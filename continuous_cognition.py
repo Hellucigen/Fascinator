@@ -964,8 +964,12 @@ class ContinuousCognition:
 
 请以 FAS 的身份，把这个想法用一两句自然的话向用户表达（第一人称，像想起什么随口说，禁止机制词汇）："""
         try:
+            # 2026-10-11 缺陷修复：human 模板误用 f-string 语法 "{input}" 而声明
+            # mustache 格式——单括号不是 mustache 标签，"想法来源"（basis 证据）
+            # 从未进入 prompt，LLM 每次都只凭 system 人设空谈（真实 LLM 隔离评估
+            # 实锤：生成内容与触发证据零相关）。改为 mustache 转义 "{{input}}"。
             prompt = ChatPromptTemplate.from_messages(
-                [("system", system), ("human", "{input}")],
+                [("system", system), ("human", "{{input}}")],
                 template_format="mustache")
             import fas_log
             with fas_log.llm_purpose("proactive_expression"):
