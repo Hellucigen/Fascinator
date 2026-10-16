@@ -304,6 +304,43 @@ class AutonomousLoop:
         self._actions_ref = am
         am.on_settled = self._on_action_settled
         am.revalidate = self._revalidate_queued_action
+        # 计划器钩子链（config.planner 开才安装包装；关=上面两行原样，
+        # 生产行为逐位不变）：结算事实入计划 + 队首执行前计划闸门。
+        if ((getattr(self, "config", None) or {}).get("planner")
+                or {}).get("enabled"):
+            _os0, _rv0 = am.on_settled, am.revalidate
+
+            def _planner_settled(action, result, success, now=None):
+                try:
+                    import goal_planner as _gp
+                    _gp.on_settled(getattr(self, "kg", None), action,
+                                   result, success,
+                                   getattr(self, "config", None) or {})
+                except Exception as e:
+                    logger.debug(f"[Autonomy] planner settle 跳过: {e}")
+                if now is not None:
+                    _os0(action, result, success, now)
+                else:
+                    _os0(action, result, success)
+
+            def _planner_revalidate(action):
+                a = _rv0(action)
+                if a is None:
+                    return None
+                try:
+                    import goal_planner as _gp
+                    st = _gp.state_view(
+                        self.kg, getattr(self, "_last_planner_percept",
+                                         None))
+                    return _gp.revalidate(
+                        self.kg, a, st,
+                        getattr(self, "config", None) or {})
+                except Exception as e:
+                    logger.debug(f"[Autonomy] planner revalidate 跳过: {e}")
+                    return a
+
+            am.on_settled = _planner_settled
+            am.revalidate = _planner_revalidate
 
     # ── timeline/causal 转发：app 在构造后赋值，落到行动执行器上 ──
     @property
@@ -899,6 +936,13 @@ class AutonomousLoop:
         if self._paused:
             self.phase = ST_PAUSED
             return {"acted": False, "reason": "paused"}
+        # 目标导向路径强化（候选机制 goal_path_bias；config.goal_path 默认关=
+        # 零写入、生产行为逐位不变。审计 docs/audits/GOAL_PATH_AUDIT_2026-10-09.md）
+        try:
+            from goal_path_bias import maybe_run
+            maybe_run(self.kg, self.engine, self.config)
+        except Exception as e:
+            logger.debug(f"[Autonomy] goal_path_bias 跳过: {e}")
         # （2026-09-21）安静期封门已拆除：用户刚交互过的事实以
         # context.user_recent 进调制层抬高行动阈值（连续、可被强驱动
         # 覆盖），不再是"20 秒内禁止一切决策"的硬规则。
@@ -946,6 +990,18 @@ class AutonomousLoop:
 
         # 1) 感知 → 世界事件 → 图激活 + 内部状态（事件先影响认知，不直接变行动）
         percept = self._perceive()
+        # 目标驱动计划器（goal_planner；config.planner 默认关=不安装不触碰。
+        # 审计 docs/audits/PLANNER_AUDIT_2026-10-09.md）：一拍闭环 =
+        # 监测→推进/重规划→完成判定→单步派发。
+        self._last_planner_percept = percept
+        if ((self.config or {}).get("planner") or {}).get("enabled"):
+            try:
+                import goal_planner
+                self._planner_tele = goal_planner.maybe_tick(
+                    self.kg, self.actions, percept, self.config,
+                    engine=self.engine)
+            except Exception as e:
+                logger.debug(f"[Autonomy] planner tick 跳过: {e}")
         events = self._detect_events()
         # 具身状态映射（2026-09-21）：观测事实→图谱激活/生存压力，
         # 认知与调度从图上自然感知到危险，而非 if→action 特判
@@ -1472,7 +1528,11 @@ class AutonomousLoop:
         gaps = pk.open_gaps(self.kg)
         # gap_obj 一律用**裸对象名**（与结算回流的 target、感知快照的
         # entity/block 名同键）；gid 只在需要图上节点时现算 gap_node_id()。
-        gap_objs = {str(x.get("object") or "") for x in gaps} - {""}
+        # 只为 MC 可检对象（label=用途）生成 inspect/试做候选；其它认知域
+        # （如"阅读"）的缺口由 CuriosityDrive 张力消费，具身世界里没有
+        # 对应对象——错误注册会在 TTL 后把它们的账误关（2026-10-12）。
+        gap_objs = {str(x.get("object") or "") for x in gaps
+                    if str(x.get("label") or "用途") == "用途"} - {""}
         ttl = float(self.cfg.get("goal_ttl_s", 1800))
         maxn = int(self.cfg.get("max_attempts", 3))
         changed = False

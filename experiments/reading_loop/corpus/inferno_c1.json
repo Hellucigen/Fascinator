@@ -1,0 +1,50 @@
+{
+ "source_id": "inferno_canto1_johnson",
+ "uri": "gutenberg:41537",
+ "title": "Dante, Inferno Canto I (Henry Johnson trans., PD)",
+ "license": "public domain",
+ "fetched": "2026-10-12",
+ "total_units": 8,
+ "units": [
+  {
+   "unit": 1,
+   "text": "In middle of the journey of our days I found that I was in a darksome wood-- The right road lost and vanished in the maze.",
+   "sha256": "29eba2e4a9be1771"
+  },
+  {
+   "unit": 2,
+   "text": "Ah me! how hard to make it understood How rough that wood was, wild, and terrible: By the mere thought my terror is renewed.",
+   "sha256": "3704e8275736d34c"
+  },
+  {
+   "unit": 3,
+   "text": "More bitter scarce were death. But ere I tell At large of good which there by me was found, I will relate what other things befell.",
+   "sha256": "0185fc9acd40cf7b"
+  },
+  {
+   "unit": 4,
+   "text": "Scarce know I how I entered on that ground, 10 So deeply, at the moment when I passed From the right way, was I in slumber drowned.",
+   "sha256": "64ceaf5deb794046"
+  },
+  {
+   "unit": 5,
+   "text": "But when beneath a hill arrived at last, Which for the boundary of the valley stood, That with such terror had my heart harassed,",
+   "sha256": "b714dc467b925903"
+  },
+  {
+   "unit": 6,
+   "text": "I upwards looked and saw its shoulders glowed, Radiant already with that planet's light Which guideth surely upon every road.",
+   "sha256": "63f75b803ed6ddce"
+  },
+  {
+   "unit": 7,
+   "text": "A little then was quieted by the sight The fear which deep within my heart had lain 20 Through all my sore experience of the night.",
+   "sha256": "0c2c44d6f47c53c8"
+  },
+  {
+   "unit": 8,
+   "text": "And as the man, who, breathing short in pain, Hath 'scaped the sea and struggled to the shore, Turns back to gaze upon the perilous main;",
+   "sha256": "faff70e68a02eb75"
+  }
+ ]
+}

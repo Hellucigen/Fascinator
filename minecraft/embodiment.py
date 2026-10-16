@@ -578,9 +578,12 @@ class MinecraftEmbodiment:
         # 返回 reason="say_failed"+detail——没送出去绝不报"已送达"；只有
         # 通道本身不存在/被停用时才兜底 bridge.say（兜底同样如实）。
         hub = getattr(self, "channel_hub", None)
+        _to_user = str(action.get("target") or "").lower() in (
+            "user", "用户", "")
+        _chan = "charon" if _to_user else "minecraft_chat"
         if hub is not None:
             try:
-                r = hub.send_text("minecraft_chat", text) or {}
+                r = hub.send_text(_chan, text) or {}
             except Exception as e:
                 r = {"ok": False, "reason": "channel_error",
                      "detail": str(e)[:100]}
@@ -588,13 +591,21 @@ class MinecraftEmbodiment:
             if r.get("ok"):
                 return {"success": True, "action": "communicate",
                         "result": f"said:{text[:40]}",
-                        "via": "channel_hub",
+                        "via": f"channel_hub:{_chan}",
                         "delivery_detail": str(r.get("detail") or "")[:120]}
-            if reason not in ("channel_unavailable", "channel_disabled",
-                               "channel_error"):
+            if _to_user or reason not in ("channel_unavailable",
+                                          "channel_disabled",
+                                          "channel_error"):
+                # 对"用户"说话绝不兜底进 MC 桥（00:2x 实锤教训：她的主动
+                # 话被派到游戏机器人嘴上→not_connected）：桌面通道失败就
+                # 如实失败，交给 CI 的 pending_retry 延后再投。
                 return {"success": False, "action": "communicate",
                         "reason": "say_failed",
                         "delivery_detail": str(r.get("detail") or reason)[:120]}
+        if _to_user:
+            return {"success": False, "action": "communicate",
+                    "reason": "say_failed",
+                    "delivery_detail": "charon channel absent"}
         if not bridge.say(text):
             return {"success": False, "action": "communicate", "reason": "say_failed"}
         return {"success": True, "action": "communicate",

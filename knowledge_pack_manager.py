@@ -547,10 +547,11 @@ class KnowledgePackManager:
 _pack_manager: Optional[KnowledgePackManager] = None
 
 
-def get_pack_manager() -> KnowledgePackManager:
+def get_pack_manager(packs_root: str = None) -> KnowledgePackManager:
     global _pack_manager
     if _pack_manager is None:
-        _pack_manager = KnowledgePackManager()
+        _pack_manager = (KnowledgePackManager(packs_root)
+                         if packs_root else KnowledgePackManager())
     return _pack_manager
 
 

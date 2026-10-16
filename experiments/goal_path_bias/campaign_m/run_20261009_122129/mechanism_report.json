@@ -1,0 +1,296 @@
+{
+  "date": "2026-10-09",
+  "family": "M (mechanism)",
+  "k": 8,
+  "n_seeds": 10,
+  "conditions": [
+    "A",
+    "B",
+    "C"
+  ],
+  "summary": [
+    {
+      "case": "star1",
+      "contrast": "B-A",
+      "p_raw": 0.001953125,
+      "HL_shift": 1.0,
+      "boot95": [
+        1.0,
+        1.0
+      ],
+      "mean_diff": 1.0,
+      "recallA": 0.0,
+      "recallX": 1.0,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.0,
+      "p_holm": 0.019531
+    },
+    {
+      "case": "star1",
+      "contrast": "C-A",
+      "p_raw": 0.001953125,
+      "HL_shift": 1.0,
+      "boot95": [
+        1.0,
+        1.0
+      ],
+      "mean_diff": 1.0,
+      "recallA": 0.0,
+      "recallX": 1.0,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.2,
+      "p_holm": 0.019531
+    },
+    {
+      "case": "chain5",
+      "contrast": "B-A",
+      "p_raw": 0.001953125,
+      "HL_shift": 0.5,
+      "boot95": [
+        0.5,
+        0.5
+      ],
+      "mean_diff": 0.5,
+      "recallA": 0.0,
+      "recallX": 0.5,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.0,
+      "p_holm": 0.019531
+    },
+    {
+      "case": "chain5",
+      "contrast": "C-A",
+      "p_raw": 1.0,
+      "HL_shift": 0.0,
+      "boot95": [
+        0.0,
+        0.0
+      ],
+      "mean_diff": 0.0,
+      "recallA": 0.0,
+      "recallX": 0.0,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.0,
+      "p_holm": 1.0
+    },
+    {
+      "case": "distractor",
+      "contrast": "B-A",
+      "p_raw": 0.001953125,
+      "HL_shift": 0.0714,
+      "boot95": [
+        0.0714,
+        0.0714
+      ],
+      "mean_diff": 0.0714,
+      "recallA": 0.0714,
+      "recallX": 0.1429,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.1,
+      "p_holm": 0.019531
+    },
+    {
+      "case": "distractor",
+      "contrast": "C-A",
+      "p_raw": 1.0,
+      "HL_shift": 0.0,
+      "boot95": [
+        0.0,
+        0.0
+      ],
+      "mean_diff": 0.0,
+      "recallA": 0.0714,
+      "recallX": 0.0714,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.1,
+      "p_holm": 1.0
+    },
+    {
+      "case": "mc_wooden_pickaxe",
+      "contrast": "B-A",
+      "p_raw": 0.001953125,
+      "HL_shift": 0.75,
+      "boot95": [
+        0.75,
+        0.75
+      ],
+      "mean_diff": 0.75,
+      "recallA": 0.0,
+      "recallX": 0.75,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.1,
+      "p_holm": 0.019531
+    },
+    {
+      "case": "mc_wooden_pickaxe",
+      "contrast": "C-A",
+      "p_raw": 0.001953125,
+      "HL_shift": 0.75,
+      "boot95": [
+        0.75,
+        0.75
+      ],
+      "mean_diff": 0.75,
+      "recallA": 0.0,
+      "recallX": 0.75,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.1,
+      "p_holm": 0.019531
+    },
+    {
+      "case": "mc_iron_ingot",
+      "contrast": "B-A",
+      "p_raw": 0.001953125,
+      "HL_shift": 0.375,
+      "boot95": [
+        0.375,
+        0.375
+      ],
+      "mean_diff": 0.375,
+      "recallA": 0.0,
+      "recallX": 0.375,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.25,
+      "p_holm": 0.019531
+    },
+    {
+      "case": "mc_iron_ingot",
+      "contrast": "C-A",
+      "p_raw": 1.0,
+      "HL_shift": 0.0,
+      "boot95": [
+        0.0,
+        0.0
+      ],
+      "mean_diff": 0.0,
+      "recallA": 0.0,
+      "recallX": 0.0,
+      "wrong_boost_X": 0.0,
+      "search_ms": 0.2,
+      "p_holm": 1.0
+    }
+  ],
+  "fail_evidence_ranks_distractor": {
+    "A": [
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    "B": [
+      26,
+      26,
+      26,
+      26,
+      26,
+      26,
+      26,
+      26,
+      26,
+      26
+    ],
+    "C": [
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18
+    ]
+  },
+  "status_counts": {
+    "star1|A": {
+      "n/a": 10
+    },
+    "star1|B": {
+      "PATH": 10
+    },
+    "star1|C": {
+      "PATH": 10
+    },
+    "chain5|A": {
+      "n/a": 10
+    },
+    "chain5|B": {
+      "PARTIAL_PATH": 10
+    },
+    "chain5|C": {
+      "PARTIAL_PATH": 10
+    },
+    "ring|A": {
+      "n/a": 10
+    },
+    "ring|B": {
+      "PARTIAL_PATH": 10
+    },
+    "ring|C": {
+      "PARTIAL_PATH": 10
+    },
+    "unreachable|A": {
+      "n/a": 10
+    },
+    "unreachable|B": {
+      "NO_PATH": 10
+    },
+    "unreachable|C": {
+      "NO_PATH": 10
+    },
+    "distractor|A": {
+      "n/a": 10
+    },
+    "distractor|B": {
+      "PARTIAL_PATH": 10
+    },
+    "distractor|C": {
+      "PARTIAL_PATH": 10
+    },
+    "mc_wooden_pickaxe|A": {
+      "n/a": 10
+    },
+    "mc_wooden_pickaxe|B": {
+      "PATH": 10
+    },
+    "mc_wooden_pickaxe|C": {
+      "PATH": 10
+    },
+    "mc_iron_ingot|A": {
+      "n/a": 10
+    },
+    "mc_iron_ingot|B": {
+      "PARTIAL_PATH": 10
+    },
+    "mc_iron_ingot|C": {
+      "PARTIAL_PATH": 10
+    }
+  },
+  "hebb_drift_per_condition": {
+    "A": {
+      "mean_edges": 0.0,
+      "mean_sum": 0.0
+    },
+    "B": {
+      "mean_edges": 1.14,
+      "mean_sum": 4e-05
+    },
+    "C": {
+      "mean_edges": 0.29,
+      "mean_sum": 1e-05
+    }
+  },
+  "dead_cycle_boost_counts": {
+    "ring|B": 40,
+    "ring|C": 0,
+    "unreachable|B": 0,
+    "unreachable|C": 0
+  }
+}

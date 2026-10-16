@@ -922,6 +922,19 @@ class ActionManager:
                         self.kg.add_edge(Edge(src=nid, dst=b, relation="涉及",
                                               weight=0.4,
                                               relation_category="semantic_relation"))
+                # memrep 试点（config.memrep.enabled 才生效，默认关=零变化）：
+                # 行动节点补结构槽位（action/object/ts_iso）+ timeline EPISODE
+                # 回链——经历可重建（docs/MEMREP_DESIGN_2026-10-09.md）。
+                _mr = (getattr(self, "config", None) or {}).get("memrep") or {}
+                if _mr.get("enabled") and _mr.get("record_episodes", True):
+                    import memrep as _memrep
+                    _memrep.enrich_action_node(
+                        self.kg, getattr(self, "timeline", None),
+                        self.kg.nodes.get(nid),
+                        action_type=action["action_type"],
+                        target=action.get("target"),
+                        source=_mr.get("source", "action_result"),
+                        actor=str(action.get("source") or "self"))
                 # 事件→对象边（2026-09-23 记忆审计修复）：此前动作痕迹只连
                 # "她在想什么"（依据），不连"她对谁做了什么"——对象节点反
                 # 扩散回不到自己的历史经历。与对话侧 事件-[涉及]->实体 同构；

@@ -21,7 +21,9 @@ _DIRS = {
     "下载": os.path.join(_HOME, "Downloads"),
 }
 _EXT_OK = {".txt", ".md", ".log", ".csv"}
+_EXT_READ_OK = _EXT_OK | {".json"}
 _MAX_CONTENT = 10 * 1024
+_MAX_READ = 200 * 1024
 
 
 def sanitize_name(name: str) -> str:
@@ -34,13 +36,13 @@ def sanitize_name(name: str) -> str:
 def execute_file_action(action: str, name: str, content: str = "",
                         dir_hint: str = "") -> dict:
     """执行文件动作。返回 {ok, path|error, action}。"""
-    if action not in ("create_file",):
+    if action not in ("create_file", "read_file"):
         return {"ok": False, "error": f"不支持的动作: {action}"}
     fname = sanitize_name(name)
     if not fname:
         return {"ok": False, "error": "文件名为空"}
     root = os.path.splitext(fname)[1].lower()
-    if root not in _EXT_OK:
+    if action == "create_file" and root not in _EXT_OK:
         fname += ".txt"
     d = _DIRS.get(str(dir_hint or "桌面").strip(), _DIRS["桌面"])
     path = os.path.join(d, fname)
@@ -48,6 +50,25 @@ def execute_file_action(action: str, name: str, content: str = "",
         return {"ok": False, "error": "路径越界"}
     if len(str(content or "")) > _MAX_CONTENT:
         return {"ok": False, "error": "内容超过 10KB 上限"}
+    if action == "read_file":
+        if root not in _EXT_READ_OK:
+            return {"ok": False, "error": "仅支持文本类型文件读取"}
+        try:
+            if not os.path.exists(path):
+                return {"ok": False, "error": f"文件不存在: {fname}",
+                        "action": "read_file"}
+            size = os.path.getsize(path)
+            if size > _MAX_READ:
+                return {"ok": False,
+                        "error": f"文件超过 {(_MAX_READ // 1024)}KB 读取上限"}
+            with open(path, "r", encoding="utf-8", errors="replace") as f:
+                text = f.read()
+            logger.info(f"[FileAction] 读取 {path} ({size}B)")
+            return {"ok": True, "action": "read_file", "path": path,
+                    "size": size, "content": text}
+        except Exception as e:
+            logger.warning(f"[FileAction] 读取失败: {e}")
+            return {"ok": False, "error": str(e)}
     try:
         existed = os.path.exists(path)
         with open(path, "w", encoding="utf-8") as f:

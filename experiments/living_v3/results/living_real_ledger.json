@@ -1,0 +1,129 @@
+{
+ "activities": [
+  {
+   "id": "life_1791731549",
+   "topic": "搞清楚「冯诺依曼代数熵」",
+   "source_product": "product:real_chat_gap",
+   "state": "done",
+   "created": 1791731549.6761782,
+   "updated": 1791731549.6761782,
+   "progress": [
+    {
+     "t": 1791731550.120686,
+     "method": "search",
+     "query": "搞清楚「冯诺依曼代数熵」",
+     "results": 4
+    },
+    {
+     "t": 1791731550.519317,
+     "method": "search",
+     "query": "数熵」 是什么",
+     "results": 4
+    }
+   ],
+   "methods_tried": [
+    "搞清楚「冯诺依曼代数熵」",
+    "数熵」 是什么"
+   ],
+   "known_failures": [
+    "query「搞清楚「冯诺依曼代数熵」」结果不相关"
+   ],
+   "evidence": [
+    "https://www.hgcha.com/zidian/c2776350.html"
+   ],
+   "findings": [
+    {
+     "query": "数熵」 是什么",
+     "evidence": [
+      {
+       "title": "《数》的拼音,数字的意思、组词、部首、笔画、笔顺 - 汉语查",
+       "snippet": "15 小时之前 · 数字是一个多音字，一共有3个读音，分别是shù、shǔ、shuò，左边一个娄右边一个攵是什么字，数的部首是攵，数的 …",
+       "url": "https://www.hgcha.com/zidian/c2776350.html"
+      }
+     ],
+     "page_read": {
+      "ok": true,
+      "text": "《数》的拼音,数字的意思、组词、部首、笔画、笔顺 - 汉语查 汉语字典 首页 字典 词典 成语 组词 组成语 近义词 反义词 成语接龙 当前位置： 汉语查 字典 数的意思",
+      "source": "https://www.hgcha.com/zidian/c2776350.html",
+      "untrusted": true
+     }
+    }
+   ],
+   "web_calls": 3,
+   "budget": 6,
+   "next_candidates": [],
+   "end_reason": "found_relevant_evidence",
+   "share_decided": true,
+   "share_verdict": "share",
+   "share_reason": "grounded+novel+timing_ok"
+  }
+ ],
+ "experiences": [
+  {
+   "kind": "observation",
+   "content": "搜索「搞清楚「冯诺依曼代数熵」」返回 4 条结果",
+   "source_refs": [
+    "web_search:搞清楚「冯诺依曼代数熵」"
+   ],
+   "ts": 1791731550.120686,
+   "epistemic": "observation",
+   "activity_id": "life_1791731549"
+  },
+  {
+   "kind": "failure",
+   "content": "查询「搞清楚「冯诺依曼代数熵」」结果不相关",
+   "source_refs": [
+    "web_search:搞清楚「冯诺依曼代数熵」"
+   ],
+   "ts": 1791731550.120686,
+   "epistemic": "observation",
+   "activity_id": "life_1791731549"
+  },
+  {
+   "kind": "observation",
+   "content": "搜索「数熵」 是什么」返回 4 条结果",
+   "source_refs": [
+    "web_search:数熵」 是什么"
+   ],
+   "ts": 1791731550.519317,
+   "epistemic": "observation",
+   "activity_id": "life_1791731549"
+  },
+  {
+   "kind": "observation",
+   "content": "活动「搞清楚「冯诺依曼代数熵」」找到相关资料：《数》的拼音,数字的意思、组词、部首、笔画、笔顺 - 汉语查",
+   "source_refs": [
+    "https://www.hgcha.com/zidian/c2776350.html"
+   ],
+   "ts": 1791731551.0746462,
+   "epistemic": "observation",
+   "activity_id": "life_1791731549"
+  }
+ ],
+ "share_candidates": [
+  {
+   "topic": "搞清楚「冯诺依曼代数熵」",
+   "activity": "life_1791731549",
+   "evidence": [
+    {
+     "query": "数熵」 是什么",
+     "evidence": [
+      {
+       "title": "《数》的拼音,数字的意思、组词、部首、笔画、笔顺 - 汉语查",
+       "snippet": "15 小时之前 · 数字是一个多音字，一共有3个读音，分别是shù、shǔ、shuò，左边一个娄右边一个攵是什么字，数的部首是攵，数的 …",
+       "url": "https://www.hgcha.com/zidian/c2776350.html"
+      }
+     ],
+     "page_read": {
+      "ok": true,
+      "text": "《数》的拼音,数字的意思、组词、部首、笔画、笔顺 - 汉语查 汉语字典 首页 字典 词典 成语 组词 组成语 近义词 反义词 成语接龙 当前位置： 汉语查 字典 数的意思",
+      "source": "https://www.hgcha.com/zidian/c2776350.html",
+      "untrusted": true
+     }
+    }
+   ],
+   "t": 1791731551.075187,
+   "note": "分享候选——交由现有表达机制评估，不直接发送"
+  }
+ ]
+}

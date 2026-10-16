@@ -205,3 +205,19 @@ B=1∧C<应有 ⇒ 序列化失败；C 齐备∧D=0 ⇒ 推理/评分复核（�
 统计审查 RECOMB_REPL_STAT_REVIEW_2026-10-12.md。**修订完成，停止等待
 人工审核**；G1/G2 修订获批后已应用并锁定（见版本记录 v3.1）。门槛二
 （Phase-4 报告）按任务 §六执行。
+
+## ADDENDUM-4（2026-10-12，人工批准后追加；不改写正文）
+
+**语言供应商切换**：经人工明确批准（指令"改"，针对锁定后模型漂移问题的
+明示授权），本实验 Phase-3 的 LLM 决策头由 MiMo（mimo-v2.6-flash）切换为
+**千问 qwen3.8-flash**（OpenAI 兼容端点，密钥托管 data/llm_secret.json）。
+
+同步影响与不变项：
+- §2"同模型"控制变量**继续成立**（7 臂共用 qwen3.8-flash，temperature=0、
+  max_tokens=400、每调用 ≤3 重试、预算 210、配对结构、评分器均不变）；
+- §4 残余差异清单中"模型版本（MiMo 现默认）"一项**更新为**：模型版本 =
+  qwen3.8-flash，与原始历史实验（MiMo 系）的跨实验可比性进一步下降——
+  本实验结论只作新旧路径对照，不与历史数字直接对比；
+- A4 确定性检验、A2-A5 检索控制、G1-G12 判据、统计方案：零改动；
+- harness.OpenAICaller 已改指 QwenBackend；MiMo Key 保留于
+  llm_secret.json["mimo_api_key"] 不再使用。

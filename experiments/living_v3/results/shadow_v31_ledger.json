@@ -1,0 +1,1385 @@
+{
+ "tasks": [
+  {
+   "id": "shadow_05e3dcfd",
+   "goal": "搞清楚「冯诺依曼代数熵」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_冯诺依曼代数熵",
+   "created": 1791720865.2509122,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720866.207312,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "冯诺依曼代数熵",
+     "t": 1791720866.7242682,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "冯（汉语汉字）_百度百科",
+     "snippet": "六部。 按马行疾冯冯然、此冯之本义也。 展转他用而冯之本义废矣。 冯者、马蹏箸地坚实之皃。 因之引伸其义为盛也、大也、满也 …",
+     "url": "https://baike.baidu.com/item/%E5%86%AF/54115",
+     "source": "bing"
+    },
+    {
+     "title": "冯姓_百度百科",
+     "snippet": "2022年1月24日 · 冯姓是一个多民族、多源流的古老姓氏，在当今中国大陆姓氏排行榜上名列第二十七位，在宋版《百家姓》中列第九 …",
+     "url": "https://baike.baidu.com/item/%E5%86%AF%E5%A7%93/617242",
+     "source": "bing"
+    },
+    {
+     "title": "冯的意思,冯的解释,冯的拼音,冯的部首,冯的笔顺-汉语国学",
+     "snippet": "冯是多音字，拼音是féng、píng，冯字共5画，部首是冫部，本页介绍冯字的意思，冯的详细解释，冯的读音、笔顺，还包括冯的翻译 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-20911",
+     "source": "bing"
+    },
+    {
+     "title": "骂人的词，越来越抽象了",
+     "snippet": "2025年12月19日 · 说时迟那时快，它又变成“老冯”“你老冯飞了”。 这里“冯”可以看做“妈”的通假字，因为字形上相像，最后原句的意思 …",
+     "url": "https://user.guancha.cn/main/content?id=1568553",
+     "source": "bing"
+    },
+    {
+     "title": "《冯》的拼音,冯字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "1 天前 · 冯字是一个多音字，一共有2个读音，分别是féng、píng，左边一个冫右边一个马是什么字，冯的部首是冫，冯的笔画一共5 …",
+     "url": "https://www.hgcha.com/zidian/94d05189.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant",
+   "learned_id": "自主活动_1791720866"
+  },
+  {
+   "id": "shadow_035d87b2",
+   "goal": "搞清楚「超对称规范反常」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_超对称规范反常",
+   "created": 1791720865.2509122,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720866.7342954,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "超对称规范反常",
+     "t": 1791720867.3411763,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "超（汉语汉字）_百度百科",
+     "snippet": "超，读作chāo，为汉语常用字（一级字） [1]，其最早出自《说文》小篆 [2]，本义是跃上，由跃上义引申为跳过义，由跳过引申为超出 … 阅读更多",
+     "url": "https://baike.baidu.com/item/%E8%B6%85/5261609",
+     "source": "bing"
+    },
+    {
+     "title": "超星",
+     "snippet": "2026年6月23日 · 超星名师讲坛主讲老师为来自全国重点高校或机构的知名教授、学者；或为著名艺术家、作家、主持人、医生等；又 …",
+     "url": "https://www.chaoxing.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超自然行动组",
+     "snippet": "2026年2月1日 · 《超自然行动组》 | 版本号：1.13.3.001 | 隐私政策 | 权限列表 上海巨人网络科技有限公司 ICP备案： 沪B2-20050107 …",
+     "url": "https://www.chaoziran.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超的意思,超的解释,超的拼音,超的部首,超的笔顺-汉语国学",
+     "snippet": "超的拼音是chāo，超字共12画，部首是走部，本页介绍超字的意思，超的详细解释，超的读音、笔顺，还包括超的翻译、输入法、异 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36229",
+     "source": "bing"
+    },
+    {
+     "title": "超 chāo、chào、chǎo、tiào - 漢典",
+     "snippet": "提拔;擢升 [promote] 書證 故莫敢超等逾官 —— 《管子·法禁》 例如 超拜 (越級升授官職);超階 (指超級擢升的官職) 超過;勝過 …",
+     "url": "http://zdic.net/hant/%E8%B6%85",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant",
+   "learned_id": "自主活动_1791720867"
+  },
+  {
+   "id": "shadow_003503cd",
+   "goal": "搞清楚「拓扑量子场重整化」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_拓扑量子场重整化",
+   "created": 1791720865.2509122,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720867.3463464,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "拓扑量子场重整化",
+     "t": 1791720867.9510357,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "拓扑（数学术语）_百度百科",
+     "snippet": "拓扑（Topology）是数学下属的几何分支学科，曾译名地志学，原名位置分析，核心研究图形或集合在连续变形下保持不变的整体性 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91/573536",
+     "source": "bing"
+    },
+    {
+     "title": "硬核科普：什么是拓扑？ - 知乎",
+     "snippet": "2020年9月5日 · 显然，这些结构适用于我们日常中遇到的数字。 但是，拓扑空间的结构比加法、乘法和距离的思想更加基本。 事实 …",
+     "url": "https://zhuanlan.zhihu.com/p/214200642",
+     "source": "bing"
+    },
+    {
+     "title": "能用通俗易懂的话解释一下什么是拓扑吗？ - 知乎",
+     "snippet": "2024年5月27日 · 拓扑是把几何形当作点来计算的代数理论。 点集拓扑，把开集当作了点，定义开集运算，获得开集代数。 代数拓 …",
+     "url": "https://www.zhihu.com/question/384098150/answers/updated",
+     "source": "bing"
+    },
+    {
+     "title": "拓扑学（数学学科）_百度百科",
+     "snippet": "2016年10月4日 · 在拓扑学里，重要的拓扑性质包括连通性与紧致性。 拓扑英文名是Topology，直译是“地志学”，最早指研究地形、地 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91%E5%AD%A6/769248",
+     "source": "bing"
+    },
+    {
+     "title": "什么是拓扑 - 知乎",
+     "snippet": "2025年3月20日 · 用最简单的话来说： 拓扑就是研究“形状”在连续变形 （比如拉伸、挤压、弯曲，但不能撕破或粘合）下不变的特征。 …",
+     "url": "https://zhuanlan.zhihu.com/p/31522944735",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant",
+   "learned_id": "自主活动_1791720867"
+  },
+  {
+   "id": "shadow_021707ce",
+   "goal": "搞清楚「手征自旋泡沫」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_手征自旋泡沫",
+   "created": 1791720865.2509122,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720867.956058,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "手征自旋泡沫",
+     "t": 1791720868.4377208,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "如何评价如今的 Bilibili？ - 知乎",
+     "snippet": "2026年10月2日 · B 站已经不是我所熟悉的 B 站。提问时间是 2018 年 2 月 10 日。 烂透了，已经烂透了！ 我没有兴趣回顾辉煌，只讲 … 阅读更多",
+     "url": "https://www.zhihu.com/question/266972664/answers/updated",
+     "source": "bing"
+    },
+    {
+     "title": "bilibili视频下载器，可下4K、8K、HDR、杜比音频等内容 ...",
+     "snippet": "2026年8月7日 · [原创工具] bilibili视频下载器，可下4K、8K、HDR、杜比音频等内容（2026.09.19更新） [复制链接]",
+     "url": "https://www.52pojie.cn/thread-2121793-1-1.html",
+     "source": "bing"
+    },
+    {
+     "title": "是什么原因让你放弃看bilibili？ - 知乎",
+     "snippet": "2021年5月16日 · 烂梗，阴阳怪气，二极管，娱乐化严重，商业化严重。 但是b站也有好用的地方，优质up主也不少，调教成纯学习软 …",
+     "url": "https://www.zhihu.com/question/454698611",
+     "source": "bing"
+    },
+    {
+     "title": "bilibili TV端 (云视听小电视) 历史版本汇总 - 吾爱破解 - 52pojie.cn",
+     "snippet": "2020年7月21日 · 软件是从当贝市场下载下来的，截至目前共计34个版本，和直接在B站官方下载的有一点区别，明显的就是启动页面 …",
+     "url": "https://www.52pojie.cn/thread-1224410-1-1.html",
+     "source": "bing"
+    },
+    {
+     "title": "bilibili google play版3.1.0 （已重传） - 吾爱破解 - 52pojie.cn",
+     "snippet": "2021年7月2日 · 吾爱破解 - 52pojie.cn » 网站 › 【 软件安全 】 › 『精品软件区』 › bilibili google play版3.1.0 （已重传） 返回列表 查看: …",
+     "url": "https://www.52pojie.cn/thread-1469113-1-1.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant",
+   "learned_id": "自主活动_1791720868"
+  },
+  {
+   "id": "shadow_02256368",
+   "goal": "搞清楚「转码实践中的异质再现偏差」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_转码实践中的异质再现偏差",
+   "created": 1791720865.2509122,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720868.4492605,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "转码实践中的异质再现偏差",
+     "t": 1791720868.8545468,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "转（汉语文字）_百度百科",
+     "snippet": "2023年12月7日 · “专”指纺专，即纺锤。 纺锤通过旋转来收丝，在这里表转动义。 转的本义指旋转、转圈，引申指用车运。 同时，转 …",
+     "url": "https://baike.baidu.com/item/%E8%BD%AC/53646",
+     "source": "bing"
+    },
+    {
+     "title": "转的意思,转的解释,转的拼音,转的部首,转的笔顺-汉语国学",
+     "snippet": "转是多音字，拼音是zhuǎn、zhuàn、zhuǎi，转字共8画，部首是车部，本页介绍转字的意思，转的详细解释，转的读音、笔顺，还包 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36716",
+     "source": "bing"
+    },
+    {
+     "title": "转怎么读_转的拼音 - 新华字典",
+     "snippet": "2 天之前 · 旋转：车轮飞～。 使旋转：～动地球仪。 围绕着一个中心运动：越陷越深绕着太阳～。 量词，旋转一圈为一转：绕了几 …",
+     "url": "https://zidian.gushici.net/8/8f6c.html",
+     "source": "bing"
+    },
+    {
+     "title": "《转》的拼音,转字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "4 天之前 · 转字是一个多音字，一共有3个读音，分别是zhuǎn、zhuàn、zhuǎi，左边一个车右边一个专是什么字，转的部首是车，转 …",
+     "url": "https://www.hgcha.com/zidian/4c051c86.html",
+     "source": "bing"
+    },
+    {
+     "title": "轉 - 维基词典，自由的多语言词典",
+     "snippet": "2026年2月16日 · 展开 字形拆解／相關派生漢字 系列#2583（專）： 專 ｜ 傳 ｜ 摶 ｜ 漙 ｜ 嫥 ｜ 瑼 ｜ 暷 ｜ 膞 ｜ 磚 ｜ 竱 ｜ 縳 ｜  …",
+     "url": "https://zh.wiktionary.org/wiki/%E8%BD%89",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant",
+   "learned_id": "自主活动_1791720868"
+  },
+  {
+   "id": "shadow_05be8e3d",
+   "goal": "搞清楚「冯诺依曼代数熵」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_冯诺依曼代数熵",
+   "created": 1791720890.0499635,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720890.8127165,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "冯诺依曼代数熵",
+     "t": 1791720891.1914446,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "冯（汉语汉字）_百度百科",
+     "snippet": "六部。 按马行疾冯冯然、此冯之本义也。 展转他用而冯之本义废矣。 冯者、马蹏箸地坚实之皃。 因之引伸其义为盛也、大也、满也 …",
+     "url": "https://baike.baidu.com/item/%E5%86%AF/54115",
+     "source": "bing"
+    },
+    {
+     "title": "冯姓_百度百科",
+     "snippet": "2022年1月24日 · 冯姓是一个多民族、多源流的古老姓氏，在当今中国大陆姓氏排行榜上名列第二十七位，在宋版《百家姓》中列第九 …",
+     "url": "https://baike.baidu.com/item/%E5%86%AF%E5%A7%93/617242",
+     "source": "bing"
+    },
+    {
+     "title": "冯的意思,冯的解释,冯的拼音,冯的部首,冯的笔顺-汉语国学",
+     "snippet": "冯是多音字，拼音是féng、píng，冯字共5画，部首是冫部，本页介绍冯字的意思，冯的详细解释，冯的读音、笔顺，还包括冯的翻译 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-20911",
+     "source": "bing"
+    },
+    {
+     "title": "骂人的词，越来越抽象了",
+     "snippet": "2025年12月19日 · 说时迟那时快，它又变成“老冯”“你老冯飞了”。 这里“冯”可以看做“妈”的通假字，因为字形上相像，最后原句的意思 …",
+     "url": "https://user.guancha.cn/main/content?id=1568553",
+     "source": "bing"
+    },
+    {
+     "title": "《冯》的拼音,冯字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "1 天前 · 冯字是一个多音字，一共有2个读音，分别是féng、píng，左边一个冫右边一个马是什么字，冯的部首是冫，冯的笔画一共5 …",
+     "url": "https://www.hgcha.com/zidian/94d05189.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_045c8c6d",
+   "goal": "搞清楚「超对称规范反常」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_超对称规范反常",
+   "created": 1791720890.0499635,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720891.2044725,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "超对称规范反常",
+     "t": 1791720891.5776255,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "超（汉语汉字）_百度百科",
+     "snippet": "超，读作chāo，为汉语常用字（一级字） [1]，其最早出自《说文》小篆 [2]，本义是跃上，由跃上义引申为跳过义，由跳过引申为超出 …",
+     "url": "https://baike.baidu.com/item/%E8%B6%85/5261609",
+     "source": "bing"
+    },
+    {
+     "title": "超星",
+     "snippet": "2026年6月23日 · 超星名师讲坛主讲老师为来自全国重点高校或机构的知名教授、学者；或为著名艺术家、作家、主持人、医生等；又 …",
+     "url": "https://www.chaoxing.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超自然行动组",
+     "snippet": "2026年2月1日 · 《超自然行动组》 | 版本号：1.13.3.001 | 隐私政策 | 权限列表 上海巨人网络科技有限公司 ICP备案： 沪B2-20050107 …",
+     "url": "https://www.chaoziran.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超的意思,超的解释,超的拼音,超的部首,超的笔顺-汉语国学",
+     "snippet": "超的拼音是chāo，超字共12画，部首是走部，本页介绍超字的意思，超的详细解释，超的读音、笔顺，还包括超的翻译、输入法、异 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36229",
+     "source": "bing"
+    },
+    {
+     "title": "超 chāo、chào、chǎo、tiào - 漢典",
+     "snippet": "提拔;擢升 [promote] 書證 故莫敢超等逾官 —— 《管子·法禁》 例如 超拜 (越級升授官職);超階 (指超級擢升的官職) 超過;勝過 …",
+     "url": "http://zdic.net/hant/%E8%B6%85",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_01aba16d",
+   "goal": "搞清楚「拓扑量子场重整化」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_拓扑量子场重整化",
+   "created": 1791720890.0499635,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720891.5876665,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "拓扑量子场重整化",
+     "t": 1791720892.0487382,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "拓扑（数学术语）_百度百科",
+     "snippet": "拓扑（Topology）是数学下属的几何分支学科，曾译名地志学，原名位置分析，核心研究图形或集合在连续变形下保持不变的整体性 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91/573536",
+     "source": "bing"
+    },
+    {
+     "title": "硬核科普：什么是拓扑？ - 知乎",
+     "snippet": "2020年9月5日 · 显然，这些结构适用于我们日常中遇到的数字。 但是，拓扑空间的结构比加法、乘法和距离的思想更加基本。 事实 …",
+     "url": "https://zhuanlan.zhihu.com/p/214200642",
+     "source": "bing"
+    },
+    {
+     "title": "能用通俗易懂的话解释一下什么是拓扑吗？ - 知乎",
+     "snippet": "2024年5月27日 · 拓扑是把几何形当作点来计算的代数理论。 点集拓扑，把开集当作了点，定义开集运算，获得开集代数。 代数拓 …",
+     "url": "https://www.zhihu.com/question/384098150/answers/updated",
+     "source": "bing"
+    },
+    {
+     "title": "拓扑学（数学学科）_百度百科",
+     "snippet": "2016年10月4日 · 在拓扑学里，重要的拓扑性质包括连通性与紧致性。 拓扑英文名是Topology，直译是“地志学”，最早指研究地形、地 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91%E5%AD%A6/769248",
+     "source": "bing"
+    },
+    {
+     "title": "什么是拓扑 - 知乎",
+     "snippet": "2025年3月20日 · 用最简单的话来说： 拓扑就是研究“形状”在连续变形 （比如拉伸、挤压、弯曲，但不能撕破或粘合）下不变的特征。 …",
+     "url": "https://zhuanlan.zhihu.com/p/31522944735",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_009a23db",
+   "goal": "搞清楚「手征自旋泡沫」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_手征自旋泡沫",
+   "created": 1791720890.0499635,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720892.0632799,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "手征自旋泡沫",
+     "t": 1791720892.5185268,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "从vivo官网下载的升级包怎么安装 - 百度知道",
+     "snippet": "2018年10月28日 · 从vivo官网下载的升级包安装步骤如下： 1.把升级包放到 根目录，如图片最后的升级包 压缩包 位置。 2.把手机关 …",
+     "url": "https://zhidao.baidu.com/question/1801553823999417987.html",
+     "source": "bing"
+    },
+    {
+     "title": "vivo怎么移除历史设备_百度知道",
+     "snippet": "2025年7月23日 · vivo移除历史设备的方法主要有以下几种： 通过手机端设置移除： 打开手机设置，点击顶部的账号信息。 选择“账号 …",
+     "url": "https://zhidao.baidu.com/question/630316894875984652.html",
+     "source": "bing"
+    },
+    {
+     "title": "vivo官网社区",
+     "snippet": "2023年6月16日 · vivo官网 每当进入官网APP时，都要受到3秒首页广告的折磨，不小心点到还会跳转详情页面，十分影响体验。 官网 …",
+     "url": "https://bbs.vivo.com.cn/newbbs/thread/36124042",
+     "source": "bing"
+    },
+    {
+     "title": "iQOO Neo系列 - vivo官网社区",
+     "snippet": "vivo官网社区是V粉大本营，是一个汇聚vivo最新品牌动态、新品资讯、评测技巧的阵地，也是V粉获取福利、参与互动、交流体验 ...",
+     "url": "https://bbs.vivo.com.cn/newbbs/forums/115",
+     "source": "bing"
+    },
+    {
+     "title": "vivo手机忘记锁屏密码怎么办 - 百度经验",
+     "snippet": "2023年9月5日 · 服务中心以刷机解锁的方式操作后，设备内的所有数据将无法保留。 客户服务中心地址：进入vivo官网/vivo商城APP-- …",
+     "url": "https://jingyan.baidu.com/article/77b8dc7fb7df352075eab64a.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_0397ef85",
+   "goal": "搞清楚「转码实践中的异质再现偏差」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_转码实践中的异质再现偏差",
+   "created": 1791720890.0499635,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720892.5300622,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "转码实践中的异质再现偏差",
+     "t": 1791720892.9334176,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "转（汉语文字）_百度百科",
+     "snippet": "2023年12月7日 · “专”指纺专，即纺锤。 纺锤通过旋转来收丝，在这里表转动义。 转的本义指旋转、转圈，引申指用车运。 同时，转 …",
+     "url": "https://baike.baidu.com/item/%E8%BD%AC/53646",
+     "source": "bing"
+    },
+    {
+     "title": "转的意思,转的解释,转的拼音,转的部首,转的笔顺-汉语国学",
+     "snippet": "转是多音字，拼音是zhuǎn、zhuàn、zhuǎi，转字共8画，部首是车部，本页介绍转字的意思，转的详细解释，转的读音、笔顺，还包 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36716",
+     "source": "bing"
+    },
+    {
+     "title": "转怎么读_转的拼音 - 新华字典",
+     "snippet": "2 天之前 · 旋转：车轮飞～。 使旋转：～动地球仪。 围绕着一个中心运动：越陷越深绕着太阳～。 量词，旋转一圈为一转：绕了几 …",
+     "url": "https://zidian.gushici.net/8/8f6c.html",
+     "source": "bing"
+    },
+    {
+     "title": "《转》的拼音,转字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "4 天之前 · 转字是一个多音字，一共有3个读音，分别是zhuǎn、zhuàn、zhuǎi，左边一个车右边一个专是什么字，转的部首是车，转 …",
+     "url": "https://www.hgcha.com/zidian/4c051c86.html",
+     "source": "bing"
+    },
+    {
+     "title": "轉 - 维基词典，自由的多语言词典",
+     "snippet": "2026年2月16日 · 展开 字形拆解／相關派生漢字 系列#2583（專）： 專 ｜ 傳 ｜ 摶 ｜ 漙 ｜ 嫥 ｜ 瑼 ｜ 暷 ｜ 膞 ｜ 磚 ｜ 竱 ｜ 縳 ｜  …",
+     "url": "https://zh.wiktionary.org/wiki/%E8%BD%89",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_03d86ed1",
+   "goal": "搞清楚「冯诺依曼代数熵」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_冯诺依曼代数熵",
+   "created": 1791720917.9476593,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720918.7292318,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "冯诺依曼代数熵",
+     "t": 1791720919.243652,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "冯（汉语汉字）_百度百科",
+     "snippet": "六部。 按马行疾冯冯然、此冯之本义也。 展转他用而冯之本义废矣。 冯者、马蹏箸地坚实之皃。 因之引伸其义为盛也、大也、满也 … 阅读更多",
+     "url": "https://baike.baidu.com/item/%E5%86%AF/54115",
+     "source": "bing"
+    },
+    {
+     "title": "冯姓_百度百科",
+     "snippet": "2022年1月24日 · 冯姓是一个多民族、多源流的古老姓氏，在当今中国大陆姓氏排行榜上名列第二十七位，在宋版《百家姓》中列第九 …",
+     "url": "https://baike.baidu.com/item/%E5%86%AF%E5%A7%93/617242",
+     "source": "bing"
+    },
+    {
+     "title": "冯的意思,冯的解释,冯的拼音,冯的部首,冯的笔顺-汉语国学",
+     "snippet": "冯是多音字，拼音是féng、píng，冯字共5画，部首是冫部，本页介绍冯字的意思，冯的详细解释，冯的读音、笔顺，还包括冯的翻译 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-20911",
+     "source": "bing"
+    },
+    {
+     "title": "骂人的词，越来越抽象了",
+     "snippet": "2025年12月19日 · 说时迟那时快，它又变成“老冯”“你老冯飞了”。 这里“冯”可以看做“妈”的通假字，因为字形上相像，最后原句的意思 …",
+     "url": "https://user.guancha.cn/main/content?id=1568553",
+     "source": "bing"
+    },
+    {
+     "title": "《冯》的拼音,冯字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "1 天前 · 冯字是一个多音字，一共有2个读音，分别是féng、píng，左边一个冫右边一个马是什么字，冯的部首是冫，冯的笔画一共5 …",
+     "url": "https://www.hgcha.com/zidian/94d05189.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_029e2a16",
+   "goal": "搞清楚「超对称规范反常」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_超对称规范反常",
+   "created": 1791720917.9476593,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720919.261215,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "超对称规范反常",
+     "t": 1791720919.8344953,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "超（汉语汉字）_百度百科",
+     "snippet": "超，读作chāo，为汉语常用字（一级字） [1]，其最早出自《说文》小篆 [2]，本义是跃上，由跃上义引申为跳过义，由跳过引申为超出 …",
+     "url": "https://baike.baidu.com/item/%E8%B6%85/5261609",
+     "source": "bing"
+    },
+    {
+     "title": "超星",
+     "snippet": "2026年6月23日 · 超星名师讲坛主讲老师为来自全国重点高校或机构的知名教授、学者；或为著名艺术家、作家、主持人、医生等；又 …",
+     "url": "https://www.chaoxing.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超自然行动组",
+     "snippet": "2026年2月1日 · 《超自然行动组》 | 版本号：1.13.3.001 | 隐私政策 | 权限列表 上海巨人网络科技有限公司 ICP备案： 沪B2-20050107 …",
+     "url": "https://www.chaoziran.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超的意思,超的解释,超的拼音,超的部首,超的笔顺-汉语国学",
+     "snippet": "超的拼音是chāo，超字共12画，部首是走部，本页介绍超字的意思，超的详细解释，超的读音、笔顺，还包括超的翻译、输入法、异 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36229",
+     "source": "bing"
+    },
+    {
+     "title": "超 chāo、chào、chǎo、tiào - 漢典",
+     "snippet": "提拔;擢升 [promote] 書證 故莫敢超等逾官 —— 《管子·法禁》 例如 超拜 (越級升授官職);超階 (指超級擢升的官職) 超過;勝過 …",
+     "url": "http://zdic.net/hant/%E8%B6%85",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_0260b572",
+   "goal": "搞清楚「拓扑量子场重整化」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_拓扑量子场重整化",
+   "created": 1791720917.9476593,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720919.8465924,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "拓扑量子场重整化",
+     "t": 1791720920.2392511,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "拓扑（数学术语）_百度百科",
+     "snippet": "拓扑（Topology）是数学下属的几何分支学科，曾译名地志学，原名位置分析，核心研究图形或集合在连续变形下保持不变的整体性 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91/573536",
+     "source": "bing"
+    },
+    {
+     "title": "硬核科普：什么是拓扑？ - 知乎",
+     "snippet": "2020年9月5日 · 显然，这些结构适用于我们日常中遇到的数字。 但是，拓扑空间的结构比加法、乘法和距离的思想更加基本。 事实 …",
+     "url": "https://zhuanlan.zhihu.com/p/214200642",
+     "source": "bing"
+    },
+    {
+     "title": "能用通俗易懂的话解释一下什么是拓扑吗？ - 知乎",
+     "snippet": "2024年5月27日 · 拓扑是把几何形当作点来计算的代数理论。 点集拓扑，把开集当作了点，定义开集运算，获得开集代数。 代数拓 …",
+     "url": "https://www.zhihu.com/question/384098150/answers/updated",
+     "source": "bing"
+    },
+    {
+     "title": "拓扑学（数学学科）_百度百科",
+     "snippet": "2016年10月4日 · 在拓扑学里，重要的拓扑性质包括连通性与紧致性。 拓扑英文名是Topology，直译是“地志学”，最早指研究地形、地 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91%E5%AD%A6/769248",
+     "source": "bing"
+    },
+    {
+     "title": "什么是拓扑 - 知乎",
+     "snippet": "2025年3月20日 · 用最简单的话来说： 拓扑就是研究“形状”在连续变形 （比如拉伸、挤压、弯曲，但不能撕破或粘合）下不变的特征。 …",
+     "url": "https://zhuanlan.zhihu.com/p/31522944735",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_01c60127",
+   "goal": "搞清楚「手征自旋泡沫」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_手征自旋泡沫",
+   "created": 1791720917.9476593,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720920.2568038,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "手征自旋泡沫",
+     "t": 1791720920.6634188,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "韩剧TV-热门韩剧观看-高清韩剧聚合平台",
+     "snippet": "韩剧TV同步更新韩国各大电视台热门剧集，从纯爱浪漫到硬核悬疑，你想看的这里全都有。 海量高清韩剧、韩综、韩影一网打尽，为 …",
+     "url": "http://www.pc-hanju.com.cn/",
+     "source": "bing"
+    },
+    {
+     "title": "韩剧TV | 韩剧大全在线 | 韩剧网",
+     "snippet": "2026年9月26日 · 韩剧TV支持按演员筛选剧集，轻松找到玄彬、孙艺珍、金秀贤等热门韩星的代表作品，追星追剧两不误。 联合资深 …",
+     "url": "https://pc.tv-hanju.cn/",
+     "source": "bing"
+    },
+    {
+     "title": "韩剧tv_韩剧TV官网_最新韩剧在线观看_韩剧tv热播榜",
+     "snippet": "12 小时之前 · 新增按更新时间自动排序与批量提醒设置，管理多部剧更轻松。 韩剧tv 正式上线，首批收录 1,200 部经典韩剧。 推出追 …",
+     "url": "https://hanjt.hl.cn/",
+     "source": "bing"
+    },
+    {
+     "title": "韩剧TV _ 热播韩剧推荐 | 每日追剧指南",
+     "snippet": "2026年9月15日 · 无论是浪漫爱情、悬疑推理、家庭伦理还是古装历史，你都能在韩剧TV找到经过人工校验的优质片单。 平台以“荐”为 …",
+     "url": "https://cn-hanjutv.hl.cn/",
+     "source": "bing"
+    },
+    {
+     "title": "韩小圈官方网站链接_韩小圈在线网页版入口_百度知道",
+     "snippet": "2025年11月11日 · 韩小圈通过资源整合、功能优化与社区建设，为用户提供了一站式韩流影视观看平台。 访问官网即可开启高效、互 …",
+     "url": "https://zhidao.baidu.com/question/254619546357192884.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_0196eb26",
+   "goal": "搞清楚「转码实践中的异质再现偏差」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_转码实践中的异质再现偏差",
+   "created": 1791720917.9476593,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720920.6769762,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "转码实践中的异质再现偏差",
+     "t": 1791720921.0578523,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "转（汉语文字）_百度百科",
+     "snippet": "2023年12月7日 · “专”指纺专，即纺锤。 纺锤通过旋转来收丝，在这里表转动义。 转的本义指旋转、转圈，引申指用车运。 同时，转 …",
+     "url": "https://baike.baidu.com/item/%E8%BD%AC/53646",
+     "source": "bing"
+    },
+    {
+     "title": "转的意思,转的解释,转的拼音,转的部首,转的笔顺-汉语国学",
+     "snippet": "转是多音字，拼音是zhuǎn、zhuàn、zhuǎi，转字共8画，部首是车部，本页介绍转字的意思，转的详细解释，转的读音、笔顺，还包 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36716",
+     "source": "bing"
+    },
+    {
+     "title": "转怎么读_转的拼音 - 新华字典",
+     "snippet": "2 天之前 · 旋转：车轮飞～。 使旋转：～动地球仪。 围绕着一个中心运动：越陷越深绕着太阳～。 量词，旋转一圈为一转：绕了几 …",
+     "url": "https://zidian.gushici.net/8/8f6c.html",
+     "source": "bing"
+    },
+    {
+     "title": "《转》的拼音,转字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "4 天之前 · 转字是一个多音字，一共有3个读音，分别是zhuǎn、zhuàn、zhuǎi，左边一个车右边一个专是什么字，转的部首是车，转 …",
+     "url": "https://www.hgcha.com/zidian/4c051c86.html",
+     "source": "bing"
+    },
+    {
+     "title": "轉 - 维基词典，自由的多语言词典",
+     "snippet": "2026年2月16日 · 展开 字形拆解／相關派生漢字 系列#2583（專）： 專 ｜ 傳 ｜ 摶 ｜ 漙 ｜ 嫥 ｜ 瑼 ｜ 暷 ｜ 膞 ｜ 磚 ｜ 竱 ｜ 縳 ｜  …",
+     "url": "https://zh.wiktionary.org/wiki/%E8%BD%89",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_017f5f98",
+   "goal": "搞清楚「冯诺依曼代数熵」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_冯诺依曼代数熵",
+   "created": 1791720962.1497633,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720962.9198234,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "冯诺依曼代数熵",
+     "t": 1791720963.4963753,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "冯（汉语汉字）_百度百科",
+     "snippet": "六部。 按马行疾冯冯然、此冯之本义也。 展转他用而冯之本义废矣。 冯者、马蹏箸地坚实之皃。 因之引伸其义为盛也、大也、满也 …",
+     "url": "https://baike.baidu.com/item/%E5%86%AF/54115",
+     "source": "bing"
+    },
+    {
+     "title": "冯姓_百度百科",
+     "snippet": "2022年1月24日 · 冯姓是一个多民族、多源流的古老姓氏，在当今中国大陆姓氏排行榜上名列第二十七位，在宋版《百家姓》中列第九 …",
+     "url": "https://baike.baidu.com/item/%E5%86%AF%E5%A7%93/617242",
+     "source": "bing"
+    },
+    {
+     "title": "冯的意思,冯的解释,冯的拼音,冯的部首,冯的笔顺-汉语国学",
+     "snippet": "冯是多音字，拼音是féng、píng，冯字共5画，部首是冫部，本页介绍冯字的意思，冯的详细解释，冯的读音、笔顺，还包括冯的翻译 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-20911",
+     "source": "bing"
+    },
+    {
+     "title": "骂人的词，越来越抽象了",
+     "snippet": "2025年12月19日 · 说时迟那时快，它又变成“老冯”“你老冯飞了”。 这里“冯”可以看做“妈”的通假字，因为字形上相像，最后原句的意思 …",
+     "url": "https://user.guancha.cn/main/content?id=1568553",
+     "source": "bing"
+    },
+    {
+     "title": "《冯》的拼音,冯字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "1 天前 · 冯字是一个多音字，一共有2个读音，分别是féng、píng，左边一个冫右边一个马是什么字，冯的部首是冫，冯的笔画一共5 …",
+     "url": "https://www.hgcha.com/zidian/94d05189.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_02f2dd14",
+   "goal": "搞清楚「超对称规范反常」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_超对称规范反常",
+   "created": 1791720962.1497633,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720963.516946,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "超对称规范反常",
+     "t": 1791720964.1028066,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "超（汉语汉字）_百度百科",
+     "snippet": "超，读作chāo，为汉语常用字（一级字） [1]，其最早出自《说文》小篆 [2]，本义是跃上，由跃上义引申为跳过义，由跳过引申为超出 …",
+     "url": "https://baike.baidu.com/item/%E8%B6%85/5261609",
+     "source": "bing"
+    },
+    {
+     "title": "超星",
+     "snippet": "2026年6月23日 · 超星名师讲坛主讲老师为来自全国重点高校或机构的知名教授、学者；或为著名艺术家、作家、主持人、医生等；又 …",
+     "url": "https://www.chaoxing.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超自然行动组",
+     "snippet": "2026年2月1日 · 《超自然行动组》 | 版本号：1.13.3.001 | 隐私政策 | 权限列表 上海巨人网络科技有限公司 ICP备案： 沪B2-20050107 …",
+     "url": "https://www.chaoziran.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超的意思,超的解释,超的拼音,超的部首,超的笔顺-汉语国学",
+     "snippet": "超的拼音是chāo，超字共12画，部首是走部，本页介绍超字的意思，超的详细解释，超的读音、笔顺，还包括超的翻译、输入法、异 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36229",
+     "source": "bing"
+    },
+    {
+     "title": "超 chāo、chào、chǎo、tiào - 漢典",
+     "snippet": "提拔;擢升 [promote] 書證 故莫敢超等逾官 —— 《管子·法禁》 例如 超拜 (越級升授官職);超階 (指超級擢升的官職) 超過;勝過 …",
+     "url": "http://zdic.net/hant/%E8%B6%85",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_055e4c72",
+   "goal": "搞清楚「拓扑量子场重整化」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_拓扑量子场重整化",
+   "created": 1791720962.1497633,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720964.1178617,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "拓扑量子场重整化",
+     "t": 1791720964.6999493,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "拓扑（数学术语）_百度百科",
+     "snippet": "拓扑（Topology）是数学下属的几何分支学科，曾译名地志学，原名位置分析，核心研究图形或集合在连续变形下保持不变的整体性 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91/573536",
+     "source": "bing"
+    },
+    {
+     "title": "硬核科普：什么是拓扑？ - 知乎",
+     "snippet": "2020年9月5日 · 显然，这些结构适用于我们日常中遇到的数字。 但是，拓扑空间的结构比加法、乘法和距离的思想更加基本。 事实 …",
+     "url": "https://zhuanlan.zhihu.com/p/214200642",
+     "source": "bing"
+    },
+    {
+     "title": "能用通俗易懂的话解释一下什么是拓扑吗？ - 知乎",
+     "snippet": "2024年5月27日 · 拓扑是把几何形当作点来计算的代数理论。 点集拓扑，把开集当作了点，定义开集运算，获得开集代数。 代数拓 …",
+     "url": "https://www.zhihu.com/question/384098150/answers/updated",
+     "source": "bing"
+    },
+    {
+     "title": "拓扑学（数学学科）_百度百科",
+     "snippet": "2016年10月4日 · 在拓扑学里，重要的拓扑性质包括连通性与紧致性。 拓扑英文名是Topology，直译是“地志学”，最早指研究地形、地 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91%E5%AD%A6/769248",
+     "source": "bing"
+    },
+    {
+     "title": "什么是拓扑 - 知乎",
+     "snippet": "2025年3月20日 · 用最简单的话来说： 拓扑就是研究“形状”在连续变形 （比如拉伸、挤压、弯曲，但不能撕破或粘合）下不变的特征。 …",
+     "url": "https://zhuanlan.zhihu.com/p/31522944735",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_0175e837",
+   "goal": "搞清楚「手征自旋泡沫」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_手征自旋泡沫",
+   "created": 1791720962.1497633,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720964.7205076,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "手征自旋泡沫",
+     "t": 1791720965.0672324,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "PTA | 程序设计类实验辅助教学平台",
+     "snippet": "PTA is renowned for its future-oriented, education-empowering, and excellence-driven philosophy, with rich experience in …",
+     "url": "https://pintia.cn/home",
+     "source": "bing"
+    },
+    {
+     "title": "PTA | 程序设计类实验辅助教学平台",
+     "snippet": "教材 “101计划”核心课程实践教材《数据结构实验指导 - C语言版》题目集 Code Completion × 31 Programming × 190 Multiple Files × 4",
+     "url": "https://pintia.cn/problem-sets/dashboard",
+     "source": "bing"
+    },
+    {
+     "title": "PTA | 程序设计类实验辅助教学平台 - pintia.cn",
+     "snippet": "2026年9月10日 · 回到主站/Back to PTA",
+     "url": "https://activity.pintia.cn/?proxyCDN=1",
+     "source": "bing"
+    },
+    {
+     "title": "PTA | 程序设计类实验辅助教学平台",
+     "snippet": "2025年10月25日 · Public Competition List 第十一届中国大学生程序设计竞赛（女生专场） - 热身赛 2025/10/25 00:30:00 - 2025/10/25 …",
+     "url": "https://mooc.pintia.cn/competitions/public?page=1",
+     "source": "bing"
+    },
+    {
+     "title": "PTA | 程序设计类实验辅助教学平台",
+     "snippet": "教材 “101计划”核心课程实践教材《数据结构实验指导 - C语言版》题目集 Code Completion × 31 Programming × 190 Multiple Files × 4",
+     "url": "https://mooc.pintia.cn/problem-sets/dashboard",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_031eef62",
+   "goal": "搞清楚「转码实践中的异质再现偏差」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_转码实践中的异质再现偏差",
+   "created": 1791720962.1497633,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720965.084277,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "转码实践中的异质再现偏差",
+     "t": 1791720965.7409775,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "转（汉语文字）_百度百科",
+     "snippet": "2023年12月7日 · “专”指纺专，即纺锤。 纺锤通过旋转来收丝，在这里表转动义。 转的本义指旋转、转圈，引申指用车运。 同时，转 … 阅读更多",
+     "url": "https://baike.baidu.com/item/%E8%BD%AC/53646",
+     "source": "bing"
+    },
+    {
+     "title": "转的意思,转的解释,转的拼音,转的部首,转的笔顺-汉语国学",
+     "snippet": "转是多音字，拼音是zhuǎn、zhuàn、zhuǎi，转字共8画，部首是车部，本页介绍转字的意思，转的详细解释，转的读音、笔顺，还包 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36716",
+     "source": "bing"
+    },
+    {
+     "title": "转怎么读_转的拼音 - 新华字典",
+     "snippet": "2 天之前 · 旋转：车轮飞～。 使旋转：～动地球仪。 围绕着一个中心运动：越陷越深绕着太阳～。 量词，旋转一圈为一转：绕了几 …",
+     "url": "https://zidian.gushici.net/8/8f6c.html",
+     "source": "bing"
+    },
+    {
+     "title": "《转》的拼音,转字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "4 天之前 · 转字是一个多音字，一共有3个读音，分别是zhuǎn、zhuàn、zhuǎi，左边一个车右边一个专是什么字，转的部首是车，转 …",
+     "url": "https://www.hgcha.com/zidian/4c051c86.html",
+     "source": "bing"
+    },
+    {
+     "title": "轉 - 维基词典，自由的多语言词典",
+     "snippet": "2026年2月16日 · 展开 字形拆解／相關派生漢字 系列#2583（專）： 專 ｜ 傳 ｜ 摶 ｜ 漙 ｜ 嫥 ｜ 瑼 ｜ 暷 ｜ 膞 ｜ 磚 ｜ 竱 ｜ 縳 ｜  …",
+     "url": "https://zh.wiktionary.org/wiki/%E8%BD%89",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_018a378b",
+   "goal": "搞清楚「冯诺依曼代数熵」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_冯诺依曼代数熵",
+   "created": 1791720997.6236985,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720998.5045707,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "冯诺依曼代数熵",
+     "t": 1791720998.9044776,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "冯（汉语汉字）_百度百科",
+     "snippet": "六部。 按马行疾冯冯然、此冯之本义也。 展转他用而冯之本义废矣。 冯者、马蹏箸地坚实之皃。 因之引伸其义为盛也、大也、满也 … 阅读更多",
+     "url": "https://baike.baidu.com/item/%E5%86%AF/54115",
+     "source": "bing"
+    },
+    {
+     "title": "冯姓_百度百科",
+     "snippet": "2022年1月24日 · 冯姓是一个多民族、多源流的古老姓氏，在当今中国大陆姓氏排行榜上名列第二十七位，在宋版《百家姓》中列第九 …",
+     "url": "https://baike.baidu.com/item/%E5%86%AF%E5%A7%93/617242",
+     "source": "bing"
+    },
+    {
+     "title": "冯的意思,冯的解释,冯的拼音,冯的部首,冯的笔顺-汉语国学",
+     "snippet": "冯是多音字，拼音是féng、píng，冯字共5画，部首是冫部，本页介绍冯字的意思，冯的详细解释，冯的读音、笔顺，还包括冯的翻译 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-20911",
+     "source": "bing"
+    },
+    {
+     "title": "骂人的词，越来越抽象了",
+     "snippet": "2025年12月19日 · 说时迟那时快，它又变成“老冯”“你老冯飞了”。 这里“冯”可以看做“妈”的通假字，因为字形上相像，最后原句的意思 …",
+     "url": "https://user.guancha.cn/main/content?id=1568553",
+     "source": "bing"
+    },
+    {
+     "title": "《冯》的拼音,冯字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "1 天前 · 冯字是一个多音字，一共有2个读音，分别是féng、píng，左边一个冫右边一个马是什么字，冯的部首是冫，冯的笔画一共5 …",
+     "url": "https://www.hgcha.com/zidian/94d05189.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_05b0f1ac",
+   "goal": "搞清楚「超对称规范反常」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_超对称规范反常",
+   "created": 1791720997.6236985,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720998.9270544,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "超对称规范反常",
+     "t": 1791720999.301686,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "超（汉语汉字）_百度百科",
+     "snippet": "超，读作chāo，为汉语常用字（一级字） [1]，其最早出自《说文》小篆 [2]，本义是跃上，由跃上义引申为跳过义，由跳过引申为超出 …",
+     "url": "https://baike.baidu.com/item/%E8%B6%85/5261609",
+     "source": "bing"
+    },
+    {
+     "title": "超星",
+     "snippet": "2026年6月23日 · 超星名师讲坛主讲老师为来自全国重点高校或机构的知名教授、学者；或为著名艺术家、作家、主持人、医生等；又 …",
+     "url": "https://www.chaoxing.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超自然行动组",
+     "snippet": "2026年2月1日 · 《超自然行动组》 | 版本号：1.13.3.001 | 隐私政策 | 权限列表 上海巨人网络科技有限公司 ICP备案： 沪B2-20050107 …",
+     "url": "https://www.chaoziran.com/",
+     "source": "bing"
+    },
+    {
+     "title": "超的意思,超的解释,超的拼音,超的部首,超的笔顺-汉语国学",
+     "snippet": "超的拼音是chāo，超字共12画，部首是走部，本页介绍超字的意思，超的详细解释，超的读音、笔顺，还包括超的翻译、输入法、异 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36229",
+     "source": "bing"
+    },
+    {
+     "title": "超 chāo、chào、chǎo、tiào - 漢典",
+     "snippet": "提拔;擢升 [promote] 書證 故莫敢超等逾官 —— 《管子·法禁》 例如 超拜 (越級升授官職);超階 (指超級擢升的官職) 超過;勝過 …",
+     "url": "http://zdic.net/hant/%E8%B6%85",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_01791e80",
+   "goal": "搞清楚「拓扑量子场重整化」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_拓扑量子场重整化",
+   "created": 1791720997.6236985,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720999.3208835,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "拓扑量子场重整化",
+     "t": 1791720999.7500038,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "拓扑（数学术语）_百度百科",
+     "snippet": "拓扑（Topology）是数学下属的几何分支学科，曾译名地志学，原名位置分析，核心研究图形或集合在连续变形下保持不变的整体性 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91/573536",
+     "source": "bing"
+    },
+    {
+     "title": "硬核科普：什么是拓扑？ - 知乎",
+     "snippet": "2020年9月5日 · 显然，这些结构适用于我们日常中遇到的数字。 但是，拓扑空间的结构比加法、乘法和距离的思想更加基本。 事实 …",
+     "url": "https://zhuanlan.zhihu.com/p/214200642",
+     "source": "bing"
+    },
+    {
+     "title": "能用通俗易懂的话解释一下什么是拓扑吗？ - 知乎",
+     "snippet": "2024年5月27日 · 拓扑是把几何形当作点来计算的代数理论。 点集拓扑，把开集当作了点，定义开集运算，获得开集代数。 代数拓 …",
+     "url": "https://www.zhihu.com/question/384098150/answers/updated",
+     "source": "bing"
+    },
+    {
+     "title": "拓扑学（数学学科）_百度百科",
+     "snippet": "2016年10月4日 · 在拓扑学里，重要的拓扑性质包括连通性与紧致性。 拓扑英文名是Topology，直译是“地志学”，最早指研究地形、地 …",
+     "url": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91%E5%AD%A6/769248",
+     "source": "bing"
+    },
+    {
+     "title": "什么是拓扑 - 知乎",
+     "snippet": "2025年3月20日 · 用最简单的话来说： 拓扑就是研究“形状”在连续变形 （比如拉伸、挤压、弯曲，但不能撕破或粘合）下不变的特征。 …",
+     "url": "https://zhuanlan.zhihu.com/p/31522944735",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_0555268d",
+   "goal": "搞清楚「手征自旋泡沫」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_手征自旋泡沫",
+   "created": 1791720997.6236985,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791720999.7791169,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "手征自旋泡沫",
+     "t": 1791721000.196269,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "新鲜血液 5EPL大奖赛11月赛新晋成员名单公示_5EPlay ...",
+     "snippet": "2024年11月21日 · CSGO新闻:烽火重燃，5EPL大奖赛时隔数月再度开启。在本期的5EPL大奖赛中，共有33名新星选手经过严格筛选 …",
+     "url": "https://csgo.5eplay.com/article/241121pulr6k",
+     "source": "bing"
+    },
+    {
+     "title": "2026S2赛季5EPL-C开赛 从这里开始被看见_5EPlay ...",
+     "snippet": "2026年5月11日 · - 除此之外，5EPL-C拥有独立5EPL-C挑战分，采用与5EPL相同的加分模式； - 在5EPL-C模式结算排名前5名的选 …",
+     "url": "https://csgo.5eplay.com/article/260511sjnwgy",
+     "source": "bing"
+    },
+    {
+     "title": "最近5E上线的5EPL到底是一个什么模式？",
+     "snippet": "2017年11月18日 · 而5EPL将为众多职业玩家提供一个·训练的平台，我们将以优质的服务以及严格的规则老保证这一模式的高质量，将 …",
+     "url": "https://www.zhihu.com/question/68205589",
+     "source": "bing"
+    },
+    {
+     "title": "csgo的5e平台的优先匹配、优先单排、天梯匹配什么意思 ...",
+     "snippet": "2021年1月22日 · 优先单排分为5epld， 5eplc 和5epl，普通玩家从5epld开始打，打上s分段可以上5eplc，5eplc每月前五可以打5epl， …",
+     "url": "https://www.zhihu.com/question/440721572",
+     "source": "bing"
+    },
+    {
+     "title": "《csgo》5epl-d和5epl-c有什么区别-百度经验",
+     "snippet": "2021年5月10日 · 《csgo》5epl-d和5epl-c区别： 玩家技术水平不同。5E单排模式，分3个级别，PL、PL-C、PL-D。PL水平最高，都 …",
+     "url": "https://jingyan.baidu.com/article/7c6fb428d6bd6ec1652c9000.html",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  },
+  {
+   "id": "shadow_0259531a",
+   "goal": "搞清楚「转码实践中的异质再现偏差」是什么",
+   "state": "done",
+   "source": "user_stated",
+   "evidence_id": "UnknownConcept_转码实践中的异质再现偏差",
+   "created": 1791720997.6236985,
+   "select_reason": "evidence_backed+tool_available+not_duplicate",
+   "shadow": true,
+   "started": 1791721000.2338843,
+   "tool_calls": [
+    {
+     "tool": "web_search",
+     "query": "转码实践中的异质再现偏差",
+     "t": 1791721000.6569839,
+     "ok": true,
+     "error": null
+    }
+   ],
+   "raw_results": [
+    {
+     "title": "转（汉语文字）_百度百科",
+     "snippet": "2023年12月7日 · “专”指纺专，即纺锤。 纺锤通过旋转来收丝，在这里表转动义。 转的本义指旋转、转圈，引申指用车运。 同时，转 …",
+     "url": "https://baike.baidu.com/item/%E8%BD%AC/53646",
+     "source": "bing"
+    },
+    {
+     "title": "转的意思,转的解释,转的拼音,转的部首,转的笔顺-汉语国学",
+     "snippet": "转是多音字，拼音是zhuǎn、zhuàn、zhuǎi，转字共8画，部首是车部，本页介绍转字的意思，转的详细解释，转的读音、笔顺，还包 …",
+     "url": "https://www.hanyuguoxue.com/zidian/zi-36716",
+     "source": "bing"
+    },
+    {
+     "title": "转怎么读_转的拼音 - 新华字典",
+     "snippet": "2 天之前 · 旋转：车轮飞～。 使旋转：～动地球仪。 围绕着一个中心运动：越陷越深绕着太阳～。 量词，旋转一圈为一转：绕了几 …",
+     "url": "https://zidian.gushici.net/8/8f6c.html",
+     "source": "bing"
+    },
+    {
+     "title": "《转》的拼音,转字的意思、组词、部首、笔画、笔顺 - 汉语查",
+     "snippet": "4 天之前 · 转字是一个多音字，一共有3个读音，分别是zhuǎn、zhuàn、zhuǎi，左边一个车右边一个专是什么字，转的部首是车，转 …",
+     "url": "https://www.hgcha.com/zidian/4c051c86.html",
+     "source": "bing"
+    },
+    {
+     "title": "轉 - 维基词典，自由的多语言词典",
+     "snippet": "2026年2月16日 · 展开 字形拆解／相關派生漢字 系列#2583（專）： 專 ｜ 傳 ｜ 摶 ｜ 漙 ｜ 嫥 ｜ 瑼 ｜ 暷 ｜ 膞 ｜ 磚 ｜ 竱 ｜ 縳 ｜  …",
+     "url": "https://zh.wiktionary.org/wiki/%E8%BD%89",
+     "source": "bing"
+    }
+   ],
+   "tool_error": null,
+   "verdict": "INCONCLUSIVE",
+   "verdict_reason": "results_not_relevant"
+  }
+ ],
+ "share_candidates": []
+}

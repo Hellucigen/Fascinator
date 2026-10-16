@@ -110,5 +110,50 @@ class CharonBridgeChannel:
     def capture(self, text: str, tags: list = None) -> bool:
         return self._post("/api/fleeting", {"body": text, "tags": tags or []})
 
+    def read_recent(self, topic: str = None, limit: int = 50) -> list:
+        """回读 Bridge 记账的事件（GET /api/events/recent，最新在前）。
+        投递验证/外部工具用；bridge 未升级该端点时返回 []。"""
+        import urllib.parse
+        q = f"/api/events/recent?limit={int(limit)}"
+        if topic:
+            q += "&topic=" + urllib.parse.quote(topic, safe="")
+        d = self._get(q)
+        return (d or {}).get("events", [])
+
+    def read_inbox(self) -> dict | None:
+        """GET /api/inbox — 用户正在处理什么（最近便签/未完成待办/最近笔记）。
+        陪伴侧感知轮询的供给源；bridge 未升级该端点时返回 None。"""
+        return self._get("/api/inbox")
+
     def read_summary(self) -> dict | None:
         return self._get("/api/summary")
+
+
+class JournalingChannel:
+    """ExpressionChannel 装饰器：主动/提问话语投递成功时，另记一条 Charon 便签。
+
+    陪伴留痕策略——她的话不只飘过屏幕成气泡，还在用户工作区落一笔，
+    事后（或没看见气泡时）可查。便签失败绝不影响投递结果；reactive
+    默认不留痕（聊天 UI 本身就是记录，避免噪音）。"""
+
+    name = "charon"
+
+    def __init__(self, inner: CharonBridgeChannel,
+                 origins: tuple = ("proactive", "question"),
+                 tags: tuple = ("haru",)):
+        self._inner = inner
+        self._origins = tuple(origins)
+        self._tags = list(tags)
+
+    def deliver(self, utterance: Utterance) -> bool:
+        ok = self._inner.deliver(utterance)
+        if ok and utterance.origin in self._origins:
+            try:
+                self._inner.capture(f"[{utterance.origin}] {utterance.text}",
+                                    tags=self._tags)
+            except Exception:                        # noqa: BLE001
+                logger.debug("[charon] 便签留痕失败", exc_info=True)
+        return ok
+
+    def __getattr__(self, k):
+        return getattr(self._inner, k)

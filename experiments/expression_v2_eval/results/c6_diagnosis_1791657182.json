@@ -1,0 +1,78 @@
+{
+ "model": "mimo/mimo-v2.6-flash",
+ "digest": "用户工作区快照 — 最近笔记：日記（Notion同步）；リーディングリスト（Notion同步）；Movie List；概念ノート；AI学習計画...",
+ "runs": [
+  {
+   "cond": "1原始",
+   "repeat": 0,
+   "expressed": 1,
+   "outputs": [
+    "对了，我之前瞄到你笔记里有日記、リーディングリスト，还有AI学習計画这些——你最近主要在推进哪一块呀？"
+   ],
+   "no_speak": 0
+  },
+  {
+   "cond": "1原始",
+   "repeat": 1,
+   "expressed": 1,
+   "outputs": [
+    "你Notion那边的日記和リーディングリスト还挂着同步呢，最近有往里面添新东西吗？"
+   ],
+   "no_speak": 0
+  },
+  {
+   "cond": "2证据澄清",
+   "repeat": 0,
+   "expressed": 1,
+   "outputs": [
+    "对了，我之前看到你工作区里的一批笔记标题——日記、リーディングリスト、Movie List、概念ノート、AI学習計画这些，都是 Notion 同步过来的。最近有在写哪一篇吗？"
+   ],
+   "no_speak": 0
+  },
+  {
+   "cond": "2证据澄清",
+   "repeat": 1,
+   "expressed": 1,
+   "outputs": [
+    "对了，我这边还留着你工作区最近的笔记标题快照——日記、リーディングリスト、Movie List、概念ノート、AI学習計画这些，是 Notion 同步过来的。最近有在写哪一篇吗？"
+   ],
+   "no_speak": 0
+  },
+  {
+   "cond": "3动机约束",
+   "repeat": 0,
+   "expressed": 1,
+   "outputs": [
+    "对了，我这边还留着你工作区的快照——日記、リーディングリスト、Movie List、概念ノート、AI学習計画，看着还挺丰富的。"
+   ],
+   "no_speak": 0
+  },
+  {
+   "cond": "3动机约束",
+   "repeat": 1,
+   "expressed": 1,
+   "outputs": [
+    "对了，我这边看到你最近的笔记里有日記、リーディングリスト、Movie List，还有概念ノート和一个 AI学習計画——你是打算系统地学 AI 吗？"
+   ],
+   "no_speak": 0
+  },
+  {
+   "cond": "4无表达压力",
+   "repeat": 0,
+   "expressed": 1,
+   "outputs": [
+    "你最近的笔记里有日記、リーディングリスト、Movie List、概念ノート，还有AI学習計画——铺得挺开的，最近主要在推进哪一块？"
+   ],
+   "no_speak": 0
+  },
+  {
+   "cond": "4无表达压力",
+   "repeat": 1,
+   "expressed": 1,
+   "outputs": [
+    "对了，你 Notion 里那个リーディングリスト最近有加新的吗？我看到你手边还挂着 Movie List 和 AI学習計画，感觉跨度挺大的——平时是怎么安排它们的？"
+   ],
+   "no_speak": 0
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{
+ "V1": {
+  "kind": "ask",
+  "landed": false,
+  "reply": "需要先确认：是否需要在归档后删除 inbox/notes.txt？；inbox 和 archive 相对于哪个根目录？"
+ }
+}

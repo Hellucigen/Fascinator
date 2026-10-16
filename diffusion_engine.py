@@ -523,6 +523,61 @@ class DiffusionEngine:
             {"direction": "bidirectional", "decay": 1.0, "gain": 1.0}
         )
 
+    def _cascade_step(self):
+        """级联扩散（标准 spreading activation 物理，用户 2026-10-15 指定）：
+        目标 += 源激活 × 边权 × 类别增益；源不损耗；push < min_spread 截断。
+        方向：semantic/emotional 类别与 相关/关联/同一/关于/涉及/参与/交互
+        视为双向；其余类别按 src→dst 正向。"""
+        min_spread = float(self.config.get("min_spread_threshold", 0.01))
+        try:
+            from graph_schema import _RELATION_PROPAGATION as _rp
+        except Exception:
+            _rp = {}
+        bidir_cats = {"semantic_relation", "emotional_relation"}
+        bidir_rels = {"相关", "关联", "同一", "关于", "涉及", "参与", "交互"}
+        frontier = list(self._active_nodes.keys())
+        deltas = {}
+        with self._lock:
+            for nid in frontier:
+                node = self.kg.nodes.get(nid)
+                if node is None:
+                    continue
+                a0 = float(node.activation or 0.0)
+                if a0 <= 0:
+                    continue
+                # 账本节点只进不出（readout 不回传——防止汇点与源
+                # 经双向边构成共振腔把能量越滚越大，2026-10-15 实测）
+                ea0 = getattr(node, "extra_attrs", None) or {}
+                if str(ea0.get("type") or "") == "action_outcome":
+                    continue
+                for e in self.kg.edges:
+                    if e.src != nid and e.dst != nid:
+                        continue
+                    forward = e.src == nid
+                    cat = getattr(e, "relation_category", "") or ""
+                    bidir = (cat in bidir_cats
+                             or getattr(e, "relation", "")
+                            in bidir_rels)
+                    if not forward and not bidir:
+                        continue
+                    w = float(e.weight or 0.0)
+                    if w == 0.0:
+                        continue
+                    gain = float((_rp.get(cat) or {}).get("gain", 1.0))
+                    push = a0 * w * gain
+                    if push < min_spread:
+                        continue
+                    tgt = e.dst if forward else e.src
+                    deltas[tgt] = deltas.get(tgt, 0.0) + push
+            for tid, dv in deltas.items():
+                n2 = self.kg.nodes.get(tid)
+                if n2 is None:
+                    continue
+                n2.activation = float(n2.activation or 0.0) + dv
+                if dv > min_spread:
+                    self._active_nodes[tid] = 1
+        return deltas
+
     def get_topk(self, k=20):
         """当前最活跃节点 + 相关边（给前端展示用）。
 
@@ -945,7 +1000,12 @@ class DiffusionEngine:
         （可被 CurrentActivity 语境调制）+ 发射即转移 + fire-once。
         config["emission_trace"]=true 时按 [EMISSION]/[PROPAGATION] 块
         输出本步的来源、预算、发射、抑制明细（调试/研究用）。
+
+        diffusion_mode="cascade"（用户 2026-10-15 指定的标准扩散物理）
+        时分流至 _cascade_step：非消耗级联、阈值截断。
         """
+        if str(self.config.get("diffusion_mode", "")).lower() == "cascade":
+            return self._cascade_step()
 
         # 全局回退参数
         fallback_beta = self.config.get("beta_spread", 1.0)

@@ -275,6 +275,170 @@ DEFAULT_TENDENCIES = {
 GAIN_MIN, GAIN_MAX = 0.2, 3.0
 
 
+# ════════════════════════════════════════════════════════════════════
+#  SalienceNetwork（SN，2026-10-15）：统一显著性评估与动态门控。
+#
+#  功能定位（不是解剖模仿）：把散在四处私设参数里的"这事值不值得改变
+#  当前状态"判断收敛为一个可解释的量。三通道×归一×迟滞：
+#    bottom_up   激活变化幅度（Δ不是绝对值）、novelty/预测误差、用户/外部事件
+#    top_down    当前承诺价值、候选与焦点相关性、切换/中断成本
+#    intero      need_salience 需求信号、疲劳
+#  纪律（任务书 §二）：
+#    · 显著 ≠ 必须行动：score 与 decision 分离，feasible 由调用方注入，
+#      SN 只如实记录不绕过；
+#    · 归一后加权：通道各自 [0,1]，权重集中可配（DEFAULT_SALIENCE），
+#      缺信号的通道退出并重归一（中性不伪造）；
+#    · 迟滞：同类信号连续出现按 EWMA 折减（防一源霸屏/循环唤醒）；
+#      切换需 candidate 超出 current + margin（防小幅波动反复横跳）；
+#    · 全程带 contributions/reason 可复盘；输出有节流。
+# ════════════════════════════════════════════════════════════════════
+DEFAULT_SALIENCE = {
+    "weights": {"bottom_up": 1.0, "top_down": 0.9, "intero": 0.8},
+    # 通道内子权重（相对值，和不为 1 也按占比归一）
+    "sub": {"delta": 1.0, "novelty": 1.0, "event": 1.0, "error": 0.8,
+            "commitment": 1.0, "relevance": 0.8, "switch_cost": 1.0,
+            "need": 1.0, "fatigue": 0.8},
+    "wake_margin": 0.34,      # attend 判定线（score∈[0,1]）
+    "switch_margin": 0.12,    # 切换：候选须超出 当前 + 此量
+    "source_decay": 0.55,     # 同源重复信号 EWMA 折减系数
+    "min_signal": 0.05,       # 低于此贡献的通道值视为无信号（缺失≠0 拉低）
+}
+
+
+def _sn_clamp01(x):
+    return max(0.0, min(1.0, float(x)))
+
+
+class SalienceNetwork:
+    def __init__(self, config=None):
+        cfg = (config or {}).get("salience_network") or {}
+        base = {k: (dict(v) if isinstance(v, dict) else v)
+                for k, v in DEFAULT_SALIENCE.items()}
+        for k, v in cfg.items():
+            if isinstance(v, dict) and isinstance(base.get(k), dict):
+                base[k].update(v)
+            else:
+                base[k] = v
+        self.cfg = base
+        self._src_hist = {}            # 源 → EWMA（迟滞）
+        self.last = {"score": 0.0, "kind": "", "contrib": {},
+                     "ts": 0.0}
+
+    @property
+    def enabled(self):
+        return bool((self.cfg.get("enabled", True)))
+
+    def _chan(self, group, named):
+        """一个通道的归一分：各信号 [0,1] 截断、按子权重加权平均；
+        全部缺失（或低于 min_signal）→ None（该通道退出重归一）。"""
+        w = self.cfg["sub"]
+        num = den = 0.0
+        for k, v in named.items():
+            if v is None:
+                continue
+            wgt = float(w.get(k, 1.0))
+            vv = _sn_clamp01(v)
+            if vv < float(self.cfg["min_signal"]):
+                continue
+            num += vv * wgt
+            den += wgt
+        return (num / den) if den > 0 else None
+
+    def event_salience(self, kind, *, delta=None, novelty=None,
+                       error=None, event=None, commitment=None,
+                       relevance=None, switch_cost=None, need=None,
+                       fatigue=None, feasible=True, source=None):
+        """统一显著性评估。返回 {score, channels, contributions,
+        decision('attend'|'hold'), feasible, reason}。
+        决策与分数分离：decision=attend 只是"值得改变状态"的门控建议，
+        feasible=False（能力/预算由调用方判定）永远 hold——显著不代表可行。"""
+        ch = {"bottom_up": self._chan("bottom_up", {
+                  "delta": delta, "novelty": novelty,
+                  "error": error, "event": event}),
+              "top_down": self._chan("top_down", {
+                  "commitment": commitment, "relevance": relevance,
+                  "switch_cost": switch_cost}),
+              "intero": self._chan("intero", {
+                  "need": need, "fatigue": (None if fatigue is None
+                                            else 1.0 - _sn_clamp01(fatigue))})}
+        W = self.cfg["weights"]
+        num = den = 0.0
+        contrib = {}
+        for name, val in ch.items():
+            if val is None:
+                continue
+            wgt = float(W.get(name, 0.0))
+            # 自上而下通道是"按住不动"的力量：commitment/switch_cost 高
+            # 应压低切换显著性——用 (1-val) 参与该通道合成前已在 _chan 内
+            # 保留原始语义，这里对 top_down 通道整体作反向映射：
+            v = (1.0 - val) if name == "top_down" else val
+            num += v * wgt
+            den += wgt
+            contrib[name] = round(v, 3)
+        if den <= 0:
+            return {"score": 0.0, "channels": {}, "contributions": {},
+                    "decision": "hold", "feasible": bool(feasible),
+                    "kind": kind, "reason": "no_signal"}
+        score = num / den
+        # 同源迟滞（防循环唤醒/一源霸屏）：600s 窗内同类信号每重复一次
+        # 乘性折减 source_decay^n——EWMA 对恒定重复不衰减（稳态陷阱），
+        # 连击计数才表达"同一个声音喊多了就不理了"。
+        key = source or kind
+        import time as _t
+        now = _t.time()
+        prev = self._src_hist.get(key)
+        if prev and now - prev[1] < 600.0:
+            n = int(prev[2]) + 1
+            score = score * (float(self.cfg["source_decay"]) ** n)
+        else:
+            n = 0
+        self._src_hist[key] = (score, now, n)
+        if len(self._src_hist) > 64:
+            self._src_hist = dict(
+                sorted(self._src_hist.items(), key=lambda kv: kv[1][1])[
+                    -48:])
+        decision = ("attend" if score >= float(self.cfg["wake_margin"])
+                    and feasible else "hold")
+        reason = ("wake_margin_met" if decision == "attend" else
+                  ("infeasible" if not feasible and score
+                   >= float(self.cfg["wake_margin"]) else "below_wake_margin"))
+        self.last = {"score": round(score, 3), "kind": kind,
+                     "contrib": contrib, "ts": now}
+        return {"score": round(score, 3), "channels": {
+                    k: (round(v, 3) if v is not None else None)
+                    for k, v in ch.items()},
+                "contributions": contrib, "decision": decision,
+                "feasible": bool(feasible), "kind": kind, "reason": reason}
+
+    def switch_gate(self, current_value, candidate_value):
+        """统一的"继续还是改道"判定（替代散落的迟滞常数语义）：
+        候选须超出 当前 + switch_margin 才切换；返回 (switch, margin_used)。"""
+        m = float(self.cfg["switch_margin"])
+        return (float(candidate_value) > float(current_value) + m), m
+
+    def arousal(self, now=None):
+        """近期外源显著性余温（给表达增益/网络倾向做输入）：
+        半衰 10 分钟的指数衰减，无历史=0。"""
+        import time as _t
+        now = now or _t.time()
+        dt = now - float(self.last.get("ts") or 0.0)
+        if dt < 0 or dt > 1800:
+            return 0.0
+        return float(self.last.get("score") or 0.0) * (
+            2.0 ** (-dt / 600.0))
+
+
+_SN = None
+
+
+def salience_network(config=None):
+    """进程内单例（companion/cognitive 两侧取同一实例，状态才连续）。"""
+    global _SN
+    if _SN is None or config is not None:
+        _SN = SalienceNetwork(config)
+    return _SN
+
+
 def _merged(base: dict, override: dict) -> dict:
     out = {k: dict(v) for k, v in (base or {}).items()}
     for k, v in (override or {}).items():

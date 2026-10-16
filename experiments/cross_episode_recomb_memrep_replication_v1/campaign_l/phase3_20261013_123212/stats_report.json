@@ -1,0 +1,523 @@
+{
+ "positioning": "探索性机制实验（预注册 v3.1）；结果不构成确认性证据",
+ "arms": {
+  "A1": {
+   "arm": "A1",
+   "n_runs": 30,
+   "exact": 0,
+   "run_rate": 0.0,
+   "run_rate_wilson95": [
+    0.0,
+    0.1135
+   ],
+   "infra_failures": 0,
+   "infra_rate": 0.0,
+   "model_wrong": 30,
+   "seed_inconsistency_questions": 0,
+   "questions": 6,
+   "undecidable_questions": 0
+  },
+  "A2": {
+   "arm": "A2",
+   "n_runs": 30,
+   "exact": 0,
+   "run_rate": 0.0,
+   "run_rate_wilson95": [
+    0.0,
+    0.1135
+   ],
+   "infra_failures": 0,
+   "infra_rate": 0.0,
+   "model_wrong": 30,
+   "seed_inconsistency_questions": 0,
+   "questions": 6,
+   "undecidable_questions": 0
+  },
+  "A3": {
+   "arm": "A3",
+   "n_runs": 30,
+   "exact": 5,
+   "run_rate": 0.1667,
+   "run_rate_wilson95": [
+    0.0734,
+    0.3356
+   ],
+   "infra_failures": 0,
+   "infra_rate": 0.0,
+   "model_wrong": 25,
+   "seed_inconsistency_questions": 0,
+   "questions": 6,
+   "undecidable_questions": 0
+  },
+  "A4": {
+   "arm": "A4",
+   "n_runs": 30,
+   "exact": 0,
+   "run_rate": 0.0,
+   "run_rate_wilson95": [
+    0.0,
+    0.1135
+   ],
+   "infra_failures": 0,
+   "infra_rate": 0.0,
+   "model_wrong": 30,
+   "seed_inconsistency_questions": 0,
+   "questions": 6,
+   "undecidable_questions": 0
+  },
+  "A5": {
+   "arm": "A5",
+   "n_runs": 30,
+   "exact": 5,
+   "run_rate": 0.1667,
+   "run_rate_wilson95": [
+    0.0734,
+    0.3356
+   ],
+   "infra_failures": 0,
+   "infra_rate": 0.0,
+   "model_wrong": 25,
+   "seed_inconsistency_questions": 2,
+   "questions": 6,
+   "undecidable_questions": 0
+  },
+  "A6": {
+   "arm": "A6",
+   "n_runs": 30,
+   "exact": 15,
+   "run_rate": 0.5,
+   "run_rate_wilson95": [
+    0.3315,
+    0.6685
+   ],
+   "infra_failures": 0,
+   "infra_rate": 0.0,
+   "model_wrong": 15,
+   "seed_inconsistency_questions": 2,
+   "questions": 6,
+   "undecidable_questions": 0
+  },
+  "A7": {
+   "arm": "A7",
+   "n_runs": 30,
+   "exact": 18,
+   "run_rate": 0.6,
+   "run_rate_wilson95": [
+    0.4232,
+    0.7541
+   ],
+   "infra_failures": 0,
+   "infra_rate": 0.0,
+   "model_wrong": 12,
+   "seed_inconsistency_questions": 1,
+   "questions": 6,
+   "undecidable_questions": 0
+  }
+ },
+ "comparisons": {
+  "H1": {
+   "arm_new": "A2",
+   "arm_old": "A3",
+   "N": 6,
+   "wins_new": 0,
+   "wins_old": 1,
+   "delta_pp": -16.67,
+   "c": 0.0,
+   "joint_exploratory_signal": false,
+   "excluded": [],
+   "table": [
+    {
+     "qid": "Q1",
+     "new": 0,
+     "old": 1,
+     "direction": "old"
+    },
+    {
+     "qid": "Q2",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q3",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q4",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q5",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q6",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    }
+   ],
+   "discordant": 1,
+   "favorable": 0,
+   "note": "联合探索性信号是探索性指标，不是统计显著性或机制有效性证明",
+   "favorable_cp95": [
+    0.0,
+    0.975
+   ]
+  },
+  "H2": {
+   "arm_new": "A3",
+   "arm_old": "A5",
+   "N": 6,
+   "wins_new": 0,
+   "wins_old": 0,
+   "delta_pp": 0.0,
+   "c": 0.0,
+   "joint_exploratory_signal": false,
+   "excluded": [],
+   "table": [
+    {
+     "qid": "Q1",
+     "new": 1,
+     "old": 1,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q2",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q3",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q4",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q5",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q6",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    }
+   ],
+   "discordant": 0,
+   "favorable": 0,
+   "note": "联合探索性信号是探索性指标，不是统计显著性或机制有效性证明"
+  },
+  "H3": {
+   "arm_new": "A4",
+   "arm_old": "A5",
+   "N": 6,
+   "wins_new": 0,
+   "wins_old": 1,
+   "delta_pp": -16.67,
+   "c": 0.0,
+   "joint_exploratory_signal": false,
+   "excluded": [],
+   "table": [
+    {
+     "qid": "Q1",
+     "new": 0,
+     "old": 1,
+     "direction": "old"
+    },
+    {
+     "qid": "Q2",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q3",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q4",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q5",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q6",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    }
+   ],
+   "discordant": 1,
+   "favorable": 0,
+   "note": "联合探索性信号是探索性指标，不是统计显著性或机制有效性证明",
+   "favorable_cp95": [
+    0.0,
+    0.975
+   ]
+  },
+  "H4": {
+   "arm_new": "A2",
+   "arm_old": "A5",
+   "N": 6,
+   "wins_new": 0,
+   "wins_old": 1,
+   "delta_pp": -16.67,
+   "c": 0.0,
+   "joint_exploratory_signal": false,
+   "excluded": [],
+   "table": [
+    {
+     "qid": "Q1",
+     "new": 0,
+     "old": 1,
+     "direction": "old"
+    },
+    {
+     "qid": "Q2",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q3",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q4",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q5",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    },
+    {
+     "qid": "Q6",
+     "new": 0,
+     "old": 0,
+     "direction": "tie"
+    }
+   ],
+   "discordant": 1,
+   "favorable": 0,
+   "note": "联合探索性信号是探索性指标，不是统计显著性或机制有效性证明",
+   "favorable_cp95": [
+    0.0,
+    0.975
+   ]
+  }
+ },
+ "per_question_tables": {
+  "H1": [
+   {
+    "qid": "Q1",
+    "new": 0,
+    "old": 1,
+    "direction": "old"
+   },
+   {
+    "qid": "Q2",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q3",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q4",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q5",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q6",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   }
+  ],
+  "H2": [
+   {
+    "qid": "Q1",
+    "new": 1,
+    "old": 1,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q2",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q3",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q4",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q5",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q6",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   }
+  ],
+  "H3": [
+   {
+    "qid": "Q1",
+    "new": 0,
+    "old": 1,
+    "direction": "old"
+   },
+   {
+    "qid": "Q2",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q3",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q4",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q5",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q6",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   }
+  ],
+  "H4": [
+   {
+    "qid": "Q1",
+    "new": 0,
+    "old": 1,
+    "direction": "old"
+   },
+   {
+    "qid": "Q2",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q3",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q4",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q5",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   },
+   {
+    "qid": "Q6",
+    "new": 0,
+    "old": 0,
+    "direction": "tie"
+   }
+  ]
+ },
+ "sign_tests": {
+  "H1": {
+   "p_two_sided_exact": 1.0,
+   "note": "参考描述；非成败判据"
+  },
+  "H2": {
+   "p_two_sided_exact": 1.0,
+   "note": "参考描述；非成败判据"
+  },
+  "H3": {
+   "p_two_sided_exact": 1.0,
+   "note": "参考描述；非成败判据"
+  },
+  "H4": {
+   "p_two_sided_exact": 1.0,
+   "note": "参考描述；非成败判据"
+  }
+ },
+ "holm_note": "n=6 下最小双侧 p=0.03125 > Holm 首门槛 0.0125，校正后 p 恒不可拒绝——仅附报，不作成败判据",
+ "stage_diagnostics": {
+  "A_not_expressible": 90,
+  "B_retrieval_miss": 50,
+  "C_serialization_loss": 60,
+  "D_evaluated": 10,
+  "D_evaluated_correct": 0,
+  "D_evaluated_wrong": 10,
+  "D_not_applicable_infra": 0,
+  "D_not_applicable_representation": 90
+ },
+ "hash": "436c99c3fb983bb2"
+}

@@ -62,9 +62,13 @@ BUCKET_PHASE = {"清晨": "白天", "上午": "白天", "中午": "白天",
 # 把"小时"翻译成"事实"的地方——它是时钟传感器的一部分，不是判据。
 # 调制器侧（褪黑素样/组胺样）**只读图上写好的属性**，代码里不出现 hour 比较
 # （闸门 tests/test_circadian_modulators.py 用源码扫描钉住这条）。
-# 尺度是功能类比（禁令 9：不当作医学模拟）：晚上开始抬、深夜最高、清晨回落。
-BUCKET_CIRCADIAN = {"凌晨": 1.00, "深夜": 0.95, "晚上": 0.60, "傍晚": 0.30,
-                    "下午": 0.05, "中午": 0.00, "上午": 0.00, "清晨": 0.15}
+# 尺度是功能类比（禁令 9：不当作医学模拟）。
+# 时相标定（2026-10-09，夜型相位）：主人作息偏晚、约凌晨 1 点入睡，
+# 曲线整体后移——傍晚/晚上保持清醒能量，深夜开始抬，凌晨最高，
+# 清晨（5-8 点）对夜型人仍是深夜余韵，不再"五点即晨"。
+# 这是传感器标定（几点=多夜），不是认知判据；时段桶边界是语言常识，未动。
+BUCKET_CIRCADIAN = {"凌晨": 1.00, "深夜": 0.60, "晚上": 0.25, "傍晚": 0.10,
+                    "下午": 0.05, "中午": 0.00, "上午": 0.00, "清晨": 0.40}
 # 节点属性名（**知识**与**此刻在势**分开存，这是本期重要区分）：
 #   circadian_load     = 这个时段本身有多"夜"（静态知识，播种时写）
 #   circadian_strength = 此刻这一事实有多成立 = 夜间度 ×(是不是当前)
@@ -342,3 +346,18 @@ def link_event_to_bucket(kg, event_id: str, bucket: str):
                                  relation="发生于时段", weight=0.6,
                                  relation_category="temporal_relation"))
                 logger.info(f"[Time] {event_id} -[发生于时段]-> {bucket}")
+
+
+def link_event_to_now_bucket(kg, event_id: str):
+    """图谱扩展 2026-10-13：观察/检索/活动类情景节点统一挂当前时段桶。
+
+    此前 Charon 观察、搜索记录、Steam 情境、活动体验等写入点都不调
+    link_event_to_bucket（该函数只在对话事件框架用了），导致
+    cognitive↔episodic 桥全图仅 10 条、时段调制与"什么时候发生了什么"
+    脱钩。fail-soft：时间感知缺席绝不影响感知写入主路。"""
+    try:
+        if not event_id:
+            return
+        link_event_to_bucket(kg, event_id, hour_bucket())
+    except Exception:                              # noqa: BLE001
+        pass

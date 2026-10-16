@@ -222,8 +222,12 @@ def _ensure_hub(kg):
 
 # ── 探索缺口（open/close/查询）────────────────────────────
 
-def gap_node_id(obj: str) -> str:
-    return f"{GAP_ITEM_PREFIX}{obj})"
+def gap_node_id(obj: str, label: str = "用途") -> str:
+    """缺口节点 id。label 泛化（2026-10-12 阅读接入）：默认"用途"保持
+    既有 id 逐位不变；其它认知域（如"阅读"）用同一条 hub/张力账本。"""
+    if label == "用途":
+        return f"{GAP_ITEM_PREFIX}{obj})"
+    return f"缺口:{label}({obj})"
 
 
 def has_known_use(kg, obj: str) -> bool:
@@ -249,13 +253,13 @@ def has_known_use(kg, obj: str) -> bool:
 
 
 def open_gap(kg, engine, obj: str, kind: str = "unknown_use",
-             config=None) -> bool:
+             config=None, label: str = "用途") -> bool:
     """为"对象已知、用途未知"开一个有界探索缺口（幂等；返回是否新开）。"""
     obj = str(obj or "").strip().lower()
     if not obj or not _cfg(config).get("enabled", True):
         return False
     _ensure_hub(kg)
-    gid = gap_node_id(obj)
+    gid = gap_node_id(obj, label=label)
     now = time.time()
     step = float(_cfg(config).get("gap_activation_step", 0.6))
     cap = int(_cfg(config).get("max_gaps", 24))
@@ -270,7 +274,7 @@ def open_gap(kg, engine, obj: str, kind: str = "unknown_use",
                              label="declarative-semantic",
                              graph_space="cognitive",
                              extra_attrs={"type": "exploration_gap_item",
-                                          "object": obj, "kind": str(kind),
+                                          "object": obj, "kind": str(kind), "label": str(label),
                                           "opened_at": now,
                                           "source": "prior_seed"}))
             if kg.get_edge(gid, obj, "指向") is None and obj in kg.nodes:
@@ -286,7 +290,8 @@ def open_gap(kg, engine, obj: str, kind: str = "unknown_use",
             kg.add_edge(Edge(src=gid, dst=GAP_HUB, relation="属于",
                              weight=0.6,
                              relation_category="semantic_relation"))
-        gaps[gid] = {"object": obj, "kind": str(kind), "at": now}
+        gaps[gid] = {"object": obj, "kind": str(kind),
+                     "at": now, "label": str(label)}
         # 有界：超出封顶按最旧退役（不删节点，只从聚合账上关闭）
         items = sorted(gaps.items(), key=lambda kv: kv[1].get("at", 0))
         for old_gid, _meta in items[:max(0, len(gaps) - cap)]:
@@ -323,7 +328,7 @@ def open_gap(kg, engine, obj: str, kind: str = "unknown_use",
 
 
 def resurface_gap(kg, engine, obj: str, config=None,
-                  now: float = None) -> bool:
+                  now: float = None, label: str = "用途") -> bool:
     """§16 blocked→retry：放弃的探索缺口不是死刑——对象仍在手且隔了一个
     生命周期，该有有界次数（gap_max_reopen）的新尝试。因用途已知/证据成功
     而关的缺口（use_known / used:*）永不重开。零 LLM；不含任何逐物规则。
@@ -336,7 +341,7 @@ def resurface_gap(kg, engine, obj: str, config=None,
     obj = str(obj or "").strip().lower()
     if not obj:
         return False
-    gid = gap_node_id(obj)
+    gid = gap_node_id(obj, label=label)
     now = now if now is not None else time.time()
     min_s = float(cfg.get("gap_resurface_min_s", 1800))
     max_re = int(cfg.get("gap_max_reopen", 2))
@@ -366,10 +371,10 @@ def resurface_gap(kg, engine, obj: str, config=None,
 
 
 def close_gap(kg, engine, obj: str, reason: str = "learned",
-              config=None) -> bool:
+              config=None, label: str = "用途") -> bool:
     """真实反馈证实用途（或线索引用）→ 缺口关闭，聚合激活回落。"""
     obj = str(obj or "").strip().lower()
-    gid = gap_node_id(obj)
+    gid = gap_node_id(obj, label=label)
     decay = float(_cfg(config).get("gap_close_decay", 0.4))
     closed = False
     with kg._lock:

@@ -1,0 +1,215 @@
+{
+ "inferno_units": [
+  {
+   "unit": 1,
+   "status": "confirmed",
+   "partial": false,
+   "relations": 2,
+   "error": ""
+  },
+  {
+   "unit": 2,
+   "status": "confirmed",
+   "partial": false,
+   "relations": 4,
+   "error": ""
+  },
+  {
+   "unit": 3,
+   "status": "confirmed",
+   "partial": false,
+   "relations": 3,
+   "error": ""
+  },
+  {
+   "unit": 4,
+   "status": "confirmed",
+   "partial": false,
+   "relations": 3,
+   "error": ""
+  },
+  {
+   "unit": 5,
+   "status": "confirmed",
+   "partial": false,
+   "relations": 3,
+   "error": ""
+  },
+  {
+   "unit": 6,
+   "status": "confirmed",
+   "partial": false,
+   "relations": 2,
+   "error": ""
+  }
+ ],
+ "inferno_facts": [
+  {
+   "s": "I",
+   "rel": "位于",
+   "o": "darksome wood",
+   "kind": "text_stated",
+   "unit": 1
+  },
+  {
+   "s": "right road",
+   "rel": "属于",
+   "o": "I",
+   "kind": "text_stated",
+   "unit": 1
+  },
+  {
+   "s": "wood",
+   "rel": "是",
+   "o": "wild",
+   "kind": "text_stated",
+   "unit": 2
+  },
+  {
+   "s": "wood",
+   "rel": "是",
+   "o": "terrible",
+   "kind": "text_stated",
+   "unit": 2
+  },
+  {
+   "s": "thought",
+   "rel": "导致",
+   "o": "terror",
+   "kind": "text_stated",
+   "unit": 2
+  },
+  {
+   "s": "terror",
+   "rel": "是",
+   "o": "me",
+   "kind": "inferred",
+   "unit": 2
+  },
+  {
+   "s": "the speaker",
+   "rel": "涉及",
+   "o": "death",
+   "kind": "inferred",
+   "unit": 3
+  },
+  {
+   "s": "the speaker",
+   "rel": "拥有",
+   "o": "good",
+   "kind": "text_stated",
+   "unit": 3
+  },
+  {
+   "s": "good",
+   "rel": "位于",
+   "o": "there",
+   "kind": "text_stated",
+   "unit": 3
+  },
+  {
+   "s": "叙述者",
+   "rel": "相关",
+   "o": "那片土地",
+   "kind": "text_stated",
+   "unit": 4
+  },
+  {
+   "s": "叙述者",
+   "rel": "相关",
+   "o": "正途",
+   "kind": "text_stated",
+   "unit": 4
+  },
+  {
+   "s": "沉睡",
+   "rel": "导致",
+   "o": "叙述者",
+   "kind": "inferred",
+   "unit": 4
+  },
+  {
+   "s": "hill",
+   "rel": "位于",
+   "o": "valley",
+   "kind": "text_stated",
+   "unit": 5
+  },
+  {
+   "s": "terror",
+   "rel": "导致",
+   "o": "heart",
+   "kind": "text_stated",
+   "unit": 5
+  },
+  {
+   "s": "hill",
+   "rel": "相关",
+   "o": "terror",
+   "kind": "inferred",
+   "unit": 5
+  },
+  {
+   "s": "planet's light",
+   "rel": "位于",
+   "o": "every road",
+   "kind": "text_stated",
+   "unit": 6
+  },
+  {
+   "s": "shoulders",
+   "rel": "相关",
+   "o": "planet's light",
+   "kind": "text_stated",
+   "unit": 6
+  }
+ ],
+ "progress": "已确认 6/8 单元；失败 0；下一步：读第 7 单元",
+ "q1_state": "sufficient",
+ "q1_answer": "In a darksome wood.",
+ "q2_state": "insufficient",
+ "q2_gap_registered": true,
+ "conflicts": [
+  {
+   "s": "wood",
+   "p": "是",
+   "objects": [
+    "terrible",
+    "wild"
+   ],
+   "units": [
+    2
+   ]
+  },
+  {
+   "s": "叙述者",
+   "p": "相关",
+   "objects": [
+    "正途",
+    "那片土地"
+   ],
+   "units": [
+    4
+   ]
+  }
+ ],
+ "alice_units": [
+  "confirmed",
+  "confirmed"
+ ],
+ "alice_state": "sufficient",
+ "alice_answer": "河岸（river bank）。",
+ "calls": 10,
+ "tokens": [
+  "264+113",
+  "264+365",
+  "265+171",
+  "270+501",
+  "262+322",
+  "261+195",
+  "118+47",
+  "302+438",
+  "299+481",
+  "237+28"
+ ]
+}

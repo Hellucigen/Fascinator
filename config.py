@@ -242,6 +242,36 @@ DEFAULT_CONFIG = {
     "api_token": "",
     # true = 连 127.0.0.1 来源也要求 token（默认 False，保持本机体验）
     "api_token_require_loopback": False,
+    # Charon 陪伴外壳下行通道（fas/companion/charon_bridge）：utterance 事件
+    # 投递 + 可选 toast。认知侧默认关（不构造则零行为变化）；陪伴仓部署默认
+    # 开（FAS-Companion app.py FAS_CHARON 块置 True）。可 PUT /api/config 热切。
+    "companion_charon_enabled": False,
+    "charon_notify_toast": False,   # 投同时经 /api/notify 弹 toast（默认只发事件）
+    # ── 表达决策 v2（2026-10-10 改造，continuous_cognition._evaluate_expression_v2）──
+    # 显著性/证据资格/社交动机/表达成本 四轴分离 + express/defer/suppress 判定
+    # + DEFER 过期。默认关：关=逐字走旧路径（线上行为零变化）；开=新决策。
+    # 回滚=PUT /api/config {"expression_decision_v2": false}（即时，无需重启）。
+    "expression_decision_v2": False,
+    "expression_defer_max_s": 1800,      # DEFER 最长等待（无实质强化即过期 DISCARD）
+    "expression_dedup_window_s": 1800,   # 同目标+同证据簇去重窗口（SUPPRESS）
+    # ── 自主生活循环（v3.4 受控生产接入，Companion living_loop.py）──
+    # 独立守护线程：从真实 chat_log 知识缺口产生活动，只读 web_search，
+    # 学习/账本写 data/living_ledger.json（隔离于生产图谱）。
+    # 默认关；开启需授权。回滚=PUT /api/config {"living_loop_enabled": false}。
+    "living_loop_enabled": False,
+    "living_loop_tick_s": 600,           # 生活循环节拍（下限 60s）
+    # 状态驱动改造（2026-10-13）：tick_s 语义=**安全网巡检上限**；
+    # 事件（新信息/回合结束/游戏情境/任务变化）经 activities.notify_event
+    # 提前唤醒重评估，唤醒拍受此冷却窗合并（防事件风暴）。
+    "living_min_reeval_gap_s": 90,
+    "living_loop_daily_web_budget": 500,  # 每日网络调用预算（18:5x 调至500：HTTP 无货币成本，此闸只防失控刷接口；实测全天 LLM 花费 2.3 分，巡逻零 token）
+    "living_loop_max_web_per_activity": 6,  # 单活动网络调用上限
+    "living_loop_max_activities_open": 1,    # 首次试运行并发上限（1）
+    # 好奇驱动的自发上网检索（FAS-Companion app.py _curiosity_web_explorer）：
+    # 挂着未回答的探索问题时，空闲节拍自己搜一把并留痕（图/经历/主动分享）。
+    # 认知侧默认关；陪伴仓部署默认开（FAS_NO_SELF_SEARCH=1 可关）。
+    "companion_self_search_enabled": False,
+    "companion_self_search_interval_s": 600,   # 轮询间隔（下限 60s）
     # 图谱快照轮转：单写入器每次成功落盘后，距上次 ≥ interval 秒复制一份
     # 到 data/graph_snapshots/，只保留最近 keep 份（0 = 关闭）
     "graph_snapshot_interval_s": 1800,
@@ -257,6 +287,94 @@ DEFAULT_CONFIG = {
     # 阈值下的空闲由 Amble 技能给身体——短距离走走看看，有界、节流、危险不逛。
     "amble_distance": 6,        # 单次踱步目标距离（格，随机 3~此值）
     "amble_timeout_s": 25,      # 踱步时长上限（到点自然收束，不记失败）
+
+    # ==================================================================
+    # 全栈陪伴一体化（2026-10-12 实施轮；键在此声明、消费全在 FAS-Companion）
+    # ==================================================================
+    # 交流目标规划器（FAS-Companion interaction_planner.py）。此前该段在两仓
+    # config 均不存在 → 模块已接线但永远无法从 API 打开（PUT 只认已有键）。
+    # 默认关；键值与 interaction_planner.DEFAULTS 一致。
+    "interaction_planner": {
+        "enabled": False,
+        "max_active": 2,
+        "advance_min_interval_s": 1800.0,
+        "expire_after_s": 7 * 24 * 3600.0,
+        "strategy_retry_limit": 2,
+        "pending_grace_turns": 2,
+    },
+    # ── 日语语音闭环（FAS-Companion voice_io.py）──────────────────────
+    # voice_enabled：语音子系统总开关（默认关=零行为变化；可持久化）。
+    # voice_listen_enabled：麦克风持续监听。隐私 ephemeral——可热开热关，
+    # 但**永不写入覆盖文件**，重启后一律回到关闭（不静默重开麦克风）。
+    "voice_enabled": False,
+    "voice_listen_enabled": False,
+    # ASR：multilingual faster-whisper（含日语/中文）；whisper-file 供离线测试注入。
+    # 不假设输入语言：auto=由模型检测（实测偏差可改成显式 "ja"/"zh"）。
+    "voice_asr_backend": "faster-whisper",
+    "voice_asr_model": "small",
+    "voice_asr_language": "auto",
+    # 中文级联精认（2026-10-13）：whisper 检出中文的语音段交本机
+    # FunASR Paraformer（E:/Models/nlp/Paraformer，实测整句全对 0.7s）。
+    "voice_funasr_zh_enabled": True,
+    # TTS 输出语言=日语（用户偏好）；backend auto 回退链：
+    # kokoro-onnx（本地日语）→ Windows SAPI（PowerShell，零依赖系统日语语音）→ 无声。
+    "voice_tts_backend": "auto",
+    "voice_speak_language": "ja",
+    # 双轨（Open-LLM-VTuber 教训）：显示文本照原样回复，播报文本经 LLM 转成
+    # 日语——不把用户的中文输入强改成日语，也不假设对话模型只会日语。
+    "voice_translate_tts": True,
+    "voice_interrupt": True,           # 检测到用户开口 → 停播+作废在飞回合
+    "voice_max_segment_s": 15,         # 单段送识别的语音上限（超时强制收束）
+    "voice_min_speech_s": 0.35,        # 有效语音段最短时长（噪声过滤）
+    # ── 屏幕观察（FAS-Companion screen_watch.py）──────────────────────
+    # 默认关 + 隐私 ephemeral（不跨重启；开=显式动作，采集期持续可见指示）。
+    "screen_observe_enabled": False,
+    "screen_observe_interval_s": 600,  # 自动采样最小间隔（手动观察不受限）
+    "screen_observe_max_per_hour": 6,  # 每小时采样上限（防失控轮询）
+    # ── Steam 情境（只读 Web API，零侵入；密钥走环境变量 STEAM_API_KEY）──
+    "steam_poll_enabled": False,       # 需 key+steam_id 齐全才会真的启动
+    "steam_id": "",
+    "steam_poll_interval_s": 120,
+    # ── 伺か/SSP 桌面形象表现层（FAS-Companion ssp_bridge.py）──────────
+    # 2026-10-13 实测：SSTP-over-HTTP SEND+notranslate 通道可用（ghost
+    # emily4/sagiri_tama 气泡接受）。ssp_enabled 可持久化（只是表现层开关，
+    # 无隐私采集）；ghost 未运行时推送静默失败，绝不影响主链路。
+    "ssp_enabled": False,
+    "ssp_url": "http://127.0.0.1:9801/api/sstp/v1",
+    # ── 日常活动（activities.py，2026-10-13）──────────────────────────
+    # 音乐曲库目录（默认用户 Music 文件夹；空/不存在 → 活动自动不可用，
+    # 不假装播放）。浏览/调研复用 living_loop 既有网络与预算纪律。
+    "activity_music_library": "~/Music",
+    # 论坛巡逻源（公开只读列表接口；browse 无好奇问题时去这些"环境"看
+    # 有没有命中她已有概念的新信息——命中才点进去，不为逛而逛）
+    "activity_forum_feeds": ["bili", "hn", "ithome"],
+    # SN 统一显著性网络（2026-10-15）：enabled=False 即时回退旧决策路径
+    # （白名单唤醒/乘式迟滞/无 arousal 表达）——持久开关，overlay 可覆盖。
+    # weights/sub/margins 为集中配置的可校准初值（复盘日志后按需调整）。
+    # CI→行动候选桥（2026-10-15）：enabled=False 即回退到无桥基线；
+    # weight 是 CI 激活→行动分数的换算系数（与 正在学习边 通道同量纲）。
+    "ci_action_bridge": {"enabled": True, "weight": 0.55},
+    "salience_network": {
+        "enabled": True,
+        "weights": {"bottom_up": 1.0, "top_down": 0.9, "intero": 0.8},
+        "wake_margin": 0.34, "switch_margin": 0.12, "source_decay": 0.55,
+    },
+    # ── 云端用量与预算（实施任务 §5：记录→阈值→降级，拒绝静默烧钱）────
+    # 单价按 provider 文档填表（元/1k token）；0=不计价（本地调用天然 0）。
+    "llm_monthly_budget_cny": 0.0,     # 0 = 不限（默认行为零变化）
+    "llm_price_table": {
+        # 千问 AI 平台 qwen3.8-flash 官方牌价（2026-10-13 用户填入）：
+        # 输入 ¥0.8/M、输出 ¥2.7/M → 每 1k 各 0.0008 / 0.0027 元。
+        # 按非缓存价估算（保守上界；缓存命中/Batch 实际更低）。
+        "qwen3.8-flash": {"in": 0.0008, "out": 0.0027},
+        "mimo-v2.6-flash": {"in": 0.0, "out": 0.0},
+    },
+
+    # ── 千问思考模式（2026-10-13 用户要求强关）────────────────────────
+    # False = enable_thinking:false：不产思维链，回答延迟从 30-70s 掉到
+    # 秒级（实测 0.55s），费用按 completion 直算；思考质量换速度。
+    # 改 True 即恢复（PUT /api/config 可持久热切）。
+    "qwen_enable_thinking": False,
 
     # ------------------------------------------------------------------
     # LLM Provider 参数
@@ -341,6 +459,7 @@ DEFAULT_CONFIG = {
     "relation_ontology": {
         # ── 语义关系（客观知识）──
         "是": "semantic_relation", "属于": "semantic_relation", "包含": "semantic_relation",
+        "实例属于": "semantic_relation",   # 个体→概念（memrep 2026-10-09；不注册会被归一成"关联"）
         "具有": "semantic_relation", "位于": "semantic_relation", "靠近": "semantic_relation",
         "拥有": "semantic_relation", "使用": "semantic_relation", "名字叫": "semantic_relation",
         "类型": "semantic_relation", "相关": "semantic_relation", "同一": "semantic_relation",
@@ -511,6 +630,12 @@ DEFAULT_CONFIG = {
         # 是同一条弧），单向会逼系统"记两遍"。而 调制/增强/抑制 保留因果方向：
         # 调制器→认知目标 是有方向的（反向不构成调制）。
         "交互": "bidirectional",
+        # 图谱扩展 2026-10-13：'关联' 是认知共现兜底关系（LLM 抽取/桥接常用），
+        # 语义对称——此前吃默认 forward，存量 40+ 条边有约一半因方向随机而
+        # 传播不到对侧；'别名' 同理（同一实体的两个名字无因果方向）。
+        # 传播安全性在副本实测有界（graph_verify_expansion V2b）。
+        "关联": "bidirectional",
+        "别名": "bidirectional",
     },
 
     # label → graph_space 推断表（graph_migration 使用；app.py bootstrap 使用）
@@ -687,7 +812,7 @@ DEFAULT_CONFIG = {
         "need_drift_rate_per_min": 0.02,
         #   circadian_drift_rate_per_min：`时段/昼夜→调制器` 的漂移速率（P10）。
         #     比需求漂移快一档是**时间尺度**决定的（§27）：昼夜要在一个夜段里真的
-        #     把水位抬起来（melatonin decay 0.035/min），需求缺口则要慢到"持续缺口
+        #     把水位抬起来（如组胺 decay 0.025/min），需求缺口则要慢到"持续缺口
         #     才留得住痕迹"。两者不同值不是不一致。
         "circadian_drift_rate_per_min": 0.06,
         # ── 心情（R2 P11：派生、单向、有界）────────────────────────
@@ -782,13 +907,10 @@ DEFAULT_CONFIG = {
             #  再写一条会在投影时撞键，effects 表按信号索引装不下两行）
             ["histamine", "增强", "调制目标:认知预算", 0.20, "清醒→允许更多资源"],
             ["histamine", "调制", "调制目标:重燃周期", -0.30, "清醒→更早重燃冷字段"],
-            ["melatonin", "调制", "调制目标:认知预算", -0.25, "夜段→预算收缩"],
-            ["melatonin", "调制", "调制目标:行动门槛", 0.20, "夜段→更少发起行动"],
             # ── 调制器 ↔ 网络 / Drive / 行为概念（图上可见的耦合）──
             ["cortisol", "抑制", "DMNetwork", -0.25, "压力压走神（场景 11）"],
             ["norepinephrine", "增强", "CENetwork", 0.25, "意外→控制网络占优（场景 14）"],
             ["acetylcholine", "增强", "CENetwork", 0.20, "保真→任务聚焦"],
-            ["melatonin", "增强", "DMNetwork", 0.30, "夜段→走神/反思偏置"],
             ["glutamate", "增强", "CENetwork", 0.15, "兴奋增益供给执行"],
             ["dopamine", "增强", "CuriosityDrive", 0.30, "奖赏预期→好奇驱动"],
             ["oxytocin", "增强", "SocialDrive", 0.35, "联结→社交驱动"],
@@ -817,34 +939,27 @@ DEFAULT_CONFIG = {
             ["皮质醇样", "增强", "安全需求", 0.25, "持续压力→安全感缺口被抬高（想避险）"],
             ["多巴胺样", "抑制", "探索需求", -0.20, "奖赏水位已高→探索缺口收敛（饱足）"],
             ["催产素样", "抑制", "社交需求", -0.20, "联结感已足→社交缺口收敛"],
-            # ── 时段/昼夜 → 调制器（R2 P10：§11 melatonin 由时间事实驱动）──
+            # ── 时段/昼夜 → 调制器（2026-10-14：褪黑素调制已移除——AI 无睡意；组胺清醒度仍由时段事实驱动）──
             #   源节点属性 `circadian_strength` = 此刻有多"夜"（0~1，唯一作者
             #   temporal_awareness.update_clock_state；白天节点的在势是它的补）。
             #   显著性不乘 activation：扩散的货币不借来当调制驱动（P6 同一纪律），
             #   而且不乘才让"同一 bucket 序列 ⇒ 同一曲线"成立（P10 闸门）。
-            #   权重尺度按"抬幅 = rate×w×强度/decay"反推：目标是深夜褪黑素样落在
             #   饱和拐点(0.70)附近、白天压到量程低段但**不钉在 0**（钉满就没信息了）。
             #   实测曲线见 docs/neuromodulation_R2_audit.md 附一〇。
-            ["夜间", "增强", "褪黑素样", 0.25, "夜段→睡意水位上升（小时级，不是脉冲）"],
-            ["白天", "抑制", "褪黑素样", -0.05, "白天压回低段（小权重：留分辨率）"],
-            ["深夜", "增强", "褪黑素样", 0.08, "最深的夜在夜段之上再推一点（时段级形状）"],
-            ["凌晨", "增强", "褪黑素样", 0.06, "凌晨仍在睡"],
             ["白天", "增强", "组胺样", 0.12, "白天→清醒基线抬起来"],
-            ["夜间", "抑制", "组胺样", -0.12, "夜段→清醒度回落（与褪黑素同向的两端）"],
+            ["夜间", "抑制", "组胺样", -0.12, "夜段→清醒度回落（夜间清醒度回落）"],
             # ── 调制器 → 心情（R2 P11：心情的"包络"成分，单向）──
             #   乘数是 `dev = 受体响应(浓度−基线)`（与各条参数通道同一个量），
             #   所以过载反转在这里同样生效：皮质醇钉在 max 附近时它对心情的
             #   下拉会**回推**（耗竭/麻木的钝化读法），而不是继续往负端钉死。
             #   为什么是这 5 条：血清素=背景稳态（张力性的那个，权重最大）、
             #   皮质醇=压力底色、多巴胺=预期水位、催产素=联结感、
-            #   褪黑素=夜里的钝重（它让"熬夜后情绪差"这句有图上的通路）。
             #   **没有** 需求→心情：需求已经通过 P9 的边抬/压这些调制器，再连一条
             #   就是同一件事数两遍（也违反"每条边一个可说清的理由"）。
             ["serotonin", "增强", "心情", 0.30, "背景稳态好→底色偏暖（唯一张力性主导项）"],
             ["cortisol", "抑制", "心情", -0.30, "压力水位高→底色发沉"],
             ["dopamine", "增强", "心情", 0.20, "预期/奖赏水位抬底色（ tonic 侧，不含脉冲）"],
             ["oxytocin", "增强", "心情", 0.20, "联结感是底色的正项（与被忽略时回落对应）"],
-            ["melatonin", "抑制", "心情", -0.10, "深夜意压一点亮度（P10 的昼夜由此自然进心情）"],
             # ── 调制器 ↔ 调制器（`交互`：P7 的事件写入增益；协同为正、拮抗为负）──
             # 这些边**不产参数系数**（靶点不是 调制目标:*），只在 apply_event 里
             # 改变"某类事件写进某调制器时乘多少"：gain = Π(1 + w × dev(源))。
@@ -1002,18 +1117,6 @@ DEFAULT_CONFIG = {
                 "overload_pull": 0.50,   # R2 P8/D5：睡眠压力类
                 "desc": "清醒度（警觉基线、空闲→主动发起、认知预算上限的许可）",
             },
-            "melatonin": {
-                "category": "circadian", "mirror": "褪黑素样",
-                "level": 0.20, "baseline": 0.20, "min": 0.0, "max": 1.0,
-                "decay_per_min": 0.035, "rise_per_min": 0.02,
-                "phasic_decay_per_min": 0.04, "split_tonic": False,
-                "momentum": 0.05, "sensitivity": 1.00,
-                "saturation": 0.70, "overload": 0.85, "refractory_min": 0.0,
-                "overload_pull": 0.40,   # R2 P8/D5：昼夜类（P10 由时段事实驱动）
-                # 唯一由 circadian 语境驱动的调制器：不读系统时钟，只吃时段节点属性
-                "circadian_driven": True,
-                "desc": "昼夜与睡眠压力（夜间 urgency↓、反思/检索偏置↑；由时段图谱事实驱动）",
-            },
         },
         # ⑤ 事件表（R2 P7，设计决定 D4）：**事件 → 调制器**的扇出是图数据，
         #    不是 reward.py 里的逐激素 if/else。启动时幂等种成
@@ -1072,13 +1175,9 @@ DEFAULT_CONFIG = {
             # ── 时段迁移（R2 P10；P7 就把这一类事件留着没接靶点）──
             #   signal=valence 且调用方给的是**有符号**的夜间度之差
             #   （`load_to − load_from`，由 temporal_awareness 从图上事实算）：
-            #   天黑→褪黑素抬、天亮→褪黑素降，一条边管两个方向。
             #   上午→中午 差值 0 ⇒ 事件被 `signal=…=0` 门掉（不是"每次都抖一下"）。
             #   这一格是**快通道**（跨段那一刻的一步），慢通道是上面的
             #   昼夜漂移边；两条通道同向但不重叠，正是 §27 的时间尺度分层。
-            {"type": "time_bucket_changed", "mod": "melatonin", "w": 0.45,
-             "signal": "valence", "channel": "tonic", "clamp": 0.25,
-             "why": "跨时段→褪黑素水位被推/拉一步（幅度=图上夜间度之差）"},
             {"type": "time_bucket_changed", "mod": "histamine", "w": -0.35,
              "signal": "valence", "channel": "tonic", "clamp": 0.20,
              "why": "变夜→清醒度掉一格；变亮→抬起来（同一事件的两侧）"},
@@ -1364,8 +1463,13 @@ DEFAULT_CONFIG = {
                              "context.fatigue": 0.20}},
             "cognition.express_threshold": {
                 "baseline": 0.78, "min": 0.55, "max": 0.95,
-                "effects": {"need.social": -0.10, "hormone.oxytocin": -0.12,
-                             "drive.social": -0.08, "hormone.cortisol": 0.10,
+                # 20:0x 尺度校准（可解释初值，非生理规律宣称）：CI 激活在
+                # ×0.9/拍衰减下存活窗只有几拍，社交饥饿必须**真的**帮到开口
+                # ——旧系数合计最多 -0.30 且 drive.social 只 -0.08，饿穿全
+                # 天也够不着线（今天 132 次 below_bar 的根因之一）。
+                # recent_expression 抑制分量保留原力度。
+                "effects": {"need.social": -0.20, "hormone.oxytocin": -0.18,
+                             "drive.social": -0.22, "hormone.cortisol": 0.10,
                              "context.recent_expression": 0.28}},
             "action.score_threshold": {
                 "baseline": 0.30, "min": 0.18, "max": 0.50,
@@ -1665,6 +1769,9 @@ DEFAULT_CONFIG = {
             "communication": {"signals": {
                 "social_relevance": 0.45, "user_relevance": 0.40,
                 "emotion_present": 0.20, "drive.social": 0.35,
+                # 2026-10-15 用户指正：陪伴的分享多半是"我刚碰上什么"，
+                # 不是"这事关于你"——她自己的新鲜经历升为一等社交燃料。
+                "recent_experience": 0.35,
                 "network.DMN": -0.15}},
             "exploration": {"signals": {
                 "drive.curiosity": 0.50, "unknown_present": 0.35,
@@ -1872,6 +1979,104 @@ DEFAULT_CONFIG = {
 
         # 社交/情绪表达的权重衰减（这些对话行为下重要性降低）
         "social_dialogue_weight_penalty": 0.4,
+    },
+
+    # ------------------------------------------------------------------
+    # Goal Path Bias — 目标导向路径强化（候选机制，2026-10-09）
+    # 审计 docs/audits/GOAL_PATH_AUDIT_2026-10-09.md；设计
+    # experiments/goal_path_bias/DESIGN.md。消费者=goal_path_bias.py。
+    # **默认全关**：本节任何键缺失/为 False 时生产行为逐位不变。
+    # ------------------------------------------------------------------
+    "goal_path": {
+        "enabled": False,               # **刻意保持关**：本仓行为实验负结果
+                                        # （族 L 零收益+哨兵层方向性负，FINAL
+                                        # _REPORT 判定不达标），不随启用批次开
+        "search": False,                # 只读路径审计（遥测，零激活写入）
+        "bias": False,                  # 激活偏置（依赖 search）
+        "require_state_anchor": False,  # C 条件：路径全叶须落在 拥有/可采资源
+        "max_hops": 8,                  # 与 world_prior.MAX_DEPTH 对齐
+        "max_paths": 3,                 # 每层候选生产者/来源上限
+        "max_nodes": 12,                # 单次推导节点预算
+        "bias_floor": 0.9,              # hop0 偏置地板（autonomy §9 同值先例）
+        "bias_gamma": 0.6,              # 每跳衰减
+        "min_confidence": 0.5,          # C 条件 provenance 下限
+    },
+
+    # ------------------------------------------------------------------
+    # Goal Planner — 目标驱动最小闭环计划器（候选机制，2026-10-09）
+    # 审计 docs/audits/PLANNER_AUDIT_2026-10-09.md；消费者=goal_planner.py。
+    # **默认关**：关时 autonomy 不安装钩子包装、计划器零触碰，生产逐位不变。
+    # 与 goal_path 正交：规划判定不读激活、不占 Top-k。
+    # ------------------------------------------------------------------
+    # ------------------------------------------------------------------
+    # MemRep — 统一记忆表示（事实有效期/来源、经历事件槽位、个体实例）。
+    # 设计 docs/MEMREP_DESIGN_2026-10-09.md；消费者=memrep.py。
+    # **默认关**：关时试点写点零触碰，生产逐位不变。
+    # ------------------------------------------------------------------
+    "memrep": {
+        "enabled": True,                # 2026-10-12 启用（真实验证：verify2 10 调用
+                                        # 6/6 抽取+问答接地+Cato 拒答；见 ENABLEMENT）
+        "record_episodes": True,        # 行动节点槽位补全+timeline 回链
+        "timeline_path": "data/experience_timeline.json",
+        "source": "action_result",
+    },
+
+    # ------------------------------------------------------------------
+    # Reader — 分段阅读闭环生产接入（2026-10-12；消费者=reading.py 与
+    # FAS-Companion app.py 的 reader 块）。**默认关**：关时宿主块整体跳过，
+    # 生产行为逐位不变。每拍最多推进一个抽取单元（无后台调度假设、
+    # 不自动开启昂贵长任务；进度/继续均为对话内显式回合）。
+    # ------------------------------------------------------------------
+    "reader": {
+        "enabled": True,                # 2026-10-12 启用（verify2 真机抽取 6/6、进度
+                                        # 台账诚实；宿主块运行时未测，已登记）
+        "ledger_path": "data/reading_ledger.json",
+        "unit_chars": 900,              # 单元聚合字符数
+        "max_units": 200,               # 单来源单元上限（超出截断并标注）
+    },
+
+    # ------------------------------------------------------------------
+    # TaskLoop — 通用任务闭环生产接入（第三阶段 2026-10-12）。
+    # 消费者：taskloop.py / taskloop_host.py；宿主块=FAS-Companion
+    # app.py 2a-pre.4c。**默认全关+白名单空**：关时 handle 立即 None
+    # （原对话路径逐位不变）；开 enabled 而白名单空时路由请求得到
+    # "执行域未启用"的如实答复——不擅自执行任何东西。
+    # ------------------------------------------------------------------
+    "taskloop": {
+        "enabled": True,                # 2026-10-12 启用（离线集成 161/161 +
+                                        # 真实解析 V2 约束保留通过；V1/V3-V5
+                                        # 因预算未记录，风险已登记 ENABLEMENT）
+        "parse_enabled": True,          # 自然语言→目标解析（需宿主 nlp）
+        "adapters": ["files", "sandbox"],   # 执行域白名单（reading 走 reader 通道）
+        "ledger_path": "data/taskloop_ledger.json",
+        "index_path": "data/taskloop_tasks.json",
+        "files_workspace": "data/task_workspace",
+        "max_actions_per_turn": 1,      # 每对话拍至多一个可核验行动
+        # 背景自主推进（2026-10-13 接入 Companion poller）：默认关——
+        # "空闲时自动推一步"是新执行权限，须用户显式打开；开了也只在
+        # 非交互期推进（cc busy 让位）、每拍至多一步、TaskLoop 自带
+        # step_cap/失败拉黑/重规划上限。
+        "autopilot_enabled": False,
+        "sandbox_def": {                # 沙盒静态世界定义（无任务专名）
+            "rooms": ["entry", "storage", "workshop"],
+            "links": {"entry": ["storage"], "storage": ["workshop"]},
+            "items": {"board_a": "storage", "board_b": "storage"},
+            "capacity": 2, "fixtures": {},
+        },
+        "verify_retry_cap": 1,          # 连续 verify-miss>本值 → 拉黑
+        "step_cap": 40,
+    },
+
+    "planner": {
+        "enabled": True,                # 2026-10-12 启用（SimEnv 控制环 23 测绿；
+                                        # 真实 MC 运行时未验证，回退=改回 False）
+        "max_depth": 6,                 # 反向链深度上限
+        "max_steps": 12,                # 单计划步数预算
+        "max_revisions": 3,             # 重规划上限（超限终止目标）
+        "step_retry_limit": 2,          # 同步骤原地重试上限（blame=action）
+        "evidence_enabled": True,       # 定向计数写回（绝不改边权）
+        "dispatch_priority": 0.7,
+        "dispatch_motivation": "planned_goal",
     },
 
     # ------------------------------------------------------------------

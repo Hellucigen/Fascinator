@@ -167,6 +167,13 @@ def _normalize_mod_specs(mods_cfg: dict) -> dict:
 # 衰减/吸收/恢复类写入不受上升速率夹速（它们是"回落"或"行政设定"，不是事件压力）
 SLEW_EXEMPT_SOURCES = ("decay", "rise", "manual", "restore")
 MOMENTUM_DECAY_PER_MIN = 0.15     # 习惯化的恢复速率：事件停了呢就退掉
+# 受体敏感度可塑性（2026-10-16 统一校准 §3.3）：sensitization 是**计数驱动**
+# 的慢变量——每个实际生效的脉冲推 ±固定小步（方向=脉冲符号，相反经历即
+# 脱敏），与响应幅度无关，结构上不存在"反应越强→越敏化→反应更强"的正反馈。
+SENSITIZE_STEP_PER_PULSE = 0.02   # 每次脉冲的敏感度位移（±）
+SENSITIZE_RECOVERY_PER_MIN = 0.0015  # 敏化退速（半程约 7.7h，事件停了呢就缓退）
+SENSITIZE_CAP = 0.35              # 敏化范围 ±（有效增益最 ×1.35 / ×0.65）
+SENSITIVITY_FLOOR, SENSITIVITY_CEIL = 0.5, 2.0  # 有效敏感度硬钳位
 
 
 def receptor_response(dev: float, baseline: float, saturation: float,
@@ -292,6 +299,7 @@ class InternalState:
                 "phasic_decay_per_min": spec["phasic_decay_per_min"],
                 "momentum": float(spec["momentum"]),
                 "momentum_state": 0.0,        # 近期脉冲的指数平均（习惯化用）
+                "sensitization": 0.0,         # 慢敏感度位移（计数驱动，见 §3.3）
                 "sensitivity": float(spec["sensitivity"]),
                 "saturation": float(spec["saturation"]),
                 "overload": float(spec["overload"]),
@@ -352,7 +360,8 @@ class InternalState:
                     for k in ("level", "tonic", "phasic", "last_update",
                               "last_sources", "history",
                               "refractory_until", "last_pulse_ts", "source_detail",
-                              "momentum_state", "pending_rise", "last_slow_ts"):
+                              "momentum_state", "sensitization",
+                              "pending_rise", "last_slow_ts"):
                         if k in saved:
                             self._modulators[name][k] = saved[k]
                     # 迁移：R2 P3 之前的快照里 tonic 可能为 null（只有 split 才有）。
@@ -799,6 +808,7 @@ class InternalState:
             with self._lock:
                 item["pending_rise"] = 0.0
                 item["momentum_state"] = 0.0
+                item["sensitization"] = 0.0
                 item["refractory_until"] = 0.0
                 item["phasic"] = 0.0 if item.get("split_tonic") else None
                 self._compose_view(name)
@@ -831,8 +841,24 @@ class InternalState:
     def modulator_baseline(self, name: str) -> float:
         return float((self._modulators.get(name) or {}).get("baseline", 0.5))
 
+    def _eff_sensitivity(self, item: dict) -> float:
+        """有效敏感度 = 基础 sensitivity × (1 + sensitization)，硬钳位。
+
+        sensitization 由 pulse 按**次**累计（与幅度无关），tick_decay 缓慢
+        退回 0，reset 清零——有界、可恢复、单事件不永久。modulator_field
+        的 "sensitivity" 读数走这里，因此 pulse 增益与 modulator_subgraph
+        的边系数（"sensitivity" 是真源乘子）共用同一个事实源。
+        """
+        base = float(item.get("sensitivity", 1.0) or 1.0)
+        sz = float(item.get("sensitization") or 0.0)
+        return max(SENSITIVITY_FLOOR, min(
+            SENSITIVITY_CEIL, base * (1.0 + sz)))
+
     def modulator_field(self, name: str, key: str, default=None):
-        return (self._modulators.get(name) or {}).get(key, default)
+        item = self._modulators.get(name) or {}
+        if key == "sensitivity" and item:
+            return self._eff_sensitivity(item)
+        return item.get(key, default)
 
     def modulator_tonic(self, name: str) -> float:
         """**参数通道**的读数：只含慢分量（含受体曲线），不含 phasic。
@@ -1193,7 +1219,14 @@ class InternalState:
             if item.get("phasic") is None:
                 # 未拆 tonic/phasic 的调制器：脉冲 = 一次带习惯化的慢分量位移
                 g = self._apply_momentum(item, float(delta) *
-                                         float(item.get("sensitivity", 1.0) or 1.0))
+                                         self._eff_sensitivity(item))
+                if abs(g) > 1e-6:   # 敏化按次不按幅（无自放大回路）
+                    item["sensitization"] = round(max(
+                        -SENSITIZE_CAP, min(
+                            SENSITIZE_CAP,
+                            float(item.get("sensitization") or 0.0) +
+                            (SENSITIZE_STEP_PER_PULSE if g > 0
+                             else -SENSITIZE_STEP_PER_PULSE))), 4)
                 r = self._write_numeric("modulator", name,
                                         float(item.get("tonic", 0.0)) + g,
                                         reason=reason or "事件脉冲",
@@ -1210,8 +1243,15 @@ class InternalState:
                 return r
             now = self._now()
             old = float(item.get("phasic") or 0.0)
-            sens = float(item.get("sensitivity", 1.0) or 1.0)
+            sens = self._eff_sensitivity(item)
             gain = self._apply_momentum(item, float(delta) * sens)
+            if abs(gain) > 1e-6:   # 敏化按次不按幅（无自放大回路）
+                item["sensitization"] = round(max(
+                    -SENSITIZE_CAP, min(
+                        SENSITIZE_CAP,
+                        float(item.get("sensitization") or 0.0) +
+                        (SENSITIZE_STEP_PER_PULSE if gain > 0
+                         else -SENSITIZE_STEP_PER_PULSE))), 4)
             ref_min = float(item.get("refractory_min") or 0.0)
             until = float(item.get("refractory_until") or 0.0)
             # 不应期：越新越打不动。left = 窗口剩余比例（0=不在不应期），
@@ -1238,6 +1278,8 @@ class InternalState:
                    "refractory_left": round(left, 3),
                    "refractory_damping": round(damping, 3),
                    "momentum_state": round(float(item.get("momentum_state") or 0.0), 4),
+                   "sensitization": round(float(item.get("sensitization") or 0.0), 4),
+                   "eff_sensitivity": round(self._eff_sensitivity(item), 4),
                    "tonic": item.get("tonic"), "level": lvl_after,
                    "level_old": lvl_before, "phasic": new,
                    "pending_rise": round(float(item.get("pending_rise") or 0.0), 4),
@@ -1387,6 +1429,12 @@ class InternalState:
                 if mv:
                     item["momentum_state"] = round(
                         mv * max(0.0, 1.0 - MOMENTUM_DECAY_PER_MIN * dt_min), 6)
+                # ③b 敏化恢复（慢）：事件停了呢敏感度缓退回基础值
+                sz = float(item.get("sensitization") or 0.0)
+                if sz:
+                    item["sensitization"] = round(
+                        sz * max(0.0, 1.0 - SENSITIZE_RECOVERY_PER_MIN *
+                           dt_min), 6)
                 # ④ tonic：向 baseline 回归（仅当显著偏离，避免每拍空写）
                 if rate > 0 and abs(cur - base) > 0.02:
                     target = cur + (base - cur) * min(0.9, rate * dt_min)

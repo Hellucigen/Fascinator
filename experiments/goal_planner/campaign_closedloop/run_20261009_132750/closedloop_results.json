@@ -1,0 +1,281 @@
+[
+  {
+    "cond": "A",
+    "achieved": true,
+    "actions": 2,
+    "wasted": 0,
+    "explores": 0,
+    "replans": null,
+    "goal_state": "n/a(反应式无目标对象)",
+    "fail_reasons": [],
+    "cycles": 3,
+    "traj_tail": [
+      {},
+      {
+        "oak_log": 3
+      },
+      {
+        "oak_log": 2,
+        "oak_planks": 4
+      }
+    ],
+    "scenario": "S1_normal",
+    "desc": "正常两阶段链（采+合成）"
+  },
+  {
+    "cond": "B",
+    "achieved": true,
+    "actions": 2,
+    "wasted": 0,
+    "explores": null,
+    "replans": 0,
+    "precondition_violations": 0,
+    "terminated": false,
+    "goal_state": "指针已了结(达成或终止)",
+    "fail_reasons": [],
+    "cycles": 3,
+    "traj_tail": [
+      {
+        "oak_log": 2
+      },
+      {
+        "oak_log": 0,
+        "oak_planks": 8
+      },
+      {
+        "oak_log": 0,
+        "oak_planks": 8
+      }
+    ],
+    "scenario": "S1_normal",
+    "desc": "正常两阶段链（采+合成）"
+  },
+  {
+    "cond": "A",
+    "achieved": true,
+    "actions": 3,
+    "wasted": 1,
+    "explores": 0,
+    "replans": null,
+    "goal_state": "n/a(反应式无目标对象)",
+    "fail_reasons": [
+      "bench_jam"
+    ],
+    "cycles": 4,
+    "traj_tail": [
+      {
+        "oak_log": 3
+      },
+      {
+        "oak_log": 3
+      },
+      {
+        "oak_log": 2,
+        "oak_planks": 4
+      }
+    ],
+    "scenario": "S2_flaky_craft",
+    "desc": "合成首试失败一次后成功"
+  },
+  {
+    "cond": "B",
+    "achieved": true,
+    "actions": 3,
+    "wasted": 1,
+    "explores": null,
+    "replans": 0,
+    "precondition_violations": 0,
+    "terminated": false,
+    "goal_state": "指针已了结(达成或终止)",
+    "fail_reasons": [
+      "bench_jam"
+    ],
+    "cycles": 4,
+    "traj_tail": [
+      {
+        "oak_log": 2
+      },
+      {
+        "oak_log": 0,
+        "oak_planks": 8
+      },
+      {
+        "oak_log": 0,
+        "oak_planks": 8
+      }
+    ],
+    "scenario": "S2_flaky_craft",
+    "desc": "合成首试失败一次后成功"
+  },
+  {
+    "cond": "A",
+    "achieved": true,
+    "actions": 3,
+    "wasted": 1,
+    "explores": 0,
+    "replans": null,
+    "goal_state": "n/a(反应式无目标对象)",
+    "fail_reasons": [
+      "block_not_found"
+    ],
+    "cycles": 4,
+    "traj_tail": [
+      {},
+      {
+        "birch_log": 3
+      },
+      {
+        "birch_log": 2,
+        "oak_planks": 4
+      }
+    ],
+    "scenario": "S3_env_change",
+    "desc": "计划途中橡树消失→备选分支"
+  },
+  {
+    "cond": "B",
+    "achieved": true,
+    "actions": 3,
+    "wasted": 0,
+    "explores": null,
+    "replans": 1,
+    "precondition_violations": 0,
+    "terminated": false,
+    "goal_state": "指针已了结(达成或终止)",
+    "fail_reasons": [
+      "block_not_found"
+    ],
+    "cycles": 4,
+    "traj_tail": [
+      {
+        "birch_log": 2
+      },
+      {
+        "birch_log": 0,
+        "oak_planks": 8
+      },
+      {
+        "birch_log": 0,
+        "oak_planks": 8
+      }
+    ],
+    "scenario": "S3_env_change",
+    "desc": "计划途中橡树消失→备选分支"
+  },
+  {
+    "cond": "A",
+    "achieved": true,
+    "actions": 1,
+    "wasted": 0,
+    "explores": 0,
+    "replans": null,
+    "goal_state": "n/a(反应式无目标对象)",
+    "fail_reasons": [],
+    "cycles": 2,
+    "traj_tail": [
+      {},
+      {
+        "oak_log": 3,
+        "oak_planks": 8
+      }
+    ],
+    "scenario": "S4_external_done",
+    "desc": "中途外部送达=他途达成"
+  },
+  {
+    "cond": "B",
+    "achieved": true,
+    "actions": 1,
+    "wasted": 0,
+    "explores": null,
+    "replans": 0,
+    "precondition_violations": 0,
+    "terminated": false,
+    "goal_state": "指针已了结(达成或终止)",
+    "fail_reasons": [],
+    "cycles": 2,
+    "traj_tail": [
+      {
+        "oak_log": 2
+      },
+      {
+        "oak_log": 2,
+        "oak_planks": 8
+      }
+    ],
+    "scenario": "S4_external_done",
+    "desc": "中途外部送达=他途达成"
+  },
+  {
+    "cond": "A",
+    "achieved": false,
+    "actions": 0,
+    "wasted": 0,
+    "explores": 40,
+    "replans": null,
+    "goal_state": "n/a(反应式无目标对象)",
+    "fail_reasons": [],
+    "cycles": 40,
+    "traj_tail": [
+      {},
+      {},
+      {}
+    ],
+    "scenario": "S5_and_missing",
+    "desc": "AND 前置缺项（stick 需 magic_dust）"
+  },
+  {
+    "cond": "B",
+    "achieved": false,
+    "actions": 0,
+    "wasted": 0,
+    "explores": null,
+    "replans": 0,
+    "precondition_violations": 0,
+    "terminated": true,
+    "goal_state": "指针已了结(达成或终止)",
+    "fail_reasons": [],
+    "cycles": 1,
+    "traj_tail": [
+      {}
+    ],
+    "scenario": "S5_and_missing",
+    "desc": "AND 前置缺项（stick 需 magic_dust）"
+  },
+  {
+    "cond": "A",
+    "achieved": false,
+    "actions": 0,
+    "wasted": 0,
+    "explores": 40,
+    "replans": null,
+    "goal_state": "n/a(反应式无目标对象)",
+    "fail_reasons": [],
+    "cycles": 40,
+    "traj_tail": [
+      {},
+      {},
+      {}
+    ],
+    "scenario": "S6_tool_deadend",
+    "desc": "工具死链（采铁矿需不可得银镐）"
+  },
+  {
+    "cond": "B",
+    "achieved": false,
+    "actions": 0,
+    "wasted": 0,
+    "explores": null,
+    "replans": 0,
+    "precondition_violations": 0,
+    "terminated": true,
+    "goal_state": "指针已了结(达成或终止)",
+    "fail_reasons": [],
+    "cycles": 1,
+    "traj_tail": [
+      {}
+    ],
+    "scenario": "S6_tool_deadend",
+    "desc": "工具死链（采铁矿需不可得银镐）"
+  }
+]

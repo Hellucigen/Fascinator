@@ -1,0 +1,85 @@
+{
+ "n": 10,
+ "log": [
+  {
+   "purpose": "extract",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 144,
+   "completion_tokens": 500,
+   "latency_s": 8.15,
+   "answer": "{\"entities\": [\"middle of the journey of our days\", \"narrator\", \"darksome wood\", \"right road\", \"maze\"], \"relations\": [{\"src\": \"narrator\", \"rel\": \"位于\", \"dst\": \"darksome wood\", \"kind\": \"text\", \"quote\": \"I found that I was in a darksome wood\"}, {\"src\": \"darksome wood\", \"rel\": \"包含\", \"dst\": \"maze\", \"kind\": \"inference\", \"quote\": \"a darksome wood\"}, {\"src\": \"right road\", \"rel\": \"相关"
+  },
+  {
+   "purpose": "extract",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 144,
+   "completion_tokens": 252,
+   "latency_s": 6.46,
+   "answer": "{\"entities\": [\"wood\", \"the mere thought\", \"terror\"], \"relations\": [{\"src\": \"wood\", \"rel\": \"是\", \"dst\": \"rough, wild, and terrible\", \"kind\": \"text\", \"quote\": \"how rough that wood was, wild, and terrible\"}, {\"src\": \"the mere thought\", \"rel\": \"导致\", \"dst\": \"terror\", \"kind\": \"text\", \"quote\": \"By the mere thought my terror is renewed\"}]}"
+  },
+  {
+   "purpose": "extract",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 145,
+   "completion_tokens": 500,
+   "latency_s": 18.05,
+   "answer": ""
+  },
+  {
+   "purpose": "extract",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 150,
+   "completion_tokens": 493,
+   "latency_s": 6.6,
+   "answer": "{\"entities\": [\"I\", \"ground\", \"right way\", \"slumber\"], \"relations\": [{\"src\": \"I\", \"rel\": \"位于\", \"dst\": \"ground\", \"kind\": \"text\", \"quote\": \"how I entered on that ground\"}, {\"src\": \"I\", \"rel\": \"相关\", \"dst\": \"right way\", \"kind\": \"text\", \"quote\": \"I passed From the right way\"}, {\"src\": \"I\", \"rel\": \"属于\", \"dst\": \"slumber\", \"kind\": \"text\", \"quote\": \"was I in slumber drowned\"}, {\"src\": \"slumber\", \"rel\": \"导致\", \"dst\": \"ground\", \"kind\": \"inference\", \"quote\": \"So deeply, at the moment when I passed\"}]}"
+  },
+  {
+   "purpose": "extract",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 142,
+   "completion_tokens": 500,
+   "latency_s": 9.75,
+   "answer": "{\"entities\": [\"hill\", \"valley\", \"边界\", \"heart\","
+  },
+  {
+   "purpose": "extract",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 141,
+   "completion_tokens": 162,
+   "latency_s": 4.7,
+   "answer": "{\"entities\": [\"shoulders\", \"planet's light\", \"planet\"], \"relations\": [{\"src\": \"shoulders\", \"rel\": \"拥有\", \"dst\": \"planet's light\", \"kind\": \"text\", \"quote\": \"shoulders glowed, Radiant already with that planet's light\"}, {\"src\": \"planet\", \"rel\": \"需要\", \"dst\": \"every road\", \"kind\": \"text\", \"quote\": \"guideth surely upon every road\"}]}"
+  },
+  {
+   "purpose": "answer",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 207,
+   "completion_tokens": 162,
+   "latency_s": 4.2,
+   "answer": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+   "purpose": "answer",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 174,
+   "completion_tokens": 63,
+   "latency_s": 3.57,
+   "answer": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+   "purpose": "answer",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 111,
+   "completion_tokens": 56,
+   "latency_s": 4.64,
+   "answer": "INSUFFICIENT_EVIDENCE"
+  },
+  {
+   "purpose": "baseline_fabrication_probe",
+   "model": "mimo-v2.6-flash",
+   "prompt_tokens": 29,
+   "completion_tokens": 97,
+   "latency_s": 4.34,
+   "answer": "In *Purgatorio*, Canto II, Cato rebukes Virgil, Dante, and Statius for daring to tread upon the sacred shore of his mountain, demanding to know what living beings are doing there. He then orders them to show their lighter natures (their lack of sin) before allowing them to proceed."
+  }
+ ]
+}

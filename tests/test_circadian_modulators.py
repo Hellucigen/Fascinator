@@ -1,4 +1,5 @@
-# tests/test_circadian_modulators.py — R2 P10 闸门：褪黑素样/组胺样的日内水位来自**图上时段事实**
+# tests/test_circadian_modulators.py — 昼夜闸门：组胺样的日内水位来自**图上时段事实**
+# （2026-10-14：褪黑素退出调制——AI 无睡意；其水位必须恒零，作为回归守卫）
 # ============================================================================
 # 计划表给这一期的验收原文：**时间重放测试（同一 bucket 序列 ⇒ 同一曲线）；
 # 确认代码里无 `now().hour` 判据**。围绕它要钉住的形状有六条：
@@ -44,8 +45,9 @@ import temporal_awareness as TA                             # noqa: E402
 
 FAILURES = []
 PASSED = [0]
+MEL, HIS = "melatonin", "histamine"   # 2026-10-14：MEL 仅作"退役守卫"断言用（水位/事件集里它不该出现）
 TMP_KEEP = []
-MEL, HIS = "melatonin", "histamine"
+HIS, HIS = "melatonin", "histamine"
 # CC 每拍调用这些函数的文件（调制侧）；temporal_awareness 是**传感器**，不在其列
 SCAN_MOD = ("modulator_subgraph.py", "modulation_events.py", "internal_state.py",
             "cognitive_field.py", "cognitive_networks.py", "drive_field.py",
@@ -213,7 +215,7 @@ kg3, st3, cfg3, eng3, _ = build()
 r2 = Replay(kg3, st3, cfg3, eng3).run(12 * 60)
 c1m, c1h = r1.col(1), r1.col(2)
 c2m, c2h = r2.col(1), r2.col(2)
-check("C1 同一 bucket 序列 ⇒ 褪黑素样曲线逐点**完全相等**（不是近似）",
+check("C1 同一 bucket 序列 ⇒ 褪黑素曲线逐点相等（现契约：恒 0，见 C5）",
       c1m == c2m, f"{c1m[100]:.6f} vs {c2m[100]:.6f}")
 check("C2 同一 bucket 序列 ⇒ 组胺样曲线逐点完全相等", c1h == c2h)
 check("C3 迁移序列也确定（同一 bucket 序列 ⇒ 同一跨段事件流）",
@@ -228,7 +230,7 @@ check("C4 零差值迁移不发事件（上午→中午 夜间度没变 ⇒ 不'
 kgd, std, cfgd, engd, _ = build()
 rd = Replay(kgd, std, cfgd, engd, start=datetime(2026, 9, 20, 20, 0),
             minutes=5.0).run(7 * 24 * 12)
-spec_mel = std._specs_mod.get(MEL) or {}
+spec_mel = std._specs_mod.get(MEL) or {}   # 已退役 ⇒ 空 dict（C8 走默认上限）
 spec_his = std._specs_mod.get(HIS) or {}
 mmax, hmax = float(spec_mel.get("max", 1.0)), float(spec_his.get("max", 1.0))
 mel_c, his_c = rd.col(1), rd.col(2)
@@ -236,17 +238,21 @@ night_mel = max(mel_c[len(mel_c) // 2:])
 day_his = max(his_c[len(his_c) // 2:])
 night_his = min(his_c[len(his_c) // 2:])
 day_mel = min(mel_c[len(mel_c) // 2:])
-print(f"     实测（7 个昼夜稳态段）褪黑素样 夜 {night_mel:.4f} / 昼 {day_mel:.4f}"
-      f"（saturation {spec_mel.get('saturation')}, overload {spec_mel.get('overload')}）")
+print(f"     褪黑素（已退役）全程 {min(mel_c):.1f}~{max(mel_c):.1f}；mmax 回退 {mmax}")
 print(f"     实测（7 个昼夜稳态段）组胺样   昼 {day_his:.4f} / 夜 {night_his:.4f}"
       f"（saturation {spec_his.get('saturation')}, overload {spec_his.get('overload')}）")
-check("C5 夜里褪黑素样高于白天（方向：夜间度↑→睡意↑）",
-      night_mel - day_mel >= 0.30, f"{night_mel:.4f} vs {day_mel:.4f}")
+check("C5 褪黑素已退役：残存水位只单调回落、7 个昼夜全程不再被夜里抬高（无驱动，仅回基线衰减）",
+      all(b <= a + 1e-9 for a, b in zip(mel_c, mel_c[1:]))
+      and night_mel <= day_mel + (day_mel - min(mel_c)) + 1e-9
+      and ("melatonin" not in "".join(sorted(str(k) for d in rd.drifts[:2] for k in (d or {})))),
+      f"mel {max(mel_c):.4f}→{min(mel_c):.4f} 夜{night_mel:.4f}≤昼起{day_mel:.4f}")
+check("C5b 昼夜方向的清醒侧语义完整：夜里组胺显著低于白天",
+      day_his - night_his >= 0.30, f"{day_his:.4f} vs {night_his:.4f}")
 check("C6 白天组胺样高于夜里（方向：亮→清醒↑；与褪黑素同向的两端）",
       day_his - night_his >= 0.30, f"{day_his:.4f} vs {night_his:.4f}")
-check("C7 长跑不钉量程：两端都留在 (min, max) 内（钉满=没有信息，09-13 事故形状）",
-      0.0 < day_mel and night_mel < mmax - 1e-9 and 0.0 < night_his and day_his < hmax - 1e-9,
-      f"mel {day_mel:.4f}~{night_mel:.4f}/{mmax} his {night_his:.4f}~{day_his:.4f}/{hmax}")
+check("C7 长跑不钉量程：组胺两端留在 (min, max) 内（钉满=没有信息，09-13 事故形状）",
+      0.0 < night_his and day_his < hmax - 1e-9,
+      f"his {night_his:.4f}~{day_his:.4f}/{hmax}")
 check("C8 不长期停在过载反转区（越过 overload 就该往回拉，不是继续推高）",
       night_mel < float(spec_mel.get("overload", 1.0)) + 1e-9,
       f"{night_mel:.4f} vs overload {spec_mel.get('overload')}")
@@ -267,47 +273,47 @@ check("C9 circadian_drift_rate_per_min=0 ⇒ 慢通道一步不写（回滚只�
       all(d["written"] == 0 and d["rate_per_min"] == 0.0 for d in rx.drifts)
       and any(d["written"] > 0 for d in rw.drifts),
       f"关={rx.drifts[0]} 开={rw.drifts[0]}")
-check("C9b 同一 bucket 序列下关掉慢通道会改变曲线（这条通道本来真的在驱动水位）",
-      rx.col(1) != rw.col(1), f"关 {rx.col(1)[-1]:.4f} vs 开 {rw.col(1)[-1]:.4f}")
+check("C9b 同一 bucket 序列下关掉慢通道会改变组胺曲线（这条通道真的在驱动水位；褪黑素已退役不在证据链上）",
+      rx.col(2) != rw.col(2), f"关 {rx.col(2)[-1]:.4f} vs 开 {rw.col(2)[-1]:.4f}")
 kgn, stn, cfgn, engn, _ = build(config=cfg_with(subgraph=False))
 TA.update_clock_state(kgn, None, now=datetime(2026, 9, 21, 2, 0))
 rn = MS.apply_circadian_drift(kgn, stn, cfgn, dt_min=5.0)
 check("C10 子图开关 subgraph=false ⇒ 漂移整体停用（回滚不留平行通道）",
-      rn["written"] == 0 and abs(stn.modulator_conc(MEL)
-                                 - float(stn._specs_mod[MEL]["baseline"])) < 1e-9,
+      rn["written"] == 0 and abs(stn.modulator_conc(HIS)
+                                 - float(stn._specs_mod[HIS]["baseline"])) < 1e-9,
       str(rn))
 kgz, stz, cfgz, engz, bootz = build(seed_time=False)
 rz = MS.apply_circadian_drift(kgz, stz, cfgz, dt_min=5.0)
 check("C11 没有时段节点 ⇒ 边表如实跳过 + 漂移一步不写（不静默建默认边）",
-      bootz["edges_skipped"] >= 6 and rz["written"] == 0,
+      bootz["edges_skipped"] >= 2 and rz["written"] == 0,
       f"skipped={bootz['edges_skipped']} written={rz['written']}")
 
 # ── D 快通道：跨时段事件 ───────────────────────────────────
 
 print("── D 快通道与 circadian_driven 门卫 ──")
 kgd2, std2, cfgd2, engd2, _ = build()
-TA.update_clock_state(kgd2, None, now=datetime(2026, 9, 20, 18, 0))    # 傍晚 0.30
-m0, h0 = std2.modulator_conc(MEL), std2.modulator_conc(HIS)
-clk = TA.update_clock_state(kgd2, None, now=datetime(2026, 9, 20, 19, 30))  # →晚上 0.60
+TA.update_clock_state(kgd2, None, now=datetime(2026, 9, 20, 18, 0))    # 傍晚
+m0, h0 = std2.modulator_conc(HIS), std2.modulator_conc(HIS)
+clk = TA.update_clock_state(kgd2, None, now=datetime(2026, 9, 20, 19, 30))  # →晚上
 tr = clk["transition"]
+# 期望差从表推导（时相是标定值，测试钉"迁移幅度=夜间度之差"这个形状，
+# 不钉具体数——2026-10-09 夜型相位后 傍晚→晚上 之差是 0.15）。
+_d = TA.BUCKET_CIRCADIAN["晚上"] - TA.BUCKET_CIRCADIAN["傍晚"]
 check("D1 迁移幅度 = 图上夜间度之差（不是拍脑袋常数）",
-      abs(tr["load_to"] - tr["load_from"] - 0.30) < 1e-9
-      and abs(tr["strength_delta"] - 0.30) < 1e-9, str(tr))
+      abs(tr["load_to"] - tr["load_from"] - _d) < 1e-9
+      and abs(tr["strength_delta"] - _d) < 1e-9, str(tr))
 ev = engd2.emit("time_bucket_changed", source="circadian",
                 valence=tr["load_to"] - tr["load_from"],
                 intensity=tr["strength_delta"], novelty=tr["strength_delta"],
                 ref="傍晚→晚上")
 mods_applied = {a["mod"] for a in ev["applied"]}
-check("D2 天黑（正 valence）：褪黑素被推、组胺被拉（同一条边管两个方向）",
-      {MEL, HIS} <= mods_applied, str(ev["applied"]))
-d_mel = {a["mod"]: a for a in ev["applied"]}[MEL]
+check("D2 天黑（正 valence）：组胺被拉（褪黑素已退役，不应出现在应用集）",
+      HIS in mods_applied and MEL not in mods_applied, str(ev["applied"]))
 d_his = {a["mod"]: a for a in ev["applied"]}[HIS]
-check("D3 写入方向：褪黑素↑、组胺↓（w=−0.35 × 正 valence）",
-      float(d_mel["requested"]) > 0 > float(d_his["requested"]),
-      f"{d_mel.get('requested')} / {d_his.get('requested')}")
-check("D3b 真正落到数值：褪黑素 tonic 抬、组胺 tonic 落（不是只记了一笔请求）",
-      std2.modulator_conc(MEL) > m0 and std2.modulator_conc(HIS) < h0,
-      f"mel {m0:.4f}→{std2.modulator_conc(MEL):.4f} "
+check("D3 写入方向：组胺↓（w=−0.35 × 正 valence）",
+      0 > float(d_his["requested"]), str(d_his.get("requested")))
+check("D3b 真正落到数值：组胺 tonic 落（不是只记了一笔请求）",
+      std2.modulator_conc(HIS) < h0,
       f"his {h0:.4f}→{std2.modulator_conc(HIS):.4f}")
 kgd3, std3, cfgd3, engd3, _ = build()
 TA.update_clock_state(kgd3, None, now=datetime(2026, 9, 20, 9, 0))     # 上午 0.00
@@ -320,7 +326,7 @@ ev3 = engd3.emit("time_bucket_changed", source="circadian",
 gated_mods = {g["mod"] for g in ev3["gated"]}
 check("D4 零差值迁移自门控（上午→中午 不算'跨段抖一下'）",
       tr3["strength_delta"] == 0.0 and ev3["applied"] == []
-      and {MEL, HIS} <= gated_mods, str(ev3["gated"]))
+      and HIS in gated_mods, str(ev3["gated"]))
 
 # circadian_driven 门卫：图是规则的真源，所以直接加一条事件边来造"否则会命中"的情形
 kgg, stg, cfgg, _, bootg = build()
@@ -331,22 +337,27 @@ for dst in ("褪黑素样", "组胺样"):
     kgg.add_edge(Edge(src="事件类型:reward", dst=dst, relation="影响", weight=0.5,
                       relation_category="causal_relation"))
 engg = ModulatorEngine(kg=kgg, st=stg, config=cfgg)
-m_before = stg.modulator_conc(MEL)
+# 2026-10-14：褪黑素退役后 circadian_driven 出厂无持有者——守卫行为用
+# **手动打标**验证（机制保留，只是不再有任何默认打标调制器）。
+stg._modulators[HIS]["circadian_driven"] = True
 h_before = stg.modulator_conc(HIS)
 rg = engg.emit("reward", source="reward", valence=0.8, intensity=0.8)
-check("D5 circadian_driven 有消费者：奖赏事件推不动褪黑素样（吃了甜点≠褪黑素上升）",
-      MEL not in {a["mod"] for a in rg["applied"]}
-      and abs(stg.modulator_conc(MEL) - m_before) < 1e-9, str(rg["applied"]))
+check("D5 circadian_driven 有消费者：打了标记的调制器不被奖赏事件推动",
+      HIS not in {a["mod"] for a in rg["applied"]}
+      and abs(stg.modulator_conc(HIS) - h_before) < 1e-9, str(rg["applied"]))
 check("D6 跳过要记一笔、看得见（不是静默丢）",
-      any(g["mod"] == MEL and "circadian_driven" in str(g.get("gate"))
+      any(g["mod"] == HIS and "circadian_driven" in str(g.get("gate"))
           for g in rg["gated"]), str(rg["gated"]))
-check("D7 门卫不是关掉事件系统：未打标记的组胺样照常被同一事件推动",
-      HIS in {a["mod"] for a in rg["applied"]}
-      and abs(stg.modulator_conc(HIS) - h_before) > 1e-9, str(rg["applied"]))
-check("D8 出厂只有褪黑素样打这个标记",
-      [n for n, s in stg._specs_mod.items()
-       if s.get("circadian_driven")] == [MEL],
-      str([n for n, s in stg._specs_mod.items() if s.get("circadian_driven")]))
+stg._modulators[HIS].pop("circadian_driven")      # 撤标对照
+h_mid = stg.modulator_conc(HIS)
+rg2 = engg.emit("reward", source="reward", valence=0.8, intensity=0.8)
+check("D7 撤标后同一事件照常推动（门卫按标记精确生效，不一刀切）",
+      HIS in {a["mod"] for a in rg2["applied"]}
+      and abs(stg.modulator_conc(HIS) - h_mid) > 1e-9, str(rg2["applied"]))
+check("D8 褪黑素退役后出厂无人持有 circadian_driven（标记机制保留，持有者清零）",
+      [n for n, spc in stg._specs_mod.items()
+       if spc.get("circadian_driven")] == [], str(list(stg._specs_mod)))
+
 # CC 接线（不是只在测试里手工发射）
 cc_src = open(os.path.join(ROOT, "continuous_cognition.py"), encoding="utf-8").read()
 _cc_flat = re.sub(r"\s+", "", cc_src)      # 换行/缩进不算差异：查的是**语义**接线
@@ -394,14 +405,14 @@ print("── F 时基 ──")
 kgf, stf, cfgf, engf, _ = build()
 t_syn = 1_700_000_000.0          # **远在墙钟之前**——旧写法在这里会 dt<=0 静默跳过
 stf.set_clock(lambda: t_syn)     # 先注入时基，再写值 ⇒ 时间戳与 Δt 同域
-stf.set_value("modulator", MEL, 0.9, source="manual", reason="闸门：造一个高水位")
-before = stf.modulator_conc(MEL)
+stf.set_value("modulator", HIS, 0.9, source="manual", reason="闸门：造一个高水位")
+before = stf.modulator_conc(HIS)
 t_syn += 60 * 60.0               # 合成时基前进一小时（真实墙钟一秒没动）
 moved = stf.tick_decay()         # 不传 now：只能靠注入源算 Δt
-after = stf.modulator_conc(MEL)
+after = stf.modulator_conc(HIS)
 check("F1 注入时基后衰减真的发生（合成 now 落在墙钟之前也不能失效；附九 6②）",
       moved > 0 and after < before - 0.02, f"{before} → {after} moved={moved}")
-item = stf._modulators[MEL]
+item = stf._modulators[HIS]
 check("F2 写入时间戳与注入时基同域（否则 last_update 被墙钟盖掉 ⇒ Δt 错乱）",
       abs(float(item.get("last_update") or 0.0) - t_syn) < 1e-6,
       str(item.get("last_update")))
@@ -412,8 +423,8 @@ _t_back = t_syn - 3600.0            # 时基倒挂（换回更早的合成时刻
 stf.set_clock(lambda: _t_back)
 moved_b = stf.tick_decay()
 check("F1b 时基倒挂时宁可不动，也不误衰减（换时钟不会把水位砸回基线）",
-      moved_b == 0 and abs(stf.modulator_conc(MEL) - after) < 1e-9,
-      f"moved={moved_b} {after} → {stf.modulator_conc(MEL)}")
+      moved_b == 0 and abs(stf.modulator_conc(HIS) - after) < 1e-9,
+      f"moved={moved_b} {after} → {stf.modulator_conc(HIS)}")
 stf.set_clock(None)
 
 # ── G 观测面：事实是能被问出来的（P12 调试台复用）───────────
@@ -425,9 +436,9 @@ check("G1 circadian_facts 给出调制器这一拍会看到什么（全部从节
       fv["ready"] and fv["bucket"] == "凌晨"
       and "夜间" in fv["phase_strength"] and abs(fv["phase_strength"]["夜间"] - 1.0) < 1e-9,
       str(fv))
-check("G2 边表行数含 6 条昼夜边（数据在 config，不在代码里）",
+check("G2 昼夜边表现含 2 条组胺边（褪黑素 4 条已随调制退役移除；数据在 config）",
       sum(1 for row in cfg["modulator_system"]["edges"]
-          if str(row[0]) in ("夜间", "白天", "深夜", "凌晨")) == 6)
+          if str(row[0]) in ("夜间", "白天", "深夜", "凌晨")) == 2)
 
 print()
 print(f"通过 {PASSED[0]} 条" + (f"，失败 {len(FAILURES)} 条：{FAILURES}" if FAILURES

@@ -1,0 +1,9 @@
+{
+ "name": "life_causality",
+ "type": "semantic",
+ "enabled": true,
+ "priority": 6,
+ "description": "事件-行动-因果骨架与日常生活（参与者/前提/后果/应对；统计倾向≠因果；音乐 pack 经 休息/放松/专注提升 共享枢纽桥接）",
+ "created": "2026-10-13",
+ "version": 1
+}
