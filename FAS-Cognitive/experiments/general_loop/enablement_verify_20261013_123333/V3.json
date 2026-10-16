@@ -1,0 +1,17 @@
+{
+ "V1": {
+  "kind": "error",
+  "landed": false,
+  "reply": "任务闭环内部故障（未回退旧路径）: TypeError(\"'int' object is not subscriptable\")"
+ },
+ "V2": {
+  "kind": "error",
+  "constraints_in_ledger": [],
+  "iron_forbid_kept": false
+ },
+ "V3": {
+  "kind": "error",
+  "reply": "任务闭环内部故障（未回退旧路径）: TypeError(\"'int' object is not subscriptable\")",
+  "no_env_built": false
+ }
+}

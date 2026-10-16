@@ -1,0 +1,746 @@
+{
+ "profiles": [
+  {
+   "name": "P1 稀疏高价值",
+   "path": "v1",
+   "formed": 6,
+   "expressed": 3,
+   "expressed_by_goal": {
+    "follow_up": 2,
+    "information_seeking": 1
+   },
+   "discarded_decay": 3,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_20000",
+     "t": 1000020.0,
+     "goal": "follow_up",
+     "basis": [
+      "P1_ev1",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_21680000",
+     "t": 1021680.0,
+     "goal": "information_seeking",
+     "basis": [
+      "P1_ev2",
+      "用户",
+      "CuriosityDrive"
+     ]
+    },
+    {
+     "ci": "CI_57740000",
+     "t": 1057740.0,
+     "goal": "follow_up",
+     "basis": [
+      "P1_ev3",
+      "用户",
+      "用户关系"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "None/": 75
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P1 稀疏高价值",
+   "path": "v2",
+   "formed": 6,
+   "expressed": 3,
+   "expressed_by_goal": {
+    "follow_up": 2,
+    "information_seeking": 1
+   },
+   "discarded_decay": 3,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_20000",
+     "t": 1000020.0,
+     "goal": "follow_up",
+     "basis": [
+      "P1_ev1",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_21680000",
+     "t": 1021680.0,
+     "goal": "information_seeking",
+     "basis": [
+      "P1_ev2",
+      "用户",
+      "CuriosityDrive"
+     ]
+    },
+    {
+     "ci": "CI_57740000",
+     "t": 1057740.0,
+     "goal": "follow_up",
+     "basis": [
+      "P1_ev3",
+      "用户",
+      "用户关系"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "suppress/duplicate_recent": 72,
+    "express/statement_bar_met": 2,
+    "express/inquiry_bar_met": 1
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P2 密集低价值",
+   "path": "v1",
+   "formed": 20,
+   "expressed": 10,
+   "expressed_by_goal": {
+    "follow_up": 10
+   },
+   "discarded_decay": 10,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_750000",
+     "t": 1000750.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev12",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_810000",
+     "t": 1000810.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev13",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_990000",
+     "t": 1000990.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev16",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_1050000",
+     "t": 1001050.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev17",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_1230000",
+     "t": 1001230.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev20",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_1290000",
+     "t": 1001290.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev21",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_1470000",
+     "t": 1001470.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev24",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_1530000",
+     "t": 1001530.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev25",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_1710000",
+     "t": 1001710.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev28",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_1770000",
+     "t": 1001770.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev29",
+      "用户"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "None/": 386
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P2 密集低价值",
+   "path": "v2",
+   "formed": 20,
+   "expressed": 5,
+   "expressed_by_goal": {
+    "follow_up": 5
+   },
+   "discarded_decay": 15,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_80000",
+     "t": 1000080.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev1",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_270000",
+     "t": 1000270.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev4",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_330000",
+     "t": 1000330.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev5",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_510000",
+     "t": 1000510.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev8",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_570000",
+     "t": 1000570.0,
+     "goal": "follow_up",
+     "basis": [
+      "P2_ev9",
+      "用户"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "suppress/rate_limit_hour": 280,
+    "suppress/duplicate_recent": 100,
+    "express/statement_bar_met": 6
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P3 对话交替",
+   "path": "v1",
+   "formed": 18,
+   "expressed": 6,
+   "expressed_by_goal": {
+    "follow_up": 6
+   },
+   "discarded_decay": 12,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_3560000",
+     "t": 1003560.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev0",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_10760000",
+     "t": 1010760.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev1",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_17960000",
+     "t": 1017960.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev2",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_25160000",
+     "t": 1025160.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev3",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_32360000",
+     "t": 1032360.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev4",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_39560000",
+     "t": 1039560.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev5",
+      "用户",
+      "用户关系"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "None/": 150,
+    "None/basis lacking concrete tension": 147
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P3 对话交替",
+   "path": "v2",
+   "formed": 18,
+   "expressed": 6,
+   "expressed_by_goal": {
+    "follow_up": 6
+   },
+   "discarded_decay": 12,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_3560000",
+     "t": 1003560.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev0",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_10760000",
+     "t": 1010760.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev1",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_17960000",
+     "t": 1017960.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev2",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_25160000",
+     "t": 1025160.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev3",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_32360000",
+     "t": 1032360.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev4",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_39560000",
+     "t": 1039560.0,
+     "goal": "follow_up",
+     "basis": [
+      "P3_ev5",
+      "用户",
+      "用户关系"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "defer/eligibility_no_evidence": 147,
+    "suppress/duplicate_recent": 144,
+    "express/statement_bar_met": 6
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P4 社交爬升无事件",
+   "path": "v1",
+   "formed": 0,
+   "expressed": 0,
+   "expressed_by_goal": {},
+   "discarded_decay": 0,
+   "discarded_stale": 0,
+   "expressed_detail": [],
+   "verdict_mix": {},
+   "restart_check": [],
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P4 社交爬升无事件",
+   "path": "v2",
+   "formed": 0,
+   "expressed": 0,
+   "expressed_by_goal": {},
+   "discarded_decay": 0,
+   "discarded_stale": 0,
+   "expressed_detail": [],
+   "verdict_mix": {},
+   "restart_check": [],
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P5 注意力争夺",
+   "path": "v1",
+   "formed": 10,
+   "expressed": 5,
+   "expressed_by_goal": {
+    "follow_up": 5
+   },
+   "discarded_decay": 5,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_20000",
+     "t": 1000020.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_hot",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_80000",
+     "t": 1000080.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_n0",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_270000",
+     "t": 1000270.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_n3",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_330000",
+     "t": 1000330.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_n5",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_520000",
+     "t": 1000520.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_n8",
+      "用户"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "None/": 125
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P5 注意力争夺",
+   "path": "v2",
+   "formed": 10,
+   "expressed": 5,
+   "expressed_by_goal": {
+    "follow_up": 5
+   },
+   "discarded_decay": 5,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_20000",
+     "t": 1000020.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_hot",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_80000",
+     "t": 1000080.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_n0",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_270000",
+     "t": 1000270.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_n3",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_330000",
+     "t": 1000330.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_n5",
+      "用户"
+     ]
+    },
+    {
+     "ci": "CI_520000",
+     "t": 1000520.0,
+     "goal": "follow_up",
+     "basis": [
+      "P5_n8",
+      "用户"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "suppress/duplicate_recent": 72,
+    "defer/below_bar": 48,
+    "express/statement_bar_met": 5
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P6 已回应再现",
+   "path": "v1",
+   "formed": 4,
+   "expressed": 2,
+   "expressed_by_goal": {
+    "follow_up": 2
+   },
+   "discarded_decay": 2,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_20000",
+     "t": 1000020.0,
+     "goal": "follow_up",
+     "basis": [
+      "P6_a",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_14480000",
+     "t": 1014480.0,
+     "goal": "follow_up",
+     "basis": [
+      "P6_b",
+      "用户",
+      "用户关系"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "None/": 50
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P6 已回应再现",
+   "path": "v2",
+   "formed": 4,
+   "expressed": 2,
+   "expressed_by_goal": {
+    "follow_up": 2
+   },
+   "discarded_decay": 2,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_20000",
+     "t": 1000020.0,
+     "goal": "follow_up",
+     "basis": [
+      "P6_a",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_14480000",
+     "t": 1014480.0,
+     "goal": "follow_up",
+     "basis": [
+      "P6_b",
+      "用户",
+      "用户关系"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "suppress/duplicate_recent": 48,
+    "express/statement_bar_met": 2
+   },
+   "restart_check": false,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P7 重启恢复",
+   "path": "v1",
+   "formed": 4,
+   "expressed": 2,
+   "expressed_by_goal": {
+    "follow_up": 2
+   },
+   "discarded_decay": 2,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_20000",
+     "t": 1000020.0,
+     "goal": "follow_up",
+     "basis": [
+      "P7_a",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_39680000",
+     "t": 1039680.0,
+     "goal": "follow_up",
+     "basis": [
+      "P7_b",
+      "用户",
+      "用户关系"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "None/": 50
+   },
+   "restart_check": true,
+   "channel_deliveries": 0
+  },
+  {
+   "name": "P7 重启恢复",
+   "path": "v2",
+   "formed": 4,
+   "expressed": 2,
+   "expressed_by_goal": {
+    "follow_up": 2
+   },
+   "discarded_decay": 2,
+   "discarded_stale": 0,
+   "expressed_detail": [
+    {
+     "ci": "CI_20000",
+     "t": 1000020.0,
+     "goal": "follow_up",
+     "basis": [
+      "P7_a",
+      "用户",
+      "用户关系"
+     ]
+    },
+    {
+     "ci": "CI_39680000",
+     "t": 1039680.0,
+     "goal": "follow_up",
+     "basis": [
+      "P7_b",
+      "用户",
+      "用户关系"
+     ]
+    }
+   ],
+   "verdict_mix": {
+    "suppress/duplicate_recent": 48,
+    "express/statement_bar_met": 2
+   },
+   "restart_check": true,
+   "channel_deliveries": 0
+  }
+ ]
+}

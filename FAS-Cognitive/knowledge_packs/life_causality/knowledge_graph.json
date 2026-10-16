@@ -1,0 +1,965 @@
+{
+ "nodes": [
+  {
+   "id": "事件",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "参与者",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "场所",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "前提条件",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "后果",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "障碍",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "应对方式",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "策略",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "证据",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "例外",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "经验总结",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "行动结果沉淀成的可复用知识"
+   }
+  },
+  {
+   "id": "锻炼",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "休息",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "做饭",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "整理房间",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "喝水",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "道歉",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "和解",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "冲突",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "合作",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "计划",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "行动",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "结果",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "学习_个体",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "从经验获得持久变化"
+   }
+  },
+  {
+   "id": "挫折感",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "目标受阻",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "策略调整",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "统计倾向",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "A常伴B ≠ A必然导致B"
+   }
+  },
+  {
+   "id": "因果关系",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "日常行为",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "注意力",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "睡眠不足",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "身体状态",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "疲劳",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "食材",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "关系压力",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "信任",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "失败",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "情绪低落",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  }
+ ],
+ "edges": [
+  {
+   "src": "事件",
+   "dst": "参与者",
+   "relation": "包含",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "事件",
+   "dst": "场所",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "事件",
+   "dst": "前提条件",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "事件",
+   "dst": "后果",
+   "relation": "产生",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "行动",
+   "dst": "事件",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "计划",
+   "dst": "行动",
+   "relation": "先于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "行动",
+   "dst": "策略",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "障碍",
+   "dst": "行动",
+   "relation": "阻碍",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "行动",
+   "dst": "结果",
+   "relation": "产生",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "结果",
+   "dst": "经验总结",
+   "relation": "先于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "应对方式",
+   "dst": "策略",
+   "relation": "可实现为",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "睡眠不足",
+   "dst": "注意力",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "锻炼",
+   "dst": "情绪低落",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "锻炼",
+   "dst": "应对方式",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "休息",
+   "dst": "应对方式",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "休息",
+   "dst": "疲劳",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "喝水",
+   "dst": "身体状态",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "做饭",
+   "dst": "日常行为",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "做饭",
+   "dst": "食材",
+   "relation": "需要",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "冲突",
+   "dst": "道歉",
+   "relation": "可修复于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "道歉",
+   "dst": "和解",
+   "relation": "可达成",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "冲突",
+   "dst": "关系压力",
+   "relation": "产生",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "合作",
+   "dst": "信任",
+   "relation": "产生",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "失败",
+   "dst": "目标受阻",
+   "relation": "诱发",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "目标受阻",
+   "dst": "挫折感",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "应对方式",
+   "dst": "策略调整",
+   "relation": "可实现为",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "因果关系",
+   "dst": "证据",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "因果关系",
+   "dst": "例外",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "经验总结",
+   "dst": "学习_个体",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "失败",
+   "dst": "经验总结",
+   "relation": "先于",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "统计倾向",
+   "dst": "因果关系",
+   "relation": "区别于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "冲突",
+   "dst": "关系压力",
+   "relation": "产生",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "合作",
+   "dst": "信任",
+   "relation": "产生",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "睡眠不足",
+   "dst": "注意力",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "锻炼",
+   "dst": "情绪低落",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "休息",
+   "dst": "疲劳",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "喝水",
+   "dst": "身体状态",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "做饭",
+   "dst": "日常行为",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "做饭",
+   "dst": "食材",
+   "relation": "需要",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "冲突",
+   "dst": "道歉",
+   "relation": "可修复于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "道歉",
+   "dst": "和解",
+   "relation": "可达成",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  }
+ ]
+}

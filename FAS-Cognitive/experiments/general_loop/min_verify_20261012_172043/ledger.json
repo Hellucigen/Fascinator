@@ -1,0 +1,75 @@
+{
+  "inferno_canto1_johnson": {
+    "uri": "gutenberg:41537",
+    "title": "Dante, Inferno Canto I (Henry Johnson trans., PD)",
+    "total_units": 8,
+    "goal": {
+      "type": "covered",
+      "condition": "all_units_confirmed",
+      "created": "2026-10-12 17:20:51"
+    },
+    "units": {
+      "1": {
+        "sha256": "29eba2e4a9be1771",
+        "status": "failed",
+        "written": null,
+        "attempts": 1,
+        "error": "extract:RuntimeError(\"extract failed after retries: ValueError('unsalvageable extractor output')\")",
+        "dispatch_ts": "2026-10-12 17:20:51",
+        "read_ts": "2026-10-12 17:20:58"
+      },
+      "2": {
+        "sha256": "3704e8275736d34c",
+        "status": "pending",
+        "written": null,
+        "attempts": 0,
+        "error": ""
+      },
+      "3": {
+        "sha256": "0185fc9acd40cf7b",
+        "status": "pending",
+        "written": null,
+        "attempts": 0,
+        "error": ""
+      },
+      "4": {
+        "sha256": "64ceaf5deb794046",
+        "status": "pending",
+        "written": null,
+        "attempts": 0,
+        "error": ""
+      },
+      "5": {
+        "sha256": "b714dc467b925903",
+        "status": "pending",
+        "written": null,
+        "attempts": 0,
+        "error": ""
+      },
+      "6": {
+        "sha256": "63f75b803ed6ddce",
+        "status": "pending",
+        "written": null,
+        "attempts": 0,
+        "error": ""
+      },
+      "7": {
+        "sha256": "0c2c44d6f47c53c8",
+        "status": "pending",
+        "written": null,
+        "attempts": 0,
+        "error": ""
+      },
+      "8": {
+        "sha256": "faff70e68a02eb75",
+        "status": "pending",
+        "written": null,
+        "attempts": 0,
+        "error": ""
+      }
+    },
+    "facts": [],
+    "gaps": [],
+    "created": "2026-10-12 17:20:51"
+  }
+}

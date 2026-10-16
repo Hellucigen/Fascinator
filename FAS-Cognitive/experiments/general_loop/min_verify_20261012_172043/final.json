@@ -1,0 +1,46 @@
+{
+ "out": {
+  "V2": {
+   "verdict": "ask",
+   "errors": [],
+   "spec": {
+    "preds": [
+     "loc:board_a:workshop"
+    ],
+    "constraints": {
+     "forbid_ops": [
+      "consume:iron_ore"
+     ],
+     "forbid_del": [
+      "iron_ore"
+     ]
+    },
+    "questions": [
+     "Is workshop a directory path (if so, what is it) or a named location in your system?",
+     "Is board_a a file, a directory, or an item/record?",
+     "If workshop/board_a already exists, should I overwrite it, keep both, or stop and ask?"
+    ]
+   },
+   "iron_forbid_kept": true
+  },
+  "READ": {
+   "status": "failed",
+   "partial": null,
+   "relations": 0,
+   "facts": []
+  },
+  "CALLS": 2
+ },
+ "calls": [
+  {
+   "tok": "214+289",
+   "user": "把 board_a 搬到 workshop；不要消耗任何铁矿石（forbid consuming i",
+   "raw": "{\"preds\": [\"loc:board_a:workshop\"], \"constraints\": {\"forbid_ops\": [\"consume:iron_ore\"], \"forbid_del\": [\"iron_ore\"], \"forbid_add\": []}, \"questions\": [\"Is workshop a directory path (if so, what is it) or a named location in your system?\", \"Is board_a a file, a directory, or an item/record?\", \"If workshop/board_a already exists, should I overwrite it, keep both, or stop and ask?\"]}"
+  },
+  {
+   "tok": "264+185",
+   "user": "Extract knowledge from the text unit. Return STRIC",
+   "raw": "{\"entities\":[\"I\",\"darksome wood\",\"right road\",\"maze\"],\\\"relations\\\":[{\\\"src\\\":\\\"I\\\",\\\"rel\\\":\\\"位于\\\",\\\"dst\\\":\\\"darksome wood\\\",\\\"kind\\\":\\\"text\\\",\\\"quote\\\":\\\"I found that I was in a darksome wood\\\"},{\\\"src\\\":\\\"right road\\\",\\\"rel\\\":\\\"位于\\\",\\\"dst\\\":\\\"maze\\\",\\\"kind\\\":\\\"inference\\\",\\\"quote\\\":\\\"The right road lost and vanished in the maze\\\"},{\\\"src\\\":\\\"right road\\\",\\\"rel\\\":\\\"相关\\\",\\\"dst\\\":\\\"I\\\",\\\"kind\\\":\\\"i"
+  }
+ ]
+}

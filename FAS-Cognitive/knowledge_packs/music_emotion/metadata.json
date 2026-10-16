@@ -1,0 +1,9 @@
+{
+ "name": "music_emotion",
+ "type": "semantic",
+ "enabled": true,
+ "priority": 6,
+ "description": "音乐-情绪-感官-个人经历跨领域骨架（作品结构/听觉属性/主题/情绪分层/行为场景/作用机制 likely 标注）",
+ "created": "2026-10-13",
+ "version": 1
+}

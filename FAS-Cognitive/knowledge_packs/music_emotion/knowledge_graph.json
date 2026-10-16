@@ -1,0 +1,2290 @@
+{
+ "nodes": [
+  {
+   "id": "歌曲",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "音乐的人声短篇作品"
+   }
+  },
+  {
+   "id": "歌词",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "旋律",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "和声",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "音色",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "力度",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "音量强弱变化"
+   }
+  },
+  {
+   "id": "速度_音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "快慢( BPM )"
+   }
+  },
+  {
+   "id": "演唱",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "乐器",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "专辑",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "背景音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "伴随其他活动的非注意中心音乐"
+   }
+  },
+  {
+   "id": "慢歌",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "快歌",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "纯音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "无人声"
+   }
+  },
+  {
+   "id": "民谣",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "摇滚",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "说唱",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "抒情歌",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "听觉体验",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "音量",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "音高",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "柔和",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "刺耳",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "动感",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "节奏激起的身体反应"
+   }
+  },
+  {
+   "id": "听觉疲劳",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "能量感",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "音乐传达的强弱兴醒度"
+   }
+  },
+  {
+   "id": "离别",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "爱情",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "失恋",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "成长",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "梦想",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "自由",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "自然_主题",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "城市生活",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "故乡",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "青春",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "怀念",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "思念",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "希望",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "平静",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "感伤",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "温暖",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "振奋",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "孤独感",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "听音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "唱歌",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "搜索歌曲",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "分享歌曲",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "收藏歌曲",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "单曲循环",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "现场演出",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "放音乐当背景",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "情绪调节",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "改变情绪状态的一般过程"
+   }
+  },
+  {
+   "id": "放松",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "专注提升",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "提神",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "记忆唤起",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "怀旧效应",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "老歌触发当年情境记忆"
+   }
+  },
+  {
+   "id": "背景音效应",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "音乐对任务表现的影响视任务与人而定"
+   }
+  },
+  {
+   "id": "入睡困难缓解",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "情绪传染_音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "作品情绪向听者传递的现象"
+   }
+  },
+  {
+   "id": "通勤",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "睡前",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "运动中",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "工作时",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "学习时",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "雨天",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "聚会",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "咖啡馆场景",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "夜晚独处",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "个人音乐记忆",
+   "weight": 0.6,
+   "activation": 0.0,
+   "label": "declarative-episodic",
+   "graph_space": "episodic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "某人在某时某地听某歌的经历之总类"
+   }
+  },
+  {
+   "id": "喜欢的歌",
+   "weight": 0.6,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "习惯养成_音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "音乐作品",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "创作出的音乐实体总称"
+   }
+  },
+  {
+   "id": "音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "音乐风格",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "听觉",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "节奏",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "流行音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "电子音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "播放设备",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "音乐平台",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "表达行为",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "场景",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "老歌",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general",
+    "note": "与某人某段岁月绑定过的作品"
+   }
+  },
+  {
+   "id": "经历记忆",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "难过",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "大声_持续",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "失恋歌曲占多",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  },
+  {
+   "id": "悲伤的音乐",
+   "weight": 0.5,
+   "activation": 0.0,
+   "label": "declarative-semantic",
+   "graph_space": "semantic",
+   "execution": null,
+   "confidence": 0.6,
+   "extra_attrs": {
+    "type": "prior_concept",
+    "source": "knowledge_pack_v1:2026-10-13",
+    "epistemic": "general"
+   }
+  }
+ ],
+ "edges": [
+  {
+   "src": "歌曲",
+   "dst": "音乐作品",
+   "relation": "是",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "纯音乐",
+   "dst": "音乐作品",
+   "relation": "是",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "背景音乐",
+   "dst": "音乐作品",
+   "relation": "是",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "音乐作品",
+   "dst": "音乐",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "歌词",
+   "dst": "歌曲",
+   "relation": "组成部分",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "旋律",
+   "dst": "歌曲",
+   "relation": "组成部分",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "和声",
+   "dst": "歌曲",
+   "relation": "组成部分",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "演唱",
+   "dst": "歌曲",
+   "relation": "组成部分",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "音色",
+   "dst": "音乐",
+   "relation": "组成部分",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "力度",
+   "dst": "音乐",
+   "relation": "组成部分",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "速度_音乐",
+   "dst": "音乐",
+   "relation": "组成部分",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "节奏",
+   "dst": "音乐",
+   "relation": "组成部分",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "旋律",
+   "dst": "音高",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "旋律",
+   "dst": "和声",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "乐器",
+   "dst": "音色",
+   "relation": "产生",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "演唱",
+   "dst": "音色",
+   "relation": "产生",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "专辑",
+   "dst": "音乐作品",
+   "relation": "包含",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "民谣",
+   "dst": "音乐风格",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "摇滚",
+   "dst": "音乐风格",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "说唱",
+   "dst": "音乐风格",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "抒情歌",
+   "dst": "音乐风格",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "流行音乐",
+   "dst": "音乐风格",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "电子音乐",
+   "dst": "音乐风格",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "慢歌",
+   "dst": "速度_音乐",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "快歌",
+   "dst": "速度_音乐",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "音乐",
+   "dst": "听觉体验",
+   "relation": "作用于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "听觉体验",
+   "dst": "听觉",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "音量",
+   "dst": "力度",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "刺耳",
+   "dst": "音色",
+   "relation": "是",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "柔和",
+   "dst": "音色",
+   "relation": "是",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "动感",
+   "dst": "快歌",
+   "relation": "诱发",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "快歌",
+   "dst": "动感",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "音量",
+   "dst": "听觉疲劳",
+   "relation": "影响",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "能量感",
+   "dst": "快歌",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "抒情歌",
+   "dst": "能量感",
+   "relation": "具有",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "歌词",
+   "dst": "离别",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "歌词",
+   "dst": "爱情",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "歌词",
+   "dst": "成长",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "歌词",
+   "dst": "故乡",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "民谣",
+   "dst": "故乡",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "民谣",
+   "dst": "青春",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "抒情歌",
+   "dst": "爱情",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "失恋歌曲占多",
+   "dst": "失恋",
+   "relation": "关于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "摇滚",
+   "dst": "自由",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "说唱",
+   "dst": "城市生活",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "离别",
+   "dst": "思念",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "离别",
+   "dst": "感伤",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "故乡",
+   "dst": "怀念",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "青春",
+   "dst": "怀念",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "梦想",
+   "dst": "希望",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "爱情",
+   "dst": "温暖",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "失恋",
+   "dst": "孤独感",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "慢歌",
+   "dst": "平静",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "慢歌",
+   "dst": "感伤",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "快歌",
+   "dst": "振奋",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "摇滚",
+   "dst": "振奋",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "抒情歌",
+   "dst": "感伤",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "听音乐",
+   "dst": "播放设备",
+   "relation": "需要",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "听音乐",
+   "dst": "情绪调节",
+   "relation": "作用于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "听音乐",
+   "dst": "通勤",
+   "relation": "发生于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "听音乐",
+   "dst": "睡前",
+   "relation": "发生于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "听音乐",
+   "dst": "运动中",
+   "relation": "发生于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "听音乐",
+   "dst": "工作时",
+   "relation": "发生于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "背景音乐",
+   "dst": "工作时",
+   "relation": "发生于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "背景音乐",
+   "dst": "学习时",
+   "relation": "发生于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "搜索歌曲",
+   "dst": "音乐平台",
+   "relation": "使用",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "分享歌曲",
+   "dst": "表达行为",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "单曲循环",
+   "dst": "听觉疲劳",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "唱歌",
+   "dst": "演唱",
+   "relation": "使用",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "情绪调节",
+   "dst": "听音乐",
+   "relation": "可实现为",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "听音乐",
+   "dst": "放松",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "慢歌",
+   "dst": "入睡困难缓解",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "背景音乐",
+   "dst": "专注提升",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "快歌",
+   "dst": "提神",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "怀旧效应",
+   "dst": "老歌",
+   "relation": "关于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "老歌",
+   "dst": "记忆唤起",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "音乐作品",
+   "dst": "怀旧效应",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "情绪传染_音乐",
+   "dst": "能量感",
+   "relation": "关于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "背景音效应",
+   "dst": "工作时",
+   "relation": "关于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "个人音乐记忆",
+   "dst": "经历记忆",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "喜欢的歌",
+   "dst": "个人音乐记忆",
+   "relation": "关于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "怀旧效应",
+   "dst": "个人音乐记忆",
+   "relation": "关于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "老歌",
+   "dst": "喜欢的歌",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "习惯养成_音乐",
+   "dst": "喜欢的歌",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "歌词",
+   "dst": "自然_主题",
+   "relation": "针对",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "收藏歌曲",
+   "dst": "音乐平台",
+   "relation": "需要",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "现场演出",
+   "dst": "演唱",
+   "relation": "使用",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "放音乐当背景",
+   "dst": "背景音乐",
+   "relation": "产生",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "悲伤的音乐",
+   "dst": "感伤",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "悲伤的音乐",
+   "dst": "难过",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "大声_持续",
+   "dst": "音量",
+   "relation": "是",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "大声_持续",
+   "dst": "听觉疲劳",
+   "relation": "影响",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "难过",
+   "dst": "感伤",
+   "relation": "相关",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "夜晚独处",
+   "dst": "场景",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "雨天",
+   "dst": "场景",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "睡前",
+   "dst": "场景",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "通勤",
+   "dst": "场景",
+   "relation": "属于",
+   "weight": 0.5,
+   "extra_attrs": {
+    "certainty": "general",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "雨天",
+   "dst": "平静",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "雨天",
+   "dst": "感伤",
+   "relation": "诱发",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "聚会",
+   "dst": "快歌",
+   "relation": "需要",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  },
+  {
+   "src": "咖啡馆场景",
+   "dst": "背景音乐",
+   "relation": "需要",
+   "weight": 0.35,
+   "extra_attrs": {
+    "certainty": "likely",
+    "source": "knowledge_pack_v1:2026-10-13"
+   }
+  }
+ ]
+}

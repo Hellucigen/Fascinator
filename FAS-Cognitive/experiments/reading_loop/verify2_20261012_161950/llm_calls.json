@@ -1,0 +1,87 @@
+{
+ "calls": [
+  10
+ ],
+ "log": [
+  {
+   "model": "mimo-v2.6-flash",
+   "max_tokens": 900,
+   "prompt_tokens": 264,
+   "completion_tokens": 113,
+   "latency_s": 3.46,
+   "raw": "{\"entities\":[\"I\",\"darksome wood\",\"right road\"],\"relations\":[{\"src\":\"I\",\"rel\":\"位于\",\"dst\":\"darksome wood\",\"kind\":\"text\",\"quote\":\"I found that I was in a darksome wood\"},{\"src\":\"right road\",\"rel\":\"属于\",\"dst\":\"I\",\"kind\":\"text\",\"quote\":\"The right road lost and vanished in the maze\"}]}"
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "max_tokens": 900,
+   "prompt_tokens": 264,
+   "completion_tokens": 365,
+   "latency_s": 21.35,
+   "raw": "{\"entities\":[\"wood\",\"wild\",\"terrible\",\"thought\",\"terror\",\"me\"], \"relations\":[{\"src\":\"wood\",\"rel\":\"是\",\"dst\":\"wild\",\"kind\":\"text\",\"quote\":\"how rough that wood was, wild, and terrible\"},{\"src\":\"wood\",\"rel\":\"是\",\"dst\":\"terrible\",\"kind\":\"text\",\"quote\":\"wild, and terrible\"},{\"src\":\"thought\",\"rel\":\"导致\",\"dst\":\"terror\",\"kind\":\"text\",\"quote\":\"By the mere thought my terror is renewed\"},{\"src\":\"terror\",\"rel\":\"是\",\"dst\":\"me\",\"kind\":\"inference\",\"quote\":\"my terror is renewed\"}]}"
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "max_tokens": 900,
+   "prompt_tokens": 265,
+   "completion_tokens": 171,
+   "latency_s": 6.06,
+   "raw": "{\"entities\":[\"death\",\"the speaker\",\"good\"], \"relations\":[{\"src\":\"the speaker\",\"rel\":\"涉及\",\"dst\":\"death\",\"kind\":\"inference\",\"quote\":\"More bitter scarce were death.\"},{\"src\":\"the speaker\",\"rel\":\"拥有\",\"dst\":\"good\",\"kind\":\"text\",\"quote\":\"At large of good which there by me was found\"},{\"src\":\"good\",\"rel\":\"位于\",\"dst\":\"there\",\"kind\":\"text\",\"quote\":\"good which there by me was found\"}]}"
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "max_tokens": 900,
+   "prompt_tokens": 270,
+   "completion_tokens": 501,
+   "latency_s": 9.11,
+   "raw": "{\"entities\":[\"叙述者\",\"那片土地\",\"正途\",\"沉睡\"],\"relations\":[{\"src\":\"叙述者\",\"rel\":\"相关\",\"dst\":\"那片土地\",\"kind\":\"text\",\"quote\":\"Scarce know I how I entered on that ground\"},{\"src\":\"叙述者\",\"rel\":\"相关\",\"dst\":\"正途\",\"kind\":\"text\",\"quote\":\"From the right way\"},{\"src\":\"沉睡\",\"rel\":\"导致\",\"dst\":\"叙述者\",\"kind\":\"inference\",\"quote\":\"So deeply, at the moment when I passed From the right way, was I in slumber drowned\"}]}"
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "max_tokens": 900,
+   "prompt_tokens": 262,
+   "completion_tokens": 322,
+   "latency_s": 39.43,
+   "raw": "{\"entities\":[\"hill\",\"valley\",\"terror\",\"heart\"],\"relations\":[{\"src\":\"hill\",\"rel\":\"位于\",\"dst\":\"valley\",\"kind\":\"text\",\"quote\":\"for the boundary of the valley stood\"},{\"src\":\"terror\",\"rel\":\"导致\",\"dst\":\"heart\",\"kind\":\"text\",\"quote\":\"with such terror had my heart harassed\"},{\"src\":\"hill\",\"rel\":\"相关\",\"dst\":\"terror\",\"kind\":\"inference\",\"quote\":\"That with such terror had my heart harassed\"}]}"
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "max_tokens": 900,
+   "prompt_tokens": 261,
+   "completion_tokens": 195,
+   "latency_s": 4.58,
+   "raw": "{\"entities\": [\"shoulders\", \"planet's light\"], \"relations\": [{\"src\": \"planet's light\", \"rel\": \"位于\", \"dst\": \"every road\", \"kind\": \"text\", \"quote\": \"guideth surely upon every road\"}, {\"src\": \"shoulders\", \"rel\": \"相关\", \"dst\": \"planet's light\", \"kind\": \"text\", \"quote\": \"shoulders glowed, Radiant already with that planet's light\"}]}"
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "purpose": "answer",
+   "prompt_tokens": 118,
+   "completion_tokens": 47,
+   "latency_s": 2.56,
+   "raw": "In a darksome wood."
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "max_tokens": 900,
+   "prompt_tokens": 302,
+   "completion_tokens": 438,
+   "latency_s": 7.83,
+   "raw": "{\"entities\":[\"Alice\",\"Alice的姐姐\",\"河岸\",\"姐姐正在读的书\"],\"relations\":[{\"src\":\"Alice\",\"rel\":\"位于\",\"dst\":\"河岸\",\"kind\":\"text\",\"quote\":\"sitting by her sister on the bank\"},{\"src\":\"Alice的姐姐\",\"rel\":\"拥有\",\"dst\":\"姐姐正在读的书\",\"kind\":\"text\",\"quote\":\"the book her sister was reading\"},{\"src\":\"Alice\",\"rel\":\"涉及\",\"dst\":\"姐姐正在读的书\",\"kind\":\"text\",\"quote\":\"she had peeped into the book her sister was reading\"},{\"src\":\"姐姐正在读的书\",\"rel\":\"属于\",\"dst\":\"没有图画或对话的书\",\"kind\":\"text\",\"quote\":\"it had no pictures or conversations in it\"},{\"src\":\"Alice\",\"rel\":\"相关\",\"dst\":\"姐姐正在读的书\",\"kind\":\"inference\",\"quote\":\"what is the use of a book ... without p"
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "max_tokens": 900,
+   "prompt_tokens": 299,
+   "completion_tokens": 481,
+   "latency_s": 24.66,
+   "raw": "{\"entities\":[\"Alice\",\"White Rabbit\",\"daisy-chain\",\"daisies\",\"hot day\"],\"relations\":[{\"src\":\"White Rabbit\",\"rel\":\"相关\",\"dst\":\"Alice\",\"kind\":\"text\",\"quote\":\"a White Rabbit with pink eyes ran close by her\"},{\"src\":\"hot day\",\"rel\":\"导致\",\"dst\":\"Alice\",\"kind\":\"text\",\"quote\":\"the hot day made her feel very sleepy and stupid\"},{\"src\":\"daisy-chain\",\"rel\":\"需要\",\"dst\":\"daisies\",\"kind\":\"inference\",\"quote\":\"whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies\"},{\"src\":\"Alice\",\"rel\":\"涉及\",\"dst\":\"daisy-chain\",\"kind\":\"text\",\"quote\":\"the pleasure of making a"
+  },
+  {
+   "model": "mimo-v2.6-flash",
+   "purpose": "answer",
+   "prompt_tokens": 237,
+   "completion_tokens": 28,
+   "latency_s": 3.17,
+   "raw": "河岸（river bank）。"
+  }
+ ]
+}

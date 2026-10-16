@@ -1,0 +1,17 @@
+{
+ "V1": {
+  "kind": "error",
+  "landed": false,
+  "reply": "任务闭环内部故障（未回退旧路径）: AuthenticationError(\"Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type'"
+ },
+ "V2": {
+  "kind": "error",
+  "constraints_in_ledger": [],
+  "iron_forbid_kept": false
+ },
+ "V3": {
+  "kind": "error",
+  "reply": "任务闭环内部故障（未回退旧路径）: AuthenticationError(\"Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', '",
+  "no_env_built": false
+ }
+}

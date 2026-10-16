@@ -1,0 +1,79 @@
+{
+ "V1": {
+  "kind": "ask",
+  "landed": false,
+  "reply": "需要先确认：是否需要在归档后删除 inbox/notes.txt？；inbox 和 archive 相对于哪个根目录？"
+ },
+ "V2": {
+  "kind": "task",
+  "constraints_in_ledger": [
+   {
+    "forbid_ops": [
+     "touch:storage:*",
+     "consume:iron_ore"
+    ],
+    "forbid_del": []
+   }
+  ],
+  "iron_forbid_kept": true
+ },
+ "V3": {
+  "kind": "reject",
+  "reply": "无法把这句话安全结构化为任务目标（preds 缺失/为空/非规范谓词），不执行。",
+  "no_env_built": false
+ },
+ "V4": {
+  "kind": "task",
+  "invalid_or_miss_recorded": true,
+  "not_false_completed": true,
+  "status": "active"
+ },
+ "V5": {
+  "kind": "progress",
+  "zero_new_llm": true,
+  "reply": "任务进行中；已核验 0/1 项目标；未满足：['loc:dup.txt:archive']；本任务累计行动 1 步、重规划 0 次、无效 1 次、未核验 0 次"
+ },
+ "READ": {
+  "results": [
+   {
+    "unit": 1,
+    "status": "confirmed",
+    "partial": false,
+    "relations": 3,
+    "reason": ""
+   }
+  ],
+  "progress": "已确认 1/8 单元；失败 0；下一步：读第 2 单元"
+ },
+ "BUDGET": {
+  "calls": 5,
+  "cap": 10,
+  "usage": [
+   {
+    "tok": "262+1745",
+    "lat": 37.05,
+    "purpose": "USER INSTRUCTION:\n把 inbox 里的 notes.txt 归"
+   },
+   {
+    "tok": "269+5851",
+    "lat": 76.21,
+    "purpose": "USER INSTRUCTION:\n把 board_a 搬到 workshop；"
+   },
+   {
+    "tok": "255+344",
+    "lat": 6.54,
+    "purpose": "USER INSTRUCTION:\n把那个文件弄过去"
+   },
+   {
+    "tok": "259+2202",
+    "lat": 48.4,
+    "purpose": "USER INSTRUCTION:\n把 dup.txt 从 inbox 移到 a"
+   },
+   {
+    "tok": "294+887",
+    "lat": 15.38,
+    "purpose": "Extract knowledge from the text unit. Re"
+   }
+  ]
+ }
+}

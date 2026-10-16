@@ -1,0 +1,107 @@
+{
+ "A_goal": {
+  "goal": {
+   "type": "covered",
+   "condition": "all_units_confirmed",
+   "created": "2026-10-12 15:11:30"
+  },
+  "first_next": 1
+ },
+ "B_read": [
+  {
+   "unit": 1,
+   "status": "failed",
+   "relations": 0
+  },
+  {
+   "unit": 2,
+   "status": "confirmed",
+   "relations": 2
+  },
+  {
+   "unit": 3,
+   "status": "failed",
+   "relations": 0
+  },
+  {
+   "unit": 4,
+   "status": "confirmed",
+   "relations": 4
+  },
+  {
+   "unit": 5,
+   "status": "failed",
+   "relations": 0
+  },
+  {
+   "unit": 6,
+   "status": "confirmed",
+   "relations": 2
+  }
+ ],
+ "B_q_wood": {
+  "status": "evidence",
+  "units": [
+   2,
+   4,
+   6
+  ],
+  "n_facts": 8,
+  "answer": "INSUFFICIENT_EVIDENCE"
+ },
+ "B_q_beast": {
+  "status": "evidence",
+  "units": [
+   2,
+   4
+  ],
+  "n_facts": 6,
+  "answer": "INSUFFICIENT_EVIDENCE"
+ },
+ "C_resume": {
+  "progress_after_restart": {
+   "confirmed": 3,
+   "total": 8,
+   "failed": 3,
+   "dispatched": 0
+  },
+  "next_unit_after_restart": 1
+ },
+ "D_conflicts": [],
+ "D_history_query": [],
+ "E_gated": {
+  "status": "evidence",
+  "units": [
+   2
+  ],
+  "n_facts": 2,
+  "answer": "INSUFFICIENT_EVIDENCE"
+ },
+ "E_baseline_no_gate": {
+  "answer": "In *Purgatorio*, Canto II, Cato rebukes Virgil, Dante, and Statius for daring to tread upon the sacred shore of his mountain, demanding to know what living beings are doing there. He then orders them to show their lighter natures (their lack of sin) "
+ },
+ "F_alice": {
+  "read": [
+   "failed",
+   "failed"
+  ],
+  "answer": "INSUFFICIENT_EVIDENCE",
+  "progress": {
+   "confirmed": 0,
+   "total": 5,
+   "failed": 2,
+   "dispatched": 0
+  }
+ },
+ "claims_vs_evidence_inferno": {
+  "claims_done": false,
+  "evidence_done": false,
+  "progress": {
+   "confirmed": 3,
+   "total": 8,
+   "failed": 3,
+   "dispatched": 0
+  }
+ },
+ "dropped_relations_count": 0
+}

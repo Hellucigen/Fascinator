@@ -1,0 +1,501 @@
+{
+ "generated": "2026-10-11 00:42:37",
+ "code": {
+  "cognitive": "de6e8bd+dirty",
+  "companion": "66bd2e7+dirty"
+ },
+ "config": {
+  "form": 0.55,
+  "express": 0.78,
+  "defer_max": 1800,
+  "dedup": 1800,
+  "max_hour": 6,
+  "cooldown": 60
+ },
+ "pair": [
+  {
+   "scenario": "A1 新项目事件询问",
+   "family": "A",
+   "opps": [
+    {
+     "id": "ev_proj_a1",
+     "mode": "inquiry",
+     "value": "high"
+    }
+   ],
+   "v1": {
+    "name": "A1 新项目事件询问",
+    "family": "A",
+    "path": "v1",
+    "seed": 0,
+    "opportunities": [
+     {
+      "id": "ev_proj_a1",
+      "mode": "inquiry",
+      "value": "high"
+     }
+    ],
+    "counts": {
+     "cis_formed": 1,
+     "ci_valuable": 1,
+     "ci_noise": 0,
+     "expressed_total": 1,
+     "expressed_valuable": 1,
+     "expressed_noise": 0,
+     "expressed_inquiry": 0,
+     "expressed_no_evidence": 0,
+     "duplicate_express": 0,
+     "discarded": 0,
+     "deferred_final": 0,
+     "still_forming": 0
+    },
+    "expressed": [
+     {
+      "t": 1000010.0,
+      "ci": "CI_10000",
+      "via": "channel",
+      "text": "[mock utterance]",
+      "goal": "follow_up",
+      "basis": [
+       "ev_proj_a1",
+       "用户",
+       "用户关系"
+      ]
+     }
+    ],
+    "verdicts": {
+     "CI_10000": {
+      "expression_score": 0.85,
+      "suppression_score": 0.0,
+      "cooldown_floor_ok": true
+     }
+    },
+    "history": {
+     "CI_10000": [
+      {
+       "t": 1000010.0,
+       "sig": [
+        "expressed",
+        0.85,
+        null,
+        null
+       ],
+       "status": "expressed",
+       "act": 0.85,
+       "verdict": null,
+       "reason": ""
+      }
+     ]
+    },
+    "discard_events": [],
+    "channel_deliveries": 0
+   },
+   "v2": {
+    "name": "A1 新项目事件询问",
+    "family": "A",
+    "path": "v2",
+    "seed": 0,
+    "opportunities": [
+     {
+      "id": "ev_proj_a1",
+      "mode": "inquiry",
+      "value": "high"
+     }
+    ],
+    "counts": {
+     "cis_formed": 1,
+     "ci_valuable": 1,
+     "ci_noise": 0,
+     "expressed_total": 1,
+     "expressed_valuable": 1,
+     "expressed_noise": 0,
+     "expressed_inquiry": 0,
+     "expressed_no_evidence": 0,
+     "duplicate_express": 0,
+     "discarded": 0,
+     "deferred_final": 0,
+     "still_forming": 0
+    },
+    "expressed": [
+     {
+      "t": 1000010.0,
+      "ci": "CI_10000",
+      "via": "channel",
+      "text": "[mock utterance]",
+      "goal": "follow_up",
+      "basis": [
+       "ev_proj_a1",
+       "用户",
+       "用户关系"
+      ]
+     }
+    ],
+    "verdicts": {
+     "CI_10000": {
+      "verdict": "express",
+      "reason": "statement_bar_met",
+      "decision": "v2",
+      "expression_score": 0.85,
+      "salience": 0.85,
+      "suppression_score": 0.0,
+      "bar": 0.78,
+      "content_class": "statement",
+      "evidence": {
+       "episodic": true,
+       "emotion": false,
+       "unknown": false
+      },
+      "cooldown_floor_ok": true,
+      "suppression_terms": []
+     }
+    },
+    "history": {
+     "CI_10000": [
+      {
+       "t": 1000010.0,
+       "sig": [
+        "expressed",
+        0.85,
+        "express",
+        "statement_bar_met"
+       ],
+       "status": "expressed",
+       "act": 0.85,
+       "verdict": "express",
+       "reason": "statement_bar_met"
+      }
+     ]
+    },
+    "discard_events": [],
+    "channel_deliveries": 0
+   }
+  },
+  {
+   "scenario": "A2 新术语询问",
+   "family": "A",
+   "opps": [
+    {
+     "id": "ev_term_a2",
+     "mode": "inquiry",
+     "value": "high"
+    },
+    {
+     "id": "用户近况_a2",
+     "mode": "inquiry",
+     "value": "high"
+    }
+   ],
+   "v1": {
+    "name": "A2 新术语询问",
+    "family": "A",
+    "path": "v1",
+    "seed": 0,
+    "opportunities": [
+     {
+      "id": "ev_term_a2",
+      "mode": "inquiry",
+      "value": "high"
+     },
+     {
+      "id": "用户近况_a2",
+      "mode": "inquiry",
+      "value": "high"
+     }
+    ],
+    "counts": {
+     "cis_formed": 1,
+     "ci_valuable": 1,
+     "ci_noise": 0,
+     "expressed_total": 1,
+     "expressed_valuable": 1,
+     "expressed_noise": 0,
+     "expressed_inquiry": 0,
+     "expressed_no_evidence": 0,
+     "duplicate_express": 0,
+     "discarded": 0,
+     "deferred_final": 0,
+     "still_forming": 0
+    },
+    "expressed": [
+     {
+      "t": 1000010.0,
+      "ci": "CI_10000",
+      "via": "channel",
+      "text": "[mock utterance]",
+      "goal": "follow_up",
+      "basis": [
+       "UnknownConcept_暗物质晕",
+       "用户近况_a2",
+       "用户"
+      ]
+     }
+    ],
+    "verdicts": {
+     "CI_10000": {
+      "expression_score": 0.825,
+      "suppression_score": 0.0,
+      "cooldown_floor_ok": true
+     }
+    },
+    "history": {
+     "CI_10000": [
+      {
+       "t": 1000010.0,
+       "sig": [
+        "expressed",
+        0.825,
+        null,
+        null
+       ],
+       "status": "expressed",
+       "act": 0.825,
+       "verdict": null,
+       "reason": ""
+      }
+     ]
+    },
+    "discard_events": [],
+    "channel_deliveries": 0
+   },
+   "v2": {
+    "name": "A2 新术语询问",
+    "family": "A",
+    "path": "v2",
+    "seed": 0,
+    "opportunities": [
+     {
+      "id": "ev_term_a2",
+      "mode": "inquiry",
+      "value": "high"
+     },
+     {
+      "id": "用户近况_a2",
+      "mode": "inquiry",
+      "value": "high"
+     }
+    ],
+    "counts": {
+     "cis_formed": 1,
+     "ci_valuable": 1,
+     "ci_noise": 0,
+     "expressed_total": 1,
+     "expressed_valuable": 1,
+     "expressed_noise": 0,
+     "expressed_inquiry": 0,
+     "expressed_no_evidence": 0,
+     "duplicate_express": 0,
+     "discarded": 0,
+     "deferred_final": 0,
+     "still_forming": 0
+    },
+    "expressed": [
+     {
+      "t": 1000010.0,
+      "ci": "CI_10000",
+      "via": "channel",
+      "text": "[mock utterance]",
+      "goal": "follow_up",
+      "basis": [
+       "UnknownConcept_暗物质晕",
+       "用户近况_a2",
+       "用户"
+      ]
+     }
+    ],
+    "verdicts": {
+     "CI_10000": {
+      "verdict": "express",
+      "reason": "statement_bar_met",
+      "decision": "v2",
+      "expression_score": 0.825,
+      "salience": 0.825,
+      "suppression_score": 0.0,
+      "bar": 0.78,
+      "content_class": "statement",
+      "evidence": {
+       "episodic": true,
+       "emotion": false,
+       "unknown": true
+      },
+      "cooldown_floor_ok": true,
+      "suppression_terms": []
+     }
+    },
+    "history": {
+     "CI_10000": [
+      {
+       "t": 1000010.0,
+       "sig": [
+        "expressed",
+        0.825,
+        "express",
+        "statement_bar_met"
+       ],
+       "status": "expressed",
+       "act": 0.825,
+       "verdict": "express",
+       "reason": "statement_bar_met"
+      }
+     ]
+    },
+    "discard_events": [],
+    "channel_deliveries": 0
+   }
+  },
+  {
+   "scenario": "A3 来源不充分事件",
+   "family": "A",
+   "opps": [
+    {
+     "id": "ev_partial_a3",
+     "mode": "inquiry",
+     "value": "high"
+    }
+   ],
+   "v1": {
+    "name": "A3 来源不充分事件",
+    "family": "A",
+    "path": "v1",
+    "seed": 0,
+    "opportunities": [
+     {
+      "id": "ev_partial_a3",
+      "mode": "inquiry",
+      "value": "high"
+     }
+    ],
+    "counts": {
+     "cis_formed": 1,
+     "ci_valuable": 1,
+     "ci_noise": 0,
+     "expressed_total": 1,
+     "expressed_valuable": 1,
+     "expressed_noise": 0,
+     "expressed_inquiry": 0,
+     "expressed_no_evidence": 0,
+     "duplicate_express": 0,
+     "discarded": 0,
+     "deferred_final": 0,
+     "still_forming": 0
+    },
+    "expressed": [
+     {
+      "t": 1000010.0,
+      "ci": "CI_10000",
+      "via": "channel",
+      "text": "[mock utterance]",
+      "goal": "follow_up",
+      "basis": [
+       "ev_partial_a3",
+       "用户"
+      ]
+     }
+    ],
+    "verdicts": {
+     "CI_10000": {
+      "expression_score": 0.85,
+      "suppression_score": 0.0,
+      "cooldown_floor_ok": true
+     }
+    },
+    "history": {
+     "CI_10000": [
+      {
+       "t": 1000010.0,
+       "sig": [
+        "expressed",
+        0.85,
+        null,
+        null
+       ],
+       "status": "expressed",
+       "act": 0.85,
+       "verdict": null,
+       "reason": ""
+      }
+     ]
+    },
+    "discard_events": [],
+    "channel_deliveries": 0
+   },
+   "v2": {
+    "name": "A3 来源不充分事件",
+    "family": "A",
+    "path": "v2",
+    "seed": 0,
+    "opportunities": [
+     {
+      "id": "ev_partial_a3",
+      "mode": "inquiry",
+      "value": "high"
+     }
+    ],
+    "counts": {
+     "cis_formed": 1,
+     "ci_valuable": 1,
+     "ci_noise": 0,
+     "expressed_total": 1,
+     "expressed_valuable": 1,
+     "expressed_noise": 0,
+     "expressed_inquiry": 0,
+     "expressed_no_evidence": 0,
+     "duplicate_express": 0,
+     "discarded": 0,
+     "deferred_final": 0,
+     "still_forming": 0
+    },
+    "expressed": [
+     {
+      "t": 1000010.0,
+      "ci": "CI_10000",
+      "via": "channel",
+      "text": "[mock utterance]",
+      "goal": "follow_up",
+      "basis": [
+       "ev_partial_a3",
+       "用户"
+      ]
+     }
+    ],
+    "verdicts": {
+     "CI_10000": {
+      "verdict": "express",
+      "reason": "statement_bar_met",
+      "decision": "v2",
+      "expression_score": 0.85,
+      "salience": 0.85,
+      "suppression_score": 0.0,
+      "bar": 0.78,
+      "content_class": "statement",
+      "evidence": {
+       "episodic": true,
+       "emotion": false,
+       "unknown": false
+      },
+      "cooldown_floor_ok": true,
+      "suppression_terms": []
+     }
+    },
+    "history": {
+     "CI_10000": [
+      {
+       "t": 1000010.0,
+       "sig": [
+        "expressed",
+        0.85,
+        "express",
+        "statement_bar_met"
+       ],
+       "status": "expressed",
+       "act": 0.85,
+       "verdict": "express",
+       "reason": "statement_bar_met"
+      }
+     ]
+    },
+    "discard_events": [],
+    "channel_deliveries": 0
+   }
+  }
+ ]
+}

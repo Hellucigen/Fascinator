@@ -1,0 +1,119 @@
+{
+  "head": {
+    "model": "mimo-v2.6-flash",
+    "temperature": 0,
+    "max_tokens": 120,
+    "backend": "MiMo (parent llm_provider)"
+  },
+  "mcnemar_holm": [
+    {
+      "target": "aether_lens",
+      "contrast": "B-A",
+      "rateA": 0.0,
+      "rateX": 0.0,
+      "discordant_X_only": 0,
+      "discordant_A_only": 0,
+      "p_mcnemar_exact": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "target": "aether_lens",
+      "contrast": "C-A",
+      "rateA": 0.0,
+      "rateX": 0.0,
+      "discordant_X_only": 0,
+      "discordant_A_only": 0,
+      "p_mcnemar_exact": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "target": "resonance_core",
+      "contrast": "B-A",
+      "rateA": 0.0,
+      "rateX": 0.0,
+      "discordant_X_only": 0,
+      "discordant_A_only": 0,
+      "p_mcnemar_exact": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "target": "resonance_core",
+      "contrast": "C-A",
+      "rateA": 0.0,
+      "rateX": 0.0,
+      "discordant_X_only": 0,
+      "discordant_A_only": 0,
+      "p_mcnemar_exact": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "target": "oak_planks",
+      "contrast": "B-A",
+      "rateA": 0.5,
+      "rateX": 0.1,
+      "discordant_X_only": 0,
+      "discordant_A_only": 4,
+      "p_mcnemar_exact": 0.125,
+      "p_holm": 0.75
+    },
+    {
+      "target": "oak_planks",
+      "contrast": "C-A",
+      "rateA": 0.5,
+      "rateX": 0.1,
+      "discordant_X_only": 0,
+      "discordant_A_only": 4,
+      "p_mcnemar_exact": 0.125,
+      "p_holm": 0.75
+    }
+  ],
+  "cost": {
+    "A": {
+      "n": 30,
+      "mean_prompt_tok": 454.7,
+      "mean_latency_s": 5.9
+    },
+    "B": {
+      "n": 30,
+      "mean_prompt_tok": 470.5,
+      "mean_latency_s": 3.12
+    },
+    "C": {
+      "n": 30,
+      "mean_prompt_tok": 470.5,
+      "mean_latency_s": 2.42
+    }
+  },
+  "mediation": {
+    "A": {
+      "success_given_token_visible": [
+        0,
+        0
+      ],
+      "success_given_hidden": [
+        5,
+        30
+      ]
+    },
+    "B": {
+      "success_given_token_visible": [
+        1,
+        1
+      ],
+      "success_given_hidden": [
+        0,
+        29
+      ]
+    },
+    "C": {
+      "success_given_token_visible": [
+        1,
+        1
+      ],
+      "success_given_hidden": [
+        0,
+        29
+      ]
+    }
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "date": "2026-10-09",
+  "mode": "read-only",
+  "note": "search-only 审计（bias=off）：对图零写入；沙箱桥为实验事实源非生产知识",
+  "graphs": [
+    {
+      "graph": "mc_production(sandbox-bridge)",
+      "n_nodes": 69,
+      "n_edges": 50,
+      "n_items": 11,
+      "item_sink_fraction": 1.0,
+      "statuses": {
+        "PARTIAL_PATH": 6,
+        "PATH": 5
+      },
+      "depths": null,
+      "leaf_why": {
+        "gatherable:": 27,
+        "unresolved:DEPTH": 19,
+        "unresolved:BUDGET": 3
+      },
+      "forward2_mean": null,
+      "errors": [],
+      "audit_ms": 2.0,
+      "depth_stats": {
+        "n": 11,
+        "mean": 5.909,
+        "median": 7,
+        "max": 8,
+        "zero_fraction": 0.0
+      },
+      "forward2_stats": {
+        "n": 11,
+        "mean": 0.0,
+        "median": 0,
+        "max": 0,
+        "zero_fraction": 1.0
+      }
+    },
+    {
+      "graph": "baseline_snapshot_20260928",
+      "n_nodes": 270,
+      "n_edges": 285,
+      "n_items": 2,
+      "item_sink_fraction": 1.0,
+      "statuses": {
+        "PATH": 2
+      },
+      "depths": null,
+      "leaf_why": {
+        "owned": 2,
+        "unresolved:BLOCK_NOT_GATHERABLE": 1
+      },
+      "forward2_mean": null,
+      "errors": [],
+      "audit_ms": 0.0,
+      "depth_stats": {
+        "n": 2,
+        "mean": 1.0,
+        "median": 2,
+        "max": 2,
+        "zero_fraction": 0.5
+      },
+      "forward2_stats": {
+        "n": 2,
+        "mean": 2.5,
+        "median": 5,
+        "max": 5,
+        "zero_fraction": 0.5
+      }
+    },
+    {
+      "graph": "knowledge_packs_merged",
+      "n_nodes": 63,
+      "n_edges": 47,
+      "n_items": 0,
+      "item_sink_fraction": null,
+      "statuses": {},
+      "depths": null,
+      "leaf_why": {},
+      "forward2_mean": null,
+      "errors": [],
+      "audit_ms": 0.0,
+      "depth_stats": {
+        "n": 0
+      },
+      "forward2_stats": {
+        "n": 0
+      }
+    },
+    {
+      "graph": "synthetic:star1",
+      "n_nodes": 42,
+      "n_edges": 20,
+      "n_items": 2,
+      "item_sink_fraction": 1.0,
+      "statuses": {
+        "PATH": 2
+      },
+      "depths": null,
+      "leaf_why": {
+        "gatherable:": 2
+      },
+      "forward2_mean": null,
+      "errors": [],
+      "audit_ms": 0.0,
+      "depth_stats": {
+        "n": 2,
+        "mean": 2.0,
+        "median": 3,
+        "max": 3,
+        "zero_fraction": 0.0
+      },
+      "forward2_stats": {
+        "n": 2,
+        "mean": 0.0,
+        "median": 0,
+        "max": 0,
+        "zero_fraction": 1.0
+      }
+    },
+    {
+      "graph": "synthetic:chain5",
+      "n_nodes": 52,
+      "n_edges": 32,
+      "n_items": 7,
+      "item_sink_fraction": 1.0,
+      "statuses": {
+        "PARTIAL_PATH": 3,
+        "PATH": 4
+      },
+      "depths": null,
+      "leaf_why": {
+        "unresolved:DEPTH": 3,
+        "gatherable:": 10
+      },
+      "forward2_mean": null,
+      "errors": [],
+      "audit_ms": 1.0,
+      "depth_stats": {
+        "n": 7,
+        "mean": 5.714,
+        "median": 7,
+        "max": 8,
+        "zero_fraction": 0.0
+      },
+      "forward2_stats": {
+        "n": 7,
+        "mean": 0.0,
+        "median": 0,
+        "max": 0,
+        "zero_fraction": 1.0
+      }
+    },
+    {
+      "graph": "synthetic:ring",
+      "n_nodes": 41,
+      "n_edges": 20,
+      "n_items": 2,
+      "item_sink_fraction": 1.0,
+      "statuses": {
+        "PARTIAL_PATH": 2
+      },
+      "depths": null,
+      "leaf_why": {
+        "unresolved:CYCLE": 2
+      },
+      "forward2_mean": null,
+      "errors": [],
+      "audit_ms": 0.0,
+      "depth_stats": {
+        "n": 2,
+        "mean": 3.0,
+        "median": 3,
+        "max": 3,
+        "zero_fraction": 0.0
+      },
+      "forward2_stats": {
+        "n": 2,
+        "mean": 0.0,
+        "median": 0,
+        "max": 0,
+        "zero_fraction": 1.0
+      }
+    },
+    {
+      "graph": "synthetic:unreachable",
+      "n_nodes": 38,
+      "n_edges": 16,
+      "n_items": 1,
+      "item_sink_fraction": 1.0,
+      "statuses": {
+        "NO_PATH": 1
+      },
+      "depths": null,
+      "leaf_why": {
+        "unresolved:NO_PRODUCER": 1
+      },
+      "forward2_mean": null,
+      "errors": [],
+      "audit_ms": 0.0,
+      "depth_stats": {
+        "n": 1,
+        "mean": 0.0,
+        "median": 0,
+        "max": 0,
+        "zero_fraction": 1.0
+      },
+      "forward2_stats": {
+        "n": 1,
+        "mean": 0.0,
+        "median": 0,
+        "max": 0,
+        "zero_fraction": 1.0
+      }
+    },
+    {
+      "graph": "synthetic:distractor",
+      "n_nodes": 67,
+      "n_edges": 61,
+      "n_items": 7,
+      "item_sink_fraction": 1.0,
+      "statuses": {
+        "PARTIAL_PATH": 3,
+        "PATH": 4
+      },
+      "depths": null,
+      "leaf_why": {
+        "unresolved:DEPTH": 3,
+        "gatherable:": 10
+      },
+      "forward2_mean": null,
+      "errors": [],
+      "audit_ms": 1.0,
+      "depth_stats": {
+        "n": 7,
+        "mean": 5.714,
+        "median": 7,
+        "max": 8,
+        "zero_fraction": 0.0
+      },
+      "forward2_stats": {
+        "n": 7,
+        "mean": 0.0,
+        "median": 0,
+        "max": 0,
+        "zero_fraction": 1.0
+      }
+    }
+  ]
+}
