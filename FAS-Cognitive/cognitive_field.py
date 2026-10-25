@@ -227,8 +227,7 @@ DEFAULT_MODULATION = {
             "baseline": 0.55, "min": 0.35, "max": 0.75,
             "effects": {"drive.curiosity": -0.12, "network.DMN": -0.10,
                          "drive.social": -0.08, "network.CEN": 0.08,
-                         "hormone.cortisol": 0.15,
-                         "context.fatigue": 0.20}},
+                         "hormone.cortisol": 0.15}},
         "cognition.express_threshold": {
             "baseline": 0.78, "min": 0.55, "max": 0.95,
             "effects": {"need.social": -0.10, "hormone.oxytocin": -0.12,
@@ -282,7 +281,7 @@ GAIN_MIN, GAIN_MAX = 0.2, 3.0
 #  当前状态"判断收敛为一个可解释的量。三通道×归一×迟滞：
 #    bottom_up   激活变化幅度（Δ不是绝对值）、novelty/预测误差、用户/外部事件
 #    top_down    当前承诺价值、候选与焦点相关性、切换/中断成本
-#    intero      need_salience 需求信号、疲劳
+#    intero      need_salience 需求信号（疲劳通道已删：AI 无疲劳生理）
 #  纪律（任务书 §二）：
 #    · 显著 ≠ 必须行动：score 与 decision 分离，feasible 由调用方注入，
 #      SN 只如实记录不绕过；
@@ -297,7 +296,7 @@ DEFAULT_SALIENCE = {
     # 通道内子权重（相对值，和不为 1 也按占比归一）
     "sub": {"delta": 1.0, "novelty": 1.0, "event": 1.0, "error": 0.8,
             "commitment": 1.0, "relevance": 0.8, "switch_cost": 1.0,
-            "need": 1.0, "fatigue": 0.8},
+            "need": 1.0},
     "wake_margin": 0.34,      # attend 判定线（score∈[0,1]）
     "switch_margin": 0.12,    # 切换：候选须超出 当前 + 此量
     "source_decay": 0.55,     # 同源重复信号 EWMA 折减系数
@@ -347,20 +346,20 @@ class SalienceNetwork:
     def event_salience(self, kind, *, delta=None, novelty=None,
                        error=None, event=None, commitment=None,
                        relevance=None, switch_cost=None, need=None,
-                       fatigue=None, feasible=True, source=None):
+                       feasible=True, source=None):
         """统一显著性评估。返回 {score, channels, contributions,
         decision('attend'|'hold'), feasible, reason}。
         决策与分数分离：decision=attend 只是"值得改变状态"的门控建议，
-        feasible=False（能力/预算由调用方判定）永远 hold——显著不代表可行。"""
+        feasible=False（能力/预算由调用方判定）永远 hold——显著不代表可行。
+        （fatigue 入参已删，2026-10-17：AI 无疲劳生理；全部调用方本来都传
+        None， intero 通道只保留需求显著性。）"""
         ch = {"bottom_up": self._chan("bottom_up", {
                   "delta": delta, "novelty": novelty,
                   "error": error, "event": event}),
               "top_down": self._chan("top_down", {
                   "commitment": commitment, "relevance": relevance,
                   "switch_cost": switch_cost}),
-              "intero": self._chan("intero", {
-                  "need": need, "fatigue": (None if fatigue is None
-                                            else 1.0 - _sn_clamp01(fatigue))})}
+              "intero": self._chan("intero", {"need": need})}
         W = self.cfg["weights"]
         num = den = 0.0
         contrib = {}

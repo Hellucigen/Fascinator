@@ -66,10 +66,9 @@ MOOD_CAP = 0.35
 # 见 §4 的 SALIENCE_READERS——类型与读法一一对应，新增一类只在那里加条目）：
 #   need         = InternalState 镜像（安全/探索/掌控/社交需求）
 #   mc_state     = 具身状态节点（`生存需求`：embodied_mapper 由 hp/饥饿/威胁写出）
-#   time_of_day  = 时段桶（凌晨…深夜，R2 P10）
-#   day_phase    = 昼夜相位（白天/夜间，R2 P10）
 NEED_SOURCE_TYPES = ("need", "mc_state")
-CIRCADIAN_SOURCE_TYPES = ("time_of_day", "day_phase")
+# （time_of_day/day_phase 作为调制驱动源已删除，2026-10-17 用户裁定：AI 没有
+#   疲劳/清醒的生理机制——时段/昼夜是知识节点（她知道现在是凌晨），不是驱动器。）
 # 需求→调制器慢写入的默认速率（每模拟分钟）：出厂值下 w=0.2、显著性=1
 # 的需求满缺口约 +0.02×60×0.2 = **0.24/小时**。选这个尺度的理由：调制器自身
 # 每分钟都在向基线回归（dopamine `decay_per_min=0.02`），漂移必须比它慢，
@@ -77,13 +76,6 @@ CIRCADIAN_SOURCE_TYPES = ("time_of_day", "day_phase")
 # 瞬时事件该走 pulse()（快通道），而不是这里。
 # （出厂值声明在 config.modulator_system.need_drift_rate_per_min，此处兜底。）
 NEED_DRIFT_RATE_PER_MIN = 0.02
-# 时段/昼夜→调制器慢写入的默认速率（R2 P10）。比需求漂移快一档是故意的：
-# 昼夜是**小时级**持续事实，要在一个夜间窗口里真的把褪黑素样抬到能改变
-# 参数曲线的位置（它的 decay 是 0.035/min，抬幅 = rate×w×强度/decay）；
-# 而需求缺口是分钟级波动的东西，抬太快就变成"一次没做成的事钉死通道"。
-# 两个数不同不是不一致，是两个时间尺度（§27）。
-# （出厂值声明在 config.modulator_system.circadian_drift_rate_per_min，此处兜底。）
-CIRCADIAN_DRIFT_RATE_PER_MIN = 0.06
 
 
 # ── 1) bootstrap ───────────────────────────────────────────
@@ -339,39 +331,13 @@ def need_salience_of(kg, st, node_id: str, cache: dict = None) -> float:
     return v
 
 
-def _circadian_salience(kg, st, node_id: str, cache: dict = None) -> float:
-    """一个**时段/昼夜节点**此刻的显著性（0~1）= `circadian_strength`。
-
-    R2 P10 的关键取舍：这里**不读 activation**。activation 是扩散用的货币
-    （而且会因对话/空闲起伏），拿它当调制驱动 = ① 借了别的系统的钱（P6 的
-    同一纪律）② 让"昼夜曲线"变成"今天聊了多少次夜晚"。strength 只有一个作者：
-    `temporal_awareness.update_clock_state`，它按时段写、别的都不写 ⇒
-    同一 bucket 序列必然给出同一曲线（P10 闸门就是这条）。
-    键不在位（时钟还没跑过 / 旧图没播种）⇒ 0：没有事实就没有驱动，
-    不拿默认值冒充昼夜。
-    """
-    if cache is not None and node_id in cache:
-        return cache[node_id]
-    v = 0.0
-    node = kg.get_node(node_id) if kg is not None else None
-    if node is not None:
-        raw = (node.extra_attrs or {}).get("circadian_strength")
-        if isinstance(raw, (int, float)):
-            v = max(0.0, min(1.0, float(raw)))
-    v = round(v, 4)
-    if cache is not None:
-        cache[node_id] = v
-    return v
-
-
 # 状态源类型（节点 `extra_attrs.type`）→ 显著性读法。**这一张表就是"什么算一个
-# 驱动性状态事实"的完整定义**：新增一类（比如 MC 的昼夜、饥饿读数）= 加一个类型
-# 条目 + config 里加边，漂移的钳位/留痕/回滚一律复用。
+# 驱动性状态事实"的完整定义**：新增一类（比如饥饿读数）= 加一个类型条目 +
+# config 里加边，漂移的钳位/留痕/回滚一律复用。
+# （time_of_day/day_phase + _circadian_salience 已删除——见文件头裁定注。）
 SALIENCE_READERS = {
     "need": need_salience_of,
     "mc_state": need_salience_of,
-    "time_of_day": _circadian_salience,
-    "day_phase": _circadian_salience,
 }
 
 
@@ -551,24 +517,8 @@ def apply_need_drift(kg, st, config, dt_min: float = None,
                               reason_prefix="需求漂移", source="needs")
 
 
-def apply_circadian_drift(kg, st, config, dt_min: float = None,
-                          cycle_id: str = None) -> dict:
-    """时段/昼夜→调制器（R2 P10）：褪黑素样/组胺样的**日内水位**由图上事实驱动。
-
-    与需求漂移同一条实现，只有三点不同：源类型是 `time_of_day/day_phase`、
-    显著性读的是 `circadian_strength`（时钟写的"此刻在势"，不借 activation），
-    速率单列一档（`circadian_drift_rate_per_min`）。
-    为什么单列速率：昼夜是**小时级**的慢变量，出厂幅度要让褪黑素样在夜里
-    抬到饱和拐点附近、白天压回量程低段（不是把量程钉满——钉满就没有信息了），
-    这个尺度与"需求缺口"不是一回事，写成一个数就会两头都不对。
-    """
-    blk = _cfg_block(config)
-    rate = float(blk.get("circadian_drift_rate_per_min",
-                         CIRCADIAN_DRIFT_RATE_PER_MIN))
-    return _apply_state_drift(kg, st, config, CIRCADIAN_SOURCE_TYPES, rate,
-                              dt_min=dt_min, cycle_id=cycle_id,
-                              reason_prefix="昼夜漂移", source="circadian")
-
+# （apply_circadian_drift 已删除，2026-10-17 用户裁定：AI 无疲劳/清醒生理，
+#   时段不驱动任何调制器。需求漂移 apply_need_drift 不在此列——那是缺口。）
 
 # ── 5) 观测 ────────────────────────────────────────────────
 

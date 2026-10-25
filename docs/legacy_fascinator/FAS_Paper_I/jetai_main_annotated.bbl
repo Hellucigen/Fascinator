@@ -1,0 +1,112 @@
+\begin{thebibliography}{}
+
+\bibitem[Anderson et~al., 2004]{anderson2004integrated}
+Anderson, J.~R., Bothell, D., Byrne, M.~D., Douglass, S., Lebiere, C., and Qin,
+  Y. (2004).
+\newblock An integrated theory of the mind.
+\newblock {\em Psychological Review}, 111(4):1036--1060.
+
+\bibitem[Baddeley, 2000]{baddeley2000episodic}
+Baddeley, A. (2000).
+\newblock The episodic buffer: A new component of working memory?
+\newblock {\em Trends in Cognitive Sciences}, 4(11):417--423.
+
+\bibitem[Collins and Loftus, 1975]{collins1975spreading}
+Collins, A.~M. and Loftus, E.~F. (1975).
+\newblock A spreading-activation theory of semantic processing.
+\newblock {\em Psychological Review}, 82(6):407--428.
+
+\bibitem[Cowan, 2001]{cowan2001magical}
+Cowan, N. (2001).
+\newblock The magical number 4 in short-term memory: A reconsideration of
+  mental storage capacity.
+\newblock {\em Behavioral and Brain Sciences}, 24(1):87--114.
+
+\bibitem[Edge et~al., 2024]{edge2024graphrag}
+Edge, D., Trinh, H., Cheng, N., Bradley, J., Chao, A., Mardis, A., Osinubi, J.,
+  and Others (2024).
+\newblock From local to global: A graph rag approach to query-focused
+  summarization.
+\newblock {\em arXiv preprint arXiv:2404.16130}.
+
+\bibitem[Guti{\'e}rrez et~al., 2024]{gutierrez2024hipporag}
+Guti{\'e}rrez, B.~J., Sharpentine, Y., Tu, Y., Khramtsova, E., Zhu, X., Gweon,
+  H., and Cohen, W.~W. (2024).
+\newblock Hipporag: Neurobiologically inspired long-term memory for large
+  language models.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)}.
+
+\bibitem[Hart and Goertzel, 2008]{hart2008opencog}
+Hart, J. and Goertzel, B. (2008).
+\newblock {OpenCog}: A software framework for integrative artificial general
+  intelligence.
+\newblock In {\em Proceedings of the First AGI Conference (AGI-08)}.
+
+\bibitem[Itti and Koch, 2001]{itti2001computational}
+Itti, L. and Koch, C. (2001).
+\newblock Computational modelling of visual attention.
+\newblock {\em Nature Reviews Neuroscience}, 2(3):194--203.
+
+\bibitem[Laird, 2012]{laird2012soar}
+Laird, J.~E. (2012).
+\newblock {\em The Soar Cognitive Architecture}.
+\newblock MIT Press, Cambridge, MA.
+
+\bibitem[Lewis et~al., 2020]{lewis2020rag}
+Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N.,
+  K{\"u}ttler, H., Lewis, M., Yih, W.-t., Rockt{\"a}schel, T., et~al. (2020).
+\newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)}.
+
+\bibitem[Packer et~al., 2023]{packer2023memgpt}
+Packer, C., Fang, V., Patil, S.~G., Lin, K., Wooders, S., and Gonzalez, J.~E.
+  (2023).
+\newblock Memgpt: Towards llms as operating systems.
+\newblock {\em arXiv preprint arXiv:2310.08560}.
+
+\bibitem[Park et~al., 2023]{park2023generative}
+Park, J.~S., O'Brien, J., Cai, C.~J., Morris, M.~R., Liang, P., and Bernstein,
+  M.~S. (2023).
+\newblock Generative agents: Interactive simulacra of human behavior.
+\newblock In {\em Proceedings of the 36th Annual ACM Symposium on User
+  Interface Software and Technology (UIST)}.
+
+\bibitem[Posner, 1980]{posner1980orienting}
+Posner, M.~I. (1980).
+\newblock Orienting of attention.
+\newblock {\em Quarterly Journal of Experimental Psychology}, 32(1):3--25.
+
+\bibitem[Schacter et~al., 2007]{schacter2007remembering}
+Schacter, D.~L., Addis, D.~R., and Buckner, R.~L. (2007).
+\newblock Remembering the past to imagine the future: The prospective brain.
+\newblock {\em Nature Reviews Neuroscience}, 8(9):657--661.
+
+\bibitem[Shinn et~al., 2023]{shinn2023reflexion}
+Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., and Yao, S. (2023).
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)}.
+
+\bibitem[Tulving, 1983]{tulving1983elements}
+Tulving, E. (1983).
+\newblock {\em Elements of Episodic Memory}.
+\newblock Oxford University Press, Oxford.
+
+\bibitem[Wang et~al., 2023]{wang2023voyager}
+Wang, G., Xie, Y., Jiang, Y., Mandlekar, A., Xiao, C., Zhu, Y., Fan, L., and
+  Anandkumar, A. (2023).
+\newblock Voyager: An open-ended embodied agent with large language models.
+\newblock {\em arXiv preprint arXiv:2305.16291}.
+
+\bibitem[Yao et~al., 2023]{yao2023react}
+Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., and Cao, Y.
+  (2023).
+\newblock {ReAct}: Synergizing reasoning and acting in language models.
+\newblock In {\em International Conference on Learning Representations (ICLR)}.
+
+\bibitem[Zacks et~al., 2007]{zacks2007event}
+Zacks, J.~M., Speer, N.~K., Swallow, K.~M., Braver, T.~S., and Reynolds, J.~R.
+  (2007).
+\newblock Event perception: A mind-brain perspective.
+\newblock {\em Psychological Bulletin}, 133(2):273--293.
+
+\end{thebibliography}

@@ -1,0 +1,127 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{anderson2004integrated}
+\citation{laird2012soar}
+\citation{yao2023react,park2023generative,shinn2023reflexion}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\citation{collins1975spreading}
+\citation{anderson2004integrated}
+\citation{laird2012soar}
+\citation{hart2008opencog}
+\citation{tulving1983elements,baddeley2000episodic}
+\citation{zacks2007event,schacter2007remembering}
+\citation{collins1975spreading}
+\citation{itti2001computational,posner1980orienting,cowan2001magical}
+\citation{yao2023react}
+\citation{park2023generative}
+\citation{shinn2023reflexion}
+\citation{lewis2020rag}
+\citation{gutierrez2024hipporag}
+\citation{edge2024graphrag}
+\citation{packer2023memgpt}
+\citation{wang2023voyager}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The unified graph ontology (schematic). Seven label classes and eight relation types share one namespace; there is no separate episodic, skill, or intention store. Cross-space links (blue, corridor-routed) are the core capability: the \texttt  {leads-to} edge from \texttt  {action experience} to \texttt  {change} (weight = confidence) is the product of the write-back pipeline (Section~\ref {sec:arch-wb}); \texttt  {gap} points to an entity to inject activation; \texttt  {event} carries a negative-polarity slot edge (red dashed) suppressing the entity (Section~\ref {sec:arch-persist}).}}{3}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:ontology}{{1}{3}{The unified graph ontology (schematic). Seven label classes and eight relation types share one namespace; there is no separate episodic, skill, or intention store. Cross-space links (blue, corridor-routed) are the core capability: the \texttt {leads-to} edge from \texttt {action experience} to \texttt {change} (weight = confidence) is the product of the write-back pipeline (Section~\ref {sec:arch-wb}); \texttt {gap} points to an entity to inject activation; \texttt {event} carries a negative-polarity slot edge (red dashed) suppressing the entity (Section~\ref {sec:arch-persist})}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The Fascinator Architecture}{3}{section.3}\protected@file@percent }
+\newlabel{sec:arch}{{3}{3}{The Fascinator Architecture}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The unified cognitive graph}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:arch-graph}{{3.1}{3}{The unified cognitive graph}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Cognitive state and spreading activation}{3}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:arch-act}{{3.2}{3}{Cognitive state and spreading activation}{subsection.3.2}{}}
+\newlabel{eq:spread}{{1}{3}{Cognitive state and spreading activation}{equation.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Spreading activation and flat retrieval side by side. Every numbered claim comes from the archived experiments of Section~\ref {sec:res-boundary}; the figure only builds intuition.}}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:act-schematic}{{2}{4}{Spreading activation and flat retrieval side by side. Every numbered claim comes from the archived experiments of Section~\ref {sec:res-boundary}; the figure only builds intuition}{figure.caption.2}{}}
+\newlabel{eq:mod}{{2}{4}{Cognitive state and spreading activation}{equation.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Experience attribution and write-back}{4}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:arch-wb}{{3.3}{4}{Experience attribution and write-back}{subsection.3.3}{}}
+\newlabel{eq:wb}{{3}{4}{Experience attribution and write-back}{equation.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Persistence and consumers}{4}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:arch-persist}{{3.4}{4}{Persistence and consumers}{subsection.3.4}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Attribution--write-back: experience to relational knowledge}}{5}{algorithm.1}\protected@file@percent }
+\newlabel{alg:wb}{{1}{5}{Attribution--write-back: experience to relational knowledge}{algorithm.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The FAS conceptual loop: from embodied interaction to reusable relational knowledge, and back to behavior via activation and consumers. Dashed blocks are scaffolding (mechanics tables; the necessary precondition characterized by the zero-prior result, Section~\ref {sec:res-system}) and consumption channels. The LLM's only positions in the loop are language production/interpretation/reflection (Section~\ref {sec:arch-llm}).}}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:loop}{{3}{5}{The FAS conceptual loop: from embodied interaction to reusable relational knowledge, and back to behavior via activation and consumers. Dashed blocks are scaffolding (mechanics tables; the necessary precondition characterized by the zero-prior result, Section~\ref {sec:res-system}) and consumption channels. The LLM's only positions in the loop are language production/interpretation/reflection (Section~\ref {sec:arch-llm})}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}The LLM as a budgeted interface}{5}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:arch-llm}{{3.5}{5}{The LLM as a budgeted interface}{subsection.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}The experience-to-knowledge loop}{5}{subsection.3.6}\protected@file@percent }
+\newlabel{sec:arch-loop}{{3.6}{5}{The experience-to-knowledge loop}{subsection.3.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Evaluation Protocol}{6}{section.4}\protected@file@percent }
+\newlabel{sec:method}{{4}{6}{Evaluation Protocol}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Environment, determinism, and what ``paired seeds'' mean}{6}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:method-env}{{4.1}{6}{Environment, determinism, and what ``paired seeds'' mean}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Preregistration and evidence accounting}{6}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:method-prereg}{{4.2}{6}{Preregistration and evidence accounting}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}The mechanism-campaign protocol (preregistered)}{6}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:method-civ}{{4.3}{6}{The mechanism-campaign protocol (preregistered)}{subsection.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Evidence levels $\times $ protocol layers (merged scale; used to attribute every claim in this paper).}}{7}{table.caption.4}\protected@file@percent }
+\newlabel{tab:evidence}{{1}{7}{Evidence levels $\times $ protocol layers (merged scale; used to attribute every claim in this paper)}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}LLM decision-head protocol (routing experiments)}{7}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:method-routing}{{4.4}{7}{LLM decision-head protocol (routing experiments)}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Reproducibility}{7}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{7}{section.5}\protected@file@percent }
+\newlabel{sec:results}{{5}{7}{Results}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Persistent relational reuse: the information-asymmetric beacon task}{7}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:res-reuse}{{5.1}{7}{Persistent relational reuse: the information-asymmetric beacon task}{subsection.5.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Statistical conventions, one row per comparison family (full version with implementation locations in Supplementary Material~S18). ``Status'': pre $=$ preregistered; post $=$ post-hoc; desc $=$ descriptive (no test). All $p$ values in this paper are produced by the test named in this table.}}{8}{table.caption.5}\protected@file@percent }
+\newlabel{tab:stats}{{2}{8}{Statistical conventions, one row per comparison family (full version with implementation locations in Supplementary Material~S18). ``Status'': pre $=$ preregistered; post $=$ post-hoc; desc $=$ descriptive (no test). All $p$ values in this paper are produced by the test named in this table}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Write-back isolation, persistence, and consumption}{8}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:res-persist}{{5.2}{8}{Write-back isolation, persistence, and consumption}{subsection.5.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Beacon task results ($n{=}20$ paired seeds per condition; 80 runs). All numbers from the archived campaign analysis.}}{9}{table.caption.6}\protected@file@percent }
+\newlabel{tab:beacon}{{3}{9}{Beacon task results ($n{=}20$ paired seeds per condition; 80 runs). All numbers from the archived campaign analysis}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Preregistered boundary analysis of activation-based access}{9}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:res-boundary}{{5.3}{9}{Preregistered boundary analysis of activation-based access}{subsection.5.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Preregistered boundary analysis: key mechanism-level numbers. All values are read programmatically from the archived statistics files; full data in Supplementary Material S7--S9.}}{10}{table.caption.7}\protected@file@percent }
+\newlabel{tab:boundary}{{4}{10}{Preregistered boundary analysis: key mechanism-level numbers. All values are read programmatically from the archived statistics files; full data in Supplementary Material S7--S9}{table.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Shared-hub parameter sweep (84 cells $\times $ 30 paired seeds, deterministic, zero-LLM). Cell color: paired success difference (FAS minus flat) on the joint target; green = FAS strictly better, orange = flat strictly better, gray = tie; annotations give the cell counts. The FAS-advantage region is confined to weak edge weights and shallow convergence paths. All numbers read programmatically from the archived sweep outputs.}}{11}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:sweep}{{4}{11}{Shared-hub parameter sweep (84 cells $\times $ 30 paired seeds, deterministic, zero-LLM). Cell color: paired success difference (FAS minus flat) on the joint target; green = FAS strictly better, orange = flat strictly better, gray = tie; annotations give the cell counts. The FAS-advantage region is confined to weak edge weights and shallow convergence paths. All numbers read programmatically from the archived sweep outputs}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The diffusion applicability boundary. (a) Preregistered confirmatory family: all four $\Delta $JCG negative (reverse-direction Holm $p{=}1.5\times 10^{-9}$); the only positive point is the shared-hub topology (star, single-weight $w{=}0.5$ design). (b) Weight sweep: both methods reach MRR${=}1.0$ together at $w{=}0.7$. (c) Dilution trade-off: the wider the spread, the flatter the target activation ($\rho {=}{-}0.445$, ${-}0.656$).}}{11}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:boundary}{{5}{11}{The diffusion applicability boundary. (a) Preregistered confirmatory family: all four $\Delta $JCG negative (reverse-direction Holm $p{=}1.5\times 10^{-9}$); the only positive point is the shared-hub topology (star, single-weight $w{=}0.5$ design). (b) Weight sweep: both methods reach MRR${=}1.0$ together at $w{=}0.7$. (c) Dilution trade-off: the wider the spread, the flatter the target activation ($\rho {=}{-}0.445$, ${-}0.656$)}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Determinism re-run of the decision-head family}{11}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:res-rerun}{{5.4}{11}{Determinism re-run of the decision-head family}{subsection.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Comparative behavioral evidence (campaign v2)}{11}{subsection.5.5}\protected@file@percent }
+\newlabel{sec:res-campaign}{{5.5}{11}{Comparative behavioral evidence (campaign v2)}{subsection.5.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Persistent-state test under context removal}{13}{subsection.5.6}\protected@file@percent }
+\newlabel{sec:res-psa}{{5.6}{13}{Persistent-state test under context removal}{subsection.5.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Additional observations}{13}{subsection.5.7}\protected@file@percent }
+\newlabel{sec:res-system}{{5.7}{13}{Additional observations}{subsection.5.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Audit-driven corrections and negative results}{14}{subsection.5.8}\protected@file@percent }
+\newlabel{sec:audit-negative}{{5.8}{14}{Audit-driven corrections and negative results}{subsection.5.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{14}{section.6}\protected@file@percent }
+\newlabel{sec:discussion}{{6}{14}{Discussion}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}What FAS demonstrates}{14}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Why flat retrieval usually suffices---and when it does not}{15}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}The role of scaffolding}{15}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Why the unified graph matters}{15}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Design implication: direction semantics}{15}{subsection.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Limitations}{15}{section.7}\protected@file@percent }
+\newlabel{sec:limits}{{7}{15}{Limitations}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{16}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data and code availability.}{16}{section*.10}\protected@file@percent }
+\bibstyle{plainnat}
+\bibdata{references}
+\bibcite{anderson2004integrated}{{1}{2004}{{Anderson et~al.}}{{Anderson, Bothell, Byrne, Douglass, Lebiere, and Qin}}}
+\bibcite{baddeley2000episodic}{{2}{2000}{{Baddeley}}{{}}}
+\bibcite{collins1975spreading}{{3}{1975}{{Collins and Loftus}}{{}}}
+\bibcite{cowan2001magical}{{4}{2001}{{Cowan}}{{}}}
+\bibcite{edge2024graphrag}{{5}{2024}{{Edge et~al.}}{{Edge, Trinh, Cheng, Bradley, Chao, Mardis, Osinubi, and Others}}}
+\bibcite{gutierrez2024hipporag}{{6}{2024}{{Guti{\'e}rrez et~al.}}{{Guti{\'e}rrez, Sharpentine, Tu, Khramtsova, Zhu, Gweon, and Cohen}}}
+\bibcite{hart2008opencog}{{7}{2008}{{Hart and Goertzel}}{{}}}
+\bibcite{itti2001computational}{{8}{2001}{{Itti and Koch}}{{}}}
+\bibcite{laird2012soar}{{9}{2012}{{Laird}}{{}}}
+\bibcite{lewis2020rag}{{10}{2020}{{Lewis et~al.}}{{Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, K{\"u}ttler, Lewis, Yih, Rockt{\"a}schel, et~al.}}}
+\bibcite{packer2023memgpt}{{11}{2023}{{Packer et~al.}}{{Packer, Fang, Patil, Lin, Wooders, and Gonzalez}}}
+\bibcite{park2023generative}{{12}{2023}{{Park et~al.}}{{Park, O'Brien, Cai, Morris, Liang, and Bernstein}}}
+\bibcite{posner1980orienting}{{13}{1980}{{Posner}}{{}}}
+\bibcite{schacter2007remembering}{{14}{2007}{{Schacter et~al.}}{{Schacter, Addis, and Buckner}}}
+\bibcite{shinn2023reflexion}{{15}{2023}{{Shinn et~al.}}{{Shinn, Cassano, Gopinath, Narasimhan, and Yao}}}
+\bibcite{tulving1983elements}{{16}{1983}{{Tulving}}{{}}}
+\bibcite{wang2023voyager}{{17}{2023}{{Wang et~al.}}{{Wang, Xie, Jiang, Mandlekar, Xiao, Zhu, Fan, and Anandkumar}}}
+\bibcite{yao2023react}{{18}{2023}{{Yao et~al.}}{{Yao, Zhao, Yu, Du, Shafran, Narasimhan, and Cao}}}
+\bibcite{zacks2007event}{{19}{2007}{{Zacks et~al.}}{{Zacks, Speer, Swallow, Braver, and Reynolds}}}
+\gdef \@abspage@last{17}

@@ -1,0 +1,423 @@
+---
+import Badge from './Badge.astro';
+import CardImageToggle from './react/CardImageToggle';
+import { t } from '../lib/ui-strings';
+import { getLocale } from '../lib/i18n';
+import { replaceGameTokens } from '../lib/energy-icons';
+
+export interface Props {
+  game: 'sts1' | 'sts2';
+  card: any;
+  data: any;
+}
+
+const { game, card, data } = Astro.props;
+const { locale, langPrefix } = getLocale(Astro);
+
+const upg = card.upgrade;
+// STS1 and STS2 upgrades both have absolute cost in upgrade.cost
+const hasUpgrade = upg && Object.keys(upg).length > 0;
+
+// Build upgrade description for STS2
+function buildUpgradeDescription(card: any): { description: string; cost: number | null; keywords: string[] } | null {
+  const upg = card.upgrade;
+  if (!upg || Object.keys(upg).length === 0) return null;
+  
+  let desc = card.description ?? '';
+  const baseVars: Record<string, number> = { ...(card.vars ?? {}) };
+  const newVars: Record<string, number> = { ...baseVars };
+  
+  const varKeyMap: Record<string, string> = {};
+  for (const uk of Object.keys(upg)) {
+    if (['add_keywords', 'remove_keywords', 'energy', 'stars', 'description'].includes(uk)) continue;
+    if (uk in baseVars) {
+      varKeyMap[uk] = uk;
+    } else {
+      const puk = `power_${uk}`;
+      if (puk in baseVars) varKeyMap[uk] = puk;
+    }
+  }
+  
+  for (const [uk, vk] of Object.entries(varKeyMap)) {
+    newVars[vk] = baseVars[vk] + upg[uk];
+  }
+  
+  // Replace values in reverse order of magnitude to avoid partial matches
+  const replacements: Array<[number, number]> = [];
+  for (const vk of Object.values(varKeyMap)) {
+    const oldVal = Math.floor(baseVars[vk]);
+    const newVal = Math.floor(newVars[vk]);
+    if (oldVal !== newVal) {
+      replacements.push([oldVal, newVal]);
+    }
+  }
+  // Sort by old value descending so larger numbers are replaced first
+  replacements.sort((a, b) => b[0] - a[0]);
+  for (const [oldVal, newVal] of replacements) {
+    const re = new RegExp(`(?<!\\d)${oldVal}(?!\\d)`);
+    desc = desc.replace(re, String(newVal));
+  }
+  
+  // Handle energy upgrade: add [E] markers
+  if (upg.energy) {
+    const added = '[E]'.repeat(upg.energy);
+    // Find last [E] and insert after it
+    const lastE = desc.lastIndexOf('[E]');
+    if (lastE >= 0) {
+      desc = desc.slice(0, lastE + 3) + added + desc.slice(lastE + 3);
+    }
+  }
+  
+  // Handle stars upgrade: add [S] markers
+  if (upg.stars) {
+    const added = '[S]'.repeat(upg.stars);
+    const lastS = desc.lastIndexOf('[S]');
+    if (lastS >= 0) {
+      desc = desc.slice(0, lastS + 3) + added + desc.slice(lastS + 3);
+    }
+  }
+  
+  let cost = upg.cost != null ? upg.cost : card.cost;
+  
+  const kws = [...(card.keywords ?? [])];
+  for (const kw of (upg.add_keywords ?? [])) {
+    if (!kws.includes(kw)) kws.push(kw);
+  }
+  for (const kw of (upg.remove_keywords ?? [])) {
+    const idx = kws.indexOf(kw);
+    if (idx >= 0) kws.splice(idx, 1);
+  }
+  
+  return { description: desc, cost, keywords: kws };
+}
+
+const upgInfo = game === 'sts2' ? buildUpgradeDescription(card) : null;
+
+// Build highlighted description HTML
+function highlightDescription(desc: string, game: string, data: any, color?: string): string {
+  if (!desc) return '';
+  let html = desc.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  
+  // Energy tokens
+  const carduiBase = game === 'sts1' ? '/images/sts1/cardui' : '/images/sts2/cardui';
+  const energyMap: Record<string, string> = {
+    '[R]': `${carduiBase}/card_red_orb.png`,
+    '[G]': `${carduiBase}/card_green_orb.png`,
+    '[B]': `${carduiBase}/card_blue_orb.png`,
+    '[W]': `${carduiBase}/card_purple_orb.png`,
+  };
+  for (const [token, imgPath] of Object.entries(energyMap)) {
+    const escaped = token.replace('[', '\\[').replace(']', '\\]');
+    html = html.replace(new RegExp(escaped, 'g'),
+      `<img src="${imgPath}" alt="${token}" class="inline-block h-5 w-5 align-text-bottom" />`);
+  }
+  // [Energy] token
+  html = html.replace(/\[Energy\]/g, `<img src="${carduiBase}/card_red_orb.png" alt="Energy" class="inline-block h-5 w-5 align-text-bottom" />`);
+  
+  // STS2 [E] and [N Energy] tokens — use character-specific energy icon
+  if (game === 'sts2') {
+    html = replaceGameTokens(html, color);
+  }
+  // Collect highlight terms: keywords + power names
+  const highlightTerms: string[] = [];
+  if (data.keywords) {
+    for (const kw of data.keywords) {
+      for (const name of kw.names) {
+        highlightTerms.push(name);
+      }
+    }
+  }
+  if (data.powers) {
+    for (const p of data.powers) {
+      if (p.name && p.name.length > 2) {
+        highlightTerms.push(p.name);
+      }
+    }
+  }
+  
+  // Sort by length descending to match longer terms first
+  highlightTerms.sort((a, b) => b.length - a.length);
+  
+  // Replace terms with highlighted spans (case-insensitive, whole word)
+  for (const term of highlightTerms) {
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`\\b(${escaped})\\b`, 'gi');
+    html = html.replace(re, '<span class="text-amber-300 font-medium">$1</span>');
+  }
+  
+  html = html.replace(/\n/g, '<br>');
+  return html;
+}
+
+const descHtml = highlightDescription(card.description ?? '', game, data, card.color);
+
+// Build upgrade diff HTML for display
+function buildUpgradeDiffHtml(baseDesc: string, upgDesc: string, game: string, data: any): string {
+  if (!upgDesc) return '';
+  const baseLines = baseDesc.split('\n');
+  const upgLines = upgDesc.split('\n');
+  const result: string[] = [];
+  
+  for (let i = 0; i < upgLines.length; i++) {
+    const line = upgLines[i];
+    const baseLine = i < baseLines.length ? baseLines[i] : '';
+    if (line === baseLine) {
+      result.push(highlightDescription(line, game, data, card.color));
+    } else {
+      // Word-level diff
+      const baseWords = baseLine.split(/(\s+)/);
+      const upgWords = line.split(/(\s+)/);
+      let html = '';
+      for (let j = 0; j < upgWords.length; j++) {
+        const w = upgWords[j];
+        const bw = j < baseWords.length ? baseWords[j] : '';
+        if (w !== bw && w.trim()) {
+          html += `<span class="text-emerald-400 font-medium">${highlightDescription(w, game, data, card.color)}</span>`;
+        } else {
+          html += highlightDescription(w, game, data, card.color);
+        }
+      }
+      result.push(html);
+    }
+  }
+  return result.join('<br>');
+}
+
+const upgDescHtml = hasUpgrade
+  ? (game === 'sts2'
+    ? buildUpgradeDiffHtml(card.description ?? '', upg?.description ?? upgInfo?.description ?? card.description ?? '', game, data)
+    : (upg?.description ? buildUpgradeDiffHtml(card.description ?? '', upg.description, game, data) : ''))
+  : '';
+
+// Collect flags
+const flags: string[] = [];
+if (card.exhaust) flags.push('Exhaust');
+if (card.ethereal) flags.push('Ethereal');
+if (card.innate) flags.push('Innate');
+if (card.retain) flags.push('Retain');
+if (card.self_retain) flags.push('Self Retain');
+if (card.purge_on_use) flags.push('Purge on use');
+
+// STS2: also check keywords array for flags
+if (game === 'sts2' && card.keywords) {
+  for (const kw of card.keywords) {
+    if (!flags.includes(kw)) flags.push(kw);
+  }
+}
+
+// Keyword-to-power-icon mapping
+const keywordIcons: Record<string, string> = {
+  'artifact': 'artifact', 'dexterity': 'dexterity', 'focus': 'focus',
+  'frail': 'frail', 'intangible': 'intangible', 'poison': 'poison',
+  'mantra': 'mantra', 'regen': 'regen', 'strength': 'strength',
+  'thorns': 'thorns', 'vigor': 'vigor', 'vulnerable': 'vulnerable',
+  'weak': 'weak', 'channel': 'channel', 'ritual': 'ritual',
+  'retain': 'retain', 'plated armor': 'platedarmor', 'metallicize': 'platedarmor',
+  'barricade': 'barricade', 'burst': 'burst', 'confusion': 'confusion',
+  'corruption': 'corruption', 'draw': 'carddraw', 'echo': 'echo',
+  'envenom': 'envenom', 'flight': 'flight', 'flex': 'flex',
+  'evolve': 'evolve', 'berserk': 'berserk', 'buffer': 'buffer',
+  'block': 'block',
+};
+
+// Find keywords mentioned in the card description OR in the card's keywords array
+const allText = (card.description ?? '') + (upg?.description ?? '') + (upgInfo?.description ?? '');
+const cardKeywords = (card.keywords ?? []) as string[];
+const mentionedKeywords = data.keywords.filter((kw: any) => {
+  // Match if keyword name appears in description text
+  const inDesc = kw.names.some((name: string) => {
+    const re = new RegExp(`\\b${name}\\b`, 'i');
+    return re.test(allText);
+  });
+  // Or if the keyword is in the card's keywords array
+  const inCardKws = cardKeywords.some((ck: string) => 
+    kw.names.some((name: string) => name.toLowerCase() === ck.toLowerCase()) ||
+    kw.id?.toLowerCase() === ck.toLowerCase()
+  );
+  return inDesc || inCardKws;
+});
+
+// Related powers/buffs/debuffs: from cardPowers map OR mentioned in description
+const mappedPowersRaw = data.cardPowers?.[String(card.id)] ?? [];
+// Enrich mapped powers with full data from powers list
+const powersById = new Map((data.powers ?? []).map((p: any) => [p.id, p]));
+const mappedPowers = mappedPowersRaw.map((mp: any) => powersById.get(mp.id) ?? mp);
+const genericPowerNames = new Set(['draw', 'draw card', 'block', 'heal', 'damage', 'gold', 'energy', 'minion']);
+const mentionedPowers = (data.powers ?? []).filter((p: any) => {
+  if (!p.name || p.name.length < 3) return false;
+  if (p.name.length <= 5 || genericPowerNames.has(p.name.toLowerCase())) return false;
+  const re = new RegExp(`\\b${p.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+  return re.test(allText);
+});
+// Dedupe by name
+const seenPowerNames = new Set(mappedPowers.map((p: any) => p.name));
+const allRelatedPowers = [
+  ...mappedPowers,
+  ...mentionedPowers.filter((p: any) => !seenPowerNames.has(p.name)),
+];
+// Exclude powers that already appear as keywords
+const keywordNameSet = new Set(mentionedKeywords.flatMap((kw: any) => kw.names.map((n: string) => n.toLowerCase())));
+const relatedPowers = allRelatedPowers.filter((p: any) => !keywordNameSet.has(p.name?.toLowerCase()));
+
+// Upgrade summary for STS2 (show what changed)
+const tinkerTimeName = data.eventById?.get('TINKER_TIME')?.name ?? 'Tinker Time';
+const tinkerTimeSentence = t('Created during the {event} event. You choose a type and a rider effect (2 of 3 offered randomly for each).', locale);
+const [tinkerTimeBefore, tinkerTimeAfter = ''] = tinkerTimeSentence.split('{event}');
+
+const upgChanges: string[] = [];
+if (game === 'sts2' && upg) {
+  if (upg.cost != null && upg.cost !== card.cost) upgChanges.push(`${t('Cost', locale)} ${upg.cost}`);
+  for (const kw of (upg.add_keywords ?? [])) upgChanges.push(`+${kw}`);
+  for (const kw of (upg.remove_keywords ?? [])) upgChanges.push(`-${kw}`);
+  for (const [k, v] of Object.entries(upg)) {
+    if (['add_keywords', 'remove_keywords', 'cost'].includes(k)) continue;
+    const val = v as number;
+    upgChanges.push(`${k} ${val > 0 ? '+' : ''}${val}`);
+  }
+}
+---
+<!-- Parallax hero background -->
+{game === 'sts2' && card.id && (
+  <div class="relative -mx-4 -mt-6 mb-6 overflow-hidden rounded-b-2xl" style="height: 200px;">
+    <img
+      src={'/images/sts2/cards/' + card.id.toLowerCase() + '.png'}
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl scale-125"
+      onerror="this.style.display='none'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[rgb(var(--bg-base-rgb)/0.6)] to-[var(--bg-base)]"></div>
+  </div>
+)}
+{game === 'sts1' && card.id && (
+  <div class="relative -mx-4 -mt-6 mb-6 overflow-hidden rounded-b-2xl" style="height: 200px;">
+    <img
+      src={'/images/sts1/cards/' + card.id.toLowerCase() + '.png'}
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl scale-125"
+      onerror="this.style.display='none'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[rgb(var(--bg-base-rgb)/0.6)] to-[var(--bg-base)]"></div>
+  </div>
+)}
+
+<div class="flex flex-col items-center gap-6 md:flex-row md:items-start" style={game === 'sts2' || game === 'sts1' ? 'margin-top: -120px; position: relative; z-index: 1;' : ''}>
+  <!-- Rendered card image with toggle -->
+  {game === 'sts2' ? (
+    <CardImageToggle client:load card={card} hasUpgrade={hasUpgrade} locale={locale} />
+  ) : (
+    <CardImageToggle client:load card={card} hasUpgrade={hasUpgrade} game="sts1" locale={locale} />
+  )}
+
+  <!-- Card info -->
+  <div class="flex-1 min-w-0">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <h1 id="card-name" class="font-game text-2xl font-semibold">{card.name}</h1>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <Badge label={String(card.color)} tone={String(card.color)} locale={locale} />
+          <Badge label={t(String(card.type), locale)} />
+          <Badge label={t(String(card.rarity), locale)} />
+          {card.cost != null && <span id="cost-badge"><Badge label={t('Cost', locale) + ' ' + card.cost} /></span>}
+        </div>
+      </div>
+      <div class="text-xs text-slate-400">ID: {card.id}</div>
+    </div>
+
+    {flags.length > 0 && (
+      <div class="mt-3 flex flex-wrap gap-1.5">
+        {flags.map(f => <Badge label={t(f, locale)} />)}
+      </div>
+    )}
+
+    <!-- Description removed — visible on card render -->
+
+    {mentionedKeywords.length > 0 && (
+      <section class="mt-6">
+        <h2 class="font-game text-sm font-semibold text-slate-400 mb-3">{t('Keywords', locale)}</h2>
+        <div class="space-y-2">
+          {mentionedKeywords.map((kw: any) => {
+            const name = kw.name ?? kw.names[0];
+            const iconFile = keywordIcons[name.toLowerCase()];
+            return (
+              <a href={`${langPrefix}/${game}/keywords`} class="flex items-start gap-3 rounded-lg border border-white/[0.06] bg-white/[0.03] p-3 hover:bg-white/[0.06] hover:border-white/[0.12] transition-colors">
+                {iconFile && (
+                  <img src={`/images/${game}/powers/${iconFile}.png`} alt={name} class="w-8 h-8 shrink-0 mt-0.5" />
+                )}
+                <div>
+                  <span class="font-game text-sm font-medium theme-title capitalize">{name}</span>
+                  <p class="text-xs text-slate-300 mt-0.5">{kw.description}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    {relatedPowers.length > 0 && (
+      <section class="mt-6">
+        <h2 class="font-game text-sm font-semibold text-slate-400 mb-3">{t('Applied Effects', locale)}</h2>
+        <div class="space-y-2">
+          {relatedPowers.map((p: any) => {
+            const iconSrc = p.icon
+              ? `/images/${game}/powers/${p.icon}`
+              : `/images/${game}/powers/${p.id?.toLowerCase() ?? p.name?.toLowerCase().replace(/\s+/g, '_')}.png`;
+            const powerId = p.id ?? (p.name ? p.name.toUpperCase().replace(/\s+/g, '_') + '_POWER' : null);
+            const powerExists = powerId ? powersById.has(powerId) : false;
+            const href = (powerId && powerExists) ? `${langPrefix}/${game}/effects/${powerId}` : null;
+            const Tag = href ? 'a' : 'div';
+            return (
+              <a href={href ?? '#'} class={`flex items-center gap-3 rounded-lg border border-white/[0.06] bg-white/[0.03] p-3 ${href ? 'hover:bg-white/[0.06] hover:border-white/[0.12] transition-colors' : ''}`}>
+                <img src={iconSrc} alt={p.name} class="w-8 h-8 flex-shrink-0" />
+                <div>
+                  <span class="font-game text-sm font-medium theme-title">{p.name}</span>
+                  <p class="text-xs text-slate-300 mt-0.5">{p.description}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    {card.tags && card.tags.length > 0 && (
+      <section class="mt-4 rounded-lg border border-white/[0.06] bg-white/[0.03] p-4">
+        <h2 class="font-game text-sm font-semibold">{t('Tags', locale)}</h2>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {card.tags.map((tag: string) => <Badge label={tag} locale={locale} />)}
+        </div>
+      </section>
+    )}
+
+    {(card as any).variants && (
+      <section class="mt-6">
+        <h2 class="font-game text-sm font-semibold text-slate-400 mb-3">{t('Card Variants', locale)}</h2>
+        <p class="text-xs text-slate-400 mb-3 italic">
+          {tinkerTimeBefore}<a href={`${langPrefix}/sts2/events/TINKER_TIME`} class="theme-link underline decoration-[color:rgb(var(--accent-rgb)/0.4)] hover:decoration-[color:var(--accent-300)]">{tinkerTimeName}</a>{tinkerTimeAfter}
+        </p>
+        <div class="grid gap-3 sm:grid-cols-3">
+          {Object.entries((card as any).variants).map(([typeName, variant]: [string, any]) => (
+            <div class="rounded-lg border border-white/10 bg-white/5 p-3">
+              {variant.image && (
+                <img src={variant.image} alt={`${card.name} (${typeName})`} class="w-full rounded mb-2 object-contain" style="max-height: 140px;" loading="lazy" />
+              )}
+              <h3 class="font-game text-sm font-semibold theme-title">{typeName}</h3>
+              <p class="text-xs text-slate-400 mt-0.5" set:html={replaceGameTokens(variant.description)} />
+              <div class="mt-2 space-y-1.5">
+                {variant.riders.map((rider: any) => (
+                  <div class="rounded border border-white/5 bg-white/[0.03] p-2">
+                    <div class="font-game text-xs font-semibold theme-title">{rider.name}</div>
+                    <p class="text-xs text-slate-300 mt-0.5" set:html={replaceGameTokens(rider.description)} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="text-xs text-slate-500 mt-2">{t('Upgrade adds Innate.', locale)}</p>
+      </section>
+    )}
+  </div>
+</div>
+
+

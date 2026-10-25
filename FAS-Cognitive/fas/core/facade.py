@@ -163,7 +163,8 @@ class CognitiveCore:
                last_outcome_negative: bool = False, last_expr_gap_s: float = 9999.0,
                has_action_result: bool = False, exploration: dict = None,
                hormone: dict = None, modulation=None,
-               action_tendencies: dict = None) -> TurnDecision:
+               action_tendencies: dict = None,
+               traits: dict = None) -> TurnDecision:
         """行为竞争决策头，委托 dialogue_decision.dialogue_decide（233 行，零 LLM）。
         参数默认值即"无副作用缺席"——不改变任何打分路径。"""
         from dialogue_decision import dialogue_decide
@@ -180,7 +181,8 @@ class CognitiveCore:
             tendencies or [], curiosity_active, last_outcome_negative,
             last_expr_gap_s, has_action_result,
             exploration=exploration, hormone=hormone, modulation=modulation,
-            action_tendencies=action_tendencies, action_space=self.action_space)
+            action_tendencies=action_tendencies, action_space=self.action_space,
+            traits=traits)
         return TurnDecision(raw=raw)
 
     def compile_language_request(self, *, decision: TurnDecision,

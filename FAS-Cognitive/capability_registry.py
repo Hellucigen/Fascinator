@@ -535,6 +535,18 @@ class CapabilityRegistry:
              ["网络搜索", "文件操作", "看屏幕", "FOLLOW", "进入Minecraft世界"],
              ["action_registry"],
              "正则仍是快速入口，但动作理解长在 Action Concept 上（图谱提供候选，执行经 Intent）"),
+
+            # ── 语音表达（2026-10-21：让"朗读"成为她知道自己能/不能做的事）──
+            ("voice_speech", "语音朗读",
+             "用语音把一段文字念出来、读给用户听（TTS 出声）。依赖本地 "
+             "kokoro-onnx；未指定念什么时，回指上一条用户消息——这样"
+             "'读吧/念给我听'有确定的对象，不会凭空编要读的内容。",
+             "acquired", "expression",
+             ["voice_io.py", "app.py"],
+             ["语音朗读", "朗读", "念给我听", "读出来", "播报"],
+             [],
+             "TTS 后端 kokoro-onnx（本地）→ edge-tts（云兜底）→ 无声；"
+             "能力边界=有引擎、能读有文本时出声"),
         ]
 
         for cap_data in initial:

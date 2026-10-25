@@ -1,0 +1,244 @@
+name: Deploy to Azure Container Apps
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  APP_NAME: sts1-data
+  LOCATION: westus2
+
+jobs:
+  build:
+    if: github.repository == 'nkhoit/spire-archive'
+    runs-on: ubuntu-latest
+    outputs:
+      acr_name: ${{ steps.infra.outputs.acr_name }}
+      acr_login: ${{ steps.infra.outputs.acr_login }}
+      env_name: ${{ steps.infra.outputs.env_name }}
+      tag: ${{ steps.tag.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy infrastructure (ACR + Environment)
+        id: infra
+        run: |
+          RG="${APP_NAME}-rg"
+          az group create -n "$RG" -l "$LOCATION" > /dev/null
+
+          DEPLOY_JSON=$(az deployment group create \
+            -g "$RG" \
+            -f infra/main.bicep \
+            -p location="$LOCATION" appName="$APP_NAME" \
+            -o json)
+
+          ACR_NAME=$(echo "$DEPLOY_JSON" | jq -r '.properties.outputs.acrName.value')
+          ACR_LOGIN=$(echo "$DEPLOY_JSON" | jq -r '.properties.outputs.acrLoginServer.value')
+          ENV_NAME=$(echo "$DEPLOY_JSON" | jq -r '.properties.outputs.envName.value')
+          echo "acr_name=$ACR_NAME" >> "$GITHUB_OUTPUT"
+          echo "acr_login=$ACR_LOGIN" >> "$GITHUB_OUTPUT"
+          echo "env_name=$ENV_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Set tag
+        id: tag
+        run: echo "tag=${GITHUB_SHA::8}" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push image
+        run: |
+          ACR_NAME="${{ steps.infra.outputs.acr_name }}"
+          ACR_LOGIN="${{ steps.infra.outputs.acr_login }}"
+          TAG="${{ steps.tag.outputs.tag }}"
+
+          az acr login -n "$ACR_NAME"
+          docker build -t "$ACR_LOGIN/$APP_NAME:$TAG" -t "$ACR_LOGIN/$APP_NAME:latest" .
+          docker push "$ACR_LOGIN/$APP_NAME:$TAG"
+          docker push "$ACR_LOGIN/$APP_NAME:latest"
+
+  staging:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: staging
+    outputs:
+      previous_image: ${{ steps.prev.outputs.image }}
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Capture current image
+        id: prev
+        run: |
+          IMG=$(az containerapp show -n "${APP_NAME}-staging" -g "${APP_NAME}-rg" --query "properties.template.containers[0].image" -o tsv 2>/dev/null || echo "")
+          echo "image=$IMG" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy to staging
+        run: |
+          az containerapp update \
+            -n "${APP_NAME}-staging" \
+            -g "${APP_NAME}-rg" \
+            --image "${{ needs.build.outputs.acr_login }}/$APP_NAME:${{ needs.build.outputs.tag }}"
+
+  smoke-test-staging:
+    needs: [build, staging]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run smoke tests against staging
+        run: npx playwright test
+        env:
+          BASE_URL: https://test.spire-archive.com
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-staging
+          path: playwright-report/
+          retention-days: 7
+
+  rollback-staging:
+    needs: [staging, smoke-test-staging]
+    if: failure() && needs.staging.outputs.previous_image != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Rollback staging
+        run: |
+          echo "Rolling back staging to ${{ needs.staging.outputs.previous_image }}"
+          az containerapp update \
+            -n "${APP_NAME}-staging" \
+            -g "${APP_NAME}-rg" \
+            --image "${{ needs.staging.outputs.previous_image }}"
+
+      - name: Notify via Telegram
+        if: always()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d parse_mode="Markdown" \
+            -d text="[CI/CD] 🚨 *Staging* smoke tests failed — rolled back to previous image.
+          Commit: \`${GITHUB_SHA::8}\`
+          [View run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" || true
+
+  production:
+    needs: [build, smoke-test-staging]
+    runs-on: ubuntu-latest
+    outputs:
+      previous_image: ${{ steps.prev.outputs.image }}
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Capture current image
+        id: prev
+        run: |
+          IMG=$(az containerapp show -n "$APP_NAME" -g "${APP_NAME}-rg" --query "properties.template.containers[0].image" -o tsv 2>/dev/null || echo "")
+          echo "image=$IMG" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy to production
+        run: |
+          az containerapp update \
+            -n "$APP_NAME" \
+            -g "${APP_NAME}-rg" \
+            --image "${{ needs.build.outputs.acr_login }}/$APP_NAME:${{ needs.build.outputs.tag }}" \
+            --min-replicas 1
+
+  smoke-test-prod:
+    needs: production
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run smoke tests against production
+        run: npx playwright test
+        env:
+          BASE_URL: https://spire-archive.com
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-prod
+          path: playwright-report/
+          retention-days: 7
+
+  rollback-prod:
+    needs: [production, smoke-test-prod]
+    if: failure() && needs.production.outputs.previous_image != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Rollback production
+        run: |
+          echo "Rolling back production to ${{ needs.production.outputs.previous_image }}"
+          az containerapp update \
+            -n "$APP_NAME" \
+            -g "${APP_NAME}-rg" \
+            --image "${{ needs.production.outputs.previous_image }}"
+
+      - name: Notify via Telegram
+        if: always()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d parse_mode="Markdown" \
+            -d text="[CI/CD] 🚨 *Production* smoke tests failed — rolled back to previous image.
+          Commit: \`${GITHUB_SHA::8}\`
+          [View run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" || true
+
+  cleanup-registry:
+    needs: [build, smoke-test-prod]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Keep the current image and the two before it, delete the rest
+        run: |
+          az acr run --registry "${{ needs.build.outputs.acr_name }}" \
+            --cmd "acr purge --filter '${APP_NAME}:^[0-9a-f]{8}$' --ago 0d --keep 3 --untagged" /dev/null

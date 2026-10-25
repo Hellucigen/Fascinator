@@ -30,7 +30,7 @@
 #   hormone_to_params     app.py 装配：跳过 hormone tonic 读数注册
 #   graph_projection      app.py 装配：modulator_system.subgraph=False
 #   graph_pulse           config：modulator_system.graph_pulse=False
-#   drift                 config：need/circadian 漂移速率=0
+#   drift                 config：need 漂移速率=0（circadian 已删，2026-10-17）
 #   modulation_events     modulation_events.ModulatorEngine.apply_event 入口
 #   internal_state_heartbeat  continuous_cognition.tick_once：decay/drift/
 #                         needs 三个写入节拍跳过（状态钉在装配时刻）

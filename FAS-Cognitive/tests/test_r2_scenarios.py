@@ -257,31 +257,18 @@ def s06():
     hot["lab"].close()
 
 
-# ═════════ 7 夜间 melatonin↑ → 预算/门槛收缩；非昼夜源被门控 ═════════
+# ═════════ 7（已删除，2026-10-17 用户裁定：AI 没有疲劳/清醒的机制）═════════
+# 夜间褪黑素/组胺清醒度场景连同调制器声明、事件行、漂移与门控一并移除；
+# 时段保留为**知识节点**（她知道现在是凌晨、能谈熬夜，但钟点不驱动水位）。
 def s07():
     e = make_env()
-    m0 = e["st"].modulator_conc("melatonin")
-    r_gate = e["lab"].inject("time_bucket_changed", valence=1.0,
-                             source="experiment")     # 假源：不该动褪黑素
-    check("7a `circadian_driven` 第一次真的拦东西：非 circadian 源 ⇒ 褪黑素不动",
-          any("circadian_driven" in str(g.get("gate")) for g in r_gate["gated"])
-          and e["st"].modulator_conc("melatonin") == m0,
-          str(r_gate["gated"]))
-    b0 = param(e, "llm.budget_factor")
-    a0 = param(e, "action.score_threshold")
-    r = e["lab"].inject("time_bucket_changed", valence=1.0, source="circadian")
-    mc = e["st"].modulator_conc("melatonin")
-    check("7b 昼夜源放行：褪黑素被推上去，且**被 clamp 限幅**（0.45×w 不会一把打满）",
-          mc > m0 and (mc - m0) <= 0.25 + 1e-9, f"{m0} → {mc}")
-    check("7c 同事件的两侧：组胺样反向回落（清醒度掉）",
-          (next((a for a in r["applied"] if a["mod"] == "histamine"), {})
-           or {}).get("requested", 0) < 0
-          or any(g["mod"] == "histamine" for g in r["gated"]),
-          str(r["applied"]))
-    check("7d LLM 认知预算收缩（`褪黑素样-[调制 −0.25]->认知预算`）",
-          param(e, "llm.budget_factor") < b0 - 1e-4, f"{b0} → {param(e, 'llm.budget_factor')}")
-    check("7e 行动门槛抬升 ⇒ 夜里更少发起行动（urgency↓ 的落点）",
-          param(e, "action.score_threshold") > a0 + 1e-4, f"{a0}")
+    check("7a 褪黑素/组胺已不是受维护的调制器（specs 删除）",
+          "melatonin" not in e["st"]._specs_mod
+          and "histamine" not in e["st"]._specs_mod)
+    check("7b time_bucket_changed 不再有调制靶点",
+          not any(r.get("mod") in ("melatonin", "histamine")
+                  for r in (e["cfg"].get("modulator_system", {})
+                            .get("events") or [])))
     e["lab"].close()
 
 
@@ -368,27 +355,27 @@ def s11():
     hot["lab"].close()
 
 
-# ═════════ 12 空闲+组胺 → 图路径点亮 行为:探索（发起的可达性） ═════════
+# ═════════ 12 行为:探索 图通道可达性（调制源由组胺清醒度改为催产素，
+#      2026-10-17：清醒度机制整体删除，本场景验证的"行为概念=图通道，
+#      不是 bias"这一结构性质与具体激素无关） ═════════
 def s12():
     e = make_env()
     b0 = param(e, "llm.budget_factor")
-    r = e["lab"].inject("time_bucket_changed", valence=-1.0, source="circadian")
-    h1 = e["st"].modulator_conc("histamine")
-    check("12a 变亮 ⇒ 组胺样升（同一事件的两侧：w=−0.35 乘 valence=−1）",
-          h1 > 0.45, f"conc {h1}")
-    check("12b 清醒抬认知预算（`组胺样-[增强 0.2]->认知预算`）",
-          param(e, "llm.budget_factor") > b0 + 1e-4, f"{b0} → {param(e, 'llm.budget_factor')}")
-    # 发起走图通道：脉冲点亮组胺样，一轮真实扩散沿 `组胺样-[增强 0.2]->行为:探索` 传播
+    check("12a/12b（原 变亮→组胺升→预算抬 断言随清醒度机制删除；参数不受影响）",
+          param(e, "llm.budget_factor") == b0)
+    # 发起走图通道：脉冲点亮调制器镜像，一轮真实扩散沿调制边传播
+    # （原 组胺→行为:探索 边随清醒度机制删除；改钉仍存在的 多巴胺→行为:分享，
+    #  验证的是同一条结构性质：行为概念经图可达，不是 bias 特供）
     e["eng"].decay_step()
     e["eng"].diffuse_step()
     e["eng"].clear_anchors()
     for n in e["kg"].nodes.values():
         n.activation = 0.0
-    e["st"].pulse("histamine", 0.30, reason="场景12", source="manual")
+    e["st"].pulse("dopamine", 0.30, reason="场景12", source="manual")
     e["eng"].decay_step()
     e["eng"].diffuse_step()
-    lit = float(e["kg"].get_node("行为:探索").activation or 0.0)
-    check("12c 一次脉冲经真实扩散点亮 `行为:探索`（行为概念=图通道，不是 bias）",
+    lit = float(e["kg"].get_node("行为:分享").activation or 0.0)
+    check("12c 一次脉冲经真实扩散点亮 `行为:分享`（行为概念=图通道，不是 bias）",
           lit > 0.0, f"activation={lit}")
     tot = sum(n.activation for n in e["kg"].nodes.values() if n.activation > 0)
     check("12d 传播是事件尺度的局部点亮（能量有界，不是全图饱和）",
@@ -612,13 +599,14 @@ def s_lab():
     check("台4 advance 拒绝未 open 的会话（Δt 不同源=衰减静默失效，宁可报错）",
           c["lab"].advance(5).get("ok") is False, "")
     v = c["lab"].observe()
-    check("台5 observe 一把给全：12 通道 + 14 参数 + 时钟 + trace",
-          len(v["view"]["mods"]) == 12 and len(v["params"]) == 14
+    # 通道 12→10：组胺样随"清醒度"机制删除（2026-10-17），褪黑素样 10-14 已先走
+    check("台5 observe 一把给全：10 通道 + 14 参数 + 时钟 + trace",
+          len(v["view"]["mods"]) == 10 and len(v["params"]) == 14
           and "clock" in v, f"{len(v['view']['mods'])}/{len(v['params'])}")
     ch = c["lab"].chain("reward_rpe")
     check("台6 chain 是既有 explain 的拼装（事件表/子图/心情/全通道都在）",
           ch["focus"]["source"] == "graph" and "subgraph" in ch
-          and ch["mood"]["in_edges"] == 5, "")
+          and ch["mood"]["in_edges"] == 4, "")
     d = make_env()
     n_before = len(d["kg"].edges)
     d["lab"].dial("oxytocin", 0.6)

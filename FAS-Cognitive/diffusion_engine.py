@@ -147,8 +147,14 @@ class DiffusionEngine:
         # -----------------------------------
         self._active_nodes: dict = {}
         self._active_edges: set = set()
-        # Hebbian 首见基线（运行时，不落盘）与参数调制增益（默认中性）
+        # （2026-10-19：Hebbian 基线已改为持久在边 extra_attrs["hebb_w0"]，
+        # 见 _hebbian；此运行时 dict 保留仅作兼容，不再参与封顶计算）
         self._hebb_w0: dict = {}
+        # 假设腿证据门（2026-10-19）：假设关联边不吃"重复共激活"本身。
+        # 消费方指认一次与假设相关的新独立证据=发放一份有限学习信用
+        # （note_hypothesis_evidence），信用耗尽即停学；方向不明的新节点
+        # 不发放（宁可不学，不猜支持/反驳）。
+        self._hypo_ev_credit = 0
         self._param_gain: float = 1.0
         # 认知调制层（可选，app 装配注入 ModulationLayer）：
         # 网络态/张力/激素 → 扩散参数的闭环读点（无则全部回退 config，
@@ -270,9 +276,15 @@ class DiffusionEngine:
 
         护栏：config.hebbian.enabled；类别白名单（默认 semantic/emotional——
         disposition 的先验/激活/pair 边与认知关系类**永不被运行时改写**，
-        人格学习只走 disposition 通道）；单边相对首见基线增幅封顶 max_gain
-        （可逆不爆炸）；ε 极小。基线以运行时首见值记录，重启后以当前持久
-        权重为新基线，限幅跨会话稳定。
+        人格学习只走 disposition 通道）；单边相对**首见基线**增幅封顶
+        max_gain；ε 极小；封顶值再受 ±2.0 绝对钳。
+        基线跨重启修正（2026-10-19 实验实锤）：旧实现把"运行时首见值"
+        当基线、重启后以已膨胀权重重新起基——每会话恰好 ×1.5，30 个
+        模拟会话把 0.4 的语义边推到 2.30、把 0.5 的喜欢边（零兑现）推到
+        同值；docstring 宣称的"限幅跨会话稳定"经验为假。现在首见基线
+        写进边自己的 extra_attrs["hebb_w0"]（to_dict 全量往返），封顶
+        跨重启恒定。注意：修复上线前已被棘轮抬高的存量边，其"首见"
+        只能从当前值起算——最多多涨一轮 max_gain 后永久钉死，不再无界。
         """
         hb = self.config.get("hebbian") or {}
         if not hb.get("enabled", True):
@@ -281,20 +293,40 @@ class DiffusionEngine:
         if cat not in set(hb.get("categories", ["semantic_relation",
                                                 "emotional_relation"])):
             return
+        # 假设关联腿（_emerge_hypotheses 建、带 hypothesis_leg 标）：
+        # 反复共激活≠新证据——没有指认过的相关新证据信用，拒学。
+        # 传播照常发生，禁的只是权重自增；信用按强化次数计费，一份
+        # 证据只买有限学习量（防一次证据喂整场会话）。
+        if (getattr(edge, "extra_attrs", None) or {}).get("hypothesis_leg"):
+            if int(getattr(self, "_hypo_ev_credit", 0)) <= 0:
+                return
+            self._hypo_ev_credit = int(self._hypo_ev_credit) - 1
         eps = float(hb.get("epsilon", 0.0015))
         max_gain = float(hb.get("max_gain", 0.5))
-        key = (edge.src, edge.dst, edge.relation)
-        w0 = self._hebb_w0.get(key)
-        if w0 is None:
-            self._hebb_w0[key] = w0 = abs(edge.weight) or 1e-6
         a_u = min(1.0, max(0.0,
                 float(getattr(src_node, "activation", 0) or 0) / 5.0))
-        cap = abs(w0) * (1.0 + max_gain)
+        if a_u <= 0.0:
+            return
+        ea = edge.extra_attrs
+        if ea is None:
+            ea = edge.extra_attrs = {}
+        w0 = ea.get("hebb_w0")
+        if w0 is None:
+            ea["hebb_w0"] = w0 = abs(edge.weight) or 1e-6
+        cap = min(abs(float(w0)) * (1.0 + max_gain), 2.0)   # 绝对钳兜底
         step = eps * a_u
         if edge.weight >= 0:
             edge.weight = min(cap, edge.weight + step)
         else:   # 抑制边同向强化（更抑制），|w| 同封顶
             edge.weight = max(-cap, edge.weight - step)
+
+    def note_hypothesis_evidence(self, credits: int = 40):
+        """消费方指认"与某假设相关的新独立证据"时调用（生产接线：
+        调研证据消费 _consume_evidence；reactivation 中真实新增的
+        episodic 唤醒）。每指认一次，假设关联腿获得 credits 次强化
+        信用——有限、可耗尽，重复点亮本身不再自动等于证据。"""
+        self._hypo_ev_credit = int(getattr(self, "_hypo_ev_credit", 0)) \
+            + max(0, int(credits))
 
     def _forget_factor(self, node):
         """last_access 驱动的可达性衰减（软遗忘：数据保留、唤醒变难）。"""
@@ -547,9 +579,10 @@ class DiffusionEngine:
                     continue
                 # 账本节点只进不出（readout 不回传——防止汇点与源
                 # 经双向边构成共振腔把能量越滚越大，2026-10-15 实测）
-                ea0 = getattr(node, "extra_attrs", None) or {}
-                if str(ea0.get("type") or "") == "action_outcome":
-                    continue
+                from graph_model import is_non_emitting
+                if is_non_emitting(node):
+                    continue   # 内部痕迹/状态镜像只进不出（泛化自
+                    # action_outcome 先例，2026-10-20 共振腔实测）
                 for e in self.kg.edges:
                     if e.src != nid and e.dst != nid:
                         continue
@@ -573,6 +606,11 @@ class DiffusionEngine:
                 n2 = self.kg.nodes.get(tid)
                 if n2 is None:
                     continue
+                from graph_model import is_state_mirror
+                if is_state_mirror(n2):
+                    continue   # 状态镜像不收扩散能（2026-10-20 第二次复发
+                    # 实修：MC 没开着却被枢纽地板经能力链合法泵到封顶——
+                    # 镜像只反映桥接直写的真实状态，不是图谱物理）
                 n2.activation = float(n2.activation or 0.0) + dv
                 if dv > min_spread:
                     self._active_nodes[tid] = 1
@@ -596,7 +634,14 @@ class DiffusionEngine:
             # 这是 blocking 与 non_blocking 的可测试分界：前者激活值恒为 0，
             # 后者激活值正常但被输出过滤掉。
             pool = [self.kg.nodes[nid] for nid in self._active_nodes
-                    if nid in self.kg.nodes and not self._node_is_hidden(nid)]
+                    if nid in self.kg.nodes and not self._node_is_hidden(nid)
+                    # 结构脚手架不进 topk（2026-10-25 实锤：时点锚
+                    # label=infrastructure，"保存-重启"循环反复回滚其衰减，
+                    # 0.68×15+ 长期霸占 CC basis_pool 与回答区窗口，把
+                    # 0.3 的真实情景内容全部挤出。与 active_snapshot 的
+                    # 既有过滤语义对齐：结构件可参与扩散，不作认知输出）
+                    and getattr(self.kg.nodes[nid], "label", "")
+                    not in ("infrastructure", "procedural")]
             top_nodes = heapq.nlargest(
                 k,
                 pool,
@@ -1039,6 +1084,13 @@ class DiffusionEngine:
                 if node.activation < min_spread:
                     continue
 
+                # 只进不出（2026-10-20 与级联路同款闸，共振腔修复）：
+                # 内部痕迹/状态镜像不向外泵能——标准路虽有"发射即转移"
+                # 兜底不至于发散，但镜像当语义能量源本身就是类别错误。
+                from graph_model import is_non_emitting
+                if is_non_emitting(node):
+                    continue
+
                 # ── Fire-once：一次 propagation cycle 内至多一次 outward emission ──
                 # 注意区分两件事：激活的**累积**（可以持续接收多条传入并累加）
                 # 与**向外发射**（受限动作）。图环 A→B→A 中若无此约束，
@@ -1205,6 +1257,12 @@ class DiffusionEngine:
                 if dst_node is not None and self._node_is_blocked(dst):
                     # ── 锁介入点 5/5：目标接收前（blocking 锁）──
                     # 被阻塞的对象激活值保持 0，不因他人传播而获得注意力
+                    continue
+                # 状态镜像禁收扩散能（2026-10-20，与级联路同款闸）：镜像
+                # 读数只该来自桥接直写；扩散喂进来的能量会把"没在玩"
+                # 物理成像成"正身处其中"，常驻气泡与 basis。
+                from graph_model import is_state_mirror
+                if dst_node is not None and is_state_mirror(dst_node):
                     continue
                 if dst_node is not None:
                     dst_space = getattr(dst_node, "graph_space", "semantic")

@@ -214,17 +214,20 @@ def get_interest(kg: KnowledgeGraph, target_node: str) -> dict:
         return {"level": 0.0, "ask_count": 0, "resolved_count": 0,
                 "ignored_count": 0, "last_outcome": None}
     out = {"level": 0.0, "ask_count": 0, "resolved_count": 0,
-           "ignored_count": 0, "last_outcome": None}
+           "ignored_count": 0, "acted_count": 0, "last_outcome": None}
     out.update({k: v for k, v in it.items() if k in out})
     return out
 
 
 def note_interest(kg: KnowledgeGraph, target_node: str, event: str,
-                  config: dict = None) -> dict:
+                  config: dict = None, mult: float = None) -> dict:
     """兴趣水位更新（确定性，无 LLM）。
 
     event: signal（又遇到） / fired（发出探索行动） /
            resolved（被回答） / ignored（被忽略/超时） / searched（自搜完成）
+           / sated（念头被行动兑现而消耗——2026-10-17 用户设计：欲望就是
+           念头的持续激活，每满足一次衰减一部分，mult 由行动结果决定
+           （输得越惨念头越凉）；水位跌破行动阈值，念头自然停止）
     兴趣可以增强、衰减、被压制、再次出现——但绝不因一次回答而清零。
     """
     cfg = (config or {}).get("curiosity", {})
@@ -232,6 +235,16 @@ def note_interest(kg: KnowledgeGraph, target_node: str, event: str,
     if node is None:
         return {}
     it = dict(get_interest(kg, target_node))
+    if event == "sated":
+        m = float(mult if mult is not None else
+                  cfg.get("interest_sated_decay", 0.7))
+        it["level"] = round(max(0.0, min(1.0, it["level"] * m)), 4)
+        it["acted_count"] = it.get("acted_count", 0) + 1
+        it["last_outcome"] = "sated"
+        it["last_explored_at"] = now_str()
+        node.extra_attrs["interest"] = it
+        node.touch()
+        return it
     if event == "signal":
         it["level"] = min(1.0, it["level"] + float(cfg.get("interest_signal_gain", 0.25)))
         it["last_signal_at"] = now_str()

@@ -511,6 +511,13 @@ class MinecraftEmbodiment:
                           or action.get("type") or "").strip()
         if not action_type:
             return {"success": False, "action": "?", "reason": "no_action_type"}
+        # communicate 是语言动作：走通道层（Charon/桌面气泡），与 MC 桥
+        # 是否在线无关——2026-10-24 实锤：MC node 死后 available()=False
+        # 把"对用户说话"也拦成 not_connected，主动话永远送不到桌面
+        # （且失败进因果归因，她在学"说了也没用"→表达被抑制）。
+        # 必须放在 available() 门之前。
+        if action_type == "communicate":
+            return self._communicate(action, params)
         if not self.available():
             return {"success": False, "action": action_type,
                     "reason": "not_connected"}

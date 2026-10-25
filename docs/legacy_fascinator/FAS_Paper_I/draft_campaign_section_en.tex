@@ -1,0 +1,102 @@
+% DRAFT — 并入 main.tex 的新小节(T 行为半区数字留槽)
+% 位置:插在 5.5 (Determinism re-run) 之后、5.6 Additional observations 之前;
+% 后续小节编号顺延。数字全部程序化提取自 capability_gap_v2 归档。
+
+\subsection{Comparative behavioral evidence (campaign v2)}
+\label{sec:res-campaign}
+
+The protocol above tests activation against closed-form and embedding
+retrieval on \emph{mechanism} metrics. To test the same questions on
+\emph{behavior}, we ran a second campaign (360 runs; design, two
+mid-course confound repairs, and full data in Supplementary
+Material~S15--S17) in which every condition shares the same scripted
+experience stream, the same menu, the same LLM decision head
+(temperature 0), and the same decision budget---only the memory form
+differs.
+
+\textbf{Goal resumption under neutral instructions (C).} After an
+open-book practice phase (obtain \texttt{oak\_planks}) and an unrelated
+distractor phase, the test prompt gives no goal at all
+(``you have free choice'') and the recipe facts are stripped. FAS
+resumes and completes the abandoned goal in \textbf{9/10} paired seeds;
+the full-history LLM baseline and the no-memory baseline resume in
+\textbf{0/10} (McNemar $p{=}0.0039$; Holm $p{=}0.0117$). This advantage
+is regime-dependent: with a longer experience stream that also contains
+a failure episode, the full-history baseline matches FAS at 10/10
+(below)---the salience advantage holds in the short-history regime.
+Mechanism attribution: a zero-experience control reproduces the
+same working set (the recipe-closure prior edge
+\texttt{oak\_log}$\rightarrow$\texttt{oak\_planks} re-lights the chain
+when the raw material is observed), so the effect is
+\emph{observation-triggered activation over prior relational
+structure}---relational working-set salience---rather than an
+intention-lifecycle mechanism.
+
+\textbf{Goal revision is where the same mechanism costs (E).} With an
+infeasible target (tool-gated ore), the full-history baseline stops
+repeating the failed gather after \textbf{1.0} failures on average and
+pivots immediately; FAS repeats it \textbf{10.5} times and pivots in
+7/10 runs (late). A joint measurement (below) gives the direction and
+magnitude of this cost precisely. The two results are the same coin: state that keeps
+a goal salient under distraction also keeps it salient when the
+environment invalidates it.
+
+\textbf{Consumer repairs (E2/F).} We then tested whether the failure
+and goal states are simply not consumed by the decision context.
+Wiring the production event-frame's negative-polarity encoding into
+the campaign assembly (failure$\rightarrow$entity edge $w{=}{-}0.8$,
+parameters identical to the production config) reduced repeated
+failures from 10.5 to \textbf{7.2} (one-sided Wilcoxon
+$p{=}0.011$)---statistically significant, still short of the baseline,
+so residual inertia is design-level (constant goal text, weak ledger
+prior). Adding a uniform self-graph goal consumer
+(\texttt{current\_goal} $\rightarrow$ working set; production default
+off) turned the previously bit-identical ON/OFF behavior into a
+separation: with the registry cleared, the consumer-on loop re-derives
+the abandoned goal in 5/5 seeds and its gathering actions rise from
+1.0 to \textbf{6.0} per run. The self-model's ``behavioral
+irrelevance'' was a missing-consumer artifact, not a property of the
+representation.
+
+\textbf{Behavioral convergence (I).} On a two-chain convergence task
+(\texttt{oak\_fence} requires \texttt{oak\_planks} and \texttt{stick}
+learned in separate experiences), FAS conditions complete 0--2/10
+while the raw-history LLM baseline completes \textbf{10/10} (Holm
+$p{=}0.041$). Context budget ($k{=}16,32$) and a structure-enriched
+serialization (explicit action$\rightarrow$outcome pairs) both remain
+at 0/10 ($n{=}30$), locating the failure in the \emph{serialization
+format}: the graph state drops the temporal narrative that the raw
+stream preserves (Supplementary Material~S17).
+
+\textbf{Credit horizon (B) and long-run stability (J).} A deterministic
+delay probe on the production attribution pipeline shows
+action$\rightarrow$consequence credit forms in 10/10 seeds up to 80\,s
+and in 0/10 at 160\,s---the 90\,s attribution window is the
+architecture's credit horizon (an intentional semantic boundary,
+Section~\ref{sec:limits}). A 100-cycle stability run (zero-LLM) shows
+bounded graph growth ($+3.7\%$ nodes), clamped activation, and no
+contamination collapse, but also zero promotion (repetition-starved
+episodes never reach the support threshold)---long-run consolidation
+remains untested.
+
+\textbf{Joint measurement (T).} On a single task sequence carrying
+both mechanisms (a failed infeasible goal followed by a neutral free
+phase), the event-frame encoding replicates its effect
+(failed-gather repetitions 12.0$\rightarrow$7.8, one-sided Wilcoxon
+$p{=}0.002$), the goal consumer adds no resumption increment where the
+prior-edge path is already at ceiling (all conditions 10/10) and adds
+no inertia penalty (6.8 vs 7.8, n.s.)---the two consumers coexist, and
+the combined working set crowds the failed action out of the top-8
+entirely. The behavioral trade-off curve between suppression and
+salience is therefore measurable, and its first two points favor
+suppression. (One design flaw---inventory carry-over saturating the
+first resumption metric---was caught and corrected with a fresh-world
+rerun; both datasets are archived.)
+
+Together these results revise the paper's claim structure: persistent
+relational state demonstrably changes behavior in one direction
+(resumption), demonstrably costs in another (revision), is currently
+bottlenecked at the serialization interface (convergence), and is
+credit-limited by an explicit design window (delayed consequence).
+All negative and reverse-direction results are reported at full
+strength.

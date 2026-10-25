@@ -179,6 +179,12 @@ class ActionManager:
         self.llm_budget = llm_budget
         self._save_graph_fn = save_graph_fn
         self._note_outcome_fn = note_outcome_fn
+        # 动作历史落盘 + 实时上报（2026-10-21 Charon 动作窗口）：
+        # _data_dir 决定 action_history.jsonl 位置；event_sink 由 app 注入
+        # （Charon 桥推送回调），缺席=只落盘不推送。
+        self._data_dir = str(data_dir or "data")
+        self._hist_writes = 0
+        self.event_sink = None
 
         cfg = self.config.setdefault("action_system", {})
         cfg.setdefault("interrupt_margin", 0.12)     # 打断所需优先级差
@@ -233,6 +239,46 @@ class ActionManager:
                 "recent": list(self._recent[-8:]),
                 "stats": dict(self._stats),
             }
+
+    # ── 动作历史（落盘 + 查询，2026-10-21）────────────────
+    def _persist_history(self, rec: dict):
+        """结算记录追加 data/action_history.jsonl；每 200 条滚动截断到
+        最近 2000 条（陪伴机不养无限增长的日志）。失败静默——历史绝不
+        能炸动作主路。"""
+        import json
+        import os
+        try:
+            path = os.path.join(self._data_dir, "action_history.jsonl")
+            with open(path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            self._hist_writes += 1
+            if self._hist_writes % 200 == 0:
+                with open(path, encoding="utf-8") as f:
+                    tail = f.readlines()[-2000:]
+                with open(path, "w", encoding="utf-8") as f:
+                    f.writelines(tail)
+        except Exception:                              # noqa: BLE001
+            pass
+
+    def history(self, n: int = 60) -> list:
+        """最近 n 条已结算动作（新→旧）；文件缺席回退内存。"""
+        import json
+        import os
+        path = os.path.join(self._data_dir, "action_history.jsonl")
+        out = []
+        try:
+            with open(path, encoding="utf-8") as f:
+                lines = f.readlines()
+            for ln in lines[-max(1, int(n)):]:
+                try:
+                    out.append(json.loads(ln))
+                except Exception:                      # noqa: BLE001
+                    pass
+            out.reverse()
+        except OSError:
+            with self._lock:
+                out = list(reversed(self._recent[-int(n):]))
+        return out
 
     # ── 提交动作（所有来源的唯一入口）─────────────────────
 
@@ -463,6 +509,16 @@ class ActionManager:
         self._emit_action_event(action)
         # 当前活动挂接：activity ≠ action——同族动作归入同一活动节点
         self._track_activity_start(action)
+        # 实时上报（Charon 动作窗口消费）：sink 缺席/异常都不碰动作主路
+        if self.event_sink:
+            try:
+                self.event_sink("start", {
+                    "action": action["action_type"],
+                    "target": action.get("target"),
+                    "source": action.get("source"),
+                    "priority": action.get("priority")})
+            except Exception:                          # noqa: BLE001
+                pass
         # started 在"动作真的开始执行"处计一次（同步/挂起都算）。旧版只在
         # pending 分支加计数：同步成功的 craft/place 结算 success 却不进
         # started，账目恒等式 success+failed+cancelled+interrupted==started
@@ -553,6 +609,14 @@ class ActionManager:
                 "ts": now_str()})
             if len(self._recent) > 40:
                 del self._recent[:-40]
+        # 结算历史落盘 + 实时上报（2026-10-21 Charon 动作窗口）
+        _rec = dict(self._recent[-1]) if self._recent else {}
+        self._persist_history(_rec)
+        if self.event_sink and _rec:
+            try:
+                self.event_sink("settle", _rec)
+            except Exception:                          # noqa: BLE001
+                pass
         self._emit_result_event(action, result, success)
         self._write_action_memory(action, result, success)
         self._track_activity_settle(result, success)

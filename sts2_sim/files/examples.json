@@ -1,0 +1,410 @@
+{
+  "schema": "fas-sts2-kb/1.0",
+  "version": "kb-0.1.0",
+  "game": "Slay the Spire 2",
+  "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+  "examples": [
+    {
+      "id": "X.01",
+      "title": "Multi-hit with Vulnerable",
+      "domain": "combat",
+      "hypothetical": true,
+      "scenario": {
+        "card": {
+          "hits": 3,
+          "base": 5,
+          "applies": "vulnerable 1",
+          "cost": 2
+        },
+        "enemy": {
+          "hp": 30,
+          "block": 4,
+          "vulnerable": 0
+        },
+        "player": {
+          "energy": 3,
+          "strength": 0
+        }
+      },
+      "patterns": [
+        "P.debuff_before_burst",
+        "P.expected_damage"
+      ],
+      "steps": [
+        "bind hits and base to attack",
+        "vulnerable applied on play; assume it resolves before hits (unknown ordering)",
+        "per-hit 5 -> 7 if vuln first"
+      ],
+      "result": {
+        "no_vuln_total": 15,
+        "vuln_first_total": 21,
+        "hp_after_vuln_first": 13
+      },
+      "uncertainties": [
+        "whether debuff applies before first hit",
+        "rounding"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.02",
+      "title": "Poison vs block",
+      "domain": "combat",
+      "hypothetical": true,
+      "scenario": {
+        "card": "applies poison 6",
+        "enemy": {
+          "hp": 40,
+          "block": 20
+        }
+      },
+      "patterns": [
+        "P.dot_vs_block",
+        "P.dot_total_damage"
+      ],
+      "steps": [
+        "classify poison as non-attack",
+        "block does not reduce",
+        "ticks 6+5+4+3+2+1"
+      ],
+      "result": {
+        "projected_total": 21,
+        "ignores_block": true
+      },
+      "uncertainties": [
+        "tick timing",
+        "accelerant"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.03",
+      "title": "Doom lethality",
+      "domain": "combat",
+      "hypothetical": true,
+      "scenario": {
+        "enemy": {
+          "hp": 33,
+          "doom": 0
+        },
+        "card": "apply doom 33"
+      },
+      "patterns": [
+        "P.doom_threshold",
+        "P.lethal_check"
+      ],
+      "steps": [
+        "doom 33 >= hp 33",
+        "dies at end of enemy turn"
+      ],
+      "result": {
+        "dies": true,
+        "when": "end of enemy turn"
+      },
+      "uncertainties": [
+        "timing wording conflict",
+        "enemy healing"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.04",
+      "title": "Weak versus block",
+      "domain": "combat",
+      "hypothetical": true,
+      "scenario": {
+        "intent": {
+          "damage": 18,
+          "hits": 1
+        },
+        "player": {
+          "block": 8
+        },
+        "options": [
+          {
+            "weak": true
+          },
+          {
+            "block_gain": 10
+          }
+        ]
+      },
+      "patterns": [
+        "P.block_sufficiency",
+        "P.defensive_debuff_value"
+      ],
+      "steps": [
+        "weak: 18*0.75=13",
+        "needed block 13 vs have 8"
+      ],
+      "result": {
+        "weak_incoming": 13,
+        "hp_loss_weak": 5,
+        "hp_loss_block_option": 0
+      },
+      "uncertainties": [
+        "floor/round",
+        "does weak apply to this intent"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.05",
+      "title": "Forge plus Retain accumulation",
+      "domain": "combat",
+      "hypothetical": true,
+      "scenario": {
+        "blade": {
+          "damage": 10
+        },
+        "forge_plan": [
+          3,
+          2
+        ]
+      },
+      "patterns": [
+        "P.scaling_attack_projection"
+      ],
+      "steps": [
+        "forge adds to all zones",
+        "retain keeps blade in hand"
+      ],
+      "result": {
+        "blade_after": 15
+      },
+      "uncertainties": [
+        "blade location",
+        "extra synergy"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.06",
+      "title": "Dual resource affordability",
+      "domain": "combat",
+      "hypothetical": true,
+      "scenario": {
+        "energy": 3,
+        "stars": 2,
+        "cards": [
+          {
+            "e": 1,
+            "s": 1
+          },
+          {
+            "e": 2,
+            "s": 2
+          },
+          {
+            "e": 1,
+            "s": 0
+          }
+        ]
+      },
+      "patterns": [
+        "P.dual_resource_affordability"
+      ],
+      "steps": [
+        "both pools must cover",
+        "best subset"
+      ],
+      "result": {
+        "playable_sets": [
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "note": "set [0,1] costs e3 s3: infeasible",
+        "correct_feasible": [
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "uncertainties": [
+        "star gain mid-turn"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.07",
+      "title": "Sly discard chain",
+      "domain": "combat",
+      "hypothetical": true,
+      "scenario": {
+        "hand": [
+          "Sly A",
+          "Sly B",
+          "discard card"
+        ],
+        "energy": 1
+      },
+      "patterns": [
+        "P.discard_chain_value"
+      ],
+      "steps": [
+        "discard effect triggers sly cards"
+      ],
+      "result": {
+        "free_plays_up_to": 2
+      },
+      "uncertainties": [
+        "target selection"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.08",
+      "title": "Rest vs Smith before elite",
+      "domain": "resource_management",
+      "hypothetical": true,
+      "scenario": {
+        "hp": 40,
+        "max_hp": 80,
+        "upgrade_value": "high"
+      },
+      "patterns": [
+        "P.rest_decision"
+      ],
+      "steps": [
+        "heal under max-HP basis = floor(80*0.3)=24",
+        "under missing-HP basis = floor(40*0.3)=12"
+      ],
+      "result": {
+        "heal_max_basis": 24,
+        "heal_missing_basis": 12
+      },
+      "uncertainties": [
+        "basis conflict between sources"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.09",
+      "title": "Shop allocation",
+      "domain": "resource_management",
+      "hypothetical": true,
+      "scenario": {
+        "gold": 150,
+        "removal": 75,
+        "potion": 50,
+        "slots_free": 0
+      },
+      "patterns": [
+        "P.shop_allocation"
+      ],
+      "steps": [
+        "potion purchase fails without slot",
+        "remove card then maybe relic"
+      ],
+      "result": {
+        "buy": [
+          "removal"
+        ],
+        "cannot_buy": "potion without slot"
+      },
+      "uncertainties": [
+        "actual prices"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.10",
+      "title": "Route choice",
+      "domain": "route_selection",
+      "hypothetical": true,
+      "scenario": {
+        "paths": [
+          [
+            "monster",
+            "rest",
+            "elite"
+          ],
+          [
+            "unknown",
+            "merchant",
+            "rest"
+          ]
+        ],
+        "hp_ratio": 0.5,
+        "gold": 120
+      },
+      "patterns": [
+        "P.route_value"
+      ],
+      "steps": [
+        "path 2 passes a shop with enough gold",
+        "path 1 elite grants relic but risk"
+      ],
+      "result": {
+        "preferred": "path 2 at low HP (heuristic)"
+      },
+      "uncertainties": [
+        "elite relic value",
+        "unknown outcomes"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.11",
+      "title": "Event parse: chest tradeoff",
+      "domain": "resource_management",
+      "hypothetical": true,
+      "scenario": {
+        "event": "small chest gold vs large chest more gold plus permanent curse"
+      },
+      "patterns": [
+        "P.event_ev"
+      ],
+      "steps": [
+        "parse options into effects",
+        "curse adds a bad card permanently"
+      ],
+      "result": {
+        "decision_depends_on": "gold need vs deck dilution"
+      },
+      "uncertainties": [
+        "curse type"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    },
+    {
+      "id": "X.12",
+      "title": "Osty absorption",
+      "domain": "combat",
+      "hypothetical": true,
+      "scenario": {
+        "incoming": 12,
+        "osty_hp": 5,
+        "block": 0
+      },
+      "patterns": [
+        "P.damage_absorption_order"
+      ],
+      "steps": [
+        "osty absorbs first",
+        "overflow behavior unknown"
+      ],
+      "result": {
+        "osty_absorbed": 5,
+        "remaining_if_overflow_passes": 7
+      },
+      "uncertainties": [
+        "overflow rule"
+      ],
+      "note": "synthetic card/numbers for illustration; not game facts"
+    }
+  ]
+}

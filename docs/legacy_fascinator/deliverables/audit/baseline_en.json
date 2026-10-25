@@ -1,0 +1,6674 @@
+{
+ "file": "deliverables/baseline_snapshot/main.tex",
+ "n": 1667,
+ "numbers": [
+  {
+   "v": "10",
+   "ctx": " ["
+  },
+  {
+   "v": "4",
+   "ctx": " [10pt,a"
+  },
+  {
+   "v": "2.4",
+   "ctx": ",a4paper]{article}  [margin="
+  },
+  {
+   "v": "1",
+   "ctx": "}  {multirow}  {array}  {L}["
+  },
+  {
+   "v": "1",
+   "ctx": "w}  {array}  {L}[1]{>{  }p{#"
+  },
+  {
+   "v": "60",
+   "ctx": "orlinks=true,linkcolor=blue!"
+  },
+  {
+   "v": "60",
+   "ctx": "lue!60!black,citecolor=blue!"
+  },
+  {
+   "v": "60",
+   "ctx": "blue!60!black,urlcolor=blue!"
+  },
+  {
+   "v": "3",
+   "ctx": "hyperref}  {caption}    { }{"
+  },
+  {
+   "v": "2",
+   "ctx": "sort&compress]{natbib}  { }{"
+  },
+  {
+   "v": "2024015943",
+   "ctx": "t of Computer Science\\\\    {"
+  },
+  {
+   "v": "4",
+   "ctx": "andboxes---a preregistered $"
+  },
+  {
+   "v": "50",
+   "ctx": "dboxes---a preregistered $4 "
+  },
+  {
+   "v": "5",
+   "ctx": "seed mechanism campaign and "
+  },
+  {
+   "v": "20",
+   "ctx": "avioral experiments---and a "
+  },
+  {
+   "v": "34",
+   "ctx": "LLM decision head, totaling "
+  },
+  {
+   "v": "016",
+   "ctx": "ecision head, totaling 34{,}"
+  },
+  {
+   "v": "20",
+   "ctx": "istent graph context yields "
+  },
+  {
+   "v": "20",
+   "ctx": "ent graph context yields 20/"
+  },
+  {
+   "v": "0",
+   "ctx": "lds 20/20 completion versus "
+  },
+  {
+   "v": "20",
+   "ctx": "s 20/20 completion versus 0/"
+  },
+  {
+   "v": "2",
+   "ctx": "thout context (McNemar $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "out context (McNemar $p{=}2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "context (McNemar $p{=}2 10^{"
+  },
+  {
+   "v": "20",
+   "ctx": "n-free aggregation (D-flat, "
+  },
+  {
+   "v": "20",
+   "ctx": "ree aggregation (D-flat, 20/"
+  },
+  {
+   "v": "0",
+   "ctx": "nism genuinely runs (JCG${>}"
+  },
+  {
+   "v": "200",
+   "ctx": "enuinely runs (JCG${>}0$ on "
+  },
+  {
+   "v": "200",
+   "ctx": "nely runs (JCG${>}0$ on 200/"
+  },
+  {
+   "v": "0",
+   "ctx": "tered conditions ($ $JCG${<}"
+  },
+  {
+   "v": "1.5",
+   "ctx": "ns ($ $JCG${<}0$, Holm $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "$ $JCG${<}0$, Holm $p{=}1.5 "
+  },
+  {
+   "v": "-9",
+   "ctx": "CG${<}0$, Holm $p{=}1.5 10^{"
+  },
+  {
+   "v": "0",
+   "ctx": "0$, Holm $p{=}1.5 10^{-9}$, "
+  },
+  {
+   "v": "200",
+   "ctx": ", Holm $p{=}1.5 10^{-9}$, 0/"
+  },
+  {
+   "v": "30",
+   "ctx": "al shared-hub topology (FAS "
+  },
+  {
+   "v": "30",
+   "ctx": "shared-hub topology (FAS 30/"
+  },
+  {
+   "v": "0",
+   "ctx": "ology (FAS 30/30  {vs} flat "
+  },
+  {
+   "v": "30",
+   "ctx": "ogy (FAS 30/30  {vs} flat 0/"
+  },
+  {
+   "v": "0.325",
+   "ctx": "l limit of propagation ($ $ "
+  },
+  {
+   "v": "0.645",
+   "ctx": "of propagation ($ $ 0.325$ $"
+  },
+  {
+   "v": "0.002",
+   "ctx": "on ($ $ 0.325$ $0.645, $p{=}"
+  },
+  {
+   "v": "0.886",
+   "ctx": "$ $0.645, $p{=}0.002$, $r{=}"
+  },
+  {
+   "v": "10",
+   "ctx": ", $p{=}0.002$, $r{=}0.886$, "
+  },
+  {
+   "v": "10",
+   "ctx": "p{=}0.002$, $r{=}0.886$, 10/"
+  },
+  {
+   "v": "21",
+   "ctx": ", $r{=}0.886$, 10/10 seeds; "
+  },
+  {
+   "v": "21",
+   "ctx": "r{=}0.886$, 10/10 seeds; 21/"
+  },
+  {
+   "v": "0.001953",
+   "ctx": " 21/21 paired tests at $p{=}"
+  },
+  {
+   "v": "0.445",
+   "ctx": "ad dilutes targets ($ {=}{-}"
+  },
+  {
+   "v": "0.656",
+   "ctx": "argets ($ {=}{-}0.445$, ${-}"
+  },
+  {
+   "v": "2004",
+   "ctx": "res such as ACT-R~ {anderson"
+  },
+  {
+   "v": "2012",
+   "ctx": "integrated} and Soar~ {laird"
+  },
+  {
+   "v": "2023",
+   "ctx": "rate. LLM-based agents~ {yao"
+  },
+  {
+   "v": "2023",
+   "ctx": "d agents~ {yao2023react,park"
+  },
+  {
+   "v": "2023",
+   "ctx": "act,park2023generative,shinn"
+  },
+  {
+   "v": "1975",
+   "ctx": "ndidate generation~ {collins"
+  },
+  {
+   "v": "20",
+   "ctx": "metry}: on the beacon task ("
+  },
+  {
+   "v": "20",
+   "ctx": "aired seeds), graph context "
+  },
+  {
+   "v": "20",
+   "ctx": "ed seeds), graph context 20/"
+  },
+  {
+   "v": "0",
+   "ctx": "ds), graph context 20/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": "), graph context 20/20 vs 0/"
+  },
+  {
+   "v": "2",
+   "ctx": "thout context (McNemar $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "out context (McNemar $p{=}2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "context (McNemar $p{=}2 10^{"
+  },
+  {
+   "v": "20",
+   "ctx": "tion (D-flat) also achieves "
+  },
+  {
+   "v": "20",
+   "ctx": "n (D-flat) also achieves 20/"
+  },
+  {
+   "v": "4",
+   "ctx": "stered mechanism campaign ($"
+  },
+  {
+   "v": "50",
+   "ctx": "ered mechanism campaign ($4 "
+  },
+  {
+   "v": "34",
+   "ctx": "paign ($4 50$ paired seeds, "
+  },
+  {
+   "v": "016",
+   "ctx": " ($4 50$ paired seeds, 34{,}"
+  },
+  {
+   "v": "0",
+   "ctx": "atory conditions ($ $JCG${<}"
+  },
+  {
+   "v": "1.5",
+   "ctx": "ns ($ $JCG${<}0$, Holm $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "$ $JCG${<}0$, Holm $p{=}1.5 "
+  },
+  {
+   "v": "-9",
+   "ctx": "CG${<}0$, Holm $p{=}1.5 10^{"
+  },
+  {
+   "v": "0",
+   "ctx": "0$, Holm $p{=}1.5 10^{-9}$, "
+  },
+  {
+   "v": "200",
+   "ctx": ", Holm $p{=}1.5 10^{-9}$, 0/"
+  },
+  {
+   "v": "30",
+   "ctx": "via a shared hub) shows FAS "
+  },
+  {
+   "v": "30",
+   "ctx": " a shared hub) shows FAS 30/"
+  },
+  {
+   "v": "0",
+   "ctx": " shows FAS 30/30  {vs} flat "
+  },
+  {
+   "v": "30",
+   "ctx": "hows FAS 30/30  {vs} flat 0/"
+  },
+  {
+   "v": "5",
+   "ctx": "eterministic per seed ($n{=}"
+  },
+  {
+   "v": "50",
+   "ctx": "-mechanism experiments $n{=}"
+  },
+  {
+   "v": "20",
+   "ctx": "ents $n{=}50$; routing $n{=}"
+  },
+  {
+   "v": "20",
+   "ctx": "$ paired seeds; beacon $n{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "ds; relation direction $n{=}"
+  },
+  {
+   "v": "1,",
+   "ctx": "am of experience $ {E}={[}e_"
+  },
+  {
+   "v": "0",
+   "ctx": "learning from scratch (the P"
+  },
+  {
+   "v": "-2,2",
+   "ctx": "ts) and a static weight $w ["
+  },
+  {
+   "v": "100,",
+   "ctx": "m episodic buffer (capacity "
+  },
+  {
+   "v": "2026",
+   "ctx": "erified line-by-line in the "
+  },
+  {
+   "v": "-09",
+   "ctx": "ied line-by-line in the 2026"
+  },
+  {
+   "v": "3.5",
+   "ctx": "rs, align=center, inner sep="
+  },
+  {
+   "v": "8",
+   "ctx": "  sem/.style={sp, fill=blue!"
+  },
+  {
+   "v": "12",
+   "ctx": "epi/.style={sp, fill=orange!"
+  },
+  {
+   "v": "10",
+   "ctx": "proc/.style={sp, fill=green!"
+  },
+  {
+   "v": "8",
+   "ctx": "fst/.style={sp, fill=purple!"
+  },
+  {
+   "v": "8",
+   "ctx": "}, emo/.style={sp, fill=red!"
+  },
+  {
+   "v": "1",
+   "ctx": "nt= , fill=white, inner sep="
+  },
+  {
+   "v": "70",
+   "ctx": "={-{Latex}, semithick, gray!"
+  },
+  {
+   "v": "70,",
+   "ctx": "style={-{Latex}, thick, red!"
+  },
+  {
+   "v": "60",
+   "ctx": "={-{Latex}, semithick, blue!"
+  },
+  {
+   "v": "5.2",
+   "ctx": "black}]  [sp, minimum width="
+  },
+  {
+   "v": "6,",
+   "ctx": "imum width=5.2cm, fill=gray!"
+  },
+  {
+   "v": "60",
+   "ctx": "l=gray!6, font= , draw=gray!"
+  },
+  {
+   "v": "0,0",
+   "ctx": "= , draw=gray!60]   (G) at ("
+  },
+  {
+   "v": "-3.2",
+   "ctx": "pability}};  [sem] (it) at ("
+  },
+  {
+   "v": "1.7",
+   "ctx": "ity}};  [sem] (it) at (-3.2,"
+  },
+  {
+   "v": "-1.6",
+   "ctx": "  {stick}};  [sem] (rc) at ("
+  },
+  {
+   "v": "2.6",
+   "ctx": "ick}};  [sem] (rc) at (-1.6,"
+  },
+  {
+   "v": "-3.4",
+   "ctx": "\\_planks}};  [sem] (ch) at ("
+  },
+  {
+   "v": "-1.2",
+   "ctx": "nks}};  [sem] (ch) at (-3.4,"
+  },
+  {
+   "v": "1.8",
+   "ctx": "ncreased}};  [epi] (ev) at ("
+  },
+  {
+   "v": "2.5",
+   "ctx": "ased}};  [epi] (ev) at (1.8,"
+  },
+  {
+   "v": "3.4",
+   "ctx": "appeared}};  [epi] (ae) at ("
+  },
+  {
+   "v": "1.3",
+   "ctx": "ared}};  [epi] (ae) at (3.4,"
+  },
+  {
+   "v": "2.9",
+   "ctx": "k\\_log)}};  [proc] (ac) at ("
+  },
+  {
+   "v": "-1.5",
+   "ctx": "og)}};  [proc] (ac) at (2.9,"
+  },
+  {
+   "v": "-1.9",
+   "ctx": "_item}};  [selfst] (ci) at ("
+  },
+  {
+   "v": "-3.3",
+   "ctx": "}};  [selfst] (ci) at (-1.9,"
+  },
+  {
+   "v": "-3.3",
+   "ctx": "{gap:use}};  [emo] (em) at ("
+  },
+  {
+   "v": "0.3",
+   "ctx": "use}};  [emo] (em) at (-3.3,"
+  },
+  {
+   "v": "1.6",
+   "ctx": " (ae) -- (ch);  [edgeT] at ("
+  },
+  {
+   "v": "0.75",
+   "ctx": ") -- (ch);  [edgeT] at (1.6,"
+  },
+  {
+   "v": "0.2",
+   "ctx": "ss] (ci) -- node[edgeT, pos="
+  },
+  {
+   "v": "70",
+   "ctx": "node[edgeT, below, text=red!"
+  },
+  {
+   "v": "30,",
+   "ctx": "ckground layer]  [draw=blue!"
+  },
+  {
+   "v": "3",
+   "ctx": "fit=(it)(rc)(ch), inner sep="
+  },
+  {
+   "v": "60",
+   "ctx": "p=3pt, label={[font= , blue!"
+  },
+  {
+   "v": "40,",
+   "ctx": "semantic}]{};  [draw=orange!"
+  },
+  {
+   "v": "3",
+   "ctx": "rs, fit=(ev)(ae), inner sep="
+  },
+  {
+   "v": "70",
+   "ctx": "3pt, label={[font= , orange!"
+  },
+  {
+   "v": "50,",
+   "ctx": "dic space}]{};  [draw=green!"
+  },
+  {
+   "v": "3",
+   "ctx": "orners, fit=(ac), inner sep="
+  },
+  {
+   "v": "50",
+   "ctx": "=3pt, label={[font= , green!"
+  },
+  {
+   "v": "40,",
+   "ctx": "al space}]{};  [draw=purple!"
+  },
+  {
+   "v": "3",
+   "ctx": "orners, fit=(ci), inner sep="
+  },
+  {
+   "v": "60",
+   "ctx": "3pt, label={[font= , purple!"
+  },
+  {
+   "v": "0",
+   "ctx": "\\, /\\;   _{v'}   (  w_{uv'},"
+  },
+  {
+   "v": "1",
+   "ctx": " followed by decay $a_v(t{+}"
+  },
+  {
+   "v": "1",
+   "ctx": "wed by decay $a_v(t{+}1) = ("
+  },
+  {
+   "v": "3",
+   "ctx": "ma (episodic space $a_{ }{=}"
+  },
+  {
+   "v": "5",
+   "ctx": "a_{ }{=}3$, global default $"
+  },
+  {
+   "v": "1.0",
+   "ctx": " quantity per step (default "
+  },
+  {
+   "v": "1",
+   "ctx": "{equation} g \\;=\\;  {clip} ("
+  },
+  {
+   "v": "0.3",
+   "ctx": "ation} g \\;=\\;  {clip} (1 + "
+  },
+  {
+   "v": "0.15",
+   "ctx": "lip} (1 + 0.3\\, {arousal} - "
+  },
+  {
+   "v": "0.7",
+   "ctx": "ousal} - 0.15\\, {stress},\\; "
+  },
+  {
+   "v": "1.6",
+   "ctx": "- 0.15\\, {stress},\\; 0.7,\\; "
+  },
+  {
+   "v": "10",
+   "ctx": "{circle, draw, minimum size="
+  },
+  {
+   "v": "0",
+   "ctx": "inimum size=10mm, inner sep="
+  },
+  {
+   "v": "25",
+   "ctx": "hub/.style={nd, fill=purple!"
+  },
+  {
+   "v": "50",
+   "ctx": "}, hot/.style={nd, fill=red!"
+  },
+  {
+   "v": "40",
+   "ctx": "arm/.style={nd, fill=orange!"
+  },
+  {
+   "v": "12",
+   "ctx": " cool/.style={nd, fill=blue!"
+  },
+  {
+   "v": "80,",
+   "ctx": "e={align=center, text=black!"
+  },
+  {
+   "v": "50,",
+   "ctx": "tyle={-{Latex}, thick, gray!"
+  },
+  {
+   "v": "70,",
+   "ctx": "style={-{Latex}, thick, red!"
+  },
+  {
+   "v": "0,2.0",
+   "ctx": "70, dashed}]  [hot] (a) at ("
+  },
+  {
+   "v": "1",
+   "ctx": " at (0,2.0) {gap A\\\\ demand "
+  },
+  {
+   "v": "1.7",
+   "ctx": " demand 1};  [warm] (x) at ("
+  },
+  {
+   "v": "1.2",
+   "ctx": "and 1};  [warm] (x) at (1.7,"
+  },
+  {
+   "v": "0,0",
+   "ctx": " {entity a};  [hot] (b) at ("
+  },
+  {
+   "v": "2",
+   "ctx": "b) at (0,0) {gap B\\\\ demand "
+  },
+  {
+   "v": "1.7",
+   "ctx": " demand 2};  [warm] (y) at ("
+  },
+  {
+   "v": "0.8",
+   "ctx": "and 2};  [warm] (y) at (1.7,"
+  },
+  {
+   "v": "3.4",
+   "ctx": " {entity b};  [hub] (P) at ("
+  },
+  {
+   "v": "1.0",
+   "ctx": "tity b};  [hub] (P) at (3.4,"
+  },
+  {
+   "v": "5.6",
+   "ctx": "d\\\\ hub P};  [cool] (T) at ("
+  },
+  {
+   "v": "1.8",
+   "ctx": "hub P};  [cool] (T) at (5.6,"
+  },
+  {
+   "v": "5.6",
+   "ctx": "oak\\_log};  [cool] (rp) at ("
+  },
+  {
+   "v": "0.2",
+   "ctx": "_log};  [cool] (rp) at (5.6,"
+  },
+  {
+   "v": "60,",
+   "ctx": " planks};  [cool, draw=gray!"
+  },
+  {
+   "v": "12",
+   "ctx": "ol, draw=gray!60, fill=gray!"
+  },
+  {
+   "v": "7.4",
+   "ctx": "!60, fill=gray!12] (ev) at ("
+  },
+  {
+   "v": "2.6",
+   "ctx": " fill=gray!12] (ev) at (7.4,"
+  },
+  {
+   "v": "-0.354",
+   "ctx": "inib] (ev) -- (T);  [flat] ("
+  },
+  {
+   "v": "1.646",
+   "ctx": "ev) -- (T);  [flat] (-0.354,"
+  },
+  {
+   "v": "-1.3",
+   "ctx": "  [flat] (-0.354,1.646) -- ("
+  },
+  {
+   "v": "0.6",
+   "ctx": "at] (-0.354,1.646) -- (-1.3,"
+  },
+  {
+   "v": "-1.3",
+   "ctx": "54,1.646) -- (-1.3,0.6) -- ("
+  },
+  {
+   "v": "-0.55",
+   "ctx": "646) -- (-1.3,0.6) -- (-1.3,"
+  },
+  {
+   "v": "2.5",
+   "ctx": ".3,0.6) -- (-1.3,-0.55) -- ("
+  },
+  {
+   "v": "-0.55",
+   "ctx": ".6) -- (-1.3,-0.55) -- (2.5,"
+  },
+  {
+   "v": "5.25",
+   "ctx": "3,-0.55) -- (2.5,-0.55) -- ("
+  },
+  {
+   "v": "-0.15",
+   "ctx": "55) -- (2.5,-0.55) -- (5.25,"
+  },
+  {
+   "v": "0.70",
+   "ctx": "5.25,-0.15) node[annot, pos="
+  },
+  {
+   "v": "0.5",
+   "ctx": "d]{flat: nearest};  [flat] ("
+  },
+  {
+   "v": "0",
+   "ctx": "lat: nearest};  [flat] (0.5,"
+  },
+  {
+   "v": "2.55",
+   "ctx": "arest};  [flat] (0.5,0) -- ("
+  },
+  {
+   "v": "0.15",
+   "ctx": "};  [flat] (0.5,0) -- (2.55,"
+  },
+  {
+   "v": "4.0",
+   "ctx": " (0.5,0) -- (2.55,0.15) -- ("
+  },
+  {
+   "v": "0.15",
+   "ctx": "5,0) -- (2.55,0.15) -- (4.0,"
+  },
+  {
+   "v": "5.1",
+   "ctx": ".55,0.15) -- (4.0,0.15) -- ("
+  },
+  {
+   "v": "1.8",
+   "ctx": "0.15) -- (4.0,0.15) -- (5.1,"
+  },
+  {
+   "v": "0.37",
+   "ctx": "- (5.1,1.8) node[annot, pos="
+  },
+  {
+   "v": "-1",
+   "ctx": "pos=0.37, below, sloped]{Top"
+  },
+  {
+   "v": "0.15",
+   "ctx": "lign=left, anchor=west] at ("
+  },
+  {
+   "v": "-1.55",
+   "ctx": "left, anchor=west] at (0.15,"
+  },
+  {
+   "v": "-0.5",
+   "ctx": "(Section~ {sec:res-act}):\\\\["
+  },
+  {
+   "v": "0",
+   "ctx": "  $ $ mechanism runs: JCG$>$"
+  },
+  {
+   "v": "200",
+   "ctx": " mechanism runs: JCG$>$0 on "
+  },
+  {
+   "v": "200",
+   "ctx": "hanism runs: JCG$>$0 on 200/"
+  },
+  {
+   "v": "2",
+   "ctx": "on 200/200 paired seeds; $ $"
+  },
+  {
+   "v": "1",
+   "ctx": "aired seeds; $ $2-input MRR@"
+  },
+  {
+   "v": "1.0",
+   "ctx": "d seeds; $ $2-input MRR@1$=$"
+  },
+  {
+   "v": "-0.5",
+   "ctx": "$=$1.0 (hypothesis group)\\\\["
+  },
+  {
+   "v": "3,",
+   "ctx": "ce: combinational topology O"
+  },
+  {
+   "v": "30",
+   "ctx": "binational topology O3, FAS "
+  },
+  {
+   "v": "30",
+   "ctx": "ational topology O3, FAS 30/"
+  },
+  {
+   "v": "0",
+   "ctx": "gy O3, FAS 30/30  {vs} flat "
+  },
+  {
+   "v": "30",
+   "ctx": " O3, FAS 30/30  {vs} flat 0/"
+  },
+  {
+   "v": "0.5",
+   "ctx": "at 0/30 (single weight $w{=}"
+  },
+  {
+   "v": "-0.5",
+   "ctx": " weight $w{=}0.5$ design)\\\\["
+  },
+  {
+   "v": "-0.5",
+   "ctx": "t for ordinary retrieval:\\\\["
+  },
+  {
+   "v": "0",
+   "ctx": "\\[-0.5mm]     $ $ $ $JCG${<}"
+  },
+  {
+   "v": "4",
+   "ctx": " $ $ $ $JCG${<}0$ under all "
+  },
+  {
+   "v": "1.5",
+   "ctx": "tered conditions (Holm $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "d conditions (Holm $p{=}1.5 "
+  },
+  {
+   "v": "-9",
+   "ctx": "nditions (Holm $p{=}1.5 10^{"
+  },
+  {
+   "v": "0",
+   "ctx": "ns (Holm $p{=}1.5 10^{-9}$, "
+  },
+  {
+   "v": "200",
+   "ctx": " (Holm $p{=}1.5 10^{-9}$, 0/"
+  },
+  {
+   "v": "-0.5",
+   "ctx": "0^{-9}$, 0/200 reversals)\\\\["
+  },
+  {
+   "v": "0.445",
+   "ctx": "ad dilutes targets ($ {=}{-}"
+  },
+  {
+   "v": "0.656",
+   "ctx": "argets ($ {=}{-}0.445$, ${-}"
+  },
+  {
+   "v": "8",
+   "ctx": "and the attribution window ("
+  },
+  {
+   "v": "-120",
+   "ctx": "d the attribution window (8-"
+  },
+  {
+   "v": "2",
+   "ctx": " confidence $ {conf}=s/(s+c+"
+  },
+  {
+   "v": "5",
+   "ctx": "{conf}=s/(s+c+2)$. When $s  "
+  },
+  {
+   "v": "0.80",
+   "ctx": ". When $s  5$ and $ {conf}  "
+  },
+  {
+   "v": "0.05",
+   "ctx": "lection as prior bonuses ($ "
+  },
+  {
+   "v": "1",
+   "ctx": "ge} {alg:wb}  {algorithmic}["
+  },
+  {
+   "v": "1",
+   "ctx": "by action signature: $s {+}="
+  },
+  {
+   "v": "1",
+   "ctx": " (positive outcome), $c {+}="
+  },
+  {
+   "v": "2",
+   "ctx": " (contra)   $ {conf}=s/(s+c+"
+  },
+  {
+   "v": "5",
+   "ctx": "hing)  {$s    {KG\\_SUPPORT}="
+  },
+  {
+   "v": "0.80",
+   "ctx": " {conf}    {KG\\_CONFIDENCE}="
+  },
+  {
+   "v": "0.05",
+   "ctx": "sures that re-activated ($a "
+  },
+  {
+   "v": "4",
+   "ctx": "connecting shared entities ("
+  },
+  {
+   "v": "12",
+   "ctx": "nnecting shared entities (4/"
+  },
+  {
+   "v": "0",
+   "ctx": "ng shared entities (4/12 vs "
+  },
+  {
+   "v": "8",
+   "ctx": " shared entities (4/12 vs 0/"
+  },
+  {
+   "v": "0",
+   "ctx": "ed entities (4/12 vs 0/8 vs "
+  },
+  {
+   "v": "0",
+   "ctx": " entities (4/12 vs 0/8 vs 0/"
+  },
+  {
+   "v": "0.05",
+   "ctx": "by ledger success priors ($+"
+  },
+  {
+   "v": "-0.05",
+   "ctx": " priors ($+0.05$ success / $"
+  },
+  {
+   "v": "2.5",
+   "ctx": "e runs graph dynamics every "
+  },
+  {
+   "v": "1",
+   "ctx": "[t]     {Component status (T"
+  },
+  {
+   "v": "1",
+   "ctx": " switch). Evidence levels: L"
+  },
+  {
+   "v": "2",
+   "ctx": "ructural-representational, L"
+  },
+  {
+   "v": "3",
+   "ctx": "sentational, L2 mechanism, L"
+  },
+  {
+   "v": "2026",
+   "ctx": "erified line-by-line in the "
+  },
+  {
+   "v": "-09",
+   "ctx": "ied line-by-line in the 2026"
+  },
+  {
+   "v": "3.6",
+   "ctx": "ab:components}  {tabular}{L{"
+  },
+  {
+   "v": "1.9",
+   "ctx": "nents}  {tabular}{L{3.6cm}L{"
+  },
+  {
+   "v": "1.9",
+   "ctx": "{tabular}{L{3.6cm}L{1.9cm}L{"
+  },
+  {
+   "v": "1.4",
+   "ctx": "}{L{3.6cm}L{1.9cm}L{1.9cm}L{"
+  },
+  {
+   "v": "3.9",
+   "ctx": "m}L{1.9cm}L{1.9cm}L{1.4cm}L{"
+  },
+  {
+   "v": "7",
+   "ctx": "nified graph (single graph, "
+  },
+  {
+   "v": "8",
+   "ctx": "gle graph, 7 label classes, "
+  },
+  {
+   "v": "1",
+   "ctx": "uction & all experiments & L"
+  },
+  {
+   "v": "2",
+   "ctx": "Exp.\\ B, four conditions & L"
+  },
+  {
+   "v": "1",
+   "ctx": "/promotion) & production & B"
+  },
+  {
+   "v": "2,",
+   "ctx": "omotion) & production & B1/B"
+  },
+  {
+   "v": "2,",
+   "ctx": "ion) & production & B1/B2, A"
+  },
+  {
+   "v": "1",
+   "ctx": "roduction & B1/B2, A2, H & L"
+  },
+  {
+   "v": "2",
+   "ctx": "uction & B1/B2, A2, H & L1/L"
+  },
+  {
+   "v": "1",
+   "ctx": "ion) & production & G, C & L"
+  },
+  {
+   "v": "2",
+   "ctx": ") & production & G, C & L1/L"
+  },
+  {
+   "v": "3",
+   "ctx": "ion & Exp.\\ C (assembly) & L"
+  },
+  {
+   "v": "0.05",
+   "ctx": "embly) & L3 & prior bonus $ "
+  },
+  {
+   "v": "20",
+   "ctx": "t edges) & implemented & D/C"
+  },
+  {
+   "v": "20",
+   "ctx": "es) & implemented & D/C20e/C"
+  },
+  {
+   "v": "2",
+   "ctx": "& D/C20e/C20g (assembly) & L"
+  },
+  {
+   "v": "3",
+   "ctx": "/C20e/C20g (assembly) & L2/L"
+  },
+  {
+   "v": "2",
+   "ctx": "ce) & production & C-emo & L"
+  },
+  {
+   "v": "2",
+   "ctx": "n & production & Exp.\\ F & L"
+  },
+  {
+   "v": "2",
+   "ctx": "ycle & production & D-CI & L"
+  },
+  {
+   "v": "2",
+   "ctx": "not implemented \\\\ routing v"
+  },
+  {
+   "v": "2",
+   "ctx": "sion head & experimental & v"
+  },
+  {
+   "v": "520",
+   "ctx": "experimental & v2 campaign, "
+  },
+  {
+   "v": "3",
+   "ctx": " & v2 campaign, 520 runs & L"
+  },
+  {
+   "v": "3",
+   "ctx": " {Main behavioral results (T"
+  },
+  {
+   "v": "3.6",
+   "ctx": "{tab:behavior}  {tabular}{L{"
+  },
+  {
+   "v": "5.2",
+   "ctx": "avior}  {tabular}{L{3.6cm}L{"
+  },
+  {
+   "v": "3.6",
+   "ctx": "{tabular}{L{3.6cm}L{5.2cm}L{"
+  },
+  {
+   "v": "2.4",
+   "ctx": "}{L{3.6cm}L{5.2cm}L{3.6cm}L{"
+  },
+  {
+   "v": "10",
+   "ctx": "  {Conclusion} \\\\   Beacon A"
+  },
+  {
+   "v": "20",
+   "ctx": "-flat/D-noact/llm-direct $  "
+  },
+  {
+   "v": "20",
+   "ctx": "t $  20$ paired seeds & fas "
+  },
+  {
+   "v": "20,",
+   "ctx": "  20$ paired seeds & fas 20/"
+  },
+  {
+   "v": "20",
+   "ctx": "d seeds & fas 20/20, D-flat "
+  },
+  {
+   "v": "20,",
+   "ctx": "eeds & fas 20/20, D-flat 20/"
+  },
+  {
+   "v": "0",
+   "ctx": "0/20, D-flat 20/20, D-noact "
+  },
+  {
+   "v": "20,",
+   "ctx": "20, D-flat 20/20, D-noact 0/"
+  },
+  {
+   "v": "0",
+   "ctx": "20/20, D-noact 0/20, direct "
+  },
+  {
+   "v": "20",
+   "ctx": "/20, D-noact 0/20, direct 0/"
+  },
+  {
+   "v": "2",
+   "ctx": ", direct 0/20; McNemar $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "direct 0/20; McNemar $p{=}2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "ct 0/20; McNemar $p{=}2 10^{"
+  },
+  {
+   "v": "20",
+   "ctx": "rst action gather\\_oak\\_log "
+  },
+  {
+   "v": "20",
+   "ctx": " action gather\\_oak\\_log 20/"
+  },
+  {
+   "v": "5",
+   "ctx": " & Transfer vs No-Transfer, "
+  },
+  {
+   "v": "5",
+   "ctx": " Transfer vs No-Transfer, 5/"
+  },
+  {
+   "v": "13",
+   "ctx": "vs No-Transfer, 5/5 seeds & "
+  },
+  {
+   "v": "16",
+   "ctx": "Transfer, 5/5 seeds & 13 vs "
+  },
+  {
+   "v": "8",
+   "ctx": "5/5 seeds & 13 vs 16 ticks, "
+  },
+  {
+   "v": "9",
+   "ctx": "eeds & 13 vs 16 ticks, 8 vs "
+  },
+  {
+   "v": "5",
+   "ctx": "rst-action birch$ $oak flip "
+  },
+  {
+   "v": "5",
+   "ctx": "t-action birch$ $oak flip 5/"
+  },
+  {
+   "v": "20",
+   "ctx": "st}) \\\\ Event framework (D/C"
+  },
+  {
+   "v": "20",
+   "ctx": "\\\\ Event framework (D/C20e/C"
+  },
+  {
+   "v": "5",
+   "ctx": "C20g) & inject vs control n="
+  },
+  {
+   "v": "3",
+   "ctx": "ontrol n=5; real receipts n="
+  },
+  {
+   "v": "4",
+   "ctx": "trol n=5; real receipts n=3/"
+  },
+  {
+   "v": "6",
+   "ctx": "ts n=3/4 & first action oak@"
+  },
+  {
+   "v": "9",
+   "ctx": "first action oak@6 vs birch@"
+  },
+  {
+   "v": "15",
+   "ctx": "@6 vs birch@9; real failure "
+  },
+  {
+   "v": "17",
+   "ctx": "birch@9; real failure 15 vs "
+  },
+  {
+   "v": "0",
+   "ctx": "es-persist}) \\\\ Long chain L"
+  },
+  {
+   "v": "3",
+   "ctx": "persist}) \\\\ Long chain L0/L"
+  },
+  {
+   "v": "3",
+   "ctx": "sist}) \\\\ Long chain L0/L3/L"
+  },
+  {
+   "v": "5,",
+   "ctx": "\\\\ Long chain L0/L3/L3b & n="
+  },
+  {
+   "v": "14",
+   "ctx": "Long chain L0/L3/L3b & n=5, "
+  },
+  {
+   "v": "5",
+   "ctx": "L0/L3/L3b & n=5, 14 steps & "
+  },
+  {
+   "v": "5",
+   "ctx": "/L3/L3b & n=5, 14 steps & 5/"
+  },
+  {
+   "v": "315",
+   "ctx": "/L3b & n=5, 14 steps & 5/5 @"
+  },
+  {
+   "v": "3",
+   "ctx": " n=5, 14 steps & 5/5 @315; L"
+  },
+  {
+   "v": "0",
+   "ctx": "=5, 14 steps & 5/5 @315; L3 "
+  },
+  {
+   "v": "5",
+   "ctx": ", 14 steps & 5/5 @315; L3 0/"
+  },
+  {
+   "v": "3",
+   "ctx": " steps & 5/5 @315; L3 0/5; L"
+  },
+  {
+   "v": "315",
+   "ctx": "; L3 0/5; L3b bit-identical "
+  },
+  {
+   "v": "0",
+   "ctx": "res-system}) \\\\ Zero prior P"
+  },
+  {
+   "v": "1",
+   "ctx": "-system}) \\\\ Zero prior P0/P"
+  },
+  {
+   "v": "2",
+   "ctx": "stem}) \\\\ Zero prior P0/P1/P"
+  },
+  {
+   "v": "25",
+   "ctx": "}) \\\\ Zero prior P0/P1/P2 & "
+  },
+  {
+   "v": "0",
+   "ctx": " & 25 episodes/condition & P"
+  },
+  {
+   "v": "0",
+   "ctx": " 25 episodes/condition & P0 "
+  },
+  {
+   "v": "25",
+   "ctx": "5 episodes/condition & P0 0/"
+  },
+  {
+   "v": "29",
+   "ctx": "odes/condition & P0 0/25 ($+"
+  },
+  {
+   "v": "1",
+   "ctx": "n & P0 0/25 ($+29$ nodes); P"
+  },
+  {
+   "v": "2",
+   "ctx": "0 0/25 ($+29$ nodes); P1$=$P"
+  },
+  {
+   "v": "25",
+   "ctx": "0/25 ($+29$ nodes); P1$=$P2 "
+  },
+  {
+   "v": "25",
+   "ctx": "5 ($+29$ nodes); P1$=$P2 25/"
+  },
+  {
+   "v": "4",
+   "ctx": "+29$ nodes); P1$=$P2 25/25 @"
+  },
+  {
+   "v": "2",
+   "ctx": "ec:res-system}) \\\\ Routing v"
+  },
+  {
+   "v": "4",
+   "ctx": "res-system}) \\\\ Routing v2 T"
+  },
+  {
+   "v": "20",
+   "ctx": "ng v2 T4 & fas vs direct, n="
+  },
+  {
+   "v": "19",
+   "ctx": "as vs direct, n=20 paired & "
+  },
+  {
+   "v": "20",
+   "ctx": "vs direct, n=20 paired & 19/"
+  },
+  {
+   "v": "15",
+   "ctx": "ect, n=20 paired & 19/20 vs "
+  },
+  {
+   "v": "20,",
+   "ctx": ", n=20 paired & 19/20 vs 15/"
+  },
+  {
+   "v": "0.046",
+   "ctx": " & 19/20 vs 15/20, $p^{ }{=}"
+  },
+  {
+   "v": "5.45",
+   "ctx": " $p^{ }{=}0.046$; decisions "
+  },
+  {
+   "v": "7.25",
+   "ctx": "=}0.046$; decisions 5.45 vs "
+  },
+  {
+   "v": "0.029",
+   "ctx": "ecisions 5.45 vs 7.25, $p{=}"
+  },
+  {
+   "v": "0.48",
+   "ctx": " vs 7.25, $p{=}0.029$; util "
+  },
+  {
+   "v": "0.30",
+   "ctx": ", $p{=}0.029$; util 0.48 vs "
+  },
+  {
+   "v": "0.010",
+   "ctx": "9$; util 0.48 vs 0.30, $p{=}"
+  },
+  {
+   "v": "1",
+   "ctx": "observation, corrected $p{ }"
+  },
+  {
+   "v": "2",
+   "ctx": "ec:res-system}) \\\\ Routing v"
+  },
+  {
+   "v": "3",
+   "ctx": "res-system}) \\\\ Routing v2 T"
+  },
+  {
+   "v": "20",
+   "ctx": " T3 & fas vs history/rag, n="
+  },
+  {
+   "v": "4.15",
+   "ctx": " fas vs history/rag, n=20 & "
+  },
+  {
+   "v": "2.3",
+   "ctx": "history/rag, n=20 & 4.15 vs "
+  },
+  {
+   "v": "2.8",
+   "ctx": "ory/rag, n=20 & 4.15 vs 2.3/"
+  },
+  {
+   "v": "0.003",
+   "ctx": " vs 2.3/2.8 decisions, $p{=}"
+  },
+  {
+   "v": "0.044",
+   "ctx": "3/2.8 decisions, $p{=}0.003/"
+  },
+  {
+   "v": "4",
+   "ctx": "rs, align=center, inner sep="
+  },
+  {
+   "v": "3",
+   "ctx": "rs, align=center, inner sep="
+  },
+  {
+   "v": "12,",
+   "ctx": " sep=3pt, font= , fill=gray!"
+  },
+  {
+   "v": "3.5",
+   "ctx": "semithick},   node distance="
+  },
+  {
+   "v": "6",
+   "ctx": ",   node distance=3.5mm and "
+  },
+  {
+   "v": "8",
+   "ctx": "ents\\\\   attribution window "
+  },
+  {
+   "v": "-120",
+   "ctx": "ts\\\\   attribution window 8-"
+  },
+  {
+   "v": "1",
+   "ctx": "on};  [scaff, left=of ev] (s"
+  },
+  {
+   "v": "2",
+   "ctx": "es};  [scaff, left=of cs] (s"
+  },
+  {
+   "v": "-6",
+   "ctx": ";  [flow] (beh) -| ([xshift="
+  },
+  {
+   "v": "1",
+   "ctx": ".south) |- (env);  [flow] (s"
+  },
+  {
+   "v": "2",
+   "ctx": "ow] (s1) -- (ev);  [flow] (s"
+  },
+  {
+   "v": "0",
+   "ctx": "ition characterized by the P"
+  },
+  {
+   "v": "1",
+   "ctx": "tity). Evidence grades run L"
+  },
+  {
+   "v": "2",
+   "ctx": "es run L1 (structural) $ $ L"
+  },
+  {
+   "v": "3",
+   "ctx": "al) $ $ L2 (mechanism) $ $ L"
+  },
+  {
+   "v": "4",
+   "ctx": "hanism) $ $ L3 (behavior); L"
+  },
+  {
+   "v": "1",
+   "ctx": "eled at each occurrence:  {P"
+  },
+  {
+   "v": "2",
+   "ctx": "guration in the sandbox.  {P"
+  },
+  {
+   "v": "20",
+   "ctx": "d event framework (Exp.\\ D/C"
+  },
+  {
+   "v": "20",
+   "ctx": "nt framework (Exp.\\ D/C20e/C"
+  },
+  {
+   "v": "3",
+   "ctx": "y experimental assembly.  {P"
+  },
+  {
+   "v": "4",
+   "ctx": " is claimed or required.  {P"
+  },
+  {
+   "v": "521",
+   "ctx": "ever built edges, swallowed "
+  },
+  {
+   "v": "521",
+   "ctx": " built edges, swallowed 521/"
+  },
+  {
+   "v": "2026",
+   "ctx": "Appendix~ {app:routing}); a "
+  },
+  {
+   "v": "-09",
+   "ctx": "ndix~ {app:routing}); a 2026"
+  },
+  {
+   "v": "-30",
+   "ctx": "x~ {app:routing}); a 2026-09"
+  },
+  {
+   "v": "12,",
+   "ctx": "polated from it (Limitation "
+  },
+  {
+   "v": "1",
+   "ctx": "s (Table~ {tab:rqmap}):  {RQ"
+  },
+  {
+   "v": "3",
+   "ctx": "try ($ $  {sec:res-reuse}, L"
+  },
+  {
+   "v": "2",
+   "ctx": "  {sec:res-reuse}, L3);  {RQ"
+  },
+  {
+   "v": "1",
+   "ctx": "s ($ $  {sec:res-persist}, L"
+  },
+  {
+   "v": "3",
+   "ctx": " $  {sec:res-persist}, L1--L"
+  },
+  {
+   "v": "3",
+   "ctx": ":res-persist}, L1--L3);  {RQ"
+  },
+  {
+   "v": "2",
+   "ctx": "res-act}-- {sec:res-topo}, L"
+  },
+  {
+   "v": "4",
+   "ctx": "-- {sec:res-topo}, L2);  {RQ"
+  },
+  {
+   "v": "3",
+   "ctx": "$  {sec:whydiff}, negative L"
+  },
+  {
+   "v": "2",
+   "ctx": "nt $ $ evidence-level map (T"
+  },
+  {
+   "v": "5",
+   "ctx": "). Subject experiments $n{=}"
+  },
+  {
+   "v": "50",
+   "ctx": "terministic; mechanism $n{=}"
+  },
+  {
+   "v": "20",
+   "ctx": "paired; beacon/routing $n{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "ed; relation direction $n{=}"
+  },
+  {
+   "v": "1.3",
+   "ctx": "}  {tab:rqmap}  {tabular}{L{"
+  },
+  {
+   "v": "5.4",
+   "ctx": "rqmap}  {tabular}{L{1.3cm}L{"
+  },
+  {
+   "v": "4.2",
+   "ctx": "{tabular}{L{1.3cm}L{5.4cm}L{"
+  },
+  {
+   "v": "1.2",
+   "ctx": "}{L{1.3cm}L{5.4cm}L{4.2cm}L{"
+  },
+  {
+   "v": "1.9",
+   "ctx": "m}L{5.4cm}L{4.2cm}L{1.2cm}L{"
+  },
+  {
+   "v": "1",
+   "ctx": "{Level} &  {Verdict} \\\\   RQ"
+  },
+  {
+   "v": "10",
+   "ctx": "t} \\\\   RQ1 reuse & Beacon A"
+  },
+  {
+   "v": "20",
+   "ctx": "D-flat/D-noact/llm-direct $ "
+  },
+  {
+   "v": "20",
+   "ctx": "D-noact/llm-direct $ 20$) & "
+  },
+  {
+   "v": "20",
+   "ctx": "oact/llm-direct $ 20$) & 20/"
+  },
+  {
+   "v": "20",
+   "ctx": "lm-direct $ 20$) & 20/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": "direct $ 20$) & 20/20 vs 20/"
+  },
+  {
+   "v": "0",
+   "ctx": " $ 20$) & 20/20 vs 20/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": " 20$) & 20/20 vs 20/20 vs 0/"
+  },
+  {
+   "v": "0",
+   "ctx": "& 20/20 vs 20/20 vs 0/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": "20/20 vs 20/20 vs 0/20 vs 0/"
+  },
+  {
+   "v": "2",
+   "ctx": "0 vs 0/20 vs 0/20; McNemar $"
+  },
+  {
+   "v": "10",
+   "ctx": "vs 0/20 vs 0/20; McNemar $2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "/20 vs 0/20; McNemar $2 10^{"
+  },
+  {
+   "v": "3",
+   "ctx": "/20; McNemar $2 10^{-6}$ & L"
+  },
+  {
+   "v": "2",
+   "ctx": " & positive + boundary \\\\ RQ"
+  },
+  {
+   "v": "1",
+   "ctx": " boundary \\\\ RQ2 persist & B"
+  },
+  {
+   "v": "2",
+   "ctx": "undary \\\\ RQ2 persist & B1/B"
+  },
+  {
+   "v": "2",
+   "ctx": "1/B2 write-back isolation; A"
+  },
+  {
+   "v": "0",
+   "ctx": "-back isolation; A2 reuse; G"
+  },
+  {
+   "v": "1",
+   "ctx": "ck isolation; A2 reuse; G0/G"
+  },
+  {
+   "v": "2",
+   "ctx": "isolation; A2 reuse; G0/G1/G"
+  },
+  {
+   "v": "20",
+   "ctx": "euse; G0/G1/G2; Exp.\\ C; D/C"
+  },
+  {
+   "v": "20",
+   "ctx": " G0/G1/G2; Exp.\\ C; D/C20e/C"
+  },
+  {
+   "v": "0",
+   "ctx": "/G2; Exp.\\ C; D/C20e/C20g & "
+  },
+  {
+   "v": "13",
+   "ctx": "Exp.\\ C; D/C20e/C20g & 0 vs "
+  },
+  {
+   "v": "4",
+   "ctx": "/C20e/C20g & 0 vs 13 nodes; "
+  },
+  {
+   "v": "12",
+   "ctx": "20e/C20g & 0 vs 13 nodes; 4/"
+  },
+  {
+   "v": "0",
+   "ctx": "0g & 0 vs 13 nodes; 4/12 vs "
+  },
+  {
+   "v": "8",
+   "ctx": " & 0 vs 13 nodes; 4/12 vs 0/"
+  },
+  {
+   "v": "0",
+   "ctx": "vs 13 nodes; 4/12 vs 0/8 vs "
+  },
+  {
+   "v": "0",
+   "ctx": " 13 nodes; 4/12 vs 0/8 vs 0/"
+  },
+  {
+   "v": "13",
+   "ctx": " nodes; 4/12 vs 0/8 vs 0/0; "
+  },
+  {
+   "v": "16",
+   "ctx": "; 4/12 vs 0/8 vs 0/0; 13 vs "
+  },
+  {
+   "v": "5",
+   "ctx": "16 ticks; first-action flip "
+  },
+  {
+   "v": "5",
+   "ctx": " ticks; first-action flip 5/"
+  },
+  {
+   "v": "1",
+   "ctx": "s; first-action flip 5/5 & L"
+  },
+  {
+   "v": "3",
+   "ctx": "irst-action flip 5/5 & L1--L"
+  },
+  {
+   "v": "3",
+   "ctx": "/5 & L1--L3 & positive \\\\ RQ"
+  },
+  {
+   "v": "-1",
+   "ctx": "p.\\ B; mechanism campaign (C"
+  },
+  {
+   "v": "-4,",
+   "ctx": "; mechanism campaign (C-1..C"
+  },
+  {
+   "v": "61.5",
+   "ctx": "rfactuals, hidden oracle) & "
+  },
+  {
+   "v": "16.6",
+   "ctx": "uals, hidden oracle) & 61.5/"
+  },
+  {
+   "v": "45.8",
+   "ctx": " hidden oracle) & 61.5/16.6/"
+  },
+  {
+   "v": "17.2",
+   "ctx": "en oracle) & 61.5/16.6/45.8/"
+  },
+  {
+   "v": "200",
+   "ctx": " & 61.5/16.6/45.8/17.2; JCG "
+  },
+  {
+   "v": "200",
+   "ctx": "1.5/16.6/45.8/17.2; JCG 200/"
+  },
+  {
+   "v": "0",
+   "ctx": "7.2; JCG 200/200; $ $JCG${<}"
+  },
+  {
+   "v": "4",
+   "ctx": "; JCG 200/200; $ $JCG${<}0$ "
+  },
+  {
+   "v": "4",
+   "ctx": "JCG 200/200; $ $JCG${<}0$ 4/"
+  },
+  {
+   "v": "30",
+   "ctx": "00; $ $JCG${<}0$ 4/4; combo "
+  },
+  {
+   "v": "30",
+   "ctx": " $ $JCG${<}0$ 4/4; combo 30/"
+  },
+  {
+   "v": "0",
+   "ctx": "G${<}0$ 4/4; combo 30/30 vs "
+  },
+  {
+   "v": "30",
+   "ctx": "{<}0$ 4/4; combo 30/30 vs 0/"
+  },
+  {
+   "v": "2",
+   "ctx": "4/4; combo 30/30 vs 0/30 & L"
+  },
+  {
+   "v": "3",
+   "ctx": " & positive + rejected \\\\ RQ"
+  },
+  {
+   "v": "3",
+   "ctx": "rection (F vs B projection, "
+  },
+  {
+   "v": "10",
+   "ctx": "rojection, 3 injections $ $ "
+  },
+  {
+   "v": "0.325",
+   "ctx": "ections $ $ 10 seeds) & $ $ "
+  },
+  {
+   "v": "0.645",
+   "ctx": "$ $ 10 seeds) & $ $ 0.325$ $"
+  },
+  {
+   "v": "0.833",
+   "ctx": "$ $ 0.325$ $0.645; dilution "
+  },
+  {
+   "v": "0.475",
+   "ctx": "$ $0.645; dilution 0.833 vs "
+  },
+  {
+   "v": "2",
+   "ctx": " dilution 0.833 vs 0.475 & L"
+  },
+  {
+   "v": "4",
+   "ctx": " & mechanism diagnosis \\\\ RQ"
+  },
+  {
+   "v": "2",
+   "ctx": "; P priors; I env; routing v"
+  },
+  {
+   "v": "0",
+   "ctx": "ion-layer zero differences; "
+  },
+  {
+   "v": "25",
+   "ctx": "n-layer zero differences; 0/"
+  },
+  {
+   "v": "259",
+   "ctx": "yer zero differences; 0/25; "
+  },
+  {
+   "v": "315",
+   "ctx": "o differences; 0/25; 259 vs "
+  },
+  {
+   "v": "3",
+   "ctx": "erences; 0/25; 259 vs 315; T"
+  },
+  {
+   "v": "3",
+   "ctx": "wer; MRR worse than flat & L"
+  },
+  {
+   "v": "16",
+   "ctx": "rld with a simulated clock ("
+  },
+  {
+   "v": "5",
+   "ctx": "ubject experiments use $n{=}"
+  },
+  {
+   "v": "1",
+   "ctx": "eriments use $n{=}5$ seeds ("
+  },
+  {
+   "v": "-5",
+   "ctx": "iments use $n{=}5$ seeds (1-"
+  },
+  {
+   "v": "50",
+   "ctx": "the mechanism campaign $n{=}"
+  },
+  {
+   "v": "20",
+   "ctx": "ds; beacon and routing $n{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "ds; relation direction $n{=}"
+  },
+  {
+   "v": "494",
+   "ctx": "earch_Experiments/|) totals "
+  },
+  {
+   "v": "77,",
+   "ctx": ") totals 494 runs (ablation "
+  },
+  {
+   "v": "53,",
+   "ctx": "ns (ablation 77, eventframe "
+  },
+  {
+   "v": "43,",
+   "ctx": " 77, eventframe 53, sandbox "
+  },
+  {
+   "v": "34,",
+   "ctx": "entframe 53, sandbox 43, ci "
+  },
+  {
+   "v": "32,",
+   "ctx": "sandbox 43, ci 34, transfer "
+  },
+  {
+   "v": "2",
+   "ctx": "ci 34, transfer 32, reuse\\_a"
+  },
+  {
+   "v": "31,",
+   "ctx": " 34, transfer 32, reuse\\_a2 "
+  },
+  {
+   "v": "31,",
+   "ctx": "use\\_a2 31, prior\\_boundary "
+  },
+  {
+   "v": "29,",
+   "ctx": "ior\\_boundary 31, longchain "
+  },
+  {
+   "v": "28,",
+   "ctx": "ary 31, longchain 29, reuse "
+  },
+  {
+   "v": "25,",
+   "ctx": "chain 29, reuse 28, emotion "
+  },
+  {
+   "v": "24,",
+   "ctx": "use 28, emotion 25, hebbian "
+  },
+  {
+   "v": "22,",
+   "ctx": "hebbian 24, event\\_transfer "
+  },
+  {
+   "v": "2",
+   "ctx": "t\\_transfer 22, diffusion\\_b"
+  },
+  {
+   "v": "22,",
+   "ctx": "_transfer 22, diffusion\\_b2 "
+  },
+  {
+   "v": "14,",
+   "ctx": "diffusion\\_b2 22, envchange "
+  },
+  {
+   "v": "12,",
+   "ctx": "22, envchange 14, diffusion "
+  },
+  {
+   "v": "8,",
+   "ctx": "14, diffusion 12, baselines "
+  },
+  {
+   "v": "7,",
+   "ctx": "elines 8, prior\\_conditions "
+  },
+  {
+   "v": "2",
+   "ctx": "or\\_conditions 7, minecraft "
+  },
+  {
+   "v": "34",
+   "ctx": "her, the mechanism campaign "
+  },
+  {
+   "v": "016",
+   "ctx": "the mechanism campaign 34{,}"
+  },
+  {
+   "v": "80,",
+   "ctx": "raw_results.jsonl|), beacon "
+  },
+  {
+   "v": "2",
+   "ctx": "sonl|), beacon 80, routing v"
+  },
+  {
+   "v": "520,",
+   "ctx": "nl|), beacon 80, routing v2 "
+  },
+  {
+   "v": "60,",
+   "ctx": " v2 520, relation direction "
+  },
+  {
+   "v": "663",
+   "ctx": "ation direction 60, and the "
+  },
+  {
+   "v": "663",
+   "ctx": "lly rests on an independent "
+  },
+  {
+   "v": "0",
+   "ctx": "ence reference model (JCG$>{"
+  },
+  {
+   "v": "0.970",
+   "ctx": "rence model (JCG$>{0}$ rate "
+  },
+  {
+   "v": "2",
+   "ctx": "l (JCG$>{0}$ rate 0.970; $ $"
+  },
+  {
+   "v": "1",
+   "ctx": " rate 0.970; $ $2-input MRR@"
+  },
+  {
+   "v": "1.0",
+   "ctx": "e 0.970; $ $2-input MRR@1$=$"
+  },
+  {
+   "v": "1",
+   "ctx": "}, four subject topologies T"
+  },
+  {
+   "v": "4",
+   "ctx": "our subject topologies T1--T"
+  },
+  {
+   "v": "3",
+   "ctx": " subject topologies T1--T4: "
+  },
+  {
+   "v": "100",
+   "ctx": "topologies T1--T4: 3 inputs/"
+  },
+  {
+   "v": "25",
+   "ctx": " T1--T4: 3 inputs/100 nodes/"
+  },
+  {
+   "v": "3",
+   "ctx": "uts/100 nodes/25\\% density; "
+  },
+  {
+   "v": "300",
+   "ctx": "odes/25\\% density; 3 inputs/"
+  },
+  {
+   "v": "50",
+   "ctx": "density; 3 inputs/300 nodes/"
+  },
+  {
+   "v": "5",
+   "ctx": "y; 3 inputs/300 nodes/50\\%; "
+  },
+  {
+   "v": "300",
+   "ctx": "ts/300 nodes/50\\%; 5 inputs/"
+  },
+  {
+   "v": "50",
+   "ctx": "es/50\\%; 5 inputs/300 nodes/"
+  },
+  {
+   "v": "5",
+   "ctx": "%; 5 inputs/300 nodes/50\\%; "
+  },
+  {
+   "v": "1000",
+   "ctx": "ts/300 nodes/50\\%; 5 inputs/"
+  },
+  {
+   "v": "75",
+   "ctx": "s/50\\%; 5 inputs/1000 nodes/"
+  },
+  {
+   "v": "1",
+   "ctx": "s are compared pairwise:  {B"
+  },
+  {
+   "v": "2",
+   "ctx": " injection (graph-free);  {B"
+  },
+  {
+   "v": "3",
+   "ctx": " iterative propagation);  {B"
+  },
+  {
+   "v": "4",
+   "ctx": " (equal-energy control);  {B"
+  },
+  {
+   "v": "1",
+   "ctx": "tor-correctness prechecks; T"
+  },
+  {
+   "v": "4",
+   "ctx": "correctness prechecks; T1--T"
+  },
+  {
+   "v": "1.0",
+   "ctx": "ess prechecks; T1--T4 MRR$=$"
+  },
+  {
+   "v": "-1",
+   "ctx": "ed confirmatory conditions C"
+  },
+  {
+   "v": "-4",
+   "ctx": "nfirmatory conditions C-1..C"
+  },
+  {
+   "v": "50",
+   "ctx": "y conditions C-1..C-4 ($n{=}"
+  },
+  {
+   "v": "3",
+   "ctx": "th Holm correction to test H"
+  },
+  {
+   "v": "10",
+   "ctx": " archived): insertion-order "
+  },
+  {
+   "v": "0",
+   "ctx": "0 permutations (expect CV$=$"
+  },
+  {
+   "v": "30",
+   "ctx": "tation (hidden oracle, $n{=}"
+  },
+  {
+   "v": "2",
+   "ctx": " $n{=}30$), counterfactual C"
+  },
+  {
+   "v": "0.1",
+   "ctx": "l score), weight sweep $w \\{"
+  },
+  {
+   "v": "0.9",
+   "ctx": "re), weight sweep $w \\{0.1.."
+  },
+  {
+   "v": "1",
+   "ctx": "ational-topology detectors O"
+  },
+  {
+   "v": "3",
+   "ctx": "nal-topology detectors O1--O"
+  },
+  {
+   "v": "2",
+   "ctx": "ogy detectors O1--O3 (joint "
+  },
+  {
+   "v": "0.5",
+   "ctx": "e weight configuration $w{=}"
+  },
+  {
+   "v": "0,",
+   "ctx": "A single model (temperature "
+  },
+  {
+   "v": "-8",
+   "ctx": "ding: (A) none; (B) raw last"
+  },
+  {
+   "v": "-5",
+   "ctx": "ing-similarity retrieval top"
+  },
+  {
+   "v": "5",
+   "ctx": "l top-5 (preregistered $k{=}"
+  },
+  {
+   "v": "1",
+   "ctx": "routing, competing targets T"
+  },
+  {
+   "v": "4",
+   "ctx": "ing, competing targets T1--T"
+  },
+  {
+   "v": "37",
+   "ctx": "path: seeding a real graph ("
+  },
+  {
+   "v": "9",
+   "ctx": "e exceptions propagate, and "
+  },
+  {
+   "v": "5",
+   "ctx": " invariants are fail-fast; $"
+  },
+  {
+   "v": "4",
+   "ctx": "nvariants are fail-fast; $5 "
+  },
+  {
+   "v": "20",
+   "ctx": "ariants are fail-fast; $5 4 "
+  },
+  {
+   "v": "3",
+   "ctx": "ants are fail-fast; $5 4 20+"
+  },
+  {
+   "v": "2",
+   "ctx": "ts are fail-fast; $5 4 20+3 "
+  },
+  {
+   "v": "20",
+   "ctx": " are fail-fast; $5 4 20+3 2 "
+  },
+  {
+   "v": "520",
+   "ctx": "e fail-fast; $5 4 20+3 2 20="
+  },
+  {
+   "v": "520",
+   "ctx": "ll valid ( {harness\\_valid}="
+  },
+  {
+   "v": "520,",
+   "ctx": "alid ( {harness\\_valid}=520/"
+  },
+  {
+   "v": "0",
+   "ctx": "d}=520/520, core exceptions "
+  },
+  {
+   "v": "104",
+   "ctx": "runs and content summaries; "
+  },
+  {
+   "v": "6,",
+   "ctx": "mentation $ $ claim audit (T"
+  },
+  {
+   "v": "4.6",
+   "ctx": "}  {tab:audit}  {tabular}{L{"
+  },
+  {
+   "v": "3.2",
+   "ctx": "audit}  {tabular}{L{4.6cm}L{"
+  },
+  {
+   "v": "3.6",
+   "ctx": "{tabular}{L{4.6cm}L{3.2cm}L{"
+  },
+  {
+   "v": "1.7",
+   "ctx": "}{L{4.6cm}L{3.2cm}L{3.6cm}L{"
+  },
+  {
+   "v": "1",
+   "ctx": "t notes} &  {Verdict} \\\\   S"
+  },
+  {
+   "v": "4",
+   "ctx": "tion}) +  {writeback\\_on} & "
+  },
+  {
+   "v": "2",
+   "ctx": "eback\\_on} & 4 degenerate + "
+  },
+  {
+   "v": "2",
+   "ctx": "facts; code matches & S \\\\ S"
+  },
+  {
+   "v": "0",
+   "ctx": " rotation + shrink guard & G"
+  },
+  {
+   "v": "4",
+   "ctx": "ation + shrink guard & G0's "
+  },
+  {
+   "v": "12",
+   "ctx": "ion + shrink guard & G0's 4/"
+  },
+  {
+   "v": "3",
+   "ctx": "ture (access layer) & S \\\\ S"
+  },
+  {
+   "v": "4",
+   "ctx": " paper's self-scope & S \\\\ S"
+  },
+  {
+   "v": "5",
+   "ctx": "h writes & S (assembly) \\\\ S"
+  },
+  {
+   "v": "2",
+   "ctx": "raph is the effect source; R"
+  },
+  {
+   "v": "8",
+   "ctx": "the effect source; R2 gate P"
+  },
+  {
+   "v": "6",
+   "ctx": " gate P8 target ran & S \\\\ S"
+  },
+  {
+   "v": "0",
+   "ctx": "or\\_extra) + goal system & P"
+  },
+  {
+   "v": "7",
+   "ctx": "havior matches code & S \\\\ S"
+  },
+  {
+   "v": "8",
+   "ctx": "opagation & directed graph; "
+  },
+  {
+   "v": "33",
+   "ctx": "& independent re-check $ $ ."
+  },
+  {
+   "v": "65,",
+   "ctx": "pendent re-check $ $ .33$ $."
+  },
+  {
+   "v": "886",
+   "ctx": "-check $ $ .33$ $.65, $r{=}."
+  },
+  {
+   "v": "10",
+   "ctx": " $ $ .33$ $.65, $r{=}.886$, "
+  },
+  {
+   "v": "10",
+   "ctx": "$ .33$ $.65, $r{=}.886$, 10/"
+  },
+  {
+   "v": "1",
+   "ctx": "odified & S (mechanism) \\\\ Q"
+  },
+  {
+   "v": "663",
+   "ctx": "ent falsification campaign: "
+  },
+  {
+   "v": "0",
+   "ctx": "n campaign: 663 runs, JCG$>$"
+  },
+  {
+   "v": "0.970",
+   "ctx": "campaign: 663 runs, JCG$>$0 "
+  },
+  {
+   "v": "2",
+   "ctx": "runs, JCG$>$0 0.970 & Q \\\\ U"
+  },
+  {
+   "v": "5",
+   "ctx": "no consumption path & U \\\\ U"
+  },
+  {
+   "v": "2",
+   "ctx": "nes &  {run\\_exp\\_routing\\_v"
+  },
+  {
+   "v": "520",
+   "ctx": "routing\\_v2.py} (harness) & "
+  },
+  {
+   "v": "520",
+   "ctx": "ing\\_v2.py} (harness) & 520/"
+  },
+  {
+   "v": "4",
+   "ctx": "(harness) & 520/520 valid; T"
+  },
+  {
+   "v": "046",
+   "ctx": "520/520 valid; T4 raw $p{=}."
+  },
+  {
+   "v": "1",
+   "ctx": "w $p{=}.046$ corrected $p{ }"
+  },
+  {
+   "v": "2.1",
+   "ctx": "$ corrected $p{ }1$; tokens "
+  },
+  {
+   "v": "-3.7",
+   "ctx": "rrected $p{ }1$; tokens 2.1-"
+  },
+  {
+   "v": "2026",
+   "ctx": "_}\\\\  {context=True} (wired "
+  },
+  {
+   "v": "-09",
+   "ctx": "  {context=True} (wired 2026"
+  },
+  {
+   "v": "-30",
+   "ctx": "context=True} (wired 2026-09"
+  },
+  {
+   "v": "1",
+   "ctx": "r the acquisition phase.} RQ"
+  },
+  {
+   "v": "10",
+   "ctx": "tion asymmetry. The Beacon A"
+  },
+  {
+   "v": "20",
+   "ctx": "alse. Four conditions ($n{=}"
+  },
+  {
+   "v": "0,",
+   "ctx": "$ paired seeds, temperature "
+  },
+  {
+   "v": "80",
+   "ctx": "d seeds, temperature 0, all "
+  },
+  {
+   "v": "4",
+   "ctx": "rs, align=center, inner sep="
+  },
+  {
+   "v": "8",
+   "ctx": "   sc/.style={bn, fill=blue!"
+  },
+  {
+   "v": "12",
+   "ctx": " wb/.style={bn, fill=orange!"
+  },
+  {
+   "v": "8",
+   "ctx": "}, ob/.style={bn, fill=gray!"
+  },
+  {
+   "v": "10",
+   "ctx": " res/.style={bn, fill=green!"
+  },
+  {
+   "v": "6",
+   "ctx": "}, neg/.style={bn, fill=red!"
+  },
+  {
+   "v": "50,",
+   "ctx": ", note/.style={font= , gray!"
+  },
+  {
+   "v": "0,0",
+   "ctx": "n=center}]  [sc] (prac) at ("
+  },
+  {
+   "v": "8",
+   "ctx": ") at (0,0) {practice phase ("
+  },
+  {
+   "v": "0,",
+   "ctx": "on stream};  [wb] (wbk) at ("
+  },
+  {
+   "v": "-2.1",
+   "ctx": " stream};  [wb] (wbk) at (0,"
+  },
+  {
+   "v": "0.889",
+   "ctx": "k\\_log)} $ { {leads-to},w{=}"
+  },
+  {
+   "v": "8,",
+   "ctx": "unt\\_increased}\\\\   support "
+  },
+  {
+   "v": "0.889",
+   "ctx": "}\\\\   support 8, confidence "
+  },
+  {
+   "v": "0,",
+   "ctx": "rk-active};  [sc] (gra) at ("
+  },
+  {
+   "v": "-4.6",
+   "ctx": "-active};  [sc] (gra) at (0,"
+  },
+  {
+   "v": "9.5",
+   "ctx": "k) -- (gra);  [ob] (bk) at ("
+  },
+  {
+   "v": "0",
+   "ctx": "- (gra);  [ob] (bk) at (9.5,"
+  },
+  {
+   "v": "20",
+   "ctx": "beacon task (closed-book, n="
+  },
+  {
+   "v": "5.6",
+   "ctx": "stripped};  [res] (fas) at ("
+  },
+  {
+   "v": "-2.3",
+   "ctx": "pped};  [res] (fas) at (5.6,"
+  },
+  {
+   "v": "20",
+   "ctx": "raph + activation context\\\\ "
+  },
+  {
+   "v": "20",
+   "ctx": "h + activation context\\\\ 20/"
+  },
+  {
+   "v": "2.15",
+   "ctx": "completed ($ {x}$ decisions "
+  },
+  {
+   "v": "20",
+   "ctx": "rst action gather\\_oak\\_log "
+  },
+  {
+   "v": "20",
+   "ctx": " action gather\\_oak\\_log 20/"
+  },
+  {
+   "v": "14.0",
+   "ctx": " 20/20};  [res] (dflat) at ("
+  },
+  {
+   "v": "-2.3",
+   "ctx": "0};  [res] (dflat) at (14.0,"
+  },
+  {
+   "v": "20",
+   "ctx": "-free aggregation control\\\\ "
+  },
+  {
+   "v": "20",
+   "ctx": "ee aggregation control\\\\ 20/"
+  },
+  {
+   "v": "2.1",
+   "ctx": "completed ($ {x}$ decisions "
+  },
+  {
+   "v": "7.2",
+   "ctx": "ons 2.1)};  [neg] (dno) at ("
+  },
+  {
+   "v": "-4.6",
+   "ctx": "2.1)};  [neg] (dno) at (7.2,"
+  },
+  {
+   "v": "0",
+   "ctx": ") at (7.2,-4.6) { {D-noact} "
+  },
+  {
+   "v": "20",
+   "ctx": "at (7.2,-4.6) { {D-noact} 0/"
+  },
+  {
+   "v": "12.2",
+   "ctx": "e absent};  [neg] (dir) at ("
+  },
+  {
+   "v": "-4.6",
+   "ctx": "ent};  [neg] (dir) at (12.2,"
+  },
+  {
+   "v": "0",
+   "ctx": "(12.2,-4.6) { {llm\\_direct} "
+  },
+  {
+   "v": "20",
+   "ctx": "2.2,-4.6) { {llm\\_direct} 0/"
+  },
+  {
+   "v": "0,",
+   "ctx": ";  [flow] (gra.east) to[out="
+  },
+  {
+   "v": "190",
+   "ctx": "low] (gra.east) to[out=0,in="
+  },
+  {
+   "v": "9.3",
+   "ctx": "190] (bk.west);  [note] at ("
+  },
+  {
+   "v": "-5.9",
+   "ctx": " (bk.west);  [note] at (9.3,"
+  },
+  {
+   "v": "2",
+   "ctx": "r exact: fas vs direct $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "exact: fas vs direct $p{=}2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "t: fas vs direct $p{=}2 10^{"
+  },
+  {
+   "v": "2",
+   "ctx": "^{-6}$; fas vs D-noact $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "-6}$; fas vs D-noact $p{=}2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "; fas vs D-noact $p{=}2 10^{"
+  },
+  {
+   "v": "1.0",
+   "ctx": "{-6}$;\\\\ fas vs D-flat $p{=}"
+  },
+  {
+   "v": "0.72",
+   "ctx": ".0$ (decision Wilcoxon $p{=}"
+  },
+  {
+   "v": "1",
+   "ctx": "from  {experiments/beacon\\_v"
+  },
+  {
+   "v": "80",
+   "ctx": "\\_v1/analysis\\_final.json} ("
+  },
+  {
+   "v": "20",
+   "ctx": "80 runs, four conditions $  "
+  },
+  {
+   "v": "20",
+   "ctx": "sults.} fas\\_full completes "
+  },
+  {
+   "v": "20",
+   "ctx": "ts.} fas\\_full completes 20/"
+  },
+  {
+   "v": "2.15",
+   "ctx": "letes 20/20 (decisions mean "
+  },
+  {
+   "v": "2",
+   "ctx": "decisions mean 2.15, median "
+  },
+  {
+   "v": "0",
+   "ctx": "n 2); llm\\_direct completes "
+  },
+  {
+   "v": "20",
+   "ctx": "2); llm\\_direct completes 0/"
+  },
+  {
+   "v": "8.0",
+   "ctx": "pletes 0/20 (decisions mean "
+  },
+  {
+   "v": "2",
+   "ctx": " chain); McNemar exact $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "hain); McNemar exact $p{=}2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "); McNemar exact $p{=}2 10^{"
+  },
+  {
+   "v": "0",
+   "ctx": "as  {vs} D-noact.  {D-noact "
+  },
+  {
+   "v": "20",
+   "ctx": "  {vs} D-noact.  {D-noact 0/"
+  },
+  {
+   "v": "20",
+   "ctx": "not usable access.  {D-flat "
+  },
+  {
+   "v": "20",
+   "ctx": " usable access.  {D-flat 20/"
+  },
+  {
+   "v": "2.1",
+   "ctx": "flat 20/20} (decisions mean "
+  },
+  {
+   "v": "0.72",
+   "ctx": "fas, decision Wilcoxon $p{=}"
+  },
+  {
+   "v": "20",
+   "ctx": "st-actions gather\\_oak\\_log "
+  },
+  {
+   "v": "20,",
+   "ctx": "actions gather\\_oak\\_log 20/"
+  },
+  {
+   "v": "17",
+   "ctx": "annot advance), direct only "
+  },
+  {
+   "v": "20",
+   "ctx": "ot advance), direct only 17/"
+  },
+  {
+   "v": "2,",
+   "ctx": "tructural existence.} For RQ"
+  },
+  {
+   "v": "1",
+   "ctx": "e identical; two lineages (B"
+  },
+  {
+   "v": "2",
+   "ctx": "dentical; two lineages (B1/B"
+  },
+  {
+   "v": "1",
+   "ctx": " rounds in the same world. B"
+  },
+  {
+   "v": "0",
+   "ctx": "B1's final graph contains  {"
+  },
+  {
+   "v": "2",
+   "ctx": "action:}/ {change:} nodes; B"
+  },
+  {
+   "v": "13",
+   "ctx": "ange:} nodes; B2 contains  {"
+  },
+  {
+   "v": "15",
+   "ctx": "g:writeback}a). Sorting the "
+  },
+  {
+   "v": "2",
+   "ctx": "e 15 promoted relations of B"
+  },
+  {
+   "v": "11",
+   "ctx": "B2 (Table~ {tab:taxonomy}): "
+  },
+  {
+   "v": "4",
+   "ctx": "y be established by doing), "
+  },
+  {
+   "v": "2",
+   "ctx": "its own success event), and "
+  },
+  {
+   "v": "2",
+   "ctx": "rather than hide them. The A"
+  },
+  {
+   "v": "8",
+   "ctx": " A2 reuse experiment: after "
+  },
+  {
+   "v": "4",
+   "ctx": "ractice, each seed promotes "
+  },
+  {
+   "v": "5",
+   "ctx": "dentical across conditions ("
+  },
+  {
+   "v": "5",
+   "ctx": "ntical across conditions (5/"
+  },
+  {
+   "v": "11",
+   "ctx": "cal across conditions (5/5 @"
+  },
+  {
+   "v": "0",
+   "ctx": "ence; write-back off yields "
+  },
+  {
+   "v": "13",
+   "ctx": " {change:} nodes; on yields "
+  },
+  {
+   "v": "15",
+   "ctx": "odes; on yields 13. (b) The "
+  },
+  {
+   "v": "11",
+   "ctx": "romoted relations sort into "
+  },
+  {
+   "v": "4",
+   "ctx": " sort into 11 substantive + "
+  },
+  {
+   "v": "1",
+   "ctx": "ext re-activation.} Episode "
+  },
+  {
+   "v": "2",
+   "ctx": "t west, bare land). Episode "
+  },
+  {
+   "v": "1",
+   "ctx": "itions inherit from Episode "
+  },
+  {
+   "v": "0",
+   "ctx": " inherit from Episode 1:  {G"
+  },
+  {
+   "v": "1",
+   "ctx": "ode 1:  {G0} full graph;  {G"
+  },
+  {
+   "v": "2",
+   "ctx": "vent structure removed);  {G"
+  },
+  {
+   "v": "5",
+   "ctx": "emoved);  {G2} clean graph. "
+  },
+  {
+   "v": "5",
+   "ctx": "oved);  {G2} clean graph. 5/"
+  },
+  {
+   "v": "0",
+   "ctx": "2} clean graph. 5/5 seeds: G"
+  },
+  {
+   "v": "4",
+   "ctx": "/5 seeds: G0 re-activates  {"
+  },
+  {
+   "v": "12",
+   "ctx": "eds: G0 re-activates  {4 of "
+  },
+  {
+   "v": "0.05",
+   "ctx": " {4 of 12} marked nodes ($a "
+  },
+  {
+   "v": "1",
+   "ctx": "} marked nodes ($a 0.05$); G"
+  },
+  {
+   "v": "0",
+   "ctx": "rked nodes ($a 0.05$); G1  {"
+  },
+  {
+   "v": "8",
+   "ctx": "nodes ($a 0.05$); G1  {0 of "
+  },
+  {
+   "v": "2",
+   "ctx": " ($a 0.05$); G1  {0 of 8}; G"
+  },
+  {
+   "v": "0.5",
+   "ctx": "me.   {figure}[t]    [width="
+  },
+  {
+   "v": "-1",
+   "ctx": "ntext re-activation. Episode"
+  },
+  {
+   "v": "0.05",
+   "ctx": "e-1 marked nodes re-lit ($a "
+  },
+  {
+   "v": "2",
+   "ctx": "e-lit ($a 0.05$) in Episode "
+  },
+  {
+   "v": "8",
+   "ctx": "shed by Experiment C: after "
+  },
+  {
+   "v": "7",
+   "ctx": "step chain (ledger promotes "
+  },
+  {
+   "v": "5",
+   "ctx": "o-Transfer). Deterministic, "
+  },
+  {
+   "v": "5",
+   "ctx": "Transfer). Deterministic, 5/"
+  },
+  {
+   "v": "13",
+   "ctx": "eeds: Transfer completes in "
+  },
+  {
+   "v": "8",
+   "ctx": "fer completes in 13 ticks / "
+  },
+  {
+   "v": "16",
+   "ctx": " actions; No-Transfer needs "
+  },
+  {
+   "v": "9",
+   "ctx": "o-Transfer needs 16 ticks / "
+  },
+  {
+   "v": "1.0",
+   "ctx": "ions shared by both tasks (("
+  },
+  {
+   "v": "8",
+   "ctx": "ed by both tasks ((1.0, obs="
+  },
+  {
+   "v": "0",
+   "ctx": " ((1.0, obs=8)  {vs} (None, "
+  },
+  {
+   "v": "5",
+   "ctx": "(None, 0)). Task success is "
+  },
+  {
+   "v": "5",
+   "ctx": "one, 0)). Task success is 5/"
+  },
+  {
+   "v": "0.5",
+   "ctx": "ns.   {figure}[t]    [width="
+  },
+  {
+   "v": "3",
+   "ctx": "r (Exp.\\ C). Transfer saves "
+  },
+  {
+   "v": "1",
+   "ctx": " Transfer saves 3 ticks and "
+  },
+  {
+   "v": "5",
+   "ctx": "e first-action competition: "
+  },
+  {
+   "v": "5",
+   "ctx": "first-action competition: 5/"
+  },
+  {
+   "v": "9",
+   "ctx": "ontrol first-actions birch @"
+  },
+  {
+   "v": "6",
+   "ctx": "birch @9  {vs} inhibit oak @"
+  },
+  {
+   "v": "3",
+   "ctx": "ch @9  {vs} inhibit oak @6 ("
+  },
+  {
+   "v": "1",
+   "ctx": "it oak @6 (3 ticks earlier, "
+  },
+  {
+   "v": "4",
+   "ctx": "the doomed target once (n$=$"
+  },
+  {
+   "v": "1",
+   "ctx": "med target once (n$=$4 with "
+  },
+  {
+   "v": "17",
+   "ctx": "$4 with 1 redundant retry, @"
+  },
+  {
+   "v": "3,",
+   "ctx": "mework condition never (n$=$"
+  },
+  {
+   "v": "15",
+   "ctx": "rk condition never (n$=$3, @"
+  },
+  {
+   "v": "0",
+   "ctx": "ion on; diffusion off ($ {=}"
+  },
+  {
+   "v": "61.5",
+   "ctx": "roduces activation quality $"
+  },
+  {
+   "v": "39",
+   "ctx": "lity $61.5$ over a field of "
+  },
+  {
+   "v": "16.6",
+   "ctx": "9 lit nodes; diffusion off $"
+  },
+  {
+   "v": "17",
+   "ctx": "; diffusion off $16.6$ over "
+  },
+  {
+   "v": "45.8",
+   "ctx": " is comparable in quality ($"
+  },
+  {
+   "v": "1",
+   "ctx": "ght at drift moments (ticks "
+  },
+  {
+   "v": "-9",
+   "ctx": "t at drift moments (ticks 1-"
+  },
+  {
+   "v": "17.2",
+   "ctx": " fixed pattern; the oracle $"
+  },
+  {
+   "v": "18",
+   "ctx": "ern; the oracle $17.2$ over "
+  },
+  {
+   "v": "1.5",
+   "ctx": "nted-at'' entity activation "
+  },
+  {
+   "v": "5.0",
+   "ctx": "t'' entity activation 1.5$ $"
+  },
+  {
+   "v": "1.1",
+   "ctx": "5.0 capped (control wanders "
+  },
+  {
+   "v": "-1.7",
+   "ctx": "capped (control wanders 1.1-"
+  },
+  {
+   "v": "0.43",
+   "ctx": "e-diffusion signal oak\\_log "
+  },
+  {
+   "v": "0.0",
+   "ctx": " signal oak\\_log 0.43  {vs} "
+  },
+  {
+   "v": "1.43",
+   "ctx": "ins under emit-as-transfer ("
+  },
+  {
+   "v": "0.16",
+   "ctx": "er emit-as-transfer (1.43$ $"
+  },
+  {
+   "v": "2",
+   "ctx": ") while the control sticks; "
+  },
+  {
+   "v": "5",
+   "ctx": "rol sticks; 2-hop lit field "
+  },
+  {
+   "v": "4",
+   "ctx": "ticks; 2-hop lit field 5 vs "
+  },
+  {
+   "v": "5,",
+   "ctx": "ondition activation task (n="
+  },
+  {
+   "v": "0",
+   "ctx": "r the mechanism runs: JCG$>{"
+  },
+  {
+   "v": "200",
+   "ctx": "hanism runs: JCG$>{0}$ on  {"
+  },
+  {
+   "v": "200",
+   "ctx": "sm runs: JCG$>{0}$ on  {200/"
+  },
+  {
+   "v": "50",
+   "ctx": "confirmatory condition $n{=}"
+  },
+  {
+   "v": "0.0977",
+   "ctx": "dition $n{=}50$; median JCG "
+  },
+  {
+   "v": "0.0977",
+   "ctx": "$n{=}50$; median JCG 0.0977/"
+  },
+  {
+   "v": "0.2158",
+   "ctx": "$; median JCG 0.0977/0.0977/"
+  },
+  {
+   "v": "0.2177",
+   "ctx": "an JCG 0.0977/0.0977/0.2158/"
+  },
+  {
+   "v": "2",
+   "ctx": "); the hypothesis group ($ $"
+  },
+  {
+   "v": "1",
+   "ctx": "p ($ $2 inputs) reaches MRR@"
+  },
+  {
+   "v": "1.0",
+   "ctx": " $2 inputs) reaches MRR@1$=$"
+  },
+  {
+   "v": "2",
+   "ctx": "RR@1$=$1.0. Counterfactual C"
+  },
+  {
+   "v": "0.0",
+   "ctx": "t target): all four methods "
+  },
+  {
+   "v": "30",
+   "ctx": "ng prophecy; hidden oracle ("
+  },
+  {
+   "v": "22.5",
+   "ctx": "permutation) rank\\_median$=$"
+  },
+  {
+   "v": "10",
+   "ctx": "rivilege); insertion order, "
+  },
+  {
+   "v": "0.0",
+   "ctx": "rder, 10 permutations, CV$=$"
+  },
+  {
+   "v": "2",
+   "ctx": "against flat path-product (B"
+  },
+  {
+   "v": "0",
+   "ctx": "d conditions show $ $JCG${<}"
+  },
+  {
+   "v": "0.402",
+   "ctx": "}0$ (median differences ${-}"
+  },
+  {
+   "v": "0.402",
+   "ctx": "differences ${-}0.402$, ${-}"
+  },
+  {
+   "v": "0.784",
+   "ctx": "${-}0.402$, ${-}0.402$, ${-}"
+  },
+  {
+   "v": "0.782",
+   "ctx": "${-}0.402$, ${-}0.784$, ${-}"
+  },
+  {
+   "v": "50",
+   "ctx": "4$, ${-}0.782$; paired $n{=}"
+  },
+  {
+   "v": "1.5",
+   "ctx": "ed Wilcoxon with Holm, $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "ilcoxon with Holm, $p{=}1.5 "
+  },
+  {
+   "v": "-9",
+   "ctx": "xon with Holm, $p{=}1.5 10^{"
+  },
+  {
+   "v": "0.615",
+   "ctx": "=}1.5 10^{-9}$; effect $r{=}"
+  },
+  {
+   "v": "0",
+   "ctx": "5$; times FAS beats flat:  {"
+  },
+  {
+   "v": "200",
+   "ctx": "; times FAS beats flat:  {0/"
+  },
+  {
+   "v": "2",
+   "ctx": "  {0/200}). MRR: FAS below B"
+  },
+  {
+   "v": "0.0435",
+   "ctx": "0/200}). MRR: FAS below B2 ("
+  },
+  {
+   "v": "0.0426",
+   "ctx": ". MRR: FAS below B2 (0.0435/"
+  },
+  {
+   "v": "0.5",
+   "ctx": " below B2 (0.0435/0.0426 vs "
+  },
+  {
+   "v": "0.5",
+   "ctx": "ow B2 (0.0435/0.0426 vs 0.5/"
+  },
+  {
+   "v": "-1",
+   "ctx": ".0435/0.0426 vs 0.5/0.5 on C"
+  },
+  {
+   "v": "-2",
+   "ctx": "5/0.0426 vs 0.5/0.5 on C-1/C"
+  },
+  {
+   "v": "1.0",
+   "ctx": " 0.5/0.5 on C-1/C-2; tie at "
+  },
+  {
+   "v": "-3",
+   "ctx": " on C-1/C-2; tie at 1.0 on C"
+  },
+  {
+   "v": "-4",
+   "ctx": "C-1/C-2; tie at 1.0 on C-3/C"
+  },
+  {
+   "v": "0.0076",
+   "ctx": "ted: robustness sweep slope "
+  },
+  {
+   "v": "2",
+   "ctx": "stness sweep slope 0.0076 (B"
+  },
+  {
+   "v": "0.0",
+   "ctx": "ness sweep slope 0.0076 (B2 "
+  },
+  {
+   "v": "0.0427",
+   "ctx": " slope 0.0076 (B2 0.0), AUC "
+  },
+  {
+   "v": "0.04",
+   "ctx": "076 (B2 0.0), AUC 0.0427 vs "
+  },
+  {
+   "v": "0.0",
+   "ctx": "427 vs 0.04, critical noise "
+  },
+  {
+   "v": "0.0",
+   "ctx": " 0.04, critical noise 0.0$=$"
+  },
+  {
+   "v": "1",
+   "ctx": "er (Fig.~ {fig:boundary}). B"
+  },
+  {
+   "v": "3",
+   "ctx": "). B1 direct injection and B"
+  },
+  {
+   "v": "4",
+   "ctx": "ndependently of the graph; B"
+  },
+  {
+   "v": "1.0",
+   "ctx": "h; B4 oracle precheck MRR$=$"
+  },
+  {
+   "v": "3",
+   "ctx": "es generator-side error.  {H"
+  },
+  {
+   "v": "4,",
+   "ctx": " {Mechanism-level results (T"
+  },
+  {
+   "v": "4.6",
+   "ctx": "tab:mechanism}  {tabular}{L{"
+  },
+  {
+   "v": "5.6",
+   "ctx": "anism}  {tabular}{L{4.6cm}L{"
+  },
+  {
+   "v": "4.2",
+   "ctx": "{tabular}{L{4.6cm}L{5.6cm}L{"
+  },
+  {
+   "v": "0",
+   "ctx": "{Source/section} \\\\   JCG$>$"
+  },
+  {
+   "v": "200",
+   "ctx": " JCG$>$0 (mechanism runs) & "
+  },
+  {
+   "v": "200",
+   "ctx": "$>$0 (mechanism runs) & 200/"
+  },
+  {
+   "v": "0.0977",
+   "ctx": "0/200 paired seeds; medians "
+  },
+  {
+   "v": "0.0977",
+   "ctx": "aired seeds; medians 0.0977/"
+  },
+  {
+   "v": "0.2158",
+   "ctx": "eeds; medians 0.0977/0.0977/"
+  },
+  {
+   "v": "0.2177",
+   "ctx": "edians 0.0977/0.0977/0.2158/"
+  },
+  {
+   "v": "1",
+   "ctx": "ct} \\\\ Hypothesis-group MRR@"
+  },
+  {
+   "v": "1.0",
+   "ctx": "\\\\ Hypothesis-group MRR@1 & "
+  },
+  {
+   "v": "2",
+   "ctx": "hesis-group MRR@1 & 1.0 ($ $"
+  },
+  {
+   "v": "0",
+   "ctx": "  {sec:res-act} \\\\ $ $JCG$<$"
+  },
+  {
+   "v": "-1",
+   "ctx": "ec:res-act} \\\\ $ $JCG$<$0 (C"
+  },
+  {
+   "v": "-4",
+   "ctx": "s-act} \\\\ $ $JCG$<$0 (C-1..C"
+  },
+  {
+   "v": "0.402",
+   "ctx": "$ $JCG$<$0 (C-1..C-4) & ${-}"
+  },
+  {
+   "v": "0.402",
+   "ctx": "(C-1..C-4) & ${-}0.402$/${-}"
+  },
+  {
+   "v": "0.784",
+   "ctx": "& ${-}0.402$/${-}0.402$/${-}"
+  },
+  {
+   "v": "0.782",
+   "ctx": "$/${-}0.402$/${-}0.784$/${-}"
+  },
+  {
+   "v": "1.5",
+   "ctx": ".784$/${-}0.782$; Holm $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "$/${-}0.782$; Holm $p{=}1.5 "
+  },
+  {
+   "v": "-9",
+   "ctx": "-}0.782$; Holm $p{=}1.5 10^{"
+  },
+  {
+   "v": "0.615",
+   "ctx": "olm $p{=}1.5 10^{-9}$, $r{=}"
+  },
+  {
+   "v": "0",
+   "ctx": "}1.5 10^{-9}$, $r{=}0.615$, "
+  },
+  {
+   "v": "200",
+   "ctx": ".5 10^{-9}$, $r{=}0.615$, 0/"
+  },
+  {
+   "v": "2,",
+   "ctx": "ec:whydiff} \\\\ MRR (fas vs B"
+  },
+  {
+   "v": "-1",
+   "ctx": "hydiff} \\\\ MRR (fas vs B2, C"
+  },
+  {
+   "v": "-2",
+   "ctx": "ff} \\\\ MRR (fas vs B2, C-1/C"
+  },
+  {
+   "v": "0.0435",
+   "ctx": " MRR (fas vs B2, C-1/C-2) & "
+  },
+  {
+   "v": "0.0426",
+   "ctx": "as vs B2, C-1/C-2) & 0.0435/"
+  },
+  {
+   "v": "0.5",
+   "ctx": "C-1/C-2) & 0.0435/0.0426 vs "
+  },
+  {
+   "v": "0.5",
+   "ctx": "C-2) & 0.0435/0.0426 vs 0.5/"
+  },
+  {
+   "v": "0.0076",
+   "ctx": " Robustness (noise) & slope "
+  },
+  {
+   "v": "0.0",
+   "ctx": "s (noise) & slope 0.0076 vs "
+  },
+  {
+   "v": "0.0427",
+   "ctx": " & slope 0.0076 vs 0.0, AUC "
+  },
+  {
+   "v": "0.04",
+   "ctx": ".0076 vs 0.0, AUC 0.0427 vs "
+  },
+  {
+   "v": "0.0",
+   "ctx": "427 vs 0.04, critical noise "
+  },
+  {
+   "v": "0.0",
+   "ctx": " 0.04, critical noise 0.0$=$"
+  },
+  {
+   "v": "22.5",
+   "ctx": "der / counterfactual & rank "
+  },
+  {
+   "v": "0.0",
+   "ctx": "& rank 22.5 unchanged; CV$=$"
+  },
+  {
+   "v": "2",
+   "ctx": " 22.5 unchanged; CV$=$0.0; C"
+  },
+  {
+   "v": "0.0",
+   "ctx": "unchanged; CV$=$0.0; C2 all "
+  },
+  {
+   "v": "3",
+   "ctx": ":res-act} \\\\ Combinational O"
+  },
+  {
+   "v": "30",
+   "ctx": "binational O3 (combo) & FAS "
+  },
+  {
+   "v": "30",
+   "ctx": "ational O3 (combo) & FAS 30/"
+  },
+  {
+   "v": "2",
+   "ctx": " O3 (combo) & FAS 30/30 vs B"
+  },
+  {
+   "v": "0",
+   "ctx": "3 (combo) & FAS 30/30 vs B2 "
+  },
+  {
+   "v": "30,",
+   "ctx": "(combo) & FAS 30/30 vs B2 0/"
+  },
+  {
+   "v": "1",
+   "ctx": "o) & FAS 30/30 vs B2 0/30, B"
+  },
+  {
+   "v": "0",
+   "ctx": " & FAS 30/30 vs B2 0/30, B1 "
+  },
+  {
+   "v": "30,",
+   "ctx": " FAS 30/30 vs B2 0/30, B1 0/"
+  },
+  {
+   "v": "3",
+   "ctx": "30/30 vs B2 0/30, B1 0/30, B"
+  },
+  {
+   "v": "5",
+   "ctx": "/30 vs B2 0/30, B1 0/30, B3 "
+  },
+  {
+   "v": "30",
+   "ctx": "0 vs B2 0/30, B1 0/30, B3 5/"
+  },
+  {
+   "v": "0.5",
+   "ctx": "B3 5/30 (single weight $w{=}"
+  },
+  {
+   "v": "1.0",
+   "ctx": " & both methods reach MRR$=$"
+  },
+  {
+   "v": "0.7",
+   "ctx": " MRR$=$1.0 together at $w{=}"
+  },
+  {
+   "v": "1",
+   "ctx": "1.0 together at $w{=}0.7$ (T"
+  },
+  {
+   "v": "4",
+   "ctx": "ogether at $w{=}0.7$ (T1$ $T"
+  },
+  {
+   "v": "-0.445",
+   "ctx": "on & $ ( {reach}, {act})$: $"
+  },
+  {
+   "v": "-0.656",
+   "ctx": "{act})$: $-0.445$ (noise), $"
+  },
+  {
+   "v": "1",
+   "ctx": "gative-edge test & joint top"
+  },
+  {
+   "v": "0.0333",
+   "ctx": "tive-edge test & joint top1 "
+  },
+  {
+   "v": "0.0333",
+   "ctx": " test & joint top1 0.0333$=$"
+  },
+  {
+   "v": "17.41",
+   "ctx": "top1 0.0333$=$0.0333, total "
+  },
+  {
+   "v": "0.325",
+   "ctx": "on $ ( {score}, {act})$ & F "
+  },
+  {
+   "v": "0.645",
+   "ctx": "e}, {act})$ & F 0.325 $ $ B "
+  },
+  {
+   "v": "0.002",
+   "ctx": "& F 0.325 $ $ B 0.645 ($p{=}"
+  },
+  {
+   "v": "0.886",
+   "ctx": " B 0.645 ($p{=}0.002$, $r{=}"
+  },
+  {
+   "v": "10",
+   "ctx": " ($p{=}0.002$, $r{=}0.886$, "
+  },
+  {
+   "v": "10",
+   "ctx": "p{=}0.002$, $r{=}0.886$, 10/"
+  },
+  {
+   "v": "21",
+   "ctx": ", $r{=}0.886$, 10/10 seeds; "
+  },
+  {
+   "v": "21",
+   "ctx": "r{=}0.886$, 10/10 seeds; 21/"
+  },
+  {
+   "v": "0.001953",
+   "ctx": "/10 seeds; 21/21 tests $p{=}"
+  },
+  {
+   "v": "61.5",
+   "ctx": "ectorized four conditions & "
+  },
+  {
+   "v": "16.6",
+   "ctx": "ized four conditions & 61.5/"
+  },
+  {
+   "v": "45.8",
+   "ctx": "four conditions & 61.5/16.6/"
+  },
+  {
+   "v": "17.2",
+   "ctx": "conditions & 61.5/16.6/45.8/"
+  },
+  {
+   "v": "49.8",
+   "ctx": "es-act} \\\\ Affective dose & "
+  },
+  {
+   "v": "52.5",
+   "ctx": "t} \\\\ Affective dose & 49.8/"
+  },
+  {
+   "v": "57.4",
+   "ctx": " Affective dose & 49.8/52.5/"
+  },
+  {
+   "v": "3",
+   "ctx": "tem} \\\\ Hebbian isolation & "
+  },
+  {
+   "v": "0.074",
+   "ctx": "bbian isolation & 3 edges $+"
+  },
+  {
+   "v": "0",
+   "ctx": "ation & 3 edges $+0.074$ vs "
+  },
+  {
+   "v": "3",
+   "ctx": " in combinational topology O"
+  },
+  {
+   "v": "2",
+   "ctx": "ough a  {shared hub} (joint "
+  },
+  {
+   "v": "30",
+   "ctx": "path via shared pivot). FAS "
+  },
+  {
+   "v": "30",
+   "ctx": "h via shared pivot). FAS 30/"
+  },
+  {
+   "v": "2",
+   "ctx": "ivot). FAS 30/30 complete (B"
+  },
+  {
+   "v": "0",
+   "ctx": "ot). FAS 30/30 complete (B2 "
+  },
+  {
+   "v": "30,",
+   "ctx": "). FAS 30/30 complete (B2 0/"
+  },
+  {
+   "v": "1",
+   "ctx": "S 30/30 complete (B2 0/30, B"
+  },
+  {
+   "v": "0",
+   "ctx": "30/30 complete (B2 0/30, B1 "
+  },
+  {
+   "v": "30,",
+   "ctx": "/30 complete (B2 0/30, B1 0/"
+  },
+  {
+   "v": "3",
+   "ctx": "omplete (B2 0/30, B1 0/30, B"
+  },
+  {
+   "v": "5",
+   "ctx": "plete (B2 0/30, B1 0/30, B3 "
+  },
+  {
+   "v": "30",
+   "ctx": "ete (B2 0/30, B1 0/30, B3 5/"
+  },
+  {
+   "v": "0.5",
+   "ctx": "esign (weight fixed at $w{=}"
+  },
+  {
+   "v": "1.0",
+   "ctx": " both methods jump to MRR$=$"
+  },
+  {
+   "v": "0.7",
+   "ctx": " MRR$=$1.0 together at $w{=}"
+  },
+  {
+   "v": "0.083",
+   "ctx": " together at $w{=}0.7$ (FAS "
+  },
+  {
+   "v": "0.5",
+   "ctx": "her at $w{=}0.7$ (FAS 0.083@"
+  },
+  {
+   "v": "1.0",
+   "ctx": " $w{=}0.7$ (FAS 0.083@0.5$ $"
+  },
+  {
+   "v": "0.7",
+   "ctx": "=}0.7$ (FAS 0.083@0.5$ $1.0@"
+  },
+  {
+   "v": "2",
+   "ctx": " (FAS 0.083@0.5$ $1.0@0.7; B"
+  },
+  {
+   "v": "0.077",
+   "ctx": "FAS 0.083@0.5$ $1.0@0.7; B2 "
+  },
+  {
+   "v": "1.0",
+   "ctx": "3@0.5$ $1.0@0.7; B2 0.077$ $"
+  },
+  {
+   "v": "44",
+   "ctx": "he production recipe graph ("
+  },
+  {
+   "v": "53",
+   "ctx": "tion recipe graph (44 nodes/"
+  },
+  {
+   "v": "-1",
+   "ctx": "4 nodes/53 edges) is a depth"
+  },
+  {
+   "v": "1.0",
+   "ctx": "re sinks} (sink\\_fraction $="
+  },
+  {
+   "v": "2",
+   "ctx": "\\_fraction $=1.0$); forward "
+  },
+  {
+   "v": "0",
+   "ctx": "rward 2-hop reachability is "
+  },
+  {
+   "v": "41",
+   "ctx": "ic reverse-edge projection ("
+  },
+  {
+   "v": "53",
+   "ctx": "ojection (41 reverse edges, "
+  },
+  {
+   "v": "94",
+   "ctx": "ion (41 reverse edges, 53$ $"
+  },
+  {
+   "v": "60",
+   "ctx": " graph zero modification}); "
+  },
+  {
+   "v": "2",
+   "ctx": "modification}); 60 runs $=$ "
+  },
+  {
+   "v": "3",
+   "ctx": "); 60 runs $=$ 2 graphs $ $ "
+  },
+  {
+   "v": "1",
+   "ctx": " $ 3 injection conditions (I"
+  },
+  {
+   "v": "2",
+   "ctx": "3 injection conditions (I1/I"
+  },
+  {
+   "v": "3",
+   "ctx": "tions (I1/I2 single input, I"
+  },
+  {
+   "v": "10",
+   "ctx": "e input, I3 dual input) $ $ "
+  },
+  {
+   "v": "2",
+   "ctx": "and exclude A: forward reach"
+  },
+  {
+   "v": "0,",
+   "ctx": " A: forward reach2 F always "
+  },
+  {
+   "v": "10",
+   "ctx": "orward reach2 F always 0, B "
+  },
+  {
+   "v": "9",
+   "ctx": "ard reach2 F always 0, B 10/"
+  },
+  {
+   "v": "12",
+   "ctx": "d reach2 F always 0, B 10/9/"
+  },
+  {
+   "v": "0.325",
+   "ctx": "activation $ $ rises from F "
+  },
+  {
+   "v": "0.645",
+   "ctx": "$ rises from F 0.325 to B  {"
+  },
+  {
+   "v": "3",
+   "ctx": "rom F 0.325 to B  {0.645} (I"
+  },
+  {
+   "v": "0.002",
+   "ctx": "325 to B  {0.645} (I3; $p{=}"
+  },
+  {
+   "v": "0.886",
+   "ctx": "645} (I3; $p{=}0.002$, $r{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "; $p{=}0.002$, $r{=}0.886$, "
+  },
+  {
+   "v": "10",
+   "ctx": "p{=}0.002$, $r{=}0.886$, 10/"
+  },
+  {
+   "v": "21",
+   "ctx": " in the same direction; all "
+  },
+  {
+   "v": "0.001953",
+   "ctx": "n; all 21 paired tests $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "he minimum possible at $n{=}"
+  },
+  {
+   "v": "0.833",
+   "ctx": "ick}) absolute activation F "
+  },
+  {
+   "v": "0.475",
+   "ctx": " activation F 0.833  {vs} B "
+  },
+  {
+   "v": "22",
+   "ctx": "overage breadth} (lit nodes "
+  },
+  {
+   "v": "21",
+   "ctx": "rage breadth} (lit nodes 22/"
+  },
+  {
+   "v": "27",
+   "ctx": "e breadth} (lit nodes 22/21/"
+  },
+  {
+   "v": "6",
+   "ctx": "} (lit nodes 22/21/27  {vs} "
+  },
+  {
+   "v": "6",
+   "ctx": "(lit nodes 22/21/27  {vs} 6/"
+  },
+  {
+   "v": "9",
+   "ctx": "it nodes 22/21/27  {vs} 6/6/"
+  },
+  {
+   "v": "3",
+   "ctx": "d. Additive convergence: B/I"
+  },
+  {
+   "v": "0.475",
+   "ctx": " convergence: B/I3 measured "
+  },
+  {
+   "v": "0.491",
+   "ctx": "0.475 $ $ linear prediction "
+  },
+  {
+   "v": "1",
+   "ctx": "linear prediction 0.491 (B/I"
+  },
+  {
+   "v": "0.253",
+   "ctx": "near prediction 0.491 (B/I1 "
+  },
+  {
+   "v": "2",
+   "ctx": "tion 0.491 (B/I1 0.253 + B/I"
+  },
+  {
+   "v": "0.239",
+   "ctx": "on 0.491 (B/I1 0.253 + B/I2 "
+  },
+  {
+   "v": "0.417",
+   "ctx": "1 0.253 + B/I2 0.239). Gini "
+  },
+  {
+   "v": "0.792",
+   "ctx": "B/I2 0.239). Gini 0.417 $ $ "
+  },
+  {
+   "v": "-0.824",
+   "ctx": ".239). Gini 0.417 $ $ 0.792-"
+  },
+  {
+   "v": "1.5",
+   "ctx": " $ $JCG negative (Holm $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "JCG negative (Holm $p{=}1.5 "
+  },
+  {
+   "v": "-9",
+   "ctx": "negative (Holm $p{=}1.5 10^{"
+  },
+  {
+   "v": "0.5",
+   "ctx": "y (star, single-weight $w{=}"
+  },
+  {
+   "v": "1.0",
+   "ctx": "p: both methods reach MRR$=$"
+  },
+  {
+   "v": "0.7",
+   "ctx": " MRR$=$1.0 together at $w{=}"
+  },
+  {
+   "v": "0.445",
+   "ctx": " target activation ($ {=}{-}"
+  },
+  {
+   "v": "0.656",
+   "ctx": "vation ($ {=}{-}0.445$, ${-}"
+  },
+  {
+   "v": "25,",
+   "ctx": "bar/.style={draw, fill=blue!"
+  },
+  {
+   "v": "0",
+   "ctx": "ill=blue!25, minimum height="
+  },
+  {
+   "v": "45,",
+   "ctx": "r/.style={draw, fill=orange!"
+  },
+  {
+   "v": "0",
+   "ctx": "l=orange!45, minimum height="
+  },
+  {
+   "v": "60,",
+   "ctx": "ont= },   axis/.style={gray!"
+  },
+  {
+   "v": "0,2.7",
+   "ctx": "n}]  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "2",
+   "ctx": "nchor=west] at (0,2.7) {(a) "
+  },
+  {
+   "v": "2",
+   "ctx": "a) 2-hop reachability (reach"
+  },
+  {
+   "v": "3",
+   "ctx": "reachability (reach2 / reach"
+  },
+  {
+   "v": "0,0",
+   "ctx": "reach2 / reach3)};  [axis] ("
+  },
+  {
+   "v": "5.0",
+   "ctx": "reach3)};  [axis] (0,0) -- ("
+  },
+  {
+   "v": "0",
+   "ctx": "h3)};  [axis] (0,0) -- (5.0,"
+  },
+  {
+   "v": "25",
+   "ctx": "s] (0,0) -- (5.0,0);  [blue!"
+  },
+  {
+   "v": "0.05",
+   "ctx": ",0) -- (5.0,0);  [blue!25] ("
+  },
+  {
+   "v": "0",
+   "ctx": "- (5.0,0);  [blue!25] (0.05,"
+  },
+  {
+   "v": "0.6",
+   "ctx": "lue!25] (0.05,0) rectangle ("
+  },
+  {
+   "v": "0.9",
+   "ctx": "25] (0.05,0) rectangle (0.6,"
+  },
+  {
+   "v": "0.4",
+   "ctx": "9);  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-0.32",
+   "ctx": " [lbl, anchor=west] at (0.4,"
+  },
+  {
+   "v": "0",
+   "ctx": "or=west] at (0.4,-0.32) {F: "
+  },
+  {
+   "v": "45",
+   "ctx": "0.4,-0.32) {F: 0};  [orange!"
+  },
+  {
+   "v": "1.2",
+   "ctx": "0.32) {F: 0};  [orange!45] ("
+  },
+  {
+   "v": "0",
+   "ctx": ") {F: 0};  [orange!45] (1.2,"
+  },
+  {
+   "v": "1.2",
+   "ctx": "ange!45] (1.2,0) rectangle ("
+  },
+  {
+   "v": "12",
+   "ctx": "!45] (1.2,0) rectangle (1.2+"
+  },
+  {
+   "v": "0.07",
+   "ctx": "] (1.2,0) rectangle (1.2+12*"
+  },
+  {
+   "v": "2.0",
+   "ctx": "2,0) rectangle (1.2+12*0.07,"
+  },
+  {
+   "v": "1.2",
+   "ctx": "0);  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-0.32",
+   "ctx": " [lbl, anchor=west] at (1.2,"
+  },
+  {
+   "v": "9",
+   "ctx": "or=west] at (1.2,-0.32) {B: "
+  },
+  {
+   "v": "-12",
+   "ctx": "=west] at (1.2,-0.32) {B: 9-"
+  },
+  {
+   "v": "2",
+   "ctx": "(1.2,-0.32) {B: 9--12 (reach"
+  },
+  {
+   "v": "60",
+   "ctx": ": 9--12 (reach2)};  [orange!"
+  },
+  {
+   "v": "3.4",
+   "ctx": "12 (reach2)};  [orange!60] ("
+  },
+  {
+   "v": "0",
+   "ctx": "reach2)};  [orange!60] (3.4,"
+  },
+  {
+   "v": "3.4",
+   "ctx": "ange!60] (3.4,0) rectangle ("
+  },
+  {
+   "v": "6",
+   "ctx": "!60] (3.4,0) rectangle (3.4+"
+  },
+  {
+   "v": "0.07",
+   "ctx": "0] (3.4,0) rectangle (3.4+6*"
+  },
+  {
+   "v": "1.2",
+   "ctx": ".4,0) rectangle (3.4+6*0.07,"
+  },
+  {
+   "v": "3.4",
+   "ctx": "2);  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-0.32",
+   "ctx": " [lbl, anchor=west] at (3.4,"
+  },
+  {
+   "v": "6",
+   "ctx": "or=west] at (3.4,-0.32) {B: "
+  },
+  {
+   "v": "3",
+   "ctx": " at (3.4,-0.32) {B: 6 (reach"
+  },
+  {
+   "v": "0,",
+   "ctx": ")};  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-1.55",
+   "ctx": ";  [lbl, anchor=west] at (0,"
+  },
+  {
+   "v": "3",
+   "ctx": "ment $ ( {score}, {act})$ (I"
+  },
+  {
+   "v": "0,",
+   "ctx": "e}, {act})$ (I3)};  [axis] ("
+  },
+  {
+   "v": "-1.55",
+   "ctx": ", {act})$ (I3)};  [axis] (0,"
+  },
+  {
+   "v": "11.0",
+   "ctx": "I3)};  [axis] (0,-1.55) -- ("
+  },
+  {
+   "v": "-1.55",
+   "ctx": "  [axis] (0,-1.55) -- (11.0,"
+  },
+  {
+   "v": "25",
+   "ctx": "55) -- (11.0,-1.55);  [blue!"
+  },
+  {
+   "v": "0.05",
+   "ctx": "- (11.0,-1.55);  [blue!25] ("
+  },
+  {
+   "v": "-1.55",
+   "ctx": ".0,-1.55);  [blue!25] (0.05,"
+  },
+  {
+   "v": "0.05",
+   "ctx": "25] (0.05,-1.55) rectangle ("
+  },
+  {
+   "v": "0.325",
+   "ctx": "0.05,-1.55) rectangle (0.05+"
+  },
+  {
+   "v": "8,",
+   "ctx": "1.55) rectangle (0.05+0.325*"
+  },
+  {
+   "v": "-1.55",
+   "ctx": "55) rectangle (0.05+0.325*8,"
+  },
+  {
+   "v": "0.9",
+   "ctx": "ctangle (0.05+0.325*8,-1.55+"
+  },
+  {
+   "v": "0.05",
+   "ctx": "9);  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-2.42",
+   "ctx": "[lbl, anchor=west] at (0.05,"
+  },
+  {
+   "v": "0.325",
+   "ctx": "r=west] at (0.05,-2.42) {F: "
+  },
+  {
+   "v": "45",
+   "ctx": "-2.42) {F: 0.325};  [orange!"
+  },
+  {
+   "v": "4.2",
+   "ctx": ") {F: 0.325};  [orange!45] ("
+  },
+  {
+   "v": "-1.55",
+   "ctx": ": 0.325};  [orange!45] (4.2,"
+  },
+  {
+   "v": "4.2",
+   "ctx": "!45] (4.2,-1.55) rectangle ("
+  },
+  {
+   "v": "0.645",
+   "ctx": " (4.2,-1.55) rectangle (4.2+"
+  },
+  {
+   "v": "8,",
+   "ctx": "-1.55) rectangle (4.2+0.645*"
+  },
+  {
+   "v": "-1.55",
+   "ctx": ".55) rectangle (4.2+0.645*8,"
+  },
+  {
+   "v": "0.9",
+   "ctx": "ectangle (4.2+0.645*8,-1.55+"
+  },
+  {
+   "v": "4.2",
+   "ctx": "9);  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-2.42",
+   "ctx": " [lbl, anchor=west] at (4.2,"
+  },
+  {
+   "v": "0.645",
+   "ctx": "or=west] at (4.2,-2.42) {B: "
+  },
+  {
+   "v": "0,",
+   "ctx": "5};  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-3.65",
+   "ctx": ";  [lbl, anchor=west] at (0,"
+  },
+  {
+   "v": "3",
+   "ctx": "activation ( {item:stick}, I"
+  },
+  {
+   "v": "0,",
+   "ctx": "item:stick}, I3)};  [axis] ("
+  },
+  {
+   "v": "-3.65",
+   "ctx": "em:stick}, I3)};  [axis] (0,"
+  },
+  {
+   "v": "9.0",
+   "ctx": "I3)};  [axis] (0,-3.65) -- ("
+  },
+  {
+   "v": "-3.65",
+   "ctx": ";  [axis] (0,-3.65) -- (9.0,"
+  },
+  {
+   "v": "25",
+   "ctx": ".65) -- (9.0,-3.65);  [blue!"
+  },
+  {
+   "v": "0.05",
+   "ctx": "-- (9.0,-3.65);  [blue!25] ("
+  },
+  {
+   "v": "-3.65",
+   "ctx": ".0,-3.65);  [blue!25] (0.05,"
+  },
+  {
+   "v": "0.05",
+   "ctx": "25] (0.05,-3.65) rectangle ("
+  },
+  {
+   "v": "0.833",
+   "ctx": "0.05,-3.65) rectangle (0.05+"
+  },
+  {
+   "v": "6,",
+   "ctx": "3.65) rectangle (0.05+0.833*"
+  },
+  {
+   "v": "-3.65",
+   "ctx": "65) rectangle (0.05+0.833*6,"
+  },
+  {
+   "v": "0.9",
+   "ctx": "ctangle (0.05+0.833*6,-3.65+"
+  },
+  {
+   "v": "0.05",
+   "ctx": "9);  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-4.52",
+   "ctx": "[lbl, anchor=west] at (0.05,"
+  },
+  {
+   "v": "0.833",
+   "ctx": "r=west] at (0.05,-4.52) {F: "
+  },
+  {
+   "v": "45",
+   "ctx": "-4.52) {F: 0.833};  [orange!"
+  },
+  {
+   "v": "4.2",
+   "ctx": ") {F: 0.833};  [orange!45] ("
+  },
+  {
+   "v": "-3.65",
+   "ctx": ": 0.833};  [orange!45] (4.2,"
+  },
+  {
+   "v": "4.2",
+   "ctx": "!45] (4.2,-3.65) rectangle ("
+  },
+  {
+   "v": "0.475",
+   "ctx": " (4.2,-3.65) rectangle (4.2+"
+  },
+  {
+   "v": "6,",
+   "ctx": "-3.65) rectangle (4.2+0.475*"
+  },
+  {
+   "v": "-3.65",
+   "ctx": ".65) rectangle (4.2+0.475*6,"
+  },
+  {
+   "v": "0.9",
+   "ctx": "ectangle (4.2+0.475*6,-3.65+"
+  },
+  {
+   "v": "4.2",
+   "ctx": "9);  [lbl, anchor=west] at ("
+  },
+  {
+   "v": "-4.52",
+   "ctx": " [lbl, anchor=west] at (4.2,"
+  },
+  {
+   "v": "0.475",
+   "ctx": "or=west] at (4.2,-4.52) {B: "
+  },
+  {
+   "v": "0,",
+   "ctx": "lign=left, anchor=west] at ("
+  },
+  {
+   "v": "-5.5",
+   "ctx": "gn=left, anchor=west] at (0,"
+  },
+  {
+   "v": "10",
+   "ctx": "ction experiment summary (n="
+  },
+  {
+   "v": "21",
+   "ctx": "ary (n=10 paired seeds; all "
+  },
+  {
+   "v": "0.001953",
+   "ctx": "ed seeds; all 21 tests $p{=}"
+  },
+  {
+   "v": "0.886",
+   "ctx": " tests $p{=}0.001953$, $r{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "p{=}0.001953$, $r{=}0.886$, "
+  },
+  {
+   "v": "10",
+   "ctx": "}0.001953$, $r{=}0.886$, 10/"
+  },
+  {
+   "v": "14",
+   "ctx": " results.   {Long chain.} A "
+  },
+  {
+   "v": "13",
+   "ctx": "ng chain.} A 14-step chain ("
+  },
+  {
+   "v": "14",
+   "ctx": "-settlement simplification; "
+  },
+  {
+   "v": "5",
+   "ctx": " decoy resources) completes "
+  },
+  {
+   "v": "5",
+   "ctx": "ecoy resources) completes 5/"
+  },
+  {
+   "v": "315",
+   "ctx": "ces) completes 5/5 seeds at "
+  },
+  {
+   "v": "0",
+   "ctx": " under full configuration (L"
+  },
+  {
+   "v": "3",
+   "ctx": "} the smelting task prior (L"
+  },
+  {
+   "v": "0",
+   "ctx": "e smelting task prior (L3): "
+  },
+  {
+   "v": "5",
+   "ctx": "smelting task prior (L3): 0/"
+  },
+  {
+   "v": "65",
+   "ctx": "lting task prior (L3): 0/5 ("
+  },
+  {
+   "v": "58",
+   "ctx": "prior (L3): 0/5 (65 actions/"
+  },
+  {
+   "v": "33",
+   "ctx": "/5 (65 actions/58 redundant/"
+  },
+  {
+   "v": "3",
+   "ctx": "g only the smelting prior (L"
+  },
+  {
+   "v": "315",
+   "ctx": " restores the bit-identical "
+  },
+  {
+   "v": "1",
+   "ctx": " this depth. $-$diffusion (L"
+  },
+  {
+   "v": "259",
+   "ctx": "-$diffusion (L1) is faster ("
+  },
+  {
+   "v": "2,",
+   "ctx": "; $-$write-back promotion (L"
+  },
+  {
+   "v": "0",
+   "ctx": "-$write-back promotion (L2, "
+  },
+  {
+   "v": "0",
+   "ctx": " (L2, 0 promotions) equals L"
+  },
+  {
+   "v": "315",
+   "ctx": "2, 0 promotions) equals L0 ("
+  },
+  {
+   "v": "2",
+   "ctx": "tion.} Three prior levels: P"
+  },
+  {
+   "v": "1",
+   "ctx": " levels: P2 (full priors), P"
+  },
+  {
+   "v": "0",
+   "ctx": "1 (mechanics tables only), P"
+  },
+  {
+   "v": "1",
+   "ctx": "k, five episodes per seed: P"
+  },
+  {
+   "v": "2",
+   "ctx": " episodes per seed: P1 and P"
+  },
+  {
+   "v": "25",
+   "ctx": "des per seed: P1 and P2 all "
+  },
+  {
+   "v": "4",
+   "ctx": "5 episodes complete (median "
+  },
+  {
+   "v": "0",
+   "ctx": "ticks, indistinguishable); P"
+  },
+  {
+   "v": "0",
+   "ctx": "s, indistinguishable); P0  {"
+  },
+  {
+   "v": "25",
+   "ctx": " indistinguishable); P0  {0/"
+  },
+  {
+   "v": "0",
+   "ctx": "ct replay diagnoses: under P"
+  },
+  {
+   "v": "60",
+   "ctx": "plore\\_area(target)}; after "
+  },
+  {
+   "v": "0",
+   "ctx": "er is completely untouched ("
+  },
+  {
+   "v": "0",
+   "ctx": "y untouched (0 aggregations/"
+  },
+  {
+   "v": "0",
+   "ctx": "0 aggregations/0 hypotheses/"
+  },
+  {
+   "v": "29",
+   "ctx": "ll grows from perception ($+"
+  },
+  {
+   "v": "5",
+   "ctx": "erception ($+29$ nodes over "
+  },
+  {
+   "v": "30",
+   "ctx": "ral face is sub-threshold.} "
+  },
+  {
+   "v": "3",
+   "ctx": "d condition changes exactly "
+  },
+  {
+   "v": "0.074",
+   "ctx": "oak\\_log}-- {gatherable}, $+"
+  },
+  {
+   "v": "0.079",
+   "ctx": "$+0.074$; total-sum drift $+"
+  },
+  {
+   "v": "0.85",
+   "ctx": "y is monotone in gain ($g{=}"
+  },
+  {
+   "v": "49.8",
+   "ctx": "notone in gain ($g{=}0.85$: "
+  },
+  {
+   "v": "1.0",
+   "ctx": " in gain ($g{=}0.85$: 49.8; "
+  },
+  {
+   "v": "52.5",
+   "ctx": "ain ($g{=}0.85$: 49.8; 1.0: "
+  },
+  {
+   "v": "1.3",
+   "ctx": "g{=}0.85$: 49.8; 1.0: 52.5; "
+  },
+  {
+   "v": "57.4",
+   "ctx": ".85$: 49.8; 1.0: 52.5; 1.3: "
+  },
+  {
+   "v": "3",
+   "ctx": " form from real experience ("
+  },
+  {
+   "v": "-4",
+   "ctx": "orm from real experience (3-"
+  },
+  {
+   "v": "0",
+   "ctx": "ng to basis events; control "
+  },
+  {
+   "v": "1.61",
+   "ctx": "measured (field temperature "
+  },
+  {
+   "v": "-2.12",
+   "ctx": "red (field temperature 1.61-"
+  },
+  {
+   "v": "0.35",
+   "ctx": "12 $ $ cold-field threshold "
+  },
+  {
+   "v": "0.46",
+   "ctx": "ression never reached (peak "
+  },
+  {
+   "v": "0.78",
+   "ctx": "ed (peak 0.46 $<$ threshold "
+  },
+  {
+   "v": "521",
+   "ctx": "ever built edges, swallowed "
+  },
+  {
+   "v": "521",
+   "ctx": " built edges, swallowed 521/"
+  },
+  {
+   "v": "80",
+   "ctx": ", and had an empty focus on "
+  },
+  {
+   "v": "80",
+   "ctx": "nd had an empty focus on 80/"
+  },
+  {
+   "v": "520",
+   "ctx": "ebuilt official campaign is "
+  },
+  {
+   "v": "520",
+   "ctx": "lt official campaign is 520/"
+  },
+  {
+   "v": "4",
+   "ctx": "paign is 520/520 valid. On T"
+  },
+  {
+   "v": "19",
+   "ctx": "gement + goal), FAS context "
+  },
+  {
+   "v": "20",
+   "ctx": "ent + goal), FAS context 19/"
+  },
+  {
+   "v": "15",
+   "ctx": "text 19/20  {vs} no-context "
+  },
+  {
+   "v": "20",
+   "ctx": "t 19/20  {vs} no-context 15/"
+  },
+  {
+   "v": "0.046",
+   "ctx": "ext 15/20 (uncorrected $p{=}"
+  },
+  {
+   "v": "5.45",
+   "ctx": "ted $p{=}0.046$), decisions "
+  },
+  {
+   "v": "7.25",
+   "ctx": "}0.046$), decisions 5.45 vs "
+  },
+  {
+   "v": "0.029",
+   "ctx": "ecisions 5.45 vs 7.25 ($p{=}"
+  },
+  {
+   "v": "0.48",
+   "ctx": "0.029$), target utilization "
+  },
+  {
+   "v": "0.30",
+   "ctx": " target utilization 0.48 vs "
+  },
+  {
+   "v": "0.010",
+   "ctx": "lization 0.48 vs 0.30 ($p{=}"
+  },
+  {
+   "v": "280",
+   "ctx": "parison correction over the "
+  },
+  {
+   "v": "1",
+   "ctx": "ver the 280 tests, all $p{ }"
+  },
+  {
+   "v": "3",
+   "ctx": "onfirmatory claim is made. T"
+  },
+  {
+   "v": "4.15",
+   "ctx": "ng is significantly slower ("
+  },
+  {
+   "v": "2.3",
+   "ctx": "gnificantly slower (4.15 vs "
+  },
+  {
+   "v": "2.8",
+   "ctx": "icantly slower (4.15 vs 2.3/"
+  },
+  {
+   "v": "0.003",
+   "ctx": "ower (4.15 vs 2.3/2.8, $p{=}"
+  },
+  {
+   "v": "0.044",
+   "ctx": "15 vs 2.3/2.8, $p{=}0.003$/$"
+  },
+  {
+   "v": "1",
+   "ctx": "2.8, $p{=}0.003$/$0.044$); T"
+  },
+  {
+   "v": "2",
+   "ctx": ", $p{=}0.003$/$0.044$); T1/T"
+  },
+  {
+   "v": "20",
+   "ctx": "ical across all conditions ("
+  },
+  {
+   "v": "20",
+   "ctx": "l across all conditions (20/"
+  },
+  {
+   "v": "2.1",
+   "ctx": "ken costs are structural at "
+  },
+  {
+   "v": "-3.7",
+   "ctx": "costs are structural at 2.1-"
+  },
+  {
+   "v": "1456",
+   "ctx": "$ (per-decision prompt: fas "
+  },
+  {
+   "v": "1084",
+   "ctx": "r-decision prompt: fas 1456/"
+  },
+  {
+   "v": "2070",
+   "ctx": "ision prompt: fas 1456/1084/"
+  },
+  {
+   "v": "2662",
+   "ctx": " prompt: fas 1456/1084/2070/"
+  },
+  {
+   "v": "661",
+   "ctx": "56/1084/2070/2662 vs direct "
+  },
+  {
+   "v": "528",
+   "ctx": "084/2070/2662 vs direct 661/"
+  },
+  {
+   "v": "554",
+   "ctx": "2070/2662 vs direct 661/528/"
+  },
+  {
+   "v": "1267",
+   "ctx": "/2662 vs direct 661/528/554/"
+  },
+  {
+   "v": "2.4",
+   "ctx": "n ON: activation divergence "
+  },
+  {
+   "v": "9.9",
+   "ctx": "activation divergence 2.4$ $"
+  },
+  {
+   "v": "100",
+   "ctx": "e 2.4$ $9.9; demand present "
+  },
+  {
+   "v": "0",
+   "ctx": ".9; demand present 100\\% vs "
+  },
+  {
+   "v": "1",
+   "ctx": " the full campaign and the v"
+  },
+  {
+   "v": "1",
+   "ctx": "o LLM in the action path): M"
+  },
+  {
+   "v": "25",
+   "ctx": "LM in the action path): M1 ("
+  },
+  {
+   "v": "100",
+   "ctx": "discovery form) net graph $+"
+  },
+  {
+   "v": "365",
+   "ctx": ") net graph $+100$ nodes, $+"
+  },
+  {
+   "v": "400",
+   "ctx": "$+100$ nodes, $+365$ edges, "
+  },
+  {
+   "v": "86,",
+   "ctx": "nts (a recorder defect lost "
+  },
+  {
+   "v": "2",
+   "ctx": "ched and labeled as such); M"
+  },
+  {
+   "v": "25",
+   "ctx": "d and labeled as such); M2 ("
+  },
+  {
+   "v": "35",
+   "ctx": "n, convergence form) only $+"
+  },
+  {
+   "v": "95",
+   "ctx": "ce form) only $+35$ nodes/$+"
+  },
+  {
+   "v": "89",
+   "ctx": " learned goals (investigate "
+  },
+  {
+   "v": "89",
+   "ctx": "9); the live causal ledger ("
+  },
+  {
+   "v": "78",
+   "ctx": "l ledger (89 aggregations / "
+  },
+  {
+   "v": "29",
+   "ctx": "regations / 78 hypotheses / "
+  },
+  {
+   "v": "2",
+   "ctx": "lished in the live window (M"
+  },
+  {
+   "v": "4",
+   "ctx": "al already suffices} Across "
+  },
+  {
+   "v": "200",
+   "ctx": "reregistered conditions and "
+  },
+  {
+   "v": "0.445",
+   "ctx": " target activation ($ {=}{-}"
+  },
+  {
+   "v": "0.656",
+   "ctx": "}{-}0.445$ noise sweep, ${-}"
+  },
+  {
+   "v": "0.0435",
+   "ctx": "RR degradation with spread ("
+  },
+  {
+   "v": "0.0426",
+   "ctx": "adation with spread (0.0435/"
+  },
+  {
+   "v": "0.5",
+   "ctx": "d (0.0435/0.0426  {vs} flat "
+  },
+  {
+   "v": "0.5",
+   "ctx": ".0435/0.0426  {vs} flat 0.5/"
+  },
+  {
+   "v": "259",
+   "ctx": "er $-$diffusion long chain ("
+  },
+  {
+   "v": "315",
+   "ctx": "iffusion long chain (259 vs "
+  },
+  {
+   "v": "30",
+   "ctx": " positive difference (combo "
+  },
+  {
+   "v": "30",
+   "ctx": "sitive difference (combo 30/"
+  },
+  {
+   "v": "0",
+   "ctx": " difference (combo 30/30 vs "
+  },
+  {
+   "v": "30",
+   "ctx": "ifference (combo 30/30 vs 0/"
+  },
+  {
+   "v": "0.5",
+   "ctx": " single weight design ($w{=}"
+  },
+  {
+   "v": "1",
+   "ctx": "e weights (Future Work item "
+  },
+  {
+   "v": "1",
+   "ctx": "he same conclusion: (i) on T"
+  },
+  {
+   "v": "2",
+   "ctx": "same conclusion: (i) on T1/T"
+  },
+  {
+   "v": "20",
+   "ctx": "onditions complete equally ("
+  },
+  {
+   "v": "20",
+   "ctx": "itions complete equally (20/"
+  },
+  {
+   "v": "0",
+   "ctx": "-marginal context value $ $ "
+  },
+  {
+   "v": "3",
+   "ctx": "ntext value $ $ 0; (ii) on T"
+  },
+  {
+   "v": "4,",
+   "ctx": "ctional positive evidence, T"
+  },
+  {
+   "v": "20",
+   "ctx": " locks knowledge in memory ("
+  },
+  {
+   "v": "20",
+   "ctx": "cks knowledge in memory (20/"
+  },
+  {
+   "v": "0",
+   "ctx": "owledge in memory (20/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": "ledge in memory (20/20 vs 0/"
+  },
+  {
+   "v": "0",
+   "ctx": "y to internal differences: B"
+  },
+  {
+   "v": "1",
+   "ctx": "o internal differences: B0/B"
+  },
+  {
+   "v": "2",
+   "ctx": "nternal differences: B0/B1/B"
+  },
+  {
+   "v": "11",
+   "ctx": "l differences: B0/B1/B2 all "
+  },
+  {
+   "v": "16,",
+   "ctx": "activation three conditions "
+  },
+  {
+   "v": "9",
+   "ctx": " modulation four conditions "
+  },
+  {
+   "v": "0",
+   "ctx": "h and all injected sources ("
+  },
+  {
+   "v": "13",
+   "ctx": " all injected sources (0 vs "
+  },
+  {
+   "v": "15",
+   "ctx": "ted sources (0 vs 13 nodes, "
+  },
+  {
+   "v": "2",
+   "ctx": "s 13 nodes, 15 promotions, A"
+  },
+  {
+   "v": "4",
+   "ctx": "13 nodes, 15 promotions, A2 "
+  },
+  {
+   "v": "4",
+   "ctx": "ivates in changed contexts ("
+  },
+  {
+   "v": "12",
+   "ctx": "ates in changed contexts (4/"
+  },
+  {
+   "v": "0",
+   "ctx": "n changed contexts (4/12 vs "
+  },
+  {
+   "v": "8",
+   "ctx": "changed contexts (4/12 vs 0/"
+  },
+  {
+   "v": "0",
+   "ctx": "ed contexts (4/12 vs 0/8 vs "
+  },
+  {
+   "v": "0",
+   "ctx": " contexts (4/12 vs 0/8 vs 0/"
+  },
+  {
+   "v": "13",
+   "ctx": "measurably change behavior ("
+  },
+  {
+   "v": "16",
+   "ctx": "ably change behavior (13 vs "
+  },
+  {
+   "v": "5",
+   "ctx": "e behavior (13 vs 16 ticks; "
+  },
+  {
+   "v": "5",
+   "ctx": "behavior (13 vs 16 ticks; 5/"
+  },
+  {
+   "v": "20",
+   "ctx": " behavioral benefit (beacon "
+  },
+  {
+   "v": "20",
+   "ctx": "havioral benefit (beacon 20/"
+  },
+  {
+   "v": "0",
+   "ctx": "al benefit (beacon 20/20 vs "
+  },
+  {
+   "v": "20,",
+   "ctx": " benefit (beacon 20/20 vs 0/"
+  },
+  {
+   "v": "2",
+   "ctx": "(beacon 20/20 vs 0/20, $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "eacon 20/20 vs 0/20, $p{=}2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "n 20/20 vs 0/20, $p{=}2 10^{"
+  },
+  {
+   "v": "61.5",
+   "ctx": "able from noise and lookup ("
+  },
+  {
+   "v": "16.6",
+   "ctx": "from noise and lookup (61.5/"
+  },
+  {
+   "v": "45.8",
+   "ctx": "noise and lookup (61.5/16.6/"
+  },
+  {
+   "v": "17.2",
+   "ctx": " and lookup (61.5/16.6/45.8/"
+  },
+  {
+   "v": "200",
+   "ctx": "convergence mechanism runs ("
+  },
+  {
+   "v": "200",
+   "ctx": "ergence mechanism runs (200/"
+  },
+  {
+   "v": "0",
+   "ctx": "s preregistration-rejected ("
+  },
+  {
+   "v": "200",
+   "ctx": "preregistration-rejected (0/"
+  },
+  {
+   "v": "30",
+   "ctx": "hub combinational topology ("
+  },
+  {
+   "v": "30",
+   "ctx": " combinational topology (30/"
+  },
+  {
+   "v": "0",
+   "ctx": "national topology (30/30 vs "
+  },
+  {
+   "v": "30",
+   "ctx": "tional topology (30/30 vs 0/"
+  },
+  {
+   "v": "0",
+   "ctx": " {The role of scaffolding} P"
+  },
+  {
+   "v": "0",
+   "ctx": "he role of scaffolding} P0 ("
+  },
+  {
+   "v": "25",
+   "ctx": " role of scaffolding} P0 (0/"
+  },
+  {
+   "v": "4",
+   "ctx": "tional evidence chains (G's "
+  },
+  {
+   "v": "12",
+   "ctx": "onal evidence chains (G's 4/"
+  },
+  {
+   "v": "0.074",
+   "ctx": "r. At the signal level: a $+"
+  },
+  {
+   "v": "1",
+   "ctx": "Limitations}  {sec:limits} ("
+  },
+  {
+   "v": "2",
+   "ctx": "o interventional/do tests. ("
+  },
+  {
+   "v": "3",
+   "ctx": "nal baseline replications. ("
+  },
+  {
+   "v": "4",
+   "ctx": "nvironment simplification. ("
+  },
+  {
+   "v": "10",
+   "ctx": "y; paired experiments ($n{=}"
+  },
+  {
+   "v": "20",
+   "ctx": "experiments ($n{=}10$, $n{=}"
+  },
+  {
+   "v": "50",
+   "ctx": "s ($n{=}10$, $n{=}20$, $n{=}"
+  },
+  {
+   "v": "5",
+   "ctx": "e-comparison declarations. ("
+  },
+  {
+   "v": "6",
+   "ctx": "-activation channels only. ("
+  },
+  {
+   "v": "7",
+   "ctx": "ing, not learning ability. ("
+  },
+  {
+   "v": "8",
+   "ctx": "y validated in this paper. ("
+  },
+  {
+   "v": "9",
+   "ctx": "ion-default-off mechanism. ("
+  },
+  {
+   "v": "10",
+   "ctx": "endence is not quantified. ("
+  },
+  {
+   "v": "44",
+   "ctx": "erimental graphs are small ("
+  },
+  {
+   "v": "-1000",
+   "ctx": "mental graphs are small (44-"
+  },
+  {
+   "v": "11",
+   "ctx": "e recipe relation classes. ("
+  },
+  {
+   "v": "2026",
+   "ctx": "ntrolling execution; before "
+  },
+  {
+   "v": "-09",
+   "ctx": "lling execution; before 2026"
+  },
+  {
+   "v": "-30",
+   "ctx": "ng execution; before 2026-09"
+  },
+  {
+   "v": "12",
+   "ctx": "directional evidence only. ("
+  },
+  {
+   "v": "50",
+   "ctx": "he mechanism campaign ($n{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "nd relation direction ($n{=}"
+  },
+  {
+   "v": "13",
+   "ctx": "ngle weight configuration. ("
+  },
+  {
+   "v": "10",
+   "ctx": "tional), extending the $n{=}"
+  },
+  {
+   "v": "1",
+   "ctx": " tables one at a time from P"
+  },
+  {
+   "v": "0.46",
+   "ctx": "mers}: CI expression-level ("
+  },
+  {
+   "v": "0.78",
+   "ctx": " expression-level (0.46 $ $ "
+  },
+  {
+   "v": "20",
+   "ctx": "t relational reuse yields a "
+  },
+  {
+   "v": "20",
+   "ctx": "elational reuse yields a 20/"
+  },
+  {
+   "v": "0",
+   "ctx": " reuse yields a 20/20  {vs} "
+  },
+  {
+   "v": "20",
+   "ctx": "euse yields a 20/20  {vs} 0/"
+  },
+  {
+   "v": "2",
+   "ctx": "behavioral difference ($p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "havioral difference ($p{=}2 "
+  },
+  {
+   "v": "-6",
+   "ctx": "oral difference ($p{=}2 10^{"
+  },
+  {
+   "v": "1",
+   "ctx": "{alg:spread}  {algorithmic}["
+  },
+  {
+   "v": "1",
+   "ctx": "ss $ $)   updated $ {a}(t{+}"
+  },
+  {
+   "v": "1",
+   "ctx": " {a}(t{+}1)$   $g    {clip}("
+  },
+  {
+   "v": "0.3",
+   "ctx": "(t{+}1)$   $g    {clip}(1 + "
+  },
+  {
+   "v": "0.15",
+   "ctx": "  $g    {clip}(1 + 0.3\\,  - "
+  },
+  {
+   "v": "0.7",
+   "ctx": "lip}(1 + 0.3\\,  - 0.15\\, ,\\ "
+  },
+  {
+   "v": "1.6",
+   "ctx": " + 0.3\\,  - 0.15\\, ,\\ 0.7,\\ "
+  },
+  {
+   "v": "0",
+   "ctx": "itive-weight total $W^+_u > "
+  },
+  {
+   "v": "0",
+   "ctx": " g \\,/\\,  _{v'}  (  w_{uv'},"
+  },
+  {
+   "v": "1",
+   "ctx": "$v$}     $a_v     (a_{ },\\ ("
+  },
+  {
+   "v": "0",
+   "ctx": "ly $ $ section provenance. B"
+  },
+  {
+   "v": "1",
+   "ctx": "$ $ section provenance. B0/B"
+  },
+  {
+   "v": "2",
+   "ctx": " section provenance. B0/B1/B"
+  },
+  {
+   "v": "2",
+   "ctx": "ffusion causal experiment; B"
+  },
+  {
+   "v": "4.6",
+   "ctx": "  {tab:family}  {tabular}{L{"
+  },
+  {
+   "v": "3.4",
+   "ctx": "amily}  {tabular}{L{4.6cm}L{"
+  },
+  {
+   "v": "6.0",
+   "ctx": "{tabular}{L{4.6cm}L{3.4cm}L{"
+  },
+  {
+   "v": "10",
+   "ctx": "} &  {Purpose} \\\\   Beacon A"
+  },
+  {
+   "v": "20",
+   "ctx": "e} & information asymmetry: "
+  },
+  {
+   "v": "20",
+   "ctx": "& information asymmetry: 20/"
+  },
+  {
+   "v": "0",
+   "ctx": "rmation asymmetry: 20/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": "ation asymmetry: 20/20 vs 0/"
+  },
+  {
+   "v": "0",
+   "ctx": "asymmetry: 20/20 vs 0/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": "ymmetry: 20/20 vs 0/20 vs 0/"
+  },
+  {
+   "v": "20",
+   "ctx": "y: 20/20 vs 0/20 vs 0/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": "20/20 vs 0/20 vs 0/20 vs 20/"
+  },
+  {
+   "v": "2",
+   "ctx": "s 0/20 vs 0/20 vs 20/20 \\\\ A"
+  },
+  {
+   "v": "8",
+   "ctx": "use &   {sec:res-persist} & "
+  },
+  {
+   "v": "4",
+   "ctx": "ist} & 8-round promotion of "
+  },
+  {
+   "v": "5.0",
+   "ctx": "nce and activation residual "
+  },
+  {
+   "v": "0.0",
+   "ctx": " activation residual 5.0 vs "
+  },
+  {
+   "v": "0",
+   "ctx": "ion residual 5.0 vs 0.0 \\\\ B"
+  },
+  {
+   "v": "1",
+   "ctx": " residual 5.0 vs 0.0 \\\\ B0/B"
+  },
+  {
+   "v": "2",
+   "ctx": "sidual 5.0 vs 0.0 \\\\ B0/B1/B"
+  },
+  {
+   "v": "0",
+   "ctx": "ist} & write-back isolation "
+  },
+  {
+   "v": "13",
+   "ctx": "& write-back isolation 0 vs "
+  },
+  {
+   "v": "0",
+   "ctx": "isolation 0 vs 13 nodes \\\\ G"
+  },
+  {
+   "v": "1",
+   "ctx": "lation 0 vs 13 nodes \\\\ G0/G"
+  },
+  {
+   "v": "2",
+   "ctx": "ion 0 vs 13 nodes \\\\ G0/G1/G"
+  },
+  {
+   "v": "4",
+   "ctx": "cross-context re-activation "
+  },
+  {
+   "v": "12",
+   "ctx": "oss-context re-activation 4/"
+  },
+  {
+   "v": "-0",
+   "ctx": "s-context re-activation 4/12"
+  },
+  {
+   "v": "8",
+   "ctx": "ontext re-activation 4/12-0/"
+  },
+  {
+   "v": "-0",
+   "ctx": "ntext re-activation 4/12-0/8"
+  },
+  {
+   "v": "0",
+   "ctx": "xt re-activation 4/12-0/8-0/"
+  },
+  {
+   "v": "13",
+   "ctx": "s-persist} & ledger channel "
+  },
+  {
+   "v": "16",
+   "ctx": "ist} & ledger channel 13 vs "
+  },
+  {
+   "v": "20",
+   "ctx": " 13 vs 16 ticks \\\\ Exp.\\ D/C"
+  },
+  {
+   "v": "20",
+   "ctx": "s 16 ticks \\\\ Exp.\\ D/C20e/C"
+  },
+  {
+   "v": "6",
+   "ctx": " & event-framework channel @"
+  },
+  {
+   "v": "9,",
+   "ctx": "nt-framework channel @6 vs @"
+  },
+  {
+   "v": "15",
+   "ctx": "ramework channel @6 vs @9, @"
+  },
+  {
+   "v": "17",
+   "ctx": "k channel @6 vs @9, @15 vs @"
+  },
+  {
+   "v": "18",
+   "ctx": "s-layer differences (incl. C"
+  },
+  {
+   "v": "2",
+   "ctx": "incl. C18 assembly fix) \\\\ B"
+  },
+  {
+   "v": "2",
+   "ctx": "bly fix) \\\\ B2 (diffusion\\_b"
+  },
+  {
+   "v": "61.5",
+   "ctx": "& four-condition separation "
+  },
+  {
+   "v": "16.6",
+   "ctx": "r-condition separation 61.5/"
+  },
+  {
+   "v": "45.8",
+   "ctx": "dition separation 61.5/16.6/"
+  },
+  {
+   "v": "17.2",
+   "ctx": "n separation 61.5/16.6/45.8/"
+  },
+  {
+   "v": "663",
+   "ctx": "thod-civ},  {sec:res-act} & "
+  },
+  {
+   "v": "0.970",
+   "ctx": "ec:res-act} & 663 runs: JCG "
+  },
+  {
+   "v": "2",
+   "ctx": "} & 663 runs: JCG 0.970, $ $"
+  },
+  {
+   "v": "1",
+   "ctx": ": JCG 0.970, $ $2-input MRR@"
+  },
+  {
+   "v": "1.0",
+   "ctx": "G 0.970, $ $2-input MRR@1$=$"
+  },
+  {
+   "v": "34",
+   "ctx": "es-topo}, App.~ {app:civ} & "
+  },
+  {
+   "v": "016",
+   "ctx": "po}, App.~ {app:civ} & 34{,}"
+  },
+  {
+   "v": "-1",
+   "ctx": "{app:civ} & 34{,}016 runs: C"
+  },
+  {
+   "v": "-4,",
+   "ctx": "civ} & 34{,}016 runs: C-1..C"
+  },
+  {
+   "v": "49.8",
+   "ctx": "res-system} & dose response "
+  },
+  {
+   "v": "52.5",
+   "ctx": "ystem} & dose response 49.8/"
+  },
+  {
+   "v": "57.4",
+   "ctx": "} & dose response 49.8/52.5/"
+  },
+  {
+   "v": "3",
+   "ctx": ":res-system} & CI lifecycle "
+  },
+  {
+   "v": "-4",
+   "ctx": "es-system} & CI lifecycle 3-"
+  },
+  {
+   "v": "0.074",
+   "ctx": " Hebbian weight isolation $+"
+  },
+  {
+   "v": "0",
+   "ctx": "in) &   {sec:res-system} & L"
+  },
+  {
+   "v": "315",
+   "ctx": ") &   {sec:res-system} & L0 "
+  },
+  {
+   "v": "1",
+   "ctx": "sec:res-system} & L0 315 / L"
+  },
+  {
+   "v": "259",
+   "ctx": "c:res-system} & L0 315 / L1 "
+  },
+  {
+   "v": "3",
+   "ctx": "ystem} & L0 315 / L1 259 / L"
+  },
+  {
+   "v": "0",
+   "ctx": "tem} & L0 315 / L1 259 / L3 "
+  },
+  {
+   "v": "-5",
+   "ctx": "em} & L0 315 / L1 259 / L3 0"
+  },
+  {
+   "v": "3",
+   "ctx": "L0 315 / L1 259 / L3 0-5 / L"
+  },
+  {
+   "v": "5",
+   "ctx": "315 / L1 259 / L3 0-5 / L3b "
+  },
+  {
+   "v": "-5",
+   "ctx": "15 / L1 259 / L3 0-5 / L3b 5"
+  },
+  {
+   "v": "0",
+   "ctx": "ry) &   {sec:res-system} & P"
+  },
+  {
+   "v": "0",
+   "ctx": ") &   {sec:res-system} & P0 "
+  },
+  {
+   "v": "25",
+   "ctx": "&   {sec:res-system} & P0 0/"
+  },
+  {
+   "v": "1",
+   "ctx": "sec:res-system} & P0 0/25; P"
+  },
+  {
+   "v": "2",
+   "ctx": "es-system} & P0 0/25; P1$=$P"
+  },
+  {
+   "v": "25",
+   "ctx": "-system} & P0 0/25; P1$=$P2 "
+  },
+  {
+   "v": "25",
+   "ctx": "stem} & P0 0/25; P1$=$P2 25/"
+  },
+  {
+   "v": "1",
+   "ctx": "change scale insufficient; Q"
+  },
+  {
+   "v": "3",
+   "ctx": "ge scale insufficient; Q1--Q"
+  },
+  {
+   "v": "1",
+   "ctx": "t; Q1--Q3 re-validation \\\\ M"
+  },
+  {
+   "v": "3",
+   "ctx": "1--Q3 re-validation \\\\ M1--M"
+  },
+  {
+   "v": "1",
+   "ctx": "king; $-$Prior artifact \\\\ S"
+  },
+  {
+   "v": "11",
+   "ctx": "; $-$Prior artifact \\\\ S1--S"
+  },
+  {
+   "v": "1",
+   "ctx": "nition controls \\\\ routing v"
+  },
+  {
+   "v": "2",
+   "ctx": "asis for claims \\\\ routing v"
+  },
+  {
+   "v": "520",
+   "ctx": "tem}, App.~ {app:routing} & "
+  },
+  {
+   "v": "2",
+   "ctx": "full promotion list of the B"
+  },
+  {
+   "v": "15",
+   "ctx": "ion list of the B2 lineage ("
+  },
+  {
+   "v": "1",
+   "ctx": "ponding graph snapshots ( {A"
+  },
+  {
+   "v": "1",
+   "ctx": "ing graph snapshots ( {A1\\_B"
+  },
+  {
+   "v": "1",
+   "ctx": "aph snapshots ( {A1\\_B1}/ {A"
+  },
+  {
+   "v": "2",
+   "ctx": "snapshots ( {A1\\_B1}/ {A1\\_B"
+  },
+  {
+   "v": "1",
+   "ctx": "ts. Example promotion (seed "
+  },
+  {
+   "v": "8",
+   "ctx": "reased}, cumulative support "
+  },
+  {
+   "v": "0.889",
+   "ctx": "tive support 8 / confidence "
+  },
+  {
+   "v": "8",
+   "ctx": " 8 / confidence 0.889 after "
+  },
+  {
+   "v": "2",
+   "ctx": "n write.   {table}[h]     {B"
+  },
+  {
+   "v": "1",
+   "ctx": "e}[h]     {B2-lineage (seed "
+  },
+  {
+   "v": "15",
+   "ctx": "h]     {B2-lineage (seed 1) "
+  },
+  {
+   "v": "6.6",
+   "ctx": "{tab:taxonomy}  {tabular}{L{"
+  },
+  {
+   "v": "2.2",
+   "ctx": "onomy}  {tabular}{L{6.6cm}L{"
+  },
+  {
+   "v": "5.2",
+   "ctx": "{tabular}{L{6.6cm}L{2.2cm}L{"
+  },
+  {
+   "v": "7",
+   "ctx": "consumes sticks \\\\ $\\;\\; $ ("
+  },
+  {
+   "v": "4",
+   "ctx": "e:self:\\{A\\}:succeeded} ($  "
+  },
+  {
+   "v": "2",
+   "ctx": "bular}  {table}   {Routing v"
+  },
+  {
+   "v": "1",
+   "ctx": "Campaign}  {app:routing}  {v"
+  },
+  {
+   "v": "1",
+   "ctx": "ecord} The first campaign (v"
+  },
+  {
+   "v": "1",
+   "ctx": "dit before formal writing: R"
+  },
+  {
+   "v": "2",
+   "ctx": " traveled existing edges); R"
+  },
+  {
+   "v": "521",
+   "ctx": "raveled existing edges); R2 "
+  },
+  {
+   "v": "521",
+   "ctx": "led existing edges); R2 521/"
+  },
+  {
+   "v": "3",
+   "ctx": "'' ablation $ $ identity); R"
+  },
+  {
+   "v": "80",
+   "ctx": " ablation $ $ identity); R3 "
+  },
+  {
+   "v": "80",
+   "ctx": "lation $ $ identity); R3 80/"
+  },
+  {
+   "v": "1",
+   "ctx": "first-step focus empty. No v"
+  },
+  {
+   "v": "1",
+   "ctx": "been renamed  {statistics\\_V"
+  },
+  {
+   "v": "2",
+   "ctx": "stics.csv} is the official v"
+  },
+  {
+   "v": "2",
+   "ctx": "v2 campaign statistics.   {v"
+  },
+  {
+   "v": "520",
+   "ctx": "izes the official campaign ("
+  },
+  {
+   "v": "520",
+   "ctx": " the official campaign (520/"
+  },
+  {
+   "v": "9",
+   "ctx": "al campaign (520/520 valid; "
+  },
+  {
+   "v": "0",
+   "ctx": "iants pass; core exceptions "
+  },
+  {
+   "v": "1456",
+   "ctx": "on prompt means): fas\\_full "
+  },
+  {
+   "v": "1084",
+   "ctx": "ompt means): fas\\_full 1456/"
+  },
+  {
+   "v": "2070",
+   "ctx": "means): fas\\_full 1456/1084/"
+  },
+  {
+   "v": "2662",
+   "ctx": "): fas\\_full 1456/1084/2070/"
+  },
+  {
+   "v": "1",
+   "ctx": "_full 1456/1084/2070/2662 (T"
+  },
+  {
+   "v": "4",
+   "ctx": "l 1456/1084/2070/2662 (T1--T"
+  },
+  {
+   "v": "661",
+   "ctx": "662 (T1--T4) vs llm\\_direct "
+  },
+  {
+   "v": "528",
+   "ctx": "(T1--T4) vs llm\\_direct 661/"
+  },
+  {
+   "v": "554",
+   "ctx": "-T4) vs llm\\_direct 661/528/"
+  },
+  {
+   "v": "1267,",
+   "ctx": " vs llm\\_direct 661/528/554/"
+  },
+  {
+   "v": "2.1",
+   "ctx": "ect 661/528/554/1267, i.e., "
+  },
+  {
+   "v": "-3.7",
+   "ctx": "661/528/554/1267, i.e., 2.1-"
+  },
+  {
+   "v": "20",
+   "ctx": "267, i.e., 2.1--3.7$ $; all "
+  },
+  {
+   "v": "0.003",
+   "ctx": "ncipal token comparisons $p "
+  },
+  {
+   "v": "40",
+   "ctx": "metry (ablation family $n{=}"
+  },
+  {
+   "v": "2.4",
+   "ctx": "aises activation divergence "
+  },
+  {
+   "v": "9.9",
+   "ctx": "activation divergence 2.4$ $"
+  },
+  {
+   "v": "0.717",
+   "ctx": "e 2.4$ $9.9, pick precision "
+  },
+  {
+   "v": "0.734",
+   "ctx": ".9, pick precision 0.717 vs "
+  },
+  {
+   "v": "100",
+   "ctx": "17 vs 0.734, demand present "
+  },
+  {
+   "v": "0",
+   "ctx": "34, demand present 100\\% vs "
+  },
+  {
+   "v": "2",
+   "ctx": "  {table}[ht]     {Routing v"
+  },
+  {
+   "v": "20",
+   "ctx": "2: task-level results ($n{=}"
+  },
+  {
+   "v": "3.4",
+   "ctx": " {tab:routing}  {tabular}{L{"
+  },
+  {
+   "v": "3.0",
+   "ctx": "uting}  {tabular}{L{3.4cm}L{"
+  },
+  {
+   "v": "3.4",
+   "ctx": "{tabular}{L{3.4cm}L{3.0cm}L{"
+  },
+  {
+   "v": "4.0",
+   "ctx": "}{L{3.4cm}L{3.0cm}L{3.4cm}L{"
+  },
+  {
+   "v": "1",
+   "ctx": "icance (uncorrected)} \\\\   T"
+  },
+  {
+   "v": "3.25",
+   "ctx": "& fas vs direct decisions & "
+  },
+  {
+   "v": "4.2",
+   "ctx": " direct decisions & 3.25 vs "
+  },
+  {
+   "v": "0.064",
+   "ctx": "isions & 3.25 vs 4.2 & $p{=}"
+  },
+  {
+   "v": "1",
+   "ctx": "64$ (directional fewer) \\\\ T"
+  },
+  {
+   "v": "3.25",
+   "ctx": "ge reuse & fas vs history & "
+  },
+  {
+   "v": "2.5",
+   "ctx": " & fas vs history & 3.25 vs "
+  },
+  {
+   "v": "0.035",
+   "ctx": "istory & 3.25 vs 2.5 & $p{=}"
+  },
+  {
+   "v": "2",
+   "ctx": "5 & $p{=}0.035$ (worse) \\\\ T"
+  },
+  {
+   "v": "20",
+   "ctx": "all conditions completion & "
+  },
+  {
+   "v": "20",
+   "ctx": " conditions completion & 20/"
+  },
+  {
+   "v": "3",
+   "ctx": " 20/20 & none (ceiling) \\\\ T"
+  },
+  {
+   "v": "4.15",
+   "ctx": "ng & fas vs history / rag & "
+  },
+  {
+   "v": "2.3",
+   "ctx": " vs history / rag & 4.15 vs "
+  },
+  {
+   "v": "2.8",
+   "ctx": "story / rag & 4.15 vs 2.3 / "
+  },
+  {
+   "v": "0.003",
+   "ctx": " & 4.15 vs 2.3 / 2.8 & $p{=}"
+  },
+  {
+   "v": "0.044",
+   "ctx": " 2.3 / 2.8 & $p{=}0.003$ / $"
+  },
+  {
+   "v": "4",
+   "ctx": ".003$ / $0.044$: slower \\\\ T"
+  },
+  {
+   "v": "19",
+   "ctx": " fas vs direct completion & "
+  },
+  {
+   "v": "20",
+   "ctx": "s vs direct completion & 19/"
+  },
+  {
+   "v": "15",
+   "ctx": "irect completion & 19/20 vs "
+  },
+  {
+   "v": "20",
+   "ctx": "ct completion & 19/20 vs 15/"
+  },
+  {
+   "v": "0.046",
+   "ctx": "ion & 19/20 vs 15/20 & $p{=}"
+  },
+  {
+   "v": "4",
+   "ctx": "{=}0.046$ (directional) \\\\ T"
+  },
+  {
+   "v": "5.45",
+   "ctx": "eting targets & decisions & "
+  },
+  {
+   "v": "7.25",
+   "ctx": "rgets & decisions & 5.45 vs "
+  },
+  {
+   "v": "0.029",
+   "ctx": "sions & 5.45 vs 7.25 & $p{=}"
+  },
+  {
+   "v": "4",
+   "ctx": "5 vs 7.25 & $p{=}0.029$ \\\\ T"
+  },
+  {
+   "v": "0.48",
+   "ctx": "gets & target utilization & "
+  },
+  {
+   "v": "0.30",
+   "ctx": "arget utilization & 0.48 vs "
+  },
+  {
+   "v": "0.010",
+   "ctx": "ation & 0.48 vs 0.30 & $p{=}"
+  },
+  {
+   "v": "280",
+   "ctx": " Bonferroni correction over "
+  },
+  {
+   "v": "4",
+   "ctx": " over 280 tests, all three T"
+  },
+  {
+   "v": "1",
+   "ctx": " three T4 metrics give $p{ }"
+  },
+  {
+   "v": "4",
+   "ctx": "e T4 metrics give $p{ }1$; T"
+  },
+  {
+   "v": "3",
+   "ctx": "knowledge, as the carrier. T"
+  },
+  {
+   "v": "44",
+   "ctx": "t (production recipe graph, "
+  },
+  {
+   "v": "53",
+   "ctx": "tion recipe graph, 44 nodes/"
+  },
+  {
+   "v": "8",
+   "ctx": " relation classes (produces "
+  },
+  {
+   "v": "18",
+   "ctx": "asses (produces 8 / belongs "
+  },
+  {
+   "v": "13",
+   "ctx": "uces 8 / belongs 18 / drops "
+  },
+  {
+   "v": "11",
+   "ctx": "longs 18 / drops 13 / needs "
+  },
+  {
+   "v": "3",
+   "ctx": " 13 / needs 11 / needs-tool "
+  },
+  {
+   "v": "1.0",
+   "ctx": "k targets (sink\\_fraction $="
+  },
+  {
+   "v": "13",
+   "ctx": "fraction $=1.0$);  {item:*} "
+  },
+  {
+   "v": "13",
+   "ctx": "ction $=1.0$);  {item:*} 13/"
+  },
+  {
+   "v": "-1",
+   "ctx": "with zero out-edges; a depth"
+  },
+  {
+   "v": "2",
+   "ctx": "epth-1 star forest; forward "
+  },
+  {
+   "v": "0",
+   "ctx": " forward 2-hop reachability "
+  },
+  {
+   "v": "41",
+   "ctx": "achability 0. Graph B = F + "
+  },
+  {
+   "v": "53",
+   "ctx": "eneric reverse projections ("
+  },
+  {
+   "v": "94",
+   "ctx": "c reverse projections (53$ $"
+  },
+  {
+   "v": "60",
+   "ctx": "s, no node special-casing). "
+  },
+  {
+   "v": "2",
+   "ctx": "pecial-casing). 60 runs $=$ "
+  },
+  {
+   "v": "3",
+   "ctx": "). 60 runs $=$ 2 graphs $ $ "
+  },
+  {
+   "v": "1",
+   "ctx": "2 graphs $ $ 3 injections (I"
+  },
+  {
+   "v": "2",
+   "ctx": "raphs $ $ 3 injections (I1/I"
+  },
+  {
+   "v": "3",
+   "ctx": " injections (I1/I2 single, I"
+  },
+  {
+   "v": "10",
+   "ctx": "(I1/I2 single, I3 dual) $ $ "
+  },
+  {
+   "v": "21",
+   "ctx": "l) $ $ 10 paired seeds; all "
+  },
+  {
+   "v": "0.001953",
+   "ctx": "s; all 21 paired tests $p{=}"
+  },
+  {
+   "v": "10",
+   "ctx": " (minimum possible for $n{=}"
+  },
+  {
+   "v": "0.886",
+   "ctx": "or $n{=}10$ Wilcoxon), $r{=}"
+  },
+  {
+   "v": "10",
+   "ctx": "10$ Wilcoxon), $r{=}0.886$, "
+  },
+  {
+   "v": "10",
+   "ctx": " Wilcoxon), $r{=}0.886$, 10/"
+  },
+  {
+   "v": "2",
+   "ctx": "on. Main-axis numbers: reach"
+  },
+  {
+   "v": "0",
+   "ctx": "Main-axis numbers: reach2 F "
+  },
+  {
+   "v": "10,9,12",
+   "ctx": "xis numbers: reach2 F 0 / B "
+  },
+  {
+   "v": "3",
+   "ctx": "each2 F 0 / B 10,9,12; reach"
+  },
+  {
+   "v": "6",
+   "ctx": "2 F 0 / B 10,9,12; reach3 B "
+  },
+  {
+   "v": "6,6,9",
+   "ctx": "9,12; reach3 B 6; lit nodes "
+  },
+  {
+   "v": "22,21,27",
+   "ctx": "ach3 B 6; lit nodes 6,6,9 / "
+  },
+  {
+   "v": "0.265",
+   "ctx": ",27; $ ( {score}, {act})$ F "
+  },
+  {
+   "v": "0.275",
+   "ctx": " ( {score}, {act})$ F 0.265/"
+  },
+  {
+   "v": "0.325",
+   "ctx": "ore}, {act})$ F 0.265/0.275/"
+  },
+  {
+   "v": "0.542",
+   "ctx": ")$ F 0.265/0.275/0.325 vs B "
+  },
+  {
+   "v": "0.513",
+   "ctx": ".265/0.275/0.325 vs B 0.542/"
+  },
+  {
+   "v": "0.645",
+   "ctx": ".275/0.325 vs B 0.542/0.513/"
+  },
+  {
+   "v": "3",
+   "ctx": "25 vs B 0.542/0.513/0.645 (I"
+  },
+  {
+   "v": "0.002",
+   "ctx": "3/0.645 (I3 dual input $p{=}"
+  },
+  {
+   "v": "3",
+   "ctx": "-node absolute activation (I"
+  },
+  {
+   "v": "0.833",
+   "ctx": " absolute activation (I3) F "
+  },
+  {
+   "v": "0.475",
+   "ctx": "ctivation (I3) F 0.833 vs B "
+  },
+  {
+   "v": "1",
+   "ctx": "3 vs B 0.475 (single-input I"
+  },
+  {
+   "v": "2",
+   "ctx": "s B 0.475 (single-input I1/I"
+  },
+  {
+   "v": "0.417",
+   "ctx": "B 0.475 (single-input I1/I2 "
+  },
+  {
+   "v": "0.253",
+   "ctx": "single-input I1/I2 0.417 vs "
+  },
+  {
+   "v": "0.239",
+   "ctx": "-input I1/I2 0.417 vs 0.253/"
+  },
+  {
+   "v": "0.491",
+   "ctx": "0.239); additive prediction "
+  },
+  {
+   "v": "3",
+   "ctx": "ive prediction 0.491 $ $ B/I"
+  },
+  {
+   "v": "0.475",
+   "ctx": "ion 0.491 $ $ B/I3 measured "
+  },
+  {
+   "v": "0.417",
+   "ctx": "$ B/I3 measured 0.475; Gini "
+  },
+  {
+   "v": "0.792",
+   "ctx": "sured 0.475; Gini 0.417 $ $ "
+  },
+  {
+   "v": "-0.824",
+   "ctx": "0.475; Gini 0.417 $ $ 0.792-"
+  },
+  {
+   "v": "3",
+   "ctx": "e suppression-OFF control (C"
+  },
+  {
+   "v": "3",
+   "ctx": "ted seed reservoir and the H"
+  },
+  {
+   "v": "4",
+   "ctx": " with the artifacts; every T"
+  },
+  {
+   "v": "663",
+   "ctx": "ism\\_falsification/} is the "
+  },
+  {
+   "v": "0",
+   "ctx": "ence reference model (JCG$>$"
+  },
+  {
+   "v": "0.970",
+   "ctx": "ference model (JCG$>$0 rate "
+  },
+  {
+   "v": "1",
+   "ctx": "el (JCG$>$0 rate 0.970; MRR@"
+  },
+  {
+   "v": "1.0",
+   "ctx": "JCG$>$0 rate 0.970; MRR@1$=$"
+  },
+  {
+   "v": "2026",
+   "ctx": "{app:audit} The full audit ("
+  },
+  {
+   "v": "-09",
+   "ctx": ":audit} The full audit (2026"
+  },
+  {
+   "v": "-30",
+   "ctx": "dit} The full audit (2026-09"
+  },
+  {
+   "v": "17",
+   "ctx": "NTATION\\_MATRIX.md}) covers "
+  },
+  {
+   "v": "1",
+   "ctx": "RIX.md}) covers 17 claims (S"
+  },
+  {
+   "v": "7",
+   "ctx": "md}) covers 17 claims (S1--S"
+  },
+  {
+   "v": "1",
+   "ctx": ") covers 17 claims (S1--S7/Q"
+  },
+  {
+   "v": "5",
+   "ctx": "vers 17 claims (S1--S7/Q1--Q"
+  },
+  {
+   "v": "1",
+   "ctx": "s 17 claims (S1--S7/Q1--Q5/U"
+  },
+  {
+   "v": "5",
+   "ctx": " claims (S1--S7/Q1--Q5/U1--U"
+  },
+  {
+   "v": "-1",
+   "ctx": "tified definitional gaps CON"
+  },
+  {
+   "v": "-2",
+   "ctx": " definitional gaps CON-1/CON"
+  },
+  {
+   "v": "2026",
+   "ctx": "gaps CON-1/CON-2), wired on "
+  },
+  {
+   "v": "-09",
+   "ctx": " CON-1/CON-2), wired on 2026"
+  },
+  {
+   "v": "-30",
+   "ctx": "N-1/CON-2), wired on 2026-09"
+  },
+  {
+   "v": "1",
+   "ctx": "; values are not exposed); Q"
+  },
+  {
+   "v": "5",
+   "ctx": "alues are not exposed); Q1/U"
+  },
+  {
+   "v": "1",
+   "ctx": "plementation locations for S"
+  },
+  {
+   "v": "7",
+   "ctx": "entation locations for S1--S"
+  },
+  {
+   "v": "1",
+   "ctx": "n locations for S1--S7 and Q"
+  },
+  {
+   "v": "5,",
+   "ctx": "cations for S1--S7 and Q1--Q"
+  },
+  {
+   "v": "2",
+   "ctx": "S1--S7 and Q1--Q5, and the U"
+  },
+  {
+   "v": "16",
+   "ctx": "onfiguration} Sandbox clock "
+  },
+  {
+   "v": "8",
+   "ctx": " s/tick; attribution window "
+  },
+  {
+   "v": "-120",
+   "ctx": "/tick; attribution window 8-"
+  },
+  {
+   "v": "5",
+   "ctx": " s; promotion thresholds $s "
+  },
+  {
+   "v": "0.80",
+   "ctx": " thresholds $s 5$, $ {conf} "
+  },
+  {
+   "v": "2",
+   "ctx": "onf} 0.80$ (Laplace $s/(s+c+"
+  },
+  {
+   "v": "3.0",
+   "ctx": "by per-space caps (episodic "
+  },
+  {
+   "v": "5.0",
+   "ctx": "caps (episodic 3.0 / global "
+  },
+  {
+   "v": "1.0",
+   "ctx": "mit-as-transfer coefficient "
+  },
+  {
+   "v": "0.7",
+   "ctx": " exempt); modulation clip $["
+  },
+  {
+   "v": "1.6",
+   "ctx": "mpt); modulation clip $[0.7,"
+  },
+  {
+   "v": "0.0015",
+   "ctx": "p $[0.7,1.6]$; Hebbian $ {=}"
+  },
+  {
+   "v": "0.5",
+   "ctx": "bian $ {=}0.0015$, $ _{ }{=}"
+  },
+  {
+   "v": "3,",
+   "ctx": "otional-relation}\\}; CI cap "
+  },
+  {
+   "v": "0.55",
+   "ctx": "ion}\\}; CI cap 3, formation "
+  },
+  {
+   "v": "0.78",
+   "ctx": " formation 0.55, expression "
+  },
+  {
+   "v": "0.10",
+   "ctx": "5, expression 0.78, discard "
+  },
+  {
+   "v": "0.35",
+   "ctx": "e-fire cold-field threshold "
+  },
+  {
+   "v": "1",
+   "ctx": "False; mechanism campaign: T"
+  },
+  {
+   "v": "4",
+   "ctx": "e; mechanism campaign: T1--T"
+  },
+  {
+   "v": "3",
+   "ctx": "ampaign: T1--T4 topologies ("
+  },
+  {
+   "v": "100",
+   "ctx": "ign: T1--T4 topologies (3in/"
+  },
+  {
+   "v": "25",
+   "ctx": "T1--T4 topologies (3in/100n/"
+  },
+  {
+   "v": "3",
+   "ctx": " topologies (3in/100n/25\\%, "
+  },
+  {
+   "v": "300",
+   "ctx": "ologies (3in/100n/25\\%, 3in/"
+  },
+  {
+   "v": "50",
+   "ctx": "es (3in/100n/25\\%, 3in/300n/"
+  },
+  {
+   "v": "5",
+   "ctx": "n/100n/25\\%, 3in/300n/50\\%, "
+  },
+  {
+   "v": "300",
+   "ctx": "0n/25\\%, 3in/300n/50\\%, 5in/"
+  },
+  {
+   "v": "50",
+   "ctx": "\\%, 3in/300n/50\\%, 5in/300n/"
+  },
+  {
+   "v": "5",
+   "ctx": "n/300n/50\\%, 5in/300n/50\\%, "
+  },
+  {
+   "v": "1000",
+   "ctx": "0n/50\\%, 5in/300n/50\\%, 5in/"
+  },
+  {
+   "v": "75",
+   "ctx": "%, 5in/300n/50\\%, 5in/1000n/"
+  },
+  {
+   "v": "1",
+   "ctx": "00n/50\\%, 5in/1000n/75\\%), B"
+  },
+  {
+   "v": "4",
+   "ctx": "50\\%, 5in/1000n/75\\%), B1--B"
+  }
+ ]
+}

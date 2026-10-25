@@ -1,0 +1,328 @@
+{
+ "攻击": {
+  "打击": {
+   "plays": 361,
+   "hp_delta_sum": -410.66
+  },
+  "防御": {
+   "plays": 119,
+   "hp_delta_sum": -130.9
+  },
+  "抖肩": {
+   "plays": 63,
+   "hp_delta_sum": -69.91
+  },
+  "怒吼": {
+   "plays": 56,
+   "hp_delta_sum": -61.45
+  },
+  "顺手牵羊": {
+   "plays": 9,
+   "hp_delta_sum": -10.89
+  },
+  "观察姿态": {
+   "plays": 3,
+   "hp_delta_sum": -2.87
+  },
+  "铁皮": {
+   "plays": 5,
+   "hp_delta_sum": -5.59
+  },
+  "活动肌肉": {
+   "plays": 7,
+   "hp_delta_sum": -7.7
+  },
+  "铁浪": {
+   "plays": 3,
+   "hp_delta_sum": -3.45
+  },
+  "恶魔形态": {
+   "plays": 2,
+   "hp_delta_sum": -3.46
+  },
+  "双持": {
+   "plays": 4,
+   "hp_delta_sum": -3.37
+  },
+  "横扫": {
+   "plays": 16,
+   "hp_delta_sum": -18.48
+  },
+  "猛冲": {
+   "plays": 2,
+   "hp_delta_sum": -1.83
+  },
+  "战吼": {
+   "plays": 1,
+   "hp_delta_sum": -2.12
+  },
+  "格挡反击": {
+   "plays": 2,
+   "hp_delta_sum": -2.65
+  },
+  "虚弱之雾": {
+   "plays": 2,
+   "hp_delta_sum": -2.14
+  },
+  "补给": {
+   "plays": 2,
+   "hp_delta_sum": -2.38
+  },
+  "蓄力": {
+   "plays": 1,
+   "hp_delta_sum": -1.62
+  }
+ },
+ "强化": {
+  "打击": {
+   "plays": 290,
+   "hp_delta_sum": -323.37
+  },
+  "格挡反击": {
+   "plays": 4,
+   "hp_delta_sum": -4.41
+  },
+  "痛击": {
+   "plays": 3,
+   "hp_delta_sum": -1.67
+  },
+  "抖肩": {
+   "plays": 46,
+   "hp_delta_sum": -56.7
+  },
+  "猛冲": {
+   "plays": 4,
+   "hp_delta_sum": -3.92
+  },
+  "活动肌肉": {
+   "plays": 17,
+   "hp_delta_sum": -19.64
+  },
+  "战吼": {
+   "plays": 4,
+   "hp_delta_sum": -5.26
+  },
+  "怒吼": {
+   "plays": 47,
+   "hp_delta_sum": -54.37
+  },
+  "防御": {
+   "plays": 71,
+   "hp_delta_sum": -86.57
+  },
+  "顺手牵羊": {
+   "plays": 18,
+   "hp_delta_sum": -17.35
+  },
+  "铁皮": {
+   "plays": 6,
+   "hp_delta_sum": -6.38
+  },
+  "铁浪": {
+   "plays": 3,
+   "hp_delta_sum": -4.21
+  },
+  "恶魔形态": {
+   "plays": 2,
+   "hp_delta_sum": -3.68
+  },
+  "补给": {
+   "plays": 4,
+   "hp_delta_sum": -5.45
+  },
+  "双持": {
+   "plays": 5,
+   "hp_delta_sum": -4.69
+  },
+  "横扫": {
+   "plays": 14,
+   "hp_delta_sum": -16.73
+  },
+  "虚弱之雾": {
+   "plays": 3,
+   "hp_delta_sum": -2.81
+  },
+  "观察姿态": {
+   "plays": 4,
+   "hp_delta_sum": -4.62
+  },
+  "蓄力": {
+   "plays": 1,
+   "hp_delta_sum": -1.33
+  },
+  "燃烧契约": {
+   "plays": 2,
+   "hp_delta_sum": -1.85
+  }
+ },
+ "防御": {
+  "格挡反击": {
+   "plays": 1,
+   "hp_delta_sum": -0.44
+  },
+  "打击": {
+   "plays": 31,
+   "hp_delta_sum": -33.25
+  },
+  "横扫": {
+   "plays": 3,
+   "hp_delta_sum": -4.03
+  },
+  "铁浪": {
+   "plays": 1,
+   "hp_delta_sum": -1.55
+  },
+  "恶魔形态": {
+   "plays": 1,
+   "hp_delta_sum": -1.62
+  }
+ },
+ "攻击,重击": {
+  "打击": {
+   "plays": 314,
+   "hp_delta_sum": -355.57
+  },
+  "格挡反击": {
+   "plays": 10,
+   "hp_delta_sum": -9.71
+  },
+  "怒吼": {
+   "plays": 72,
+   "hp_delta_sum": -81.39
+  },
+  "防御": {
+   "plays": 73,
+   "hp_delta_sum": -79.63
+  },
+  "抖肩": {
+   "plays": 53,
+   "hp_delta_sum": -57.52
+  },
+  "痛击": {
+   "plays": 3,
+   "hp_delta_sum": -2.0
+  },
+  "猛冲": {
+   "plays": 7,
+   "hp_delta_sum": -7.17
+  },
+  "活动肌肉": {
+   "plays": 16,
+   "hp_delta_sum": -16.73
+  },
+  "顺手牵羊": {
+   "plays": 30,
+   "hp_delta_sum": -34.68
+  },
+  "双持": {
+   "plays": 4,
+   "hp_delta_sum": -3.35
+  },
+  "观察姿态": {
+   "plays": 4,
+   "hp_delta_sum": -3.34
+  },
+  "铁浪": {
+   "plays": 9,
+   "hp_delta_sum": -10.03
+  },
+  "恶魔形态": {
+   "plays": 4,
+   "hp_delta_sum": -6.7
+  },
+  "补给": {
+   "plays": 6,
+   "hp_delta_sum": -6.57
+  },
+  "虚弱之雾": {
+   "plays": 8,
+   "hp_delta_sum": -8.04
+  },
+  "横扫": {
+   "plays": 39,
+   "hp_delta_sum": -45.5
+  },
+  "蓄力": {
+   "plays": 1,
+   "hp_delta_sum": -0.87
+  },
+  "燃烧契约": {
+   "plays": 4,
+   "hp_delta_sum": -5.15
+  },
+  "战吼": {
+   "plays": 4,
+   "hp_delta_sum": -6.55
+  },
+  "铁皮": {
+   "plays": 5,
+   "hp_delta_sum": -7.25
+  }
+ },
+ "削弱,攻击": {
+  "打击": {
+   "plays": 77,
+   "hp_delta_sum": -86.33
+  },
+  "怒吼": {
+   "plays": 14,
+   "hp_delta_sum": -16.42
+  },
+  "防御": {
+   "plays": 22,
+   "hp_delta_sum": -27.04
+  },
+  "抖肩": {
+   "plays": 19,
+   "hp_delta_sum": -21.28
+  },
+  "战吼": {
+   "plays": 2,
+   "hp_delta_sum": -1.98
+  },
+  "顺手牵羊": {
+   "plays": 8,
+   "hp_delta_sum": -8.98
+  },
+  "铁皮": {
+   "plays": 3,
+   "hp_delta_sum": -3.17
+  },
+  "双持": {
+   "plays": 5,
+   "hp_delta_sum": -4.74
+  },
+  "虚弱之雾": {
+   "plays": 3,
+   "hp_delta_sum": -2.94
+  },
+  "蓄力": {
+   "plays": 1,
+   "hp_delta_sum": -0.87
+  },
+  "补给": {
+   "plays": 1,
+   "hp_delta_sum": -1.48
+  },
+  "猛冲": {
+   "plays": 3,
+   "hp_delta_sum": -3.03
+  },
+  "横扫": {
+   "plays": 8,
+   "hp_delta_sum": -10.21
+  },
+  "铁浪": {
+   "plays": 1,
+   "hp_delta_sum": -1.55
+  },
+  "格挡反击": {
+   "plays": 1,
+   "hp_delta_sum": -1.32
+  },
+  "痛击": {
+   "plays": 2,
+   "hp_delta_sum": -1.23
+  }
+ }
+}

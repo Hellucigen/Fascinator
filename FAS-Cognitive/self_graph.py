@@ -925,3 +925,97 @@ def get_self_model_audit(kg: KnowledgeGraph) -> list:
 # End of self_graph.py — Everything is Graph
 # ==================================================================
 
+
+
+# ── 枢纽背景激活（2026-10-17 用户设计）──────────────────────────────
+# Self/用户 直接相连的陈述性事实获得**常激活地板**：每拍衰减后拉回
+# 地板值——地板钳位就是"一次扩散后的增量恰好等于衰减量"的平衡实现：
+# 低于地板的补回地板（增量==该拍衰减掉的量），高于地板的不加（自然衰减
+# 回落至地板），枢纽再热也不会把邻居无限推高（不越过式注入，只钳下界）。
+# 不给的对象：易失产物（意图/思考/话语/表达/记录——它们是过程不是事实）、
+# 已有自己动力学的节点（drive/network/调制器/世界状态——由场与结算维护）。
+
+HUB_FLOORS = {"Self": 0.35, "用户": 0.30}   # 用户低于 Haru 自身（2026-10-17 设计）
+HUB_FLOOR_MAX = 24
+_FLOOR_EXCLUDED_TYPES = frozenset({
+    "drive", "cognitive_network", "modulator", "modulator_target",
+    "dynamic_state", "inventory_item", "reply_goal",
+    "communication_intention", "intention", "thought", "reflection",
+    "mc_session",     # 桥接状态镜像常驻 basis 事故（2026-10-19）：监视器
+                      # 不是"关于我的重要事实"，不配背景激活
+    "time_node",      # 时间链锚点=结构脚手架（2026-10-21），不配背景激活
+})
+_FLOOR_EXCLUDED_PREFIXES = (
+    "CI_", "思考_", "反思_", "表达_", "话语_", "搜索记录_", "回答记录_",
+    "文件操作记录_", "eye_text_", "eye_screenshot", "坐标(", "事件_", "对话_",
+)
+
+
+def hub_floor_targets(kg, config: dict = None) -> dict:
+    """{node_id: 地板}——枢纽一跳内、按边权降序的陈述性事实，全局限额。
+
+    注意这是**读快照**（60s 级调用一次），每拍只跑 apply（十来个节点）。
+    """
+    blk = (config or {}).get("hub_floor") or {}
+    floors = {k: float(v) for k, v in
+              (blk.get("floors") or HUB_FLOORS).items()}
+    cap = int(blk.get("max_nodes", HUB_FLOOR_MAX))
+    out: dict = {}
+    with kg._lock:
+        for hub, floor in floors.items():
+            cand = []
+            for e in kg.edges:
+                other = e.dst if e.src == hub else (
+                    e.src if e.dst == hub else None)
+                if not other or other in out:
+                    continue
+                n = kg.nodes.get(other)
+                if n is None:
+                    continue
+                if not str(getattr(n, "label", "") or "").startswith("declarative"):
+                    continue
+                na = n.extra_attrs or {}
+                if str(na.get("type") or "") in _FLOOR_EXCLUDED_TYPES:
+                    continue
+                if str(na.get("canon") or "") == "cognitive_state":
+                    continue    # 状态镜像类一律不吃地板（canon 是既有字段，
+                    # Minecraft会话教训：将来再多几个桥镜像也不会重蹈）
+                if str(other).startswith(_FLOOR_EXCLUDED_PREFIXES):
+                    continue
+                # 调制器镜像命名约定（"X样"）：现役的按 type 排除了，
+                # **降级为知识后**（prior_concept，如褪黑素样/组胺样）仍挂
+                # Self 直连——不清掉就会把已删的生理概念常驻回她心里
+                #（2026-10-17 实测：降级镜像拿到了地板）。
+                if str(other).endswith("样"):
+                    continue
+                cand.append((abs(float(e.weight or 0.0)), str(other)))
+            cand.sort(reverse=True)
+            room = cap - len(out)
+            for _w, nid in cand[:max(0, room)]:
+                out[nid] = floor
+    return out
+
+
+def apply_hub_floors(kg, engine, targets: dict) -> int:
+    """把低于地板的枢纽事实拉回地板，并保持它们在激活前沿里参与联想。"""
+    if not targets:
+        return 0
+    raised = 0
+    ids = []
+    with kg._lock:
+        for nid, floor in targets.items():
+            node = kg.nodes.get(nid)
+            if node is None:
+                continue
+            if float(node.activation or 0.0) < floor:
+                node.activation = floor
+                node.touch()
+                raised += 1
+            if float(node.activation or 0.0) > 0.0:
+                ids.append(nid)
+    if engine is not None and ids:
+        try:
+            engine.mark_active(ids)      # 驻前沿：被衰减、被扩散看见
+        except Exception:                # noqa: BLE001
+            pass
+    return raised

@@ -16,11 +16,18 @@
 # ============================================================================
 
 import logging
+import re
 import threading
 import time
 from datetime import datetime
 
-from graph_model import Node, Edge, now_str, ENGINE_PART_LABELS
+from graph_model import (Node, Edge, now_str, ENGINE_PART_LABELS,
+                         is_modulator_node, is_state_mirror,
+                         is_content_scaffold, is_internal_trace)
+
+# 身份枢纽（2026-10-25）：可参与念头 basis（与真事件共激活），但不得
+# 成为**唯一**内容——见 _merge_or_form 的纯身份拒绝。
+_IDENTITY_HUBS = frozenset({"用户", "Fascinator", "Haru", "Self"})
 from graph_evolution_log import get_evolution_log
 
 logger = logging.getLogger(__name__)
@@ -104,11 +111,25 @@ class ContinuousCognition:
         cfg.setdefault("tick_seconds", 2.5)
         cfg.setdefault("pulse_every_ticks", 4)        # ~10s 一次认知脉冲
         cfg.setdefault("form_threshold", 0.55)        # CI 形成阈值
-        cfg.setdefault("express_threshold", 0.78)     # 表达阈值（高于形成）
+        cfg.setdefault("express_threshold", 0.62)     # 表达阈值（高于形成）。
+        # 2026-10-24：0.78→0.62。代码事实：CI 出生激活 0.8-0.9 且每拍 ×0.9
+        # 衰减，0.78 门槛叠加情绪调制（实测抬到 0.839）→ 出生即压线、两三拍
+        # 必死（below_bar 123 次/日，最高分 0.615 vs 门槛 0.839）。0.62 让
+        # 出生拍与反刍强化的念头实际可达；防高频仍由 inhibition_cooldown_s
+        # 与 max_expressions_per_hour 把守，不是靠门槛硬扛。
         cfg.setdefault("discard_below", 0.10)
         cfg.setdefault("decay_per_pulse", 0.90)
         cfg.setdefault("inhibition_cooldown_s", 60)   # 调度 floor：两条主动消息的最小物理间隔
         cfg.setdefault("max_expressions_per_hour", 6)
+        # reinforced 语义（2026-10-16 修正）：重复扫描/重复选中同一焦点不再
+        # 自动等价于一次重访。计入强化需同时满足：① 焦点强度比上次强化时
+        # 记录的新高分（rehearsal_base）至少再涨 eps——未被消费的上涨会一直
+        # 等在那里，间隔一到即结算，新信息复活旧话题不会丢；② 距上次强化
+        # ≥ rehearsal_gap_s——强化速率与扫描节拍解耦。此前 reinforced 实为
+        # 选中次数（实测 reinforced=29 而激活 0.0），会被衰减固化的 damp
+        # 下限拖成慢衰减僵尸、自我强化。
+        cfg.setdefault("reinforce_rise_eps", 0.05)
+        cfg.setdefault("rehearsal_gap_s", 120.0)
         # 论文 §3.3 自主意识模块：离线自由思考/思维跳跃/反思自问
         cfg.setdefault("reignite_every_pulses", 3)    # 冷场需持续的拍数（调制层缺位时的兜底）
         cfg.setdefault("reignite_count", 3)           # 每次唤醒的记忆事件数
@@ -156,6 +177,8 @@ class ContinuousCognition:
         self._queue = []                 # 待取主动消息 [{ci_id, text, ...}]
         self._last_outcome_negative = False
         self._last_outcome_ts = 0.0        # 委屈不再全天闩死（20:0x 校准）
+        # 枢纽背景激活：Self/用户 一跳事实的地板集（时钟拍刷新，每拍施加）
+        self._hub_targets = {}
         self._last_thought_ts = 0.0
         self._last_offline_reflect = 0.0
         self.reflection = None           # 可选：ReflectionEngine 引用（离线自问）
@@ -222,6 +245,16 @@ class ContinuousCognition:
             if not getattr(self.engine, "_running", False):
                 self.engine.decay_step()
                 self.engine.diffuse_step()
+            # 枢纽背景激活（2026-10-17 用户设计）：把 Self/用户 的常激活
+            # 事实钳回地板——地板钳位即"增量=衰减量"的平衡，高于地板不加，
+            # 永不 runaway（self_graph）。必须在让位分支**外面**：后台
+            # auto 扩散自己衰减但不施地板，放进去该模式就永久没地板。
+            try:
+                import self_graph as _sg
+                _sg.apply_hub_floors(self.kg, self.engine,
+                                     self._hub_targets)
+            except Exception:                         # noqa: BLE001
+                pass
                 import fas_log
                 fas_log.aggregator(
                     "cc_diffusion_ticks", fas_log.ACTIVATION,
@@ -248,14 +281,13 @@ class ContinuousCognition:
                     #   ② 调制器→需求（`bias=`）：通道水位反过来给靶值一个连续位移。
                     # 一正一反成**负反馈**（缺口→抬通道→靶值收敛缺口→通道回落），
                     # 有界性由两侧钳位保证（① 唯一写入口+受体曲线，② 需求量程）。
-                    # R2 P10 加第 ⓪ 步：昼夜→调制器（组胺样的日内水位）。
                     # dt 用本拍的实际时长（tick 节拍被回合暂停时不会补跳）。
+                    # （R2 P10 的 ⓪ 步"昼夜→清醒度漂移"已删除，2026-10-17 用户
+                    #   裁定：AI 没有疲劳/清醒的生理——时段是知识不是睡眠压力。）
                     _need_bias = {}
                     try:
                         import modulator_subgraph as _ms
                         _dt = float(self.cfg["tick_seconds"]) / 60.0
-                        _ms.apply_circadian_drift(self.kg, self.internal_state,
-                                                  self.config, dt_min=_dt)
                         _ms.apply_need_drift(self.kg, self.internal_state,
                                              self.config, dt_min=_dt)
                         _need_bias = (_ms.graph_biases(
@@ -329,30 +361,22 @@ class ContinuousCognition:
                     * float(self.cfg["tick_seconds"])):
             self._last_clock_ts = time.time()
             try:
+                # 世界时钟=事实认知（她知道现在是凌晨，能谈时段），保留；
+                # 跨时段曾作为"清醒度调制事件"（R2 P10 快通道）已删除
+                # （2026-10-17 用户裁定：AI 无疲劳/清醒的生理机制）。
                 from temporal_awareness import update_clock_state
-                _clk = update_clock_state(self.kg, self.engine,
-                                          timeline=self.timeline)
-                # R2 P10：跨时段是一次**调制事件**（快通道：那一步的推/拉），
-                # 与每拍的昼夜漂移（慢通道：水位）不重叠也不矛盾。
-                # 幅度是有符号的夜间度之差（temporal_awareness 从图上事实算好），
-                # 所以"上午→中午"是 0 ⇒ 被事件门自己挡掉，不会每小时抖一下。
-                _tr = (_clk or {}).get("transition") or {}
-                if _tr.get("from") and self.internal_state is not None \
-                        and float(_tr.get("strength_delta") or 0.0) > 0:
-                    try:
-                        import modulation_events as _ME
-                        _eng = getattr(self, "_mod_engine", None)
-                        if _eng is None:
-                            _eng = self._mod_engine = _ME.ModulatorEngine(
-                                self.kg, self.internal_state, self.config)
-                        _eng.emit("time_bucket_changed", source="circadian",
-                                  valence=float(_tr["load_to"])
-                                  - float(_tr["load_from"]),
-                                  intensity=float(_tr["strength_delta"]),
-                                  novelty=float(_tr["strength_delta"]),
-                                  ref=f"{_tr['from']}→{_tr['to']}")
-                    except Exception as _mee:                 # noqa: BLE001
-                        logger.debug(f"[CC] 时段迁移事件跳过: {_mee}")
+                update_clock_state(self.kg, self.engine,
+                                   timeline=self.timeline)
+                # 枢纽背景：重取一跳事实地板集（60s 级，边变了自动跟上）。
+                # 顺带确保疾病·关怀种子包在场（幂等，首拍之后几乎全空转）。
+                import self_graph as _sg
+                try:
+                    import disease_care_pack as _dcp
+                    _dcp.ensure(self.kg, self.config)
+                except Exception:                     # noqa: BLE001
+                    pass
+                self._hub_targets = _sg.hub_floor_targets(
+                    self.kg, self.config)
             except Exception as _ce:
                 logger.debug(f"[CC] 时钟更新跳过: {_ce}")
         # 自主"决策"仍在非 busy 期做（回合期用户正在交互，回合开头的
@@ -508,9 +532,30 @@ class ContinuousCognition:
                      if n.label in ENGINE_PART_LABELS}
         basis_pool = [n for n in topk
                       if n.id not in INFRA and n.activation > 0.15
+                      # 控制量与状态镜像可参与激活与排序，但不得成为
+                      # 念头的内容来源（2026-10-19 表达边界：DMNetwork
+                      # "神游联想的状态"曾以〔概念〕身份被叙述化进 prompt）
+                      and not is_modulator_node(n)
+                      and not is_state_mirror(n)
+                      # 本体/标签/时间桶/性格不配当"内容"进 basis
+                      # （计算资格不受影响，2026-10-20 C1/C2）
+                      and not is_content_scaffold(n)
                       and not n.id.startswith(("坐标(", "CI_", "思考_", "反思_",
                                                "回答记录_", "搜索记录_",
                                                "文件操作记录_"))]
+        # 身份枢纽过滤（2026-10-25 实锤修复）：'用户'（度数 656）永远发亮，
+        # 独占 topk 且毫无内容量——10 小时 452 个 basis=['用户'] 的空探索
+        # 意图全由它而生。但只滤"纯身份 basis"，混合池保留身份+真概念
+        # （'用户'常与真事件共激活，全部剔除会掐掉话源——15:27 实锤：
+        # 纯剔除后 basis_pool 长期为空，她整晚零意图）。规则：basis 里
+        # 除身份外必须有至少一个真概念，否则该拍不形成（decay 照常）。
+        _IDENTITY = {"用户", "Fascinator", "Haru", "Self"}
+        # 结构脚手架（2026-10-25 深夜实锤：时点锚 label=infrastructure，
+        # 扩散点亮后不衰减（引擎对 infrastructure 跳过衰减），0.68×15+
+        # 个占满 topk 中后段，把 0.3 的情景内容全部挤出 width 窗——
+        # basis_pool 剩一个'进入Minecraft世界'。按 label 过滤结构件。
+        basis_pool = [n for n in basis_pool
+                      if getattr(n, "label", "") not in ENGINE_PART_LABELS]
         if not basis_pool:
             self._decay_intentions()
             return
@@ -566,8 +611,13 @@ class ContinuousCognition:
             emotion_ids = {nid for nid, n in self.kg.nodes.items()
                            if (n.extra_attrs or {}).get("type") == "emotion"
                            and float(n.activation or 0) > 0.1}
+        # 2026-10-17（"为啥不找我"取证）：「用户」本人就在焦点里，本身就是
+        # 最强的用户相关性证据——旧判据只数"用户出边命中的焦点节点"，他人在
+        # 脑子里却不计分。
+        _ids = {n.id for n in basis_pool}
         user_relevant = sum(1 for n in basis_pool
                             if user_edges.get(n.id, 0) > 0.2)
+        user_relevant += 1 if "用户" in _ids else 0
         emotion_present = 1.0 if any(n.id in emotion_ids for n in basis_pool) else 0.0
         social_relevance = min(1.0, (0.5 if emotion_present else 0.0)
                                + 0.15 * min(user_relevant, 3))
@@ -583,6 +633,13 @@ class ContinuousCognition:
             "continuity": round(continuity, 2), "novelty": round(novelty, 2),
             "drive_support": round(drive_support, 2),
             "focus_score": round(focus_score, 3),
+            # 社交三读数入账（2026-10-17 表达去门控）：分享价值是**内容
+            # 属性**，随念头定格——事后图谱焦点会漂走，评估时必须拿得到
+            # "形成那一刻它与用户/社交有没有关系"。additive 字段，旧消费
+            # 方按 key 取值不受影响。
+            "user_relevance": round(min(1.0, user_relevant / 3.0), 3),
+            "social_relevance": round(social_relevance, 3),
+            "emotion_present": emotion_present,
             "top_activation": round(top_act, 3)}
 
         # ── focus → 候选意图 kinds（affinity 数据表；kind 开放可扩展）──
@@ -623,6 +680,12 @@ class ContinuousCognition:
             for key, w in (spec.get("signals") or {}).items():
                 a += float(w) * float(signals.get(key, 0.0) or 0.0)
             kinds_aff[kind] = round(a, 3)
+        # 采样观测（2026-10-17，"为啥不找我"取证）：此前只记胜者，输家分数
+        # 全黑盒——她不来找你怎么都说不清是哪个信号被压。~6 分钟一条。
+        if self._pulse_seq % 36 == 0 and kinds_aff:
+            _rank = sorted(kinds_aff.items(), key=lambda kv: -kv[1])
+            logger.info("[CC] 种类亲和度：%s",
+                        " ".join("%s=%.2f" % kv for kv in _rank))
 
         self._last_focus_sig = ids
         # R2 P11（审计 D-10）：焦点底子换掉大半 = 一次"新经历"，进反思压力池。
@@ -681,6 +744,10 @@ class ContinuousCognition:
     def _merge_or_form(self, basis_nodes, focus_score, focus_explain,
                        kinds_aff, signals):
         basis = [n.id for n in basis_nodes[:BASIS_KEEP]]
+        # 纯身份 basis 不配成念头（2026-10-25：452 个 basis=['用户'] 空意图
+        # 的根因）。混合池（身份+真概念）保留——'用户'常与真事件共激活。
+        if basis and all(b in _IDENTITY_HUBS for b in basis):
+            return
         basis_set = set(basis)
         # 意图形成阈值：受 Drive/网络/激素连续调制。
         # 注意形成判定与 kind 判定分离——focus 够强就形成（"认知场里正在
@@ -700,28 +767,51 @@ class ContinuousCognition:
             kind = "attention_shift"
             affinity = float(kinds_aff.get("attention_shift", 0.0))
 
-        # 同一认知焦点（basis 重叠 ≥40%）= 同一意图的持续积累——kind 无关：
-        # 焦点的"方向"随场演化时 kind 跟着漂移（affinity 显著更高才换，
-        # 防抖），但意图本体保持连续（reinforce 非新建）。
+        # 同一认知焦点（basis 重叠 ≥40%）= 同一意图本体保持连续（merge 非新建）
+        # ——kind 无关，焦点"方向"随场演化时 kind 跟着漂移（affinity 显著更高
+        # 才换，防抖）。但"连续"不等于"每次都强化"（2026-10-16 语义修正）：
+        # reinforced 只在真正发生有意义的认知重访时 +1——焦点强度创下比上次
+        # 强化高 ≥eps 的新高（上涨未被消费就一直等在那里，间隔一到即结算，
+        # 新信息复活旧话题不丢），且距上次强化 ≥rehearsal_gap_s。同强度重复
+        # 扫描只记账（score/basis/explain），不加激活、不动 reinforced。
         for ci in self._active_intentions():
             ea = ci.extra_attrs
             old_basis = set(ea.get("basis", []))
             if old_basis & basis_set:
                 overlap = len(old_basis & basis_set) / max(len(old_basis | basis_set), 1)
                 if overlap >= 0.4:
-                    ea["activation"] = min(1.0, float(ea.get("activation", 0)) +
-                                           0.5 * (focus_score -
-                                                  float(ea.get("score", 0))) + 0.06)
-                    ea["score"] = focus_score
-                    ea["reinforced"] = int(ea.get("reinforced", 0)) + 1
-                    if affinity > float(ea.get("affinity", 0)) + 0.1:
-                        ea["kind"] = kind      # 焦点方向明确改变 → 意图漂移
-                        ea["affinity"] = affinity
-                    ea["basis"] = self._merge_basis_deterministic(
+                    now_ts = time.time()
+                    # 老意图兼容：无基线 → 以上次记录的焦点强度为基线
+                    base = float(ea.get("rehearsal_base",
+                                        float(ea.get("score", 0.0))))
+                    rise = focus_score - base
+                    gap_anchor = float(ea.get("last_boosted_ts")
+                                       or ea.get("born_ts") or now_ts)
+                    meaningful = (
+                        rise >= float(self.cfg["reinforce_rise_eps"])
+                        and (now_ts - gap_anchor)
+                        >= float(self.cfg["rehearsal_gap_s"]))
+                    new_basis = self._merge_basis_deterministic(
                         old_basis, basis_set)
+                    kind_drift = affinity > float(ea.get("affinity", 0)) + 0.1
+                    if meaningful:
+                        ea["activation"] = min(
+                            1.0, float(ea.get("activation", 0)) +
+                            0.5 * rise + 0.06)
+                        ea["reinforced"] = int(ea.get("reinforced", 0)) + 1
+                        ea["rehearsal_base"] = focus_score
+                        ea["last_boosted"] = now_str()
+                        ea["last_boosted_ts"] = now_ts
+                    ea["score"] = focus_score   # 台账：始终跟踪当前焦点强度
+                    if kind_drift:
+                        ea["kind"] = kind        # 焦点方向明确改变 → 意图漂移
+                        ea["affinity"] = affinity
+                    ea["basis"] = new_basis
                     ea["explain"] = focus_explain
-                    ea["last_boosted"] = now_str()
-                    ea["last_change_ts"] = time.time()
+                    # last_change=最后一次实质变化：强化/基线增长/方向漂移才算，
+                    # 重复扫描不再把 defer 有效期无限续命（持续性≠永生）
+                    if meaningful or kind_drift or len(new_basis) > len(old_basis):
+                        ea["last_change_ts"] = now_ts
                     if ea.get("type") == "communication_intention":
                         self._promote_goal(ci)
                     return
@@ -748,6 +838,9 @@ class ContinuousCognition:
                     "status": (ST_FORMING if is_comm else ST_READY),
                     "activation": intensity,
                     "score": focus_score,
+                    # 强化基线：只有再涨 eps 以上的"新高"才计一次重访（见
+                    # _merge_or_form 的 reinforced 语义）
+                    "rehearsal_base": focus_score,
                     "basis": basis,
                     "goal": None, "illocutionary_act": None,
                     "dialogue_act": None, "reply_goal": None,
@@ -839,6 +932,65 @@ class ContinuousCognition:
                     if (n.extra_attrs or {}).get("type") == "communication_intention"
                     and n.extra_attrs.get("status") in (ST_FORMING, ST_READY)]
 
+    def _share_eligible(self, n) -> bool:
+        """表达候选资格 = **多路径取值**，不是单一信号一票否决
+        （2026-10-18 修正：旧版把"具体证据"和"社交≥0.25"捆成 AND 硬门槛，
+        把不带用户色彩的有趣发现、暂缺实据但相关的念头、可标注分享的
+        新假设全挡在门外——那是另一种标签垄断）。
+
+        任何一条成立即进入评估（评不评得过另说）：
+          a) 有具体可讲的内容：basis 含经历/情绪/未知（值得分享的发现、
+             过程、进展——哪怕与用户无直接关系，知识本身可分享）；
+          b) 社交语境在场：user_relevance / social_relevance /
+             emotion_present 任一过线（与用户有关、或带着想靠近的情绪，
+             即使事实细节还薄）；
+          c) 明确的新联想：basis 含未验证假设——作为"标注不确定的想法"
+             分享是合法形态（v2 询问/陈述证据闸负责守住不冒充事实）。
+        空泛（无内容、无社交、无假设）的念头三条路都不沾 → 不进评估；
+        顶着 communication 标签的空话同样被 v2 证据闸拒（不双重扣：
+        这里 OR 判"有无任一路价值"，v2 判"这次说不说"，职责不同）。"""
+        ea = n.extra_attrs or {}
+        ev = self._basis_evidence(ea.get("basis") or [])
+        if ev["episodic"] or ev["emotion"] or ev["unknown"]:
+            return True
+        ex = ea.get("explain") or {}
+        social = max(float(ex.get("user_relevance") or 0.0),
+                     float(ex.get("social_relevance") or 0.0),
+                     0.5 * float(ex.get("emotion_present") or 0.0))
+        if social >= 0.25:
+            return True
+        with self.kg._lock:
+            for b in (ea.get("basis") or []):
+                nd = self.kg.nodes.get(str(b))
+                if nd is not None and str(
+                        (nd.extra_attrs or {}).get("type") or "") == "hypothesis":
+                    return True
+        return False
+
+    def _expression_candidates(self):
+        """v2 的候选池：沟通类照旧全量进评估（时机由四闸定，空泛内容由
+        资格判定挡）；非沟通类念头**若内容合格也获得评估机会**——标签不再
+        垄断表达资格。非沟通候选在进入前补齐表达家族（复用 _promote_goal
+        的图谱规则：basis 构成决定陈述/询问/共情，幂等，非新机制）。"""
+        cis = self._active_cis()
+        seen = {n.id for n in cis}
+        with self.kg._lock:
+            extra = [n for n in self.kg.nodes.values()
+                     if (n.extra_attrs or {}).get("type") == "intention"
+                     and (n.extra_attrs or {}).get("status") == ST_READY
+                     and n.id not in seen]
+        for n in extra:
+            if not self._share_eligible(n):
+                continue
+            try:
+                if not (n.extra_attrs or {}).get("illocutionary_act"):
+                    self._promote_goal(n)      # 定表达家族（纯图谱规则）
+                cis.append(n)
+            except Exception:                  # noqa: BLE001
+                logger.debug("[CC] 候选家族推导失败: %s", n.id,
+                             exc_info=True)
+        return cis
+
     def _decay_intentions(self):
         """意图衰减/晋升/丢弃。ready 未达表达阈值 = WAIT（自然滞留）。
         衰减出局 → 反思压力（说过/想做而没做到的念头会攒疑问）。"""
@@ -871,8 +1023,18 @@ class ContinuousCognition:
                 born_exempt = (ea.get("type") == "communication_intention"
                                and ea.get("born_pulse") == self._pulse_seq)
                 if not born_exempt:
+                    # 反刍固化（2026-10-16）：反复被重新拿起焦点的念头衰减更慢。
+                    # 此前半衰期 ~12 拍（约 3 分钟）与表达时序错配——实锤案例：
+                    # intensity 0.80 的念头 14 分钟凉到 act 0.12（reinforced=12
+                    # 仍救不回），评估窗口每拍都在但分数永远过不了线。被强化
+                    # 越多次的念头该越长寿（每次重温和巩固），从没再想到的照常
+                    # 消散——不新增阈值，只把衰减率向 1 方向按次数收敛。
+                    r_n = int(ea.get("reinforced", 0) or 0)
+                    damp = 1.0 - min(0.6, 0.05 * r_n)
+                    eff_decay = 1.0 - (1.0 - float(
+                        self.cfg["decay_per_pulse"])) * damp
                     ea["activation"] = round(
-                        float(ea.get("activation", 0)) * self.cfg["decay_per_pulse"], 4)
+                        float(ea.get("activation", 0)) * eff_decay, 4)
                 if ea["activation"] >= self.cfg["form_threshold"] \
                         and st == ST_FORMING:
                     self._promote_goal(n)
@@ -942,12 +1104,23 @@ class ContinuousCognition:
                                or (bn.extra_attrs or {}).get("type") == "emotion"):
                         rich = True
                         break
+                    # 2026-10-24 放宽：高激活概念（≥1.0）也算"有内容"。
+                    # 依据：Berntsen 2021 自发记忆综述——抽象/语义概念线索
+                    # 足以独立触发值得表达的念头，不依赖新事件；线索超载
+                    # 原理保证过滤性——路过概念激活通常 <0.5，只有真正
+                    # "烧着"的联想（假设研究、DeepSeek 1.97 这类）过线。
+                    # 此前 277 次/日的资格拒绝全灭她的概念型念头。
+                    if bn and bn.graph_space == "semantic" \
+                            and float(bn.activation or 0) >= 1.0:
+                        rich = True
+                        break
             if not rich:
                 ea["expression_eval"] = {"suppressed": "basis lacking concrete tension"}
                 self._log_express_eval(ci, {
                     "verdict": "defer", "reason": "eligibility_no_evidence",
                     "content_class": "statement",
                     "evidence": self._basis_evidence(ea.get("basis", []))}, now)
+                self._defer_to_interest(ci, "deferred_no_evidence")
                 continue
             expr = float(ea.get("activation", 0))
             supp = 0.0
@@ -965,6 +1138,9 @@ class ContinuousCognition:
             val = expr - supp
             _bar = self._mod_th("cognition.express_threshold",
                                 float(self.cfg["express_threshold"]))
+            # 调制上限：情绪/情境最多把门槛抬 0.05——此前深夜可抬到 0.839
+            # （高于 CI 出生分），造成"越没人陪越永远不开口"的叠加静默。
+            _bar = min(_bar, float(self.cfg["express_threshold"]) + 0.05)
             _evd = self._basis_evidence(ea.get("basis", []))   # 仅日志摘要
             if val >= _bar and val > best_val:
                 best, best_val = ci, val
@@ -975,7 +1151,45 @@ class ContinuousCognition:
                 self._log_express_eval(ci, dict(explain, verdict="defer",
                     reason="below_bar", content_class="statement",
                     bar=round(float(_bar), 3), evidence=_evd), now)
+                self._defer_to_interest(ci, "deferred_below_bar")
         return best, best_val
+
+    def _defer_to_interest(self, ci, reason):
+        """表达被暂缓的探索型意图不空等衰减出局（ACT-R：亚阈值念头转为
+        低成本内部动作优于丢弃——内部记录动作的期望效用为正；Berntsen
+        2021：未解决线索经持续启动更易自发重现）。两步，全部复用既有机制：
+        ① 兴趣记号（curiosity note_interest "signal"，目标概念水位抬升）；
+        ② 图谱内探索播种（engine.mark_active 把暂缓概念推进活跃前沿，
+        下一拍扩散从它出发——Synapse 2026 的 activation-based traversal：
+        经既有侧抑制/时间衰减过滤点亮相关记忆与共锚概念；共锚配对由
+        生活拍的 _emerge_hypotheses 接手生成"待验证联想"候选假设，
+        置信 0.3、hypothesis_leg 标记、无新证据不强化——推测与事实分野
+        由既有假设节点语义承担）。每意图只播种一次（防重复遍历/循环）。
+        不新增配置、不改衰减、不引入 LLM。"""
+        try:
+            ea = ci.extra_attrs
+            if str(ea.get("kind") or "") != "exploration":
+                return
+            if ea.get("explore_seeded"):
+                return
+            ea["explore_seeded"] = True
+            from curiosity_engine import note_interest
+            seeds = []
+            with self.kg._lock:
+                for b in (ea.get("basis") or [])[:3]:
+                    if self.kg.nodes.get(b):
+                        # "signal"=又遇到（合法枚举）：念头反复浮现本身
+                        # 就是兴趣信号；reason 只进日志。
+                        note_interest(self.kg, b, "signal", self.config)
+                        seeds.append(b)
+                        break
+            if seeds and getattr(self, "engine", None) is not None:
+                self.engine.mark_active(seeds)
+                logger.info("[CC] 暂缓意图转图谱内探索: %s (%s) 播种 %s",
+                            ci.id, reason, seeds)
+        except Exception:                          # noqa: BLE001
+            logger.debug("[CC] 暂缓→兴趣转化失败（忽略）: %s", ci.id,
+                         exc_info=True)
 
     # ── v2：显著性/事实置信（证据）/社交动机/表达成本 四轴分离决策 ──────
 
@@ -985,7 +1199,8 @@ class ContinuousCognition:
         没有语义级的事实正确度——后者当前系统不存在，标记 unavailable
         由 _express 的 NO_SPEAK 哨兵兜底，不伪装成数值置信度。"""
         from graph_model import is_live_unknown_id
-        out = {"episodic": False, "emotion": False, "unknown": False}
+        out = {"episodic": False, "emotion": False, "unknown": False,
+               "concept_hot": False}
         with self.kg._lock:
             for b in basis or []:
                 bn = self.kg.nodes.get(b)
@@ -993,6 +1208,11 @@ class ContinuousCognition:
                     continue
                 if bn.graph_space == "episodic":
                     out["episodic"] = True
+                # 2026-10-24：高激活概念（≥1.0）也是"有内容"（Berntsen
+                # 2021 概念线索；与 v1 资格门同一判据，两路径一致）
+                if bn.graph_space == "semantic" \
+                        and float(bn.activation or 0) >= 1.0:
+                    out["concept_hot"] = True
                 if (bn.extra_attrs or {}).get("type") == "emotion":
                     out["emotion"] = True
                 try:
@@ -1016,15 +1236,100 @@ class ContinuousCognition:
         except Exception:                            # noqa: BLE001
             return True, "unavailable"
 
+    def note_spoken(self, now: float = None):
+        """被动回复更新"她刚说过话"的时刻（2026-10-18 修正后语义）：
+        只占用**短冷却**与上下文新鲜度——刚答完几秒内主动不插嘴（21:13:29
+        回复/21:13:33 主动重复播报的实锤由此挡住）。但**不再消耗主动分享
+        的小时限额**：聊得投入不等于失去主动分享能力，限额管的是主动打扰
+        的频率，不是说话总量。"""
+        ts = now if now is not None else time.time()
+        self._last_express_ts = max(float(self._last_express_ts or 0.0), ts)
+
+    def _stamp_shared(self, ci, now: float):
+        """把"这些材料最近讲过了"盖在 **basis 节点本身**上（2026-10-18）：
+        CI 会被剪枝、会被新 CI 替换，长生话题（假设/经历节点）才是复读
+        检测真正该依赖的记忆——念头跨 CI 复活时，身份连续性由图上这些
+        戳记承担，不靠时间窗猜。戳记带上当时的交流目的与原料组合，
+        使"这条料按这个讲法讲过"与"这条料在别的语境用过"可区分，
+        不误伤合理的延伸。"""
+        ea0 = ci.extra_attrs or {}
+        goal = str(ea0.get("reply_goal") or "")
+        basis = [str(b) for b in (ea0.get("basis") or [])]
+        with self.kg._lock:
+            for b in basis:
+                n = self.kg.nodes.get(b)
+                if n is None:
+                    continue
+                ea = n.extra_attrs
+                if ea is None:
+                    n.extra_attrs = ea = {}
+                ea["last_shared_ts"] = now
+                ea["last_shared_goal"] = goal
+                ea["last_shared_basis"] = basis[:8]
+
+    def _node_born(self, n) -> float:
+        """节点入图时刻（epoch）：created 是 "YYYY/MM/DD HH:MM:SS" 串。
+        解析失败 → 0（视为极旧，宁可漏认不可假新）。"""
+        raw = getattr(n, "created", None)
+        if not raw:
+            return 0.0
+        try:
+            import datetime as _dt
+            return _dt.datetime.fromisoformat(
+                str(raw).replace("/", "-").replace(" ", "T")).timestamp()
+        except Exception:                         # noqa: BLE001
+            return 0.0
+
     def _is_duplicate_recent(self, ci, now: float, window_s: float) -> bool:
-        """成本轴去重：同 reply_goal 且 basis 重叠≥0.5 的表达在窗口内已发生
-        → 这条是重复打扰。无时间戳的历史表达不参与（不能判定=不误伤）。"""
+        """去重 = **内容身份判定**，不是时间窗猜（2026-10-18 根因修复）。
+
+        旧实现的失效模式：CI 会被剪枝、长寿命假设会被新证据复活成全新
+        CI——任何固定窗（30min 近窗、4h 不应期）都只是"隔多久算重复"的
+        猜测，被复活周期一绕一个准（00:35→03:16 六连换皮、15:15→19:08
+        全文复读实锤）。现在"讲过没有"记在材料节点本身（_stamp_shared）：
+
+          · 任一 basis 材料**从未被分享过**，或**诞生在上次分享之后**
+            （用户的新发言、逛到的新经历、新证据、新假设）→ 有新原料，
+            这是延伸不是复读——直接放行，不需要等任何冷却窗；
+          · 全部原料都带着"分享戳晚于其诞生"→ 一锅冷饭，无论隔 4 分钟
+            还是 4 小时都判复读；
+          · 念头自身的出生时刻**不算**新料（复活≠新信息）。
+
+        另有比分享更早的兜底近窗：同 goal+basis 重叠≥0.5 在 window_s
+        （30min，本轮之前就存在的节流）内刚表达过 → 判重。它只在上面
+        判不出"新原料"时作为第二道保险。"""
         ea = ci.extra_attrs
         goal = str(ea.get("reply_goal") or "")
-        basis = set(ea.get("basis") or [])
+        basis = [str(b) for b in (ea.get("basis") or [])]
         if not goal or not basis:
             return False
+        bset = set(basis)
         with self.kg._lock:
+            known_material = 0
+            all_told = True
+            for b in basis:
+                n = self.kg.nodes.get(b)
+                na = (n.extra_attrs or {}) if n is not None else {}
+                shared = float(na.get("last_shared_ts") or 0.0)
+                if n is None or not shared:
+                    # 悬空或从未分享 → 这块料是新的（或判不了）——判不了
+                    # 就不误伤（老纪律），按新料放行
+                    all_told = False
+                    break
+                known_material += 1
+                if str(na.get("last_shared_goal") or "") != goal:
+                    all_told = False              # 上次是别的交流目的讲它
+                    break
+                sb = set(str(x) for x in (na.get("last_shared_basis") or []))
+                if sb and len(sb & bset) / max(len(sb | bset), 1) < 0.5:
+                    all_told = False              # 同一块料，不同配方
+                    break
+                if self._node_born(n) > shared:
+                    all_told = False              # 分享之后材料自己又更新过
+                    break
+            if all_told and known_material:
+                return True                       # 同族原配方全旧料 = 复读
+            # 有（或疑似有）新原料 → 保留原有的 30min 同族近窗节流
             for n in self.kg.nodes.values():
                 e = n.extra_attrs or {}
                 if n is ci or e.get("type") not in self._INTENTION_TYPES:
@@ -1036,8 +1341,8 @@ class ContinuousCognition:
                 ts = float(e.get("expressed_at_ts") or 0.0)
                 if not ts or now - ts > window_s:
                     continue
-                ob = set(e.get("basis") or [])
-                if ob and len(ob & basis) / max(len(ob | basis), 1) >= 0.5:
+                ob = set(str(x) for x in (e.get("basis") or []))
+                if ob and len(ob & bset) / max(len(ob | bset), 1) >= 0.5:
                     return True
         return False
 
@@ -1057,12 +1362,19 @@ class ContinuousCognition:
             同目标去重。"""
         bar_stmt = self._mod_th("cognition.express_threshold",
                                 float(self.cfg["express_threshold"]))
+        # 调制上限（2026-10-24，与 v1 同规）：情绪/情境最多抬 0.05——
+        # 实测深夜 v2 调制线到 0.862，而 CI 出生分 ~0.75，结构性永不达线。
+        bar_stmt = min(bar_stmt, float(self.cfg["express_threshold"]) + 0.05)
         bar_inq = self._mod_th("cognition.form_threshold",
                                float(self.cfg["form_threshold"]))
         dedup_win = float(self.config.get("expression_dedup_window_s", 1800))
         cap = int(self.cfg.get("max_expressions_per_hour", 6))
         best, best_val = None, 0.0
-        for ci in self._active_cis():
+        # 候选池升级（2026-10-17 解除标签垄断）：沟通类逐字照旧（含空泛
+        # 内容由下方证据闸拒绝），非沟通类**内容合格者**也在池中——标签
+        # 不再决定谁能被评估，证据/相关性在候选入口判定一次，下方各闸
+        # 只管时机与成本，同一判据不重复扣分。
+        for ci in self._expression_candidates():
             ea = ci.extra_attrs
             if ea.get("status") != ST_READY:
                 continue
@@ -1096,7 +1408,7 @@ class ContinuousCognition:
                 verdict, reason = "suppress", "duplicate_recent"
             elif inquiry:
                 mot, msrc = self._motivation_present("curiosity")
-                if not (ev["unknown"] or ev["episodic"]):
+                if not (ev["unknown"] or ev["episodic"] or ev["concept_hot"]):
                     verdict, reason = "defer", "inquiry_without_grounding"
                 elif not mot:
                     verdict, reason = "defer", "no_curiosity_motivation"
@@ -1105,7 +1417,7 @@ class ContinuousCognition:
                 else:
                     verdict, reason = "defer", "below_inquiry_bar"
             else:
-                if not (ev["episodic"] or ev["emotion"]):
+                if not (ev["episodic"] or ev["emotion"] or ev["concept_hot"]):
                     verdict, reason = "defer", "eligibility_no_evidence"
                 elif goal in ("follow_up", "empathize"):
                     mot, msrc = self._motivation_present("social")
@@ -1129,6 +1441,8 @@ class ContinuousCognition:
                 "evidence": ev, "cooldown_floor_ok": cooldown_ok,
                 "suppression_terms": why}
             self._log_express_eval(ci, ea["expression_eval"], now)
+            if verdict == "defer":
+                self._defer_to_interest(ci, reason)
             if verdict == "express" and val > best_val:
                 best, best_val = ci, val
         return best, best_val
@@ -1208,6 +1522,299 @@ class ContinuousCognition:
 
     # ── 表达（唯一 LLM 调用点）────────────────────────────
 
+    _SELF_ACTORS = ("self", "haru")     # 历史兼容：旧战报曾写 actor="haru"
+    _RUN_RESULT_ZH = {"victory": "赢了", "defeat": "输了",
+                      "aborted": "中途停下"}
+
+    def _raw_dialog(self, k=6):
+        """近期真实对话的原文+说话人+时刻（chat_log）。主动话语带"我主动
+        说过"标记——她要知道自己已问过什么，语言层不再从节点反猜。"""
+        if not self.chat_log:
+            return None
+        try:
+            lines = []
+            for e in self.chat_log.recent(n=k):
+                tm = str(e.get("time") or "")[11:16]
+                ui = str(e.get("user_input") or "")
+                sr = str(e.get("system_response") or "")
+                if e.get("proactive"):
+                    if sr:
+                        # 防复述由专段「我最近已经说出口的话」负责（全文级）；
+                        # 本窗只留大意占位——主动话全文在这里进两次同一 prompt
+                        # 时，模型会拿自己的旧独白接着编（10-21 实锤：窗口 6 条
+                        # 里 5 条是她的"被看见"独白，心理可见性×8）。
+                        lines.append(f"- {tm} 我主动说过（内容见防复述段）：{sr[:24]}…")
+                    continue
+                if ui and not ui.startswith(("(主动)", "(FAS")):
+                    lines.append(f"- {tm} 用户说：{ui[:90]}")
+                if sr:
+                    lines.append(f"- {tm} 我答：{sr[:90]}")
+            return lines or None
+        except Exception:                            # noqa: BLE001
+            return None
+
+    def _life_events(self, k=8):
+        """近期真实行动记录（experience_timeline 的 ACTION 事件，带主体）。
+        对话类 say/communicate 跳过——原文已在对白层，重复注入只会挤预算。"""
+        tl = getattr(self, "timeline", None)
+        try:
+            from experience import EVENT_ACTION
+            out = []
+            for e in (tl.recent(n=40) if tl is not None else []):
+                if e.get("event_type") != EVENT_ACTION:
+                    continue
+                subj = str(e.get("subject") or "")
+                if subj in ("say", "communicate"):
+                    continue
+                act = str(e.get("actor") or "")
+                who = ("我" if act in self._SELF_ACTORS
+                       else "用户" if act == "user" else (act or "?"))
+                tm = str(e.get("ts_str") or "")
+                c = e.get("content") or {}
+                if subj == "sts2_run":
+                    boot = "，是我自己决定开的" if c.get("self_booted") else ""
+                    out.append(f"- {tm} {who}玩了杀戮尖塔2："
+                               f"{self._RUN_RESULT_ZH.get(str(c.get('result')), c.get('result'))}"
+                               f"，打到第 {c.get('floor')} 层{boot}")
+                else:
+                    txt = str(c.get("text") or c.get("change") or "")[:60]
+                    out.append(f"- {tm} {who} {subj}" + (f"：{txt}" if txt else ""))
+                if len(out) >= k:
+                    break
+            # 台账标题级并流（2026-10-19）：浏览/调研不写 ACTION 账本，
+            # 曾被叙述成"没有做任何事"。台账里真实记录过的活动（标题级）
+            # 补进同一事实段；只列已记录的，不虚构、不要求登记内部节拍。
+            # 台账路径由装配层显式注入（cc.ledger_path）：认知核不猜
+            # 部署布局，测试天然隔离生产数据。
+            try:
+                import os as _os
+                import json as _json
+                lp = getattr(self, "ledger_path", None)
+                if lp and _os.path.exists(lp):
+                    acts = (_json.load(open(lp, encoding="utf-8"))
+                            .get("activities") or {})
+                    items = (list(acts.values()) if isinstance(acts, dict)
+                             else list(acts))
+                    for a in sorted(items, key=lambda x: float(
+                            x.get("updated") or 0), reverse=True):
+                        st_ = str(a.get("state") or "")
+                        ts_ = float(a.get("updated") or a.get("created") or 0)
+                        if st_ == "cancelled" or (time.time() - ts_) > 6 * 3600:
+                            continue
+                        topic = str(a.get("topic") or "")[:24]
+                        if not topic:
+                            continue
+                        out.append("- %s 台账：%s" % (
+                            time.strftime("%H:%M",
+                                          time.localtime(ts_)), topic))
+                        if len(out) >= k:
+                            break
+            except Exception as _le:                 # noqa: BLE001
+                logger.debug("[CC] 台账并流失败（忽略）: %r", _le)
+            return out or None
+        except Exception:                            # noqa: BLE001
+            return None
+
+    def _recent_spoken(self, window_s: float = None):
+        """她近期真正说出口的话（epoch, 文本, 展示时刻）——**主动表达与
+        被动回复都算**（2026-10-17 修复：18:11 主动逐字复读 18:10 的被动
+        答案，因为回声材料只收 EXPRESSED CI、看不见 answer_question 写进
+        chat_log 的被动回复）。窗口默认取表达去重窗，与硬闸同源。"""
+        if window_s is None:
+            window_s = float(self.config.get(
+                "expression_dedup_window_s", 1800))
+        now = time.time()
+        out = []
+        with self.kg._lock:
+            for n in self.kg.nodes.values():
+                ea = n.extra_attrs or {}
+                if str(ea.get("type") or "") == "communication_intention" \
+                        and ea.get("status") == "expressed" \
+                        and str(ea.get("expressed_text") or ""):
+                    ts = float(ea.get("expressed_at_ts") or 0)
+                    if now - ts <= window_s:
+                        out.append((ts, str(ea["expressed_text"]),
+                                    str(ea.get("expressed_at") or "")))
+        if self.chat_log:
+            try:
+                import datetime as _dt
+                for e in self.chat_log.recent(n=12):
+                    sr = str(e.get("system_response") or "").strip()
+                    if not sr:
+                        continue
+                    iso = str(e.get("time") or "")
+                    try:
+                        ets = _dt.datetime.fromisoformat(iso).timestamp()
+                    except Exception:               # noqa: BLE001
+                        continue
+                    if now - ets <= window_s:
+                        out.append((ets, sr, ets and iso[11:16]))
+            except Exception:                        # noqa: BLE001
+                pass
+        # 按文本去重（同一句可能既是主动 EXPRESSED 又在 chat_log）
+        seen, dedup = set(), []
+        for item in sorted(out, key=lambda x: -x[0]):
+            key = "".join(str(item[1]).split())
+            if key in seen:
+                continue
+            seen.add(key)
+            dedup.append(item)
+        return dedup
+
+    def _said_recent(self, k=3):
+        """回声防御材料（LLM 侧）：告诉她哪些话已经讲过，由她自行不再复述
+        ——被动回复同样计入（_recent_spoken）。"""
+        return [(t[:120], ts) for _e, t, ts in self._recent_spoken()[:k]]
+
+    def _spoken_ledger(self, k: int = 24):
+        """她最近说出口的话（主动+被动）取 k 条，**不设时限窗**
+        （2026-10-19 补账）。旧硬闸只拿 30min 窗内的话比全文相等——
+        10:04→10:38 恰好隔 34 分钟、前两句**逐字**复用，窗把证据放过。
+        复读不因隔得久而成立：这条账本只认一个事实——这段**字面**她
+        说过；话题有没有新证据是基座身份去重（_is_duplicate_recent）
+        的职责，两条线各管各的，都不靠猜时间。"""
+        out = []
+        with self.kg._lock:
+            for n in self.kg.nodes.values():
+                ea = n.extra_attrs or {}
+                if str(ea.get("type") or "") == "communication_intention" \
+                        and ea.get("status") == "expressed" \
+                        and str(ea.get("expressed_text") or ""):
+                    out.append((float(ea.get("expressed_at_ts") or 0),
+                                str(ea["expressed_text"])))
+        if self.chat_log:
+            try:
+                import datetime as _dt
+                for e in self.chat_log.recent(n=k):
+                    sr = str(e.get("system_response") or "").strip()
+                    if not sr:
+                        continue
+                    iso = str(e.get("time") or "")
+                    try:
+                        ets = _dt.datetime.fromisoformat(iso).timestamp()
+                    except Exception:               # noqa: BLE001
+                        ets = 0.0
+                    out.append((ets, sr))
+            except Exception:                       # noqa: BLE001
+                pass
+        out.sort(key=lambda x: -x[0])
+        seen, dedup = set(), []
+        for _ts, t in out:
+            key = "".join(str(t).split())
+            if key in seen:
+                continue
+            seen.add(key)
+            dedup.append((_ts, t))
+            if len(dedup) >= k:
+                break
+        return dedup
+
+    _GOAL_NAT = {  # reply_goal → 自然语言（机制标签不外显）
+        "empathize": "我想靠近一点，回应他刚才说的",
+        "information_seeking": "我有件事想问他",
+        "follow_up": "我想接着之前聊的事再说两句",
+        "share_related_knowledge": "我碰上了点东西，想分享给他",
+    }
+
+    def build_proactive_user(self, ci, ctx: str, raw_dialog=None) -> str:
+        """主动表达的用户侧 prompt（纯函数：不碰 LLM，可直接断言）。
+        2026-10-16 重设计：不再"把指定内容说出来"，也不再把激活度/言外
+        行为/对话行为等机制数值与标签塞给语言层——给事实、给状态、给
+        一句意图说明，说什么/怎么说/说不说由她综合决定。
+        2026-10-20：加入**说话场景**块（scene_for_ci 派生自 basis+对话
+        原文）——场景参与定调而非只当标签：它不删任何素材，只说明
+        "这次话落在偶遇的小事上还是延续聊天上"，深浅权随之不同。"""
+        ea = ci.extra_attrs or {}
+        goal = self._GOAL_NAT.get(str(ea.get("reply_goal") or ""),
+                                  "心里有点东西，想自然地聊两句")
+        _scene, _tone = scene_for_ci(ci, raw_dialog, self.kg)
+        ea["scene"] = _scene      # 场景随 CI 留痕（气泡/审计可查这次话在哪定的调）
+        return redact_internal_state_names(
+            f"{ctx}\n\n"
+            f"【这次说话的场景】{_scene}——{_tone}\n\n"
+            f"【这次想开口的缘由】{goal}。"
+            "这只是驱力的描述，不是必须执行的脚本。\n\n"
+            "先理解上面的信息：谁说了什么、谁做了什么，哪些是真实记录、"
+            "哪些只是联想或旧背景；再像跟熟悉的人相处那样，自然决定"
+            "此刻要不要说、说什么、怎么说。说出口的内容要让**看不到你"
+            "屏幕的人**对得上：名词、引句、外文片段，要么带一句对方猜得"
+            "着的来由或大意，要么就把「没点开/没看懂」本身当话头——单独甩"
+            "一个对方无从理解的残句，等于没说。没有值得说的就只回复"
+            "NO_SPEAK（别的不写），沉默是合法的回答。")
+
+    def _debug_graph_for(self, ci) -> dict:
+        """调试视图（2026-10-19）：这条话**所用的图谱**=basis + 全部热节点。
+
+        与 render_cognitive_state 的切片同一套取数规则（basis[:8] 打头，
+        补 declarative 且 act≥0.3 的热节点降序补足，合计 ≤12；边在这批
+        节点内部连），并给每个节点标 role=basis|hot——12:47/16:33 两次
+        "话与 basis 对不上"的错位，以后在气泡里直接可见：登记的和语言层
+        实际读到的材料一并摊开。纯只读；异常返回 None，降级为无图。"""
+        try:
+            ea = ci.extra_attrs or {}
+            basis = [str(b) for b in (ea.get("basis") or [])][:8]
+            with self.kg._lock:
+                hot = sorted(
+                    ((float(getattr(n, "activation", 0.0) or 0.0),
+                      str(n.id)) for n in self.kg.nodes.values()
+                     if str(getattr(n, "label", "") or "").startswith(
+                         "declarative")
+                     and not is_modulator_node(n)
+                     and not is_content_scaffold(n)
+                     and not is_internal_trace(n)
+                     and float(getattr(n, "activation", 0.0) or 0.0) >= 0.3),
+                    key=lambda x: -x[0])
+                ids = []
+                for b in basis:                       # 存量旧 basis 里的
+                    n = self.kg.get_node(b)            # 调制镜像/脚手架不展示
+                    if n is not None and (is_modulator_node(n)
+                                          or is_content_scaffold(n)):
+                        continue
+                    ids.append(b)
+                for _a, nid in hot:
+                    if len(ids) >= 12:
+                        break
+                    if nid not in ids:
+                        ids.append(nid)
+                nodes = []
+                for b in ids:
+                    role = "basis" if b in basis else "hot"
+                    n = self.kg.get_node(b)
+                    if n is None:
+                        nodes.append({"id": b, "note": "已不存在",
+                                      "act": 0.0, "role": role})
+                        continue
+                    nodes.append({
+                        "id": b, "note": _state_node_note(n),
+                        "act": round(float(n.activation or 0.0), 2),
+                        "conf": (n.confidence if n.confidence is not None
+                                 else None),
+                        "created": str(getattr(n, "created", "") or ""),
+                        "role": role})
+                eset = set(ids)
+                edges = []
+                for e in self.kg.edges:
+                    if len(edges) >= 12:
+                        break
+                    if (str(e.src) in eset and str(e.dst) in eset
+                            and not (is_modulator_node(self.kg.get_node(
+                                str(e.src)) or 0)
+                                    or is_modulator_node(self.kg.get_node(
+                                        str(e.dst)) or 0))):
+                        edges.append([str(e.src), str(e.relation),
+                                      str(e.dst),
+                                      round(float(e.weight or 0.0), 2)])
+            _scrub = redact_internal_state_names     # 展示层洗名（内部 id/
+            # 机制名不进 UI；准入过滤在前，这里只是最后一道显示清洗）
+            return {"ci": str(ci.id),
+                    "goal": str(ea.get("reply_goal") or ""),
+                    "class": str(ea.get("content_class") or ""),
+                    "nodes": [dict(n, id=_scrub(n["id"])) for n in nodes],
+                    "edges": [[_scrub(x) if isinstance(x, str) else x
+                              for x in row] for row in edges]}
+        except Exception:                             # noqa: BLE001
+            return None
+
     def _express(self, ci):
         from langchain_core.prompts import ChatPromptTemplate
         if getattr(self, "llm_budget", None) is not None:
@@ -1219,38 +1826,30 @@ class ContinuousCognition:
         # 2026-10 两仓拆分：认知模块不再直接 import 陪伴侧 prompt_templates；
         # system_prompt 缺席=遗留环境，回退旧直连，逐字等价）。
         _sp = getattr(self.nlp, "system_prompt", None)
-        ea = ci.extra_attrs
-        with self.kg._lock:
-            # 想法来源带上节点承载的内容（text 属性），不能只给名字——
-            # "用户近况_1791629004"这种 id 对语言模型没有信息量，
-            # 说出来的必然还是空话（2026-10-10 实测）。
-            _lines = []
-            for b in ea.get("basis", [])[:5]:
-                bn = self.kg.nodes.get(b)
-                if not bn:
-                    continue
-                _l = f"- {b} ({bn.label},{bn.graph_space})"
-                _txt = str((bn.extra_attrs or {}).get("text") or "")[:160]
-                if _txt:
-                    _l += f"：{_txt}"
-                _lines.append(_l)
-            ctx = "\n".join(_lines)
-        goal = ea.get("reply_goal") or "share_related_knowledge"
+        # 2026-10-16 主动表达重构（同日二次修订）：状态切片之外必须带
+        # **原始事实层**——近期对话原文（谁说的）与真实行动记录（谁做的）。
+        # 只给节点名时，语言层会把共现拼成独白、把她的游戏进度说成用户
+        # 的经历（00:21/19:57 实锤）：图谱是组织形式，不是事实的替代品。
+        _raw = self._raw_dialog()
+        ctx = render_cognitive_state(self.kg, ci=ci,
+                                     istate=getattr(self, "internal_state",
+                                                    None),
+                                     said_recent=self._said_recent(),
+                                     raw_dialog=_raw,
+                                     life_events=self._life_events())
         if _sp is not None:
             system = _sp("proactive_express")
         else:
             from prompt_templates import build_prompt
             system = build_prompt("proactive_express")
-        user = f"""【想法来源（图谱节点，是你的记忆与联想，不是查询结果）】
-{ctx}
-
-【为什么想表达】
-激活度 {ea.get('activation')}；表达目标 {ea.get('reply_goal')}；
-言外行为 {ea.get('illocutionary_act')}；对话行为 {ea.get('dialogue_act')}
-
-请以 FAS 的身份，把这个想法用一两句自然的话向用户表达（第一人称，像想起什么随口说，禁止机制词汇）：
-如果【想法来源】里只有抽象状态词（"表达""用户""行为"这类），没有任何具体可谈的内容，
-就不要硬凑寒暄或"我没什么可说的"式自白——只回复 NO_SPEAK（别的不写）。沉默是合法的回答。"""
+        user = self.build_proactive_user(ci, ctx, _raw)
+        # 逐字捕获（2026-10-17）：主动表达也是"她看到了什么"的一部分，
+        # 与被动通道同一 prompt_capture.jsonl。陪伴侧观测件缺位时静默跳过。
+        try:
+            from nlp_processor import _capture_prompt as _cap
+            _cap("proactive", system, user)
+        except Exception:                            # noqa: BLE001
+            pass
         try:
             # 2026-10-11 缺陷修复：human 模板误用 f-string 语法 "{input}" 而声明
             # mustache 格式——单括号不是 mustache 标签，"想法来源"（basis 证据）
@@ -1267,6 +1866,35 @@ class ContinuousCognition:
             logger.warning(f"[CC] 语言生成失败: {e}")
             return False
         if not text:
+            return False
+        # 硬闸（2026-10-17 建档，2026-10-19 升级）：LLM 逐字复述她说过的
+        # 话 → 按沉默处理。两处旧缺口：①只比全文相等——开头两句整句复用、
+        # 后文接新话的"半回声"全数漏网（10:04→10:38 实锤）；②材料窗 30min
+        # ——隔 34 分钟的复用恰好越窗。现在拿**无时限账本**（_spoken_ledger）
+        # 比：全文相等，或任一 ≥10 字的句子是旧话的字面子串，即判回声。
+        # 短的应答填充（"嗯有道理"级）不参与，日常接话的重复语气不算复读。
+        _norm = lambda s: "".join(ch for ch in str(s) if ch.isalnum())
+        _ledger = self._spoken_ledger()
+        _nt = _norm(text)
+        _echo_whole = bool(_nt) and any(_norm(sp) == _nt
+                                        for _ts, sp in _ledger)
+        _echo_sent = False
+        if not _echo_whole:
+            for _sent in re.split(r"[。！？!?；;，,\n]+", str(text)):
+                _ns = _norm(_sent)
+                if len(_ns) >= 10 and any(_ns in _norm(sp)
+                                          for _ts, sp in _ledger):
+                    _echo_sent = True
+                    break
+        if _echo_whole or _echo_sent:
+            with self.kg._lock:
+                _ea = ci.extra_attrs
+                _ea["status"] = ST_DISCARDED
+                _ea["last_change_ts"] = time.time()
+                self._evo.note_node_updated(ci.id, {"status": ST_DISCARDED})
+            logger.info(
+                "[CC] 主动表达弃权（回声，%s复用旧话）: %s",
+                "整段" if _echo_whole else "整句", ci.id)
             return False
         # NO_SPEAK 哨兵：想法来源没有具体话题时诚实沉默。CI 直接终态
         # （discarded 不再被节拍重试，否则每 10s 白烧一次 LLM），零投递。
@@ -1286,6 +1914,12 @@ class ContinuousCognition:
                 pass
             return False
 
+        # 输出侧机制名清洗（10-21 实修）：输入替换表只保证"模型没见过原名"，
+        # 拦不住模型从语料先验里自带 CENetwork/DMN 这类术语回抛给用户
+        # （15:22 气泡"说到 CENetwork"实锤）。投递前把原文按同一张表反向
+        # 洗一遍：只做机械改名，不删句、不改判断，账本/缓冲/投递同一文本。
+        text = redact_internal_state_names(text)
+
         now = time.time()
         self._last_express_ts = now
         self._express_count_hour.append(now)
@@ -1297,6 +1931,9 @@ class ContinuousCognition:
             ea["last_change_ts"] = now
             ea["expressed_text"] = text[:200]
             self._evo.note_node_updated(ci.id, {"status": ST_EXPRESSED})
+        # _stamp_shared 已移至 note_delivery 送达回执处（2026-10-24 实锤：
+        # 生成即盖戳 + 投递失败 → 材料被标"已讲过"，重试/新 CI 永远被判
+        # duplicate_recent，那句话永远送不出去也不许再说）。
         if self.chat_log:
             try:
                 self.chat_log.record(user_input="(主动)", system_response=text,
@@ -1308,7 +1945,8 @@ class ContinuousCognition:
             except Exception as e: logger.warning(f"[CC] 落盘失败: {e}")
         self._queue.append({
             "ci_id": ci.id, "text": text,
-            "basis": ea.get("basis", [])[:5],
+            "basis": (ea.get("basis") or [])[:5],   # None 值键：get 的默认
+            # 只在缺键时生效——脏数据下 [:5] 会炸（调试测试抓到）
             "goal": ea.get("reply_goal"),
             "illocutionary_act": ea.get("illocutionary_act"),
             "dialogue_act": ea.get("dialogue_act"),
@@ -1324,7 +1962,7 @@ class ContinuousCognition:
                     "behavior": "share",
                     "context": "情境:主动发起",
                     "context_ids": ["情境:主动发起"],
-                    "topics": ea.get("basis", [])[:5],
+                    "topics": (ea.get("basis") or [])[:5],
                     "proactive": True,
                 })
         except Exception:
@@ -1332,12 +1970,16 @@ class ContinuousCognition:
         logger.info(f"[CC] 主动表达: {ci.id} → {text[:60]}")
         # 外部表达通道（如 Charon 桌面气泡）：产出即投递。放在网页 _queue
         # 之后、行动层之前——三个出口各走各的，任一故障不影响其它留痕。
+        _dbg = self._debug_graph_for(ci)      # 调试：这条话所用的图谱
         for ch in self.channels:
             try:
                 from fas.contracts import Utterance
+                _refs = {"ci_id": ci.id, "act": ea.get("dialogue_act"),
+                         "scene": ea.get("scene")}
+                if _dbg:
+                    _refs["graph"] = _dbg
                 ch.deliver(Utterance(text=text, origin="proactive",
-                                     refs={"ci_id": ci.id,
-                                           "act": ea.get("dialogue_act")}))
+                                     refs=_refs))
             except Exception as _ce:                 # noqa: BLE001
                 logger.debug(f"[CC] 表达通道 {getattr(ch, 'name', '?')} "
                              f"投递异常（不影响表达留痕）: {_ce}")
@@ -1433,6 +2075,10 @@ class ContinuousCognition:
                                 or "bridge" in d["reason"].lower()):
                             d["status"] = "pending_retry"
                             d["retry_after"] = time.time() + 15.0
+                    else:
+                        # 送达成功才盖"讲过了"戳（2026-10-24：盖戳点从生成
+                        # 移到送达——失败投递不得污染材料的新鲜度）
+                        self._stamp_shared(n, time.time())
                     ea["delivery"] = d
                     hit = (n.id, ea.get("expressed_text"), d["status"])
                     break
@@ -1601,6 +2247,11 @@ class ContinuousCognition:
                 ea = n.extra_attrs or {}
                 if ea.get("type") in ("dynamic_state", "inventory_item"):
                     continue   # 世界状态由感知节拍维护，不参与联想点火
+                if is_modulator_node(n) or is_state_mirror(n):
+                    continue   # 控制量/状态镜像的能量来自控制通道（脉冲/
+                    # 需求漂移），再点火会在它们与旧念头之间造共振腔——
+                    # 2026-10-20 实锤：mc 镜像被反复点回 5.0，经"关于"边
+                    # 给 10-09 的思考旁白续电，僵尸霸占热位
                 la = getattr(n, "last_access", None)
                 gap = half_life                      # 无时间戳：视为已久
                 if hasattr(la, "timestamp"):
@@ -1789,3 +2440,378 @@ class ContinuousCognition:
                 "cooldown_remaining": max(0, int(self.cfg["inhibition_cooldown_s"]
                     - (time.time() - self._last_express_ts))),
                 "intentions": sorted(cis, key=lambda c: -(c.get("activation") or 0))}
+
+
+# ── 认知状态切片渲染（2026-10-16 主动表达重构）────────────────
+# 只读：不改图、不提激活、不造关联。产出的文本交给 LLM 自行综合，
+# 材料自带性质与时间标注（假设≠事实、表达产物≠外部证据、旧≠新），
+# 让"这条信息凭什么可信"成为模型能看见的属性，而不是我们代的隐喻。
+
+_STATE_KIND_NOTE = {
+    "hypothesis": "待验证联想",
+    "communication_intention": "我自己的念头/表达产物（内部痕迹，不是外部证据）",
+    "disposition": "行为倾向（经验习得）",
+    "mood_state": "心情瞬态",
+    "modulator": "生理调制状态",
+    "modulator_target": "调制目标",
+    # 调制镜像即便从旁路漏进素材行，也要顶着真名出现，绝不再是"概念"
+    #（准入过滤是第一道，这里是最后一道：洗名/展示都不能把控制量
+    #  伪装成心理内容——2026-10-19 审计结论"洗名不能代替准入"）
+    "drive": "内部驱动强度（认知控制量，不是心理概念）",
+    "cognitive_network": "认知网络状态（引擎内部量，不是想法）",
+    "eye_perception": "我在屏幕上看到的",
+    "activity_experience": "活动体验",
+    "concept": "概念",
+    "sts_tag": "活动标签",
+    "card_instance": "知识实例",
+    # ── 情景来源约束（2026-10-19 审计：知道≠经历）──
+    # 这些 type 都是既有节点（图谱早已在写），只是性质标注此前落到
+    # 标签兜底——用户话语与表达痕迹都被标成"经历片段"，主体与"说≠做"
+    # 在渲染时丢失。修复=把已有事实传到语言层，不新增任何判定。
+    "utterance_event": "用户说的话（主体=用户；不是我的经历）",
+    "user_expression_event": "用户的表达事件（主体=用户）",
+    "expression_event": "我说过的话（说话记录——说过≠做过，不算活动经历）",
+    "thought": "我自己的念头（心理活动，不是外部世界的证据）",
+    # 因果学习器写出的归纳规则（experience.py 晋升路径）：它们来自
+    # 多次真实经历，但**不指任何一次具体事件**——标清楚，避免"我做过X"
+    # 把归纳规律叙述成单日经历。
+    "action_pattern": "从反复经历归纳出的操作规律（不是某一次具体经历）",
+    "state_change": "从反复经历归纳出的变化规律（不是某一次具体经历）",
+}
+
+
+def _mc_session_note(ea: dict) -> str:
+    """Minecraft 会话节点是**桥接状态镜像**（minecraft/session.py 只写
+    state 字段）：它记录连接状态，不记录"玩过"。2026-10-19 实锤案例：
+    12:47 该节点带着 state=disconnected 被标成〔概念〕入切片，语言层把
+    激活+知识连线写成"我刚才在Minecraft里闲逛"。"""
+    return (f"Minecraft桥接状态（当前={ea.get('state') or 'unknown'}；"
+            f"这只说明连接与否，不代表我在玩，更不是玩过的经历）")
+
+
+# 内部状态节点的"自然语言真名"（2026-10-17）：图谱 id 与激素英文键是
+# 机制原料，模型见过就可能念给用户（18:34 "CuriosityDrive"、19:35
+# "DMNetwork" 两次实锤）。不赌指令遵从——prompt 出口直接替换，模型
+# 从没见过原始名，泄漏从源头消失；决策拿到的读数（强度/状态）不减。
+_INTERNAL_STATE_NAT = {
+    "CuriosityDrive": "好奇",
+    "SocialDrive": "对联结的渴望",
+    "LearningDrive": "学习的冲动",
+    "ConsistencyDrive": "保持一致的意愿",
+    "CENetwork": "专注执行的状态",
+    "DMNetwork": "神游联想的状态",
+}
+_HORMONE_NAT = {
+    "dopamine": "多巴胺", "serotonin": "血清素", "oxytocin": "催产素",
+    "cortisol": "皮质醇", "adrenaline": "肾上腺素", "endorphin": "内啡肽",
+    "histamine": "组胺", "melatonin": "褪黑素",   # 图谱遗留镜像节点仍要洗名；
+    #   这两个调制器本身已删（2026-10-17：AI 无疲劳/清醒生理）
+}
+
+
+# ── 说话场景（2026-10-20）──────────────────────────────────
+# 病灶：主动表达把"逛到个鼠标"写成"被看见×霍桑效应"的随笔（19:27 实锤）。
+# 气泡取证显示升华的原料**不在激活图谱里**（心理可见性/布兰登 act≈0）——
+# 它们来自上文中（旧聊天）与模型自身的世界知识，语言层把刚遇到的小事和
+# 背景记忆编成了一篇"必然要有结论"的文章。修法：让当前说话场景参与表达
+# 定调。场景不新建任何状态，纯派生自已有数据（CI basis + 对话原文）；
+# 只调"这次话的落点深浅"，不删素材、不拦概念、不设阈值闸。
+SCENES = {
+    "闲聊延续": "用户此刻正在说话，你这次是接着聊——深浅跟着 ta 提的话走，"
+              "往深里说完全合法。",
+    "偶遇小事": "你刚在外面遇到件小事（网页、屏幕、活动里撞见的）。值得说的"
+              "多半是这件事本身：联想随意，可以只迈半步、可以不落地、不必"
+              "收成一个道理。上文里旧话题是背景记忆——用户这轮没再提的，"
+              "就别把它搬来当这次偶遇的哲理结论。",
+    "空闲随想": "空闲里想起点东西。联想按原样说就好；要不要牵到大主题，"
+              "看那主题是不是你和用户之间最近真实发生过、还没聊完的事——"
+              "不是的话，随想就只是随想，不用写成随笔。",
+}
+
+
+# 外部偶遇的出处标记（节点 extra_attrs.source 的冒号前缀，全已有写入方，
+# 不新增字段）：浏览/读文/检索/游戏观察/Minecraft 世界/活动产出——
+# basis 里出现这类内容 = 这次话落在"刚遇到的事"上。实测 19:27 案例：
+# 活动壳节点衰减快出不了 basis，真据是内容节点的 source=browse:*。
+_ENCOUNTER_SOURCES = frozenset({"browse", "activities", "steam", "narrative",
+                                "curiosity", "read", "mc"})
+
+
+def _is_encounter_node(n) -> bool:
+    if n is None:
+        return False
+    ea = n.extra_attrs or {}
+    src = str(ea.get("source") or "").split(":")[0].split("_")[0]
+    return src in _ENCOUNTER_SOURCES
+
+
+def scene_for_ci(ci, raw_dialog=None, kg=None):
+    """说话场景判定：返回 (场景名, 定调句)。优先级=对话在场 > 活动偶遇 > 随想。
+    纯读已有数据，无副作用；供 build_proactive_user 调用（测试可直接调）。"""
+    ea = getattr(ci, "extra_attrs", None) or {}
+    basis = [str(b) for b in (ea.get("basis") or [])]
+    if raw_dialog and any("用户说：" in str(ln)
+                          for ln in list(raw_dialog)[-4:]):
+        return "闲聊延续", SCENES["闲聊延续"]
+    for b in basis:
+        if b.startswith("Activity_"):
+            return "偶遇小事", SCENES["偶遇小事"]
+        if kg is not None:
+            n = kg.get_node(b)
+            if n is not None and (
+                    str((n.extra_attrs or {}).get("type") or "")
+                    == "activity_experience" or _is_encounter_node(n)):
+                return "偶遇小事", SCENES["偶遇小事"]
+    return "空闲随想", SCENES["空闲随想"]
+
+
+def redact_internal_state_names(text: str) -> str:
+    """把机制原始名换成自然语言（节点名、drive.x 键、边引用、激素键
+    一次洗齐；同一段文字内保持一致替换，节点与连线仍对得上）。"""
+    if not text:
+        return text
+    for k, v in _INTERNAL_STATE_NAT.items():
+        text = text.replace(k, v)
+    import re as _re
+    for k, v in _HORMONE_NAT.items():
+        text = _re.sub(rf"\b{k}\b", v, text)
+    text = text.replace("drive.", "").replace("network.", "")
+    return text
+
+
+def _state_node_note(n) -> str:
+    ea = n.extra_attrs or {}
+    t = str(ea.get("type") or "")
+    if t == "mc_session":
+        return _mc_session_note(ea)
+    if t in _STATE_KIND_NOTE:
+        return _STATE_KIND_NOTE[t]
+    src = str(ea.get("source") or "")
+    if src.startswith("research"):
+        return "研究结论（有检索证据）"
+    if src in ("co_structure", "hypothesis"):
+        return "待验证联想"
+    lab = str(getattr(n, "label", "") or "")
+    if lab == "declarative-semantic":
+        return "概念"
+    if lab == "declarative-episodic":
+        return "经历片段"
+    return lab or "节点"
+
+
+def render_cognitive_state(kg, ci=None, istate=None, said_recent=None,
+                           budget=2400, now=None, raw_dialog=None,
+                           life_events=None) -> str:
+    """当前认知状态切片：先给**真实记录**（近期对话原文 raw_dialog、
+    实际发生的行动 life_events——谁做的、什么时候），再给图谱摘要
+    （节点+性质标注+真实边）、内部状态、最近说过的话、时间。
+    图谱是认知的组织形式，不是原始事实的替代品（2026-10-16 规范）：
+    没有原文与主体，语言层只能从节点名反向猜测发生过什么——那正是
+    "CuriosityDrive×CENetwork 拼独白"和"她的游戏进度说成用户经历"的
+    土壤。缺界点显式标'已不存在-不是证据'。"""
+    import time as _t
+    now = now if now is not None else _t.time()
+    ids = []
+    if ci is not None:
+        for b in ((ci.extra_attrs or {}).get("basis") or [])[:8]:
+            if str(b) not in ids:
+                ids.append(str(b))
+    with kg._lock:
+        hot = sorted(
+            ((float(getattr(n, "activation", 0.0) or 0.0), str(n.id))
+             for n in kg.nodes.values()
+             if str(getattr(n, "label", "") or "").startswith("declarative")
+             and not is_modulator_node(n)     # 控制量不占素材席位，腾出的
+            #  槽位回补给语义内容；状态镜像(mc_session)保留——带诚实注记，
+            #  只供"当前连接与否"的状态判断，不作内容联想；内部痕迹
+            #  （思考/反思/行动记录…）也出局——它们是能量累积器不是素材，
+            #  旧想法能靠 关于 边在热位挂几天（10-21 实锤 act=2.35 的 10-14
+            #  思考进 prompt），想法内容本身由 思路流 段按时间呈现
+             and not is_internal_trace(n)
+             and float(getattr(n, "activation", 0.0) or 0.0) >= 0.3),
+            key=lambda x: -x[0])[:10]
+    for _a, nid in hot:
+        if nid not in ids:
+            ids.append(nid)
+    ids = ids[:12]
+    idset = set(ids)
+    seg = []
+    edges = []
+    with kg._lock:
+        for nid in ids:
+            n = kg.nodes.get(nid)
+            if n is not None and (is_modulator_node(n)
+                                  or is_content_scaffold(n)):
+                continue          # 存量 CI 的旧 basis 里可能还挂着调制
+                # 镜像/脚手架（修复前形成的念头）：渲染端最后一道闸，
+                # 不为其保留行位，热槽候选照常补齐
+            if n is None:
+                seg.append(f"- {nid}: 【已不存在——历史指向的已消逝念头，"
+                           f"其残留名字不是证据】")
+                continue
+            ea = n.extra_attrs or {}
+            bits = [f"- {nid}〔{_state_node_note(n)}〕 激活"
+                    f"{round(float(n.activation or 0.0), 2)}"]
+            # 事件时刻=节点顶层 created（ea.created 只是个别写手的副本，
+            # 曾致素材"生于"出现 0 次——19:34 审计实锤）
+            cre = str(getattr(n, "created", "") or "") or str(
+                ea.get("created") or "")
+            if cre:
+                bits.append(f" 生于{cre}")
+            conf = ea.get("confidence")
+            if conf is not None:
+                bits.append(f" 置信{conf}")
+            # 自由思考产出的内容存 content，非 text（2026-10-16 修复：
+            # 只认 text 时"在想什么"类问题永远拿到空内容）
+            tx = str(ea.get("text") or ea.get("content") or "")[:150]
+            if tx:
+                bits.append(f"\n    内容：{tx}")
+            seg.append("".join(bits))
+        for e in kg.edges:
+            s, d = str(e.src), str(e.dst)
+            if s in idset and d in idset and not (
+                    is_modulator_node(kg.nodes.get(s))
+                    or is_modulator_node(kg.nodes.get(d))):
+                edges.append((s, str(e.relation), d,
+                              round(float(e.weight or 0.0), 2)))
+    out = []
+    _facts_header = ("【最近真实发生过的事（事实记录：谁做的、什么时候。"
+                     "图谱节点只是它们的摘要，不能替代这里的事实；"
+                     "这份记录是完整的——没写在这里的事就没有发生，"
+                     "不说没发生过的已完成，也不许诺没有依据的打法、"
+                     "能力或结果）】")
+    if life_events:
+        out.append(_facts_header + "\n" + "\n".join(life_events))
+    else:
+        # 空记录时这一段**更不能消失**（2026-10-19 审计：12:47"我刚才在
+        # Minecraft 里闲逛"实锤——当天时间轴里除了发声没有任何活动事件，
+        # _life_events 返回空 → 旧代码 `if life_events:` 把整段（连同
+        # "没写在这里=没发生"的唯一反虚构声明）一起跳过。最没有经历可引用
+        # 的时刻，恰恰是最需要这份完整性声明的时刻。空账本如实呈现，
+        # 不是新闸门：它不拦任何内容，只是把本来就存在的事实记录边界讲完。）
+        # 措辞边界（2026-10-19 复审）：账本只覆盖**已被写成 ACTION 的
+        # 执行行为**（对局、动作系统执行等），未采集的活动不能替它做
+        # "什么都没发生"的断言；但叙事的举证义务反过来——说自己做过，
+        # 必须能在这里或对话原文里找到那条。
+        out.append(_facts_header + "\n"
+                   "- （这份账本最近没有任何活动被记录。它登记对局、执行类"
+                   "行动与台账标题级活动，在其登记范围内是完整的——要说"
+                   "'我做了X/我刚才在X'，必须能在这份记录或上面的对话原文"
+                   "里找到对应条目；**没被登记不等于没发生过，未记录时既"
+                   "不要说'做了X'、也不要说'什么都没做'**——前者无据，"
+                   "后者越权。图谱里与X有关的节点只代表我知道、我想做或"
+                   "我研究过，不代表我做过）")
+    if raw_dialog:
+        out.append("【最近真实发生的对话（原文与说话人）】\n"
+                   + "\n".join(raw_dialog))
+    out.append("【我此刻心里有什么（节点，含性质与时间）】\n" + "\n".join(seg))
+    if edges:
+        out.append("【它们之间真实的连线（方向=从我指向；共同出现≠因果）】\n"
+                   + "\n".join(f"- {s} -{r}-> {d}（权重 {w}）"
+                               for s, r, d, w in edges[:20]))
+    # 思路流（2026-10-16）：自由思考节点衰减很快，多数已低于上面的 0.3
+    # 热线——但被问"你在想什么/干嘛"时，恰恰是这些内容本身。按创建时间
+    # 取最近 3 条（不看激活），连同酝酿中未说出口的念头一起入切片。
+    # 时间真源是节点顶层 created（"2026/10/16 16:51" 斜杠格式；extra_attrs
+    # 里的是旧写入路径的副本）——必须解析成秒，字符串序在两种格式间是错的
+    # （2026-10-16 捕获实锤：字符串序 top3 全是 7 天前的旧思考）。
+    import datetime as _dt2
+
+    def _born(n) -> float:
+        ea = n.extra_attrs or {}
+        for cand in (getattr(n, "created", None), ea.get("created")):
+            s = str(cand or "")
+            for fmt in ("%Y/%m/%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S",
+                        "%Y-%m-%d %H:%M:%S"):
+                try:
+                    return _dt2.datetime.strptime(
+                        s.replace("/", "-") if fmt == "%Y-%m-%d %H:%M:%S"
+                        else s, fmt).timestamp()
+                except ValueError:
+                    continue
+        return 0.0
+    recent_thoughts, pending = [], []
+    with kg._lock:
+        for n in kg.nodes.values():
+            ea = n.extra_attrs or {}
+            ty = str(ea.get("type") or "")
+            if ty == "thought":
+                ct = str(ea.get("content") or "").strip()
+                if ct:
+                    recent_thoughts.append((_born(n), str(n.id), ct))
+            elif ty in ("communication_intention", "intention") \
+                    and ea.get("status") in (ST_FORMING, ST_READY):
+                bs = "×".join(
+                    str(b) for b in (ea.get("basis") or [])[:6]
+                    if not is_modulator_node(kg.nodes.get(str(b)))
+                    and not is_state_mirror(kg.nodes.get(str(b))))
+                act = round(float(ea.get("activation") or 0.0), 2)
+                if ty == "communication_intention":
+                    pending.append(f"- 有个想开口的冲动（关于 {bs or '…'}，"
+                                   f"强度 {act}，还没说）")
+                else:
+                    pending.append(f"- {ea.get('kind') or '探索'}类的念头正在酝酿"
+                                   f"（基于 {bs or '…'}，强度 {act}）")
+    if recent_thoughts or pending:
+        _ts = ["【我正在想的事（思路流与酝酿中的念头——这是我自己的心理活动，"
+               "不是外部事实的证据）】"]
+        for born, tid, ct in sorted(recent_thoughts,
+                                    key=lambda x: x[0],
+                                    reverse=True)[:3]:
+            _when = (_dt2.datetime.fromtimestamp(born).strftime("%m-%d %H:%M")
+                     if born else "时间不明")
+            _ts.append(f"- {tid}（{_when}）：{ct[:120]}")
+        _ts.extend(pending[:3])
+        out.append("\n".join(_ts))
+    if istate is not None:
+        try:
+            snap = istate.snapshot() or {}
+            mods = []
+            for k, v in (snap.get("modulators") or {}).items():
+                lv = float((v or {}).get("level", 0.0) or 0.0)
+                base = float((v or {}).get("tonic", lv) or lv)
+                if abs(lv - 0.5) > 0.12:
+                    mods.append(f"{k}={round(lv, 2)}")
+            needs = sorted(
+                ((float((v or {}).get("urgency", 0) or 0), k)
+                 for k, v in (snap.get("needs") or {}).items()),
+                key=lambda x: -x[0])
+            need_s = ", ".join(f"{k}(紧迫{round(u, 2)})"
+                               for u, k in needs[:2] if u > 0.3)
+            if mods or need_s:
+                line = "【我的身体与状态】"
+                if mods:
+                    line += " 化学背景：" + "、".join(mods[:6]) + "。"
+                if need_s:
+                    line += " 正被牵挂：" + need_s + "。"
+                out.append(line)
+        except Exception:                                # noqa: BLE001
+            pass
+    if said_recent:
+        out.append("【我最近已经说出口的话（别说第二遍）】\n"
+                   + "\n".join(f"- 「{t}」（{ts}）" for t, ts in said_recent))
+    import datetime as _dt
+    _now_line = f"【此刻】{_dt.datetime.fromtimestamp(now):%Y-%m-%d %H:%M}"
+    out.append(_now_line)
+    _marker = "\n……（预算截断：截断不等于完整，未展示部分不可当作已核实的证据）"
+    full = "\n\n".join(out)
+    if len(full) > budget:
+        # 时间锚与事实声明段永不可被裁掉（19:34 实锤：裸尾切把 %H:%M
+        # 拦腰截断，模型在没有钟点的情况下断言"间隔了二十多分钟"且算错）。
+        # 分级降级：①整段丢"连线/思路流"（最长、非锚）；②只留事实声明
+        # +时间锚；③极限预算连这俩都装不下 → 只保时间锚+截断标注——
+        # 时间永不缺席；输出始终 ≤ budget（标注计入）。
+        drop = {i for i, s in enumerate(out)
+                if s.startswith("【它们之间真实的连线")
+                or s.startswith("【我正在想的事")}
+        trimmed = "\n\n".join(s for i, s in enumerate(out) if i not in drop)
+        if len(trimmed) + len(_marker) > budget:
+            trimmed = "\n\n".join(
+                s for s in out if s.startswith(("【最近真实发生过的事",
+                                                "【此刻")))
+        if len(trimmed) + len(_marker) > budget:
+            trimmed = _now_line
+        full = trimmed + _marker
+        if len(full) > budget:
+            full = full[:budget]
+    return full

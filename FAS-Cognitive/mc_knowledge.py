@@ -63,9 +63,12 @@ def ensure_mc_world(kg, config) -> dict:
                 return
         # 走 kg.add_edge（add_edge 自身取锁，避免 kg._lock 可重入下的
         # 裸列表改动与索引不一致）
-        kg.add_edge(Edge(src=src, dst=dst, relation=rel, weight=wt,
-                         relation_category=cat))
-        stats["edges"] += 1
+        if src == dst:               # 种子表偶有自映射（cobblestone 产
+            return                   # cobblestone 等），自环无意义且会被
+                                     # add_edge 拒收；在此早退免误计 stats
+        if kg.add_edge(Edge(src=src, dst=dst, relation=rel, weight=wt,
+                            relation_category=cat)):
+            stats["edges"] += 1
 
     prot_classes = set(w.get("protected_classes") or [])
     protection = str(w.get("protection_node") or "用户资产保护")

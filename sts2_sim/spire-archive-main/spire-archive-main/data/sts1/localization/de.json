@@ -1,0 +1,4859 @@
+{
+  "cards": {
+    "A_THOUSAND_CUTS": {
+      "name": "Tausend Schnitte",
+      "description": "Immer wenn du eine Karte ausspielst,\nfüge ALLEN Gegnern 1 Schaden zu."
+    },
+    "ACCURACY": {
+      "name": "Genauigkeit",
+      "description": "Messer fügen 4 Schaden mehr zu."
+    },
+    "ACROBATICS": {
+      "name": "Akrobatik",
+      "description": "Ziehe 3 Karten.\nWirf 1 Karte ab."
+    },
+    "ADRENALINE": {
+      "name": "Adrenalin",
+      "description": "Erhalte [G].\nZiehe 2 Karten.\nErschöpft.",
+      "upgradeDescription": "Erhalte [G] [G].\nZiehe 2 Karten.\nErschöpft."
+    },
+    "AFTER_IMAGE": {
+      "name": "Nachbild",
+      "description": "Immer wenn du eine Karte ausspielst, erhalte 1 Block.",
+      "upgradeDescription": "Angeboren.\nImmer wenn du eine Karte ausspielst, erhalte 1 Block."
+    },
+    "AGGREGATE": {
+      "name": "Ansammeln",
+      "description": "Erhalte [B] für\njede 4. Karte im Nachziehstapel."
+    },
+    "ALL_FOR_ONE": {
+      "name": "Alle für Einen",
+      "description": "Füge 10 Schaden zu. Nimm alle Karten mit Kosten 0 vom Abwurfstapel auf die Hand."
+    },
+    "ALL_OUT_ATTACK": {
+      "name": "Großangriff",
+      "description": "Füge ALLEN Gegnern 10 Schaden zu.\nWirf 1 zufällige Karte ab."
+    },
+    "ALLOCATE": {
+      "name": "Umlegen",
+      "description": "Erhalte !M! Fokus.\nVerliere 1 Stärke.\nVerliere 1 Geschicklichkeit."
+    },
+    "AMPLIFY": {
+      "name": "Verstärken",
+      "description": "Deine nächste Macht in diesem Zug wird zweimal gespielt.",
+      "upgradeDescription": "Deine nächsten +1 Mächte in diesem Zug werden zweimal gespielt."
+    },
+    "ANGER": {
+      "name": "Zorn",
+      "description": "Füge 6 Schaden zu.\nNimm eine Kopie dieser Karte auf den Abwurfstapel."
+    },
+    "APOTHEOSIS": {
+      "name": "Apotheose",
+      "description": "Verbessere ALLE deine Karten für den Rest des Kampfes.\nErschöpft."
+    },
+    "ARMAMENTS": {
+      "name": "Aufrüsten",
+      "description": "Erhalte 5 Block.\nVerbessere eine Handkarte bis zum Ende des Kampfes.",
+      "upgradeDescription": "Erhalte 5 Block.\nVerbessere alle Handkarten bis zum Ende des Kampfes."
+    },
+    "ASCENDERSBANE": {
+      "name": "Aufstiegsfluch",
+      "description": "Unspielbar.\nFlüchtig.\nKann nicht aus dem Deck entfernt werden."
+    },
+    "AUTO_SHIELDS": {
+      "name": "Schilde hoch!",
+      "description": "Falls du 0 Block hast, erhalte 11 Block."
+    },
+    "AXE_KICK": {
+      "name": "Axttritt",
+      "description": "Füge !D! Schaden zu.\nEntlade deinen vordersten Orb."
+    },
+    "BACKFLIP": {
+      "name": "Rückwärtssalto",
+      "description": "Erhalte 5 Block.\nZiehe 2 Karten."
+    },
+    "BACKSTAB": {
+      "name": "Meucheln",
+      "description": "Angeboren.\nFüge 11 Schaden zu.\nErschöpft."
+    },
+    "BALL_LIGHTNING": {
+      "name": "Kugelblitz",
+      "description": "Füge 7 Schaden zu. Erschaffe 1 Blitz."
+    },
+    "BANDAGE_UP": {
+      "name": "Bandagieren",
+      "description": "Heile 4 TP.\nErschöpft."
+    },
+    "BANE": {
+      "name": "Unheil",
+      "description": "Füge 7 Schaden zu.\nIst dein Gegner vergiftet, füge nochmal 7 Schaden zu."
+    },
+    "BARRAGE": {
+      "name": "Sperrfeuer",
+      "description": "Füge pro Orb\n4 Schaden zu."
+    },
+    "BARRICADE": {
+      "name": "Barrikade",
+      "description": "Dein Block verfällt nicht mehr zu Beginn deines Zuges."
+    },
+    "BASH": {
+      "name": "Schmettern",
+      "description": "Füge 8 Schaden zu.\nWende 2 Verwundbar an."
+    },
+    "BATTLE_TRANCE": {
+      "name": "Kampftrance",
+      "description": "Ziehe 3 Karten.\nDu kannst in diesem Zug keine weiteren Karten ziehen."
+    },
+    "BEAM_CELL": {
+      "name": "Strahlenzelle",
+      "description": "Füge 3 Schaden zu und wende 1 Verwundbar an."
+    },
+    "BERSERK": {
+      "name": "Berserker",
+      "description": "Erhalte\n2 Verwundbar.\nErhalte immer zu Beginn deines Zuges [R]."
+    },
+    "BIASED_COGNITION": {
+      "name": "Verzerrter Fokus",
+      "description": "Erhalte 4 Fokus.\nVerliere immer zu Beginn deines Zuges\n1 Fokus."
+    },
+    "BITE": {
+      "name": "Biss",
+      "description": "Füge 7 Schaden zu.\nHeile 2 TP."
+    },
+    "BLADE_DANCE": {
+      "name": "Messertanz",
+      "description": "Nimm 3 Messer auf die Hand."
+    },
+    "BLASTER": {
+      "name": "Blaster",
+      "description": "Füge ALLEN Gegnern !D! Schaden zu.\nErhalte [B] pro erschaffenem Orb.\nErschöpft."
+    },
+    "BLIND": {
+      "name": "Blenden",
+      "description": "Wende 2 Schwach an.",
+      "upgradeDescription": "Wende 2 Schwach auf ALLE Gegner an."
+    },
+    "BLIZZARD": {
+      "name": "Schneesturm",
+      "description": "Füge ALLEN Gegnern Schaden zu in Höhe 2 mal des diesen Kampf erschaffenen Frosts."
+    },
+    "BLOOD_FOR_BLOOD": {
+      "name": "Blut um Blut",
+      "description": "Kostet 1 [R] weniger für jeden deiner TP-Verluste diesen Kampf.\nFüge 18 Schaden zu."
+    },
+    "BLOODLETTING": {
+      "name": "Aderlass",
+      "description": "Erhalte [R] [R].\nVerliere 3 TP.",
+      "upgradeDescription": "Erhalte [R] [R] [R].\nVerliere 3 TP."
+    },
+    "BLUDGEON": {
+      "name": "Knüppeln",
+      "description": "Füge 32 Schaden zu."
+    },
+    "BLUR": {
+      "name": "Verschwimmen",
+      "description": "Erhalte 5 Block.\nDein Block wird zu Beginn deines nächsten Zuges nicht entfernt."
+    },
+    "BODY_SLAM": {
+      "name": "Bodyslam",
+      "description": "Füge Schaden in Höhe deines aktuellen Blocks zu.",
+      "upgradeDescription": "(Fügt 0 Schaden zu.)"
+    },
+    "BOOTSEQUENCE": {
+      "name": "Systemstart",
+      "description": "Angeboren.\nErhalte 10 Block.\nErschöpft."
+    },
+    "BOUNCING_FLASK": {
+      "name": "Springende Flasche",
+      "description": "Wende 3 mal 3 Gift auf einen zufälligen Gegner an."
+    },
+    "BRUTALITY": {
+      "name": "Brutalität",
+      "description": "Verliere immer zu Beginn deines Zuges\n1 TP und ziehe 1 Karte.",
+      "upgradeDescription": "Angeboren.\nVerliere immer zu Beginn deines Zuges\n1 TP und ziehe 1 Karte."
+    },
+    "BUFFER": {
+      "name": "Puffer",
+      "description": "Verhindere den nächsten TP-Verlust.",
+      "upgradeDescription": "Verhindere die nächsten\n+1 TP-Verluste."
+    },
+    "BULLET_TIME": {
+      "name": "Zeitlupe",
+      "description": "Du kannst in diesem Zug keine Karten ziehen. Deine Handkarten kosten für diesen Zug 0."
+    },
+    "BURN": {
+      "name": "Brennen",
+      "description": "Unspielbar.\nErleide am Ende deines Zuges 2 Schaden.",
+      "upgradeDescription": "Unspielbar.\nErleide am Ende deines Zuges 4 Schaden."
+    },
+    "BURNING_PACT": {
+      "name": "Feuerpakt",
+      "description": "Erschöpfe 1 Karte.\nZiehe 2 Karten."
+    },
+    "BURST": {
+      "name": "Sprint",
+      "description": "Deine nächste Fertigkeit in diesem Zug wird zweimal ausgespielt.",
+      "upgradeDescription": "Deine nächsten +1 Fertigkeiten in diesem Zug werden zweimal ausgespielt."
+    },
+    "CALCULATED_GAMBLE": {
+      "name": "Kalkuliertes Risiko",
+      "description": "Wirf deine Hand ab und ziehe genauso viele Karten.\nErschöpft.",
+      "upgradeDescription": "Wirf deine Hand ab und ziehe genauso viele Karten."
+    },
+    "CALTROPS": {
+      "name": "Krähenfüße",
+      "description": "Immer wenn du angegriffen wirst,\nfüge dem Angreifer\n3 Schaden zu."
+    },
+    "CAPACITOR": {
+      "name": "Kapazität",
+      "description": "Erhalte 2 Orb-Slots.",
+      "upgradeDescription": "Erhalte +1 Orb-Slots."
+    },
+    "CARNAGE": {
+      "name": "Blutbad",
+      "description": "Flüchtig.\nFüge 20 Schaden zu."
+    },
+    "CATALYST": {
+      "name": "Katalysator",
+      "description": "Verdoppele das Gift auf einem Gegner.\nErschöpft.",
+      "upgradeDescription": "Verdreifache das Gift auf einem Gegner.\nErschöpft."
+    },
+    "CHAOS": {
+      "name": "Chaos",
+      "description": "Erschaffe 1 zufälligen Orb.",
+      "upgradeDescription": "Erschaffe +1 zufällige Orbs."
+    },
+    "CHILL": {
+      "name": "Kälte",
+      "description": "Erschaffe 1 Frost\npro Gegner.\nErschöpft.",
+      "upgradeDescription": "Angeboren.\nErschaffe 1 Frost\npro Gegner.\nErschöpft."
+    },
+    "CHOKE": {
+      "name": "Würgen",
+      "description": "Füge 12 Schaden zu. Immer wenn du in diesem Zug eine Karte spielst, verliert das Ziel 3 TP."
+    },
+    "CHRYSALIS": {
+      "name": "Eingepuppt",
+      "description": "Mische 3 zufällige Fertigkeiten in den Nachziehstapel. Sie kosten diesen Kampf 0. Erschöpft."
+    },
+    "CLASH": {
+      "name": "Zusammenstoß",
+      "description": "Nur spielbar, wenn alle Handkarten Angriffe sind.\nFüge 14 Schaden zu."
+    },
+    "CLEAVE": {
+      "name": "Spalten",
+      "description": "Füge ALLEN Gegnern 8 Schaden zu."
+    },
+    "CLOAK_AND_DAGGER": {
+      "name": "Dolch und Mantel",
+      "description": "Erhalte 6 Block.\nNimm 1 Messer auf die Hand.",
+      "upgradeDescription": "Erhalte 6 Block.\nNimm +1 Messer auf die Hand."
+    },
+    "CLOTHESLINE": {
+      "name": "Niederreißen",
+      "description": "Füge 12 Schaden zu.\nWende 2 Schwach an."
+    },
+    "CLUMSY": {
+      "name": "Ungeschickt",
+      "description": "Unspielbar.\nFlüchtig."
+    },
+    "COLD_SNAP": {
+      "name": "Kälteeinbruch",
+      "description": "Füge 6 Schaden zu. Erschaffe 1 Frost."
+    },
+    "COMBUST": {
+      "name": "Verbrennen",
+      "description": "Verliere immer am Ende deines Zuges 1 TP und füge ALLEN Gegnern 5 Schaden zu."
+    },
+    "COMPILE_DRIVER": {
+      "name": "Kompilieren",
+      "description": "Füge 7 Schaden zu.\nZiehe 1 Karte pro unterschiedlichem Orb."
+    },
+    "CONCENTRATE": {
+      "name": "Konzentrieren",
+      "description": "Wirf 3 Karten ab.\nErhalte [G] [G]."
+    },
+    "CONSERVE_BATTERY": {
+      "name": "Batterie laden",
+      "description": "Erhalte 7 Block.\nIm nächsten Zug erhalte [B]."
+    },
+    "CONSUME": {
+      "name": "Konsumieren",
+      "description": "Erhalte 2 Fokus.\nVerliere 1 Orb-Slot."
+    },
+    "COOLHEADED": {
+      "name": "Kühler Kopf",
+      "description": "Erschaffe 1 Frost.\nZiehe 1 Karte.",
+      "upgradeDescription": "Erschaffe 1 Frost.\nZiehe +1 Karten."
+    },
+    "CORE_SURGE": {
+      "name": "Kraft des Kerns",
+      "description": "Füge 11 Schaden zu.\nErhalte 1 Artefakt.\nErschöpft."
+    },
+    "CORPSE_EXPLOSION": {
+      "name": "Leichenexplosion",
+      "description": "Wende 6 Gift an.\nSobald dieser Gegner stirbt, erleiden ALLE Gegner Schaden in Höhe seiner max. TP."
+    },
+    "CORRUPTION": {
+      "name": "Verderbnis",
+      "description": "Fertigkeiten kosten 0.\nImmer wenn du eine Fertigkeit ausspielst, erschöpfe sie."
+    },
+    "CREATIVE_AI": {
+      "name": "Kreative KI",
+      "description": "Nimm immer zu Beginn deines Zuges eine zufällige Macht auf die Hand."
+    },
+    "CRIPPLING_POISON": {
+      "name": "Lähmende Wolke",
+      "description": "Wende an ALLEN Gegnern 4 Gift und\n2 Schwach an.\nErschöpft."
+    },
+    "DAGGER_SPRAY": {
+      "name": "Dolchfächer",
+      "description": "Füge ALLEN Gegnern zweimal 4 Schaden zu."
+    },
+    "DAGGER_THROW": {
+      "name": "Dolchwurf",
+      "description": "Füge 9 Schaden zu.\nZiehe 1 Karte.\nWirf 1 Karte ab."
+    },
+    "DARK_EMBRACE": {
+      "name": "Dunkle Hingabe",
+      "description": "Immer wenn eine Karte erschöpft wird,\nziehe 1 Karte."
+    },
+    "DARK_SHACKLES": {
+      "name": "Dunkle Fesseln",
+      "description": "Dein Gegner verliert für den Rest dieses Zuges 9 Stärke.\nErschöpft."
+    },
+    "DARKNESS": {
+      "name": "Dunkelheit",
+      "description": "Erschaffe\n1 Schatten.",
+      "upgradeDescription": "Erschaffe\n1 Schatten.\nLöse den passiven Effekt aller Schattenorbs aus."
+    },
+    "DASH": {
+      "name": "Vorpreschen",
+      "description": "Erhalte 10 Block.\nFüge 10 Schaden zu."
+    },
+    "DAZED": {
+      "name": "Benommen",
+      "description": "Unspielbar.\nFlüchtig."
+    },
+    "DEADLY_POISON": {
+      "name": "Tödliches Gift",
+      "description": "Wende 5 Gift an."
+    },
+    "DECAY": {
+      "name": "Verfall",
+      "description": "Unspielbar.\nErleide am Ende deines Zuges 2 Schaden."
+    },
+    "DEEP_BREATH": {
+      "name": "Tiefer Atemzug",
+      "description": "Mische den Abwurfstapel in den Nachziehstapel.\nZiehe 1 Karte.",
+      "upgradeDescription": "Mische den Abwurfstapel in den Nachziehstapel.\nZiehe +1 Karten."
+    },
+    "DEFEND_B": {
+      "name": "Verteidigen",
+      "description": "Erhalte 5 Block."
+    },
+    "DEFEND_G": {
+      "name": "Verteidigen",
+      "description": "Erhalte 5 Block."
+    },
+    "DEFEND_R": {
+      "name": "Verteidigen",
+      "description": "Erhalte 5 Block."
+    },
+    "DEFLECT": {
+      "name": "Abwehr",
+      "description": "Erhalte 4 Block."
+    },
+    "DEFRAGMENT": {
+      "name": "Defragmentieren",
+      "description": "Erhalte 1 Fokus."
+    },
+    "DEMON_FORM": {
+      "name": "Dämonenform",
+      "description": "Erhalte immer zu Beginn deines Zuges\n2 Stärke."
+    },
+    "DIE_DIE_DIE": {
+      "name": "Stirb, stirb, stirb",
+      "description": "Füge ALLEN Gegnern 13 Schaden zu.\nErschöpft."
+    },
+    "DISARM": {
+      "name": "Entwaffnen",
+      "description": "Dein Gegner verliert für den Rest dieses Kampfes 2 Stärke.\nErschöpft."
+    },
+    "DISCOVERY": {
+      "name": "Entdeckung",
+      "description": "Wähle 1 aus 3 zufälligen Karten und nimm sie auf die Hand. Sie kostet für diesen Zug 0. Erschöpft.",
+      "upgradeDescription": "Wähle 1 aus 3 zufälligen Karten und nimm sie auf die Hand. Sie kostet für diesen Zug 0."
+    },
+    "DISTRACTION": {
+      "name": "Ablenkung",
+      "description": "Nimm eine zufällige Fertigkeit auf die Hand. Diese kostet für diesen Zug 0.\nErschöpft."
+    },
+    "DODGE_AND_ROLL": {
+      "name": "Ausweichrolle",
+      "description": "Erhalte 4 Block.\nIm nächsten Zug erhalte 4 Block."
+    },
+    "DOOM_AND_GLOOM": {
+      "name": "Dunkles Schicksal",
+      "description": "Füge ALLEN Gegnern 10 Schaden zu.\nErschaffe\n1 Schatten."
+    },
+    "DOPPELGANGER": {
+      "name": "Doppelgänger",
+      "description": "Im nächsten Zug\nziehe X Karten und erhalte X [G].\nErschöpft.",
+      "upgradeDescription": "Im nächsten Zug\nziehe X+1 Karten und erhalte X+1 [G].\nErschöpft."
+    },
+    "DOUBLE_ENERGY": {
+      "name": "Doppelte Energie",
+      "description": "Verdopple deine Energie.\nErschöpft.",
+      "upgradeDescription": "Verdopple deine Energie."
+    },
+    "DOUBLE_TAP": {
+      "name": "Doppeltreffer",
+      "description": "Dein nächster Angriff in diesem Zug wird zweimal ausgespielt.",
+      "upgradeDescription": "Deine nächsten\n+1 Angriffe in diesem Zug werden zweimal ausgespielt."
+    },
+    "DOUBT": {
+      "name": "Zweifel",
+      "description": "Unspielbar.\nErhalte am Ende deines Zuges\n1 Schwach."
+    },
+    "DRAMATIC_ENTRANCE": {
+      "name": "Dramatischer Auftritt",
+      "description": "Angeboren.\nFüge ALLEN Gegnern 8 Schaden zu.\nErschöpft."
+    },
+    "DROPKICK": {
+      "name": "Sprungtritt",
+      "description": "Füge 5 Schaden zu.\nIst der Gegner Verwundbar,\nerhalte [R] und\nziehe 1 Karte."
+    },
+    "DUAL_WIELD": {
+      "name": "Zweiwaffenkampf",
+      "description": "Erzeuge eine Kopie einer Angriffs- oder Machtkarte auf deiner Hand.",
+      "upgradeDescription": "Erzeuge 2 Kopien einer Angriffs- oder Machtkarte auf deiner Hand."
+    },
+    "DUALCAST": {
+      "name": "Doppelentladung",
+      "description": "Entlade deinen vordersten Orb zweimal."
+    },
+    "ECHO_FORM": {
+      "name": "Echoform",
+      "description": "Flüchtig.\nIn jedem Zug wird die erste gespielte Karte zweimal gespielt.",
+      "upgradeDescription": "In jedem Zug wird die erste gespielte Karte zweimal gespielt."
+    },
+    "ELECTRODYNAMICS": {
+      "name": "Elektrodynamik",
+      "description": "Blitze treffen jetzt\nALLE Gegner.\nErschaffe 2 Blitze."
+    },
+    "ENDLESS_AGONY": {
+      "name": "Endlose Qual",
+      "description": "Füge 4 Schaden zu.\nImmer wenn du diese Karte ziehst, nimm eine Kopie von ihr auf die Hand. Erschöpft."
+    },
+    "ENERGY_PULSE": {
+      "name": "Energie-Puls",
+      "description": "Erhalte Block in Höhe deiner Energie.",
+      "upgradeDescription": "Erhalte Block in Höhe deiner doppelten Energie."
+    },
+    "ENLIGHTENMENT": {
+      "name": "Erleuchtung",
+      "description": "Senke die Kosten deiner Handkarten für diesen Zug auf 1.",
+      "upgradeDescription": "Senke die Kosten deiner Handkarten für diesen Kampf auf 1."
+    },
+    "ENTRENCH": {
+      "name": "Verschanzen",
+      "description": "Verdopple dein aktuelles Block.",
+      "upgradeDescription": "Verdopple dein aktuelles Block."
+    },
+    "ENVENOM": {
+      "name": "Klinge vergiften",
+      "description": "Immer wenn ein Angriff ungeblockten Schaden zufügt,\nwende 1 Gift an."
+    },
+    "ESCAPE_PLAN": {
+      "name": "Fluchtplan",
+      "description": "Ziehe 1 Karte.\nIst die Karte eine Fertigkeit,\nerhalte 3 Block."
+    },
+    "EVISCERATE": {
+      "name": "Ausweiden",
+      "description": "Kostet 1 [G] weniger pro in diesem Zug abgeworfener Karte.\nFüge dreimal\n7 Schaden zu."
+    },
+    "EVOLVE": {
+      "name": "Entwickeln",
+      "description": "Immer wenn du einen Status ziehst,\nziehe 1 Karte.",
+      "upgradeDescription": "Immer wenn du einen Status ziehst,\nziehe +1 Karten."
+    },
+    "EXHUME": {
+      "name": "Exhumieren",
+      "description": "Wähle eine erschöpfte Karte und nimm sie zurück auf die Hand.\nErschöpft."
+    },
+    "EXPERTISE": {
+      "name": "Expertise",
+      "description": "Ziehe Karten, bis du\n6 Handkarten hast."
+    },
+    "FTL": {
+      "name": "FTL",
+      "description": "Füge 5 Schaden zu. Hast du diesen Zug weniger als 3 Karten ausgepielt,\nziehe 1 Karte."
+    },
+    "FEED": {
+      "name": "Verschlingen",
+      "description": "Füge 10 Schaden zu.\nFalls tödlich, erhöhe deine max. TP um 3. Erschöpft."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Schmerzfrei",
+      "description": "Immer wenn eine Karte erschöpft wird,\nerhalte 3 Block."
+    },
+    "FIEND_FIRE": {
+      "name": "Teufelsfeuer",
+      "description": "Erschöpfe deine Hand. Füge pro erschöpfter Karte 7 Schaden zu.\nErschöpft."
+    },
+    "FINESSE": {
+      "name": "Ass im Ärmel",
+      "description": "Erhalte 2 Block.\nZiehe 1 Karte."
+    },
+    "FINISHER": {
+      "name": "Vollstrecken",
+      "description": "Füge pro in diesem Zug gespieltem Angriff\n6 Schaden zu."
+    },
+    "FIRE_BREATHING": {
+      "name": "Feueratem",
+      "description": "Immer wenn du eine Status- oder Fluchkarte ziehst,\nfüge ALLEN Gegnern\n6 Schaden zu."
+    },
+    "FISSION": {
+      "name": "Spaltung",
+      "description": "Entferne alle deine Orbs. Erhalte [B] und ziehe 1 Karte pro entferntem Orb.\nErschöpft.",
+      "upgradeDescription": "Entlade alle deine Orbs. Erhalte [B] und ziehe 1 Karte pro entladenem Orb.\nErschöpft."
+    },
+    "FLAME_BARRIER": {
+      "name": "Flammenwall",
+      "description": "Erhalte 12 Block.\nImmer wenn dich in diesem Zug ein Gegner angreift, füge ihm\n4 Schaden zu."
+    },
+    "FLASH_OF_STEEL": {
+      "name": "Stahlblitz",
+      "description": "Füge 3 Schaden zu.\nZiehe 1 Karte."
+    },
+    "FLECHETTES": {
+      "name": "Wurfpfeile",
+      "description": "Füge pro Fertigkeit auf deiner Hand\n4 Schaden zu."
+    },
+    "FLEX": {
+      "name": "Muskelspiel",
+      "description": "Erhalte 2 Stärke.\nVerliere am Ende deines Zuges 2 Stärke."
+    },
+    "FLUX_CAPACITOR": {
+      "name": "Fluxkompensator",
+      "description": "Ersetze alle erschaffenen Orbs mit Plasma.\nErschöpft."
+    },
+    "FLYING_KNEE": {
+      "name": "Kniestoß",
+      "description": "Füge 8 Schaden zu.\nErhalte im nächsten Zug [G]."
+    },
+    "FOOTWORK": {
+      "name": "Beinarbeit",
+      "description": "Erhalte\n2 Geschicklichkeit."
+    },
+    "FORCE_FIELD": {
+      "name": "Kraftfeld",
+      "description": "Kostet 1 [B] weniger pro diesen Kampf gespielter Machtkarte.\nErhalte 12 Block."
+    },
+    "FORETHOUGHT": {
+      "name": "Planung",
+      "description": "Lege eine Handkarte unter den Nachziehstapel.\nSie kostet 0,\nbis du sie spielst.",
+      "upgradeDescription": "Lege beliebig viele Handkarten unter den Nachziehstapel.\nSie kosten 0,\nbis du sie spielst."
+    },
+    "FUSION": {
+      "name": "Fusion",
+      "description": "Erschaffe 1 Plasma."
+    },
+    "GASH": {
+      "name": "Kralle",
+      "description": "Füge 3 Schaden zu.\nAlle Krallen fügen diesen Kampf\n2 Schaden mehr zu."
+    },
+    "GENETIC_ALGORITHM": {
+      "name": "Gen-Algorithmus",
+      "description": "Erhalte !B! Block.\nErhöhe den Block dieser Karte permanent um 2.\nErschöpft."
+    },
+    "GHOSTLY": {
+      "name": "Apparieren",
+      "description": "Flüchtig.\nErhalte 1 Immateriell.\nErschöpft.",
+      "upgradeDescription": "Erhalte 1 Immateriell.\nErschöpft."
+    },
+    "GHOSTLY_ARMOR": {
+      "name": "Geisterrüstung",
+      "description": "Erhalte 10 Block.\nFlüchtig."
+    },
+    "GLACIER": {
+      "name": "Gletscher",
+      "description": "Erhalte 7 Block.\nErschaffe 2 Frost.",
+      "upgradeDescription": "Erhalte +3 Block.\nErschaffe 2 Frost."
+    },
+    "GLASS_KNIFE": {
+      "name": "Glasmesser",
+      "description": "Füge zweimal\n8 Schaden zu.\nDer Schaden dieser Karte verringert sich für diesen Kampf um 2."
+    },
+    "GO_FOR_THE_EYES": {
+      "name": "In die Augen",
+      "description": "Füge 3 Schaden zu.\nFalls der Gegner angreifen will,\nwende 1 Schwach an."
+    },
+    "GOOD_INSTINCTS": {
+      "name": "Gute Instinkte",
+      "description": "Erhalte 6 Block."
+    },
+    "GRAND_FINALE": {
+      "name": "Großes Finale",
+      "description": "Nur spielbar, wenn keine Karten im Nachziehstapel sind.\nFüge ALLEN Gegnern 50 Schaden zu.",
+      "upgradeDescription": "Mein Nachziehstapel\nmuss leer sein."
+    },
+    "HANDOFGREED": {
+      "name": "Arm der Gier",
+      "description": "Füge 20 Schaden zu.\nFalls tödlich,\nerhalte 20 Gold."
+    },
+    "HAVOC": {
+      "name": "Verwüstung",
+      "description": "Spiele die oberste Karte des Nachziehstapels aus und erschöpfe sie."
+    },
+    "HEADBUTT": {
+      "name": "Kopfnuss",
+      "description": "Füge 9 Schaden zu.\nLege eine Karte aus dem Abwurfstapel auf den Nachziehstapel."
+    },
+    "HEATSINKS": {
+      "name": "Wärmetauscher",
+      "description": "Immer wenn du eine Macht ausspielst, ziehe 1 Karte.",
+      "upgradeDescription": "Immer wenn du eine Macht ausspielst, ziehe +1 Karten."
+    },
+    "HEAVY_BLADE": {
+      "name": "Schweres Schwert",
+      "description": "Füge 14 Schaden zu.\nStärke beeinflusst Schweres Schwert\n3 mal.",
+      "upgradeDescription": "Füge 14 Schaden zu.\nStärke beeinflusst Schweres Schwert\n+2 mal."
+    },
+    "HEEL_HOOK": {
+      "name": "Fersenklemme",
+      "description": "Füge 5 Schaden zu.\nIst der Gegner Schwach, erhalte [G] und ziehe 1 Karte."
+    },
+    "HELLO_WORLD": {
+      "name": "Hallo Welt",
+      "description": "Nimm immer zu Beginn deines Zuges eine zufällige gewöhnliche Karte auf die Hand.",
+      "upgradeDescription": "Angeboren. Nimm immer zu Beginn deines Zuges eine zufällige gewöhnliche Karte auf die Hand."
+    },
+    "HEMOKINESIS": {
+      "name": "Hämokinese",
+      "description": "Verliere 2 TP.\nFüge 15 Schaden zu."
+    },
+    "HIDE": {
+      "name": "Verstecken",
+      "description": "Du kannst bis zum Beginn deines nächsten Zuges keine TP verlieren.\nErschöpft."
+    },
+    "HOLOGRAM": {
+      "name": "Hologramm",
+      "description": "Erhalte 3 Block.\nNimm eine Karte aus dem Abwurfstapel zurück auf die Hand.\nErschöpft.",
+      "upgradeDescription": "Erhalte +2 Block.\nNimm eine Karte aus dem Abwurfstapel zurück auf die Hand."
+    },
+    "HYPERBEAM": {
+      "name": "Hyperstrahl",
+      "description": "Füge ALLEN Gegnern 26 Schaden zu.\nVerliere 3 Fokus."
+    },
+    "IMMOLATE": {
+      "name": "Feueropfer",
+      "description": "Füge ALLEN Gegnern 21 Schaden zu.\nNimm ein Brennen auf den Abwurfstapel."
+    },
+    "IMPATIENCE": {
+      "name": "Ungeduld",
+      "description": "Falls du keine Angriffe auf der Hand hast, ziehe 2 Karten."
+    },
+    "IMPERVIOUS": {
+      "name": "Unempfindlich",
+      "description": "Erhalte 30 Block.\nErschöpft."
+    },
+    "INFERNAL_BLADE": {
+      "name": "Teuflische Klinge",
+      "description": "Nimm einen zufälligen Angriff auf die Hand. Dieser kostet für diesen Zug 0.\nErschöpft."
+    },
+    "INFINITE_BLADES": {
+      "name": "Zahllose Klingen",
+      "description": "Nimm immer zu Beginn deines Zuges ein Messer auf die Hand.",
+      "upgradeDescription": "Angeboren.\nNimm immer zu Beginn deines Zuges ein Messer auf die Hand."
+    },
+    "INFLAME": {
+      "name": "Entflammen",
+      "description": "Erhalte 2 Stärke."
+    },
+    "INJURY": {
+      "name": "Verletzung",
+      "description": "Unspielbar."
+    },
+    "INTIMIDATE": {
+      "name": "Einschüchtern",
+      "description": "Wende 1 Schwach\nauf ALLE Gegner an.\nErschöpft."
+    },
+    "IRON_WAVE": {
+      "name": "Eisenwelle",
+      "description": "Erhalte 5 Block.\nFüge 5 Schaden zu."
+    },
+    "J_A_X": {
+      "name": "J.A.X.",
+      "description": "Verliere 3 TP.\nErhalte 2 Stärke."
+    },
+    "JACK_OF_ALL_TRADES": {
+      "name": "Alleskönner",
+      "description": "Nimm 1 zufällige farblose Karte auf die Hand.\nErschöpft.",
+      "upgradeDescription": "Nimm +1 zufällige farblose Karten auf die Hand.\nErschöpft."
+    },
+    "JUGGERNAUT": {
+      "name": "Moloch",
+      "description": "Immer wenn du Block erhältst, füge einem zufälligen Gegner\n5 Schaden zu."
+    },
+    "LEAP": {
+      "name": "Sprung",
+      "description": "Erhalte 9 Block."
+    },
+    "LEG_SWEEP": {
+      "name": "Fußfeger",
+      "description": "Wende 2 Schwach an.\nErhalte 11 Block."
+    },
+    "LIMIT_BREAK": {
+      "name": "Ekstase",
+      "description": "Verdoppele deine Stärke.\nErschöpft.",
+      "upgradeDescription": "Verdoppele deine Stärke."
+    },
+    "LOCKON": {
+      "name": "Ins Schwarze",
+      "description": "Füge 8 Schaden zu.\nWende 2 Anvisieren an."
+    },
+    "LOOP": {
+      "name": "Schleife",
+      "description": "Löse immer zu Beginn deines Zuges die passive Fähigkeit deines vordersten Orbs aus.",
+      "upgradeDescription": "Löse immer zu Beginn deines Zuges die passive Fähigkeit deines vordersten Orbs +1 mal aus."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Lernende Maschine",
+      "description": "Ziehe immer zu Beginn deines Zuges 1 Karte mehr.",
+      "upgradeDescription": "Angeboren.\nZiehe immer zu Beginn deines Zuges 1 Karte mehr."
+    },
+    "MADNESS": {
+      "name": "Wahnsinn",
+      "description": "Eine zufällige Handkarte kostet für den Rest des Kampfes 0.\nErschöpft."
+    },
+    "MAGNETISM": {
+      "name": "Magnetismus",
+      "description": "Nimm immer zu Beginn deines Zuges eine zufällige farblose Karte auf die Hand."
+    },
+    "MALAISE": {
+      "name": "Unwohlsein",
+      "description": "Das Ziel verliert\nX Stärke.\nWende X Schwach an.\nErschöpft.",
+      "upgradeDescription": "Das Ziel verliert\nX+1 Stärke. Wende X+1 Schwach an.\nErschöpft."
+    },
+    "MASTER_OF_STRATEGY": {
+      "name": "Meisterstratege",
+      "description": "Ziehe 3 Karten.\nErschöpft."
+    },
+    "MASTERFUL_STAB": {
+      "name": "Meisterstich",
+      "description": "Füge 12 Schaden zu.\nImmer wenn du Schaden erleidest, steigen die Kosten dieser Karte um 1."
+    },
+    "MAYHEM": {
+      "name": "Wilder Kampf",
+      "description": "Spiele immer zu Beginn deines Zuges die oberste Karte des Nachziehstapels."
+    },
+    "MELTER": {
+      "name": "Schmelzen",
+      "description": "Entferne allen Block von einem Gegner.\nFüge 10 Schaden zu."
+    },
+    "METALLICIZE": {
+      "name": "Metallschicht",
+      "description": "Erhalte immer am Ende deines Zuges\n3 Block."
+    },
+    "METAMORPHOSIS": {
+      "name": "Metamorphose",
+      "description": "Mische 3 zufällige Angriffe in den Nachziehstapel. Sie kosten diesen Kampf 0. Erschöpft."
+    },
+    "METEOR_STRIKE": {
+      "name": "Meteorschlag",
+      "description": "Füge 24 Schaden zu.\nErschaffe 3 Plasma."
+    },
+    "MIND_BLAST": {
+      "name": "Gedankenstrahl",
+      "description": "Angeboren.\nFüge Schaden zu in Höhe der Kartenzahl im Nachziehstapel."
+    },
+    "MULTI_CAST": {
+      "name": "Multi-Entladung",
+      "description": "Entlade deinen vordersten Orb X mal.",
+      "upgradeDescription": "Entlade deinen vordersten Orb X+1 mal."
+    },
+    "NECRONOMICURSE": {
+      "name": "Necronomischer Fluch",
+      "description": "Unspielbar.\nDu kannst diesem Fluch nicht entgehen."
+    },
+    "NEUTRALIZE": {
+      "name": "Neutralisieren",
+      "description": "Füge 3 Schaden zu.\nWende 1 Schwach an."
+    },
+    "NIGHT_TERROR": {
+      "name": "Albtraum",
+      "description": "Wähle eine Handkarte.\nNimm im nächsten Zug 3 Kopien dieser Karte auf die Hand.\nErschöpft."
+    },
+    "NORMALITY": {
+      "name": "Normalität",
+      "description": "Unspielbar.\nDu kannst in diesem Zug nicht mehr als\n3 Karten ausspielen."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Giftige Dämpfe",
+      "description": "Wende immer zu Beginn deines Zuges auf ALLE Gegner\n2 Gift an."
+    },
+    "OFFERING": {
+      "name": "Opfergabe",
+      "description": "Verliere 6 TP.\nErhalte [R] [R].\nZiehe 3 Karten.\nErschöpft.",
+      "upgradeDescription": "Verliere 6 TP.\nErhalte [R] [R].\nZiehe +2 Karten.\nErschöpft."
+    },
+    "OUTMANEUVER": {
+      "name": "Ausmanövrieren",
+      "description": "Im nächsten Zug erhalte [G] [G].",
+      "upgradeDescription": "Im nächsten Zug erhalte [G] [G] [G]."
+    },
+    "PAIN": {
+      "name": "Schmerz",
+      "description": "Unspielbar.\nIst diese Karte auf der Hand, verliere beim Ausspielen anderer Karten 1 TP."
+    },
+    "PANACEA": {
+      "name": "Allheilmittel",
+      "description": "Erhalte 1 Artefakt.\nErschöpft."
+    },
+    "PANACHE": {
+      "name": "Elan",
+      "description": "Immer wenn du in einem einzigen Zug\n5 Karten ausspielst,\nfüge ALLEN Gegnern 10 Schaden zu."
+    },
+    "PANICBUTTON": {
+      "name": "Panikknopf",
+      "description": "Erhalte 30 Block.\nKarten geben für die nächsten 2 Züge keinen Block.\nErschöpft."
+    },
+    "PARASITE": {
+      "name": "Parasit",
+      "description": "Unspielbar.\nWird diese Karte transformiert oder aus dem Deck entfernt, verliere 3 max. TP."
+    },
+    "PERFECTED_STRIKE": {
+      "name": "Perfekter Schlag",
+      "description": "Füge 6 Schaden zu.\nFügt für JEDE deiner \"Schlag\" beinhaltenden Karten +2 Schaden zu.",
+      "upgradeDescription": "Füge 6 Schaden zu.\nFügt für JEDE deiner \"Schlag\" beinhaltenden Karten +3 Schaden zu."
+    },
+    "PHANTASMAL_KILLER": {
+      "name": "Phantomkiller",
+      "description": "In deinem nächsten Zug wird dein Angriffsschaden verdoppelt."
+    },
+    "PIERCINGWAIL": {
+      "name": "Schrilles Heulen",
+      "description": "ALLE Gegner verlieren 1 Zug lang 6 Stärke.\nErschöpft."
+    },
+    "POISONED_STAB": {
+      "name": "Giftiger Stich",
+      "description": "Füge 6 Schaden zu und wende 3 Gift an."
+    },
+    "POMMEL_STRIKE": {
+      "name": "Knaufschlag",
+      "description": "Füge 9 Schaden zu.\nZiehe 1 Karte.",
+      "upgradeDescription": "Füge +1 Schaden zu.\nZiehe +1 Karten."
+    },
+    "POWER_THROUGH": {
+      "name": "Durchkämpfen",
+      "description": "Nimm 2 Wunden\nauf die Hand.\nErhalte 15 Block."
+    },
+    "PREDATOR": {
+      "name": "Jagd",
+      "description": "Füge 15 Schaden zu.\nZiehe im nächsten Zug 2 Karten mehr."
+    },
+    "PREPARED": {
+      "name": "Vorbereitet",
+      "description": "Ziehe 1 Karte.\nWirf 1 Karte ab.",
+      "upgradeDescription": "Ziehe +1 Karten.\nWirf +1 Karten ab."
+    },
+    "PRIDE": {
+      "name": "Stolz",
+      "description": "Angeboren. Erschöpft.\nLege am Ende deines Zuges eine Kopie dieser Karte auf den Nachziehstapel."
+    },
+    "PUMMEL": {
+      "name": "Prügeln",
+      "description": "Füge 4 mal\n2 Schaden zu.\nErschöpft.",
+      "upgradeDescription": "Füge +1 mal\n2 Schaden zu.\nErschöpft."
+    },
+    "PURITY": {
+      "name": "Reinheit",
+      "description": "Erschöpfe bis zu\n3 Karten deiner Wahl aus deiner Hand.\nErschöpft."
+    },
+    "QUICK_SLASH": {
+      "name": "Schneller Hieb",
+      "description": "Füge 8 Schaden zu.\nZiehe 1 Karte."
+    },
+    "RAGE": {
+      "name": "Wut",
+      "description": "Immer wenn du in diesem Zug einen Angriff ausspielst, erhalte 3 Block."
+    },
+    "RAINBOW": {
+      "name": "Regenbogen",
+      "description": "Erschaffe 1 Blitz,\n1 Frost und\n1 Schatten.\nErschöpft.",
+      "upgradeDescription": "Erschaffe 1 Blitz,\n1 Frost und\n1 Schatten."
+    },
+    "RAMPAGE": {
+      "name": "Toben",
+      "description": "Füge 8 Schaden zu.\nMit jedem Spielen dieser Karte erhöht sich ihr Schaden diesen Kampf um 5."
+    },
+    "REAPER": {
+      "name": "Schnitter",
+      "description": "Füge ALLEN Gegnern 4 Schaden zu.\nHeile um die TP, die sie verloren haben. Erschöpft."
+    },
+    "REBOOT": {
+      "name": "Neustart",
+      "description": "Mische alle Karten in den Nachziehstapel.\nZiehe 4 Karten.\nErschöpft."
+    },
+    "REBOUND": {
+      "name": "Rückstoß",
+      "description": "Füge 9 Schaden zu.\nLege die nächste in diesem Zug gespielte Karte auf den Nachziehstapel."
+    },
+    "RECKLESS_CHARGE": {
+      "name": "Gewagter Ansturm",
+      "description": "Füge 7 Schaden zu.\nMische ein Benommen in den Nachziehstapel."
+    },
+    "RECYCLE": {
+      "name": "Recyclen",
+      "description": "Erschöpfe eine Karte.\nErhalte [B] in Höhe ihrer Kosten."
+    },
+    "REDO": {
+      "name": "Rekursion",
+      "description": "Entlade deinen vordersten Orb.\nErschaffe den Orb,\nder gerade entladen wurde."
+    },
+    "REFLEX": {
+      "name": "Reflex",
+      "description": "Unspielbar.\nWenn du diese Karte abwirfst,\nziehe 2 Karten.",
+      "upgradeDescription": "Unspielbar.\nWenn du diese Karte abwirfst,\nziehe +1 Karten."
+    },
+    "REGRET": {
+      "name": "Reue",
+      "description": "Unspielbar.\nVerliere am Ende deines Zuges pro Handkarte 1 TP."
+    },
+    "REINFORCED_BODY": {
+      "name": "Verstärkte Hülle",
+      "description": "Erhalte X mal 7 Block."
+    },
+    "REPROGRAM": {
+      "name": "Umprogrammieren",
+      "description": "Verliere 1 Fokus.\nErhalte 1 Stärke.\nErhalte\n1 Geschicklichkeit."
+    },
+    "RIDDLE_WITH_HOLES": {
+      "name": "Zerlöchern",
+      "description": "Füge 5 mal\n3 Schaden zu."
+    },
+    "RIP_AND_TEAR": {
+      "name": "Zerfetzen",
+      "description": "Füge 2 mal einem zufälligen Gegner\n7 Schaden zu."
+    },
+    "RITUALDAGGER": {
+      "name": "Ritualdolch",
+      "description": "Füge !D! Schaden zu.\nFalls tödlich, erhöhe den Schaden dieser Karte permanent um 3. Erschöpft."
+    },
+    "RUPTURE": {
+      "name": "Blutriss",
+      "description": "Immer wenn du durch eine Karte TP verlierst, erhalte 1 Stärke."
+    },
+    "SADISTIC_NATURE": {
+      "name": "Sadistische Natur",
+      "description": "Immer wenn du einen Debuff auf einen Gegner anwendest, erleidet er 5 Schaden."
+    },
+    "SCRAPE": {
+      "name": "Ausschlachten",
+      "description": "Füge 7 Schaden zu.\nZiehe 4 Karten.\nWirf jede so gezogene Karte ab, die nicht 0 kostet."
+    },
+    "SEARING_BLOW": {
+      "name": "Flammender Hieb",
+      "description": "Füge 12 Schaden zu.\nKann beliebig oft verbessert werden."
+    },
+    "SECOND_WIND": {
+      "name": "Kräfte bündeln",
+      "description": "Erschöpfe alle Handkarten außer Angriffen und erhalte 5 Block für jede."
+    },
+    "SECRET_TECHNIQUE": {
+      "name": "Geheime Technik",
+      "description": "Wähle eine Fertigkeit aus dem Nachziehstapel und nimm sie auf die Hand.\nErschöpft.",
+      "upgradeDescription": "Wähle eine Fertigkeit aus dem Nachziehstapel und nimm sie auf die Hand."
+    },
+    "SECRET_WEAPON": {
+      "name": "Geheimwaffe",
+      "description": "Wähle einen Angriff aus dem Nachziehstapel und nimm ihn auf die Hand. Erschöpft.",
+      "upgradeDescription": "Wähle einen Angriff aus dem Nachziehstapel und nimm ihn auf die Hand."
+    },
+    "SEEING_RED": {
+      "name": "Durchdrehen",
+      "description": "Erhalte [R] [R].\nErschöpft."
+    },
+    "SEEK": {
+      "name": "Suchen",
+      "description": "Wähle 1 Karte aus dem Nachziehstapel. Nimm sie auf die Hand.\nErschöpft.",
+      "upgradeDescription": "Wähle +1 Karten aus dem Nachziehstapel. Nimm sie auf die Hand.\nErschöpft."
+    },
+    "SELF_REPAIR": {
+      "name": "Selbstreparatur",
+      "description": "Heile am Ende des Kampfes 7 TP."
+    },
+    "SENTINEL": {
+      "name": "Wächter",
+      "description": "Erhalte 5 Block.\nWird diese Karte erschöpft,\nerhalte [R] [R].",
+      "upgradeDescription": "Erhalte +3 Block.\nWird diese Karte erschöpft,\nerhalte [R] [R] [R]."
+    },
+    "SETUP": {
+      "name": "Abgekartet",
+      "description": "Lege eine Handkarte auf den Nachziehstapel.\nSie kostet 0, bis sie gespielt wird."
+    },
+    "SEVER_SOUL": {
+      "name": "Seele trennen",
+      "description": "Erschöpfe alle Handkarten außer Angriffen.\nFüge 16 Schaden zu."
+    },
+    "SHAME": {
+      "name": "Scham",
+      "description": "Unspielbar.\nErhalte am Ende deines Zuges\n1 Gebrechlich."
+    },
+    "SHIV": {
+      "name": "Messer",
+      "description": "Füge !D! Schaden zu.\nErschöpft."
+    },
+    "SHOCKWAVE": {
+      "name": "Schockwelle",
+      "description": "Wende 3 Schwach und Verwundbar auf ALLE Gegner an.\nErschöpft."
+    },
+    "SHRUG_IT_OFF": {
+      "name": "Nimm's gelassen",
+      "description": "Erhalte 8 Block.\nZiehe 1 Karte."
+    },
+    "SKEWER": {
+      "name": "Aufspießen",
+      "description": "Füge X mal\n7 Schaden zu."
+    },
+    "SKIM": {
+      "name": "Abschöpfen",
+      "description": "Ziehe 3 Karten."
+    },
+    "SLICE": {
+      "name": "Schnitt",
+      "description": "Füge 6 Schaden zu."
+    },
+    "SLIMED": {
+      "name": "Verschleimt",
+      "description": "Erschöpft."
+    },
+    "SPOT_WEAKNESS": {
+      "name": "Schwäche erkennen",
+      "description": "Falls der Gegner angreifen will,\nerhalte 3 Stärke."
+    },
+    "STACK": {
+      "name": "Stapel",
+      "description": "Erhalte Block in Höhe der Kartenzahl im Abwurfstapel.",
+      "upgradeDescription": "Erhalte Block in Höhe der Kartenzahl im Abwurfstapel +3."
+    },
+    "STATIC_DISCHARGE": {
+      "name": "Statische Entladung",
+      "description": "Immer wenn du ungeblockten Angriffsschaden erleidest,\nerschaffe 1 Blitz.",
+      "upgradeDescription": "Immer wenn du ungeblockten Angriffsschaden erleidest,\nerschaffe +1 Blitze."
+    },
+    "STEAM": {
+      "name": "Dampfwall",
+      "description": "Erhalte 6 Block.\nDer Block dieser Karte wird für diesen Kampf um 1 verringert."
+    },
+    "STEAM_POWER": {
+      "name": "Übertakten",
+      "description": "Ziehe 2 Karten.\nNimm ein Brennen auf den Abwurfstapel."
+    },
+    "STORM": {
+      "name": "Sturm",
+      "description": "Immer wenn du eine Macht ausspielst, erschaffe 1 Blitz.",
+      "upgradeDescription": "Angeboren.\nImmer wenn du eine Macht ausspielst, erschaffe 1 Blitz."
+    },
+    "STORM_OF_STEEL": {
+      "name": "Stahlsturm",
+      "description": "Wirf deine Hand ab.\nNimm pro abgeworfener Karte 1 Messer auf die Hand.",
+      "upgradeDescription": "Wirf deine Hand ab.\nNimm pro abgeworfener Karte 1 Messer+ auf die Hand."
+    },
+    "STREAMLINE": {
+      "name": "Optimieren",
+      "description": "Füge 15 Schaden zu.\nImmer wenn du diese Karte spielst, senke ihre Kosten für diesen Kampf um 1 ."
+    },
+    "STRIKE_B": {
+      "name": "Schlag",
+      "description": "Füge 6 Schaden zu."
+    },
+    "STRIKE_G": {
+      "name": "Schlag",
+      "description": "Füge 6 Schaden zu."
+    },
+    "STRIKE_R": {
+      "name": "Schlag",
+      "description": "Füge 6 Schaden zu."
+    },
+    "SUCKER_PUNCH": {
+      "name": "Unerwarteter Hieb",
+      "description": "Füge 7 Schaden zu.\nWende 1 Schwach an."
+    },
+    "SUNDER": {
+      "name": "Trennen",
+      "description": "Füge 24 Schaden zu.\nFalls der Gegner dadurch stirbt, erhalte [B] [B] [B]."
+    },
+    "SURVIVOR": {
+      "name": "Überlebenskünstlerin",
+      "description": "Erhalte 8 Block.\nWirf eine Karte ab."
+    },
+    "SWEEPING_BEAM": {
+      "name": "Breiter Strahl",
+      "description": "Füge ALLEN Gegnern 6 Schaden zu.\nZiehe 1 Karte."
+    },
+    "SWIFT_STRIKE": {
+      "name": "Schneller Schlag",
+      "description": "Füge 7 Schaden zu."
+    },
+    "SWORD_BOOMERANG": {
+      "name": "Bumerangschwert",
+      "description": "Füge 3 mal einem zufälligen Gegner\n3 Schaden zu."
+    },
+    "TACTICIAN": {
+      "name": "Taktikerin",
+      "description": "Unspielbar.\nWenn du diese Karte abwirfst, erhalte [G].",
+      "upgradeDescription": "Unspielbar.\nWenn du diese Karte abwirfst, erhalte [G] [G]."
+    },
+    "TEMPEST": {
+      "name": "Gewitter",
+      "description": "Erschaffe X Blitze.\nErschöpft.",
+      "upgradeDescription": "Erschaffe X+1 Blitze.\nErschöpft."
+    },
+    "TERROR": {
+      "name": "Terror",
+      "description": "Wende\n99 Verwundbar an.\nErschöpft."
+    },
+    "THE_BOMB": {
+      "name": "Die Bombe",
+      "description": "Füge nach 3 Zügen ALLEN Gegnern\n40 Schaden zu."
+    },
+    "THINKING_AHEAD": {
+      "name": "Vorausdenken",
+      "description": "Ziehe 2 Karten.\nLege eine Handkarte auf den Nachziehstapel.\nErschöpft.",
+      "upgradeDescription": "Ziehe 2 Karten.\nLege eine Handkarte auf den Nachziehstapel."
+    },
+    "THUNDER_STRIKE": {
+      "name": "Donnerschlag",
+      "description": "Füge pro diesen Kampf erschaffenem Blitz einem zufälligen Gegner 7 Schaden zu."
+    },
+    "THUNDERCLAP": {
+      "name": "Blitz und Donner",
+      "description": "Füge ALLEN Gegnern 4 Schaden zu und wende 1 Verwundbar auf sie an."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Handwerkszeug",
+      "description": "Ziehe immer zu Beginn deines Zuges 1 Karte und wirf 1 Karte ab."
+    },
+    "TRANSMUTATION": {
+      "name": "Umwandlung",
+      "description": "Nimm X zufällige farblose Karten auf die Hand. Sie kosten für diesen Zug 0.\nErschöpft.",
+      "upgradeDescription": "Nimm X zufällige verbesserte farblose Karten auf die Hand. Sie kosten für diesen Zug 0. Erschöpft."
+    },
+    "TRIP": {
+      "name": "Straucheln",
+      "description": "Wende 2 Verwundbar an.",
+      "upgradeDescription": "Wende 2 Verwundbar auf ALLE Gegner an."
+    },
+    "TRUE_GRIT": {
+      "name": "Standhaft",
+      "description": "Erhalte 7 Block.\nErschöpfe eine zufällige Handkarte.",
+      "upgradeDescription": "Erhalte +2 Block.\nErschöpfe eine Handkarte."
+    },
+    "TURBO": {
+      "name": "TURBO",
+      "description": "Erhalte [B] [B].\nNimm eine Leere auf den Abwurfstapel.",
+      "upgradeDescription": "Erhalte [B] [B] [B].\nNimm eine Leere auf den Abwurfstapel."
+    },
+    "TWIN_STRIKE": {
+      "name": "Doppelschlag",
+      "description": "Füge zweimal\n5 Schaden zu."
+    },
+    "UNDERHANDED_STRIKE": {
+      "name": "Tückischer Schlag",
+      "description": "Füge 12 Schaden zu.\nHast du in diesem Zug eine Karte abgeworfen,\nerhalte [G] [G]."
+    },
+    "UNDO": {
+      "name": "Ausgeglichenheit",
+      "description": "Erhalte 13 Block.\nBehalte deine Hand in diesem Zug."
+    },
+    "UNLOAD": {
+      "name": "Alles Abwerfen",
+      "description": "Füge 14 Schaden zu.\nWirf alle Karten außer Angriffen ab."
+    },
+    "UPPERCUT": {
+      "name": "Kinnhaken",
+      "description": "Füge 13 Schaden zu.\nWende 1 Schwach und 1 Verwundbar an."
+    },
+    "VENOMOLOGY": {
+      "name": "Alchemisieren",
+      "description": "Erhalte einen\nzufälligen Trank.\nErschöpft."
+    },
+    "VIOLENCE": {
+      "name": "Gewalt",
+      "description": "Nimm 3 zufällige Angriffskarten aus dem Nachziehstapel auf die Hand.\nErschöpft."
+    },
+    "VOID": {
+      "name": "Leere",
+      "description": "Unspielbar.\nFlüchtig.\nWenn diese Karte gezogen wird,\nverliere 1 Energie."
+    },
+    "WARCRY": {
+      "name": "Schlachtruf",
+      "description": "Ziehe 1 Karte.\nLege eine Handkarte auf den Nachziehstapel.\nErschöpft.",
+      "upgradeDescription": "Ziehe +1 Karten.\nLege eine Handkarte auf den Nachziehstapel.\nErschöpft."
+    },
+    "WELL_LAID_PLANS": {
+      "name": "Gut ausgeklügelt",
+      "description": "Behalte immer\nam Ende deines Zuges bis zu 1 Karte.",
+      "upgradeDescription": "Behalte immer\nam Ende deines Zuges bis zu +1 Karten."
+    },
+    "WHIRLWIND": {
+      "name": "Wirbelwind",
+      "description": "Füge ALLEN Gegnern X mal 5 Schaden zu."
+    },
+    "WHITE_NOISE": {
+      "name": "Rauschen",
+      "description": "Nimm eine zufällige Macht auf die Hand. Diese kostet für diesen Zug 0.\nErschöpft."
+    },
+    "WILD_STRIKE": {
+      "name": "Wilder Schlag",
+      "description": "Füge 12 Schaden zu.\nMische eine Wunde in den Nachziehstapel."
+    },
+    "WOUND": {
+      "name": "Wunde",
+      "description": "Unspielbar."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Geistform",
+      "description": "Erhalte 2 Immateriell.\nVerliere immer am Ende deines Zuges\n1 Geschicklichkeit."
+    },
+    "WRITHE": {
+      "name": "Leid",
+      "description": "Unspielbar.\nAngeboren."
+    },
+    "ZAP": {
+      "name": "Blitz",
+      "description": "Erschaffe 1 Blitz."
+    },
+    "SPIRITSHIELD": {
+      "name": "Geistesschild",
+      "description": "Erhalte 3 Block\npro Handkarte."
+    },
+    "BRILLIANCEAURA": {
+      "name": "DEPRECATED Brilliance Aura",
+      "description": "Behalten.\nErschöpft.\nZiehe immer zu Beginn deines Zuges 1 Karte."
+    },
+    "WRATH": {
+      "name": "Zorn",
+      "description": "Verursache und erhalte doppelten Angriffsschaden."
+    },
+    "POLYMATH": {
+      "name": "DEPRECATED Polymath",
+      "description": "Nimm Ruhe oder Zorn an.\nErschöpft."
+    },
+    "TANTRUM": {
+      "name": "Wutanfall",
+      "description": "Füge 3 mal 3 Schaden zu. Nimm Zorn an.\nMische diese Karte in den Nachziehstapel."
+    },
+    "ADAPTATION": {
+      "name": "Eile",
+      "description": "Immer wenn du Zorn annimmst,\nziehe 2 Karten.",
+      "upgradeDescription": "Veraltet."
+    },
+    "CAUSALITY": {
+      "name": "Kausalität",
+      "description": "Ziehe Karten,\nbis deine Hand voll ist.\nErschöpft.",
+      "upgradeDescription": "Behalten.\nZiehe Karten,\nbis deine Hand voll ist.\nErschöpft."
+    },
+    "DEVOTION": {
+      "name": "Hingabe",
+      "description": "Erhalte immer zu Beginn deines Zuges\n2 Mantra."
+    },
+    "EMPTYFIST": {
+      "name": "Leere Faust",
+      "description": "Füge 9 Schaden zu.\nVerlasse deine Haltung."
+    },
+    "WISDOM": {
+      "name": "Weisheit",
+      "description": "Behalten.\nZiehe !M! Karten.\nErschöpft."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Retribution",
+      "description": "Whenever you lose HP, erhalte !M! Vigor."
+    },
+    "FLOWSTATE": {
+      "name": "VERALTET Alles fließt",
+      "description": "Zorn: Nimm Ruhe an.\nRuhe: Nimm Zorn an.\nErschöpft.",
+      "upgradeDescription": "Zorn: Nimm Ruhe an.\nRuhe: Nimm Zorn an."
+    },
+    "SWIVEL": {
+      "name": "Drehen",
+      "description": "Erhalte 8 Block.\nDer nächste gespielte Angriff kostet 0."
+    },
+    "WISH": {
+      "name": "Wünschen",
+      "description": "Wähle eins:\nErhalte\n6 Panzerrüstung,\n3 Stärke oder 25 Gold.\nErschöpft."
+    },
+    "FURYAURA": {
+      "name": "DEPRECATED Fury Aura",
+      "description": "Behalten.\nErhalte !M! temporary Stärke.\nimmer zu Beginn deines Zuges erhalte 1 temporary Stärke."
+    },
+    "DEUSEXMACHINA": {
+      "name": "Deus ex Machina",
+      "description": "Unspielbar.\nWenn du diese Karte ziehst, erschöpfe sie und nimm 2 Wunder auf die Hand."
+    },
+    "THROUGHVIOLENCE": {
+      "name": "Durch Gewalt",
+      "description": "Behalten.\nFüge !D! Schaden zu.\nErschöpft."
+    },
+    "CLARITY": {
+      "name": "Klarheit",
+      "description": "Sieh die obersten !M! Karten des Nachziehstapels an. Nimm eine auf die Hand.\nErschöpfe die andere.",
+      "upgradeDescription": "Sieh die obersten !M! Karten des Nachziehstapels an. Nimm eine auf die Hand.\nErschöpfe den Rest."
+    },
+    "WREATHOFFLAME": {
+      "name": "Flammenkranz",
+      "description": "Dein nächster Angriff fügt 5 Schaden mehr zu."
+    },
+    "FLICKER": {
+      "name": "DEPRECATED Flicker",
+      "description": "Füge !D! Schaden zu. If this kills the enemy, return this Karte to your hand."
+    },
+    "ALPHA": {
+      "name": "Alpha",
+      "description": "Mische ein Beta in den Nachziehstapel.\nErschöpft.",
+      "upgradeDescription": "Angeboren.\nMische ein Beta in den Nachziehstapel.\nErschöpft."
+    },
+    "FOLLOWUP": {
+      "name": "Anschlusshieb",
+      "description": "Füge 7 Schaden zu.\nHast du diesen Kampf zuletzt einen Angriff gespielt, erhalte [W]."
+    },
+    "VAULT": {
+      "name": "Überspringen",
+      "description": "Du hast einen weiteren Zug nach diesem.\nBeende deinen Zug.\nErschöpft."
+    },
+    "WINDUP": {
+      "name": "DEPRECATED Windup",
+      "description": "Füge !D! Schaden zu.\nErhalte !M! Vigor."
+    },
+    "WALLOP": {
+      "name": "Verhauen",
+      "description": "Füge 9 Schaden zu.\nErhalte soviel Block, wie du ungeblockten Schaden zugefügt hast."
+    },
+    "CONSECRATE": {
+      "name": "Einsegnen",
+      "description": "Füge ALLEN Gegnern 5 Schaden zu."
+    },
+    "CONCLUDE": {
+      "name": "Abschließen",
+      "description": "Füge ALLEN Gegnern 12 Schaden zu.\nBeende deinen Zug."
+    },
+    "MASTERREALITY": {
+      "name": "Realität meistern",
+      "description": "Jede Karte, die du im Kampf erhältst, ist verbessert."
+    },
+    "CLEANSEEVIL": {
+      "name": "Böses reinigen",
+      "description": "Nimm X Zertrümmern auf die Hand.",
+      "upgradeDescription": "Nimm X Zertrümmern+ auf die Hand."
+    },
+    "WINDMILLSTRIKE": {
+      "name": "Windmühlschlag",
+      "description": "Behalten.\nFüge 7 Schaden zu.\nBeim Behalten erhöhe den Schaden für diesen Kampf um 4."
+    },
+    "SHIELD": {
+      "name": "DEPRECATED Shield",
+      "description": "Behalten.\nErhalte !B! Block.\nErschöpft."
+    },
+    "LESSONLEARNED": {
+      "name": "Lektion gelernt",
+      "description": "Füge 10 Schaden zu.\nFalls tödlich, verbessere 1 zufällige Karte in deinem Deck.\nErschöpft."
+    },
+    "CALM": {
+      "name": "Ruhe",
+      "description": "Wenn du Ruhe verlässt, erhalte [W] [W]."
+    },
+    "THIRDEYE": {
+      "name": "Drittes Auge",
+      "description": "Erhalte 7 Block.\nSpähe 3."
+    },
+    "SURVEY": {
+      "name": "DEPRECATED Survey",
+      "description": "Erhalte !B! Block.\nErhalte !M! Vigor."
+    },
+    "FLYINGSLEEVES": {
+      "name": "Fliegende Ärmel",
+      "description": "Behalten.\nFüge zweimal\n4 Schaden zu."
+    },
+    "WIREHEADING": {
+      "name": "Voraussicht",
+      "description": "Immer zu Beginn deines Zuges\nSpähe 3."
+    },
+    "SANCTITY": {
+      "name": "Heiligkeit",
+      "description": "Erhalte 6 Block.\nHast du diesen Kampf zuletzt eine Fertigkeit gespielt,\nziehe 2 Karten."
+    },
+    "WARDAURA": {
+      "name": "DEPRECATED Ward Aura",
+      "description": "Behalten.\nErhalte !B! Block.\nErhalte zu Beginn deines Zuges !M! Block."
+    },
+    "MASTERY": {
+      "name": "Meisterlich",
+      "description": "Immer wenn du beim Ändern der Haltung versuchst, zu deiner aktuellen Haltung zu ändern, erhalte [B]."
+    },
+    "BETA": {
+      "name": "Beta",
+      "description": "Mische ein Omega in den Nachziehstapel.\nErschöpft."
+    },
+    "FEARNOEVIL": {
+      "name": "Fürchte kein Böses",
+      "description": "Füge 8 Schaden zu.\nFalls der Gegner angreifen will,\nnimm Ruhe an."
+    },
+    "PERSEVERANCE": {
+      "name": "Beharrlichkeit",
+      "description": "Behalten.\nErhalte 5 Block.\nBeim Behalten erhöhe den Block für diesen Kampf um 2."
+    },
+    "RAGNAROK": {
+      "name": "Ragnarök",
+      "description": "Füge 5 mal einem zufälligen Gegner\n5 Schaden zu."
+    },
+    "AWAKENEDSTRIKE": {
+      "name": "DEPRECATED Awakened Strike",
+      "description": "Füge !D! Schaden zu."
+    },
+    "BLESSED": {
+      "name": "DEPRECATED Blessed",
+      "description": "Mische !M! Miracles in den Nachziehstapel.\nErschöpft.",
+      "upgradeDescription": "Mische !M! verbesserte Miracles in den Nachziehstapel.\nErschöpft."
+    },
+    "ERUPTION": {
+      "name": "Ausbruch",
+      "description": "Füge 9 Schaden zu.\nNimm Zorn an."
+    },
+    "LETFATEDECIDE": {
+      "name": "DEPRECATED Let Fate Decide",
+      "description": "Play the top X Karten of your draw pile. If X is 3 or more, Retain X Karten."
+    },
+    "CUTTHROUGHFATE": {
+      "name": "Schicksalsschnitt",
+      "description": "Füge 7 Schaden zu.\nSpähe 2.\nZiehe 1 Karte."
+    },
+    "WAVEOFTHEHAND": {
+      "name": "Wink mit der Hand",
+      "description": "Immer wenn du diesen Zug Block erhältst, wende 1 Schwach auf ALLE Gegner an."
+    },
+    "VIGILANCE": {
+      "name": "Wachsamkeit",
+      "description": "Erhalte 8 Block.\nNimm Ruhe an.",
+      "upgradeDescription": "Veraltet."
+    },
+    "PATHTOVICTORY": {
+      "name": "Schwachpunkte",
+      "description": "Wende 8 Markierung an.\nALLE Gegner verlieren TP in Höhe ihrer Markierung."
+    },
+    "EVALUATE": {
+      "name": "Auswerten",
+      "description": "Erhalte 6 Block.\nMische eine Einsicht in den Nachziehstapel.",
+      "upgradeDescription": "Erhalte +4 Block.\nMische eine Einsicht+ in den Nachziehstapel."
+    },
+    "ESTABLISHMENT": {
+      "name": "Etablierung",
+      "description": "Immer wenn eine Karte behalten wird, senke ihre Kosten für diesen Kampf um 1.",
+      "upgradeDescription": "Angeboren.\nImmer wenn eine Karte behalten wird, senke ihre Kosten für diesen Kampf um 1."
+    },
+    "COLLECT": {
+      "name": "Sammeln",
+      "description": "Nimm zu Beginn deiner nächsten X Züge ein Wunder+ auf die Hand.\nErschöpft.",
+      "upgradeDescription": "Nimm zu Beginn deiner nächsten X+1 Züge ein Wunder+ auf die Hand.\nErschöpft."
+    },
+    "EXPERIENCED": {
+      "name": "DEPRECATED Experienced",
+      "description": "Erhalte !B! Block for each verbesserte Karte in your hand."
+    },
+    "PERFECTEDFORM": {
+      "name": "DEPRECATED Perfected Form",
+      "description": "If you have entered all basic Haltungen this turn, enter Divinity.\nErschöpft.",
+      "upgradeDescription": "If you have entered all basic Haltungen this turn, enter Divinity."
+    },
+    "JUSTLUCKY": {
+      "name": "Einfach Glück",
+      "description": "Spähe 1.\nErhalte 2 Block.\nFüge 3 Schaden zu."
+    },
+    "TORRENT": {
+      "name": "DEPRECATED Torrent",
+      "description": "Füge ALLEN Gegnern !D! Schaden zu !M! times.\nErschöpft."
+    },
+    "PEACE": {
+      "name": "Friede",
+      "description": "Behalten.\nALLE Gegner verlieren diesen Zug !M! Stärke.\nErschöpft."
+    },
+    "PALMTHATRESTRAINS": {
+      "name": "DEPRECATED Restraining Palm",
+      "description": "Füge !D! Schaden zu.\nWende !M! Schwach."
+    },
+    "PROTECT": {
+      "name": "Schützen",
+      "description": "Behalten.\nErhalte 12 Block."
+    },
+    "WORSHIP": {
+      "name": "Verehren",
+      "description": "Erhalte 5 Mantra.",
+      "upgradeDescription": "Behalten.\nErhalte 5 Mantra."
+    },
+    "EMPTYMIND": {
+      "name": "Leerer Kopf",
+      "description": "Ziehe 2 Karten.\nVerlasse deine Haltung.",
+      "upgradeDescription": "Ziehe +1 Karten.\nVerlasse deine Haltung."
+    },
+    "MIRACLE": {
+      "name": "Wunder",
+      "description": "Behalten.\nErhalte [W].\nErschöpft.",
+      "upgradeDescription": "Behalten.\nErhalte [W] [W].\nErschöpft."
+    },
+    "DEVAFORM": {
+      "name": "Devaform",
+      "description": "Flüchtig.\nErhalte immer zu Beginn deines Zuges [W] und erhöhe diesen Wert um 1 [W].",
+      "upgradeDescription": "Erhalte immer zu Beginn deines Zuges [W] und erhöhe diesen Wert um 1 [W]."
+    },
+    "TALKTOTHEHAND": {
+      "name": "Sprich zur Hand",
+      "description": "Füge 5 Schaden zu.\nImmer wenn du diesen Gegner angreifst, erhalte 2 Block.\nErschöpft."
+    },
+    "STRIKE_P": {
+      "name": "Schlag",
+      "description": "Füge 6 Schaden zu."
+    },
+    "MEDITATE": {
+      "name": "Meditieren",
+      "description": "Nimm eine Karte vom Abwurfstapel auf die Hand und behalte sie.\nNimm Ruhe an.\nBeende deinen Zug.",
+      "upgradeDescription": "Nimm 2 Karten vom Abwurfstapel auf die Hand und behalte sie.\nNimm Ruhe an.\nBeende deinen Zug."
+    },
+    "NIRVANA": {
+      "name": "Nirvana",
+      "description": "Immer wenn du Spähst,\nerhalte 3 Block."
+    },
+    "DECEIVEREALITY": {
+      "name": "Realität trügen",
+      "description": "Erhalte 4 Block.\nNimm eine Geborgenheit auf die Hand.",
+      "upgradeDescription": "Erhalte +3 Block.\nNimm eine Geborgenheit+ auf die Hand."
+    },
+    "RETREATINGHAND": {
+      "name": "DEPRECATED Retreating Hand",
+      "description": "Ethereal.\nErhalte !B! Block. If the previous Karte played was an Angriff, return this Karte to your hand.",
+      "upgradeDescription": "Erhalte !B! Block. If the previous Karte played was an Angriff, return this Karte to your hand."
+    },
+    "HALT": {
+      "name": "Halt",
+      "description": "Erhalte 3 Block.\nFalls du in Zorn bist, erhalte 9 Block mehr."
+    },
+    "CURSEOFTHEBELL": {
+      "name": "Fluch der Glocke",
+      "description": "Unspielbar.\nKann nicht aus dem Deck entfernt werden."
+    },
+    "BRILLIANCE": {
+      "name": "Brillanz",
+      "description": "Füge 12 Schaden zu.\nFügt mehr Schaden zu pro diesen Kampf erhaltenem Mantra."
+    },
+    "CLEARTHEMIND": {
+      "name": "Entspannen",
+      "description": "Behalten.\nNimm Ruhe an.\nErschöpft."
+    },
+    "SAFETY": {
+      "name": "Geborgenheit",
+      "description": "Behalten.\nErhalte !B! Block.\nErschöpft."
+    },
+    "SCRAWL": {
+      "name": "Gesudel",
+      "description": "Ziehe Karten, bis\ndeine Hand voll ist.\nErschöpft."
+    },
+    "PROSTRATE": {
+      "name": "Niederknien",
+      "description": "Erhalte 2 Mantra.\nErhalte 4 Block.",
+      "upgradeDescription": "Veraltet."
+    },
+    "PRAY": {
+      "name": "Beten",
+      "description": "Erhalte 3 Mantra.\nMische eine Einsicht in den Nachziehstapel.",
+      "upgradeDescription": "Erhalte +1 Mantra.\nMische eine Einsicht+ in den Nachziehstapel."
+    },
+    "BIGBRAIN": {
+      "name": "DEPRECATED Big Brain",
+      "description": "Behalten.\nZiehe 1 Karte.\nErschöpft.",
+      "upgradeDescription": "Behalten.\nZiehe 1 Karte."
+    },
+    "FOREIGNINFLUENCE": {
+      "name": "Fremder Einfluss",
+      "description": "Wähle 1 aus 3 Angriffen aller Farben. Nimm ihn auf die Hand.\nErschöpft.",
+      "upgradeDescription": "Wähle 1 aus 3 Angriffen aller Farben. Nimm ihn auf die Hand, er kostet diesen Zug 0. Erschöpft."
+    },
+    "SIGNATUREMOVE": {
+      "name": "Spezialmanöver",
+      "description": "Nur spielbar, wenn dies dein einziger Angriff auf der Hand ist.\nFüge 30 Schaden zu."
+    },
+    "SUBLIMESLICE": {
+      "name": "DEPRECATED Sublime Slice",
+      "description": "Füge !D! Schaden zu.\nEnter a random Haltung."
+    },
+    "REACHHEAVEN": {
+      "name": "Den Himmel erreichen",
+      "description": "Füge 10 Schaden zu.\nMische ein\nDurch Gewalt in den Nachziehstapel.",
+      "upgradeDescription": "Füge +5 Schaden zu.\nMische ein Durch Gewalt+ in den Nachziehstapel."
+    },
+    "INSIGHT": {
+      "name": "Einsicht",
+      "description": "Behalten.\nZiehe !M! Karten.\nErschöpft.",
+      "upgradeDescription": "Behalten.\nZiehe !M! Karten.\nErschöpft."
+    },
+    "BATTLEHYMN": {
+      "name": "Kampfhymne",
+      "description": "Nimm immer zu Beginn deines Zuges ein Zertrümmern auf die Hand.",
+      "upgradeDescription": "Angeboren.\nNimm immer zu Beginn deines Zuges ein Zertrümmern auf die Hand."
+    },
+    "SOOTHINGAURA": {
+      "name": "DEPRECATED Soothing Aura",
+      "description": "Behalten.\nWende !M! Schwach.\nzu Beginn deines Zuges apply 1 Weak to a random enemy."
+    },
+    "BOWLINGBASH": {
+      "name": "Kegeln",
+      "description": "Füge pro Gegner im Kampf 7 Schaden zu."
+    },
+    "TRUTH": {
+      "name": "Wahrheit",
+      "description": "Behalten.\nFüge !D! Schaden zu.\nZiehe !M! Karte.\nErschöpft.",
+      "upgradeDescription": "Behalten.\nFüge !D! Schaden zu.\nZiehe !M! Karten.\nErschöpft."
+    },
+    "PUNISHMENT": {
+      "name": "DEPRECATED Punishment",
+      "description": "Enter Punishment Haltung."
+    },
+    "SMITE": {
+      "name": "Zertrümmern",
+      "description": "Behalten.\nFüge !D! Schaden zu.\nErschöpft."
+    },
+    "OMNISCIENCE": {
+      "name": "Allwissenheit",
+      "description": "Wähle eine Karte im Nachziehstapel.\nSpiele sie zweimal und erschöpfe sie.\nErschöpft."
+    },
+    "OMEGA": {
+      "name": "Omega",
+      "description": "Füge immer am Ende deines Zuges ALLEN Gegnern !M! Schaden zu."
+    },
+    "SERENITY": {
+      "name": "Gelassenheit",
+      "description": "Solange du in Ruhe bist, wird TP-Verlust um !M! verringert."
+    },
+    "JUDGEMENT": {
+      "name": "Urteil",
+      "description": "Falls der Gegner 30 oder weniger TP hat, setze seine TP auf 0."
+    },
+    "MENTALFORTRESS": {
+      "name": "Mentale Festung",
+      "description": "Immer wenn du deine Haltungen änderst, erhalte 4 Block."
+    },
+    "EMPTYBODY": {
+      "name": "Leerer Körper",
+      "description": "Erhalte 7 Block.\nVerlasse deine Haltung."
+    },
+    "CRESCENDO": {
+      "name": "Crescendo",
+      "description": "Behalten.\nNimm Zorn an.\nErschöpft."
+    },
+    "SANDSOFTIME": {
+      "name": "Sand der Zeit",
+      "description": "Behalten.\nFüge 20 Schaden zu.\nBeim Behalten verringere die Kosten für diesen Kampf um 1."
+    },
+    "BLASPHEMY": {
+      "name": "Blasphemie",
+      "description": "Nimm Göttlichkeit an.\nStirb nächsten Zug.\nErschöpft.",
+      "upgradeDescription": "Behalten.\nNimm Göttlichkeit an.\nStirb nächsten Zug.\nErschöpft."
+    },
+    "TRANSCENDENCE": {
+      "name": "Transzendenz",
+      "description": "Verbessere alle Handkarten, die du behältst."
+    },
+    "FLARE": {
+      "name": "DEPRECATED Flare",
+      "description": "Füge ALLEN Gegnern !D! Schaden zu.\nZorn: Erhalte [W] [W] ."
+    },
+    "UNRAVELING": {
+      "name": "Entwirrung",
+      "description": "Spiele alle deine Handkarten von links nach rechts. Ziele werden zufällig gewählt.\nErschöpft."
+    },
+    "WEAVE": {
+      "name": "Einflechten",
+      "description": "Füge 4 Schaden zu.\nWenn du Spähst,\nnimm diese Karte vom Abwurfstapel auf die Hand."
+    },
+    "CRUSHJOINTS": {
+      "name": "Gelenke brechen",
+      "description": "Füge 8 Schaden zu.\nHast du diesen Kampf zuletzt eine Fertigkeit gespielt, wende\n1 Verwundbar an."
+    },
+    "VENGEANCE": {
+      "name": "Kochende Wut",
+      "description": "Nimm zu Beginn deines nächsten Zuges Zorn an und ziehe\n2 Karten."
+    },
+    "CARVEREALITY": {
+      "name": "Realität prägen",
+      "description": "Füge 6 Schaden zu.\nNimm ein Zertrümmern auf die Hand.",
+      "upgradeDescription": "Füge +4 Schaden zu.\nNimm ein Zertrümmern+ auf die Hand."
+    },
+    "DEFEND_P": {
+      "name": "Verteidigen",
+      "description": "Erhalte 5 Block."
+    },
+    "CRESCENTKICK": {
+      "name": "DEPRECATED Crescent Kick",
+      "description": "Füge !D! Schaden zu.\nIf you have Vigor,\nerhalte [W] und\nZiehe 1 Karte."
+    },
+    "THWACK": {
+      "name": "DEPRECATED Thwack",
+      "description": "Füge !D! Schaden zu."
+    },
+    "SWIPE": {
+      "name": "DEPRECATED Swipe",
+      "description": "Füge !D! Schaden zu. Deal half this damage to all other enemies."
+    },
+    "INNERPEACE": {
+      "name": "Innerer Friede",
+      "description": "Falls du in Ruhe bist, ziehe 3 Karten,\nsonst nimm Ruhe an."
+    },
+    "STEPANDSTRIKE": {
+      "name": "Schlag folgt Schritt",
+      "description": "Kostet für jedes Ändern der Haltung in diesem Zug 1 weniger.\nErhalte !B! Block.\nFüge !D! Schaden zu."
+    },
+    "PREDICTION": {
+      "name": "DEPRECATED Prediction",
+      "description": "Erhalte !B! Block at the start of your next turn."
+    },
+    "FLOW": {
+      "name": "DEPRECATED Flow",
+      "description": "When you play an Angriff, erhalte 1 temporary Dexterity. When you play a Fertigkeit, erhalte 1 temporary Stärke."
+    },
+    "FLAMEMASTERY": {
+      "name": "DEPRECATED Flame Mastery",
+      "description": "Erhalte !M! Stärke."
+    },
+    "FLURRYOFBLOWS": {
+      "name": "Hiebregen",
+      "description": "Füge 4 Schaden zu.\nÄnderst du Haltungen, nimm diese Karte vom Abwurfstapel auf die Hand."
+    },
+    "SASHWHIP": {
+      "name": "Schärpenknall",
+      "description": "Füge 8 Schaden zu.\nHast du diesen Kampf zuletzt einen Angriff gespielt,\nwende 1 Schwach an."
+    },
+    "WHEELKICK": {
+      "name": "Wirbeltritt",
+      "description": "Füge 15 Schaden zu.\nZiehe 2 Karten."
+    },
+    "INDIGNATION": {
+      "name": "Empörung",
+      "description": "Falls du in Zorn bist, wende 3 Verwundbar an ALLEN Gegnern an, sonst nimm Zorn an."
+    },
+    "BECOMEALMIGHTY": {
+      "name": "Allmächtig werden",
+      "description": "Erhalte !M! Stärke."
+    },
+    "FAMEANDFORTUNE": {
+      "name": "Ruhm und Reichtum",
+      "description": "Erhalte !M! Gold."
+    },
+    "LIVEFOREVER": {
+      "name": "Ewiges Leben",
+      "description": "Erhalte\n!M! Panzerrüstung."
+    },
+    "EXPUNGER": {
+      "name": "Vernichter",
+      "description": "Füge X mal\n!D! Schaden zu."
+    },
+    "CONJUREBLADE": {
+      "name": "Klinge beschwören",
+      "description": "Mische einen Vernichter in den Nachziehstapel.\nErschöpft.",
+      "upgradeDescription": "Mische einen Vernichter mit X+1 in den Nachziehstapel.\nErschöpft."
+    },
+    "FASTING2": {
+      "name": "Fasten",
+      "description": "Erhalte 3 Stärke und\n3 Geschicklichkeit.\nErhalte jeden Zug\n1 [W] weniger."
+    },
+    "DISCIPLINE": {
+      "name": "VERALTET Disziplin",
+      "description": "Wenn du deinen Zug mit unbenutzer [W] endest, ziehe nächsten Zug genauso viele Karten."
+    },
+    "FLICK": {
+      "name": "VERALTET Schnippen",
+      "description": "Füge !D! Schaden zu.\nWenn ein Gegner 3 mal geschnippt wird, nimmt er !M! Schaden."
+    },
+    "LIKEWATER": {
+      "name": "Wie Wasser",
+      "description": "Erhalte immer am Ende deines Zuges\n5 Block, falls du in Ruhe bist."
+    },
+    "STUDY": {
+      "name": "Studieren",
+      "description": "Mische immer am Ende deines Zuges eine Einsicht in deinen Nachziehstapel."
+    }
+  },
+  "relics": {
+    "ANCHOR": {
+      "name": "Anker",
+      "description": "Beginne jeden Kampf mit 10 Block.",
+      "flavor": "Mit diesem schweren Miniaturstück fühlst du dich standhafter."
+    },
+    "ANCIENT_TEA_SET": {
+      "name": "Uraltes Teeservice",
+      "description": "Immer wenn du an ein Lagerfeuer kommst, beginne den nächsten Kampf mit [E] [E] .",
+      "flavor": "Unerlässlich für entspannten Schlaf."
+    },
+    "ART_OF_WAR": {
+      "name": "Die Kunst des Krieges",
+      "description": "Spielst du in deinem Zug keine Angriffe aus, erhalte im nächsten Zug ein [E] mehr.",
+      "flavor": "Dieses uralte Manuskript enthält Weisheiten aus einer vergangenen Zeit."
+    },
+    "ASTROLABE": {
+      "name": "Astrolabium",
+      "description": "Wähle beim Aufheben 3 Karten, transformiere sie und verbessere sie dann.Wähle 3 Karten für",
+      "flavor": "Mit diesem Instrument eignest du dir das wertvolle Wissen der Sterne an."
+    },
+    "BAG_OF_MARBLES": {
+      "name": "Murmelsack",
+      "description": "Wende zu Beginn jedes Kampfes 1 Verwundbar auf ALLE Gegner an.",
+      "flavor": "Einst ein beliebtes Spielzeug in der Stadt. Nützlich, um Gegner aus dem Gleichgewicht zu bringen."
+    },
+    "BAG_OF_PREPARATION": {
+      "name": "Tasche der Vorbereitung",
+      "description": "Ziehe zu Beginn jedes Kampfes 2 Karten mehr.",
+      "flavor": "Übergroßer Abenteurerrucksack. Mit vielen Taschen und Riemen."
+    },
+    "BIRD_FACED_URN": {
+      "name": "Vogelurne",
+      "description": "Immer wenn du eine Macht ausspielst, heile 2 TP.",
+      "flavor": "Auf dieser Urne ist der böse aussehende Krähengott Mazaleth zu sehen."
+    },
+    "BLACK_BLOOD": {
+      "name": "Schwarzes Blut",
+      "description": "Ersetzt Glühendes Blut.\nHeile am Ende des Kampfes 12 TP.",
+      "flavor": "Die Wut wird immer dunkler."
+    },
+    "BLACK_STAR": {
+      "name": "Schwarzer Stern",
+      "description": "Besiegte Eliten hinterlassen ein weiteres Relikt.",
+      "flavor": "Wurde ursprünglich in der Stadt der Giftschlange neben einer einsamen Kerze entdeckt."
+    },
+    "BLOOD_VIAL": {
+      "name": "Blutphiole",
+      "description": "Heile zu Beginn jedes Kampfes 2 TP.",
+      "flavor": "Eine Phiole mit dem Blut eines echten Vampirälteren."
+    },
+    "BLOODY_IDOL": {
+      "name": "Blutiger Götze",
+      "description": "Immer wenn du Gold erhältst, heile 5 TP.",
+      "flavor": "Dieser Götze vergießt nun unentwegt blutige Tränen."
+    },
+    "BLUE_CANDLE": {
+      "name": "Blaue Kerze",
+      "description": "Unspielbare Fluchkarten können jetzt ausgespielt werden.\n\n Spielst du einen Fluch aus, verliere 1 TP und erschöpfe ihn.",
+      "flavor": "In der Dunkelheit entzündet sich die Flamme von selbst."
+    },
+    "BOOT": {
+      "name": "Der Stiefel",
+      "description": "Anstatt 4 oder weniger ungeblockten Angriffsschaden zuzufügen, wird dieser auf 5 erhöht.",
+      "flavor": "Er vergrößert sich, wenn er aufgezogen wird."
+    },
+    "BOTTLED_FLAME": {
+      "name": "Flaschenflamme",
+      "description": "Wähle beim Aufheben eine Angriffskarte. Diese Karte ist zu Beginn jedes Kampfes auf deiner Hand.Wähle eine Karte für Beginne jeden Kampf mit  auf deiner Hand.",
+      "flavor": "In der Flasche haust eine Flamme, die auf ewig brennt."
+    },
+    "BOTTLED_LIGHTNING": {
+      "name": "Flaschenblitz",
+      "description": "Wähle beim Aufheben eine Fertigkeitskarte. Diese Karte ist zu Beginn jedes Kampfes auf deiner Hand.Wähle eine Karte für Beginne jeden Kampf mit  auf deiner Hand.",
+      "flavor": "Im wirbelnden Mahlstrom siehst du einen Teil deiner selbst zurückstarren."
+    },
+    "BOTTLED_TORNADO": {
+      "name": "Flaschentornado",
+      "description": "Wähle beim Aufheben eine Machtkarte. Diese Karte ist zu Beginn jedes Kampfes auf deiner Hand.Wähle eine Karte für Beginne jeden Kampf mit  auf deiner Hand.",
+      "flavor": "Diese Flasche gibt ein sanftes Summen und Dröhnen von sich."
+    },
+    "BRIMSTONE": {
+      "name": "Schwefel",
+      "description": "Erhalte zu Beginn deines Zuges ? Stärke und alle Gegner erhalten 1 Stärke.",
+      "flavor": "Verströmt teuflische Hitze."
+    },
+    "BRONZE_SCALES": {
+      "name": "Bronzeschuppen",
+      "description": "Erhalte zu Beginn jedes Kampfes 3 Stacheln.",
+      "flavor": "Die scharfen Schuppen des Wächters. Platzieren sich neu, um den Träger zu schützen. "
+    },
+    "BURNING_BLOOD": {
+      "name": "Glühendes Blut",
+      "description": "Heile am Ende des Kampfes 6 TP.",
+      "flavor": "Das Blut deines eigenen Körpers brennt vor unendlicher Wut."
+    },
+    "BUSTED_CROWN": {
+      "name": "Zerbrochene Krone",
+      "description": "Bei Kartenbelohnungen hast du 2 Karten weniger zur Auswahl.Erhalte in deinem Zug [E] .",
+      "flavor": "Die Krone des Champs... oder nur eine billige Fälschung?"
+    },
+    "CABLES": {
+      "name": "Goldbeschichtete Kabel",
+      "description": "Dein vorderster Orb aktiviert seinen passiven Effekt ein weiteres Mal.",
+      "flavor": "„Interessant! Sogar Automatone sind vom Placebo-Effekt betroffen.“ - Ranwid"
+    },
+    "CALIPERS": {
+      "name": "Messschieber",
+      "description": "Verliere zu Beginn deines Zuges 15 Block statt dein gesamtes Block.",
+      "flavor": "„Mechanische Präzision führt zu wahrer Größe.“ – Der Architekt"
+    },
+    "CALLING_BELL": {
+      "name": "Rufglocke",
+      "description": "Erhalte beim Aufheben einen besonderen Fluch und 3 Relikte.Die Glocke schlägt...Belohnungen überspringenSchließen",
+      "flavor": "Diese dunkle Eisenglocke läutete dreimal, als du sie fandest. Doch jetzt bleibt sie stumm."
+    },
+    "CAULDRON": {
+      "name": "Kessel",
+      "description": "Braut beim Aufheben 5 zufällige Tränke.Blupp, blipp, bluuupp...!",
+      "flavor": "Tatsächlich ist der Händler ein ziemlich guter Trankbrauer. Kaufe 4, bekomme 1 gratis."
+    },
+    "CENTENNIAL_PUZZLE": {
+      "name": "Zentenniumspuzzle",
+      "description": "Das erste Mal, wenn du in einem Kampf TP verlierst, ziehe 3 Karten.",
+      "flavor": "Du löst das Rätsel und deine Brust wird von einer starken Wärme erfüllt."
+    },
+    "CHAMELEON_RING": {
+      "name": "Chamäleon-Ring",
+      "description": "Du kannst jetzt an Lagerfeuern brauen.",
+      "flavor": "Veraltet"
+    },
+    "CHAMPION_BELT": {
+      "name": "Championgürtel",
+      "description": "Immer wenn du Verwundbar anwendest, wendest du auch 1 Schwach an.",
+      "flavor": "Nur die Größten dürfen diesen Gürtel tragen."
+    },
+    "CHARON_S_ASHES": {
+      "name": "Charons Asche",
+      "description": "Immer wenn du eine Karte erschöpfst, verursache 3 Schaden an ALLEN Gegnern.",
+      "flavor": "Man sagt, Charon sei der Gott der Wiedergeburt, der bis in alle Ewigkeit stirbt und aus einem Flammenschwall aufersteht."
+    },
+    "CHEMICAL_X": {
+      "name": "Chemikalie X",
+      "description": "Immer wenn du eine Karte mit Kosten von X ausspielst, erhöhen sich ihre Effekte um 2.",
+      "flavor": "ACHTUNG: Nicht mit Zucker, Pfeffer und lauter schönen Sachen mischen."
+    },
+    "CIRCLET": {
+      "name": "Reif",
+      "description": "Sammle so viele wie möglich.",
+      "flavor": "Du hast alle Relikte gefunden. Beeindruckend!"
+    },
+    "CLOCKWORKSOUVENIR": {
+      "name": "Mechanisches Souvenir",
+      "description": "Erhalte zu Beginn jedes Kampfes 1 Artefakt.",
+      "flavor": "„So viele aufwändige Rädchen.“"
+    },
+    "COFFEE_DRIPPER": {
+      "name": "Kaffeetropfer",
+      "description": "Du kannst an Lagerfeuern nicht mehr ausruhen.Erhalte in deinem Zug [E] .",
+      "flavor": "„Ja, bitte noch eine Tasse. Zurück an die Arbeit. An die Arbeit!“ - Der Architekt"
+    },
+    "CRACKED_CORE": {
+      "name": "Gesprungener Kern",
+      "description": "Erschaffe zu Beginn jedes Kampfes 1 Blitz.",
+      "flavor": "Die mysteriöse Lebenskraft, welche die Automatone im Spire antreibt. Scheint kaputt zu sein."
+    },
+    "CULTISTMASK": {
+      "name": "Kultisten-Kopfstück",
+      "description": "Du fühlst dich gesprächiger.KRÄH!\nKRÄÄÄH",
+      "flavor": "Ich bin Teil des Schwarms!"
+    },
+    "CURSED_KEY": {
+      "name": "Verfluchter Schlüssel",
+      "description": "Immer wenn du eine Truhe (außer Bosstruhen) öffnest, nimm einen Fluch.Erhalte in deinem Zug [E] .",
+      "flavor": "Du spürst die tückische Energie, die vom Schlüssel ausgeht. Macht hat ihren Preis."
+    },
+    "DARKSTONE_PERIAPT": {
+      "name": "Dunkelstein-Amulett",
+      "description": "Immer wenn du einen Fluch nimmst, erhöhe deine max. TP um",
+      "flavor": "Der Stein wandelt dunkle Energie in Lebenskraft um."
+    },
+    "DATADISK": {
+      "name": "Festplatte",
+      "description": "Beginne jeden Kampf mit 1 Fokus.",
+      "flavor": "Diese Festplatte beinhaltet wertvolle Daten über Fögl und Schlangen."
+    },
+    "DEAD_BRANCH": {
+      "name": "Toter Ast",
+      "description": "Immer wenn du eine Karte erschöpfst, nimm eine zufällige Karte auf die Hand.",
+      "flavor": "Der Ast eines Baumes aus einer längst vergessenen Zeit."
+    },
+    "DERP_ROCK": {
+      "name": "Derp-Stein",
+      "description": "Wenn jeder Zug beginnt, erhalte  Ladung.\n(Kann nicht entfernt oder transformiert werden.)",
+      "flavor": "Platzhalter"
+    },
+    "DISCERNING_MONOCLE": {
+      "name": "Feines Monokel",
+      "description": "Händlerpreise sind reduziert um 20%.",
+      "flavor": "Ein überaus adrettes Monokel."
+    },
+    "DODECAHEDRON": {
+      "name": "VERALTET Runischer Dodekaeder",
+      "description": "Wenn du volle TP hast, erhalte in deinem Zug [E] .",
+      "flavor": "Die Runen sind nicht entzifferbar."
+    },
+    "DOLLYSMIRROR": {
+      "name": "Dollys Spiegel",
+      "description": "Nimm beim Aufheben ein weiteres Exemplar einer Karte in deinem Deck.Wähle 1 Karte, die du kopierst.",
+      "flavor": "„Darin sehe ich komisch aus.“"
+    },
+    "DREAM_CATCHER": {
+      "name": "Traumfänger",
+      "description": "Immer wenn du dich ausruhst, kannst du eine Karte für dein Deck wählen.",
+      "flavor": "Die nördlichen Stämme setzten in der Hoffnung auf Selbstbesserung nachts gern Traumfänger ein."
+    },
+    "DU_VU_DOLL": {
+      "name": "Du-Vu-Puppe",
+      "description": "Beginne pro Fluch in deinem Deck jeden Kampf mit 1 Stärke mehr. Du hast keine Flüche. Du hast  Flüche.",
+      "flavor": "Eine Puppe - gebaut, um Kraft aus tückischer Energie zu ziehen."
+    },
+    "ECTOPLASM": {
+      "name": "Ektoplasma",
+      "description": "Du kannst kein Gold mehr erhalten.Erhalte in deinem Zug [E] .",
+      "flavor": "Dieser Klumpen aus Schleim und Energie scheint lebendig zu pulsieren."
+    },
+    "EMOTION_CHIP": {
+      "name": "Gefühlschip",
+      "description": "Falls du im letzten Zug TP verloren hast, löse zu Beginn deines Zuges den passiven Effekt all deiner Orbs aus.",
+      "flavor": "...<3...?"
+    },
+    "EMPTY_CAGE": {
+      "name": "Leerer Käfig",
+      "description": "Entferne beim Aufheben 2 Karten aus deinem Deck.Wähle 2 Karten, die du entfernst.",
+      "flavor": "„Wie seltsam, etwas einzusperren, das du anbetest.“ - Ranwid"
+    },
+    "ENCHIRIDION": {
+      "name": "Enchiridion",
+      "description": "Nimm zu Beginn jedes Kampfes eine zufällige Machtkarte auf die Hand. Sie kostet 0 bis zum Ende des Zuges.",
+      "flavor": "Das legendäre Tagebuch eines uralten Lichs."
+    },
+    "ETERNAL_FEATHER": {
+      "name": "Ewige Feder",
+      "description": "Heile für je ? Karten in deinem Deck 3 TP, wenn du an ein Lagerfeuer kommst.",
+      "flavor": "Diese Feder ist scheinbar völlig unverwüstlich. Von welchem Vogel sie bloß stammen mag? "
+    },
+    "FACEOFCLERIC": {
+      "name": "Priesters Gesicht",
+      "description": "Erhöhe deine max. TP nach jedem Kampf um 1.",
+      "flavor": "Alle lieben Priester."
+    },
+    "FOSSILIZEDHELIX": {
+      "name": "Versteinerte Helix",
+      "description": "Verhindere deinen ersten TP-Verlust in jedem Kampf.",
+      "flavor": "Dieses Fossil wirkt unzerstörbar - du fragst dich, zu was für einer Kreatur es einst gehörte."
+    },
+    "FROZEN_EGG_2": {
+      "name": "Gefrorenes Ei",
+      "description": "Jede Machtkarte, die du erhältst, ist verbessert.",
+      "flavor": "Ein regloses und gefrorenes Ei, das niemals schlüpfen wird."
+    },
+    "FROZEN_EYE": {
+      "name": "Gefrorenes Auge",
+      "description": "Der Nachziehstapel wird in richtiger Reihenfolge angezeigt, wenn du ihn ansiehst.",
+      "flavor": "Wenn du in das Auge starrst, siehst du schemenhaft deine Zukunft."
+    },
+    "FROZENCORE": {
+      "name": "Gefrorener Kern",
+      "description": "Ersetzt Gesprungener Kern.\nWenn du deinen Zug mit leeren Orb-Slots beendest, erschaffe 1 Frost.",
+      "flavor": "Der Sprung in deinem Kern ist mit einer pulsierenden kalten Energie gefüllt worden."
+    },
+    "FUSION_HAMMER": {
+      "name": "Schmelzhammer",
+      "description": "Du kannst an Lagerfeuern nicht mehr schmieden.Erhalte in deinem Zug [E] .",
+      "flavor": "Wer ihn einmal schwingt, kann ihn nie wieder loslassen."
+    },
+    "GAMBLING_CHIP": {
+      "name": "Spielchip",
+      "description": "Wirf zu Beginn jedes Kampfes beliebig viele Karten ab und ziehe genauso viele.",
+      "flavor": "Auf einer Seite entdeckst du eine kleine Inschrift. Da steht: „Bärs Glücks-Chip!“"
+    },
+    "GINGER": {
+      "name": "Ingwer",
+      "description": "Du kannst nicht mehr Schwach werden.",
+      "flavor": "Eine wirkungsvolle Zutat in vielen Stärkungsmitteln."
+    },
+    "GIRYA": {
+      "name": "Girya",
+      "description": "Du kannst jetzt an Lagerfeuern Stärke erhalten (bis zu 3 Mal).",
+      "flavor": "Diese Girya ist unglaublich schwer. Du könntest damit trainieren, um viel stärker zu werden."
+    },
+    "GOLDEN_IDOL": {
+      "name": "Goldener Götze",
+      "description": "Gegner hinterlassen 25% mehr Gold.",
+      "flavor": "Beim bloßen Halten dieses Gegenstands aus reinem Gold fühlst du dich schon reicher."
+    },
+    "GREMLIN_HORN": {
+      "name": "Gremlinhorn",
+      "description": "Immer wenn ein Gegner stirbt, erhalte [E] und ziehe 1 Karte.",
+      "flavor": "„Gremlin-Aristos können bis zu ihrem Todestag wachsen. Bemerkenswert.“ – Ranwid"
+    },
+    "GREMLINMASK": {
+      "name": "Gremlin-Visage",
+      "description": "Beginne jeden Kampf mit 1 Schwach.",
+      "flavor": "Zeit, zu rennen."
+    },
+    "HANDDRILL": {
+      "name": "Handbohrer",
+      "description": "Immer wenn du den Block eines Gegners durchbrichst, wende 2 Verwundbar an.",
+      "flavor": "„Spiralen sind gefährlich.“"
+    },
+    "HAPPY_FLOWER": {
+      "name": "Fröhliche Blume",
+      "description": "Erhalte alle  Züge [E] .",
+      "flavor": "Diese immerfort lachende Pflanze ist seit Neuestem äußerst beliebt beim Adel."
+    },
+    "HOVERINGKITE": {
+      "name": "Schwebender Drachen",
+      "description": "Wenn du das erste Mal in einem Zug eine Karte abwirfst, erhalte [E] .",
+      "flavor": "Der Drachen fliegt im Kampf, angetrieben von einer mysteriösen Kraft, in deiner Nähe herum."
+    },
+    "ICE_CREAM": {
+      "name": "Eis",
+      "description": "Energie wird jetzt zwischen Zügen aufbewahrt.",
+      "flavor": "„Köstlich!“"
+    },
+    "INCENSE_BURNER": {
+      "name": "Räucherschale",
+      "description": "Erhalte alle 6 Züge 1 Immateriell.",
+      "flavor": "Der Weihrauch durchtränkt den Besitzer mit dem Geist des Verbrannten."
+    },
+    "INSERTER": {
+      "name": "Greifarm",
+      "description": "Erhalte alle 2 Züge 1 Orb-Slot.",
+      "flavor": "Greifen. Ziehen. Stapeln. Wiederholen."
+    },
+    "JUZU_BRACELET": {
+      "name": "Juzu-Armband",
+      "description": "Du begegnest in ?-Räumen keinen regulären Monstern mehr.",
+      "flavor": "Bietet Schutz gegen das Unbekannte."
+    },
+    "KUNAI": {
+      "name": "Kunai",
+      "description": "Immer wenn du ? Angriffe in einem Zug ausspielst, erhalte 1 Geschicklichkeit.",
+      "flavor": "Dank ihrer tödlichen Wirkung und Reichweite ist diese Klinge bei Assassinen beliebt."
+    },
+    "LANTERN": {
+      "name": "Laterne",
+      "description": "Erhalte im ersten Zug jedes Kampfes [E] .",
+      "flavor": "Eine gespenstische Laterne, die nur für ihren Träger leuchtet."
+    },
+    "LEE_S_WAFFLE": {
+      "name": "Lees Waffel",
+      "description": "Erhöhe beim Aufheben deine max. TP um 7 und heile all deine TP.",
+      "flavor": "„Der köstlichste Leckerbissen im ganzen Spire! Heute speziell für dich gemacht.“"
+    },
+    "LETTER_OPENER": {
+      "name": "Brieföffner",
+      "description": "Immer wenn du in einem Zug 3 Fertigkeiten ausspielst, verursachst du 5 Schaden an ALLEN Gegnern.",
+      "flavor": "Unnatürlich scharf."
+    },
+    "LIVING_BLADE": {
+      "name": "Lebendige Klinge",
+      "description": "Du kannst von jeder Karte eine beliebige Anzahl erhalten.",
+      "flavor": "VERALTET"
+    },
+    "LIZARD_TAIL": {
+      "name": "Echsenschwanz",
+      "description": "Anstatt zu sterben, heile 50% deiner max. TP (funktioniert einmal).",
+      "flavor": "Ein falscher Schwanz, um Gegner während des Kampfes hereinzulegen."
+    },
+    "MAGIC_FLOWER": {
+      "name": "Magische Blume",
+      "description": "Heilung ist während des Kampfes um 50% effektiver.",
+      "flavor": "Eine längst ausgestorben geglaubte Blume, die irgendwie perfekt erhalten geblieben ist."
+    },
+    "MANGO": {
+      "name": "Mango",
+      "description": "Erhöhe beim Aufheben deine max. TP um",
+      "flavor": "Die begehrteste vergessene Frucht. Perfekt erhalten und ohne Spuren von Spire-Fäule."
+    },
+    "MARK_OF_PAIN": {
+      "name": "Mal der Qual",
+      "description": "Erhalte in deinem Zug [R] .\nDu beginnst Kämpfe mit 2 Wunden im Nachziehstapel.",
+      "flavor": "Dieses Brandzeichen erhielten Krieger der nördlichen Stämme, wenn sie im Kampf die Qual bezwangen."
+    },
+    "MARK_OF_THE_BLOOM": {
+      "name": "Mal der Blüte",
+      "description": "Du kannst nicht mehr geheilt werden.",
+      "flavor": "Im Jenseits sind Gedanken und Realität vereint."
+    },
+    "MATRYOSHKA": {
+      "name": "Matroschka",
+      "description": "Die nächsten 2 Truhen, die du öffnest, enthalten 2 Relikte (keine Bosstruhen).Die nächste Truhe, die du öffnest, enthält 2 Relikte (keine Bosstruhe).Dieses Relikt wurde aufgebraucht.",
+      "flavor": "Ineinander schachtelbare Puppen, bemalt mit einem unbekannten Vogel mit weißen Augen und blauen Federn."
+    },
+    "MAWBANK": {
+      "name": "Spar-Schlund",
+      "description": "Erhalte auf jeder erreichten Ebene 12 Gold, bis du das nächste Mal Gold im Laden bezahlst.Dieses Relikt wurde aufgebraucht.",
+      "flavor": "Überraschend beliebt, obwohl immer wieder Schlund-Angriffe passieren."
+    },
+    "MEALTICKET": {
+      "name": "Essenskarte",
+      "description": "Wenn du einen Laden-Raum betrittst, heile 15 TP.",
+      "flavor": "„Kostenlose Fleischbällchen bei jedem Besuch!“"
+    },
+    "MEAT_ON_THE_BONE": {
+      "name": "Fleisch am Knochen",
+      "description": "Hast du am Ende des Kampfes genau oder weniger als 50% deiner TP, heile 12 TP.",
+      "flavor": "Das Fleisch erneuert sich immer wieder und scheint nie komplett aufgebraucht zu werden."
+    },
+    "MEDICAL_KIT": {
+      "name": "Verbandskasten",
+      "description": "Unspielbare Statuskarten können jetzt ausgespielt werden. Spielst du einen Status aus, wird die Karte erschöpft.",
+      "flavor": "„Enthält alles, was du brauchst! Anti-Juckreiz, Anti-Brandwunden, Anti-Gift und vieles mehr!“"
+    },
+    "MEMBERSHIP_CARD": {
+      "name": "Mitgliedskarte",
+      "description": "50% Rabatt auf alle Produkte!",
+      "flavor": "„Bonus-Mitgliedschaftsangebot für meine wertvollsten Kunden!“"
+    },
+    "MERCURY_HOURGLASS": {
+      "name": "Quecksilber-Sanduhr",
+      "description": "Füge zu Beginn deines Zuges ALLEN Gegnern 3 Schaden zu.",
+      "flavor": "Eine verzauberte Sanduhr, die immerfort fließt."
+    },
+    "MOLTEN_EGG_2": {
+      "name": "Geschmolzenes Ei",
+      "description": "Jede Angriffskarte, die du erhältst, ist verbessert.",
+      "flavor": "Das Ei eines Phoenix. Es leuchtet rot, heiß von siedender Lava."
+    },
+    "MUMMIFIED_HAND": {
+      "name": "Mumifizierte Hand",
+      "description": "Immer wenn du eine Macht ausspielst, kostet eine zufällige Handkarte in diesem Zug 0.",
+      "flavor": "Zuckt oft, besonders wenn du einen hohen Puls hast."
+    },
+    "MUTAGENICSTRENGTH": {
+      "name": "Mutagen-Kraft",
+      "description": "Beginne jeden Kampf mit ? Stärke. Verliere am Ende deines ersten Zuges 3 Stärke.",
+      "flavor": "„Die Resultate sind wohl flüchtig und werden ausgelöst, wenn das Subjekt in Gefahr ist.“ - Unbekannt"
+    },
+    "NECRONOMICON": {
+      "name": "Necronomicon",
+      "description": "Der erste Angriff, der in deinem Zug gespielt wird und 2 oder mehr kostet, wird zweimal ausgespielt. Nimmst du dieses Relikt, wirst du verflucht. oder mehr kostet, wird zweimal ausgespielt.",
+      "flavor": "Nur ein Narr würde sich diese böse Macht aneignen wollen. Nachts träumst du davon, wie das Buch deinen Geist verschlingt."
+    },
+    "NEOWSBLESSING": {
+      "name": "Niaus Klage",
+      "description": "Die Gegner in deinen ersten 3 Kämpfen haben nur 1 TP.Dieses Relikt wurde aufgebraucht.",
+      "flavor": "Der von Niau verliehene Segen ihres Klageliedes."
+    },
+    "NILRY_S_CODEX": {
+      "name": "Nilrys Kodex",
+      "description": "Am Ende deines Zuges kannst du 1 von 3 zufälligen Karten wählen und in den Nachziehstapel mischen.",
+      "flavor": "Dies stammt vom berüchtigten Spielemeister selbst. Man sagt, es erweitert den Geist."
+    },
+    "NINJA_SCROLL": {
+      "name": "Ninja-Schriftrolle",
+      "description": "Nimm zu Beginn jedes Kampfes 3 Messer auf die Hand.",
+      "flavor": "Beinhaltet die Geheimnisse des Assassinierens."
+    },
+    "NLOTH_S_GIFT": {
+      "name": "N'loths Geschenk",
+      "description": "Verdreifacht die Chance auf seltene Karten als Monsterbelohnungen.",
+      "flavor": "Das seltsame Geschenk von N'loth. Immer wenn du versuchst, es auszupacken, findest du darin ein gleich großes verpacktes Geschenk."
+    },
+    "NLOTHSMASK": {
+      "name": "N'loths hungriges Gesicht",
+      "description": "Die nächste Truhe (außer Bosstruhen) ist leer.",
+      "flavor": "Du verspürst Hunger."
+    },
+    "NUCLEAR_BATTERY": {
+      "name": "Nuklearbatterie",
+      "description": "Erschaffe zu Beginn jedes Kampfes 1 Plasma.",
+      "flavor": "Ooooh..."
+    },
+    "NULLSTONE_PERIAPT": {
+      "name": "Nullstein-Amulett",
+      "description": "Wehre den nächsten Debuff ab, den du vom Gegner erhältst.\nWird in 10 Zügen wiederaufgeladen.",
+      "flavor": "VERALTET."
+    },
+    "NUNCHAKU": {
+      "name": "Nunchaku",
+      "description": "Immer wenn du  Angriffe spielst, erhalte [E] .",
+      "flavor": "Ein gutes Übungsgerät, um die Haltung und Wendigkeit zu verbessern."
+    },
+    "ODD_MUSHROOM": {
+      "name": "Seltsamer Pilz",
+      "description": "Bist du Verwundbar, erleide 25% mehr Schaden statt 50%.",
+      "flavor": "„Nachdem ich trichella parastius konsumiert hatte, fühlte ich mich größer und weniger... empfindlich.“ – Ranwid "
+    },
+    "ODDLY_SMOOTH_STONE": {
+      "name": "Seltsam glatter Stein",
+      "description": "Beginne jeden Kampf mit 1 Geschicklichkeit.",
+      "flavor": "So etwas Glattes und Makelloses hast du noch nie gesehen. Das muss das Werk der Ahnen sein."
+    },
+    "OLD_COIN": {
+      "name": "Alte Münze",
+      "description": "Erhalte beim Aufheben 300 Gold.",
+      "flavor": "Münz-Unikate werden von Händlern wegen ihres historischen Werts und ihrer seltenen Metalle als sehr wertvoll angesehen."
+    },
+    "OMAMORI": {
+      "name": "O-Mamori",
+      "description": "Wehre die nächsten 2 genommenen Flüche ab.Wehre den nächsten genommenen Fluch ab.Dieses Relikt wurde aufgebraucht.",
+      "flavor": "Wird oft als Talisman zum Abfangen böser Geister eingesetzt. Dieser hier enthält anscheinend einen Funken göttlicher Energie."
+    },
+    "ORANGEPELLETS": {
+      "name": "Orange Pastillen",
+      "description": "Immer wenn du im selben Zug eine Macht, einen Angriff und eine Fertigkeit spielst, entferne alle deine Debuffs.",
+      "flavor": "„Hergestellt aus diversen Pilzen des Spires - vertreiben jegliche Beschwerden.“"
+    },
+    "ORICHALCUM": {
+      "name": "Oreichalkos",
+      "description": "Beendest du deinen Zug ohne Block, erhalte 6 Block.",
+      "flavor": "Ein grünliches Metall unbekannten Ursprungs. Wirkt unverwüstlich."
+    },
+    "ORNAMENTAL_FAN": {
+      "name": "Dekorativer Fächer",
+      "description": "Immer wenn du in einem Zug 3 Angriffe ausspielst, erhalte 4 Block.",
+      "flavor": "Der Fächer öffnet sich und erhärtet anscheinend immer, wenn Blut vergossen wird."
+    },
+    "ORRERY": {
+      "name": "Planetarium",
+      "description": "Wähle 5 Karten für dein Deck.Wissen!",
+      "flavor": "„Wenn du erst das Universum verstehst...“ – Zoroth"
+    },
+    "PANDORA_S_BOX": {
+      "name": "Büchse der Pandora",
+      "description": "Transformiere alle Schläge und Verteidigungen.Die Büchse der Pandora wurde geöffnet...",
+      "flavor": "Solltest du sie öffnen? Du hast ein mulmiges Gefühl."
+    },
+    "PANTOGRAPH": {
+      "name": "Pantograf",
+      "description": "Heile zu Beginn von Bosskämpfen 25 TP.",
+      "flavor": "„Ein solides Fundament ist kein Zufall. Werkzeuge zum Planen sind unerlässlich.“ – Der Architekt"
+    },
+    "PAPER_CRANE": {
+      "name": "Papierkranich",
+      "description": "Gegner mit Schwach verursachen 40% weniger Schaden statt 25%.",
+      "flavor": "Ein Origami in der Form einer Kreatur aus einer vergangenen Zeit."
+    },
+    "PAPER_FROG": {
+      "name": "Papierphrosch",
+      "description": "Gegner mit Verwundbar erleiden 75% mehr Schaden statt 50%.",
+      "flavor": "Das Papier faltet sich unentwegt zur Form einer kleinen Kreatur zusammen und wieder auseinander."
+    },
+    "PEACE_PIPE": {
+      "name": "Friedenspfeife",
+      "description": "Du kannst jetzt an Lagerfeuern Karten aus deinem Deck entfernen.",
+      "flavor": "Sorgt für einen klaren Kopf und eine reine Seele."
+    },
+    "PEAR": {
+      "name": "Birne",
+      "description": "Erhöhe beim Aufheben deine max. TP um",
+      "flavor": "Eine weit verbreitete Frucht vor der Spire-Fäule."
+    },
+    "PEN_NIB": {
+      "name": "Schreibfeder",
+      "description": "Verursache bei jedem 10. Angriff doppelten Schaden.",
+      "flavor": "Beim Halten der Feder siehst du alle, die jemals von einem Vorbesitzer des Füllers erschlagen wurden. Eine brutale Geschichte."
+    },
+    "PHILOSOPHER_S_STONE": {
+      "name": "Stein der Weisen",
+      "description": "Erhalte in deinem Zug [E] .\nALLE Gegner beginnen den Kampf mit 1 Stärke.",
+      "flavor": "Der Stein verströmt raue Energie, die alle im nahen Umkreis stärker macht."
+    },
+    "POCKETWATCH": {
+      "name": "Taschenuhr",
+      "description": "Immer wenn du 3 oder weniger Karten in einem Zug spielst, ziehe zu Beginn deines nächsten Zuges 3 Karten mehr.",
+      "flavor": "Anscheinend sind die Zeiger auf 3 Uhr stehengeblieben."
+    },
+    "POTION_BELT": {
+      "name": "Trankgürtel",
+      "description": "Erhalte beim Aufheben 2 Trankslots.",
+      "flavor": "Mit diesem Gürtel kann ich mehr Tränke tragen!"
+    },
+    "PRAYER_WHEEL": {
+      "name": "Gebetsmühle",
+      "description": "Reguläre Gegner hinterlassen jetzt ein weiteres Mal Karten.",
+      "flavor": "Das Rad dreht sich immerfort und bleibt nie stehen."
+    },
+    "PRESERVEDINSECT": {
+      "name": "Konserviertes Insekt",
+      "description": "Gegner in Elite-Kämpfen haben 25% weniger TP.",
+      "flavor": "Das Insekt scheint eine Schrumpf-Aura auszustrahlen, welche besonders große Gegner trifft."
+    },
+    "PRISMATICSHARD": {
+      "name": "Prisma-Scherbe",
+      "description": "Kampf-Kartenbelohnungen enthalten jetzt auch farblose und andersfarbige Karten.",
+      "flavor": "Beim Blick durch die Glasscherbe eröffnen sich dir völlig neue Perspektiven."
+    },
+    "QUESTION_CARD": {
+      "name": "Fragekarte",
+      "description": "Bei künftigen Kartenbelohnungen hast du 1 Karte mehr zur Auswahl.",
+      "flavor": "„Jene, die mehr Auswahl haben, mindern den Nachteil von Chaos.“ – Kublai der Große"
+    },
+    "RED_CIRCLET": {
+      "name": "Roter Reif",
+      "description": "Sieht richtig hübsch aus.",
+      "flavor": "Es gibt keine Relikte mehr. Beeindruckend!"
+    },
+    "RED_MASK": {
+      "name": "Rote Maske",
+      "description": "Wende zu Beginn jedes Kampfes 1 Schwach auf ALLE Gegner an.",
+      "flavor": "Diese sehr stilvolle Maske gehört dem Anführer der Rotmasken-Banditen. Also bist du jetzt theoretisch der Anführer?"
+    },
+    "RED_SKULL": {
+      "name": "Roter Schädel",
+      "description": "Wenn deine TP unter oder genau 50% sind, erhalte 3 Stärke mehr.",
+      "flavor": "Ein kleiner, mit Farbe verzierter Schädel."
+    },
+    "REGAL_PILLOW": {
+      "name": "Edles Kissen",
+      "description": "Heile 15 TP mehr, wenn du dich ausruhst.",
+      "flavor": "Endlich etwas für den wohlverdienten Schlaf."
+    },
+    "RING_OF_THE_SERPENT": {
+      "name": "Giftschlangenring",
+      "description": "Ersetzt Schlangenring. ?Ziehe zu Beginn deines Zuges 1 Karte mehr.",
+      "flavor": "Dein Ring hat sich verändert und verformt."
+    },
+    "RING_OF_THE_SNAKE": {
+      "name": "Schlangenring",
+      "description": "Ziehe zu Beginn jedes Kampfes 2 Karten mehr.",
+      "flavor": "Gefertigt aus einer versteinerten Schlange. Er zeugt von großem Talent als Jägerin."
+    },
+    "RUNIC_CAPACITOR": {
+      "name": "Runischer Kondensator",
+      "description": "Beginne jeden Kampf mit 3 Orb-Slots mehr.",
+      "flavor": "Mehr hilft mehr."
+    },
+    "RUNIC_CUBE": {
+      "name": "Runischer Würfel",
+      "description": "Immer wenn du TP verlierst, ziehe 1 Karte.",
+      "flavor": "Die Runen sind nicht entzifferbar."
+    },
+    "RUNIC_DOME": {
+      "name": "Runische Kuppel",
+      "description": "Du kannst nicht mehr die Absichten von Gegnern sehen.Erhalte in deinem Zug [E] .",
+      "flavor": "Die Runen sind nicht entzifferbar."
+    },
+    "RUNIC_PYRAMID": {
+      "name": "Runische Pyramide",
+      "description": "Am Ende deines Zuges wirfst du deine Hand nicht mehr ab.",
+      "flavor": "Die Runen sind nicht entzifferbar."
+    },
+    "SELF_FORMING_CLAY": {
+      "name": "Selbstformender Ton",
+      "description": "Immer wenn du im Kampf TP verlierst, erhalte im nächsten Zug 3 Block.",
+      "flavor": "„Höchst merkwürdig! Er scheint sich basierend auf meinen Gedanken zu formen! Tele-Ton?“ – Ranwid"
+    },
+    "SHOVEL": {
+      "name": "Schaufel",
+      "description": "Du kannst jetzt an Lagerfeuern nach Beute graben.",
+      "flavor": "Der Spire beherbergt unzählige Relikte längst vergessener Zivilisationen und mächtiger Abenteurer. Zeit, sie auszugraben!"
+    },
+    "SHURIKEN": {
+      "name": "Shuriken",
+      "description": "Immer wenn du ? Angriffe in einem Zug ausspielst, erhalte 1 Stärke.",
+      "flavor": "Leichte Wurfwaffen. Am besten die Augen anvisieren."
+    },
+    "SINGING_BOWL": {
+      "name": "Klangschale",
+      "description": "Anstatt eine Karte deinem Deck hinzuzufügen, kannst du +2 max. TP erhalten.",
+      "flavor": "Dieses abgenutzte Artefakt lässt eine wunderschöne Melodie erklingen, wenn man es anschlägt."
+    },
+    "SLING": {
+      "name": "Schleuder des Mutes",
+      "description": "Beginne jeden Elite-Kampf mit 2 Stärke.",
+      "flavor": "„Praktisch, wenn man besonders harten Widersachern gegenübersteht.“"
+    },
+    "SMILING_MASK": {
+      "name": "Lächelnde Maske",
+      "description": "Der Kartenentfernungsdienst des Händlers kostet jetzt immer 50 Gold.",
+      "flavor": "Diese Maske wird vom Händler getragen. Er muss einige in Reserve haben..."
+    },
+    "SNAKE_SKULL": {
+      "name": "Snecko-Schädel",
+      "description": "Immer wenn du Gift anwendest, wende 1 Gift mehr an.",
+      "flavor": "Ein Snecko-Schädel in tadellosem Zustand. Überraschend sauber und glatt, Dreck fällt unerklärlicherweise einfach davon ab."
+    },
+    "SNECKO_EYE": {
+      "name": "Snecko-Auge",
+      "description": "Ziehe in jedem Zug 2 Karten mehr. Beginne jeden Kampf Verwirrt.",
+      "flavor": "Das Auge eines gefallenen Sneckos. Viel größer, als du es dir vorgestellt hattest."
+    },
+    "SOZU": {
+      "name": "Sozu",
+      "description": "Du kannst keine Tränke mehr aufnehmen. Erhalte in deinem Zug [E] .",
+      "flavor": "Du merkst, wie magische Flüssigkeiten in der Nähe dieses Relikts die Wirkung verlieren."
+    },
+    "SPIRIT_POOP": {
+      "name": "Geisterdreck",
+      "description": "Ziemlich widerlich.",
+      "flavor": "Die verkohlten Überreste deiner Opfergaben an die Geister."
+    },
+    "SSSERPENTHEAD": {
+      "name": "Ssslangenkopf",
+      "description": "Immer, wenn du einen ?-Raum betrittst, erhalte 50 Gold.",
+      "flavor": "Am erfülltesten ist das Leben, in dem du alles kaufen kannst!"
+    },
+    "STONECALENDAR": {
+      "name": "Steinkalender",
+      "description": "Füge am Ende deines ?. Zuges ALLEN Gegnern 52 Schaden zu.",
+      "flavor": "Den Lauf der Zeit kann man im Spire nicht wahrnehmen."
+    },
+    "STRANGE_SPOON": {
+      "name": "Seltsamer Löffel",
+      "description": "Karten, die beim Ausspielen erschöpfen, werden zu 50% stattdessen abgeworfen.",
+      "flavor": "Du starrst den Löffel an, er verbiegt und verdreht sich vor deinen Augen."
+    },
+    "STRAWBERRY": {
+      "name": "Erdbeere",
+      "description": "Erhöhe beim Aufheben deine max. TP um",
+      "flavor": "„Köstlich! Nach der Fäule habe ich so eine noch nie gesehen.“ – Ranwind"
+    },
+    "SUNDIAL": {
+      "name": "Sonnenuhr",
+      "description": "Erhalte jedes . Mal, wenn du den Nachziehstapel mischst, [E] [E] .",
+      "flavor": "„Töricht und besessen von der Zeit blickten die frühen Menschen auf der Suche nach Beständigkeit gen Himmel.“ – Zoroth"
+    },
+    "SYMBIOTIC_VIRUS": {
+      "name": "Symbiotischer Virus",
+      "description": "Erschaffe zu Beginn jedes Kampfes 1 Schatten.",
+      "flavor": "Ein bisschen Schlechtes kann viel Gutes bringen..."
+    },
+    "THE_COURIER": {
+      "name": "Die Kurierin",
+      "description": "Dem Händler gehen nie mehr Karten, Relikte oder Tränke aus und seine Preise sind um 20% gesenkt.",
+      "flavor": "Die persönliche Gehilfin des Händlers!"
+    },
+    "THE_SPECIMEN": {
+      "name": "Das Exemplar",
+      "description": "Immer wenn ein Gegner stirbt, übertrage sein Gift auf einen zufälligen Gegner.",
+      "flavor": "„Faszinierend! Ich fand eine mutierte Kreatur, die erstaunliche Gifteigenschaften zeigte. Ich nehme eine Probe zur späteren Untersuchung mit.“ – Ranwid"
+    },
+    "THEABACUS": {
+      "name": "Der Abakus",
+      "description": "Immer wenn du den Nachziehstapel mischst, erhalte 6 Block.",
+      "flavor": "„Eins... Zwei... Drei...“"
+    },
+    "THREAD_AND_NEEDLE": {
+      "name": "Nadel und Faden",
+      "description": "Erhalte zu Beginn jedes Kampfes 4 Panzerrüstung.",
+      "flavor": "Der magische Faden umhüllt deinen Körper und verleiht dir eine harte Schale."
+    },
+    "TINGSHA": {
+      "name": "Tingsha",
+      "description": "Wirfst du in deinem Zug eine Karte ab, verursachst du pro abgeworfener Karte 3 Schaden an einem zufälligen Gegner.",
+      "flavor": "Der Widerhall dieses Instruments kann eine ohrenbetäubende Lautstärke erreichen."
+    },
+    "TINY_CHEST": {
+      "name": "Winzige Truhe",
+      "description": "Jeder 4. ?-Raum ist ein Schatzraum.",
+      "flavor": "„Ein gelungener Prototyp.“ – Der Architekt"
+    },
+    "TINY_HOUSE": {
+      "name": "Winziges Haus",
+      "description": "Erhalte 1 Trank.\nErhalte ? Gold.\nErhöhe deine max. TP um 5.\nWähle 1 Karte für dein Deck.\nVerbessere 1 zufällige Karte.Winziges Haus!",
+      "flavor": "„Eine fast perfekte Miniatur-Implementierung. Meine bisher beste Arbeit, allerdings noch immer nicht ausreichend.“– Der Architekt"
+    },
+    "TOOLBOX": {
+      "name": "Werkzeugkiste",
+      "description": "Wähle zu Beginn jedes Kampfes 1 von 3 zufälligen farblosen Karten und nimm diese auf die Hand.",
+      "flavor": "Ein Werkzeug für jedes Problem."
+    },
+    "TORII": {
+      "name": "Torii",
+      "description": "Anstatt 5 oder weniger ungeblockten Angriffsschaden zu erleiden, wird dieser auf 1 reduziert.",
+      "flavor": "Mit dem kleinen Torii in Händen durchströmt dich ein Gefühl der Ruhe und Sicherheit."
+    },
+    "TOUGH_BANDAGES": {
+      "name": "Harte Bandagen",
+      "description": "Wirfst du in deinem Zug eine Karte ab, erhalte pro abgeworfener Karte 3 Block.",
+      "flavor": "Verlust sorgt für Stärke."
+    },
+    "TOXIC_EGG_2": {
+      "name": "Toxisches Ei",
+      "description": "Jede Fertigkeitskarte, die du erhältst, ist verbessert.",
+      "flavor": "„Was eine fabelhafte Entdeckung! Es scheint ein inaktives Ei irgendeiner magischen Kreatur zu sein. Wer oder was mag es erschaffen haben?“ - Ranwid"
+    },
+    "TOY_ORNITHOPTER": {
+      "name": "Spielzeug-Ornithopter",
+      "description": "Immer wenn du einen Trank nutzt, heile 5 TP.",
+      "flavor": "„Dieses kleine Spielzeug ist der ideale Gefährte für den einsamen Abenteurer!“"
+    },
+    "TURNIP": {
+      "name": "Rübe",
+      "description": "Du kannst nicht mehr Gebrechlich werden.",
+      "flavor": "Am besten mit Ingwer."
+    },
+    "TWISTEDFUNNEL": {
+      "name": "Knotiger Trichter",
+      "description": "Wende zu Beginn jedes Kampfes 4 Gift auf ALLE Gegner an.",
+      "flavor": "„Daraus würde ich nicht trinken.“"
+    },
+    "UNCEASING_TOP": {
+      "name": "Immerdrehender Kreisel",
+      "description": "Immer wenn du keine Karten auf der Hand hast, ziehe eine Karte.",
+      "flavor": "Der Kreisel dreht sich mühelos immer weiter, als würdest du träumen."
+    },
+    "VAJRA": {
+      "name": "Vajra",
+      "description": "Beginne jeden Kampf mit 1 Stärke.",
+      "flavor": "Dieses dekorative Relikt wird Kriegern verliehen, die sich im Kampf als ruhmreich erweisen."
+    },
+    "VELVET_CHOKER": {
+      "name": "Samthalsband",
+      "description": "Du kannst nicht mehr als  Karten pro Zug spielen.Erhalte in deinem Zug [E] . Ich kann nur bis zu",
+      "flavor": "„Enorme Macht, aber dennoch zu eingeschränkt.“ – Kublai der Große"
+    },
+    "WAR_PAINT": {
+      "name": "Kriegsbemalung",
+      "description": "Verbessere beim Aufheben 2 zufällige Fertigkeiten.",
+      "flavor": "Eiserne nutzten so eine Bemalung, um vor der Schlacht magische Kreise zu erschaffen."
+    },
+    "WARPEDTONGS": {
+      "name": "Verformte Zange",
+      "description": "Verbessere am Anfang jedes Zuges eine zufällige Karte auf deiner Hand für den Rest des Kampfes.",
+      "flavor": "Diese verfluchte Zange gibt dir das Gefühl, sie wolle an den Ort zurück, an dem sie gestohlen wurde."
+    },
+    "WHETSTONE": {
+      "name": "Schleifstein",
+      "description": "Verbessere beim Aufheben 2 zufällige Angriffe.",
+      "flavor": "„Fleisch besiegt niemals Stahl.“ – Kublai der Große"
+    },
+    "WHITE_BEAST_STATUE": {
+      "name": "Weiße Bestienstatue",
+      "description": "Tränke werden nach jedem Kampf hinterlassen.",
+      "flavor": "Eine kleine weiße Statue einer Kreatur, die du nie zuvor gesehen hast."
+    },
+    "WINGEDGREAVES": {
+      "name": "Geflügelte Schuhe",
+      "description": "Beim Wählen des nächsten Raums kannst du 3 Mal vom Pfad abweichen.",
+      "flavor": "Mit Stil."
+    },
+    "WRISTBLADE": {
+      "name": "Unterhand-Klinge",
+      "description": "Angriffe, die 0 kosten, fügen 4 Schaden mehr zu.",
+      "flavor": "Für handliche Meuchelmorde."
+    },
+    "CERAMICFISH": {
+      "name": "Keramikfisch",
+      "description": "Immer wenn du deinem Deck eine Karte hinzufügst, erhalte 9 Gold.",
+      "flavor": "Diese sehr sorgfältig angemalten Fische wurden dafür verehrt, großes Glück zu bringen."
+    },
+    "STRIKEDUMMY": {
+      "name": "Schlag-Dummy",
+      "description": "Karten, die \"Schlag\" beinhalten, verursachen 3 Schaden mehr.",
+      "flavor": "Sieht verschlagen aus."
+    },
+    "VIOLETLOTUS": {
+      "name": "Purpurlotus",
+      "description": "Immer wenn du Ruhe verlässt, erhalte eine [E] mehr.",
+      "flavor": "Die alten Schriften beschreiben, dass die Oberfläche von \"Manapools\" mit diesen Blumen übersät waren."
+    },
+    "SACREDBARK": {
+      "name": "Heilige Rinde",
+      "description": "Verdopple den Effekt von Tränken.",
+      "flavor": "Gerüchten zufolge soll diese Rinde vom Weltenbaum selbst sein."
+    },
+    "TEARDROPLOCKET": {
+      "name": "Tränenmedaillon",
+      "description": "Beginne jeden Kampf in Ruhe.",
+      "flavor": "Ist der Besitzer blind, bleibt der Inhalt ungesehen."
+    },
+    "SLAVERSCOLLAR": {
+      "name": "Sklavenhändler-Kette",
+      "description": "In Elite- und Bosskämpfen erhalte in deinem Zug [E] .",
+      "flavor": "Rostige, grausame Ketten."
+    },
+    "AKABEKO": {
+      "name": "Akabeko",
+      "description": "Dein erster Angriff in jedem Kampf fügt 8 zusätzlichen Schaden zu.",
+      "flavor": "\"Muuuh~\""
+    },
+    "YANG": {
+      "name": "Dualität",
+      "description": "Immer wenn du einen Angriff spielst, erhalte 1 temporäre Geschicklichkeit.",
+      "flavor": "\"Und die Sonne war für immer gelöscht, als hätte sich ein Vorhang vor ihr geschlossen.\" - Zoroth"
+    },
+    "CLOAKCLASP": {
+      "name": "Manschettenknopf",
+      "description": "Erhalte am Ende deines Zuges 1 Block pro Handkarte.",
+      "flavor": "Einfaches, aber robustes Design."
+    },
+    "MELANGE": {
+      "name": "Melange",
+      "description": "Immer wenn du den Nachziehstapel mischst, Spähe 3.",
+      "flavor": "Mysteriöser Sand von unbekanntem Ursprung. Riecht nach Zimt."
+    },
+    "YIN": {
+      "name": "Yin",
+      "description": "Immer wenn du eine Fertigkeit spielst, erhalte 1 temporäre Stärke.",
+      "flavor": "Es gibt kein Licht ohne Dunkelheit. Oder doch?"
+    },
+    "INKBOTTLE": {
+      "name": "Tintenflasche",
+      "description": "Immer wenn du 10 Karten spielst, ziehe 1 Karte.",
+      "flavor": "Scheint sich von allein mit einer neuen Farbe zu füllen, wenn sie leer ist."
+    },
+    "TUNGSTENROD": {
+      "name": "Wolframstab",
+      "description": "Immer wenn du TP verlieren würdest, verliere 1 weniger.",
+      "flavor": "Er ist schwer. Sehr sehr schwer."
+    },
+    "HOLYWATER": {
+      "name": "Heiliges Wasser",
+      "description": "Ersetzt Reines Wasser.\nNimm zu Beginn jedes Kampfes 3 Wunder auf deine Hand.",
+      "flavor": "Noch aus einer Zeit vor dem Spire."
+    },
+    "PUREWATER": {
+      "name": "Reines Wasser",
+      "description": "Nimm zu Beginn jedes Kampfes ein Wunder auf deine Hand.",
+      "flavor": "Durch feinen Sand gefiltert und frei von Unreinheiten."
+    },
+    "HORNCLEAT": {
+      "name": "Hornklampe",
+      "description": "Erhalte zu Beginn deines 2. Zuges 14 Block.",
+      "flavor": "Angenehm in der Hand zu halten. Wozu die wohl mal gut war?"
+    },
+    "CAPTAINSWHEEL": {
+      "name": "Kapitänsrad",
+      "description": "Erhalte zu Beginn deines 3. Zuges 18 Block.",
+      "flavor": "Ein mit vorzüglicher Präzision geschnitztes Holzstück. Ein Name ist eingeschnitzt, aber in einer fremden Sprache."
+    },
+    "GOLDENEYE": {
+      "name": "Goldenes Auge",
+      "description": "Immer wenn du Spähst, Spähe 2 Karten mehr.",
+      "flavor": "Lies die Gedanken der Umstehenden und sieh voraus, was sie gleich tun."
+    },
+    "DAMARU": {
+      "name": "Damaru",
+      "description": "Erhalte zu Beginn deines Zuges 1 Mantra.",
+      "flavor": "Der Klang des Trömmelchens hält deinen Geist wach und zeigt dir, wie es weitergeht."
+    }
+  },
+  "powers": {
+    "ACCURACY": {
+      "name": "Präzision",
+      "description": "Messer verursachen X zusätzlichen Schaden."
+    },
+    "AFTER_IMAGE": {
+      "name": "Nachbild",
+      "description": "Immer wenn du eine Karte ausspielst, erhalte X Block."
+    },
+    "AMPLIFY": {
+      "name": "Verstärken",
+      "description": "In diesem Zug spielst du die nächste Macht doppelt.XIn diesem Zug spielst du die nächsten X Mächte doppelt."
+    },
+    "ANGER": {
+      "name": "Erzürnen",
+      "description": "Erhält immer, wenn du eine Fertigkeit ausspielst, X Stärke."
+    },
+    "ANGRY": {
+      "name": "Wütend",
+      "description": "Immer wenn X Angriffsschaden erleidet, erhält er X Stärke."
+    },
+    "ARTIFACT": {
+      "name": "Artefakt",
+      "description": "Wehrt X Debuff ab.X Debuffs ab."
+    },
+    "ATTACK_BURN": {
+      "name": "Angriffsbrand",
+      "description": "Immer wenn du einen Angriff ausspielst, erschöpft er – für X Zug.XImmer wenn du einen Angriff ausspielst, erschöpft er – für die nächsten X Züge."
+    },
+    "BACKATTACK": {
+      "name": "Hinterhalt",
+      "description": "Verursacht 50% mehr Schaden, da es dich von hinten angreift."
+    },
+    "BARRICADE": {
+      "name": "Barrikade",
+      "description": "Block wird zu Beginn deines Zuges nicht entfernt.XBlock wird zu Beginn des Zuges nicht entfernt."
+    },
+    "BEATOFDEATH": {
+      "name": "Pochen des Todes",
+      "description": "Wenn du eine Karte spielst, nimm X Schaden."
+    },
+    "BERSERK": {
+      "name": "Berserker",
+      "description": "Erhalte zu Beginn deines Zuges X  ."
+    },
+    "BIAS": {
+      "name": "Verzerrt",
+      "description": "Zu Beginn deines Zuges verlierst du X Fokus."
+    },
+    "BLUR": {
+      "name": "Verschwimmen",
+      "description": "Block wird zu Beginn deines nächsten Zuges nicht entfernt.XBlock wird zu Beginn deiner nächsten X Züge nicht entfernt."
+    },
+    "BRUTALITY": {
+      "name": "Brutalität",
+      "description": "Verliere zu Beginn deines Zuges X TP und ziehe X Karte.XVerliere zu Beginn deines Zuges X TP und ziehe X Karten."
+    },
+    "BUFFER": {
+      "name": "Puffer",
+      "description": "Verhindere den nächsten TP-Verlust.XVerhindere die nächsten X TP-Verluste."
+    },
+    "BULLET_TIME": {
+      "name": "Zeitlupe",
+      "description": "Die Energiekosten aller grünen Karten sind jetzt 0."
+    },
+    "BURST": {
+      "name": "Sprint",
+      "description": "In diesem Zug spielst du deine nächste Fertigkeit zweimal aus.XIn diesem Zug spielst du deine nächsten X Fertigkeiten zweimal aus."
+    },
+    "CHOKED": {
+      "name": "Gewürgt",
+      "description": "Dieser Gegner verliert X TP, immer wenn du in diesem Zug eine Karte ausspielst."
+    },
+    "COMBUST": {
+      "name": "Brennen",
+      "description": "Verliere am Ende deines Zuges X TP und verursache X Schaden an ALLEN Gegnern."
+    },
+    "COMPULSIVE": {
+      "name": "Unstet",
+      "description": "Ändert seine Absicht beim Erleiden von Angriffsschaden."
+    },
+    "CONFUSION": {
+      "name": "Verwirrung",
+      "description": "Immer wenn du eine Karte ziehst, sind ihre Kosten zufällig."
+    },
+    "CONSERVE": {
+      "name": "Speichern",
+      "description": "Energie wird in diesem Zug aufbewahrt.XEnergie wird für die nächsten X Züge aufbewahrt."
+    },
+    "CONSTRICTED": {
+      "name": "Umwickelt",
+      "description": "Am Ende deines Zuges erleidest du X Schaden."
+    },
+    "CORPSEEXPLOSIONPOWER": {
+      "name": "Leichenexplosion",
+      "description": "Sobald dieser Gegner stirbt, füge ALLEN Gegnern Schaden in Höhe seiner max. TP zu.XSobald dieser Gegner stirbt, füge ALLEN Gegnern Schaden in Höhe X mal seiner max. TP zu."
+    },
+    "CORRUPTION": {
+      "name": "Verderbnis",
+      "description": "Fertigkeiten kosten 0. Immer wenn du eine Fertigkeit ausspielst, erschöpft sie.XImmer wenn du eine Fertigkeit ausspielst, erschöpft sie."
+    },
+    "CREATIVE_AI": {
+      "name": "Kreative KI",
+      "description": "Zu Beginn deines Zuges erhältst du X zufällige Machtkarte auf die Hand.X zufällige Machtkarten auf die Hand."
+    },
+    "CURIOSITY": {
+      "name": "Neugier",
+      "description": "Erhält immer wenn du eine Macht ausspielst X Stärke."
+    },
+    "CURL_UP": {
+      "name": "Zusammenrollen",
+      "description": "Rollt sich bei Angriffsschaden ein und erhält X Block (einmalig pro Kampf)."
+    },
+    "DANCE_PUPPET": {
+      "name": "Tanzpuppe",
+      "description": "Immer wenn du eine Nicht-Fertigkeitskarte ausspielst, erleidest du X Schaden. (Kartentyp wechselt mit jedem Zug)XImmer wenn du eine Nicht-Angriffskarte ausspielst, erleidest du X+1 Tanzpuppe"
+    },
+    "DARK_EMBRACE": {
+      "name": "Dunkle Hingabe",
+      "description": "Immer wenn eine Karte erschöpft, ziehe 1 Karte.XImmer wenn eine Karte erschöpft, ziehe X Karten."
+    },
+    "DEMON_FORM": {
+      "name": "Dämonenform",
+      "description": "Zu Beginn deines Zuges erhältst du X Stärke."
+    },
+    "DEXLOSS": {
+      "name": "Temporäre Geschicklichkeit",
+      "description": "Verliere am Ende deines Zuges X Geschicklichkeit."
+    },
+    "DEXTERITY": {
+      "name": "Geschicklichkeit",
+      "description": "Erhöht von Karten erhaltenes Block um XVerringert von Karten erhaltenes Block um X."
+    },
+    "DOUBLE_DAMAGE": {
+      "name": "Doppelter Schaden",
+      "description": "Angriffe verursachen X Zug lang doppelten Schaden.X Züge lang doppelten Schaden."
+    },
+    "DOUBLE_TAP": {
+      "name": "Doppeltreffer",
+      "description": "In diesem Zug spielst du deinen nächsten Angriff zweimal aus.XIn diesem Zug spielst du deine nächsten X Angriffe zweimal aus."
+    },
+    "DRAW": {
+      "name": "Ziehen",
+      "description": "Ziehe zu Beginn deines Zuges X zusätzliche Karte.X Karte weniger.X zusätzliche Karten.X Karten weniger."
+    },
+    "DRAW_CARD": {
+      "name": "Karte ziehen",
+      "description": "Ziehe im nächsten Zug X Karten.X Karte."
+    },
+    "DRAW_DOWN": {
+      "name": "Weniger Ziehen",
+      "description": "Ziehe im nächsten Zug X Karte weniger.X Karten weniger."
+    },
+    "DRAW_REDUCTION": {
+      "name": "Ziehreduzierung",
+      "description": "Ziehe im nächsten Zug 1 Karte weniger.XZiehe 1 Karte weniger (für X Züge)."
+    },
+    "ECHO_FORM": {
+      "name": "Echoform",
+      "description": "Die erste in deinem Zug gespielte Karte wird zweimal gespielt.XDie ersten X in deinem Zug gespielten Karten werden zweimal gespielt."
+    },
+    "ELECTRO": {
+      "name": "Elektro",
+      "description": "Blitze treffen ALLE Gegner.XX"
+    },
+    "ENERGIZED": {
+      "name": "Energiegeladen",
+      "description": "Du erhältst X [G] zusätzlich im nächsten Zug.X zusätzliche [G] im nächsten Zug.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENERGIZEDBLUE": {
+      "name": "Energiegeladen",
+      "description": "Du erhältst X [B] zusätzlich im nächsten Zug.X zusätzliche [B] im nächsten Zug.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENTANGLED": {
+      "name": "Verwickelt",
+      "description": "Du kannst einen Zug lang keine Angriffe ausspielen."
+    },
+    "ENVENOM": {
+      "name": "Vergiften",
+      "description": "Immer wenn du ungeblockten Angriffsschaden verursachst, wende X Gift an."
+    },
+    "EQUILIBRIUM": {
+      "name": "Ausgeglichenheit",
+      "description": "Behalte deine Hand in diesem Zug.XBehalte deine Hand für X Züge."
+    },
+    "EVOLVE": {
+      "name": "Entwickeln",
+      "description": "Immer wenn du einen Status ziehst, ziehe eine Karte.XImmer wenn du einen Status ziehst, ziehe X Karten."
+    },
+    "EXPLOSIVE": {
+      "name": "Explosiv",
+      "description": "Explodiert in X Zügen und verursacht X Schaden.XExplodiert im eigenen Zug und verursacht"
+    },
+    "EXTRA_CARDS": {
+      "name": "Mehr Karten",
+      "description": "Ziehe im nächsten Zug 1 Karte mehr.XZiehe im nächsten Zug X Extrakarten."
+    },
+    "FADING": {
+      "name": "Schwindend",
+      "description": "Stirbt in X Zügen.XStirbt diesen Zug."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Schmerzfrei",
+      "description": "Immer wenn eine Karte erschöpft, erhältst du X Block."
+    },
+    "FIRE_BREATHING": {
+      "name": "Feueratem",
+      "description": "Immer wenn du eine Status- oder Fluchkarte ziehst, füge ALLEN Gegnern X Schaden zu."
+    },
+    "FLAME_BARRIER": {
+      "name": "Flammenwall",
+      "description": "Wenn du Angriffsschaden erleidest, werden dem Angreifer X Schaden zugefügt."
+    },
+    "FLEX": {
+      "name": "Temporäre Stärke",
+      "description": "Am Ende deines Zuges verlierst du X Stärke."
+    },
+    "FLIGHT": {
+      "name": "Flug",
+      "description": "Verringert zugefügten Angriffsschaden um 50%. Flug endet nach X Mal Angriffsschaden in einem Zug."
+    },
+    "FOCUS": {
+      "name": "Fokus",
+      "description": "Erhöht die Effektivität von Orbs um XVerringert die Effektivität von Orbs um X."
+    },
+    "FRAIL": {
+      "name": "Gebrechlich",
+      "description": "Karten bringen dir 25% weniger Block (für X Zug).X Züge)."
+    },
+    "GAMBIT": {
+      "name": "Schachzug",
+      "description": "Nach X Zug erhältst du X Zügen erhältst du X [B] ."
+    },
+    "GROWTHPOWER": {
+      "name": "Wachstum",
+      "description": "Erhält am Ende seines Zuges X Stärke."
+    },
+    "HEATSINK": {
+      "name": "Wärmetauscher",
+      "description": "Immer wenn du eine Macht spielst, ziehe X Karte.X Karten."
+    },
+    "HELLO": {
+      "name": "Hallo Welt",
+      "description": "Erhalte zu Beginn deines Zuges X zufällige Gewöhnliche Karte auf die Hand.X zufällige Gewöhnliche Karten auf die Hand."
+    },
+    "HEX": {
+      "name": "Bann",
+      "description": "Immer wenn du eine Nicht-Angriffskarte ausspielst, mische X Benommen in deinen Nachziehstapel."
+    },
+    "HIDE": {
+      "name": "Verstecken",
+      "description": "Du kannst bis zum Beginn deines nächsten Zuges keinen Schaden erleiden.XDu kannst X Züge lang keinen Schaden erleiden."
+    },
+    "INFINITE_BLADES": {
+      "name": "Zahllose Klingen",
+      "description": "Zu Beginn deines Zuges erhältst du X Messer.X Messer."
+    },
+    "INTANGIBLE": {
+      "name": "Immateriell",
+      "description": "Verringert in diesem Zug ALLEN erlittenen Schaden und TP-Verlust auf 1. Immateriell wird jeden zweiten Zug neu angewendet."
+    },
+    "INTANGIBLEPLAYER": {
+      "name": "Immateriell",
+      "description": "Verringert ALLEN genommenen Schaden und TP-Verlust auf 1."
+    },
+    "INVERTED": {
+      "name": "Umgekehrt",
+      "description": "Immun gegen Schaden. Immer wenn du Block erhältst, wird dieselbe Menge an TP verloren."
+    },
+    "INVINCIBLE": {
+      "name": "Unverwundbar",
+      "description": "Kann diese Runde nur noch X weitere TP verlieren.XKann diese Runde nicht mehr verletzt werden."
+    },
+    "JUGGERNAUT": {
+      "name": "Moloch",
+      "description": "Immer wenn du Block erhältst, verursachst du an einem zufälligen Gegner X Schaden."
+    },
+    "KNOWLEDGE": {
+      "name": "Wissen",
+      "description": "Immer wenn du eine Macht ausspielst, ziehe X Karten."
+    },
+    "LIFE_LINK": {
+      "name": "Lebensband",
+      "description": "Wird nach 2 Zügen mit 50% TP wiederbelebt, wenn andere Gegner noch am Leben sind."
+    },
+    "LOCKON": {
+      "name": "Anvisiert",
+      "description": "Erleidet X% mehr Schaden durch Orbs (für X Zug).X Züge)."
+    },
+    "LOOP": {
+      "name": "Schleife",
+      "description": "Nutze zu Beginn deines Zuges die passive Fähigkeit deines vordersten Orbs.XNutze zu Beginn deines Zuges die passive Fähigkeit deines vordersten Orbs X Mal."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Lernende Maschine",
+      "description": "Ziehe X zusätzliche Karte zu Beginn deines Zuges.X zusätzliche Karten zu Beginn deines Zuges."
+    },
+    "MAGNETISM": {
+      "name": "Magnetismus",
+      "description": "Zu Beginn deines Zuges erhältst du %s zufällige Farblose Karte auf die Hand.XZu Beginn deines Zuges erhältst du %s zufällige Farblose Karten auf die Hand."
+    },
+    "MALLEABLE": {
+      "name": "Wendig",
+      "description": "Erhält bei Angriffsschaden X Block. Erhaltener Block erhöht sich, wenn X ausgelöst wird. Setzt sich zu Beginn deines Zuges auf X zurück."
+    },
+    "MAYHEM": {
+      "name": "Wilder Kampf",
+      "description": "Spiele zu Beginn deines Zuges die oberste Karte deines Nachziehstapels.XSpiele zu Beginn deines Zuges die obersten X Karten deines Nachziehstapels."
+    },
+    "METALLICIZE": {
+      "name": "Metallschicht",
+      "description": "Du erhältst X Block am Ende deines Zuges.XErhält X Block am Ende des eigenen Zuges."
+    },
+    "MINION": {
+      "name": "Untertan",
+      "description": "Untertanen fliehen aus dem Kampf, wenn ihr Anführer stirbt."
+    },
+    "MODE_SHIFT": {
+      "name": "Moduswechsel",
+      "description": "Wechselt nach dem Erleiden von X Schaden in einen Defensivmodus."
+    },
+    "NEXT_TURN_BLOCK": {
+      "name": "Block im nächsten Zug",
+      "description": "Zu Beginn deines nächsten Zuges erhältst du X Block."
+    },
+    "NIGHT_TERROR": {
+      "name": "Albtraum",
+      "description": "Zu Beginn deines nächsten Zuges erhalte X Karten auf deine Hand."
+    },
+    "NO_ATTACK": {
+      "name": "Entwaffnet",
+      "description": "Du kannst keine Angriffe in diesem Zug spielen."
+    },
+    "NO_DRAW": {
+      "name": "Keine Karten",
+      "description": "Du kannst bis zum Ende des Zuges keine Karten ziehen."
+    },
+    "NOBLOCKPOWER": {
+      "name": "Kein Block",
+      "description": "Du kannst keinen Block von Karten erhalten."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Giftige Dämpfe",
+      "description": "Wende zu Beginn deines Zuges X Gift auf ALLE Gegner an."
+    },
+    "NULLIFY_ATTACK": {
+      "name": "Angriff aufheben",
+      "description": "Blockt jeden Zug einen Angriff komplett."
+    },
+    "PAINFUL_STABS": {
+      "name": "Schmerzende Stiche",
+      "description": "Wenn dieser Gegner dir Schaden zufügt, erhalte eine Wunde auf deinen Abwurfstapel."
+    },
+    "PANACHE": {
+      "name": "Elan",
+      "description": "Wenn du in diesem Zug noch X Karte ausspielst, füge ALLEN Gegnern X Schaden zu.X Karten ausspielst, füge ALLEN Gegnern"
+    },
+    "PEN_NIB": {
+      "name": "Schreibfeder",
+      "description": "Dein nächster Angriff verursacht doppelten Schaden."
+    },
+    "PHANTASMAL": {
+      "name": "Phantom",
+      "description": "Du verursachst doppelten Schaden im nächsten Zug.XDu verursachst doppelten Schaden für die nächsten X Züge."
+    },
+    "PLATED_ARMOR": {
+      "name": "Panzerrüstung",
+      "description": "Du erhältst X Block am Ende deines Zuges. Ungeblockter Angriffsschaden reduziert Panzerrüstung um 1.XErhält X Block am Ende des eigenen Zuges. Ungeblockter Angriffsschaden reduziert Panzerrüstung um 1."
+    },
+    "POISON": {
+      "name": "Gift",
+      "description": "Zu Beginn deines Zuges verlierst du X TP, dann reduziert sich Gift um 1.XVerliert zu Beginn des eigenen Zuges"
+    },
+    "PRIME": {
+      "name": "Scharf machen",
+      "description": "Immer wenn du einen Orb erschaffst, ziehe X Karte.X Karten."
+    },
+    "PRIMITIVE": {
+      "name": "Primitiv",
+      "description": "Wenn du eine Gewöhnliche Karte spielst, ziehe X Karte.X Karten."
+    },
+    "RAGE": {
+      "name": "Wut",
+      "description": "Immer wenn du in diesem Zug einen Angriff ausspielst, erhältst du X Block."
+    },
+    "REBOUND": {
+      "name": "Rückstoß",
+      "description": "Die nächste in diesem Zug gespielte Karte wird auf deinen Nachziehstapel gelegt.XDie nächsten X in diesem Zug gespielten Karten werden auf deinen Nachziehstapel gelegt."
+    },
+    "REDUCE_DAMAGE": {
+      "name": "Schadensreduktion",
+      "description": "Reduziere erlittenen Schaden um"
+    },
+    "REGENERATE": {
+      "name": "Regenerieren",
+      "description": "Heilt X TP am Ende des eigenen Zuges."
+    },
+    "REGENERATION": {
+      "name": "Erholen",
+      "description": "Heile X TP am Ende deines Zuges, dann reduziere Erholen um 1.X"
+    },
+    "REPAIR": {
+      "name": "Reparatur",
+      "description": "Am Ende des Kampfes heilst du X TP."
+    },
+    "REPULSE": {
+      "name": "Rückschlag",
+      "description": "Immer wenn X Angriffsschaden erleidet, erhältst du eine Wunde auf die Hand."
+    },
+    "RETAIN_CARDS": {
+      "name": "Karten behalten",
+      "description": "Am Ende jedes Zuges darfst du X Karte behalten.X Karten behalten."
+    },
+    "RETAIN_HAND": {
+      "name": "Hand behalten",
+      "description": "Am Ende deines Zuges wirfst du deine Hand nicht ab (für X Züge).XAm Ende deines Zuges wirfst du deine Hand nicht ab."
+    },
+    "RIPOSTE": {
+      "name": "Gegenangriff",
+      "description": "Gibt einmal pro Zug X Schaden zurück, wenn du einen Angriff ausspielst."
+    },
+    "RITUAL": {
+      "name": "Ritual",
+      "description": "Erhält am Ende des eigenen Zuges X Stärke.XErhalte am Ende deines Zuges"
+    },
+    "RUPTURE": {
+      "name": "Blutriss",
+      "description": "Beim Verlust von TP durch eine Karte erhältst du X Stärke."
+    },
+    "SADISTIC": {
+      "name": "Sadistisch",
+      "description": "Immer wenn du einen Debuff auf einen Gegner anwendest, verursachst du X Schaden."
+    },
+    "SERPENTINE": {
+      "name": "Schlangenartig",
+      "description": "Immun gegen Tränke."
+    },
+    "SHACKLED": {
+      "name": "Gefesselt",
+      "description": "Erhält am Ende des eigenen Zuges X Stärke zurück."
+    },
+    "SHARP_HIDE": {
+      "name": "Stachelhaut",
+      "description": "Immer wenn du einen Angriff ausspielst, erleide X Schaden."
+    },
+    "SHIFTING": {
+      "name": "Sphärenwechsel",
+      "description": "XVerliert beim Erleiden von Schaden genauso viel Stärke für diesen Zug."
+    },
+    "SHRIEK_FROM_BEYOND": {
+      "name": "Heulen aus dem Jenseits",
+      "description": "Immer wenn du einen Angriff ausspielst, wirfst du eine zufällige Karte ab."
+    },
+    "SKILL_BURN": {
+      "name": "Fertigkeitsbrand",
+      "description": "Immer wenn du eine Fertigkeit ausspielst, erschöpft sie – für X Zug.XImmer wenn du eine Fertigkeit ausspielst, erschöpft sie – für die nächsten X Züge."
+    },
+    "SLOW": {
+      "name": "Langsam",
+      "description": "Für jede Karte, die in diesem Zug ausgespielt wird, erhält X 10% mehr Schaden von Angriffen.X (Erleidet X% mehr Schaden)"
+    },
+    "SPLIT": {
+      "name": "Teilung",
+      "description": "Wenn seine TP bei oder unter 50% sind, teilt sich X in 2 kleinere Schleime mit entsprechend vielen TP."
+    },
+    "SPORE_CLOUD": {
+      "name": "Sporenwolke",
+      "description": "Wendet beim Tod für X Züge Verwundbar auf dich an."
+    },
+    "STASIS": {
+      "name": "Stasis",
+      "description": "Beim Tod bekommst du X auf deine Hand zurück."
+    },
+    "STATICDISCHARGE": {
+      "name": "Statische Entladung",
+      "description": "Wenn du ungeblockten Angriffsschaden erleidest, erschaffe X Blitz."
+    },
+    "STORM": {
+      "name": "Sturm",
+      "description": "Immer wenn du eine Macht spielst, erschaffe X Blitz."
+    },
+    "STRENGTH": {
+      "name": "Stärke",
+      "description": "Erhöht Angriffsschaden um XVerringert Angriffsschaden um X."
+    },
+    "SURROUNDED": {
+      "name": "Umzingelt",
+      "description": "Erleide 50% mehr Schaden, wenn du von hinten angegriffen wirst. Nutze Karten mit Zielauswahl oder Tränke, um deine Ausrichtung zu ändern."
+    },
+    "THEBOMB": {
+      "name": "Die Bombe",
+      "description": "Füge nach %1$s Zügen ALLEN Gegnern %2$s Schaden zu.XFüge am Ende dieses Zuges ALLEN Gegnern %1$s Schaden zu."
+    },
+    "THIEVERY": {
+      "name": "Diebstahl",
+      "description": "stiehlt X Gold bei jedem Angriff."
+    },
+    "THORNS": {
+      "name": "Stacheln",
+      "description": "Gibt beim Erleiden von Angriffsschaden X Schaden zurück."
+    },
+    "THOUSAND_CUTS": {
+      "name": "Tausend Schnitte",
+      "description": "Immer wenn du eine Karte ausspielst, verursachst du X Schaden an ALLEN Gegnern."
+    },
+    "TIME_WARP": {
+      "name": "Zeitschleife",
+      "description": "Bei jeder X. gespielten Karte endet dein Zug und der Zeitfresser erhält X Stärke."
+    },
+    "TIMEMAZEPOWER": {
+      "name": "Verirrte Zeit",
+      "description": "Bei jeder X. gespielten Karte endet dein Zug."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Handwerkszeug",
+      "description": "Ziehe zu Beginn deines Zuges X Karte und wirf X Karte ab.X Karten und wirf X Karten ab."
+    },
+    "UNAWAKENED": {
+      "name": "Noch nicht erwacht",
+      "description": "Dieser Gegner ist noch nicht erwacht…"
+    },
+    "UNSTABLE": {
+      "name": "Instabil",
+      "description": "Verursache genug Schaden, um ihn aus dem Gleichgewicht zu bringen."
+    },
+    "VENOMOLOGY": {
+      "name": "Giftlehre",
+      "description": "Gift wird um X stärker, statt jeden Zug abzunehmen."
+    },
+    "VULNERABLE": {
+      "name": "Verwundbar",
+      "description": "Erleide X% mehr Schaden von Angriffen (für X Zug).X Züge)."
+    },
+    "WEAKENED": {
+      "name": "Schwach",
+      "description": "Angriffe verursachen X% weniger Schaden (für X Zug).X Züge)."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Geistform",
+      "description": "Verliere am Ende deines Zuges X Geschicklichkeit."
+    },
+    "VIGOR": {
+      "name": "Elan",
+      "description": "Dein nächster Angriff fügt X zusätzlichen Schaden zu."
+    },
+    "CONDENSE": {
+      "name": "DEPRECATED Condense",
+      "description": "You cannot take more than X from any attack."
+    },
+    "GROUNDED": {
+      "name": "DEPRECATED Grounded",
+      "description": "Whenever you play a Skill, enter Calm."
+    },
+    "ADAPTATION": {
+      "name": "Eile",
+      "description": "Immer wenn du Zorn annimmst, ziehe X Karte.X Karten."
+    },
+    "MASTERY": {
+      "name": "DEPRECATED Mastery",
+      "description": "Whenever you attempt to switch Stances to your current Stance, gain X [B]."
+    },
+    "CONTROLLED": {
+      "name": "Mentale Festung",
+      "description": "Immer wenn du deine Haltung änderst, erhalte X Block."
+    },
+    "HOTHOT": {
+      "name": "DEPRECATED Hot hot",
+      "description": "While you are in Wrath, deal X damage back whenever you receive attack damage."
+    },
+    "FREETOPLAYPOWER": {
+      "name": "DEPRECATED FreeToPlayPower",
+      "description": "Ignore energy costs on the next card you play this turn.XIgnore energy costs on the next X cards you play this turn."
+    },
+    "COLLECT": {
+      "name": "Sammeln",
+      "description": "Erhalte zu Beginn deines nächsten Zuges ein Wunder+ auf die Hand.XErhalte zu Beginn deiner nächsten X Züge ein Wunder+ auf die Hand."
+    },
+    "EMOTIONALTURMOILPOWER": {
+      "name": "DEPRECATED Emotional Turmoil",
+      "description": "At the start of your turn, enter a new random basic stance."
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Serenity",
+      "description": "While you are in Calm, HP loss is reduced by"
+    },
+    "ENDTURNDEATH": {
+      "name": "Gotteslästerer",
+      "description": "Stirb zu Beginn deines Zuges."
+    },
+    "ALWAYSMAD": {
+      "name": "DEPRECATED Always Mad",
+      "description": "No longer receive double damage while in Wrath."
+    },
+    "MANTRA": {
+      "name": "Mantra",
+      "description": "Wenn du X Mantra erhalten hast, nimm Göttlichkeit an."
+    },
+    "ANGELFORM": {
+      "name": "Ewiges Leben",
+      "description": "Erhalte am Ende deines Zuges X Panzerrüstung."
+    },
+    "WIREHEADINGPOWER": {
+      "name": "Voraussicht",
+      "description": "Spähe X zu Beginn deines Zuges."
+    },
+    "VAULT": {
+      "name": "Überspringen",
+      "description": "Nimmt zu Beginn des nächsten Zuges X Schaden."
+    },
+    "FLOWPOWER": {
+      "name": "DEPRECATED FlowPower",
+      "description": "When you play an Attack, gain X temporary Strength. When you play a Skill, gain ,X temporary Dexterity."
+    },
+    "ESTABLISHMENTPOWER": {
+      "name": "Etablierung",
+      "description": "Immer wenn eine Karte behalten wird, verringere ihre Kosten um X."
+    },
+    "DEVOTIONPOWER": {
+      "name": "Hingabe",
+      "description": "Erhalte zu Beginn deines Zuges X Mantra."
+    },
+    "BLOCKRETURNPOWER": {
+      "name": "Block zurück",
+      "description": "Wenn dieser Gegner angegriffen wird, erhalte X Block."
+    },
+    "BATTLEHYMN": {
+      "name": "Kampfhymne",
+      "description": "Erhalte zu Beginn deines Zuges X Zerschmettern auf die Hand.X Zerschmettern auf die Hand."
+    },
+    "FREEATTACKPOWER": {
+      "name": "Gratis-Angriff",
+      "description": "Ignoriere die Energiekosten des nächsten gespielten Angriffs.XIgnoriere die Energiekosten der nächsten X gespielten Angriffe."
+    },
+    "NOSKILLS": {
+      "name": "Keine Fertigkeiten",
+      "description": "Du kannst diesen Zug keine Fertigkeiten spielen."
+    },
+    "MASTERREALITYPOWER": {
+      "name": "Realität meistern",
+      "description": "Jede Karte, die im Kampf erschaffen wird, ist verbessert.XXX"
+    },
+    "STRIKEUP": {
+      "name": "Starke Schläge",
+      "description": "Karten, die Schlag beinhalten, fügen X zusätzlichen Schaden zu."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Retribution",
+      "description": "Whenever you lose HP, gain X Vigor."
+    },
+    "CANNOTCHANGESTANCEPOWER": {
+      "name": "Kann Haltung nicht Ändern",
+      "description": "Du kannst diesen Zug deine Haltung nicht ändern."
+    },
+    "OMEGAPOWER": {
+      "name": "Omega-Macht",
+      "description": "Füge zu Beginn deines Zuges ALLEN Gegnern X Schaden zu."
+    },
+    "DUPLICATIONPOWER": {
+      "name": "Verdopplung",
+      "description": "Die nächste Karte in diesem Zug wird zweimal gespielt.XDie nächsten X Karten werden diesen Zug zweimal gespielt."
+    },
+    "NIRVANA": {
+      "name": "Nirvana",
+      "description": "Immer wenn du spähst, erhalte X Block."
+    },
+    "WRATHNEXTTURNPOWER": {
+      "name": "Kochende Wut",
+      "description": "Nimm zu Beginn deines nächsten Zuges Zorn an."
+    },
+    "DEVAFORM": {
+      "name": "Deva",
+      "description": "Erhalte zu Beginn deines Zuges [W] XErhalte zu Beginn deines Zuges X mal [W] Xund erhöhe dies um X.XTRANSLATE NOTE: At the start of your turn, gain [W] 2 times and increase this by 1."
+    },
+    "OMNISCIENCEPOWER": {
+      "name": "Allwissenheit",
+      "description": "X"
+    },
+    "WAVEOFTHEHANDPOWER": {
+      "name": "Wink mit der Hand",
+      "description": "Immer wenn du Block erhältst, wende an ALLEN Gegnern X Schwach an."
+    },
+    "ENERGYDOWNPOWER": {
+      "name": "Fasten",
+      "description": "Verliere zu Beginn deines Zuges X."
+    },
+    "DISCIPLINEPOWER": {
+      "name": "VERALTET Disziplin",
+      "description": "Wenn du deinen Zug mit unbenutzter [W] beendest, ziehe nächsten Zug genauso viele Karten."
+    },
+    "FLICKPOWER": {
+      "name": "VERALTET Geschnippt",
+      "description": "Wenn dieser Gegner noch X2 mal geschnippt wird, erleidet er X1 mal geschnippt wird, erleidet er X Schaden."
+    },
+    "PATHTOVICTORYPOWER": {
+      "name": "Markierung",
+      "description": "Verliert immer X TP, wenn du Schwachpunkte spielst."
+    },
+    "LIKEWATERPOWER": {
+      "name": "Wie Wasser",
+      "description": "Erhalte am Ende deines Zuges X Block, wenn du in Ruhe bist."
+    },
+    "STUDY": {
+      "name": "Studieren",
+      "description": "Mische am Ende deines Zuges X Einsichten in deinen Nachziehstapel.X Einsicht in deinen Nachziehstapel."
+    }
+  },
+  "potions": {
+    "ANCIENT_POTION": {
+      "name": "Uralter Trank",
+      "description": "Erhalte 1 Artefakt."
+    },
+    "ATTACKPOTION": {
+      "name": "Angriffstrank",
+      "description": "Wähle 1 von 3 zufälligen Angriffskarten. Nimm sie auf die Hand, sie kostet diesen Zug 0.1Wähle 1 von 3 zufälligen Angriffskarten. Nimm 2 Kopien auf die Hand, sie kosten diesen Zug 0."
+    },
+    "BLOCK_POTION": {
+      "name": "Blocktrank",
+      "description": "Erhalte 12 Block."
+    },
+    "BLOODPOTION": {
+      "name": "Bluttrank",
+      "description": "Heile 20% deiner max. TP."
+    },
+    "DEXTERITY_POTION": {
+      "name": "Geschicklichkeitstrank",
+      "description": "Erhalte 2 Geschicklichkeit."
+    },
+    "ELIXIR": {
+      "name": "VERALTET Elixier",
+      "description": ""
+    },
+    "ENERGY_POTION": {
+      "name": "Energietrank",
+      "description": "Erhalte 2 Energie."
+    },
+    "ENTROPICBREW": {
+      "name": "Entropisches Gebräu",
+      "description": "Fülle deine leeren Trankslots mit zufälligen Tränken auf."
+    },
+    "ESSENCEOFSTEEL": {
+      "name": "Stahlessenz",
+      "description": "Erhalte 4 Panzerrüstung."
+    },
+    "EXPLOSIVE_POTION": {
+      "name": "Explosivtrank",
+      "description": "Füge ALLEN Gegnern 10 Schaden zu."
+    },
+    "FAIRYPOTION": {
+      "name": "Feenflasche",
+      "description": "Anstatt zu sterben, wird dieser Trank abgeworfen und heile auf 30% deiner max. TP."
+    },
+    "FEARPOTION": {
+      "name": "Angsttrank",
+      "description": "Wende 3 Verwundbar an."
+    },
+    "FIRE_POTION": {
+      "name": "Feuertrank",
+      "description": "Füge 20 Schaden zu."
+    },
+    "FOCUSPOTION": {
+      "name": "Fokustrank",
+      "description": "Erhalte 2 Fokus."
+    },
+    "FRUIT_JUICE": {
+      "name": "Fruchtsaft",
+      "description": "Erhalte 5 max. TP."
+    },
+    "GAMBLERSBREW": {
+      "name": "Zocker-Gebräu",
+      "description": "Wirf beliebig viele Karten ab, dann ziehe genauso viele."
+    },
+    "GHOSTINAJAR": {
+      "name": "Flaschengeist",
+      "description": "Erhalte 1 Immateriell."
+    },
+    "HEALTH_POTION": {
+      "name": "Gesundheitstrank",
+      "description": "VERALTET"
+    },
+    "LIQUIDBRONZE": {
+      "name": "Flüssige Bronze",
+      "description": "Erhalte 3 Stacheln."
+    },
+    "POISON_POTION": {
+      "name": "Gifttrank",
+      "description": "Wende 6 Gift an."
+    },
+    "POTION_SLOT": {
+      "name": "Trankslot",
+      "description": "Nutze während des Kampfes Tränke, um Boni zu erhalten oder Gegner zu behindern.0Trankslot"
+    },
+    "POWERPOTION": {
+      "name": "Machttrank",
+      "description": "Wähle 1 von 3 zufälligen Machtkarten. Nimm sie auf die Hand, sie kostet diesen Zug 0.1Wähle 1 von 3 zufälligen Machtkarten. Nimm 2 Kopien auf die Hand, sie kosten diesen Zug 0."
+    },
+    "REGEN_POTION": {
+      "name": "Erholungstrank",
+      "description": "Erhalte 5 Erholen."
+    },
+    "SKILLPOTION": {
+      "name": "Fertigkeitstrank",
+      "description": "Wähle 1 von 3 zufälligen Fertigkeitskarten. Nimm sie auf die Hand, sie kostet diesen Zug 0.1Wähle 1 von 3 zufälligen Fertigkeitskarten. Nimm 2 Kopien auf die Hand, sie kosten diesen Zug 0."
+    },
+    "SMOKEBOMB": {
+      "name": "Rauchbombe",
+      "description": "Fliehe aus einem Kampf (außer Bosskämpfen), ohne Belohnungen zu erhalten.0Ich bin umzingelt!"
+    },
+    "SNECKOOIL": {
+      "name": "Snecko-Öl",
+      "description": "Ziehe 5 Karten. Ändere die Kosten deiner Handkarten zufällig."
+    },
+    "SPEEDPOTION": {
+      "name": "Flinkheitstrank",
+      "description": "Erhalte 5 Geschicklichkeit. Verliere am Ende deines Zuges  Geschicklichkeit."
+    },
+    "STEROIDPOTION": {
+      "name": "Steroidetrank",
+      "description": "Erhalte 5 Stärke. Verliere am Ende deines Zuges  Stärke."
+    },
+    "STRENGTH_POTION": {
+      "name": "Stärketrank",
+      "description": "Erhalte 2 Stärke."
+    },
+    "SWIFT_POTION": {
+      "name": "Schnelligkeitstrank",
+      "description": "3Ziehe  Karten."
+    },
+    "WEAK_POTION": {
+      "name": "Schwächetrank",
+      "description": "Wende 3 Schwach an."
+    },
+    "DUPLICATIONPOTION": {
+      "name": "Verdopplungstrank",
+      "description": "Deine nächste Karte in diesem Zug wird zweimal gespielt.1Deine nächsten 2 Karten in diesem Zug werden zweimal gespielt."
+    },
+    "STANCEPOTION": {
+      "name": "Haltungstrank",
+      "description": "Nimm Ruhe oder Zorn an."
+    },
+    "ELIXIRPOTION": {
+      "name": "Elixier",
+      "description": "Erschöpfe beliebig viele Handkarten."
+    },
+    "HEARTOFIRON": {
+      "name": "Eisernes Herz",
+      "description": "Erhalte 6 Metallisieren."
+    },
+    "CUNNINGPOTION": {
+      "name": "Listigkeitstrank",
+      "description": "Erhalte 3 Messer+ auf die Hand."
+    },
+    "POTIONOFCAPACITY": {
+      "name": "Kapazitätstrank",
+      "description": "Erhalte 2 Orb-Slots."
+    },
+    "ESSENCEOFDARKNESS": {
+      "name": "Schatten-Essenz",
+      "description": "Erschaffe 1 Schatten pro Orb-Slot."
+    },
+    "BOTTLEDMIRACLE": {
+      "name": "Wunder in der Flasche",
+      "description": "Erhalte 2 Wunder auf die Hand."
+    },
+    "AMBROSIA": {
+      "name": "Ambrosia",
+      "description": "Nimm die Haltung Göttlichkeit an."
+    },
+    "DISTILLEDCHAOS": {
+      "name": "Chaos-Destillat",
+      "description": "Spiele die obersten 3 Karten deines Nachziehstapels."
+    },
+    "LIQUIDMEMORIES": {
+      "name": "Flüssige Erinnerungen",
+      "description": "Wähle eine Karte aus deinem Abwurfstapel und nimm sie auf die Hand. Sie kostet diesen Zug 0.1Wähle  Karten aus deinem Abwurfstapel und nimm sie auf die Hand. Sie kosten diesen Zug 0."
+    },
+    "CULTISTPOTION": {
+      "name": "Kultistentrank",
+      "description": "Erhalte 1 Ritual."
+    },
+    "COLORLESSPOTION": {
+      "name": "Farbloser Trank",
+      "description": "Wähle 1 von 3 zufälligen farblosen Karten. Nimm sie auf die Hand, sie kostet diesen Zug 0.1Wähle 1 von 3 zufälligen farblosen Karten. Nimm 2 Kopien auf die Hand, sie kosten diesen Zug 0."
+    },
+    "BLESSINGOFTHEFORGE": {
+      "name": "Gunst der Schmiede",
+      "description": "Verbessere deine Handkarten bis zum Ende des Kampfes."
+    }
+  },
+  "events": {
+    "BEGGAR": {
+      "name": "Alter Bettler",
+      "description": "Ein alter, in Felle gewickelter Bettler streckt die Hand nach dir aus, als du vorbeikommst. „Hast du ein paar Münzen, mein Kind?“",
+      "choices": [
+        "[Gold geben] Gold: Entferne eine Karte aus deinem Deck.",
+        "[Weiter]",
+        "[Verlassen]"
+      ]
+    },
+    "COLOSSEUM": {
+      "name": "Das Kolosseum",
+      "description": "Tschack!!! \n .. \n ...... \n ... \n Du wurdest bewusstlos geschlagen...",
+      "choices": [
+        "[Weiter]",
+        "[Kämpfen]",
+        "[FEIGHEIT] Fliehen.",
+        "[SIEG] Ein mächtiger Kampf mit vielen Belohnungen."
+      ]
+    },
+    "THE_MAUSOLEUM": {
+      "name": "Das Mausoleum",
+      "description": "Du wagst dich durch eine Reihe von Gräbern und stehst nun vor einem großen edelsteinbesetzten Sarkophag in der Mitte eines runden Raums. \n Du kannst die Inschrift auf dem Sarg nicht entziffern, bemerkst jedoch, wie schwarzer Nebel aus den Seiten strömt.",
+      "choices": [
+        "[Sarg öffnen] Erhalte ein Relikt. %: Werde verflucht – Leid.",
+        "[Verlassen]"
+      ]
+    },
+    "NEST": {
+      "name": "Das Nest",
+      "description": "Eine lange Reihe maskierter Gestalten ist zu sehen, die \n eine bescheidene Kathedrale betreten.",
+      "choices": [
+        "[Einreihen] Erhalte Ritualdolch. Verliere TP.",
+        "[Schlagen und Stehlen] Erhalte"
+      ]
+    },
+    "FOUNTAIN_OF_CLEANSING": {
+      "name": "Der Göttliche Brunnen",
+      "description": "Du kommst an einem glitzerndem Wasser vorbei, das endlos aus einem Brunnen auf einer nahen Mauer sprudelt.",
+      "choices": [
+        "[Trinken] Entferne alle Flüche aus deinem Deck.",
+        "[Verlassen]"
+      ]
+    },
+    "THE_MOAI_HEAD": {
+      "name": "Der Moai-Kopf",
+      "description": "Du stolperst über etwas, das *sehr* deplatziert wirkt. Vor dir erhebt sich ein enormer Steinkopf aus einem großen Mauerabschnitt, welcher sich nicht bewegt und verändert, wie alles andere hier. \n Der Mund des Kopfes ist weit geöffnet und zeigt große, einschüchternde Zähne, die von Blut rot befleckt sind. Die Oberfläche der Statue ist überzogen mit Piktogrammen, welche anscheinend Leute darstellen, die sich in den Mund dieses Kopfes werfen und verschlungen werden. Warum sollte jemand das tun?",
+      "choices": [
+        "[Hineinspringen] Heile TP komplett. Verliere max. TP.",
+        "[Opfern: Goldener Götze] Erhalte 333 Gold. Verliere Goldenen Götzen."
+      ]
+    },
+    "THE_CLERIC": {
+      "name": "Der Priester",
+      "description": "Ein seltsamer blauer Humanoider mit einem goldenen Helm (?) nähert sich dir grinsend. \n \"Hallo, mein Freund! Ich bin Priester! Bist du an meinen Diensten interessiert?!\", schreit die Kreatur laut.",
+      "choices": [
+        "[Heilen] 35 Gold: Heile TP.",
+        "[Reinigen] Gold: Entferne eine Karte aus deinem Deck.",
+        "[Verlassen]"
+      ]
+    },
+    "THE_JOUST": {
+      "name": "Der Tjost",
+      "description": "Als du deinen Weg zwischen den großen Gebäuden fortsetzt, gelangst du an eine lange schmale Brücke. Du bemerkst Ritter an beiden Enden, die einander zugewandt sind. Du kommst näher... \n „Halt!“ \n \n Ein Ritter zwingt dich mit seiner riesigen Lanze, stehen zu bleiben.",
+      "choices": [
+        "[Weiter]",
+        "[Besitzer] Setze Gold – 30%: Gewinne Gold.",
+        "[Zusehen]"
+      ]
+    },
+    "DESIGNER": {
+      "name": "Designer In-Spire",
+      "description": "Du entdeckst einen bunten Laden mit dem Banner „IN-SPIRE“ und gehst hinein, um zu schauen, was drinnen ist. \n „Nein, auf keinen Fall. Nö. Ich kann dich nicht reinlassen!“ \n Ein Mann mit lächerlicher Kleidung erscheint am Eingang, um dich zu blockieren.",
+      "choices": [
+        "[Anpassungen] Verliere Gold. Verbessere eine Karte.",
+        "[Entrümpeln] Verliere Gold. Entferne eine Karte.",
+        "[Komplettservice] Verliere Gold. Entferne 1 Karte, verbessere 1 zufällige Karte.",
+        "[Schlagen] Verliere TP."
+      ]
+    },
+    "THE_LIBRARY": {
+      "name": "Die Bibliothek",
+      "description": "Du kommst an einem verzierten, anscheinend verlassenen Gebäude vorbei. \n Eine Tafel, die von der Wand gerissen wurde, liegt auf dem Boden. Darauf steht: „DIE BIBLIOTHEK“. \n Drinnen findest du zahllose Schriftrollen, Manuskripte und Bücher. \n Du nimmst dir eins und genießt etwas stille Zeit auf einem gemütlichen Stuhl.",
+      "choices": [
+        "[Lesen] Wähle 1 von 20 Karten für dein Deck.",
+        "[Schlafen] Heile TP."
+      ]
+    },
+    "THE_WOMAN_IN_BLUE": {
+      "name": "Die Frau in Blau",
+      "description": "Aus der Dunkelheit zieht dich ein Arm in einen kleinen Laden. Als sich deine Augen an die Dunkelheit gewöhnt haben, erkennst du eine blasse Frau in schicken Kleidern, die auf eine Wand voller Tränke zeigt. \n „Kauf einen Trank. Jetzt!“, sagt sie.",
+      "choices": [
+        "[Kaufe 1 Trank]",
+        "[Kaufe 2 Tränke]",
+        "[Kaufe 3 Tränke] Gold.",
+        "[Verlassen]"
+      ]
+    },
+    "LIARS_GAME": {
+      "name": "Die Ssssslange",
+      "description": "Du kommst in einen Raum, wo du ein ein großes Loch im Boden findest. Als du dem Loch näherkommst, erscheint daraus eine enorme Schlangenkreatur. \n \n „Ho hooo! Hallo, hallo! Wassss haben wir denn hier? Hallo Abenteurer, ich stelle dir eine einfache Frage. \n Am erfülltesten ist das Leben, in dem du alles kaufen kannst! \n Stimmst du zu?“",
+      "choices": [
+        "[Zustimmen] Erhalte Gold. Werde verflucht – Zweifel.",
+        "[Widersprechen]"
+      ]
+    },
+    "DUPLICATOR": {
+      "name": "Duplikator",
+      "description": "Vor dir befindet sich ein dekorierter Altar, der einem uralten Wesen gewidmet ist.",
+      "choices": [
+        "[Beten] Dupliziere eine Karte in deinem Deck.",
+        "[Verlassen] Wähle eine Karte zum Duplizieren."
+      ]
+    },
+    "DRUG_DEALER": {
+      "name": "Erweiterer",
+      "description": "Ein Mann mit einer Augenklappe und einem teuflischem Grinsen schlendert lässig zu dir herüber. \n „Heda, Fremdling. Bist du interessiert, die Wissenschaft voranzubringen? Kein Training oder Segen kann dich so stark machen, wie ich es kann. Du wirst es brauchen, falls du einer dieser Helden mit Todessehnsucht bist. \n Was sagste?“",
+      "choices": [
+        "[J.A.X. testen] Werde GEJAXXT.",
+        "[Versuchsperson werden] Transformiere 2 Karten.",
+        "[Mutagene einnehmen] Erhalte ein besonderes Relikt.",
+        "[Verlassen]"
+      ]
+    },
+    "MATCH_AND_KEEP": {
+      "name": "Finde die Paare!",
+      "description": "„Hier sind zwölf Karten! Finde Paare, um sie zu behalten! Fünf Versuche, aufgedeckt ist aufgedeckt. \n Bist du bereit? Los geht's!“",
+      "choices": [
+        "[Weiter]",
+        "[Verlassen]",
+        "[Spielen] Übrige Versuche:"
+      ]
+    },
+    "ADDICT": {
+      "name": "Flehender Landstreicher",
+      "description": "Gerade willst du dich an einer Gruppe verschleierter Figuren vorbeischleichen, da kommt einer von ihnen auf dich zu. \n „Hast du was für mich, mein Freund? Bitte... ein paar Münzen vielleicht?“ \n „Ich brauche nur einen Platz zum Wohnen, ich habe Schätze dafür einzutauschen...“ \n Er wirkt wahnhaft, aber harmlos.",
+      "choices": [
+        "[Gold geben] Gold: Erhalte ein Relikt.",
+        "[Rauben] Erhalte ein Relikt. Werde verflucht - Scham.",
+        "[Verlassen]"
+      ]
+    },
+    "GOLDEN_WING": {
+      "name": "Flügelstatue",
+      "description": "Zwischen den Steinen und Brocken fällt dir eine aufwändige große blaue Statue auf, die einen Flügel darstellt. \n Du siehst Gold aus einigen Rissen quillen. Vielleicht ist im Inneren noch mehr...",
+      "choices": [
+        "[Beten] Entferne eine Karte aus deinem Deck. Verliere TP.",
+        "[Zerstören] Erhalte - Gold.",
+        "[Verlassen]"
+      ]
+    },
+    "FALLING": {
+      "name": "Freier Fall",
+      "description": "Auf dem Weg nach oben hüpfst du von einer schwebenden Form zur nächsten und rutschst dabei aus. \n \n Du beginnst zu fallen.",
+      "choices": [
+        "[Weiter] [Landen] Verliere",
+        "[Gesperrt] Erfordert: Fertigkeitskarte [Kanalisieren] Verliere",
+        "[Gesperrt] Erfordert: Machtkarte [Schlagen] Verliere"
+      ]
+    },
+    "MINDBLOOM": {
+      "name": "Gedankenblüte",
+      "description": "Wie du so läufst und das Chaos des Spires durchquerst, fühlen sich deine Gedanken plötzlich sehr... echt an... \n \n Allmählich manifestieren sich Vorstellungen von Monstern und Reichtümern in der Realität. \n Die Erfahrung eilt flüchtig davon. Was tust du?",
+      "choices": [
+        "[Ich bin Krieg] Bekämpfe einen Boss des 1. Akts. Erhalte 1 seltenes Relikt.",
+        "[Ich bin reich] Erhalte 999 Gold. Werde verflucht - 2 Normalität.",
+        "[Ich bin gesund] Heile deine TP komplett. Werde verflucht - Zweifel.",
+        "[Ich bin wach] Verbessere alle Karten. Du kannst dich nicht mehr heilen.",
+        "[Verlassen]"
+      ]
+    },
+    "SECRETPORTAL": {
+      "name": "Geheimes Portal",
+      "description": "Vor dir erblickst du etwas, was in dieser fremden Landschaft fehl am Platze wirkt. Hier ist, seltsam in eine der lebende Wände des Jenseits eingelassen, ein umschlossener Steineingang, gefüllt mit einem wirbelnden magischen Portal. \n \n Du bist dir nicht sicher, wo es hinführt, aber es könnte deine Reise durch den Spire beschleunigen.",
+      "choices": [
+        "[Das Portal betreten] Bewege dich DIREKT zum Boss.",
+        "[Verlassen]"
+      ]
+    },
+    "BONFIRE_ELEMENTALS": {
+      "name": "Geister des Lagerfeuers",
+      "description": "Du triffst auf eine Gruppe vermutlich violetter Feuergeister, die um ein großes Lagerfeuer tanzen.",
+      "choices": [
+        "[Weiter]",
+        "[Verlassen]",
+        "[Opfern] Erhalte eine Belohnung gemäß deiner Opfergabe. Wähle eine Karte zum Opfern."
+      ]
+    },
+    "FACETRADER": {
+      "name": "Gesichtshändler",
+      "description": "Du läufst an einer unheimlichen Statue vorbei, die einige Masken in den Händen hat... \n Hinter dir wispert es sanft: \n \"Stopp.\"",
+      "choices": [
+        "[Anfassen] Verliere Gold.",
+        "[Austauschen] 50%: Gutes Gesicht. 50%: Schlechtes Gesicht.",
+        "[Verlassen]",
+        "[Weiter] TP, erhalte"
+      ]
+    },
+    "WINDING_HALLS": {
+      "name": "Gewundene Hallen",
+      "description": "Auf deinem Weg die gekrümmten Pfade hinauf verläufst du dich immer wieder, weil die Wände und der Boden sich unerklärlicherweise vor deinen Augen zu verschieben scheinen. \n \n Die ständig in deinem Hinterkopf flüsternden Stimmen helfen auch nicht gerade weiter.",
+      "choices": [
+        "[Spur zurückverfolgen] Verliere max. TP.",
+        "[Dem Wahnsinn hingeben] Erhalte 2 Wahnsinn. Verliere TP.",
+        "[Konzentrieren] Werde verflucht – Leid. Heile TP."
+      ]
+    },
+    "WHEEL_OF_CHANGE": {
+      "name": "Glücksrad",
+      "description": "Du triffst auf einen adrett aussehenden, fröhlichen Gremlin. \n „Jetzt ist es Zeit, das Rad zu drehen! Bist du B E R E I T ? Natürlich bist du das!“",
+      "choices": [
+        "[Spielen]"
+      ]
+    },
+    "GOLDEN_IDOL": {
+      "name": "Goldener Götze",
+      "description": "Du findest ein unscheinbares Podest, auf dem friedlich ein glänzender goldener Götze ruht. Er sieht unglaublich wertvoll aus. \n \n Du bist sicher, keine Fallen in der Nähe zu erkennen.",
+      "choices": []
+    },
+    "GOLDEN_SHRINE": {
+      "name": "Goldener Schrein",
+      "description": "Vor dir befindet sich ein kunstvoller Schrein, der einem uralten Geist gewidmet ist.",
+      "choices": [
+        "[Beten] Erhalte Gold.",
+        "[Entweihen] Erhalte 275 Gold. Werde verflucht – Reue.",
+        "[Verlassen]"
+      ]
+    },
+    "TOMB_OF_LORD_RED_MASK": {
+      "name": "Grab des Herren der Roten Maske",
+      "description": "Ein reichlich verziertes Grab ist auf der anderen Seite eines schwebenden Pfades zu sehen. Als du das Grab erreichst, bemerkst du einen Schlitz für Goldmünzen, über dem eine Inschrift eingeritzt wurde.",
+      "choices": [
+        "[Die Rote Maske aufsetzen] Erhalte 222 Gold.",
+        "[Opfern: Gold] Verliere gesamtes Gold. Erhalte ein Relikt.",
+        "[Verlassen]"
+      ]
+    },
+    "BIG_FISH": {
+      "name": "Großer Fang",
+      "description": "Dein Weg führt dich durch einen langen Korridor, wo du eine Banane, einen Donut und eine Kiste herumschweben siehst. Nein... bei genauerer Betrachtung wird deutlich, dass sie an Schnüre gebunden sind, die aus Löchern in der Decke kommen. Du hörst ein leises hämisches Kichern von oben, als du dich den Objekten näherst. \n Was tust du?",
+      "choices": [
+        "[Banane] Heile TP.",
+        "[Donut] Max. TP + .",
+        "[Kiste] Erhalte ein Relikt. Werde verflucht – Reue.",
+        "[Verlassen]"
+      ]
+    },
+    "SPIRE_HEART": {
+      "name": "Herz des Spire",
+      "description": "Ba-bumm... Ba-bumm... Ba-bumm... \n Eine tief pulsierende Bedrohung ist im ganzen Raum zu spüren... \n Ist dies das Herz des Spires? Der Quell dieses Bösen?",
+      "choices": [
+        "[Weiter]"
+      ]
+    },
+    "LAB": {
+      "name": "Labor",
+      "description": "In diesem Raum stehen lauter Gestelle voller Teströhren, Messbecher, Kolben, Forceps, Klemmschellen, Rührstäbe, Zangen, Schutzbrillen, Trichter, Pipetten, Zylinder, Kondensatoren und sogar einer seltenen gewundenen Glasröhre. \n \n Woher kennst du die Namen all dieser Werkzeuge? Nicht wichtig - du siehst dich um.",
+      "choices": [
+        "[Durchsuchen] Finde einige Tränke!"
+      ]
+    },
+    "LIVING_WALL": {
+      "name": "Lebendige Wand",
+      "description": "Als du eine Sackgasse erreichst und dich umdrehst, krachen Mauern von der Decke - du bist gefangen! \n \n Drei Gesichter materialisieren sich aus den Wänden und sprechen. \n „Vergiss, was du weißt, und ich lasse dich gehen.“ \n „Ich verlange Veränderung, um neuen Raum freizugeben.“ \n „Wenn du mich passieren willst, musst du wachsen.“",
+      "choices": [
+        "[Vergessen] Entferne eine Karte aus deinem Deck.",
+        "[Verändern] Transformiere eine Karte aus deinem Deck.",
+        "[Wachsen] Verbessere eine Karte aus deinem Deck. Wähle eine Karte zum Entfernen. Wähle eine Karte zum Transformieren. Wähle eine Karte zum Verbessern.",
+        "[Verlassen]"
+      ]
+    },
+    "SHINING_LIGHT": {
+      "name": "Lichtschein",
+      "description": "Du findest eine schimmernde Bündelung von Licht im Zentrum des Raumes. \n \n Sein warmes Leuchten und die verzaubernden Muster laden dich zu ihm ein.",
+      "choices": [
+        "[Hindurchgehen] Verbessere 2 zufällige Karten. Verliere TP.",
+        "[Verlassen]"
+      ]
+    },
+    "MASKED_BANDITS": {
+      "name": "Maskierte Banditen",
+      "description": "Hehehe... Danke für das Gold! \n Oh, ich liebe Gold. Es ist so schön. \n Glänzende, glitzernde Stücklein sind sie!",
+      "choices": [
+        "[Bezahlen] ALL dein Gold verlieren.",
+        "[Kämpfen!]",
+        "[Weiter]",
+        "[Verlassen]"
+      ]
+    },
+    "MYSTERIOUS_SPHERE": {
+      "name": "Mysteriöse Sphäre",
+      "description": "Aus dem chaotischen Terrain der Umgebung ragt eine knochige Kugel hervor, die ein mysteriöses leuchtendes Objekt umgibt. \n Neugierig, was sich im Inneren befindet, bemerkst du ein paar Wächter, die ein Auge darauf haben.",
+      "choices": [
+        "[Kugel öffnen] Kampf. Belohnung: Seltenes Relikt.",
+        "[Verlassen]",
+        "[Kämpfen]"
+      ]
+    },
+    "NOTEFORYOURSELF": {
+      "name": "Notiz an dich selbst",
+      "description": "Du bemerkst einen losen Stein einer Säule, der dir besonders ins Auge fällt.",
+      "choices": [
+        "[Weiter]",
+        "[Nehmen und Geben] Erhalte und lagere eine Karte ein.",
+        "[Ignorieren]",
+        "[Verlassen]"
+      ]
+    },
+    "N_LOTH": {
+      "name": "N’loth",
+      "description": "Eine seltsame Kreatur, die einen buckligen Rücken hat, aus dem mehrere Tentakel sprießen, wühlt sich durch einen Haufen Müll und Trümmer vor dir. Als du dich näherst, schlurft er auf eine unbedrohlich wirkende Weise auf dich zu. \n „N’loth hungrig. Füttere N’loth.“",
+      "choices": [
+        "[Opfern: ] Verliere dieses Relikt. Erhalte ein besonderes Relikt.",
+        "[Verlassen]"
+      ]
+    },
+    "MUSHROOMS": {
+      "name": "Pilze",
+      "description": "Du gibst dem unnatürlichen Verlangen, zu essen nach. Als du Pilz um Pilz verzehrst, spürst du aufkeimende Benommenheit und verlierst das Bewusstsein. Als du erwachst, fühlst du dich sehr seltsam. \n Du heilst 25% deiner TP, wirst aber auch infiziert.",
+      "choices": [
+        "[Zertrampeln] Erzürne die Pilze.",
+        "[Essen] Heile TP. Werde verflucht – Parasit.",
+        "[Kämpfen]",
+        "[Verlassen]"
+      ]
+    },
+    "GHOSTS": {
+      "name": "Rat der Geister",
+      "description": "Beim weiteren Aufstieg beginnt dicker schwarzer Rauch aus dem Boden und Wänden um dich herum zu quillen, welcher sich zu drei maskierten Gestalten formt. \n \n \"Noch eine von Niaus Puppen, glaube ich.\" \n \"JAWOLL! SIE MACHT IMMER DIE LUSTIGSTEN SPIELZEUGE!\" \n \n Dir fällt ein riesiges Grinsen auf, als sich die dritte Gestalt an dich wendet. \n \"Ignoriere die Anderen... Magst du eine Kostprobe unserer Kraft?\"",
+      "choices": [
+        "[Annehmen] Erhalte 5 Apparieren. Verliere max. TP.",
+        "[Ablehnen]"
+      ]
+    },
+    "PURIFIER": {
+      "name": "Schrein der Reinigung",
+      "description": "Vor dir befindet sich ein kunstvoller Schrein, der einem vergessenen Geist gewidmet ist.",
+      "choices": [
+        "[Beten] Entferne eine Karte aus deinem Deck.",
+        "[Verlassen] Wähle eine Karte zum Entfernen."
+      ]
+    },
+    "UPGRADE_SHRINE": {
+      "name": "Schrein der Verbesserung",
+      "description": "Vor dir befindet sich ein kunstvoller Schrein, der einem vergessenen Geist gewidmet ist.",
+      "choices": [
+        "[Beten] Verbessere eine Karte.",
+        "[Verlassen] Wähle eine Karte zum Verbessern."
+      ]
+    },
+    "TRANSMORGRIFIER": {
+      "name": "Schrein der Verwandlung",
+      "description": "Vor dir befindet sich ein kunstvoller Schrein, der einem vergessenen Geist gewidmet ist.",
+      "choices": [
+        "[Beten] Transformiere eine Karte.",
+        "[Verlassen] Wähle eine Karte zum Transformieren."
+      ]
+    },
+    "SCRAP_OOZE": {
+      "name": "Schrottschlamm",
+      "description": "Als du den Raum betrittst, hörst du ein Gurgeln und das Zermahlen von Metallen. Vor dir liegt eine schleimartige Kreatur, die mehr als genug Schrott gegessen hat. Aus dem Inneren der Kreatur siehst du Licht schimmern - vielleicht etwas Magisches? Es scheint, als könntest du ein paar Schätze bekommen, wenn du einfach in seine... Öffnung greifst. Allerdings könnten die Säure und scharfen Dinge schmerzhaft sein.",
+      "choices": [
+        "[Hineingreifen] Verliere TP. %: Finde ein Relikt.",
+        "[Verlassen]"
+      ]
+    },
+    "SENSORYSTONE": {
+      "name": "Sinnesstein",
+      "description": "Als du durch das Jenseits wanderst, entdeckst du einen leuchtenden Tesserakt, der sanft in der Luft kreist und schwankt.",
+      "choices": [
+        "[Erinnern] Wähle 1 farblose Karte für dein Deck.",
+        "[Erinnern] Wähle 2 farblose Karten für dein Deck. Verliere TP.",
+        "[Erinnern] Wähle 3 farblose Karten für dein Deck. Verliere TP."
+      ]
+    },
+    "WEMEETAGAIN": {
+      "name": "So sieht man sich wieder!",
+      "description": "\"So sieht man sich wieder!\" \n Ein vergnügter, zerzauster Kerl kommt mit fröhlichen Schritten auf dich zu. Du kennst diesen Mann nicht. \n \n \"Ich bin's, Ranwid! Haste heute Sachen für mich dabei? Das übliche? So 'n Typ wie ich schafft's nicht alleine, weißte?\" \n Du musterst ihn misstrauisch und wägst deine Möglichkeiten ab...",
+      "choices": [
+        "[Trank geben] Verliere . Erhalte ein Relikt",
+        "[Gold geben] Verliere Gold . Erhalte ein Relikt",
+        "[Karte geben] Verliere . Erhalte ein Relikt",
+        "[Angreifen]"
+      ]
+    },
+    "DEAD_ADVENTURER": {
+      "name": "Toter Abenteurer",
+      "description": "Während du den Abenteurer durchsuchst, wirst du überrascht!",
+      "choices": [
+        "[Durchsuchen] Finde Beute.",
+        "[Verlassen]"
+      ]
+    },
+    "BACK_TO_BASICS": {
+      "name": "Uralte Inschrift",
+      "description": "Als du durch die Stadt stromerst, fällt dir eine Wand ins Auge, die mit Schriftzeichen der Ahnen bedeckt ist. Gerade versuchst du zu begreifen, was die rätselhaften Symbole und Glyphen bedeuten könnten, da beginnt die Inschrift zu leuchten. \n Auf einmal wird dir die Bedeutung klar...",
+      "choices": [
+        "[Eleganz] Entferne eine Karte aus deinem Deck.",
+        "[Schlichtheit] Verbessere alle Schläge und Verteidigungen. Wähle eine Karte zum Entfernen.",
+        "[Verlassen]"
+      ]
+    },
+    "VAMPIRES": {
+      "name": "Vampire (?)",
+      "description": "Auf einer unbeleuchteten Straße triffst du auf ein paar vermummte Gestalten, die gerade mitten in irgendeinem dunklen Ritual sind. Als du näher kommst, wenden sie sich dir in gespenstischem Gleichklang zu. Der Größte von ihnen entblößt Fangzähne und streckt eine lange, blasse Hand nach dir aus. \n „Schließ dich uns an, Bruder, und spüre die Wärme des Spire.“",
+      "choices": [
+        "[Annehmen] Entferne alle Schläge. Erhalte 5 Bisse. Verliere max. TP.",
+        "[Ablehnen]",
+        "[Verlassen]"
+      ]
+    },
+    "CURSED_TOME": {
+      "name": "Verfluchter Foliant",
+      "description": "In einem verlassenen Tempel findest du ein riesiges Buch. Es ist geöffnet und gefüllt mit kryptischen Schriften. \n \n Als du versuchst, das komplizierte Skript zu verstehen, beginnt es sich zu verändern und verwandelt sich in eine Schrift, die du lesen kannst.",
+      "choices": [
+        "[Lesen]",
+        "[Weiter] Verliere 1 TP.",
+        "[Weiter] Verliere 2 TP.",
+        "[Weiter] Verliere 3 TP.",
+        "[Aufhören] Verliere 3 TP.",
+        "[Nehmen] Erhalte das Buch. Verliere TP.",
+        "[Verlassen]"
+      ]
+    },
+    "FORGOTTEN_ALTAR": {
+      "name": "Vergessener Altar",
+      "description": "Vor dir befindet sich ein Altar, der einem vergessenen Gott gewidmet ist. \n Auf dem Altar sitzt eine verzierte weibliche Statue mit ausgestreckten Armen. \n Sie ruft nach dir, sie verlangt ein Opfer.",
+      "choices": []
+    },
+    "ACCURSED_BLACKSMITH": {
+      "name": "Verwunschene Schmiede",
+      "description": "Geduckt betrittst du eine kleine Hütte. Drinnen bemerkst du, dass es eine Schmiede sein muss. Die Schmiedewerkzeuge sind sehr staubig, doch im Ofen lodert ein Feuer. Du bist nervös...",
+      "choices": [
+        "[Schmieden] Verbessere eine Karte in deinem Deck.",
+        "[Stöbern] Erhalte ein besonderes Relikt. Werde verflucht – Schmerz.",
+        "[Verlassen] Wähle eine Karte zum Verbessern"
+      ]
+    },
+    "WORLD_OF_GOOP": {
+      "name": "Welt aus Schleim",
+      "description": "Du fällst in eine Pfütze. \n SIE IST AUS KLEBRIGEM SCHLEIM!! \n Verzweifelt kämpfst du dich mehrere Minuten lang frei; der Schleim fühlt sich brennend an. \n Schleim in deinen Ohren, Schleim in deiner Nase, Schleim überall. \n \n Beim Herausklettern merkst du, dass etwas von deinem Gold fehlt. Als du zurück in die Pfütze blickst, siehst du deine fehlenden Münzen zusammen mit dem Gold anderer glückloser Abenteurer.",
+      "choices": [
+        "[Gold sammeln] Erhalte Gold. Verliere TP.",
+        "[Zurücklassen] Verliere Gold."
+      ]
+    },
+    "KNOWING_SKULL": {
+      "name": "Wissender Schädel",
+      "description": "Du befindest dich in einer alten, dekorierten Kammer. In der Mitte des Raumes sitzt ein großer Schädel auf einem verzierten Podest. Als du dich näherst, geht der Schädel in Flammen auf und wendet sich dir zu.",
+      "choices": [
+        "[Weiter]",
+        "[Information?] Enthülle den Boss. Verliere",
+        "[Erfolg?] Erhalte eine farblose Karte. Verliere TP.",
+        "[Stärkung?] Erhalte einen Trank. Verliere TP.",
+        "[Reichtümer?] Erhalte Gold. Verliere TP.",
+        "[Wie komme ich hier raus?] Verliere TP.",
+        "[Verlassen]"
+      ]
+    }
+  },
+  "keywords": {
+    "ARTIFACT": {
+      "names": [
+        "artefakt"
+      ],
+      "description": "Negiert den nächsten Debuff."
+    },
+    "BLOCK": {
+      "names": [
+        "block",
+        "blockt"
+      ],
+      "description": "Verhindert Schaden bis zum nächsten Zug."
+    },
+    "BURN": {
+      "names": [
+        "brennen",
+        "burns"
+      ],
+      "description": "Brennen ist eine unspielbare Statuskarte, die dir Schaden zufügt."
+    },
+    "CHANNEL": {
+      "names": [
+        "erschaffen",
+        "erschaffe",
+        "erschaffst",
+        "erschaffene",
+        "erschaffenen"
+      ],
+      "description": "Ein erschaffener Orb kommt in deinen vordersten freien Slot. Hast du keine freien Slots, so entlädt sich dein vorderster Orb, um Platz zu machen."
+    },
+    "CONFUSED": {
+      "names": [
+        "verwirrt",
+        "Gepreised sei Snecko!"
+      ],
+      "description": "Immer wenn du eine Karte ziehst, sind ihre Kosten zufällig."
+    },
+    "CURSE": {
+      "names": [
+        "fluch",
+        "flüche",
+        "fluchkarte"
+      ],
+      "description": "Fluchkarten sind negative Karten, die in deinem Deck bleiben."
+    },
+    "DARK": {
+      "names": [
+        "schatten",
+        "dark+"
+      ],
+      "description": "Orb: Erhöht seinen Schaden pro Zug. Beim Entladen fügt er dem Gegner mit den wenigsten TP Schaden zu."
+    },
+    "DAZED": {
+      "names": [
+        "benommen"
+      ],
+      "description": "Benommen ist eine unspielbare, flüchtige Statuskarte."
+    },
+    "DEXTERITY": {
+      "names": [
+        "geschicklichkeit"
+      ],
+      "description": "Geschicklichkeit verbessert von Karten erhaltenen Block."
+    },
+    "ETHEREAL": {
+      "names": [
+        "flüchtig"
+      ],
+      "description": "Hast du diese Karte am Ende deines Zuges auf der Hand, erschöpft sie, ist also für den Rest des Kampfes aus deinem Deck entfernt."
+    },
+    "EVOKE": {
+      "names": [
+        "entladen",
+        "entlade",
+        "entladene",
+        "entladenen"
+      ],
+      "description": "Verbrauche den Orb auf der rechten Seite und nutze seinen Entladen-Effekt."
+    },
+    "EXHAUST": {
+      "names": [
+        "erschöpfen",
+        "erschöpfe",
+        "erschöpft"
+      ],
+      "description": "Erschöpfte Karten werden für den Rest dieses Kampfes aus deinem Deck entfernt."
+    },
+    "FOCUS": {
+      "names": [
+        "fokus"
+      ],
+      "description": "Fokus erhöht die Effektivität von erschaffenen Orbs."
+    },
+    "FRAIL": {
+      "names": [
+        "gebrechlich"
+      ],
+      "description": "Bist du Gebrechlich, erhältst du 25% weniger Block von Karten."
+    },
+    "FROST": {
+      "names": [
+        "frost",
+        "frosts"
+      ],
+      "description": "Orb: Erhalte Block."
+    },
+    "INNATE": {
+      "names": [
+        "angeboren"
+      ],
+      "description": "Beginne jeden Kampf mit dieser Karte auf deiner Hand."
+    },
+    "INTANGIBLE": {
+      "names": [
+        "immateriell"
+      ],
+      "description": "Reduziere jeglichen genommenen Schaden und TP-Verlust auf 1."
+    },
+    "LIGHTNING": {
+      "names": [
+        "blitz",
+        "blitze"
+      ],
+      "description": "Orb: Fügt zufälligen Gegnern Schaden zu."
+    },
+    "LOCKED": {
+      "names": [
+        "gesperrt"
+      ],
+      "description": "Diese Karte muss noch freigeschaltet werden."
+    },
+    "LOCK_ON": {
+      "names": [
+        "anvisieren"
+      ],
+      "description": "Anvisierte Ziele erhalten 50% mehr Schaden durch Orbs."
+    },
+    "OPENER": {
+      "names": [
+        "eröffnung"
+      ],
+      "description": "Eine Karte mit Eröffnung kann nur als erste Karte eines Zuges gespielt werden."
+    },
+    "PLASMA": {
+      "names": [
+        "plasma",
+        "plasma+"
+      ],
+      "description": "Orb: Erhalte Energie."
+    },
+    "POISON": {
+      "names": [
+        "gift",
+        "vergiftet"
+      ],
+      "description": "Vergiftete Kreaturen verlieren zu Beginn ihres Zuges entsprechend viele TP. Gift verringert sich in jedem Zug um 1."
+    },
+    "RETAIN": {
+      "names": [
+        "behalten",
+        "behalte",
+        "behaltene"
+      ],
+      "description": "Karten, die du behältst, wirfst du am Ende des Zuges nicht ab."
+    },
+    "SHIV": {
+      "names": [
+        "messer",
+        "messer"
+      ],
+      "description": "Messer sind kostenlose Angriffskarten, die bei Benutzung erschöpfen."
+    },
+    "STATUS": {
+      "names": [
+        "status"
+      ],
+      "description": "Statuskarten werden am Ende des Kampfes entfernt."
+    },
+    "STRENGTH": {
+      "names": [
+        "stärke"
+      ],
+      "description": "Stärke lässt Angriffe mehr Schaden zufügen."
+    },
+    "STRIKE": {
+      "names": [
+        "schlag"
+      ],
+      "description": "Jede Karte mit dem Wort \"Schlag\" in ihrem Namen."
+    },
+    "THORNS": {
+      "names": [
+        "stachel",
+        "stacheln"
+      ],
+      "description": "Gibt beim Erleiden von Angriffsschaden Schaden zurück."
+    },
+    "TODO": {
+      "names": [
+        "todo",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE"
+      ],
+      "description": "This card is NOT IMPLEMENTED. Someone should really fix that..."
+    },
+    "TRANSFORM": {
+      "names": [
+        "transformieren",
+        "transformierst",
+        "transformiere"
+      ],
+      "description": "Transformierte Karten ändern sich zu einer Karte gleicher Farbe, aber zufälliger Seltenheit."
+    },
+    "UNKNOWN": {
+      "names": [
+        "unbekannt"
+      ],
+      "description": "Du bist dieser Karte noch nicht begegnet."
+    },
+    "UNPLAYABLE": {
+      "names": [
+        "unspielbar"
+      ],
+      "description": "Unspielbare Karten kannst du nicht aus deiner Hand spielen."
+    },
+    "UPGRADE": {
+      "names": [
+        "verbessern",
+        "verbessere",
+        "verbesserte",
+        "verbessertes",
+        "verbessert"
+      ],
+      "description": "Verbessern macht Karten mächtiger. Karten können nur einmal verbessert werden."
+    },
+    "VOID": {
+      "names": [
+        "leere",
+        "voids"
+      ],
+      "description": "Leere ist eine unspielbare Statuskarte, die beim Ziehen Energie verbraucht."
+    },
+    "VULNERABLE": {
+      "names": [
+        "verwundbar"
+      ],
+      "description": "Verwundbare Kreaturen erleiden 50% mehr Schaden durch Angriffe."
+    },
+    "WEAK": {
+      "names": [
+        "schwach",
+        "schwächen",
+        "schwach",
+        "schwächt"
+      ],
+      "description": "Schwache Kreaturen fügen mit Angriffen 25% weniger Schaden zu."
+    },
+    "WOUND": {
+      "names": [
+        "wunde",
+        "wunden"
+      ],
+      "description": "Wunden sind unspielbare Statuskarten."
+    },
+    "STANCE": {
+      "names": [
+        "haltung",
+        "haltungen",
+        "haltungswechsel"
+      ],
+      "description": "Du kannst immer nur eine Haltung haben."
+    },
+    "WRATH": {
+      "names": [
+        "zorn"
+      ],
+      "description": "In dieser Haltung verursachst und erhältst du doppelten Angriffsschaden."
+    },
+    "CALM": {
+      "names": [
+        "ruhe"
+      ],
+      "description": "Erhalte beim Verlassen dieser Haltung [W] [W] ."
+    },
+    "DIVINITY": {
+      "names": [
+        "göttlichkeit"
+      ],
+      "description": "Erhalte beim Annehmen dieser Haltung [W] [W] [W] . Angriffe fügen dreifachen Schaden zu. Verlasse diese Haltung am Beginn deines nächsten Zuges."
+    },
+    "PRAYER": {
+      "names": [
+        "mantra",
+        "durch gewalt"
+      ],
+      "description": "Wenn du 10 Mantra erhältst, nimm Göttlichkeit an."
+    },
+    "SCRY": {
+      "names": [
+        "spähen",
+        "spähe",
+        "spähst"
+      ],
+      "description": "Sieh die obersten X Karten deines Nachziehstapels an. Du darfst beliebige davon abwerfen."
+    },
+    "REGEN": {
+      "names": [
+        "erholen"
+      ],
+      "description": "Erholen heilt am Ende deines Zuges TP. Erholen verringert sich in jedem Zug um 1."
+    },
+    "VIGOR": {
+      "names": [
+        "kraft"
+      ],
+      "description": "Dein nächster Angriff fügt mehr Schaden zu."
+    },
+    "RITUAL": {
+      "names": [
+        "ritual"
+      ],
+      "description": "Erhalte am Ende deines Zuges Stärke."
+    },
+    "FATAL": {
+      "names": [
+        "tödlich"
+      ],
+      "description": "Wird ausgelöst, wenn diese Karte einen Gegner tötet, der kein Untertan ist."
+    }
+  },
+  "monsters": {
+    "ACIDSLIME_L": {
+      "name": "Säureschleim (G)",
+      "move_names": [
+        "Ätzende Spucke",
+        "Spalten",
+        "Wabbeln"
+      ]
+    },
+    "ACIDSLIME_M": {
+      "name": "Säureschleim (M)",
+      "move_names": [
+        "Ätzende Spucke",
+        "Wabbeln"
+      ]
+    },
+    "ACIDSLIME_S": {
+      "name": "Säureschleim (K)"
+    },
+    "APOLOGY_SLIME": {
+      "name": "Entschuldigungsschleim"
+    },
+    "AWAKENEDONE": {
+      "name": "Der Erweckte",
+      "move_names": [
+        "Seelenschlag",
+        "Dunkles Echo",
+        "Reinigung",
+        "Schlamm"
+      ]
+    },
+    "BANDITBEAR": {
+      "name": "Bär",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITCHILD": {
+      "name": "Pointy",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITLEADER": {
+      "name": "Romeo",
+      "move_names": [
+        ""
+      ]
+    },
+    "BOOKOFSTABBING": {
+      "name": "Buch des Stechens",
+      "move_names": [
+        ""
+      ]
+    },
+    "BRONZEAUTOMATON": {
+      "name": "Bronze-Automaton",
+      "move_names": [
+        "HYPERSTRAHL"
+      ]
+    },
+    "BRONZEORB": {
+      "name": "Bronzeorb",
+      "move_names": [
+        ""
+      ]
+    },
+    "BYRD": {
+      "name": "Fogl",
+      "move_names": [
+        ""
+      ]
+    },
+    "CENTURION": {
+      "name": "Zenturio",
+      "move_names": [
+        ""
+      ]
+    },
+    "CHAMP": {
+      "name": "Der Champ",
+      "move_names": [
+        "Defensivhaltung",
+        "Hinrichten",
+        "Schlag ins Gesicht"
+      ]
+    },
+    "CHOSEN": {
+      "name": "Auserwählte",
+      "move_names": [
+        ""
+      ]
+    },
+    "CORRUPTHEART": {
+      "name": "Verdorbenes Herz",
+      "move_names": [
+        ""
+      ]
+    },
+    "CULTIST": {
+      "name": "Kultist",
+      "move_names": [
+        "",
+        "",
+        "Zauberformel"
+      ]
+    },
+    "DAGGER": {
+      "name": "Dolch",
+      "move_names": [
+        ""
+      ]
+    },
+    "DARKLING": {
+      "name": "Dunkeling",
+      "move_names": [
+        "Mampf! Mampf!"
+      ]
+    },
+    "DECA": {
+      "name": "Deka",
+      "move_names": [
+        ""
+      ]
+    },
+    "DONU": {
+      "name": "Donu",
+      "move_names": [
+        "Kreis der Macht"
+      ]
+    },
+    "EXPLODER": {
+      "name": "Explodierer",
+      "move_names": [
+        ""
+      ]
+    },
+    "FIREORB": {
+      "name": "Feuerorb",
+      "move_names": [
+        ""
+      ]
+    },
+    "FLAMEBRUISER": {
+      "name": "Flammenschläger",
+      "move_names": [
+        ""
+      ]
+    },
+    "FUNGIBEAST": {
+      "name": "Pilzbestie",
+      "move_names": [
+        "Wachsen"
+      ]
+    },
+    "FUZZYLOUSEDEFENSIVE": {
+      "name": "Laus",
+      "move_names": [
+        "Speichelnetz"
+      ]
+    },
+    "FUZZYLOUSENORMAL": {
+      "name": "Laus",
+      "move_names": [
+        "Wachsen"
+      ]
+    },
+    "GIANTHEAD": {
+      "name": "Riesenkopf",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINFAT": {
+      "name": "Fetter Gremlin",
+      "move_names": [
+        "Zerschmettern"
+      ]
+    },
+    "GREMLINLEADER": {
+      "name": "Gremlinanführer",
+      "move_names": [
+        "Versammeln!"
+      ]
+    },
+    "GREMLINNOB": {
+      "name": "Gremlin-Aristo",
+      "move_names": [
+        "Schädelstoß",
+        "Bullenangriff"
+      ]
+    },
+    "GREMLINTHIEF": {
+      "name": "Schleichender Gremlin",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINTSUNDERE": {
+      "name": "Schildgremlin",
+      "move_names": [
+        "Beschützen",
+        "Schildstoß"
+      ]
+    },
+    "GREMLINWARRIOR": {
+      "name": "Wütender Gremlin",
+      "move_names": [
+        "Kralle"
+      ]
+    },
+    "GREMLINWIZARD": {
+      "name": "Gremlinzauberer",
+      "move_names": [
+        "Vorbereiten",
+        "Ultimativer Stoß"
+      ]
+    },
+    "HEALER": {
+      "name": "Mystikerin",
+      "move_names": [
+        ""
+      ]
+    },
+    "HEXAGHOST": {
+      "name": "Hexageist",
+      "move_names": [
+        "Entflammen",
+        "Versengen",
+        "Inferno"
+      ]
+    },
+    "JAWWORM": {
+      "name": "Kieferwurm",
+      "move_names": [
+        "Brüllen",
+        "Dreschen"
+      ]
+    },
+    "LAGAVULIN": {
+      "name": "Lagavulin",
+      "move_names": [
+        "Seele aussaugen"
+      ]
+    },
+    "LOOTER": {
+      "name": "Plünderer",
+      "move_names": [
+        "Ausfallschritt",
+        "Ausrauben"
+      ]
+    },
+    "MAW": {
+      "name": "Der Schlund",
+      "move_names": [
+        ""
+      ]
+    },
+    "MUGGER": {
+      "name": "Straßenräuber",
+      "move_names": [
+        "Ausfallschritt",
+        "Ausrauben"
+      ]
+    },
+    "NEMESIS": {
+      "name": "Nemesis",
+      "move_names": [
+        ""
+      ]
+    },
+    "ORB_WALKER": {
+      "name": "Kugelwandler",
+      "move_names": [
+        "Verstärken"
+      ]
+    },
+    "PUPPETEER": {
+      "name": "Puppenspieler",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPTOMANCER": {
+      "name": "Reptilomantin",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPULSOR": {
+      "name": "Repulsor",
+      "move_names": [
+        ""
+      ]
+    },
+    "SENTRY": {
+      "name": "Wache",
+      "move_names": [
+        "Zerfallen"
+      ]
+    },
+    "SERPENT": {
+      "name": "Spire-Wuchs",
+      "move_names": [
+        ""
+      ]
+    },
+    "SHELLED_PARASITE": {
+      "name": "Gepanzerter Parasit",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERBLUE": {
+      "name": "Sklavenhändler",
+      "move_names": [
+        "Harken"
+      ]
+    },
+    "SLAVERBOSS": {
+      "name": "Zuchtmeister",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERRED": {
+      "name": "Sklavenhändler",
+      "move_names": [
+        "Kratzen",
+        "Verwickeln"
+      ]
+    },
+    "SLIMEBOSS": {
+      "name": "Schleimboss",
+      "move_names": [
+        "Zuschlagen",
+        "Vorbereiten",
+        "Spalten",
+        "Klebriger Nebel"
+      ]
+    },
+    "SNAKEPLANT": {
+      "name": "Schlangenpflanze",
+      "move_names": [
+        "Schwächende Sporen"
+      ]
+    },
+    "SNECKO": {
+      "name": "Snecko",
+      "move_names": [
+        "Verwirrendes Blenden",
+        "Rutenschlag",
+        "Biss"
+      ]
+    },
+    "SPHERICGUARDIAN": {
+      "name": "Sphärischer Wächter",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIKESLIME_L": {
+      "name": "Stachelschleim (G)",
+      "move_names": [
+        "Wabbeln",
+        "Spalten"
+      ]
+    },
+    "SPIKESLIME_M": {
+      "name": "Stachelschleim (M)",
+      "move_names": [
+        "Wabbeln"
+      ]
+    },
+    "SPIKESLIME_S": {
+      "name": "Stachelschleim (K)"
+    },
+    "SPIKER": {
+      "name": "Stachler",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESHIELD": {
+      "name": "Spire-Schild",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESPEAR": {
+      "name": "Spire-Speer",
+      "move_names": [
+        ""
+      ]
+    },
+    "THECOLLECTOR": {
+      "name": "Der Sammler",
+      "move_names": [
+        ""
+      ]
+    },
+    "THEGUARDIAN": {
+      "name": "Der Wächter",
+      "move_names": [
+        "Defensivmodus",
+        "Erbitterter Hieb",
+        "Einrollen",
+        "Zwillingsschlag",
+        "Wirbelwind",
+        "Aufladen",
+        "Dampf ablassen"
+      ]
+    },
+    "TIMEEATER": {
+      "name": "Zeitfresser",
+      "move_names": [
+        ""
+      ]
+    },
+    "TORCHHEAD": {
+      "name": "Fackelkopf",
+      "move_names": [
+        ""
+      ]
+    },
+    "TRANSIENT": {
+      "name": "Schwundling",
+      "move_names": [
+        ""
+      ]
+    },
+    "WRITHINGMASS": {
+      "name": "Knäuelmasse",
+      "move_names": [
+        ""
+      ]
+    }
+  },
+  "characters": {
+    "DEFECT": {
+      "name": "Das Defekte",
+      "description": "Ein Kampf-Automaton, das Selbstbewusstsein erlangte.\nManipuliert Orbs mithilfe vorzeitlicher Technologie."
+    },
+    "IRONCLAD": {
+      "name": "Der Eiserne",
+      "description": "Der verbliebene Soldat der Eisernen.\nVerkaufte seine Seele, um dämonische Energien nutzen zu können."
+    },
+    "THE_SILENT": {
+      "name": "Die Stille",
+      "description": "Eine tödliche Jägerin aus den Nebelländern.\nBeseitigt Gegner mit Dolchen und Giften."
+    },
+    "WATCHER": {
+      "name": "Die Seherin",
+      "description": "Eine blinde Asketin, die kam, um den Spire \"auszuwerten\".\nMeisterin der göttlichen Haltungen."
+    }
+  }
+}

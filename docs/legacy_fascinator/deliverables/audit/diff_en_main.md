@@ -1,0 +1,282 @@
+# 数字差异审计
+
+- 旧版: deliverables/audit/baseline_en.json (1667 tokens)
+- 新版: deliverables/audit/new_en_main.json (768 tokens)
+
+## 消失(旧有新无) 211 种 / 988 处
+- `2` ×92 | 旧上下文: sort&compress]{natbib}  { }{ || thout context (McNemar $p{=} || thout context (McNemar $p{=} || b) at (0,0) {gap B\\ demand  || on 200/200 paired seeds; $ $ ||  confidence $ {conf}=s/(s+c+
+- `1` ×82 | 旧上下文: }  {multirow}  {array}  {L}[ || w}  {array}  {L}[1]{>{  }p{# || am of experience $ {E}={[}e_ || nt= , fill=white, inner sep= ||  followed by decay $a_v(t{+} || wed by decay $a_v(t{+}1) = (
+- `0` ×69 | 旧上下文: lds 20/20 completion versus  || nism genuinely runs (JCG${>} || tered conditions ($ $JCG${<} || 0$, Holm $p{=}1.5 10^{-9}$,  || ology (FAS 30/30  {vs} flat  || ds), graph context 20/20 vs 
+- `3` ×60 | 旧上下文: hyperref}  {caption}    { }{ || fit=(it)(rc)(ch), inner sep= || rs, fit=(ev)(ae), inner sep= || orners, fit=(ac), inner sep= || orners, fit=(ci), inner sep= || ma (episodic space $a_{ }{=}
+- `20` ×45 | 旧上下文: avioral experiments---and a  || istent graph context yields  || ent graph context yields 20/ || s 20/20 completion versus 0/ || n-free aggregation (D-flat,  || ree aggregation (D-flat, 20/
+- `4` ×37 | 旧上下文:  [10pt,a || andboxes---a preregistered $ || stered mechanism campaign ($ ||  $ $ $ $JCG${<}0$ under all  || connecting shared entities ( || trol n=5; real receipts n=3/
+- `10` ×31 | 旧上下文:  [ || out context (McNemar $p{=}2  || $ $JCG${<}0$, Holm $p{=}1.5  || , $p{=}0.002$, $r{=}0.886$,  || p{=}0.002$, $r{=}0.886$, 10/ || out context (McNemar $p{=}2 
+- `5` ×29 | 旧上下文: seed mechanism campaign and  || eterministic per seed ($n{=} || a_{ }{=}3$, global default $ || {conf}=s/(s+c+2)$. When $s   || hing)  {$s    {KG\_SUPPORT}= ||  & Transfer vs No-Transfer, 
+- `25` ×16 | 旧上下文: hub/.style={nd, fill=purple! || }) \\ Zero prior P0/P1/P2 &  || 5 episodes/condition & P0 0/ || 0/25 ($+29$ nodes); P1$=$P2  || 5 ($+29$ nodes); P1$=$P2 25/ || n-layer zero differences; 0/
+- `8` ×14 | 旧上下文:   sem/.style={sp, fill=blue! || fst/.style={sp, fill=purple! || }, emo/.style={sp, fill=red! || and the attribution window ( ||  shared entities (4/12 vs 0/ || gle graph, 7 label classes, 
+- `6` ×9 | 旧上下文: imum width=5.2cm, fill=gray! || ts n=3/4 & first action oak@ || ,   node distance=3.5mm and  || mentation $ $ claim audit (T ||  gate P8 target ran & S \\ S || }, neg/.style={bn, fill=red!
+- `0.05` ×9 | 旧上下文: lection as prior bonuses ($  || sures that re-activated ($a  || by ledger success priors ($+ || embly) & L3 & prior bonus $  ||  {4 of 12} marked nodes ($a  || e-1 marked nodes re-lit ($a 
+- `13` ×9 | 旧上下文: vs No-Transfer, 5/5 seeds &  || Exp.\ C; D/C20e/C20g & 0 vs  ||  nodes; 4/12 vs 0/8 vs 0/0;  || ange:} nodes; B2 contains  { ||  {change:} nodes; on yields  || eeds: Transfer completes in 
+- `4.2` ×9 | 旧上下文: {tabular}{L{1.3cm}L{5.4cm}L{ || {tabular}{L{4.6cm}L{5.6cm}L{ || ) {F: 0.325};  [orange!45] ( || !45] (4.2,-1.55) rectangle ( || 9);  [lbl, anchor=west] at ( || ) {F: 0.833};  [orange!45] (
+- `1.0` ×8 | 旧上下文:  quantity per step (default  || tity b};  [hub] (P) at (3.4, || d seeds; $ $2-input MRR@1$=$ || e 0.970; $ $2-input MRR@1$=$ || ess prechecks; T1--T4 MRR$=$ || {-6}$;\\ fas vs D-flat $p{=}
+- `520` ×8 | 旧上下文: experimental & v2 campaign,  || nl|), beacon 80, routing v2  || e fail-fast; $5 4 20+3 2 20= || ll valid ( {harness\_valid}= || alid ( {harness\_valid}=520/ || routing\_v2.py} (harness) & 
+- `0.0` ×8 | 旧上下文:  signal oak\_log 0.43  {vs}  || t target): all four methods  || rder, 10 permutations, CV$=$ || ness sweep slope 0.0076 (B2  || 427 vs 0.04, critical noise  ||  0.04, critical noise 0.0$=$
+- `50` ×7 | 旧上下文: dboxes---a preregistered $4  || ered mechanism campaign ($4  || -mechanism experiments $n{=} || dic space}]{};  [draw=green! || =3pt, label={[font= , green! || }, hot/.style={nd, fill=red!
+- `21` ×7 | 旧上下文: , $r{=}0.886$, 10/10 seeds;  || r{=}0.886$, 10/10 seeds; 21/ || , $r{=}0.886$, 10/10 seeds;  || r{=}0.886$, 10/10 seeds; 21/ ||  in the same direction; all  || rage breadth} (lit nodes 22/
+- `2026` ×7 | 旧上下文: erified line-by-line in the  || erified line-by-line in the  || Appendix~ {app:routing}); a  || _}\\  {context=True} (wired  || ntrolling execution; before  || {app:audit} The full audit (
+- `-09` ×7 | 旧上下文: ied line-by-line in the 2026 || ied line-by-line in the 2026 || ndix~ {app:routing}); a 2026 ||   {context=True} (wired 2026 || lling execution; before 2026 || :audit} The full audit (2026
+- `12` ×7 | 旧上下文: epi/.style={sp, fill=orange! ||  cool/.style={nd, fill=blue! || ol, draw=gray!60, fill=gray! || nnecting shared entities (4/ ||  sep=3pt, font= , fill=gray! || polated from it (Limitation 
+- `-1` ×7 | 旧上下文: pos=0.37, below, sloped]{Top || p.\ B; mechanism campaign (C || ed confirmatory conditions C || ntext re-activation. Episode || .0435/0.0426 vs 0.5/0.5 on C || ec:res-act} \\ $ $JCG$<$0 (C
+- `-3.65` ×7 | 旧上下文: ;  [lbl, anchor=west] at (0, || em:stick}, I3)};  [axis] (0, || ;  [axis] (0,-3.65) -- (9.0, || .0,-3.65);  [blue!25] (0.05, || 65) rectangle (0.05+0.833*6, || : 0.833};  [orange!45] (4.2,
+- `0.325` ×6 | 旧上下文: l limit of propagation ($ $  || ections $ $ 10 seeds) & $ $  || on $ ( {score}, {act})$ & F  || activation $ $ rises from F  || 0.05,-1.55) rectangle (0.05+ || r=west] at (0.05,-2.42) {F: 
+- `0.645` ×6 | 旧上下文: of propagation ($ $ 0.325$ $ || $ $ 10 seeds) & $ $ 0.325$ $ || e}, {act})$ & F 0.325 $ $ B  || $ rises from F 0.325 to B  { ||  (4.2,-1.55) rectangle (4.2+ || or=west] at (4.2,-2.42) {B: 
+- `1.2` ×6 | 旧上下文: and 1};  [warm] (x) at (1.7, || }{L{1.3cm}L{5.4cm}L{4.2cm}L{ || 0.32) {F: 0};  [orange!45] ( || ange!45] (1.2,0) rectangle ( || 0);  [lbl, anchor=west] at ( || .4,0) rectangle (3.4+6*0.07,
+- `-1.55` ×6 | 旧上下文: left, anchor=west] at (0.15, || ;  [lbl, anchor=west] at (0, || , {act})$ (I3)};  [axis] (0, ||   [axis] (0,-1.55) -- (11.0, || .0,-1.55);  [blue!25] (0.05, || 55) rectangle (0.05+0.325*8,
+- `15` ×6 | 旧上下文: @6 vs birch@9; real failure  || ect, n=20 paired & 19/20 vs  || g:writeback}a). Sorting the  || odes; on yields 13. (b) The  || rk condition never (n$=$3, @ || text 19/20  {vs} no-context 
+- `0.475` ×6 | 旧上下文: $ $0.645; dilution 0.833 vs  ||  activation F 0.833  {vs} B  ||  convergence: B/I3 measured  ||  (4.2,-3.65) rectangle (4.2+ || or=west] at (4.2,-4.52) {B:  || ctivation (I3) F 0.833 vs B 
+- `60` ×5 | 旧上下文: orlinks=true,linkcolor=blue! || lue!60!black,citecolor=blue! || blue!60!black,urlcolor=blue! || ={-{Latex}, semithick, blue! || l=gray!6, font= , draw=gray! || p=3pt, label={[font= , blue!
+- `34` ×5 | 旧上下文: LLM decision head, totaling  || paign ($4 50$ paired seeds,  || entframe 53, sandbox 43, ci  || her, the mechanism campaign  || es-topo}, App.~ {app:civ} & 
+- `-6` ×5 | 旧上下文: context (McNemar $p{=}2 10^{ || context (McNemar $p{=}2 10^{ || ct 0/20; McNemar $p{=}2 10^{ || ;  [flow] (beh) -| ([xshift= || /20 vs 0/20; McNemar $2 10^{ || t: fas vs direct $p{=}2 10^{
+- `200` ×5 | 旧上下文: enuinely runs (JCG${>}0$ on  || nely runs (JCG${>}0$ on 200/ || , Holm $p{=}1.5 10^{-9}$, 0/ || , Holm $p{=}1.5 10^{-9}$, 0/ ||  mechanism runs: JCG$>$0 on  || hanism runs: JCG$>$0 on 200/
+- `0.886` ×5 | 旧上下文: $ $0.645, $p{=}0.002$, $r{=} ||  B 0.645 ($p{=}0.002$, $r{=} || 645} (I3; $p{=}0.002$, $r{=} ||  tests $p{=}0.001953$, $r{=} || or $n{=}10$ Wilcoxon), $r{=}
+- `80` ×5 | 旧上下文: e={align=center, text=black! || raw_results.jsonl|), beacon  || d seeds, temperature 0, all  || \_v1/analysis\_final.json} ( || , and had an empty focus on  || nd had an empty focus on 80/
+- `16` ×5 | 旧上下文: Transfer, 5/5 seeds & 13 vs  || ; 4/12 vs 0/8 vs 0/0; 13 vs  || rld with a simulated clock ( ||  actions; No-Transfer needs  || activation three conditions  || ably change behavior (13 vs 
+- `315` ×5 | 旧上下文: /L3b & n=5, 14 steps & 5/5 @ || ; L3 0/5; L3b bit-identical  || o differences; 0/25; 259 vs  || ces) completes 5/5 seeds at  ||  restores the bit-identical  || 2, 0 promotions) equals L0 (
+- `-30` ×5 | 旧上下文: x~ {app:routing}); a 2026-09 || context=True} (wired 2026-09 || ng execution; before 2026-09 || dit} The full audit (2026-09 || N-1/CON-2), wired on 2026-09
+- `016` ×4 | 旧上下文: ecision head, totaling 34{,} ||  ($4 50$ paired seeds, 34{,} || the mechanism campaign 34{,} || po}, App.~ {app:civ} & 34{,}
+- `0.002` ×4 | 旧上下文: on ($ $ 0.325$ $0.645, $p{=} || & F 0.325 $ $ B 0.645 ($p{=} || 325 to B  {0.645} (I3; $p{=} || 3/0.645 (I3 dual input $p{=}
+- `0.001953` ×4 | 旧上下文:  21/21 paired tests at $p{=} || /10 seeds; 21/21 tests $p{=} || n; all 21 paired tests $p{=} || ed seeds; all 21 tests $p{=} || s; all 21 paired tests $p{=}
+- `3.4` ×4 | 旧上下文: appeared}};  [epi] (ae) at ( ||  {entity b};  [hub] (P) at ( || 12 (reach2)};  [orange!60] ( || ange!60] (3.4,0) rectangle ( || 2);  [lbl, anchor=west] at ( || amily}  {tabular}{L{4.6cm}L{
+- `5.6` ×4 | 旧上下文: d\\ hub P};  [cool] (T) at ( || oak\_log};  [cool] (rp) at ( || stripped};  [res] (fas) at ( || anism}  {tabular}{L{4.6cm}L{
+- `0.5` ×4 | 旧上下文: d]{flat: nearest};  [flat] ( || at 0/30 (single weight $w{=} || e weight configuration $w{=} || me.   {figure}[t]    [width= || ns.   {figure}[t]    [width= ||  below B2 (0.0435/0.0426 vs 
+- `3.6` ×4 | 旧上下文: ab:components}  {tabular}{L{ || {tab:behavior}  {tabular}{L{ || {tabular}{L{3.6cm}L{5.2cm}L{ || {tabular}{L{4.6cm}L{3.2cm}L{
+- `7` ×4 | 旧上下文: nified graph (single graph,  || elines 8, prior\_conditions  || havior matches code & S \\ S || step chain (ledger promotes  || ing, not learning ability. ( || consumes sticks \\ $\;\; $ (
+- `521` ×4 | 旧上下文: ever built edges, swallowed  ||  built edges, swallowed 521/ || ever built edges, swallowed  ||  built edges, swallowed 521/ || raveled existing edges); R2  || led existing edges); R2 521/
+- `-4` ×4 | 旧上下文: ; mechanism campaign (C-1..C || nfirmatory conditions C-1..C || C-1/C-2; tie at 1.0 on C-3/C || s-act} \\ $ $JCG$<$0 (C-1..C || orm from real experience (3- || civ} & 34{,}016 runs: C-1..C
+- `61.5` ×4 | 旧上下文: rfactuals, hidden oracle) &  || roduces activation quality $ || ectorized four conditions &  || able from noise and lookup ( || & four-condition separation 
+- `16.6` ×4 | 旧上下文: uals, hidden oracle) & 61.5/ || 9 lit nodes; diffusion off $ || ized four conditions & 61.5/ || from noise and lookup (61.5/ || r-condition separation 61.5/
+- `45.8` ×4 | 旧上下文:  hidden oracle) & 61.5/16.6/ ||  is comparable in quality ($ || four conditions & 61.5/16.6/ || noise and lookup (61.5/16.6/ || dition separation 61.5/16.6/
+- `17.2` ×4 | 旧上下文: en oracle) & 61.5/16.6/45.8/ ||  fixed pattern; the oracle $ || conditions & 61.5/16.6/45.8/ ||  and lookup (61.5/16.6/45.8/ || n separation 61.5/16.6/45.8/
+- `0.833` ×4 | 旧上下文: $ $ 0.325$ $0.645; dilution  || ick}) absolute activation F  || 0.05,-3.65) rectangle (0.05+ || r=west] at (0.05,-4.52) {F:  ||  absolute activation (I3) F 
+- `53` ×4 | 旧上下文: ns (ablation 77, eventframe  || tion recipe graph (44 nodes/ || ojection (41 reverse edges,  || tion recipe graph, 44 nodes/ || eneric reverse projections (
+- `663` ×4 | 旧上下文: ation direction 60, and the  || lly rests on an independent  || ent falsification campaign:  || thod-civ},  {sec:res-act} &  || ism\_falsification/} is the 
+- `0.9` ×4 | 旧上下文: re), weight sweep $w \{0.1.. || 25] (0.05,0) rectangle (0.6, || ctangle (0.05+0.325*8,-1.55+ || ectangle (4.2+0.645*8,-1.55+ || ctangle (0.05+0.833*6,-3.65+ || ectangle (4.2+0.475*6,-3.65+
+- `5.0` ×4 | 旧上下文: t'' entity activation 1.5$ $ || reach3)};  [axis] (0,0) -- ( || nce and activation residual  || caps (episodic 3.0 / global 
+- `45` ×4 | 旧上下文: r/.style={draw, fill=orange! || 0.4,-0.32) {F: 0};  [orange! || -2.42) {F: 0.325};  [orange! || -4.52) {F: 0.833};  [orange!
+- `2.4` ×3 | 旧上下文: ,a4paper]{article}  [margin= || }{L{3.6cm}L{5.2cm}L{3.6cm}L{ || n ON: activation divergence  || aises activation divergence 
+- `100` ×3 | 旧上下文: m episodic buffer (capacity  || topologies T1--T4: 3 inputs/ || e 2.4$ $9.9; demand present  || discovery form) net graph $+ || 17 vs 0.734, demand present  || ign: T1--T4 topologies (3in/
+- `5.2` ×3 | 旧上下文: black}]  [sp, minimum width= || avior}  {tabular}{L{3.6cm}L{ || {tabular}{L{6.6cm}L{2.2cm}L{
+- `00` ×3 | 旧上下文: = , draw=gray!60]   (G) at ( ||  {entity a};  [hot] (b) at ( || n=center}]  [sc] (prac) at ( || reach2 / reach3)};  [axis] (
+- `1.7` ×3 | 旧上下文: ity}};  [sem] (it) at (-3.2, ||  demand 1};  [warm] (x) at ( ||  demand 2};  [warm] (y) at ( || }{L{4.6cm}L{3.2cm}L{3.6cm}L{
+- `1.6` ×3 | 旧上下文:  (ae) -- (ch);  [edgeT] at ( || - 0.15\, {stress},\; 0.7,\;  ||  + 0.3\,  - 0.15\, ,\ 0.7,\  || mpt); modulation clip $[0.7,
+- `0.15` ×3 | 旧上下文: lip} (1 + 0.3\, {arousal} -  || };  [flat] (0.5,0) -- (2.55, || 5,0) -- (2.55,0.15) -- (4.0, || lign=left, anchor=west] at ( ||   $g    {clip}(1 + 0.3\,  - 
+- `5.45` ×3 | 旧上下文:  $p^{ }{=}0.046$; decisions  || ted $p{=}0.046$), decisions  || eting targets & decisions & 
+- `7.25` ×3 | 旧上下文: =}0.046$; decisions 5.45 vs  || }0.046$), decisions 5.45 vs  || rgets & decisions & 5.45 vs 
+- `0.029` ×3 | 旧上下文: ecisions 5.45 vs 7.25, $p{=} || ecisions 5.45 vs 7.25 ($p{=} || sions & 5.45 vs 7.25 & $p{=}
+- `0.48` ×3 | 旧上下文:  vs 7.25, $p{=}0.029$; util  || 0.029$), target utilization  || gets & target utilization & 
+- `0.010` ×3 | 旧上下文: 9$; util 0.48 vs 0.30, $p{=} || lization 0.48 vs 0.30 ($p{=} || ation & 0.48 vs 0.30 & $p{=}
+- `0.003` ×3 | 旧上下文:  vs 2.3/2.8 decisions, $p{=} || ower (4.15 vs 2.3/2.8, $p{=} || ncipal token comparisons $p  ||  & 4.15 vs 2.3 / 2.8 & $p{=}
+- `-5` ×3 | 旧上下文: iments use $n{=}5$ seeds (1- || ing-similarity retrieval top || em} & L0 315 / L1 259 / L3 0 || 15 / L1 259 / L3 0-5 / L3b 5
+- `22` ×3 | 旧上下文: hebbian 24, event\_transfer  || _transfer 22, diffusion\_b2  || overage breadth} (lit nodes 
+- `0.970` ×3 | 旧上下文: rence model (JCG$>{0}$ rate  || campaign: 663 runs, JCG$>$0  || ec:res-act} & 663 runs: JCG  || ference model (JCG$>$0 rate 
+- `4.6` ×3 | 旧上下文: }  {tab:audit}  {tabular}{L{ || tab:mechanism}  {tabular}{L{ ||   {tab:family}  {tabular}{L{
+- `0.889` ×3 | 旧上下文: k\_log)} $ { {leads-to},w{=} || }\\   support 8, confidence  || tive support 8 / confidence 
+- `-4.6` ×3 | 旧上下文: -active};  [sc] (gra) at (0, || 2.1)};  [neg] (dno) at (7.2, || ent};  [neg] (dir) at (12.2,
+- `0.074` ×3 | 旧上下文: bbian isolation & 3 edges $+ || oak\_log}-- {gatherable}, $+ || r. At the signal level: a $+ ||  Hebbian weight isolation $+
+- `0.417` ×3 | 旧上下文: 1 0.253 + B/I2 0.239). Gini  || B 0.475 (single-input I1/I2  || $ B/I3 measured 0.475; Gini 
+- `-0.32` ×3 | 旧上下文:  [lbl, anchor=west] at (0.4, ||  [lbl, anchor=west] at (1.2, ||  [lbl, anchor=west] at (3.4,
+- `1.8` ×2 | 旧上下文: ncreased}};  [epi] (ev) at ( || hub P};  [cool] (T) at (5.6, || 0.15) -- (4.0,0.15) -- (5.1,
+- `2.5` ×2 | 旧上下文: ased}};  [epi] (ev) at (1.8, || .3,0.6) -- (-1.3,-0.55) -- ( || e runs graph dynamics every  ||  & fas vs history & 3.25 vs 
+- `1.3` ×2 | 旧上下文: ared}};  [epi] (ae) at (3.4, || }  {tab:rqmap}  {tabular}{L{ || g{=}0.85$: 49.8; 1.0: 52.5; 
+- `-3.3` ×2 | 旧上下文: }};  [selfst] (ci) at (-1.9, || {gap:use}};  [emo] (em) at (
+- `4.0` ×2 | 旧上下文:  (0.5,0) -- (2.55,0.15) -- ( || }{L{3.4cm}L{3.0cm}L{3.4cm}L{
+- `1.9` ×2 | 旧上下文: nents}  {tabular}{L{3.6cm}L{ || {tabular}{L{3.6cm}L{1.9cm}L{ || m}L{5.4cm}L{4.2cm}L{1.2cm}L{
+- `9` ×2 | 旧上下文: eeds & 13 vs 16 ticks, 8 vs  || first action oak@6 vs birch@ || e exceptions propagate, and  || o-Transfer needs 16 ticks /  || ontrol first-actions birch @ || ard reach2 F always 0, B 10/
+- `17` ×2 | 旧上下文: birch@9; real failure 15 vs  || annot advance), direct only  || $4 with 1 redundant retry, @ || ; diffusion off $16.6$ over  || k channel @6 vs @9, @15 vs @ || NTATION\_MATRIX.md}) covers 
+- `29` ×2 | 旧上下文: odes/condition & P0 0/25 ($+ || ior\_boundary 31, longchain  || ll grows from perception ($+ || regations / 78 hypotheses / 
+- `0.046` ×2 | 旧上下文:  & 19/20 vs 15/20, $p^{ }{=} || ext 15/20 (uncorrected $p{=} || ion & 19/20 vs 15/20 & $p{=}
+- `0.30` ×2 | 旧上下文: , $p{=}0.029$; util 0.48 vs  ||  target utilization 0.48 vs  || arget utilization & 0.48 vs 
+- `2.8` ×2 | 旧上下文: ory/rag, n=20 & 4.15 vs 2.3/ || icantly slower (4.15 vs 2.3/ || story / rag & 4.15 vs 2.3 / 
+- `0.044` ×2 | 旧上下文: 3/2.8 decisions, $p{=}0.003/ || 15 vs 2.3/2.8, $p{=}0.003$/$ ||  2.3 / 2.8 & $p{=}0.003$ / $
+- `259` ×2 | 旧上下文: yer zero differences; 0/25;  || -$diffusion (L1) is faster ( || er $-$diffusion long chain ( || c:res-system} & L0 315 / L1 
+- `31` ×2 | 旧上下文:  34, transfer 32, reuse\_a2  || use\_a2 31, prior\_boundary 
+- `300` ×2 | 旧上下文: odes/25\% density; 3 inputs/ || ts/300 nodes/50\%; 5 inputs/ || ologies (3in/100n/25\%, 3in/ || 0n/25\%, 3in/300n/50\%, 5in/
+- `33` ×2 | 旧上下文: & independent re-check $ $ . || /5 (65 actions/58 redundant/
+- `65` ×2 | 旧上下文: pendent re-check $ $ .33$ $. || lting task prior (L3): 0/5 (
+- `2.1` ×2 | 旧上下文: $ corrected $p{ }1$; tokens  || completed ($ {x}$ decisions  || flat 20/20} (decisions mean  || ken costs are structural at  || ect 661/528/554/1267, i.e., 
+- `-3.7` ×2 | 旧上下文: rrected $p{ }1$; tokens 2.1- || costs are structural at 2.1- || 661/528/554/1267, i.e., 2.1-
+- `18` ×2 | 旧上下文: ern; the oracle $17.2$ over  || s-layer differences (incl. C || asses (produces 8 / belongs 
+- `-2` ×2 | 旧上下文: 5/0.0426 vs 0.5/0.5 on C-1/C || ff} \\ MRR (fas vs B2, C-1/C ||  definitional gaps CON-1/CON
+- `49.8` ×2 | 旧上下文: es-act} \\ Affective dose &  || notone in gain ($g{=}0.85$:  || res-system} & dose response 
+- `52.5` ×2 | 旧上下文: t} \\ Affective dose & 49.8/ || ain ($g{=}0.85$: 49.8; 1.0:  || ystem} & dose response 49.8/
+- `57.4` ×2 | 旧上下文:  Affective dose & 49.8/52.5/ || .85$: 49.8; 1.0: 52.5; 1.3:  || } & dose response 49.8/52.5/
+- `41` ×2 | 旧上下文: ic reverse-edge projection ( || achability 0. Graph B = F + 
+- `94` ×2 | 旧上下文: ion (41 reverse edges, 53$ $ || c reverse projections (53$ $
+- `0.491` ×2 | 旧上下文: 0.475 $ $ linear prediction  || 0.239); additive prediction 
+- `0.253` ×2 | 旧上下文: near prediction 0.491 (B/I1  || single-input I1/I2 0.417 vs 
+- `0.239` ×2 | 旧上下文: on 0.491 (B/I1 0.253 + B/I2  || -input I1/I2 0.417 vs 0.253/
+- `0.792` ×2 | 旧上下文: B/I2 0.239). Gini 0.417 $ $  || sured 0.475; Gini 0.417 $ $ 
+- `-0.824` ×2 | 旧上下文: .239). Gini 0.417 $ $ 0.792- || 0.475; Gini 0.417 $ $ 0.792-
+- `0.07` ×2 | 旧上下文: ] (1.2,0) rectangle (1.2+12* || 0] (3.4,0) rectangle (3.4+6*
+- `-2.42` ×2 | 旧上下文: [lbl, anchor=west] at (0.05, ||  [lbl, anchor=west] at (4.2,
+- `-4.52` ×2 | 旧上下文: [lbl, anchor=west] at (0.05, ||  [lbl, anchor=west] at (4.2,
+- `0.35` ×2 | 旧上下文: 12 $ $ cold-field threshold  || e-fire cold-field threshold 
+- `0.78` ×2 | 旧上下文: ed (peak 0.46 $<$ threshold  ||  expression-level (0.46 $ $  ||  formation 0.55, expression 
+- `1456` ×2 | 旧上下文: $ (per-decision prompt: fas  || on prompt means): fas\_full 
+- `1084` ×2 | 旧上下文: r-decision prompt: fas 1456/ || ompt means): fas\_full 1456/
+- `2070` ×2 | 旧上下文: ision prompt: fas 1456/1084/ || means): fas\_full 1456/1084/
+- `2662` ×2 | 旧上下文:  prompt: fas 1456/1084/2070/ || ): fas\_full 1456/1084/2070/
+- `661` ×2 | 旧上下文: 56/1084/2070/2662 vs direct  || 662 (T1--T4) vs llm\_direct 
+- `528` ×2 | 旧上下文: 084/2070/2662 vs direct 661/ || (T1--T4) vs llm\_direct 661/
+- `554` ×2 | 旧上下文: 2070/2662 vs direct 661/528/ || -T4) vs llm\_direct 661/528/
+- `1267` ×2 | 旧上下文: /2662 vs direct 661/528/554/ ||  vs llm\_direct 661/528/554/
+- `9.9` ×2 | 旧上下文: activation divergence 2.4$ $ || activation divergence 2.4$ $
+- `-0` ×2 | 旧上下文: s-context re-activation 4/12 || ntext re-activation 4/12-0/8
+- `-9` ×1 | 旧上下文: CG${<}0$, Holm $p{=}1.5 10^{ || CG${<}0$, Holm $p{=}1.5 10^{ || nditions (Holm $p{=}1.5 10^{ || t at drift moments (ticks 1- || xon with Holm, $p{=}1.5 10^{ || -}0.782$; Holm $p{=}1.5 10^{
+- `-1.6` ×1 | 旧上下文:   {stick}};  [sem] (rc) at (
+- `-3.4` ×1 | 旧上下文: \_planks}};  [sem] (ch) at (
+- `-1.2` ×1 | 旧上下文: nks}};  [sem] (ch) at (-3.4,
+- `0.75` ×1 | 旧上下文: ) -- (ch);  [edgeT] at (1.6,
+- `40` ×1 | 旧上下文: semantic}]{};  [draw=orange! || al space}]{};  [draw=purple! || arm/.style={nd, fill=orange! || metry (ablation family $n{=}
+- `02.0` ×1 | 旧上下文: 70, dashed}]  [hot] (a) at (
+- `0.8` ×1 | 旧上下文: and 2};  [warm] (y) at (1.7,
+- `7.4` ×1 | 旧上下文: !60, fill=gray!12] (ev) at (
+- `-0.354` ×1 | 旧上下文: inib] (ev) -- (T);  [flat] (
+- `1.646` ×1 | 旧上下文: ev) -- (T);  [flat] (-0.354,
+- `-1.3` ×1 | 旧上下文:   [flat] (-0.354,1.646) -- ( || 54,1.646) -- (-1.3,0.6) -- (
+- `-0.55` ×1 | 旧上下文: 646) -- (-1.3,0.6) -- (-1.3, || .6) -- (-1.3,-0.55) -- (2.5,
+- `5.25` ×1 | 旧上下文: 3,-0.55) -- (2.5,-0.55) -- (
+- `-0.15` ×1 | 旧上下文: 55) -- (2.5,-0.55) -- (5.25,
+- `0.70` ×1 | 旧上下文: 5.25,-0.15) node[annot, pos=
+- `2.55` ×1 | 旧上下文: arest};  [flat] (0.5,0) -- (
+- `5.1` ×1 | 旧上下文: .55,0.15) -- (4.0,0.15) -- (
+- `0.37` ×1 | 旧上下文: - (5.1,1.8) node[annot, pos=
+- `-120` ×1 | 旧上下文: d the attribution window (8- || ts\\   attribution window 8- || /tick; attribution window 8-
+- `0.80` ×1 | 旧上下文: . When $s  5$ and $ {conf}   ||  {conf}    {KG\_CONFIDENCE}= ||  thresholds $s 5$, $ {conf} 
+- `1.4` ×1 | 旧上下文: }{L{3.6cm}L{1.9cm}L{1.9cm}L{
+- `3.9` ×1 | 旧上下文: m}L{1.9cm}L{1.9cm}L{1.4cm}L{
+- `14` ×1 | 旧上下文: Long chain L0/L3/L3b & n=5,  || diffusion\_b2 22, envchange  ||  results.   {Long chain.} A  || -settlement simplification; 
+- `19` ×1 | 旧上下文: as vs direct, n=20 paired &  || gement + goal), FAS context  ||  fas vs direct completion & 
+- `5.4` ×1 | 旧上下文: rqmap}  {tabular}{L{1.3cm}L{
+- `494` ×1 | 旧上下文: earch_Experiments/|) totals 
+- `77` ×1 | 旧上下文: ) totals 494 runs (ablation 
+- `43` ×1 | 旧上下文:  77, eventframe 53, sandbox 
+- `32` ×1 | 旧上下文: sandbox 43, ci 34, transfer 
+- `28` ×1 | 旧上下文: ary 31, longchain 29, reuse 
+- `24` ×1 | 旧上下文: use 28, emotion 25, hebbian 
+- `1000` ×1 | 旧上下文: ts/300 nodes/50\%; 5 inputs/ || 0n/50\%, 5in/300n/50\%, 5in/
+- `75` ×1 | 旧上下文: s/50\%; 5 inputs/1000 nodes/ || %, 5in/300n/50\%, 5in/1000n/
+- `37` ×1 | 旧上下文: path: seeding a real graph (
+- `886` ×1 | 旧上下文: -check $ $ .33$ $.65, $r{=}.
+- `046` ×1 | 旧上下文: 520/520 valid; T4 raw $p{=}.
+- `-2.1` ×1 | 旧上下文:  stream};  [wb] (wbk) at (0,
+- `9.5` ×1 | 旧上下文: k) -- (gra);  [ob] (bk) at (
+- `-2.3` ×1 | 旧上下文: pped};  [res] (fas) at (5.6, || 0};  [res] (dflat) at (14.0,
+- `14.0` ×1 | 旧上下文:  20/20};  [res] (dflat) at (
+- `7.2` ×1 | 旧上下文: ons 2.1)};  [neg] (dno) at (
+- `12.2` ×1 | 旧上下文: e absent};  [neg] (dir) at (
+- `190` ×1 | 旧上下文: low] (gra.east) to[out=0,in=
+- `9.3` ×1 | 旧上下文: 190] (bk.west);  [note] at (
+- `-5.9` ×1 | 旧上下文:  (bk.west);  [note] at (9.3,
+- `-1.7` ×1 | 旧上下文: capped (control wanders 1.1-
+- `0.43` ×1 | 旧上下文: e-diffusion signal oak\_log 
+- `1.43` ×1 | 旧上下文: ins under emit-as-transfer (
+- `0.16` ×1 | 旧上下文: er emit-as-transfer (1.43$ $
+- `22.5` ×1 | 旧上下文: permutation) rank\_median$=$ || der / counterfactual & rank 
+- `0.0435` ×1 | 旧上下文: 0/200}). MRR: FAS below B2 ( ||  MRR (fas vs B2, C-1/C-2) &  || RR degradation with spread (
+- `0.0426` ×1 | 旧上下文: . MRR: FAS below B2 (0.0435/ || as vs B2, C-1/C-2) & 0.0435/ || adation with spread (0.0435/
+- `27` ×1 | 旧上下文: e breadth} (lit nodes 22/21/
+- `02.7` ×1 | 旧上下文: n}]  [lbl, anchor=west] at (
+- `-12` ×1 | 旧上下文: =west] at (1.2,-0.32) {B: 9-
+- `11.0` ×1 | 旧上下文: I3)};  [axis] (0,-1.55) -- (
+- `9.0` ×1 | 旧上下文: I3)};  [axis] (0,-3.65) -- (
+- `-5.5` ×1 | 旧上下文: gn=left, anchor=west] at (0,
+- `58` ×1 | 旧上下文: prior (L3): 0/5 (65 actions/
+- `0.079` ×1 | 旧上下文: $+0.074$; total-sum drift $+
+- `1.61` ×1 | 旧上下文: measured (field temperature 
+- `-2.12` ×1 | 旧上下文: red (field temperature 1.61-
+- `0.46` ×1 | 旧上下文: ression never reached (peak  || mers}: CI expression-level (
+- `280` ×1 | 旧上下文: parison correction over the  ||  Bonferroni correction over 
+- `400` ×1 | 旧上下文: $+100$ nodes, $+365$ edges, 
+- `86` ×1 | 旧上下文: nts (a recorder defect lost 
+- `89` ×1 | 旧上下文:  learned goals (investigate  || 9); the live causal ledger (
+- `6.0` ×1 | 旧上下文: {tabular}{L{4.6cm}L{3.4cm}L{
+- `0.717` ×1 | 旧上下文: e 2.4$ $9.9, pick precision 
+- `0.734` ×1 | 旧上下文: .9, pick precision 0.717 vs 
+- `3.0` ×1 | 旧上下文: uting}  {tabular}{L{3.4cm}L{ || by per-space caps (episodic 
+- `0.064` ×1 | 旧上下文: isions & 3.25 vs 4.2 & $p{=}
+- `0.035` ×1 | 旧上下文: istory & 3.25 vs 2.5 & $p{=}
+- `10912` ×1 | 旧上下文: xis numbers: reach2 F 0 / B 
+- `669` ×1 | 旧上下文: 9,12; reach3 B 6; lit nodes 
+- `222127` ×1 | 旧上下文: ach3 B 6; lit nodes 6,6,9 / 
+- `0.265` ×1 | 旧上下文: ,27; $ ( {score}, {act})$ F 
+- `0.275` ×1 | 旧上下文:  ( {score}, {act})$ F 0.265/
+- `0.542` ×1 | 旧上下文: )$ F 0.265/0.275/0.325 vs B 
+- `0.513` ×1 | 旧上下文: .265/0.275/0.325 vs B 0.542/
+- `0.0015` ×1 | 旧上下文: p $[0.7,1.6]$; Hebbian $ {=}
+- `0.10` ×1 | 旧上下文: 5, expression 0.78, discard 
+
+## 新增(新有旧无) 63 种 / 89 处
+- `84` ×6 | 新上下文:  30/30  {vs} flat 0/30). An  ||  0/30)---is delimited by an  || Shared-hub parameter sweep ( || is strictly better in 11 of  || Shared-hub parameter sweep ( ||  exception delimited by the 
+- `64` ×3 | 新上下文:  deeper paths), and ties in  || $w{ }0.7$, $d{ }1$); tie in  || hs ($d{ }1$); the remaining 
+- `2023` ×3 | 新上下文: rate. LLM-based agents~ {yao || d agents~ {yao2023react,park || act,park2023generative,shinn || M-agent memory.} ReAct~ {yao || t}, Generative Agents~ {park || nerative}, Reflexion~ {shinn
+- `-3` ×3 | 新上下文: t] at ([xshift=-2pt, yshift= || , anchor=north] at ([yshift= || , anchor=north] at ([yshift= || , anchor=north] at ([yshift=
+- `-0.45` ×3 | 新上下文: at: nearest};  [flat] (0.62, || flat] (0.62,-0.45) -- (2.62, || 5) -- (2.62,-0.45) -- (4.35,
+- `2007` ×2 | 新上下文: d event segmentation~ {zacks || on~ {zacks2007event,schacter
+- `2001` ×2 | 新上下文: t selection relate to~ {itti || al,posner1980orienting,cowan
+- `-4.3` ×2 | 新上下文: ability}};   [sem] (rc) at ( ||   [corridor] (rc.north) -- (
+- `4.9` ×2 | 新上下文: appeared}};  [epi] (ae) at ( ||   [corridor] (ae.south) -- (
+- `-2.5` ×2 | 新上下文: g)}};   [proc] (ac) at (3.0, || );  [flow] (s2) -- ([yshift=
+- `-4.15` ×2 | 新上下文: orridor] (ae.south) -- (4.9, || th) -- (4.9,-4.15) -- (-5.2,
+- `-7.35` ×2 | 新上下文: ;  [corridor] (it.west) -- ( || it.west) -- (-7.35,2.3) -- (
+- `-0.72` ×2 | 新上下文: .45, left]{modulates} (-1.9, || os=0.5, right]{skill} (2.35,
+- `2.0` ×2 | 新上下文:  demand 1};  [warm] (x) at ( ||  demand 2};  [warm] (y) at ( || hub P};  [cool] (T) at (5.9,
+- `5.9` ×2 | 新上下文: d\\ hub P};  [cool] (T) at ( || oak\_log};  [cool] (rp) at (
+- `-1.35` ×2 | 新上下文: inib] (ev) -- (T);  [flat] ( || );  [flat] (-1.35,1.75) -- (
+- `5.35` ×2 | 新上下文: 5,-0.55) -- (2.5,-0.85) -- ( || ,-0.45) -- (4.35,-0.45) -- (
+- `4.4` ×2 | 新上下文: dence}  {tabular}{L{3.2cm}L{ || {tab:boundary}  {tabular}{L{
+- `30` ×1 | 新上下文: e through a shared hub (FAS  || hrough a shared hub (FAS 30/ || hub (FAS 30/30  {vs} flat 0/ || gence through a shared hub ( || ce through a shared hub (30/ || gh a shared hub (30/30 vs 0/
+- `2004` ×1 | 新上下文: res such as ACT-R~ {anderson || itectures.} ACT-R~ {anderson
+- `2012` ×1 | 新上下文: integrated} and Soar~ {laird || integrated} and Soar~ {laird
+- `1975` ×1 | 新上下文: reading activation~ {collins || anism goes back to~ {collins
+- `2008` ×1 | 新上下文: emory stores; OpenCog~ {hart
+- `1983` ×1 | 新上下文: odic-memory theory~ {tulving
+- `2000` ×1 | 新上下文: tulving1983elements,baddeley
+- `1980` ×1 | 新上下文: itti2001computational,posner
+- `2020` ×1 | 新上下文: 3reflexion}, and RAG~ {lewis
+- `4.8` ×1 | 新上下文: =8pt}]   [sp, minimum width=
+- `1.35` ×1 | 新上下文: width=4.8cm, minimum height=
+- `-4.4` ×1 | 新上下文: \_planks}};  [sem] (it) at (
+- `-5.8` ×1 | 新上下文:   {stick}};  [sem] (ch) at (
+- `3.1` ×1 | 新上下文: sed}};   [epi] (ev) at (1.7,
+- `-3.0` ×1 | 新上下文: }};  [selfst] (ci) at (-1.5,
+- `-3.9` ×1 | 新上下文: {gap:use}};  [emo] (em) at (
+- `4.32` ×1 | 新上下文: ac.north);  [edgeT] at (0.2,
+- `-5.2` ×1 | 新上下文: e.south) -- (4.9,-4.15) -- (
+- `-0.4` ×1 | 新上下文: -- (ch.south);  [edgeT] at (
+- `-4.45` ×1 | 新上下文: h.south);  [edgeT] at (-0.4,
+- `-4.0` ×1 | 新上下文:  -- (ac.west);  [edgeT] at (
+- `-2.08` ×1 | 新上下文: ac.west);  [edgeT] at (-4.0,
+- `0.72` ×1 | 新上下文: ss] (ae) -- node[edgeT, pos= || 0$; decisions Wilcoxon $p{=} || l difference, Wilcoxon $p{=}
+- `3.42` ×1 | 新上下文: dgeT, text=red!70] at (-1.3,
+- `0.45` ×1 | 新上下文: m.north) -- node[edgeT, pos=
+- `2.35` ×1 | 新上下文: eT, pos=0.5, right]{skill} (
+- `02.2` ×1 | 新上下文: 70, dashed}]  [hot] (a) at (
+- `00.0` ×1 | 新上下文:  {entity a};  [hot] (b) at (
+- `3.7` ×1 | 新上下文:  {entity b};  [hub] (P) at (
+- `7.7` ×1 | 新上下文: !60, fill=gray!12] (ev) at (
+- `1.75` ×1 | 新上下文: (ev) -- (T);  [flat] (-1.35,
+- `-0.85` ×1 | 新上下文: 5) -- (-1.35,-0.55) -- (2.5,
+- `-0.25` ×1 | 新上下文: 55) -- (2.5,-0.85) -- (5.35,
+- `1.85` ×1 | 新上下文: not, anchor=east] at (-1.55,
+- `0.62` ×1 | 新上下文: ) {flat: nearest};  [flat] (
+- `2.62` ×1 | 新上下文: };  [flat] (0.62,-0.45) -- (
+- `4.35` ×1 | 新上下文: ,-0.45) -- (2.62,-0.45) -- (
+- `1.60` ×1 | 新上下文: 5) -- (4.35,-0.45) -- (5.35,
+- `0.20` ×1 | 新上下文: (5.35,1.60) node[annot, pos=
+- `-2.05` ×1 | 新上下文: left, anchor=west] at (0.15,
+- `6.4` ×1 | 新上下文: {tabular}{L{3.2cm}L{4.4cm}L{
+- `-8` ×1 | 新上下文: sees: (A) none; (B) raw last ||  graph nodes, inside the Top
+- `8.0` ×1 | 新上下文: =}0.72$ \\ D-noact & 0/20 &  || 6}$ \\ llm\_direct & 0/20 & 
+- `2346` ×1 | 新上下文: r of converging inputs $k \{
+- `012` ×1 | 新上下文: and private-path depth $d \{

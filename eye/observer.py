@@ -146,6 +146,11 @@ def inject_camera_observation(kg, cam_result: dict, engine=None):
             # 行为判定依据（阈值细节，供审计；限量）
             "debug": [str(d)[:80] for d in (cam_result.get("debug") or [])][:10],
         }))
+    try:
+        from time_chain import anchor_episode
+        anchor_episode(kg, node_id)   # 观察=情景记忆，进时间链
+    except Exception:
+        pass
     if engine is not None:
         try:
             node = kg.get_node("看摄像头")

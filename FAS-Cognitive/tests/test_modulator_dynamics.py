@@ -62,7 +62,8 @@ def test_A_specs():
     print("\n── A 规格装载 ──")
     st, _ = build(tag="a1")
     names = set(st.modulator_names())
-    check("config 给 12 个调制器", len(names) == 12, str(sorted(names)))
+    # 12→10：组胺样随"清醒度"删除（2026-10-17 用户裁定：AI 无疲劳/清醒生理）
+    check("config 给 10 个调制器", len(names) == 10, str(sorted(names)))
     spec_names = set(C.DEFAULT_CONFIG[MS]["specs"])
     check("运行时名单 == config 名单（无第二份表）", names == spec_names,
           str(names ^ spec_names))
@@ -73,15 +74,15 @@ def test_A_specs():
           and st.mirror_modulator.get("oxytocin") == "催产素样",
           json.dumps({k: v for k, v in st.mirror_modulator.items()
                       if k in MODULATOR_SPEC}, ensure_ascii=False))
-    check("新增 8 个也都有中文镜像 id",
-          st.mirror_modulator.get("melatonin") == "褪黑素样"
-          and st.mirror_modulator.get("gaba") == "GABA样",
-          str(st.mirror_modulator.get("melatonin")))
+    # （褪黑素/组胺镜像断言随清醒疲劳族删除，2026-10-17；改钉仍在册的）
+    check("新增调制器都有中文镜像 id",
+          st.mirror_modulator.get("gaba") == "GABA样"
+          and st.mirror_modulator.get("acetylcholine") == "乙酰胆碱样",
+          str(st.mirror_modulator.get("gaba")))
     check("每个调制器的 decay_per_min 互不相同（§8 禁同一衰减）",
           len({round(st.modulator_field(n, "decay_per_min"), 6) for n in names})
           == len(names), "")
-    check("褪黑素标记为 circadian 驱动（不吃系统时钟）",
-          st.modulator_field("melatonin", "circadian_driven") is True)
+    # （褪黑素 circadian_driven 断言随清醒/疲劳机制删除，2026-10-17）
     # 回退路径：config 缺该段 → 与 R2 之前完全一致的 4 个
     st2, _ = build(cfg({}, drop=True), tag="a2")
     check("config 缺段时回退旧 4 个调制器",
@@ -225,7 +226,7 @@ def test_D_curve():
     check("dump 按 |dev| 降序（最活跃的在前）", devs == sorted(devs, reverse=True),
           str(devs))
     check("dump 提供 top-modulators 计数",
-          dump["count"] == 12 and dump["active_count"] >= 1, str(dump["count"]))
+          dump["count"] == 10 and dump["active_count"] >= 1, str(dump["count"]))
     dyn = st.modulator_dynamics("adrenaline")
     check("modulator_dynamics 暴露曲线成分（实验台用）",
           dyn["ok"] and dyn["curve"]["overload"] == 0.80

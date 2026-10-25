@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HARU · 陪伴</title>
+<style>
+:root{
+  --paper:#f7eeda; --paper-dk:#efe0c4; --ink:#4a3a28; --ink-soft:#8a7458;
+  --accent:#c96f4a; --line:#d8c5a0; --bg1:#2b3550; --bg2:#4a5a7a; --bg3:#8a7a9a;
+  --ok:#7a9a6a; --warn:#c9a04a;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+html,body{height:100%}
+body{
+  font-family:"Segoe UI","Microsoft YaHei",sans-serif; color:var(--ink);
+  background:linear-gradient(160deg,var(--bg1) 0%,var(--bg2) 55%,var(--bg3) 100%);
+  overflow:hidden; user-select:none;
+}
+#stage{position:relative; width:100vw; height:100vh}
+.view{position:absolute; inset:0; display:none}
+.view.on{display:block}
+button{font-family:inherit; cursor:pointer}
+
+/* ── 角色立绘占位：若 companion_char.png 存在则自动换图 ── */
+.chara{position:absolute; left:50%; transform:translateX(-58%); bottom:170px;
+  width:min(38vh,340px); height:min(64vh,600px);
+  background:var(--chara-img,none) center bottom/contain no-repeat;
+  filter:drop-shadow(0 12px 24px rgba(0,0,0,.35));}
+.chara .silhouette{width:100%; height:100%;
+  background:radial-gradient(ellipse 34% 12% at 50% 9%, #e8e2d4 0 60%, transparent 62%),
+    radial-gradient(ellipse 26% 26% at 50% 12%, #d9d2c0 0 60%, transparent 62%),
+    linear-gradient(180deg, transparent 0 24%, #3d4660 24% 78%, #333b52 78% 100%);
+  border-radius:14px 14px 0 0; opacity:.92;}
+.chara .face{position:absolute; left:50%; top:11%; transform:translateX(-50%);
+  font-size:26px; letter-spacing:2px}
+
+/* ── 对话框（视觉小说式）── */
+#dlg{position:absolute; left:4vw; right:4vw; bottom:24px; z-index:5;
+  background:linear-gradient(180deg,#fbf4e4,var(--paper));
+  border:2px solid var(--line); border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.5);
+  padding:18px 22px 14px}
+#dlg::before{content:""; position:absolute; inset:5px; border:1px dashed var(--line);
+  border-radius:10px; pointer-events:none}
+#nametag{position:absolute; top:-16px; left:26px; z-index:2;
+  background:var(--accent); color:#fff8ec; font-weight:600; letter-spacing:3px;
+  padding:5px 18px; border-radius:8px; transform:rotate(-1.4deg);
+  box-shadow:0 3px 8px rgba(0,0,0,.25); font-size:15px}
+#dlgtext{min-height:64px; max-height:24vh; overflow-y:auto; line-height:1.75;
+  font-size:16.5px; white-space:pre-wrap}
+#dlgtext .src-user{color:#6a4a2a}
+#dlgtext .src-proactive::before{content:"✦ "; color:var(--accent)}
+#dlgtext .dim{color:var(--ink-soft); font-size:14px}
+#inputrow{display:flex; gap:10px; margin-top:10px}
+#chatin{flex:1; border:1.5px solid var(--line); border-radius:9px; padding:9px 13px;
+  font-size:15px; background:#fffdf6; color:var(--ink); outline:none}
+#chatin:focus{border-color:var(--accent)}
+.btn{border:1.5px solid var(--line); background:#fffaf0; color:var(--ink);
+  border-radius:9px; padding:8px 14px; font-size:14px}
+.btn:hover{background:var(--paper-dk)}
+.btn.primary{background:var(--accent); color:#fff8ec; border-color:var(--accent)}
+
+/* ── 顶栏控件 ── */
+#topbar{position:absolute; top:14px; right:18px; z-index:8; display:flex; gap:8px}
+#statusline{position:absolute; top:16px; left:20px; z-index:8; color:#e9e2d0;
+  font-size:13.5px; letter-spacing:1px; text-shadow:0 1px 3px rgba(0,0,0,.5);
+  background:rgba(20,26,44,.45); padding:5px 12px; border-radius:10px}
+
+/* ── 历史抽屉 ── */
+#hist{position:absolute; right:4vw; bottom:180px; width:min(420px,42vw);
+  max-height:46vh; overflow-y:auto; z-index:6; display:none;
+  background:rgba(251,244,228,.96); border:2px solid var(--line); border-radius:12px;
+  padding:12px 14px; box-shadow:0 10px 26px rgba(0,0,0,.3)}
+#hist.on{display:block}
+#hist .h{margin:7px 0; font-size:13.5px; line-height:1.55; border-left:3px solid var(--line); padding-left:8px}
+#hist .h.user{border-color:#b0805a}
+#hist .h.pro{border-color:var(--accent)}
+#hist .h .who{font-weight:600; font-size:12px; color:var(--ink-soft)}
+
+/* ── 精简模式 ── */
+#view-mini .chara{bottom:90px; width:min(30vh,260px); height:min(52vh,470px)}
+#mini-dlg{position:absolute; left:8vw; right:8vw; bottom:18px; z-index:5;
+  background:linear-gradient(180deg,#fbf4e4,var(--paper)); border:2px solid var(--line);
+  border-radius:12px; padding:12px 16px; box-shadow:0 8px 22px rgba(0,0,0,.3)}
+#mini-dlg .t{font-size:14.5px; line-height:1.6; min-height:44px; color:var(--ink)}
+#mini-dlg .who{font-size:12px; color:var(--ink-soft); margin-bottom:3px}
+
+/* ── 认知观察 ── */
+#view-cog{background:rgba(18,22,36,.94); color:#e8e2d0; padding:18px 22px; overflow-y:auto}
+#coghead{display:flex; align-items:center; gap:12px; margin-bottom:12px}
+#coghead h2{font-size:18px; letter-spacing:2px; color:#f0e6c8}
+#coghead .sub{font-size:12px; color:#9a94a8}
+#coghead button{margin-left:auto}
+#panels{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:14px}
+.panel{background:rgba(40,48,72,.75); border:1px solid #465070; border-radius:12px;
+  padding:12px 14px; min-height:120px}
+.panel h3{font-size:13px; letter-spacing:2px; color:#c8bfa4; margin-bottom:8px;
+  border-bottom:1px dashed #465070; padding-bottom:5px}
+.panel h3 .tag{float:right; font-size:11px; color:#8a94b8; letter-spacing:0}
+.panel .empty{color:#7a8098; font-size:13px; padding:14px 4px}
+.item{margin:6px 0; font-size:13px; line-height:1.5; cursor:default}
+.item b{color:#f0d8a8; font-weight:600}
+.item .meta{color:#9a94a8; font-size:12px}
+.item.clickable:hover{background:rgba(240,216,168,.08); border-radius:6px}
+.kv{display:flex; justify-content:space-between; font-size:12.5px; margin:3px 0; color:#cfc8b4}
+.kv span:last-child{color:#f0e6c8}
+#nodedetail{position:fixed; right:26px; top:70px; width:min(380px,40vw); z-index:9;
+  background:#1c2234; border:1px solid #5a6488; border-radius:12px; padding:14px 16px;
+  display:none; max-height:70vh; overflow-y:auto; font-size:13px}
+#nodedetail.on{display:block}
+#nodedetail h4{color:#f0d8a8; margin-bottom:6px; font-size:14px}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- A. 桌面精简 -->
+  <div id="view-mini" class="view on">
+    <div id="mini-status" class="status-mini" style="position:absolute;top:14px;left:20px;color:#e9e2d0;font-size:13px;background:rgba(20,26,44,.45);padding:5px 12px;border-radius:10px">…</div>
+    <div class="chara"><div class="silhouette"></div><div class="face">◕‿◕</div></div>
+    <div id="mini-dlg">
+      <div class="who" id="mini-who">HARU</div>
+      <div class="t" id="mini-text">（她还没说什么。想她了就点开完整界面聊聊。）</div>
+    </div>
+    <div style="position:absolute;top:14px;right:18px">
+      <button class="btn primary" onclick="switchView('main')">进入完整陪伴 →</button>
+    </div>
+  </div>
+
+  <!-- B. 完整陪伴 -->
+  <div id="view-main" class="view">
+    <div id="statusline">…</div>
+    <div id="topbar">
+      <button class="btn" onclick="switchView('mini')">精简</button>
+      <button class="btn" onclick="toggleCog()">认知面板</button>
+      <button class="btn" onclick="toggleHist()">记录</button>
+    </div>
+    <div class="chara"><div class="silhouette"></div><div class="face">◕‿◕</div></div>
+    <div id="hist"></div>
+    <div id="dlg">
+      <div id="nametag">HARU</div>
+      <div id="dlgtext"><span class="dim">（对话将在这里展开。她想到了什么想说的话，也会出现在这里。）</span></div>
+      <div id="inputrow">
+        <input id="chatin" placeholder="和她说点什么…（Enter 发送）"
+               onkeydown="if(event.key==='Enter')sendChat()">
+        <button class="btn primary" onclick="sendChat()">送出</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- C. 认知观察 -->
+  <div id="view-cog" class="view">
+    <div id="coghead">
+      <h2>认知观察</h2>
+      <span class="sub" id="cog-time"></span>
+      <button class="btn" onclick="toggleCog()">回到陪伴 →</button>
+    </div>
+    <div id="panels">
+      <div class="panel"><h3>当前意图 <span class="tag">内部状态 · /api/cognition/state</span></h3><div id="p-intent" class="empty">读取中…</div></div>
+      <div class="panel"><h3>活跃概念 <span class="tag">观测 · /api/graph</span></h3><div id="p-nodes" class="empty">读取中…</div></div>
+      <div class="panel"><h3>驱力与场 <span class="tag">内部状态 · cognition/state</span></h3><div id="p-drive" class="empty">读取中…</div></div>
+      <div class="panel"><h3>生活活动账本 <span class="tag">事实记录 · /api/living</span></h3><div id="p-living" class="empty">读取中…</div></div>
+    </div>
+    <div id="nodedetail"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ── 配置：把正式立绘放到本文件同目录命名 companion_char.png 即自动生效 ── */
+const CHAR_IMG = "companion_char.png";
+(function(){ const im = new Image();
+  im.onload = () => document.querySelectorAll(".chara").forEach(c=>{
+    c.style.setProperty("--chara-img", `url(${CHAR_IMG})`);
+    c.querySelector(".silhouette").style.display="none";
+    c.querySelector(".face").style.display="none";
+  });
+  im.src = CHAR_IMG;
+})();
+
+const $ = id => document.getElementById(id);
+const esc = s => (s??"").toString().replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let view = "mini", cogTimer = null, histLines = [];
+
+function switchView(v){
+  view = v;
+  for (const k of ["mini","main","cog"]) $("view-"+k).classList.toggle("on", k===v);
+  if (v==="cog") startCog(); else stopCog();
+}
+function toggleCog(){ switchView(view==="cog" ? "main" : "cog"); }
+function toggleHist(){ $("hist").classList.toggle("on"); }
+
+/* ── 对话区：只呈现真实表达（回复 / 主动），内部状态不进对话 ── */
+function pushLine(who, text, cls){
+  const d = document.createElement("div");
+  d.className = "h "+(cls||"");
+  d.innerHTML = `<div class="who">${esc(who)}</div>${esc(text)}`;
+  $("hist").appendChild(d); $("hist").scrollTop = 1e9;
+  histLines.push({who, text});
+  if (histLines.length>200) histLines.shift();
+  $("dlgtext").innerHTML = (cls==="user" ? `<span class="src-user">${esc(text)}</span>`
+    : cls==="pro" ? `<span class="src-proactive">${esc(text)}</span>` : esc(text));
+  $("mini-text").textContent = text;
+  $("mini-who").textContent = who;
+}
+
+async function sendChat(){
+  const el = $("chatin"); const t = el.value.trim();
+  if (!t) return;
+  el.value = "";
+  pushLine("你", t, "user");
+  $("dlgtext").innerHTML = '<span class="dim">…</span>';
+  try{
+    const r = await fetch("/api/nlp", {method:"POST",
+      headers:{"Content-Type":"application/json; charset=utf-8"},
+      body: JSON.stringify({text:t, channel:"web"})});
+    const d = await r.json();
+    if (d.answer) pushLine("HARU", d.answer, "haru");
+    else pushLine("HARU", "（她好像没有接上话——稍后再试试。）", "haru");
+  }catch(e){
+    pushLine("系统", "连接 FAS 失败：" + e, "user");
+  }
+}
+
+/* ── 主动表达：复用 /api/proactive/poll（CC 产出、网页取走）── */
+async function pollProactive(){
+  try{
+    const d = await (await fetch("/api/proactive/poll")).json();
+    for (const m of (d.messages||[]))
+      if (m.text) pushLine("HARU ✦", m.text, "pro");
+  }catch(e){/* 后端暂不可达：静默重试 */}
+}
+setInterval(pollProactive, 12000); pollProactive();
+
+/* ── 状态行：真实活动状态（/api/avatar/state）── */
+const STATE_ZH = {idle:"发呆中", thinking:"在想事情", browsing:"在上网闲逛",
+  researching:"在查资料", playing:"在玩游戏", speaking:"正在说话", moving:"走动中"};
+async function pollStatus(){
+  try{
+    const a = await (await fetch("/api/avatar/state")).json();
+    const s = STATE_ZH[a.state] || a.state || "…";
+    const txt = `HARU · ${s}`;
+    $("statusline").textContent = txt;
+    $("mini-status").textContent = txt;
+  }catch(e){ $("statusline").textContent = "HARU · （后端未连接）"; }
+}
+setInterval(pollStatus, 20000); pollStatus();
+
+/* ── 认知观察：全部来自真实接口，缺数据显示空状态，不编造 ── */
+function startCog(){
+  fetchCog(); stopCog();
+  cogTimer = setInterval(fetchCog, 30000);
+}
+function stopCog(){ if (cogTimer){clearInterval(cogTimer); cogTimer=null;} }
+
+let graphCache = null;
+async function fetchCog(){
+  $("cog-time").textContent = "采样于 " + new Date().toLocaleTimeString();
+  // 意图 + 阈值（内部状态）
+  try{
+    const c = await (await fetch("/api/cognition/state")).json();
+    const ins = (c.intentions||[]).filter(i=>i.status==="ready"||i.activation>0.3)
+      .sort((a,b)=>b.activation-a.activation).slice(0,6);
+    $("p-intent").innerHTML = ins.length ? ins.map(i=>`
+      <div class="item"><b>${esc(i.kind||"?")}</b> act=${(+i.activation).toFixed(2)}
+        <span class="meta">goal=${esc(i.goal||"-")}</span>
+        <div class="meta">依据: ${esc((i.basis||[]).slice(0,3).join(" · ")||"-")}</div>
+      </div>`).join("") : '<div class="empty">当前没有活跃意图（她在放空——这是合法状态）</div>';
+    const th = c.thresholds||{};
+    $("p-drive").innerHTML =
+      `<div class="kv"><span>场变化</span><span>${(+c.field_change).toFixed(2)}</span></div>` +
+      Object.entries(th).slice(0,6).map(([k,v])=>
+        `<div class="kv"><span>${esc(k)}</span><span>${(+v).toFixed(3)}</span></div>`).join("") +
+      `<div class="kv"><span>反思压力</span><span>${(+ (c.reflection_pressure||0)).toFixed(2)}</span></div>`;
+  }catch(e){ $("p-intent").innerHTML = '<div class="empty">读取失败（后端未连接）</div>'; }
+
+  // 活跃概念（观测）
+  try{
+    if (!graphCache) graphCache = await (await fetch("/api/graph")).json();
+    const ns = (graphCache.nodes||[]).filter(n=>n.activation!=null)
+      .sort((a,b)=>b.activation-a.activation).slice(0,10);
+    $("p-nodes").innerHTML = ns.length ? ns.map(n=>`
+      <div class="item clickable" onclick="showNode('${esc(n.id).replace(/'/g,"\\'")}')">
+        <b>${esc(n.id)}</b> <span class="meta">act=${(+n.activation).toFixed(2)} · ${esc(n.label||"")}</span>
+      </div>`).join("") : '<div class="empty">图谱暂无可观测节点</div>';
+  }catch(e){ $("p-nodes").innerHTML = '<div class="empty">读取失败</div>'; }
+
+  // 活动账本（事实记录）
+  try{
+    const l = await (await fetch("/api/living")).json();
+    const acts = (l.activities||[]).slice(-6).reverse();
+    $("p-living").innerHTML = acts.length ? acts.map(a=>`
+      <div class="item"><b>${esc((a.topic||a.concept||"?").slice(0,26))}</b>
+        <span class="meta">${esc(a.state||"?")}${a.findings?` · 发现${a.findings}`:""}${a.share?` · 分享:${esc(a.share)}`:""}</span>
+      </div>`).join("") + `<div class="kv"><span>今日搜索预算余</span><span>${l.budget_left??"-"}</span></div>`
+      : '<div class="empty">账本为空</div>';
+  }catch(e){ $("p-living").innerHTML = '<div class="empty">读取失败</div>'; }
+}
+
+/* 点概念 → 真实节点详情（来自已缓存的图谱数据；不做无据推断） */
+function showNode(id){
+  const n = (graphCache.nodes||[]).find(x=>x.id===id);
+  const es = (graphCache.edges||[]).filter(e=>e.src===id||e.dst===id).slice(0,14);
+  const box = $("nodedetail");
+  if (!n){ box.innerHTML = "<h4>"+esc(id)+"</h4><div class='empty'>图上没有这个节点</div>"; }
+  else{
+    const ea = n.extra_attrs||{};
+    box.innerHTML = `<h4>${esc(n.id)}</h4>
+      <div class="kv"><span>类型</span><span>${esc(n.label||"-")}</span></div>
+      <div class="kv"><span>激活</span><span>${(+ (n.activation||0)).toFixed(3)}</span></div>
+      <div class="kv"><span>建于</span><span>${esc((n.created||"-").slice(0,19))}</span></div>
+      ${ea.text?`<div style="margin-top:6px;line-height:1.55">${esc(String(ea.text).slice(0,220))}</div>`:""}
+      <h4 style="margin-top:10px">关系（观测）</h4>
+      ${es.length? es.map(e=>`<div class="item">${esc(e.src)} —[${esc(e.relation||"?")}(${+(e.weight||0).toFixed(2)})]→ ${esc(e.dst)}</div>`).join("")
+        : '<div class="empty">暂无可见关系</div>'}`;
+  }
+  box.classList.add("on");
+  box.onclick = e => { if (e.target===box) box.classList.remove("on"); };
+}
+document.addEventListener("keydown", e=>{ if (e.key==="Escape") $("nodedetail").classList.remove("on"); });
+</script>
+</body>
+</html>

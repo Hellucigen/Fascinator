@@ -342,6 +342,11 @@ def inject_observation(kg, eye_result: dict, engine=None):
             "seen_all": [str(it.get("text") or "").strip()[:80]
                          for it in (eye_result.get("items") or [])][:60],
         }))
+    try:
+        from time_chain import anchor_episode
+        anchor_episode(kg, node_id)   # 观察=情景记忆，进时间链
+    except Exception:
+        pass
     if engine is not None:
         try:
             node = kg.get_node("看屏幕")

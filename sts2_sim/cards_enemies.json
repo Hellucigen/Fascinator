@@ -1,0 +1,622 @@
+{
+ "cards": {
+  "打击": {
+   "cost": 1,
+   "type": "attack",
+   "tags": [
+    "攻击"
+   ],
+   "fx": [
+    {
+     "op": "damage",
+     "n": 6
+    }
+   ]
+  },
+  "防御": {
+   "cost": 1,
+   "type": "skill",
+   "tags": [
+    "防御"
+   ],
+   "fx": [
+    {
+     "op": "block",
+     "n": 5
+    }
+   ]
+  },
+  "双持": {
+   "cost": 1,
+   "type": "attack",
+   "tags": [
+    "攻击"
+   ],
+   "fx": [
+    {
+     "op": "damage",
+     "n": 5,
+     "hits": 2
+    }
+   ]
+  },
+  "抖肩": {
+   "cost": 0,
+   "type": "skill",
+   "tags": [
+    "防御"
+   ],
+   "fx": [
+    {
+     "op": "block",
+     "n": 3
+    }
+   ]
+  },
+  "怒吼": {
+   "cost": 0,
+   "type": "skill",
+   "tags": [
+    "削弱",
+    "策略"
+   ],
+   "fx": [
+    {
+     "op": "debuff",
+     "key": "脆弱",
+     "n": 2
+    }
+   ]
+  },
+  "猛冲": {
+   "cost": 1,
+   "type": "attack",
+   "tags": [
+    "攻击",
+    "冒险"
+   ],
+   "fx": [
+    {
+     "op": "hp_loss",
+     "n": 3
+    },
+    {
+     "op": "damage",
+     "n": 14
+    }
+   ]
+  },
+  "横扫": {
+   "cost": 1,
+   "type": "attack",
+   "tags": [
+    "攻击",
+    "群体"
+   ],
+   "fx": [
+    {
+     "op": "damage_all",
+     "n": 8
+    }
+   ]
+  },
+  "铁浪": {
+   "cost": 1,
+   "type": "attack",
+   "tags": [
+    "防御",
+    "攻击"
+   ],
+   "fx": [
+    {
+     "op": "block",
+     "n": 5
+    },
+    {
+     "op": "damage",
+     "n": 5
+    }
+   ]
+  },
+  "蓄力": {
+   "cost": 1,
+   "type": "skill",
+   "tags": [
+    "强化",
+    "力量"
+   ],
+   "fx": [
+    {
+     "op": "self_buff",
+     "key": "力量",
+     "n": 2
+    }
+   ]
+  },
+  "补给": {
+   "cost": 0,
+   "type": "skill",
+   "tags": [
+    "策略",
+    "抽"
+   ],
+   "fx": [
+    {
+     "op": "draw",
+     "n": 2
+    }
+   ]
+  },
+  "痛击": {
+   "cost": 2,
+   "type": "attack",
+   "tags": [
+    "攻击",
+    "重击"
+   ],
+   "fx": [
+    {
+     "op": "damage",
+     "n": 18
+    },
+    {
+     "op": "debuff",
+     "key": "脆弱",
+     "n": 2
+    }
+   ]
+  },
+  "格挡反击": {
+   "cost": 1,
+   "type": "attack",
+   "tags": [
+    "防御",
+    "反击"
+   ],
+   "fx": [
+    {
+     "op": "block",
+     "n": 8
+    }
+   ]
+  },
+  "恶魔形态": {
+   "cost": 3,
+   "type": "power",
+   "tags": [
+    "强化",
+    "能力"
+   ],
+   "fx": [
+    {
+     "op": "power",
+     "key": "恶魔",
+     "n": 2
+    }
+   ]
+  },
+  "活动肌肉": {
+   "cost": 0,
+   "type": "skill",
+   "tags": [
+    "强化",
+    "力量",
+    "消耗"
+   ],
+   "keywords": [
+    "exhaust"
+   ],
+   "fx": [
+    {
+     "op": "self_buff",
+     "key": "力量",
+     "n": 1
+    }
+   ]
+  },
+  "观察姿态": {
+   "cost": 0,
+   "type": "skill",
+   "tags": [
+    "策略",
+    "抽",
+    "消耗"
+   ],
+   "keywords": [
+    "exhaust"
+   ],
+   "fx": [
+    {
+     "op": "draw",
+     "n": 3
+    },
+    {
+     "op": "hp_loss",
+     "n": 1
+    }
+   ]
+  },
+  "铁皮": {
+   "cost": 1,
+   "type": "power",
+   "tags": [
+    "防御",
+    "能力"
+   ],
+   "fx": [
+    {
+     "op": "power",
+     "key": "铁皮",
+     "n": 3
+    }
+   ]
+  },
+  "燃烧契约": {
+   "cost": 1,
+   "type": "skill",
+   "tags": [
+    "策略",
+    "消耗"
+   ],
+   "keywords": [
+    "exhaust"
+   ],
+   "fx": [
+    {
+     "op": "hp_loss",
+     "n": 3
+    },
+    {
+     "op": "draw",
+     "n": 3
+    }
+   ]
+  },
+  "顺手牵羊": {
+   "cost": 1,
+   "type": "attack",
+   "tags": [
+    "攻击",
+    "抽"
+   ],
+   "fx": [
+    {
+     "op": "damage",
+     "n": 8
+    },
+    {
+     "op": "draw",
+     "n": 1
+    }
+   ]
+  },
+  "战吼": {
+   "cost": 2,
+   "type": "attack",
+   "tags": [
+    "攻击",
+    "群体",
+    "重击"
+   ],
+   "fx": [
+    {
+     "op": "damage_all",
+     "n": 12
+    }
+   ]
+  },
+  "虚弱之雾": {
+   "cost": 0,
+   "type": "skill",
+   "tags": [
+    "削弱",
+    "策略"
+   ],
+   "fx": [
+    {
+     "op": "debuff",
+     "key": "虚弱",
+     "n": 1
+    }
+   ]
+  }
+ },
+ "statuses": {
+  "力量": {
+   "kind": "buff",
+   "stackable": true
+  },
+  "脆弱": {
+   "kind": "debuff",
+   "effect": "承受伤害×1.5"
+  },
+  "虚弱": {
+   "kind": "debuff",
+   "effect": "造成攻击×0.75"
+  }
+ },
+ "enemies": {
+  "绿史莱姆": {
+   "hp": 21,
+   "cycle": [
+    0,
+    1,
+    0,
+    2
+   ],
+   "moves": [
+    {
+     "name": "弹咬",
+     "tags": [
+      "攻击"
+     ],
+     "damage": 7
+    },
+    {
+     "name": "蓄黏",
+     "tags": [
+      "强化"
+     ],
+     "self_buff": {
+      "力量": 1
+     }
+    },
+    {
+     "name": "酸喷",
+     "tags": [
+      "攻击",
+      "削弱"
+     ],
+     "damage": 5,
+     "debuff": {
+      "虚弱": 1
+     }
+    }
+   ],
+   "real_ref": "Bowlbug Egg"
+  },
+  "灰鼠": {
+   "hp": 20,
+   "cycle": [
+    0,
+    1,
+    0,
+    2
+   ],
+   "moves": [
+    {
+     "name": "啃咬",
+     "tags": [
+      "攻击"
+     ],
+     "damage": 6
+    },
+    {
+     "name": "斧挥",
+     "tags": [
+      "攻击",
+      "重击"
+     ],
+     "damage": 12
+    },
+    {
+     "name": "缩防",
+     "tags": [
+      "防御"
+     ],
+     "block": 6
+    }
+   ],
+   "real_ref": "Axe Ruby Raider"
+  },
+  "石卫兵": {
+   "hp": 82,
+   "cycle": [
+    1,
+    0,
+    2,
+    0
+   ],
+   "moves": [
+    {
+     "name": "重锤",
+     "tags": [
+      "攻击",
+      "重击"
+     ],
+     "damage": 17
+    },
+    {
+     "name": "举盾",
+     "tags": [
+      "防御"
+     ],
+     "block": 10
+    },
+    {
+     "name": "震地",
+     "tags": [
+      "攻击",
+      "群体"
+     ],
+     "damage": 14,
+     "debuff": {
+      "脆弱": 1
+     }
+    }
+   ],
+   "real_ref": "Magi Knight/Byrdonis"
+  },
+  "精英·暗猪": {
+   "hp": 75,
+   "elite": true,
+   "cycle": [
+    0,
+    1,
+    2
+   ],
+   "moves": [
+    {
+     "name": "猛撞",
+     "tags": [
+      "攻击"
+     ],
+     "damage": 16
+    },
+    {
+     "name": "咆哮",
+     "tags": [
+      "强化"
+     ],
+     "self_buff": {
+      "力量": 2
+     }
+    },
+    {
+     "name": "连打",
+     "tags": [
+      "攻击",
+      "重击"
+     ],
+     "damage": 8,
+     "hits": 2
+    }
+   ],
+   "real_ref": "Skulking Colony"
+  },
+  "精英·菌兽": {
+   "hp": 61,
+   "elite": true,
+   "cycle": [
+    0,
+    1,
+    0,
+    2
+   ],
+   "moves": [
+    {
+     "name": "抓挠",
+     "tags": [
+      "攻击"
+     ],
+     "damage": 13
+    },
+    {
+     "name": "孢爆",
+     "tags": [
+      "攻击",
+      "削弱"
+     ],
+     "damage": 9,
+     "debuff": {
+      "虚弱": 2,
+      "脆弱": 1
+     }
+    },
+    {
+     "name": "黏膜",
+     "tags": [
+      "防御"
+     ],
+     "block": 9
+    }
+   ],
+   "real_ref": "Phrog Parasite"
+  },
+  "史莱姆首领": {
+   "hp": 96,
+   "boss": true,
+   "cycle": [
+    0,
+    1,
+    0,
+    2
+   ],
+   "moves": [
+    {
+     "name": "羽击",
+     "tags": [
+      "攻击",
+      "重击"
+     ],
+     "damage": 22
+    },
+    {
+     "name": "唤风",
+     "tags": [
+      "强化"
+     ],
+     "self_buff": {
+      "力量": 3
+     }
+    },
+    {
+     "name": "掠击",
+     "tags": [
+      "攻击"
+     ],
+     "damage": 13,
+     "hits": 2
+    }
+   ],
+   "real_ref": "Byrdonis(缩尺)"
+  }
+ },
+ "relics": {
+  "燃烧之血": {
+   "effect": "战后回血",
+   "n": 6
+  },
+  "船锚": {
+   "effect": "首回合额外护甲",
+   "n": 10
+  },
+  "奶茶": {
+   "effect": "每战第一回合多1能量",
+   "n": 1
+  }
+ },
+ "potions": {
+  "浓缩药水": {
+   "fx": [
+    {
+     "op": "self_buff",
+     "key": "力量",
+     "n": 2
+    }
+   ]
+  },
+  "聚焦药水": {
+   "fx": [
+    {
+     "op": "draw",
+     "n": 3
+    }
+   ]
+  }
+ },
+ "player_hp": 68,
+ "energy": 3,
+ "hand_size": 5,
+ "potion_slots": 1,
+ "map": [
+  [
+   "史莱姆小径:绿史莱姆"
+  ],
+  [
+   "战斗:灰鼠",
+   "精英:精英·菌兽"
+  ],
+  [
+   "休整",
+   "宝藏"
+  ],
+  [
+   "战斗:石卫兵",
+   "精英:精英·暗猪"
+  ],
+  [
+   "首领:史莱姆首领"
+  ]
+ ]
+}

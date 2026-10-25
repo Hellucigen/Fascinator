@@ -162,7 +162,10 @@ def _handle(text, ctx, cfg):
 
     # 0b) 批准任务（propose 的候选只有经批准才进入执行）
     if _APPROVE_RE.match(t):
-        tid = _open_task(idx, "pending_approval")
+        # 对话前景原则：批准的是她**最近向你提出**的候选，不是积压最久的
+        _pend = [k for k, v in idx.items()
+                 if v.get("status") == "pending_approval"]
+        tid = _pend[-1] if _pend else None
         if not tid:
             return {"kind": "progress", "reply": "没有等待批准的任务。"}
         entry = idx[tid]
@@ -184,6 +187,9 @@ def _handle(text, ctx, cfg):
             TL.TaskLoop(env, tid, ledger_path, spec["preds"],
                         spec.get("constraints"))
             entry["env_state"] = _env_state(env)
+        # 用户显式批准=授权自主步进；autopilot 总闸关时仅放行带此标的任务
+        # （直接命令型任务没有此标，维持"回合内步进"的旧行为）
+        entry["approved_by_user"] = True
         _set_status(ctx, idx, tid, "active", ledger_path)
         return {"kind": "approved", "task_id": tid,
                 "reply": "收到批准，任务开始推进（下一拍一步）。"}
@@ -439,13 +445,15 @@ def propose_goal(ctx, utterance, source="haru"):
 def idle_step(ctx):
     """空闲一拍：把最早的活动任务推进**一步**（由宿主 poller 调用）。
 
-    硬闸：taskloop.enabled 且 taskloop.autopilot_enabled（默认关=新权限
-    不擅自打开）；ctx["busy"]() 真（用户交互中）→ 让位不推进。
+    硬闸：taskloop.enabled；步进资格=autopilot_enabled（全量自主，默认关
+    =新权限不擅自打开）**或**该任务被用户显式批准过（approved_by_user——
+    批准即授权，批准了的候选必须在空闲拍真正跑起来，否则"收到批准"是空头
+    支票）。ctx["busy"]() 真（用户交互中）→ 让位不推进。
     有界性由 TaskLoop 自身保证（step_cap/失败拉黑/重规划计数）。
     返回 None=无事发生；dict=本拍报告（terminal 标记供宿主做经验写回
     与分享，频率天然受"只在终态"限制）。"""
     cfg = _cfg(ctx)
-    if not cfg.get("enabled") or not cfg.get("autopilot_enabled"):
+    if not cfg.get("enabled"):
         return None
     busy = ctx.get("busy")
     if callable(busy) and busy():
@@ -453,7 +461,13 @@ def idle_step(ctx):
     try:
         from json_store import load_json
         idx = _load_index(ctx)
-        tid = _open_task(idx, "active")
+        autopilot = bool(cfg.get("autopilot_enabled"))
+        tid = None
+        for k, v in idx.items():                     # FIFO：先开的先推进
+            if v.get("status") == "active" and (
+                    autopilot or v.get("approved_by_user")):
+                tid = k
+                break
         if not tid:
             return None
         ledger_path = cfg.get("ledger_path", "data/taskloop_ledger.json")

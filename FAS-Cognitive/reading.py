@@ -227,9 +227,15 @@ class ReadingLedger:
                                            "ts_iso": _now_iso(),
                                            "uri": self.source.get("uri")}))
         written = {"unit_node": uid, "nodes": [], "relations": 0}
+        from graph_schema import HUB_ENTITY_NAMES
         for ent in out.get("entities", []):
             ent = str(ent)[:48]
             if not ent:
+                continue
+            # 无引证背书的"涉及→枢纽"不建（2026-10-19 同一误归属纪律，
+            # 见 graph_schema.HUB_ENTITY_NAMES）；文本若真陈述了关于主体
+            # 的事实，会走 relations 通道带着 quote 进来。
+            if ent in HUB_ENTITY_NAMES:
                 continue
             if kg.get_node(ent) is None:
                 kg.add_node(Node(id=ent, extra_attrs={

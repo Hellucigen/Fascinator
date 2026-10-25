@@ -1,0 +1,480 @@
+{
+  "schema": "fas-sts2-kb/1.0",
+  "version": "kb-0.1.0",
+  "game": "Slay the Spire 2",
+  "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+  "relation_types": [
+    "requires",
+    "triggers",
+    "modifies",
+    "prevents",
+    "consumes",
+    "produces",
+    "occurs_before",
+    "depends_on",
+    "synergizes_with",
+    "counters",
+    "competes_for",
+    "has_exception"
+  ],
+  "relations": [
+    {
+      "id": "R.001",
+      "source": "M.vulnerable",
+      "target": "M.attack_damage",
+      "type": "modifies",
+      "semantics": "multiplies attack damage taken by 1.5",
+      "confidence": "verified",
+      "source_refs": [
+        "S6",
+        "S7"
+      ]
+    },
+    {
+      "id": "R.002",
+      "source": "M.weak",
+      "target": "M.attack_damage",
+      "type": "modifies",
+      "semantics": "multiplies attacker's outgoing attack damage by 0.75",
+      "confidence": "verified",
+      "source_refs": [
+        "S6",
+        "S7"
+      ]
+    },
+    {
+      "id": "R.003",
+      "source": "M.strength",
+      "target": "M.attack_damage",
+      "type": "modifies",
+      "semantics": "adds to base damage per hit",
+      "confidence": "unverified",
+      "source_refs": [
+        "S10"
+      ]
+    },
+    {
+      "id": "R.004",
+      "source": "M.block",
+      "target": "M.attack_damage",
+      "type": "prevents",
+      "semantics": "absorbs attack damage before HP loss",
+      "confidence": "verified",
+      "source_refs": [
+        "S10"
+      ]
+    },
+    {
+      "id": "R.005",
+      "source": "M.block",
+      "target": "M.poison",
+      "type": "has_exception",
+      "semantics": "Block does not stop Poison",
+      "confidence": "verified",
+      "source_refs": [
+        "S10",
+        "S1"
+      ]
+    },
+    {
+      "id": "R.006",
+      "source": "M.block",
+      "target": "M.doom",
+      "type": "has_exception",
+      "semantics": "Block does not stop Doom",
+      "confidence": "verified",
+      "source_refs": [
+        "S1",
+        "S10"
+      ]
+    },
+    {
+      "id": "R.007",
+      "source": "M.poison",
+      "target": "M.block",
+      "type": "has_exception",
+      "semantics": "Poison ignores Block",
+      "confidence": "verified",
+      "source_refs": [
+        "S10"
+      ]
+    },
+    {
+      "id": "R.008",
+      "source": "M.doom",
+      "target": "M.combat_end",
+      "type": "triggers",
+      "semantics": "Doom >= HP at check kills creature, may end combat",
+      "confidence": "verified",
+      "source_refs": [
+        "S1"
+      ]
+    },
+    {
+      "id": "R.009",
+      "source": "M.doom",
+      "target": "M.slippery_intangible",
+      "type": "has_exception",
+      "semantics": "Doom kill ignores Slippery and Intangible",
+      "confidence": "verified",
+      "source_refs": [
+        "S1"
+      ]
+    },
+    {
+      "id": "R.010",
+      "source": "M.sly",
+      "target": "M.discard",
+      "type": "depends_on",
+      "semantics": "Sly triggers only upon discard event",
+      "confidence": "verified",
+      "source_refs": [
+        "S1"
+      ]
+    },
+    {
+      "id": "R.011",
+      "source": "M.discard",
+      "target": "M.sly",
+      "type": "triggers",
+      "semantics": "discarding a Sly card plays it free",
+      "confidence": "verified",
+      "source_refs": [
+        "S1"
+      ]
+    },
+    {
+      "id": "R.012",
+      "source": "M.energy",
+      "target": "M.turn_structure",
+      "type": "occurs_before",
+      "semantics": "energy refreshes at start of player turn (assumed)",
+      "confidence": "inferred",
+      "source_refs": [
+        "S0"
+      ]
+    },
+    {
+      "id": "R.013",
+      "source": "M.energy",
+      "target": "M.stars",
+      "type": "competes_for",
+      "semantics": "some cards need both resources",
+      "confidence": "verified",
+      "source_refs": [
+        "S9"
+      ]
+    },
+    {
+      "id": "R.014",
+      "source": "M.stars",
+      "target": "M.energy",
+      "type": "synergizes_with",
+      "semantics": "reported infinite conversion builds",
+      "confidence": "version_dependent",
+      "source_refs": [
+        "S6"
+      ]
+    },
+    {
+      "id": "R.015",
+      "source": "M.forge",
+      "target": "M.retain",
+      "type": "depends_on",
+      "semantics": "Sovereign Blade is Retain, so Forge payoff accumulates in hand",
+      "confidence": "verified",
+      "source_refs": [
+        "S6"
+      ]
+    },
+    {
+      "id": "R.016",
+      "source": "M.forge",
+      "target": "M.attack_damage",
+      "type": "modifies",
+      "semantics": "Forge adds damage to blades in all zones",
+      "confidence": "verified",
+      "source_refs": [
+        "S1"
+      ]
+    },
+    {
+      "id": "R.017",
+      "source": "M.osty_summon",
+      "target": "M.attack_damage",
+      "type": "modifies",
+      "semantics": "Osty intercepts attacks before player",
+      "confidence": "verified",
+      "source_refs": [
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "R.018",
+      "source": "M.osty_summon",
+      "target": "M.block",
+      "type": "competes_for",
+      "semantics": "two ways to absorb damage; Osty HP persists, Block expires",
+      "confidence": "verified",
+      "source_refs": [
+        "S11"
+      ]
+    },
+    {
+      "id": "R.019",
+      "source": "M.exhaust",
+      "target": "M.turn_structure",
+      "type": "has_exception",
+      "semantics": "exhausted cards skip future shuffles this combat",
+      "confidence": "verified",
+      "source_refs": [
+        "S1"
+      ]
+    },
+    {
+      "id": "R.020",
+      "source": "M.retain",
+      "target": "M.turn_structure",
+      "type": "modifies",
+      "semantics": "skips end-of-turn discard",
+      "confidence": "verified",
+      "source_refs": [
+        "S1"
+      ]
+    },
+    {
+      "id": "R.021",
+      "source": "M.upgrade",
+      "target": "M.rest_site",
+      "type": "depends_on",
+      "semantics": "Smith option uses upgrade",
+      "confidence": "verified",
+      "source_refs": [
+        "S2"
+      ]
+    },
+    {
+      "id": "R.022",
+      "source": "M.rest_site",
+      "target": "M.map_rooms",
+      "type": "depends_on",
+      "semantics": "rest sites are map nodes; one before each boss",
+      "confidence": "verified",
+      "source_refs": [
+        "S2"
+      ]
+    },
+    {
+      "id": "R.023",
+      "source": "M.merchant",
+      "target": "M.gold_economy",
+      "type": "consumes",
+      "semantics": "purchases consume gold",
+      "confidence": "verified",
+      "source_refs": [
+        "S3"
+      ]
+    },
+    {
+      "id": "R.024",
+      "source": "M.merchant",
+      "target": "M.potion_slots",
+      "type": "requires",
+      "semantics": "potion purchase fails with no slot",
+      "confidence": "verified",
+      "source_refs": [
+        "S3"
+      ]
+    },
+    {
+      "id": "R.025",
+      "source": "M.gold_economy",
+      "target": "M.merchant",
+      "type": "competes_for",
+      "semantics": "gold allocation across removal/relic/potion/card",
+      "confidence": "inferred",
+      "source_refs": [
+        "S3"
+      ]
+    },
+    {
+      "id": "R.026",
+      "source": "M.potion_slots",
+      "target": "M.vulnerable",
+      "type": "produces",
+      "semantics": "Vulnerable Potion applies 3",
+      "confidence": "verified",
+      "source_refs": [
+        "S5"
+      ]
+    },
+    {
+      "id": "R.027",
+      "source": "M.potion_slots",
+      "target": "M.poison",
+      "type": "produces",
+      "semantics": "Poison Potion applies 6 (Silent)",
+      "confidence": "verified",
+      "source_refs": [
+        "S5"
+      ]
+    },
+    {
+      "id": "R.028",
+      "source": "M.potion_slots",
+      "target": "M.doom",
+      "type": "produces",
+      "semantics": "Potion of Doom applies 33 (Necrobinder)",
+      "confidence": "verified",
+      "source_refs": [
+        "S5"
+      ]
+    },
+    {
+      "id": "R.029",
+      "source": "M.ancients",
+      "target": "M.map_rooms",
+      "type": "occurs_before",
+      "semantics": "Ancient opens each act",
+      "confidence": "verified",
+      "source_refs": [
+        "S12",
+        "S4"
+      ]
+    },
+    {
+      "id": "R.030",
+      "source": "M.ancients",
+      "target": "M.rest_site",
+      "type": "has_exception",
+      "semantics": "Ancient heals instead of rest after boss",
+      "confidence": "verified",
+      "source_refs": [
+        "S4"
+      ]
+    },
+    {
+      "id": "R.031",
+      "source": "M.events",
+      "target": "M.gold_economy",
+      "type": "produces",
+      "semantics": "some events grant gold; some cost it",
+      "confidence": "verified",
+      "source_refs": [
+        "S5"
+      ]
+    },
+    {
+      "id": "R.032",
+      "source": "M.map_rooms",
+      "target": "M.events",
+      "type": "produces",
+      "semantics": "Unknown rooms can resolve to events",
+      "confidence": "verified",
+      "source_refs": [
+        "S12"
+      ]
+    },
+    {
+      "id": "R.033",
+      "source": "M.vulnerable",
+      "target": "M.poison",
+      "type": "has_exception",
+      "semantics": "Vulnerable does not scale Poison (poison is not an attack)",
+      "confidence": "inferred",
+      "source_refs": [
+        "S6",
+        "S10"
+      ]
+    },
+    {
+      "id": "R.034",
+      "source": "M.poison",
+      "target": "M.combat_end",
+      "type": "triggers",
+      "semantics": "poison can kill at its tick time",
+      "confidence": "inferred",
+      "source_refs": [
+        "S6"
+      ]
+    },
+    {
+      "id": "R.035",
+      "source": "M.attack_damage",
+      "target": "M.vulnerable",
+      "type": "depends_on",
+      "semantics": "damage depends on target's Vulnerable",
+      "confidence": "verified",
+      "source_refs": [
+        "S6"
+      ]
+    },
+    {
+      "id": "R.036",
+      "source": "M.frail",
+      "target": "M.block",
+      "type": "modifies",
+      "semantics": "reduces block gained",
+      "confidence": "unverified",
+      "source_refs": [
+        "S10"
+      ]
+    },
+    {
+      "id": "R.037",
+      "source": "M.dexterity",
+      "target": "M.block",
+      "type": "modifies",
+      "semantics": "increases block gained",
+      "confidence": "unverified",
+      "source_refs": [
+        "S10"
+      ]
+    },
+    {
+      "id": "R.038",
+      "source": "M.focus",
+      "target": "M.orbs",
+      "type": "modifies",
+      "semantics": "changes orb values",
+      "confidence": "version_dependent",
+      "source_refs": [
+        "S9"
+      ]
+    },
+    {
+      "id": "R.039",
+      "source": "M.deck_building",
+      "target": "M.exhaust",
+      "type": "synergizes_with",
+      "semantics": "exhaust thins deck within combat",
+      "confidence": "inferred",
+      "source_refs": [
+        "S1"
+      ]
+    },
+    {
+      "id": "R.040",
+      "source": "M.enemy_intent",
+      "target": "M.attack_damage",
+      "type": "depends_on",
+      "semantics": "intent informs incoming damage forecast",
+      "confidence": "inferred",
+      "source_refs": [
+        "S0"
+      ]
+    },
+    {
+      "id": "R.041",
+      "source": "M.rest_site",
+      "target": "M.upgrade",
+      "type": "competes_for",
+      "semantics": "heal versus upgrade at same node",
+      "confidence": "verified",
+      "source_refs": [
+        "S2"
+      ]
+    }
+  ]
+}

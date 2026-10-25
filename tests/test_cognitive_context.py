@@ -172,10 +172,11 @@ check("L2 倾向过滤 silence 不外露",
 
 # ── 5. L1 编译：只带短句路径需要的 ───────────────────────
 c1 = compile_for_language(ctx_ev, path="L1")
-check("L1 只含精简键（含言外行为投影概念）",
+check("L1 只含精简键（含言外行为投影概念；2026-10-16 起含认知状态切片——"
+      "L1 短回应也是用户看到的第一人称回答，被问在想什么必须有内容在场）",
       set(c1) == {"path", "decision", "action_evidence", "session_evidence",
                   "constraints", "mood", "recent_dialogue", "speech_act",
-                  "outline"},
+                  "outline", "cognitive_state"},
       str(sorted(c1)))
 check("L1 证据状态在", c1["action_evidence"]["status"] == EV_EXECUTING)
 check("L1 不带图谱记忆/世界状态（不膨胀）",

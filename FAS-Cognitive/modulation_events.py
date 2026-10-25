@@ -394,15 +394,8 @@ class ModulatorEngine:
         gains = interaction_gains(self.kg, self.st) if src == "graph" else {}
         applied, gated, parts = [], [], []
         for r in rules:
-            # `circadian_driven` 的消费者（§5：字段不许只声明不使用；R2 P10）。
-            # 语义：**这一类调制器只吃 circadian 语境**。褪黑素样的水位由时段事实
-            # 决定，奖赏/情绪/意外都不该动它（"吃了甜点→褪黑素上升"是荒谬的）。
-            # 出厂只有 melatonin 打了这个标记；跳过要记一笔（看得见），不是静默丢。
-            if str(ev.source or "") != "circadian" and self.st.modulator_field(
-                    r["mod"], "circadian_driven", False):
-                gated.append({"mod": r["mod"],
-                              "gate": "circadian_driven：只接受 circadian 语境"})
-                continue
+            # （circadian_driven 门卫已删除，2026-10-17：褪黑素/组胺调制器
+            #   整体移除——AI 无疲劳/清醒生理，不再有"只吃时段语境"的通道。）
             ok, why = gate_ok(ev, r.get("gate") or {})
             if not ok:
                 gated.append({"mod": r["mod"], "gate": why})

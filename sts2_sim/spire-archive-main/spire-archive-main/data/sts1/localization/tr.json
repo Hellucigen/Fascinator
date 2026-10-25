@@ -1,0 +1,4938 @@
+{
+  "cards": {
+    "A_THOUSAND_CUTS": {
+      "name": "Binlerce Kesik",
+      "description": "Ne zaman bir kart oynarsan TÜM düşmanlara 1 hasar ver."
+    },
+    "ACCURACY": {
+      "name": "İsabet",
+      "description": "Kamalar fazladan 4 hasar verir."
+    },
+    "ACROBATICS": {
+      "name": "Akrobasi",
+      "description": "3 kart çek.\n1 kart at."
+    },
+    "ADRENALINE": {
+      "name": "Adrenalin",
+      "description": "[G] kazan.\n2 kart çek.\nTüket.",
+      "upgradeDescription": "[G] [G] kazan.\n2 kart çek.\nTüket."
+    },
+    "AFTER_IMAGE": {
+      "name": "Ardıl Görüntü",
+      "description": "Ne zaman bir kart oynarsan 1 Blok kazan.",
+      "upgradeDescription": "Yerleşik.\nNe zaman bir kart oynarsan 1 Blok kazan."
+    },
+    "AGGREGATE": {
+      "name": "Biriktirme",
+      "description": "Çekme yığınındaki her 4 kart için [B] kazan."
+    },
+    "ALL_FOR_ONE": {
+      "name": "Hepsi Biri İçin",
+      "description": "10 hasar ver.\nAtma yığınındaki 0 maliyetli tüm kartları eline geri al."
+    },
+    "ALL_OUT_ATTACK": {
+      "name": "Topyekün Saldırı",
+      "description": "TÜM düşmanlara\n10 hasar ver.\nElinden rastgele bir kart at."
+    },
+    "ALLOCATE": {
+      "name": "Paylaştırma",
+      "description": "!M! Odak kazan.\n1 Kuvvet kaybet.\n1 Çeviklik kaybet."
+    },
+    "AMPLIFY": {
+      "name": "Güçlendirme",
+      "description": "Bu tur oynayacağın bir sonraki Güç kartı iki kez oynanır.",
+      "upgradeDescription": "Bu tur oynayacağın sonraki +1 Güç kartı iki kez oynanır."
+    },
+    "ANGER": {
+      "name": "Sinir",
+      "description": "6 hasar ver.\nBu kartın bir kopyasını atma yığınına ekle."
+    },
+    "APOTHEOSIS": {
+      "name": "Tanrılaşma",
+      "description": "Dövüşün geri kalanı boyunca TÜM kartlarını Geliştir.\nTüket."
+    },
+    "ARMAMENTS": {
+      "name": "Teçhizat",
+      "description": "5 Blok kazan.\nElinden seçtiğin bir kartı Geliştir.",
+      "upgradeDescription": "5 Blok kazan.\nElindeki tüm kartları Geliştir."
+    },
+    "ASCENDERSBANE": {
+      "name": "Yükselenin Belası",
+      "description": "Oynanamaz.\nRuhani.\nDesteden çıkarılamaz."
+    },
+    "AUTO_SHIELDS": {
+      "name": "Otomatik Kalkan",
+      "description": "Bloğun yoksa 11 Blok kazan."
+    },
+    "AXE_KICK": {
+      "name": "Balyoz Tekme",
+      "description": "!D! hasar ver.\nSıradaki Küreni Uyar."
+    },
+    "BACKFLIP": {
+      "name": "Ters Takla",
+      "description": "5 Blok kazan.\n2 kart çek."
+    },
+    "BACKSTAB": {
+      "name": "Sırttan Bıçaklama",
+      "description": "Yerleşik.\n11 hasar ver.\nTüket."
+    },
+    "BALL_LIGHTNING": {
+      "name": "Top Yıldırım",
+      "description": "7 hasar ver.\n1 Yıldırım Aktar."
+    },
+    "BANDAGE_UP": {
+      "name": "Bandajlama",
+      "description": "4 CP iyileştir.\nTüket."
+    },
+    "BANE": {
+      "name": "Yıkım",
+      "description": "7 hasar ver.\nEğer o düşman Zehirlenmiş ise 7 hasar daha ver."
+    },
+    "BARRAGE": {
+      "name": "Yaylım Ateşi",
+      "description": "Her Aktarılmış durumdaki Küre için\n4 hasar ver."
+    },
+    "BARRICADE": {
+      "name": "Barikat",
+      "description": "Blok tur başlarında kalkmaz."
+    },
+    "BASH": {
+      "name": "Göçertme",
+      "description": "8 hasar ver.\n2 Savunmasız uygula."
+    },
+    "BATTLE_TRANCE": {
+      "name": "Savaş Transı",
+      "description": "3 kart çek.\nBu tur daha fazla kart çekemezsin."
+    },
+    "BEAM_CELL": {
+      "name": "Işın Hücresi",
+      "description": "3 hasar ver.\n1 Savunmasız uygula."
+    },
+    "BERSERK": {
+      "name": "Cinnet",
+      "description": "Kendine 2 Savunmasız uygula.\nHer tur başında\n[R] kazan."
+    },
+    "BIASED_COGNITION": {
+      "name": "Taraflı Bilişsellik",
+      "description": "4 Odak kazan.\nHer tur başında\n1 Odak kaybet."
+    },
+    "BITE": {
+      "name": "Isırma",
+      "description": "7 hasar ver.\n2 CP iyileş."
+    },
+    "BLADE_DANCE": {
+      "name": "Bıçak Dansı",
+      "description": "Eline 3 Kama ekle."
+    },
+    "BLASTER": {
+      "name": "Patlatıcı",
+      "description": "deprecated."
+    },
+    "BLIND": {
+      "name": "Köreltme",
+      "description": "2 Zayıf uygula.",
+      "upgradeDescription": "TÜM düşmanlara 2 Zayıf uygula."
+    },
+    "BLIZZARD": {
+      "name": "Kar Fırtınası",
+      "description": "TÜM düşmanlara bu dövüş boyunca Aktarılmış Ayaz sayısının 2 katı hasar ver."
+    },
+    "BLOOD_FOR_BLOOD": {
+      "name": "Kana Kan",
+      "description": "Bu dövüş boyunca her CP kaybında maliyeti\n1 [R] azalır.\n18 hasar ver."
+    },
+    "BLOODLETTING": {
+      "name": "Kan Dökme",
+      "description": "3 CP kaybet.\n[R] [R] kazan.",
+      "upgradeDescription": "3 CP kaybet.\n[R] [R] [R] kazan."
+    },
+    "BLUDGEON": {
+      "name": "Tokmak",
+      "description": "32 hasar ver."
+    },
+    "BLUR": {
+      "name": "Bulanıklık",
+      "description": "5 Blok kazan.\nSonraki tur başında Blok kalkmaz."
+    },
+    "BODY_SLAM": {
+      "name": "Gövde Vuruşu",
+      "description": "Var olan Blok sayına eşit hasar ver.",
+      "upgradeDescription": "(Ver: 0 hasar.)"
+    },
+    "BOOTSEQUENCE": {
+      "name": "Önyükleme Dizisi",
+      "description": "Yerleşik.\n10 Blok kazan.\nTüket."
+    },
+    "BOUNCING_FLASK": {
+      "name": "Seken Şişe",
+      "description": "Rastgele düşmanlara\n3 kez 3 Zehir uygula."
+    },
+    "BRUTALITY": {
+      "name": "Vahşilik",
+      "description": "Her tur başında\n1 CP kaybet ve 1 kart çek.",
+      "upgradeDescription": "Yerleşik.\nHer tur başında\n1 CP kaybet ve 1 kart çek."
+    },
+    "BUFFER": {
+      "name": "Tampon",
+      "description": "Bir sonraki CP kaybını engelle.",
+      "upgradeDescription": "Sonraki +1 CP kaybını engelle."
+    },
+    "BULLET_TIME": {
+      "name": "Yavaş Çekim",
+      "description": "Bu tur daha fazla kart çekemezsin. Elindeki tüm kartların maliyetini tur sonuna kadar 0 yap."
+    },
+    "BURN": {
+      "name": "Yanık",
+      "description": "Oynanamaz.\nTur sonunda 2 hasar al.",
+      "upgradeDescription": "Oynanamaz.\nTur sonunda 4 hasar al."
+    },
+    "BURNING_PACT": {
+      "name": "Yakıcı Anlaşma",
+      "description": "1 kart Tüket.\n2 kart çek."
+    },
+    "BURST": {
+      "name": "Atılma",
+      "description": "Bu tur oynayacağın bir sonraki Beceri kartı iki kez oynanır.",
+      "upgradeDescription": "Bu tur oynayacağın sonraki +1 Beceri kartı iki kez oynanır."
+    },
+    "CALCULATED_GAMBLE": {
+      "name": "Hesaplı Kumar",
+      "description": "Elindeki tüm\nkartları at,\nattığın kart kadar\nkart çek.\nTüket.",
+      "upgradeDescription": "Elindeki tüm\nkartları at,\nattığın kart kadar\nkart çek."
+    },
+    "CALTROPS": {
+      "name": "Demir Dikeni",
+      "description": "Ne zaman Saldırı gelirse geri 3 hasar ver."
+    },
+    "CAPACITOR": {
+      "name": "Kapasitör",
+      "description": "2 Küre yuvası kazan.",
+      "upgradeDescription": "+1 Küre yuvası kazan."
+    },
+    "CARNAGE": {
+      "name": "Katliam",
+      "description": "Ruhani.\n20 hasar ver."
+    },
+    "CATALYST": {
+      "name": "Katalizör",
+      "description": "Düşmanın Zehrini\nikiye katla.\nTüket.",
+      "upgradeDescription": "Düşmanın Zehrini\nüçe katla.\nTüket."
+    },
+    "CHAOS": {
+      "name": "Kaos",
+      "description": "Rastgele 1 Küre Aktar.",
+      "upgradeDescription": "Rastgele +1 Küre Aktar."
+    },
+    "CHILL": {
+      "name": "Serinlik",
+      "description": "Dövüşteki her canlı düşman için 1 Ayaz Aktar.\nTüket.",
+      "upgradeDescription": "Yerleşik.\nDövüşteki her canlı düşman için 1 Ayaz Aktar.\nTüket."
+    },
+    "CHOKE": {
+      "name": "Boğma",
+      "description": "12 hasar ver.\nBu tur ne zaman bir kart oynarsan o düşman 3 CP kaybeder."
+    },
+    "CHRYSALIS": {
+      "name": "Koza",
+      "description": "Çekme yığınına 3 tane rastgele Beceri karıştır. Bu dövüş boyunca maliyetleri 0 olur.\nTüket."
+    },
+    "CLASH": {
+      "name": "Çatışma",
+      "description": "Yalnızca elindeki tüm kartlar Saldırı ise oynanabilir.\n14 hasar ver."
+    },
+    "CLEAVE": {
+      "name": "İkiye Yarma",
+      "description": "TÜM düşmanlara\n8 hasar ver."
+    },
+    "CLOAK_AND_DAGGER": {
+      "name": "Casusluk",
+      "description": "6 Blok kazan.\nEline 1 Kama ekle.",
+      "upgradeDescription": "6 Blok kazan.\nEline +1 Kama ekle."
+    },
+    "CLOTHESLINE": {
+      "name": "Alaşağı",
+      "description": "12 hasar ver.\n2 Zayıf uygula."
+    },
+    "CLUMSY": {
+      "name": "Sakar",
+      "description": "Oynanamaz.\nRuhani."
+    },
+    "COLD_SNAP": {
+      "name": "Soğuk Çarpması",
+      "description": "6 hasar ver.\n1 Ayaz Aktar."
+    },
+    "COMBUST": {
+      "name": "İçten Yanma",
+      "description": "Her tur sonunda\n1 CP kaybet ve TÜM düşmanlara 5 hasar ver."
+    },
+    "CONCENTRATE": {
+      "name": "Konsantrasyon",
+      "description": "Elinden 3 kart at.\n[G] [G] kazan."
+    },
+    "CONSERVE_BATTERY": {
+      "name": "Pil Şarjı",
+      "description": "7 Blok kazan.\nSonraki tur başında\n[B] kazan."
+    },
+    "CONSUME": {
+      "name": "Sarf",
+      "description": "2 Odak kazan.\n1 Küre yuvası kaybet."
+    },
+    "COOLHEADED": {
+      "name": "Serinkanlı",
+      "description": "1 Ayaz Aktar.\n1 kart çek.",
+      "upgradeDescription": "1 Ayaz Aktar.\n+1 kart çek."
+    },
+    "CORPSE_EXPLOSION": {
+      "name": "Patlayan Ceset",
+      "description": "6 Zehir uygula.\nO düşman öldüğünde TÜM düşmanlara ölen düşmanın Maksimum CP'si kadar hasar ver.",
+      "upgradeDescription": "deprecated"
+    },
+    "CORRUPTION": {
+      "name": "Yozlaşma",
+      "description": "Beceri kartlarının maliyeti 0 olur.\nNe zaman bir Beceri oynarsan onu Tüket."
+    },
+    "CREATIVE_AI": {
+      "name": "Yaratıcı AI",
+      "description": "Her tur başında\neline rastgele bir Güç kartı ekle."
+    },
+    "CRIPPLING_POISON": {
+      "name": "Felç Edici Bulut",
+      "description": "TÜM düşmanlara\n4 Zehir ve 2 Zayıf uygula.\nTüket."
+    },
+    "DAGGER_SPRAY": {
+      "name": "Hançer Serpintisi",
+      "description": "TÜM düşmanlara\niki kez 4 hasar ver."
+    },
+    "DAGGER_THROW": {
+      "name": "Hançer Fırlatma",
+      "description": "9 hasar ver.\n1 kart çek.\n1 kart at."
+    },
+    "DARK_EMBRACE": {
+      "name": "Karanlık Kucak",
+      "description": "Ne zaman bir kart Tüketilirse 1 kart çek."
+    },
+    "DARK_SHACKLES": {
+      "name": "Kara Zincir",
+      "description": "Bu tur için düşman\n9 Kuvvet kaybeder.\nTüket."
+    },
+    "DARKNESS": {
+      "name": "Zifiri Karanlık",
+      "description": "1 Karanlık Aktar.",
+      "upgradeDescription": "1 Karanlık Aktar.\nTüm Karanlık kürelerinin pasif özelliğini tetikle."
+    },
+    "DASH": {
+      "name": "Hızla Çarpma",
+      "description": "10 Blok kazan.\n10 hasar ver."
+    },
+    "DAZED": {
+      "name": "Sersemlik",
+      "description": "Oynanamaz.\nRuhani."
+    },
+    "DEADLY_POISON": {
+      "name": "Ölümcül Zehir",
+      "description": "5 Zehir uygula."
+    },
+    "DECAY": {
+      "name": "Çürüme",
+      "description": "Oynanamaz.\nTur sonunda 2 hasar al."
+    },
+    "DEEP_BREATH": {
+      "name": "Derin Nefes",
+      "description": "Atma yığınını çekme yığınına karıştır.\n1 kart çek.",
+      "upgradeDescription": "Atma yığınını çekme yığınına karıştır.\n+1 kart çek."
+    },
+    "DEFEND_B": {
+      "name": "Savunma",
+      "description": "5 Blok kazan."
+    },
+    "DEFEND_G": {
+      "name": "Savunma",
+      "description": "5 Blok kazan."
+    },
+    "DEFEND_R": {
+      "name": "Savunma",
+      "description": "5 Blok kazan."
+    },
+    "DEFLECT": {
+      "name": "Saptırma",
+      "description": "4 Blok kazan."
+    },
+    "DEFRAGMENT": {
+      "name": "Bütünleştirme",
+      "description": "1 Odak kazan."
+    },
+    "DEMON_FORM": {
+      "name": "İblis Formu",
+      "description": "Her tur başında\n2 Kuvvet kazan."
+    },
+    "DIE_DIE_DIE": {
+      "name": "Öl Öl Öl",
+      "description": "TÜM düşmanlara\n13 hasar ver.\nTüket."
+    },
+    "DISARM": {
+      "name": "Eller Yukarı",
+      "description": "Düşman 2 Kuvvet kaybeder.\nTüket."
+    },
+    "DISTRACTION": {
+      "name": "Oyalama",
+      "description": "Eline rastgele bir Beceri kartı ekle.\nBu tur maliyeti 0 olur.\nTüket."
+    },
+    "DODGE_AND_ROLL": {
+      "name": "Sıyrıl Yuvarlan",
+      "description": "4 Blok kazan.\nSonraki tur başında\n4 Blok kazan."
+    },
+    "DOOM_AND_GLOOM": {
+      "name": "Vahamet",
+      "description": "TÜM düşmanlara\n10 hasar ver.\n1 Karanlık Aktar."
+    },
+    "DOPPELGANGER": {
+      "name": "Tıpatıp Aynısı",
+      "description": "Sonraki tur başında\nX kart çek ve\nX [G] kazan.\nTüket.",
+      "upgradeDescription": "Sonraki tur başında\nX+1 kart çek ve\nX+1 [G] kazan.\nTüket."
+    },
+    "DOUBLE_ENERGY": {
+      "name": "Çift Enerji",
+      "description": "Enerjini ikiye katla.\nTüket.",
+      "upgradeDescription": "Enerjini ikiye katla."
+    },
+    "DOUBLE_TAP": {
+      "name": "Çift Vuruş",
+      "description": "Bu tur oynayacağın bir sonraki Saldırı kartı iki kez oynanır.",
+      "upgradeDescription": "Bu tur oynayacağın sonraki +1 Saldırı kartı iki kez oynanır."
+    },
+    "DOUBT": {
+      "name": "Şüphe",
+      "description": "Oynanamaz.\nTur sonunda 1 Zayıf kazan."
+    },
+    "DRAMATIC_ENTRANCE": {
+      "name": "Etkileyici Giriş",
+      "description": "Yerleşik.\nTÜM düşmanlara\n8 hasar ver.\nTüket."
+    },
+    "DROPKICK": {
+      "name": "Düşürme Vuruşu",
+      "description": "5 hasar ver.\nEğer o düşman Savunmasız ise\n[R] kazan ve 1 kart çek."
+    },
+    "DUAL_WIELD": {
+      "name": "Çift El",
+      "description": "Bir Saldırı veya Güç kartı seç. O kartın 1 kopyasını eline ekle.",
+      "upgradeDescription": "Bir Saldırı veya Güç kartı seç. O kartın 2 kopyasını eline ekle."
+    },
+    "DUALCAST": {
+      "name": "Çift Uyarı",
+      "description": "Sıradaki Küreni\niki kez Uyar."
+    },
+    "ECHO_FORM": {
+      "name": "Yankı Formu",
+      "description": "Ruhani.\nHer tur oynadığın ilk kart iki kez oynanır.",
+      "upgradeDescription": "Her tur oynadığın ilk kart iki kez oynanır."
+    },
+    "ELECTRODYNAMICS": {
+      "name": "Elektrodinamik",
+      "description": "Yıldırım artık TÜM düşmanlara vurur.\n2 Yıldırım Aktar."
+    },
+    "ENDLESS_AGONY": {
+      "name": "Bitmeyen Izdırap",
+      "description": "4 hasar ver.\nBu kartı ne zaman çekersen bir kopyasını eline ekle.\nTüket."
+    },
+    "ENERGY_PULSE": {
+      "name": "Enerji Atımı",
+      "description": "Enerjine eşit Blok kazan.",
+      "upgradeDescription": "Enerjinin iki katına eşit Blok kazan."
+    },
+    "ENLIGHTENMENT": {
+      "name": "Aydınlanma",
+      "description": "Elindeki tüm kartların maliyetini bu tur boyunca 1'e düşür.",
+      "upgradeDescription": "Elindeki tüm kartların maliyetini bu dövüş boyunca 1'e düşür."
+    },
+    "ENTRENCH": {
+      "name": "Sağlamlaştırma",
+      "description": "Bloğunu ikiye katla.",
+      "upgradeDescription": "Bloğunu ikiye katla."
+    },
+    "ENVENOM": {
+      "name": "Bir Tutam Zehir",
+      "description": "Ne zaman bir Saldırın CP hasarı verirse 1 Zehir uygula."
+    },
+    "ESCAPE_PLAN": {
+      "name": "Kaçış Planı",
+      "description": "1 kart çek.\nEğer çektiğin kart Beceri ise 3 Blok kazan."
+    },
+    "EVISCERATE": {
+      "name": "Karın Deşme",
+      "description": "Bu tur atılan her kart için maliyeti\n1 [G] azalır.\n3 kez 7 hasar ver."
+    },
+    "EVOLVE": {
+      "name": "Evrimleşme",
+      "description": "Ne zaman bir Durum kartı çekersen 1 kart çek.",
+      "upgradeDescription": "Ne zaman bir Durum kartı çekersen +1 kart çek."
+    },
+    "EXHUME": {
+      "name": "Hortlatma",
+      "description": "Tüketme yığınından eline bir kart al.\nTüket."
+    },
+    "EXPERTISE": {
+      "name": "Uzmanlık",
+      "description": "Elinde 6 kart olana kadar kart çek."
+    },
+    "FTL": {
+      "name": "IDH",
+      "description": "5 hasar ver.\nEğer bu tur 3 taneden daha az kart oynadıysan 1 kart çek."
+    },
+    "FEED": {
+      "name": "Beslenme",
+      "description": "10 hasar ver.\nEğer Ölümcül ise Maksimum CP'ni\n3 artır.\nTüket."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Acı Yok",
+      "description": "Ne zaman bir kart Tüketilirse 3 Blok kazan."
+    },
+    "FIEND_FIRE": {
+      "name": "Zebani Ateşi",
+      "description": "Tüm elini Tüket.\nTükettiğin her kart için 7 hasar ver.\nTüket."
+    },
+    "FINESSE": {
+      "name": "İncelik",
+      "description": "2 Blok kazan.\n1 kart çek."
+    },
+    "FINISHER": {
+      "name": "Bitirici",
+      "description": "Bu tur oynanmış her Saldırı için 6 hasar ver."
+    },
+    "FIRE_BREATHING": {
+      "name": "Ateş Püskürtme",
+      "description": "Ne zaman bir Durum veya Lanet kartı çekersen TÜM düşmanlara 6 hasar ver."
+    },
+    "FISSION": {
+      "name": "Fizyon",
+      "description": "Tüm Kürelerini kaldır.\nKaldırılan her Küre\niçin [B] kazan ve\n1 kart çek.\nTüket.",
+      "upgradeDescription": "Tüm Kürelerini Uyar.\nUyarılan her Küre\niçin [B] kazan ve\n1 kart çek.\nTüket."
+    },
+    "FLAME_BARRIER": {
+      "name": "Alev Seti",
+      "description": "12 Blok kazan.\nBu tur ne zaman saldırı gelirse geri 4 hasar ver."
+    },
+    "FLASH_OF_STEEL": {
+      "name": "Çelik Parıltısı",
+      "description": "3 hasar ver.\n1 kart çek."
+    },
+    "FLECHETTES": {
+      "name": "Çivi Bombası",
+      "description": "Elindeki her Beceri için 4 hasar ver."
+    },
+    "FLEX": {
+      "name": "Kasılma",
+      "description": "2 Kuvvet kazan.\nBu tur sonunda 2 Kuvvet kaybet."
+    },
+    "FLUX_CAPACITOR": {
+      "name": "Akı Kapasitörü",
+      "description": "Tüm Aktarılmış Küreleri Plazma ile değiştir.\nTüket."
+    },
+    "FLYING_KNEE": {
+      "name": "Uçan Diz",
+      "description": "8 hasar ver.\nSonraki tur başında\n[G] kazan."
+    },
+    "FOOTWORK": {
+      "name": "Ayak Hakimiyeti",
+      "description": "2 Çeviklik kazan."
+    },
+    "FORCE_FIELD": {
+      "name": "Güç Alanı",
+      "description": "Bu dövüş boyunca oynanmış her Güç kartı için maliyeti\n1 [B] azalır.\n12 Blok kazan."
+    },
+    "FUSION": {
+      "name": "Füzyon",
+      "description": "1 Plazma Aktar."
+    },
+    "GASH": {
+      "name": "Pençe",
+      "description": "3 hasar ver.\nTÜM Pençe kartlarının verdiği hasarı bu dövüş boyunca 2 artır."
+    },
+    "GENETIC_ALGORITHM": {
+      "name": "Genetik Algoritma",
+      "description": "!B! Blok kazan.\nBu kartın Bloğunu kalıcı olarak 2 artır.\nTüket."
+    },
+    "GHOSTLY": {
+      "name": "Hayali Varlık",
+      "description": "Ruhani.\n1 Soyutluk kazan.\nTüket.",
+      "upgradeDescription": "1 Soyutluk kazan.\nTüket."
+    },
+    "GHOSTLY_ARMOR": {
+      "name": "Hayaletimsi Zırh",
+      "description": "Ruhani.\n10 Blok kazan."
+    },
+    "GLACIER": {
+      "name": "Buzul",
+      "description": "7 Blok kazan.\n2 Ayaz Aktar.",
+      "upgradeDescription": "+3 Blok kazan.\n2 Ayaz Aktar."
+    },
+    "GLASS_KNIFE": {
+      "name": "Cam Bıçak",
+      "description": "İki kez 8 hasar ver.\nBu kartın verdiği hasarı bu dövüş boyunca 2 azalt."
+    },
+    "GO_FOR_THE_EYES": {
+      "name": "Gözlere Çalış",
+      "description": "3 hasar ver.\nEğer düşman saldırmaya niyetliyse 1 Zayıf uygula."
+    },
+    "GOOD_INSTINCTS": {
+      "name": "İyi İçgüdü",
+      "description": "6 Blok kazan."
+    },
+    "GRAND_FINALE": {
+      "name": "Büyük Final",
+      "description": "Yalnızca çekme yığınında hiçbir kart yoksa oynanabilir.\nTÜM düşmanlara\n50 hasar ver.",
+      "upgradeDescription": "Çekme yığınım\nBoş olmalı."
+    },
+    "HAVOC": {
+      "name": "Tahribat",
+      "description": "Çekme yığınının üstündeki kartı oyna ve onu Tüket."
+    },
+    "HEADBUTT": {
+      "name": "Kafa Atma",
+      "description": "9 hasar ver.\nAtma yığınından bir kartı çekme yığınının\nüstüne koy."
+    },
+    "HEATSINKS": {
+      "name": "Isı Yatağı",
+      "description": "Ne zaman bir Güç kartı oynarsan 1 kart çek.",
+      "upgradeDescription": "Ne zaman bir Güç kartı oynarsan +1 kart çek."
+    },
+    "HEAVY_BLADE": {
+      "name": "Ağır Kılıç",
+      "description": "14 hasar ver.\nKuvvet bu kartı 3 kat etkiler.",
+      "upgradeDescription": "14 hasar ver.\nKuvvet bu kartı +2 kat etkiler."
+    },
+    "HEEL_HOOK": {
+      "name": "Diz Kilidi",
+      "description": "5 hasar ver.\nEğer o düşman\nZayıf ise\n[G] kazan ve 1 kart çek."
+    },
+    "HELLO_WORLD": {
+      "name": "Merhaba Dünya",
+      "description": "Her tur başında\neline rastgele bir Yaygın kart ekle.",
+      "upgradeDescription": "Yerleşik.\nHer tur başında\neline rastgele bir Yaygın kart ekle."
+    },
+    "HEMOKINESIS": {
+      "name": "Hemokinezi",
+      "description": "2 CP kaybet.\n15 hasar ver."
+    },
+    "HIDE": {
+      "name": "Saklan",
+      "description": "Sonraki tur başına kadar CP kaybedemezsin.\nTüket."
+    },
+    "HOLOGRAM": {
+      "name": "Hologram",
+      "description": "3 Blok kazan.\nAtma yığınından eline bir kart al.\nTüket.",
+      "upgradeDescription": "+2 Blok kazan.\nAtma yığınından eline bir kart al."
+    },
+    "HYPERBEAM": {
+      "name": "Hiperışın",
+      "description": "TÜM düşmanlara\n26 hasar ver.\n3 Odak kaybet."
+    },
+    "IMMOLATE": {
+      "name": "Kurban Yakma",
+      "description": "TÜM düşmanlara\n21 hasar ver.\nAtma yığınına bir Yanık ekle."
+    },
+    "IMPERVIOUS": {
+      "name": "Vurdumduymaz",
+      "description": "30 Blok kazan.\nTüket."
+    },
+    "INFERNAL_BLADE": {
+      "name": "Cehennem Kılıcı",
+      "description": "Eline rastgele bir Saldırı kartı ekle.\nBu tur maliyeti 0 olur.\nTüket."
+    },
+    "INFINITE_BLADES": {
+      "name": "Sonsuz Bıçak",
+      "description": "Her tur başında\neline bir Kama ekle.",
+      "upgradeDescription": "Yerleşik.\nHer tur başında\neline bir Kama ekle."
+    },
+    "INFLAME": {
+      "name": "Alevlenme",
+      "description": "2 Kuvvet kazan."
+    },
+    "INJURY": {
+      "name": "Sakatlık",
+      "description": "Oynanamaz."
+    },
+    "INTIMIDATE": {
+      "name": "Korkutma",
+      "description": "TÜM düşmanlara\n1 Zayıf uygula.\nTüket."
+    },
+    "IRON_WAVE": {
+      "name": "Demir Dalgası",
+      "description": "5 Blok kazan.\n5 hasar ver."
+    },
+    "J_A_X": {
+      "name": "J.A.X.",
+      "description": "3 CP kaybet.\n2 Kuvvet kazan."
+    },
+    "JACK_OF_ALL_TRADES": {
+      "name": "Her İşin Ustası",
+      "description": "Eline 1 tane rastgele Renksiz kart ekle.\nTüket.",
+      "upgradeDescription": "Eline +1 tane rastgele Renksiz kart ekle.\nTüket."
+    },
+    "JUGGERNAUT": {
+      "name": "Ezici Güç",
+      "description": "Ne zaman Blok kazanırsan rastgele bir düşmana 5 hasar ver."
+    },
+    "LEAP": {
+      "name": "Sıçrama",
+      "description": "9 Blok kazan."
+    },
+    "LEG_SWEEP": {
+      "name": "Ayak Süpürme",
+      "description": "2 Zayıf uygula.\n11 Blok kazan."
+    },
+    "LIMIT_BREAK": {
+      "name": "Sınırları Zorlama",
+      "description": "Kuvvetini ikiye katla.\nTüket.",
+      "upgradeDescription": "Kuvvetini ikiye katla."
+    },
+    "LOCKON": {
+      "name": "Tam On İkiden",
+      "description": "8 hasar ver.\n2 Kilitlenme uygula."
+    },
+    "LOOP": {
+      "name": "Döngü",
+      "description": "Her tur başında\nsıradaki Kürenin pasif özelliğini tetikle.",
+      "upgradeDescription": "Her tur başında\nsıradaki Kürenin pasif özelliğini +1 kez tetikle."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Makine Öğrenimi",
+      "description": "Her tur başında\nfazladan 1 kart çek.",
+      "upgradeDescription": "Yerleşik.\nHer tur başında\nfazladan 1 kart çek."
+    },
+    "MADNESS": {
+      "name": "Delilik",
+      "description": "Elindeki rastgele bir kartın maliyetini bu dövüş boyunca 0 yap.\nTüket."
+    },
+    "MAGNETISM": {
+      "name": "Çekim",
+      "description": "Her tur başında\neline rastgele bir Renksiz kart ekle."
+    },
+    "MALAISE": {
+      "name": "Halsizlik",
+      "description": "Düşman X Kuvvet kaybeder.\nX Zayıf uygula.\nTüket.",
+      "upgradeDescription": "Düşman X+1 Kuvvet kaybeder.\nX+1 Zayıf uygula.\nTüket."
+    },
+    "MASTER_OF_STRATEGY": {
+      "name": "Strateji Ustası",
+      "description": "3 kart çek.\nTüket."
+    },
+    "MASTERFUL_STAB": {
+      "name": "Ustaca Bıçaklama",
+      "description": "Bu dövüş boyunca her CP kaybında maliyeti\n1 [G] artar.\n12 hasar ver."
+    },
+    "MAYHEM": {
+      "name": "Kargaşa",
+      "description": "Her tur başında\nçekme yığınının üstündeki kartı oyna."
+    },
+    "MELTER": {
+      "name": "Eritici",
+      "description": "Düşmanın tüm Bloğunu yok et.\n10 hasar ver."
+    },
+    "METALLICIZE": {
+      "name": "Metalleşme",
+      "description": "Her tur sonunda\n3 Blok kazan."
+    },
+    "METAMORPHOSIS": {
+      "name": "Başkalaşım",
+      "description": "Çekme yığınına 3 tane rastgele Saldırı karıştır. Bu dövüş boyunca maliyetleri 0 olur.\nTüket."
+    },
+    "METEOR_STRIKE": {
+      "name": "Göktaşı Darbesi",
+      "description": "24 hasar ver.\n3 Plazma Aktar."
+    },
+    "MIND_BLAST": {
+      "name": "Zihin Patlaması",
+      "description": "Yerleşik.\nÇekme yığınındaki kart sayısı kadar hasar ver."
+    },
+    "MULTI_CAST": {
+      "name": "Çoklu Uyarı",
+      "description": "Sıradaki Küreni\nX kez Uyar.",
+      "upgradeDescription": "Sıradaki Küreni\nX+1 kez Uyar."
+    },
+    "NECRONOMICURSE": {
+      "name": "Nekronomilanet",
+      "description": "Oynanamaz.\nBu Lanetten kaçış yok."
+    },
+    "NEUTRALIZE": {
+      "name": "Etkisizleştirme",
+      "description": "3 hasar ver.\n1 Zayıf uygula."
+    },
+    "NIGHT_TERROR": {
+      "name": "Kabus",
+      "description": "Bir kart seç.\nSonraki tur başında eline o kartın 3 tane kopyasını ekle.\nTüket."
+    },
+    "NORMALITY": {
+      "name": "Olağanlık",
+      "description": "Oynanamaz.\nElindeyse bu tur içinde en fazla 3 kart oynayabilirsin."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Zehirli Gazlar",
+      "description": "Her tur başında\nTÜM düşmanlara 2 Zehir uygula."
+    },
+    "OFFERING": {
+      "name": "Adak",
+      "description": "6 CP kaybet.\n[R] [R] kazan.\n3 kart çek.\nTüket.",
+      "upgradeDescription": "6 CP kaybet.\n[R] [R] kazan.\n+2 kart çek.\nTüket."
+    },
+    "OUTMANEUVER": {
+      "name": "Üstünlük Kurma",
+      "description": "Sonraki tur başında\n[G] [G] kazan.",
+      "upgradeDescription": "Sonraki tur başında\n[G] [G] [G] kazan."
+    },
+    "PAIN": {
+      "name": "Acı",
+      "description": "Oynanamaz.\nBu kart elindeyken oynadığın her kart için 1 CP kaybet."
+    },
+    "PANACEA": {
+      "name": "Panase",
+      "description": "1 Yapı kazan.\nTüket."
+    },
+    "PANACHE": {
+      "name": "Gösteriş",
+      "description": "Bir turda oynadığın her 5 kart için TÜM düşmanlara 10 hasar ver."
+    },
+    "PARASITE": {
+      "name": "Asalak",
+      "description": "Oynanamaz.\nEğer dönüştürülürse veya desteden çıkarılırsa, 3 Maksimum CP kaybet."
+    },
+    "PERFECTED_STRIKE": {
+      "name": "Kusursuz Darbe",
+      "description": "6 hasar ver.\nAdında \"Darbe\" bulunan her kartın için fazladan 2 hasar verir.",
+      "upgradeDescription": "6 hasar ver.\nAdında \"Darbe\" bulunan her kartın için fazladan +1 hasar verir."
+    },
+    "PHANTASMAL_KILLER": {
+      "name": "Hayali Katil",
+      "description": "Sonraki tur boyunca Saldırıların iki kat hasar verir."
+    },
+    "PIERCINGWAIL": {
+      "name": "Sağır Edici Ağıt",
+      "description": "Bu tur için TÜM düşmanlar 6 Kuvvet kaybeder.\nTüket."
+    },
+    "POISONED_STAB": {
+      "name": "Zehirli Hançer",
+      "description": "6 hasar ver.\n3 Zehir uygula."
+    },
+    "POMMEL_STRIKE": {
+      "name": "Kabza Darbesi",
+      "description": "9 hasar ver.\n1 kart çek.",
+      "upgradeDescription": "+1 hasar ver.\n+1 kart çek."
+    },
+    "POWER_THROUGH": {
+      "name": "Çelik Azim",
+      "description": "Eline 2 Yara ekle.\n15 Blok kazan."
+    },
+    "PREDATOR": {
+      "name": "Yırtıcı",
+      "description": "15 hasar ver.\nSonraki tur başında\nfazladan 2 kart çek."
+    },
+    "PREPARED": {
+      "name": "Hazırlıklı",
+      "description": "1 kart çek.\n1 kart at.",
+      "upgradeDescription": "+1 kart çek.\n+1 kart at."
+    },
+    "PUMMEL": {
+      "name": "Yumruklama",
+      "description": "4 kez 2 hasar ver.\nTüket.",
+      "upgradeDescription": "+1 kez 2 hasar ver.\nTüket."
+    },
+    "PURITY": {
+      "name": "Saflık",
+      "description": "3 karta kadar\nelinden istediğin\nsayıda kart Tüket.\nTüket."
+    },
+    "QUICK_SLASH": {
+      "name": "Çabuk Kesiş",
+      "description": "8 hasar ver.\n1 kart çek."
+    },
+    "RAGE": {
+      "name": "Öfke",
+      "description": "Bu tur ne zaman bir Saldırı oynarsan\n3 Blok kazan."
+    },
+    "RAINBOW": {
+      "name": "Gökkuşağı",
+      "description": "1 Yıldırım Aktar.\n1 Ayaz Aktar.\n1 Karanlık Aktar.\nTüket.",
+      "upgradeDescription": "1 Yıldırım Aktar.\n1 Ayaz Aktar.\n1 Karanlık Aktar."
+    },
+    "RAMPAGE": {
+      "name": "Heyheylenme",
+      "description": "8 hasar ver.\nBu kartın verdiği hasarı bu dövüş boyunca 5 artır."
+    },
+    "REAPER": {
+      "name": "Hasat",
+      "description": "TÜM düşmanlara\n4 hasar ver.\nVerdiğin CP hasarı kadar iyileş.\nTüket."
+    },
+    "REBOOT": {
+      "name": "Baştan Başlatma",
+      "description": "TÜM kartlarını çekme yığınına karıştır.\n4 kart çek.\nTüket."
+    },
+    "REBOUND": {
+      "name": "Geri Tepme",
+      "description": "9 hasar ver.\nBu tur oynayacağın bir sonraki kartı çekme yığınının üstüne koy."
+    },
+    "RECKLESS_CHARGE": {
+      "name": "Pervasız Hücum",
+      "description": "7 hasar ver.\nÇekme yığınına bir Sersemlik ekle."
+    },
+    "RECYCLE": {
+      "name": "Geri Dönüşüm",
+      "description": "Elinden bir kart Tüket.\nTükettiğin kartın maliyeti kadar\n[B] kazan."
+    },
+    "REDO": {
+      "name": "Özyineleme",
+      "description": "Sıradaki Küreni Uyar.\nUyarılmış Kürenin aynısını Aktar."
+    },
+    "REFLEX": {
+      "name": "Refleks",
+      "description": "Oynanamaz.\nEğer bu kart elinden atılırsa 2 kart çek.",
+      "upgradeDescription": "Oynanamaz.\nEğer bu kart elinden atılırsa +1 kart çek."
+    },
+    "REGRET": {
+      "name": "Pişmanlık",
+      "description": "Oynanamaz.\nTur sonunda elinde kalan kart sayısı kadar CP kaybet."
+    },
+    "REINFORCED_BODY": {
+      "name": "Takviyeli Gövde",
+      "description": "X kez 7 Blok kazan."
+    },
+    "REPROGRAM": {
+      "name": "Farklı Yazılım",
+      "description": "1 Odak kaybet.\n1 Kuvvet kazan.\n1 Çeviklik kazan."
+    },
+    "RIDDLE_WITH_HOLES": {
+      "name": "Delik Deşik Etme",
+      "description": "5 kez 3 hasar ver."
+    },
+    "RIP_AND_TEAR": {
+      "name": "Parçalama",
+      "description": "Rastgele düşmanlara iki kez 7 hasar ver."
+    },
+    "RUPTURE": {
+      "name": "Yırtık",
+      "description": "Ne zaman oynadığın bir kart sonucunda CP kaybedersen\n1 Kuvvet kazan."
+    },
+    "SADISTIC_NATURE": {
+      "name": "Sadistik Huy",
+      "description": "Ne zaman düşmana bir olumsuz etki uygularsan o düşmana 5 hasar ver."
+    },
+    "SCRAPE": {
+      "name": "Kazıma",
+      "description": "7 hasar ver.\n4 kart çek.\nÇektiğin 0 maliyetli olmayan tüm kartları elinden at."
+    },
+    "SEARING_BLOW": {
+      "name": "Dağlayan Kılıç",
+      "description": "12 hasar ver.\nSınırsız kez Geliştirilebilir."
+    },
+    "SECOND_WIND": {
+      "name": "Soluklanma",
+      "description": "Elindeki Saldırı harici tüm kartları Tüket. Tüketilen her kart için 5 Blok kazan."
+    },
+    "SECRET_TECHNIQUE": {
+      "name": "Gizli Teknik",
+      "description": "Çekme yığınından eline bir Beceri al.\nTüket.",
+      "upgradeDescription": "Çekme yığınından eline bir Beceri al."
+    },
+    "SECRET_WEAPON": {
+      "name": "Gizli Silah",
+      "description": "Çekme yığınından eline bir Saldırı al.\nTüket.",
+      "upgradeDescription": "Çekme yığınından eline bir Saldırı al."
+    },
+    "SEEING_RED": {
+      "name": "Gözükara",
+      "description": "[R] [R] kazan.\nTüket."
+    },
+    "SEEK": {
+      "name": "Arama",
+      "description": "Çekme yığınından eline 1 kart al.\nTüket.",
+      "upgradeDescription": "Çekme yığınından eline +1 kart al.\nTüket."
+    },
+    "SELF_REPAIR": {
+      "name": "Kendini Onarım",
+      "description": "Dövüş sonunda\n7 CP iyileş."
+    },
+    "SENTINEL": {
+      "name": "Koruyucu",
+      "description": "5 Blok kazan.\nEğer bu kart Tüketilirse\n[R] [R] kazan.",
+      "upgradeDescription": "+3 Blok kazan.\nEğer bu kart Tüketilirse\n[R] [R] [R] kazan."
+    },
+    "SETUP": {
+      "name": "Tuzak",
+      "description": "Elindeki bir kartı çekme yığınının\nüstüne koy.\nOynanana kadar maliyeti 0 olur."
+    },
+    "SEVER_SOUL": {
+      "name": "Ruh Kesme",
+      "description": "Elindeki Saldırı harici tüm kartları Tüket.\n16 hasar ver."
+    },
+    "SHAME": {
+      "name": "Utanç",
+      "description": "Oynanamaz.\nTur sonunda 1 Kırılgan kazan."
+    },
+    "SHIV": {
+      "name": "Kama",
+      "description": "!D! hasar ver.\nTüket."
+    },
+    "SHOCKWAVE": {
+      "name": "Şok Dalgası",
+      "description": "TÜM düşmanlara\n3 Zayıf ve Savunmasız uygula.\nTüket."
+    },
+    "SHRUG_IT_OFF": {
+      "name": "Omuz Silkme",
+      "description": "8 Blok kazan.\n1 kart çek."
+    },
+    "SKEWER": {
+      "name": "Şişleme",
+      "description": "X kez 7 hasar ver."
+    },
+    "SKIM": {
+      "name": "Göz Gezdirme",
+      "description": "3 kart çek."
+    },
+    "SLICE": {
+      "name": "Dilimleme",
+      "description": "6 hasar ver."
+    },
+    "SLIMED": {
+      "name": "Balçık",
+      "description": "Tüket."
+    },
+    "SPOT_WEAKNESS": {
+      "name": "Zayıflık Belirleme",
+      "description": "Eğer düşman saldırmaya niyetliyse 3 Kuvvet kazan."
+    },
+    "STACK": {
+      "name": "Yığın",
+      "description": "Atma yığınındaki kart sayısına eşit Blok kazan.",
+      "upgradeDescription": "Atma yığınındaki kart sayısı +3 Blok kazan."
+    },
+    "STATIC_DISCHARGE": {
+      "name": "Statik Boşalma",
+      "description": "Ne zaman saldırı hasarı alırsan\n1 Yıldırım Aktar.",
+      "upgradeDescription": "Ne zaman saldırı hasarı alırsan\n+1 Yıldırım Aktar."
+    },
+    "STEAM": {
+      "name": "Buhar Seti",
+      "description": "6 Blok kazan.\nBu kartın verdiği Bloğu bu dövüş boyunca\n1 azalt."
+    },
+    "STEAM_POWER": {
+      "name": "Hız Aşırtma",
+      "description": "2 kart çek.\nAtma yığınına bir Yanık ekle."
+    },
+    "STORM": {
+      "name": "Fırtına",
+      "description": "Ne zaman bir Güç kartı oynarsan 1 Yıldırım Aktar.",
+      "upgradeDescription": "Yerleşik.\nNe zaman bir Güç kartı oynarsan 1 Yıldırım Aktar."
+    },
+    "STORM_OF_STEEL": {
+      "name": "Çelik Fırtınası",
+      "description": "Elindeki tüm\nkartları at.\nAttığın her kart için eline bir Kama ekle.",
+      "upgradeDescription": "Elindeki tüm\nkartları at.\nAttığın her kart için eline bir Kama+ ekle."
+    },
+    "STREAMLINE": {
+      "name": "Akım Çizgisi",
+      "description": "15 hasar ver.\nBu kartın maliyetini bu dövüş boyunca 1 azalt."
+    },
+    "STRIKE_B": {
+      "name": "Darbe",
+      "description": "6 hasar ver."
+    },
+    "STRIKE_G": {
+      "name": "Darbe",
+      "description": "6 hasar ver."
+    },
+    "STRIKE_R": {
+      "name": "Darbe",
+      "description": "6 hasar ver."
+    },
+    "SUCKER_PUNCH": {
+      "name": "Şaşırtan Yumruk",
+      "description": "7 hasar ver.\n1 Zayıf uygula."
+    },
+    "SUNDER": {
+      "name": "Ayırma",
+      "description": "24 hasar ver.\nEğer bu Saldırı o düşmanı öldürürse\n[B] [B] [B] kazan."
+    },
+    "SURVIVOR": {
+      "name": "Kazazede",
+      "description": "8 Blok kazan.\n1 kart at."
+    },
+    "SWEEPING_BEAM": {
+      "name": "Süpürücü Işın",
+      "description": "TÜM düşmanlara\n6 hasar ver.\n1 kart çek."
+    },
+    "SWIFT_STRIKE": {
+      "name": "Seri Darbe",
+      "description": "7 hasar ver."
+    },
+    "SWORD_BOOMERANG": {
+      "name": "Kılıç Bumerangı",
+      "description": "Rastgele düşmanlara\n3 kez 3 hasar ver."
+    },
+    "TACTICIAN": {
+      "name": "Taktisyen",
+      "description": "Oynanamaz.\nEğer bu kart elinden atılırsa [G] kazan.",
+      "upgradeDescription": "Oynanamaz.\nEğer bu kart elinden atılırsa [G] [G] kazan."
+    },
+    "TEMPEST": {
+      "name": "Kasırga",
+      "description": "X Yıldırım Aktar.\nTüket.",
+      "upgradeDescription": "X+1 Yıldırım Aktar.\nTüket."
+    },
+    "TERROR": {
+      "name": "Dehşet",
+      "description": "99 Savunmasız uygula.\nTüket."
+    },
+    "THE_BOMB": {
+      "name": "Bomba",
+      "description": "Üç tur sonunda TÜM düşmanlara 40 hasar ver."
+    },
+    "THINKING_AHEAD": {
+      "name": "İleriyi Düşünme",
+      "description": "2 kart çek.\nElindeki bir kartı çekme yığınının\nüstüne koy.\nTüket.",
+      "upgradeDescription": "2 kart çek.\nElindeki bir kartı çekme yığınının\nüstüne koy."
+    },
+    "THUNDER_STRIKE": {
+      "name": "Yıldırım Darbesi",
+      "description": "Bu dövüş boyunca Aktarılmış her Yıldırım için rastgele düşmanlara 7 hasar ver."
+    },
+    "THUNDERCLAP": {
+      "name": "Gök Gürültüsü",
+      "description": "TÜM düşmanlara\n4 hasar ver ve 1 Savunmasız uygula."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Alet Edevat",
+      "description": "Her tur başında\nfazladan 1 kart çek ve\n1 kart at."
+    },
+    "TRANSMUTATION": {
+      "name": "Dönüşüm",
+      "description": "Eline X tane rastgele Renksiz kart ekle. Bu tur maliyetleri 0 olur.\nTüket.",
+      "upgradeDescription": "Eline X tane rastgele Gelişmiş Renksiz kart ekle. Bu tur maliyetleri 0 olur.\nTüket."
+    },
+    "TRIP": {
+      "name": "Tökezleme",
+      "description": "2 Savunmasız uygula.",
+      "upgradeDescription": "TÜM düşmanlara 2 Savunmasız uygula."
+    },
+    "TRUE_GRIT": {
+      "name": "Gerçek Yiğitlik",
+      "description": "7 Blok kazan.\nElinden rastgele bir kart Tüket.",
+      "upgradeDescription": "+2 Blok kazan.\nElinden seçtiğin bir kartı Tüket."
+    },
+    "TURBO": {
+      "name": "Turbo",
+      "description": "[B] [B] kazan.\nAtma yığınına bir Boşluk ekle.",
+      "upgradeDescription": "[B] [B] [B] kazan.\nAtma yığınına bir Boşluk ekle."
+    },
+    "TWIN_STRIKE": {
+      "name": "İkiz Darbe",
+      "description": "İki kez 5 hasar ver."
+    },
+    "UNDERHANDED_STRIKE": {
+      "name": "Sinsi Darbe",
+      "description": "12 hasar ver.\nEğer bu tur kart attıysan [G] [G] kazan."
+    },
+    "UNDO": {
+      "name": "Denge",
+      "description": "13 Blok kazan.\nBu tur sonunda elini Sakla."
+    },
+    "UNLOAD": {
+      "name": "Boşaltma",
+      "description": "14 hasar ver.\nElindeki Saldırı harici tüm kartları at."
+    },
+    "UPPERCUT": {
+      "name": "Aparkat",
+      "description": "13 hasar ver.\n1 Zayıf uygula.\n1 Savunmasız uygula."
+    },
+    "VENOMOLOGY": {
+      "name": "Simyacı",
+      "description": "Rastgele bir iksir üret.\nTüket."
+    },
+    "VOID": {
+      "name": "Boşluk",
+      "description": "Oynanamaz.\nRuhani.\nBu kartı çektiğinde\n1 Enerji kaybet."
+    },
+    "WARCRY": {
+      "name": "Savaş Narası",
+      "description": "1 kart çek.\nElindeki bir kartı çekme yığınının\nüstüne koy.\nTüket.",
+      "upgradeDescription": "+1 kart çek.\nElindeki bir kartı çekme yığınının\nüstüne koy.\nTüket."
+    },
+    "WELL_LAID_PLANS": {
+      "name": "İyi Çizilmiş Plan",
+      "description": "Her tur sonunda\nseçtiğin 1 kartı Sakla.",
+      "upgradeDescription": "Her tur sonunda\nseçtiğin +1 kartı Sakla."
+    },
+    "WHIRLWIND": {
+      "name": "Hortum",
+      "description": "TÜM düşmanlara\nX kez 5 hasar ver."
+    },
+    "WHITE_NOISE": {
+      "name": "Beyaz Gürültü",
+      "description": "Eline rastgele bir Güç kartı ekle.\nBu tur maliyeti 0 olur.\nTüket."
+    },
+    "WILD_STRIKE": {
+      "name": "Vahşi Darbe",
+      "description": "12 hasar ver.\nÇekme yığınına bir Yara karıştır."
+    },
+    "WOUND": {
+      "name": "Yara",
+      "description": "Oynanamaz."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Hayalet Formu",
+      "description": "2 Soyutluk kazan.\nHer tur sonunda\n1 Çeviklik kaybet."
+    },
+    "WRITHE": {
+      "name": "Kıvranma",
+      "description": "Oynanamaz.\nYerleşik."
+    },
+    "ZAP": {
+      "name": "Çarpma",
+      "description": "1 Yıldırım Aktar."
+    },
+    "CORE_SURGE": {
+      "name": "Çekirdek Gerilimi",
+      "description": "11 hasar ver.\n1 Yapı kazan.\nTüket."
+    },
+    "COMPILE_DRIVER": {
+      "name": "Sürücü Derlemesi",
+      "description": "7 hasar ver.\nHer farklı türden Küren için 1 kart çek."
+    },
+    "RITUALDAGGER": {
+      "name": "Ayin Hançeri",
+      "description": "!D! hasar ver.\nEğer Ölümcül ise bu kartın hasarını kalıcı olarak 3 artır.\nTüket."
+    },
+    "PRIDE": {
+      "name": "Gurur",
+      "description": "Yerleşik.\nHer tur sonunda\nbu kartın bir kopyasını çekme yığınının üstüne koy.\nTüket."
+    },
+    "PANICBUTTON": {
+      "name": "Alarm Tuşu",
+      "description": "30 Blok kazan.\n2 tur boyunca kartlardan Blok kazanamazsın.\nTüket."
+    },
+    "HANDOFGREED": {
+      "name": "Açgözlü Eli",
+      "description": "20 hasar ver.\nEğer Ölümcül ise 20 Altın kazan."
+    },
+    "VIOLENCE": {
+      "name": "Şiddet",
+      "description": "Çekme yığınından eline 3 tane rastgele\nSaldırı al.\nTüket."
+    },
+    "IMPATIENCE": {
+      "name": "Sabırsızlık",
+      "description": "Eğer elinde hiç Saldırı yoksa 2 kart çek."
+    },
+    "FORETHOUGHT": {
+      "name": "Önlem",
+      "description": "Elindeki bir kartı çekme yığınının altına koy. Oynanana kadar maliyeti 0 olur.",
+      "upgradeDescription": "Elinden istediğin kadar kartı çekme yığınının altına koy. Oynanana kadar maliyetleri 0 olur."
+    },
+    "DISCOVERY": {
+      "name": "Buluş",
+      "description": "3 rastgele karttan 1'ini seç ve eline ekle.\nBu tur maliyeti 0 olur.\nTüket.",
+      "upgradeDescription": "3 rastgele karttan 1'ini seç ve eline ekle.\nBu tur maliyeti 0 olur."
+    },
+    "SPIRITSHIELD": {
+      "name": "Ruh Kalkanı",
+      "description": "Elindeki her kart için 3 Blok kazan."
+    },
+    "BRILLIANCEAURA": {
+      "name": "DEPRECATED Brilliance Aura",
+      "description": "Exhaust.\nAt the start of your turn, draw 1 card.\nRetains."
+    },
+    "WRATH": {
+      "name": "Gazap",
+      "description": "Gelen ve giden saldırılar iki kat etkili."
+    },
+    "POLYMATH": {
+      "name": "DEPRECATED Polymath",
+      "description": "Enter Calm or Wrath.\nExhaust."
+    },
+    "TANTRUM": {
+      "name": "Öfke Nöbeti",
+      "description": "3 kez 3 hasar ver.\nGazaba gir.\nBu kartı çekme yığınına karıştır."
+    },
+    "ADAPTATION": {
+      "name": "Afallatma",
+      "description": "Ne zaman Gazaba girersen 2 kart çek.",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "CAUSALITY": {
+      "name": "Causality",
+      "description": "Draw cards until your hand is full.\nExhaust.",
+      "upgradeDescription": "Draw cards until your hand is full.\nRetains.\nExhaust."
+    },
+    "DEVOTION": {
+      "name": "Sadakat",
+      "description": "Her tur başında\n2 Mantra kazan."
+    },
+    "EMPTYFIST": {
+      "name": "Yumruk Boşaltma",
+      "description": "9 hasar ver.\nDuruşundan çık."
+    },
+    "WISDOM": {
+      "name": "Bilgelik",
+      "description": "Saklanır.\n!M! kart çek.\nTüket."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Retribution",
+      "description": "Whenever you lose HP, gain !M! Vigor."
+    },
+    "FLOWSTATE": {
+      "name": "DEPRECATED Flow State",
+      "description": "Wrath: Enter Calm.\nCalm: Enter Wrath.\nExhaust.",
+      "upgradeDescription": "Wrath: Enter Calm.\nCalm: Enter Wrath."
+    },
+    "SWIVEL": {
+      "name": "Semazen",
+      "description": "8 Blok kazan.\nOynayacağın bir sonraki Saldırı maliyetini sıfırla."
+    },
+    "WISH": {
+      "name": "Dilek",
+      "description": "Birini seç:\n6 Kaplı Zırh, 3 Kuvvet veya 25 Altın.\nTüket."
+    },
+    "FURYAURA": {
+      "name": "DEPRECATED Fury Aura",
+      "description": "Gain !M! temporary Strength.\nAt the start of your turn, gain 1 temporary Strength. Retains."
+    },
+    "DEUSEXMACHINA": {
+      "name": "Hızır Yardım",
+      "description": "Oynanamaz.\nBu kartı çektiğinde eline 2 Mucize ekle ve bu kartı Tüket."
+    },
+    "THROUGHVIOLENCE": {
+      "name": "Şiddet Yoluyla",
+      "description": "Saklanır.\n!D! hasar ver.\nTüket."
+    },
+    "METAPHYSICS": {
+      "name": "Metaphysics",
+      "description": "DEPRECATED",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "CLARITY": {
+      "name": "Clarity",
+      "description": "Look at the top !M! cards of your deck. Add 1 to your hand.\nExhaust the other.",
+      "upgradeDescription": "Look at the top !M! cards of your deck. Add 1 to your hand.\nExhaust the rest."
+    },
+    "WREATHOFFLAME": {
+      "name": "Alevli Çelenk",
+      "description": "Oynayacağın bir sonraki Saldırı fazladan 5 hasar verir."
+    },
+    "FLICKER": {
+      "name": "DEPRECATED Flicker",
+      "description": "Deal !D! damage. If this kills the enemy, return this card to your hand."
+    },
+    "ALPHA": {
+      "name": "Alfa",
+      "description": "Çekme yığınına bir Beta karıştır.\nTüket.",
+      "upgradeDescription": "Yerleşik.\nÇekme yığınına bir Beta karıştır.\nTüket."
+    },
+    "FOLLOWUP": {
+      "name": "Takip",
+      "description": "7 hasar ver.\nEğer son oynanan kart Saldırı ise [W] kazan."
+    },
+    "VAULT": {
+      "name": "Engel Atlama",
+      "description": "Düşmanın turunu atla\nyeni bir tura başla.\nTüket."
+    },
+    "WINDUP": {
+      "name": "DEPRECATED Windup",
+      "description": "Deal !D! damage.\nGain !M! Vigor."
+    },
+    "WALLOP": {
+      "name": "Pataklama",
+      "description": "9 hasar ver.\nVerdiğin CP hasarı kadar Blok kazan."
+    },
+    "CONSECRATE": {
+      "name": "Vakfetme",
+      "description": "TÜM düşmanlara\n5 hasar ver."
+    },
+    "CONCLUDE": {
+      "name": "Sonuçlandırma",
+      "description": "TÜM düşmanlara\n12 hasar ver.\nTurunu bitir."
+    },
+    "MASTERREALITY": {
+      "name": "Gerçeklik Ustası",
+      "description": "Ne zaman dövüş sırasında bir kart yaratılırsa onu Geliştir."
+    },
+    "CLEANSEEVIL": {
+      "name": "Cleanse Evil",
+      "description": "Add X Smites to your hand.",
+      "upgradeDescription": "Add X Upgraded Smites to your hand."
+    },
+    "WINDMILLSTRIKE": {
+      "name": "Fırıldak Darbesi",
+      "description": "Saklanır.\n7 hasar ver.\nHer Saklandığında verdiği hasar bu dövüş boyunca 4 artar."
+    },
+    "SHIELD": {
+      "name": "DEPRECATED Shield",
+      "description": "Gain !B! Block.\nRetains.\nExhaust."
+    },
+    "LESSONLEARNED": {
+      "name": "Ders Alındı",
+      "description": "10 hasar ver.\nEğer Ölümcül ise destendeki rastgele bir kartı Geliştir.\nTüket."
+    },
+    "CALM": {
+      "name": "Huzur",
+      "description": "Huzur terk edildiğinde [W] [W] kazan."
+    },
+    "THIRDEYE": {
+      "name": "Üçüncü Göz",
+      "description": "7 Blok kazan.\n3 Keşif yap."
+    },
+    "SURVEY": {
+      "name": "DEPRECATED Survey",
+      "description": "Gain !B! Block.\nGain !M! Vigor."
+    },
+    "FLYINGSLEEVES": {
+      "name": "Uçan Manşetler",
+      "description": "Saklanır.\nİki kez 4 hasar ver."
+    },
+    "WIREHEADING": {
+      "name": "Önsezi",
+      "description": "Her tur başında\n3 Keşif yap."
+    },
+    "SANCTITY": {
+      "name": "Kutsallık",
+      "description": "6 Blok kazan.\nEğer son oynanan kart Beceri ise 2 kart çek."
+    },
+    "WARDAURA": {
+      "name": "DEPRECATED Ward Aura",
+      "description": "Gain !B! Block.\nAt the start of your turn, gain !M! Block.\nRetains."
+    },
+    "MASTERY": {
+      "name": "Mastery",
+      "description": "Whenever you attempt to switch Stances to your current Stance, gain [B]."
+    },
+    "BETA": {
+      "name": "Beta",
+      "description": "Çekme yığınına bir Omega karıştır.\nTüket."
+    },
+    "FEARNOEVIL": {
+      "name": "Şerden Kaçınma",
+      "description": "8 hasar ver.\nEğer o düşman saldırmaya niyetliyse Huzura gir."
+    },
+    "PERSEVERANCE": {
+      "name": "Sebat",
+      "description": "Saklanır.\n5 Blok kazan.\nHer Saklandığında verdiği Blok bu dövüş boyunca 2 artar."
+    },
+    "RAGNAROK": {
+      "name": "Ragnarok",
+      "description": "Rastgele düşmanlara\n5 kez 5 hasar ver."
+    },
+    "AWAKENEDSTRIKE": {
+      "name": "DEPRECATED Awakened Strike",
+      "description": "Deal !D! damage."
+    },
+    "BLESSED": {
+      "name": "DEPRECATED Blessed",
+      "description": "Shuffle !M! Miracles into your draw pile.\nExhaust.",
+      "upgradeDescription": "Shuffle !M! Upgraded Miracles into your draw pile.\nExhaust."
+    },
+    "ERUPTION": {
+      "name": "Püskürme",
+      "description": "9 hasar ver.\nGazaba gir."
+    },
+    "LETFATEDECIDE": {
+      "name": "DEPRECATED Let Fate Decide",
+      "description": "Play the top X cards of your draw pile. If X is 3 or more, Retain X cards."
+    },
+    "CUTTHROUGHFATE": {
+      "name": "Kaderi Kesme",
+      "description": "7 hasar ver.\n2 Keşif yap.\n1 kart çek."
+    },
+    "WAVEOFTHEHAND": {
+      "name": "El Sallama",
+      "description": "Bu tur boyunca ne zaman Blok kazanırsan TÜM düşmanlara\n1 Zayıf uygula."
+    },
+    "VIGILANCE": {
+      "name": "İhtiyat",
+      "description": "8 Blok kazan.\nHuzura gir.",
+      "upgradeDescription": "Deprecated."
+    },
+    "PATHTOVICTORY": {
+      "name": "Hassas Noktalar",
+      "description": "8 Damga uygula.\nTÜM düşmanlar Damga sayıları kadar CP kaybeder."
+    },
+    "EVALUATE": {
+      "name": "Değerlendirme",
+      "description": "6 Blok kazan.\nÇekme yığınına bir İçgörü karıştır.",
+      "upgradeDescription": "+4 Blok kazan.\nÇekme yığınına bir İçgörü+ karıştır."
+    },
+    "ESTABLISHMENT": {
+      "name": "Kuruluş",
+      "description": "Saklanan kartların maliyetini bu dövüş boyunca 1 azalt.",
+      "upgradeDescription": "Yerleşik.\nSaklanan kartların maliyetini bu dövüş boyunca 1 azalt."
+    },
+    "COLLECT": {
+      "name": "Toplama",
+      "description": "X tur boyunca tur başlarında eline bir Mucize+ ekle.\nTüket.",
+      "upgradeDescription": "X+1 tur boyunca tur başlarında eline bir Mucize+ ekle.\nTüket."
+    },
+    "EXPERIENCED": {
+      "name": "DEPRECATED Experienced",
+      "description": "Gain !B! Block for each Upgraded card in your hand."
+    },
+    "PERFECTEDFORM": {
+      "name": "DEPRECATED Perfected Form",
+      "description": "If you have entered all basic Stances this turn, enter Divinity.\nExhaust.",
+      "upgradeDescription": "If you have entered all basic Stances this turn, enter Divinity."
+    },
+    "JUSTLUCKY": {
+      "name": "Sadece Şanslı",
+      "description": "1 Keşif yap.\n2 Blok kazan.\n3 hasar ver."
+    },
+    "TORRENT": {
+      "name": "DEPRECATED Torrent",
+      "description": "Deal !D! damage to ALL enemies !M! times.\nExhaust."
+    },
+    "PEACE": {
+      "name": "Peace",
+      "description": "ALL enemies lose !M! Strength this turn.\nRetains.\nExhaust."
+    },
+    "PALMTHATRESTRAINS": {
+      "name": "DEPRECATED Restraining Palm",
+      "description": "Deal !D! damage.\nApply !M! Weak."
+    },
+    "PROTECT": {
+      "name": "Korunma",
+      "description": "Saklanır.\n12 Blok kazan."
+    },
+    "WORSHIP": {
+      "name": "İbadet",
+      "description": "5 Mantra kazan.",
+      "upgradeDescription": "Saklanır.\n5 Mantra kazan."
+    },
+    "EMPTYMIND": {
+      "name": "Zihin Boşaltma",
+      "description": "2 kart çek.\nDuruşundan çık.",
+      "upgradeDescription": "+1 kart çek.\nDuruşundan çık."
+    },
+    "MIRACLE": {
+      "name": "Mucize",
+      "description": "Saklanır.\n[W] kazan.\nTüket.",
+      "upgradeDescription": "Saklanır.\n[W] [W] kazan.\nTüket."
+    },
+    "DEVAFORM": {
+      "name": "Deva Formu",
+      "description": "Ruhani.\nHer tur başında\n[W] kazan ve her tur bunu 1 artır.",
+      "upgradeDescription": "Her tur başında\n[W] kazan ve her tur bunu 1 artır."
+    },
+    "TALKTOTHEHAND": {
+      "name": "Külahıma Anlat",
+      "description": "5 hasar ver.\nO düşmana ne zaman saldırırsan 2 Blok kazan.\nTüket."
+    },
+    "STRIKE_P": {
+      "name": "Darbe",
+      "description": "6 hasar ver."
+    },
+    "MEDITATE": {
+      "name": "Meditasyon",
+      "description": "Atma yığınından eline 1 kart al ve Sakla.\nHuzura gir.\nTurunu bitir.",
+      "upgradeDescription": "Atma yığınından eline 2 kart al ve Sakla.\nHuzura gir.\nTurunu bitir."
+    },
+    "NIRVANA": {
+      "name": "Nirvana",
+      "description": "Ne zaman Keşif yaparsan 3 Blok kazan."
+    },
+    "DECEIVEREALITY": {
+      "name": "Gerçeği Yanıltma",
+      "description": "4 Blok kazan.\nEline bir Emniyet ekle."
+    },
+    "RETREATINGHAND": {
+      "name": "DEPRECATED Retreating Hand",
+      "description": "Ethereal.\nGain !B! Block. If the previous card played was an Attack, return this card to your hand.",
+      "upgradeDescription": "Gain !B! Block. If the previous card played was an Attack, return this card to your hand."
+    },
+    "HALT": {
+      "name": "Duraksama",
+      "description": "3 Blok kazan.\nEğer Gazap içindeysen 9 Blok daha kazan."
+    },
+    "CURSEOFTHEBELL": {
+      "name": "Çanın Laneti",
+      "description": "Oynanamaz.\nDesteden çıkarılamaz."
+    },
+    "BRILLIANCE": {
+      "name": "İhtişam",
+      "description": "12 hasar ver.\nBu dövüş boyunca kazandığın mantra kadar fazladan hasar verir."
+    },
+    "CLEARTHEMIND": {
+      "name": "Sukunet",
+      "description": "Saklanır.\nHuzura gir.\nTüket."
+    },
+    "SAFETY": {
+      "name": "Emniyet",
+      "description": "Saklanır.\n!B! Blok kazan.\nTüket."
+    },
+    "SCRAWL": {
+      "name": "Karalama",
+      "description": "Elin dolana kadar\nkart çek.\nTüket."
+    },
+    "PROSTRATE": {
+      "name": "Secde",
+      "description": "2 Mantra kazan.\n4 Blok kazan.",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "PRAY": {
+      "name": "Dua Etme",
+      "description": "3 Mantra kazan.\nÇekme yığınına bir İçgörü karıştır."
+    },
+    "BIGBRAIN": {
+      "name": "DEPRECATED Big Brain",
+      "description": "Draw 1 card.\nRetains.\nExhaust.",
+      "upgradeDescription": "Draw 1 card.\nRetains."
+    },
+    "FOREIGNINFLUENCE": {
+      "name": "Dış Mihraklar",
+      "description": "Herhangi bir renkteki 3 Saldırı kartından 1'ini seç ve eline ekle.\nTüket.",
+      "upgradeDescription": "Herhangi bir renkteki 3 Saldırı kartından 1'ini seç ve eline ekle.\nBu tur maliyeti 0 olur.\nTüket."
+    },
+    "SIGNATUREMOVE": {
+      "name": "İmzalı Hareket",
+      "description": "Yalnızca elindeki tek Saldırı kartı ise oynanabilir.\n30 hasar ver."
+    },
+    "SUBLIMESLICE": {
+      "name": "DEPRECATED Sublime Slice",
+      "description": "Deal !D! damage.\nEnter a random Stance."
+    },
+    "REACHHEAVEN": {
+      "name": "Cennete Ulaş",
+      "description": "10 hasar ver.\nÇekme yığınına bir\nŞiddet Yoluyla karıştır."
+    },
+    "INSIGHT": {
+      "name": "İçgörü",
+      "description": "Saklanır.\n!M! kart çek.\nTüket.",
+      "upgradeDescription": "Saklanır.\n!M! kart çek.\nTüket."
+    },
+    "BATTLEHYMN": {
+      "name": "Savaş İlahisi",
+      "description": "Her tur başında\neline bir Ceza ekle.",
+      "upgradeDescription": "Yerleşik. Her tur başında\neline bir Ceza ekle."
+    },
+    "SOOTHINGAURA": {
+      "name": "DEPRECATED Soothing Aura",
+      "description": "Apply !M! Weak.\nAt the start of your turn, apply 1 Weak to a random enemy.\nRetains."
+    },
+    "BOWLINGBASH": {
+      "name": "Bovling Cümbüşü",
+      "description": "Dövüşteki her canlı düşman için 7 hasar ver."
+    },
+    "TRUTH": {
+      "name": "Truth",
+      "description": "Deal !D! damage.\nDraw !M! card.\nRetains.\nExhaust.",
+      "upgradeDescription": "Deal !D! damage.\nDraw !M! cards.\nRetains.\nExhaust."
+    },
+    "PUNISHMENT": {
+      "name": "DEPRECATED Punishment",
+      "description": "Enter Punishment Stance."
+    },
+    "SMITE": {
+      "name": "Ceza",
+      "description": "Saklanır.\n!D! hasar ver.\nTüket."
+    },
+    "OMNISCIENCE": {
+      "name": "Bütün Bilgiler",
+      "description": "Çekme yığınından\nbir kart seç.\nSeçtiğin kartı 2 kez oyna ve Tüket.\nTüket."
+    },
+    "OMEGA": {
+      "name": "Omega",
+      "description": "Her tur sonunda\nTÜM düşmanlara\n!M! hasar ver."
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Serenity",
+      "description": "While you are in Calm, HP loss is reduced by !M!."
+    },
+    "JUDGEMENT": {
+      "name": "Yargı",
+      "description": "Eğer düşman 30 veya daha az CP'ye sahipse 0'a indir."
+    },
+    "MENTALFORTRESS": {
+      "name": "Zihin Kalesi",
+      "description": "Ne zaman Duruş değişirsen 4 Blok kazan."
+    },
+    "EMPTYBODY": {
+      "name": "Vücut Boşaltma",
+      "description": "7 Blok kazan.\nDuruşundan çık."
+    },
+    "CRESCENDO": {
+      "name": "Kreşendo",
+      "description": "Saklanır.\nGazaba gir.\nTüket."
+    },
+    "SANDSOFTIME": {
+      "name": "Zamanın Kumları",
+      "description": "Saklanır.\n20 hasar ver.\nHer Saklandığında maliyeti bu dövüş boyunca 1 azalır."
+    },
+    "BLASPHEMY": {
+      "name": "Şirk",
+      "description": "Kutsal Duruşa gir.\nSonraki tur başında öl.\nTüket.",
+      "upgradeDescription": "Saklanır.\nKutsal Duruşa gir.\nSonraki tur başında öl.\nTüket."
+    },
+    "TRANSCENDENCE": {
+      "name": "Üstünlük",
+      "description": "Upgrade all cards that Retain in your hand."
+    },
+    "FLARE": {
+      "name": "DEPRECATED Flare",
+      "description": "Deal !D! damage to ALL enemies.\nWrath: Gain [W] [W] ."
+    },
+    "UNRAVELING": {
+      "name": "Unraveling",
+      "description": "Play all of the cards in your hand from left to right. Targets are chosen randomly.\nExhaust."
+    },
+    "WEAVE": {
+      "name": "Dokuma",
+      "description": "4 hasar ver.\nNe zaman Keşif yaparsan atma yığınından eline geri döner."
+    },
+    "CRUSHJOINTS": {
+      "name": "Eklemleri Kırma",
+      "description": "8 hasar ver.\nEğer son oynanan kart Beceri ise\n1 Savunmasız uygula."
+    },
+    "VENGEANCE": {
+      "name": "Kaynayan Öfke",
+      "description": "Sonraki tur başında Gazaba gir ve 2 kart çek."
+    },
+    "CARVEREALITY": {
+      "name": "Gerçeği Oyma",
+      "description": "6 hasar ver.\nEline bir Ceza ekle."
+    },
+    "DEFEND_P": {
+      "name": "Savunma",
+      "description": "5 Blok kazan."
+    },
+    "CRESCENTKICK": {
+      "name": "DEPRECATED Crescent Kick",
+      "description": "Deal !D! damage.\nIf you have Vigor,\ngain [W] and\ndraw 1 card."
+    },
+    "THWACK": {
+      "name": "DEPRECATED Thwack",
+      "description": "Deal !D! damage."
+    },
+    "FASTING": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "SWIPE": {
+      "name": "DEPRECATED Swipe",
+      "description": "Deal !D! damage. Deal half this damage to all other enemies."
+    },
+    "INNERPEACE": {
+      "name": "İç Huzur",
+      "description": "Eğer Huzur içindeysen 3 kart çek,\nyoksa Huzura gir."
+    },
+    "STEPANDSTRIKE": {
+      "name": "DEPRECATED Step and Strike",
+      "description": "DEPRECATED"
+    },
+    "PREDICTION": {
+      "name": "DEPRECATED Prediction",
+      "description": "Gain !B! Block at the start of your next turn."
+    },
+    "FLOW": {
+      "name": "DEPRECATED Flow",
+      "description": "When you play an Attack, gain 1 temporary Dexterity. When you play a Skill, gain 1 temporary Strength."
+    },
+    "FLAMEMASTERY": {
+      "name": "DEPRECATED Flame Mastery",
+      "description": "Gain !M! Strength."
+    },
+    "FLURRYOFBLOWS": {
+      "name": "Tekme Tokat",
+      "description": "4 hasar ver.\nNe zaman Duruş değişirsen atma yığınından eline geri döner."
+    },
+    "SASHWHIP": {
+      "name": "Kanatlı Kırbaç",
+      "description": "8 hasar ver.\nEğer son oynanan kart Saldırı ise\n1 Zayıf uygula."
+    },
+    "WHEELKICK": {
+      "name": "Tekerlek Vuruşu",
+      "description": "15 hasar ver.\n2 kart çek."
+    },
+    "INDIGNATION": {
+      "name": "İçerleme",
+      "description": "Eğer Gazap içindeysen TÜM düşmanlara\n3 Savunmasız uygula, yoksa Gazaba gir."
+    },
+    "BECOMEALMIGHTY": {
+      "name": "Yüce Güç",
+      "description": "!M! Kuvvet kazan."
+    },
+    "FAMEANDFORTUNE": {
+      "name": "Şan Şöhret",
+      "description": "!M! Altın kazan."
+    },
+    "LIVEFOREVER": {
+      "name": "Sonsuz Yaşam",
+      "description": "!M! Kaplı Zırh kazan."
+    },
+    "EXPUNGER": {
+      "name": "Silici",
+      "description": "X kez !D! hasar ver."
+    },
+    "CONJUREBLADE": {
+      "name": "Ruh Kılıcı",
+      "description": "Çekme yığınına bir Silici karıştır.\nTüket.",
+      "upgradeDescription": "Çekme yığınına X+1 gücünde bir Silici karıştır.\nTüket."
+    },
+    "WAVEOFTHEHAND2": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "FASTING2": {
+      "name": "Oruç",
+      "description": "3 Kuvvet kazan.\n3 Çeviklik kazan.\nTur başlarında 1 eksik [W] kazan."
+    },
+    "DISCIPLINE": {
+      "name": "DEPRECATED Discipline",
+      "description": "If you end your turn with unused [W] , draw that many additional cards next turn."
+    },
+    "FLICK": {
+      "name": "DEPRECATED Flick",
+      "description": "Deal !D! damage.\nIf an enemy is Flicked 3 times, they take !M! damage."
+    },
+    "LIKEWATER": {
+      "name": "Su Gibi",
+      "description": "Eğer tur sonunda Huzur içindeysen\n5 Blok kazan."
+    },
+    "STUDY": {
+      "name": "Çalışma",
+      "description": "Her tur sonunda\nçekme yığınına bir İçgörü karıştır."
+    }
+  },
+  "relics": {
+    "ANCHOR": {
+      "name": "Çapa",
+      "description": "Her dövüşe 10 Blok ile başla.",
+      "flavor": "Bu minyatür süsü tuttuğunda, daha ağır ve dengeli hissediyorsun."
+    },
+    "ART_OF_WAR": {
+      "name": "Savaş Sanatı",
+      "description": "Eğer bir tur boyunca hiç Saldırı oynamazsan sonraki tur [E] kazan.",
+      "flavor": "Bu eski el yazması geçmiş çağlardan bilgelikler içeriyor."
+    },
+    "ASTROLABE": {
+      "name": "Usturlap",
+      "description": "Aldığında 3 kart seç, onları Dönüştür ve sonrasında Geliştir.Dönüştürmek için 3 Kart Seç:",
+      "flavor": "Yıldızlardan paha biçilemez bilgiler toplamak için kullanılan bir alet."
+    },
+    "BAG_OF_MARBLES": {
+      "name": "Bilye Torbası",
+      "description": "Her dövüş başında TÜM düşmanlara 1 Savunmasız uygula.",
+      "flavor": "Şehirde bir zamanlar popüler olan oyuncak. Düşmanların dengesini bozmak için kullanışlı."
+    },
+    "BAG_OF_PREPARATION": {
+      "name": "Hazırlık Çantası",
+      "description": "Her dövüş başında fazladan 2 kart çek.",
+      "flavor": "Oldukça büyük maceracı çantası. Birçok bölmesi ve kayışı var."
+    },
+    "BIRD_FACED_URN": {
+      "name": "Kuş-Suratlı Vazo",
+      "description": "Ne zaman Güç kartı oynarsan 2 CP iyileş.",
+      "flavor": "Bu vazo karga tanrısı Mazaleth'i afacan gibi gösteriyor."
+    },
+    "BLACK_BLOOD": {
+      "name": "Siyah Kan",
+      "description": "Yanan Kan'ın yerini alır. Her dövüş sonunda 12 CP iyileş.",
+      "flavor": "Öfke gittikçe koyulaşıyor."
+    },
+    "BLACK_STAR": {
+      "name": "Kara Yıldız",
+      "description": "Elitler yenildiklerinde 2 Kalıntı düşer.",
+      "flavor": "Yılanların şehrinde, yalnız bir mumun yanında keşfedildi."
+    },
+    "BLOOD_VIAL": {
+      "name": "Kanlı Şişe",
+      "description": "Her dövüş başında 2 CP iyileş.",
+      "flavor": "Yaşça büyük bir vampirin saf kanını içeren küçük bir şişe."
+    },
+    "BLOODY_IDOL": {
+      "name": "Kanlı Put",
+      "description": "Ne zaman Altın kazanırsan 5 CP iyileş.",
+      "flavor": "Sürekli kan ağlayan bir put."
+    },
+    "BLUE_CANDLE": {
+      "name": "Mavi Mum",
+      "description": "Oynanamaz Lanet kartları artık oynanabilir.\nNe zaman Lanet oynarsan 1 CP kaybet ve kartı Tüket.",
+      "flavor": "Karanlıkta kalındığında yanan bir alev."
+    },
+    "BOTTLED_FLAME": {
+      "name": "Şişelenmiş Alev",
+      "description": "Aldığında bir Saldırı kartı seç. Her dövüş başında bu kart elinde olacak.Bir kart seç: Her dövüş başında  elinde olacak.",
+      "flavor": "Şişenin içinde sonsuza kadar yanacak bir ateş bulunuyor."
+    },
+    "BOTTLED_LIGHTNING": {
+      "name": "Şişelenmiş Yıldırım",
+      "description": "Aldığında bir Beceri kartı seç. Her dövüş başında bu kart elinde olacak.Bir kart seç: Her dövüş başında  elinde olacak.",
+      "flavor": "Şişenin içine baktığında, bir parçanın sana geri baktığını görüyorsun."
+    },
+    "BOTTLED_TORNADO": {
+      "name": "Şişelenmiş Kasırga",
+      "description": "Aldığında bir Güç kartı seç. Her dövüş başında bu kart elinde olacak.Bir kart seç: Her dövüş başında  elinde olacak.",
+      "flavor": "Şişeden narin bir esinti ve uğultu geliyor."
+    },
+    "BRONZE_SCALES": {
+      "name": "Bronz Pul",
+      "description": "Her dövüşe 3 Diken ile başla.",
+      "flavor": "Gardiyanın keskin pulları. Kullananı korumak için kendini düzenler. "
+    },
+    "BURNING_BLOOD": {
+      "name": "Yanan Kan",
+      "description": "Her dövüş sonunda 6 CP iyileş.",
+      "flavor": "Vücudunun kendi kanı, bitmeyen bir öfkeyle yanıyor."
+    },
+    "CALIPERS": {
+      "name": "Kalınlık Ölçer",
+      "description": "Her tur başında tüm Bloğunu kaybetmek yerine yalnızca 15 Blok kaybet.",
+      "flavor": "\"Mekanik hassasiyet mükemmelliğe yol açar\" - Mimar"
+    },
+    "CALLING_BELL": {
+      "name": "Çağıran Çan",
+      "description": "Özel bir Lanet ve 3 kalıntı elde et.Çan Çalar...Ödülleri GeçKapat",
+      "flavor": "Bu koyu renkli çanı bulduğunda 3 kez çaldı ama şu anda sessiz duruyor."
+    },
+    "CAULDRON": {
+      "name": "Kazan",
+      "description": "Aldığında rastgele 5 iksir üret.Gulup Gulu Gulup...!",
+      "flavor": "Tüccar aslında olduça yetenekli bir iksir üreticisi. 4 al 1 kazan."
+    },
+    "CENTENNIAL_PUZZLE": {
+      "name": "Yüzyıllık Yapboz",
+      "description": "Her dövüşteki ilk CP kaybında 3 kart çek.",
+      "flavor": "Yapbozu çözdüğünde göğsünde güçlü bir sıcaklık hissediyorsun."
+    },
+    "CHAMELEON_RING": {
+      "name": "Bukalemun Yüzüğü",
+      "description": "Artık Dinlenme Yerlerinde Üretim yapabilirsin.",
+      "flavor": "Deprecated"
+    },
+    "CHAMPION_BELT": {
+      "name": "Şampiyon Kemeri",
+      "description": "Ne zaman Savunmasız uygularsan aynı zamanda 1 Zayıf uygula.",
+      "flavor": "Yalnızca en güçlü olan bu kemeri takabilir."
+    },
+    "CHARON_S_ASHES": {
+      "name": "Charon'ın Külleri",
+      "description": "Ne zaman bir kart Tüketilirse TÜM düşmanlara 3 hasar ver.",
+      "flavor": "Charon yeniden doğuşun tanrısı olarak bilinir, bir alev patlaması içinde ebediyen ölür ve dirilir."
+    },
+    "CHEMICAL_X": {
+      "name": "Kimyasal X",
+      "description": "X maliyetli kartların etkisini 2 enerji artır.",
+      "flavor": "UYARI: Şeker, baharat ve iyi olan her şeyi birbirine katmayın."
+    },
+    "CIRCLET": {
+      "name": "Taç",
+      "description": "Toplayabildiğin kadar topla.",
+      "flavor": "Bulacak başka kalıntı kalmadı. Etkileyici!"
+    },
+    "THE_COURIER": {
+      "name": "Kurye",
+      "description": "Artık tüccarın kartları, kalıntıları ve iksirleri bitmez. Ayrıca fiyatlar %20 daha ucuz.",
+      "flavor": "Tüccarın kişisel evcil hayvanı!"
+    },
+    "CURSED_KEY": {
+      "name": "Lanetli Anahtar",
+      "description": "Ne zaman boss harici bir sandık açarsan bir Lanet edin.Her tur başında [E] kazan.",
+      "flavor": "Anahtardan gelen kötü enerjiyi hissedebiliyorsun. Her gücün bir bedeli var."
+    },
+    "DEAD_BRANCH": {
+      "name": "Ölü Dal",
+      "description": "Ne zaman bir kart Tüketilirse eline rastgele bir kart ekle.",
+      "flavor": "Unutulmuş bir çağdaki ağacın dalı."
+    },
+    "DISCERNING_MONOCLE": {
+      "name": "Tek Gözlük",
+      "description": "Tüccarın malları %20 daha ucuz.",
+      "flavor": "Gerçekten de oldukça şık gözüken bir tek gözlük."
+    },
+    "DODECAHEDRON": {
+      "name": "Runik On İki Yüzlü",
+      "description": "CP'n tam ise her tur başında [E] kazan.",
+      "flavor": "Yazılanlar okunamaz halde."
+    },
+    "DREAM_CATCHER": {
+      "name": "Rüya Yakalayan",
+      "description": "Ne zaman Dinlenirsen bir kart seçim hakkı kazan.",
+      "flavor": "Kuzeyli kabileler geceleri sıklıkla rüya yakalayan kullanırdı, kişisel gelişim sağladığına inanırlardı."
+    },
+    "DU_VU_DOLL": {
+      "name": "Du-Vu Bebeği",
+      "description": "Destendeki her bir Lanet için her dövüşe 1 Kuvvet ile başla. Destende Lanet yok. Destende  Lanet var.",
+      "flavor": "Kötü enerjilerden kuvvet kazanmak için tasarlanmış bir oyuncak bebek."
+    },
+    "ECTOPLASM": {
+      "name": "Ektoplazma",
+      "description": "Artık Altın kazanamazsın.Her tur başında [E] kazan.",
+      "flavor": "Bu balçık parçası içinde hayat varmış gibi parlıyor."
+    },
+    "FROZEN_EGG_2": {
+      "name": "Donmuş Yumurta",
+      "description": "Ne zaman destene Güç kartı eklersen onu Geliştir.",
+      "flavor": "Yumurta donmuş ve durgun görülüyor, içinden hiçbir şey çıkmayacak gibi."
+    },
+    "MOLTEN_EGG_2": {
+      "name": "Erimiş Yumurta",
+      "description": "Ne zaman destene Saldırı kartı eklersen onu Geliştir.",
+      "flavor": "Anka kuşunun yumurtası. Kaynayan lav ile beraber kızıl renkte parlıyor."
+    },
+    "TOXIC_EGG_2": {
+      "name": "Zehirli Yumurta",
+      "description": "Ne zaman destene Beceri kartı eklersen onu Geliştir.",
+      "flavor": "\"Ne harika bir keşif! Büyülü bir yaratığın durağan haldeki yumurtasına benziyor. Kim ya da ne oluşturdu bunu?\" - Ranwid"
+    },
+    "ENCHIRIDION": {
+      "name": "Kaynak Kitap",
+      "description": "Her dövüş başında eline rastgele bir Güç kartı ekle. Tur boyunca maliyeti 0 olur.",
+      "flavor": "Çok eskilerde yaşamış bir yaratığın efsanevi günlüğü."
+    },
+    "ETERNAL_FEATHER": {
+      "name": "Ebedi Tüy",
+      "description": "Destende bulunan her ? kart için Dinlenme Yerine girdiğinde 3 CP iyileş.",
+      "flavor": "Bu tüy yok edilemez gibi görünüyor. Nasıl bir kuştan gelmiş olabilir ki? "
+    },
+    "GAMBLING_CHIP": {
+      "name": "Kumar Fişi",
+      "description": "Her dövüş başında istediğin sayıda kart at ve attığın sayıda kart çek.",
+      "flavor": "Kenarında küçük bir kullanma talimatı görüyorsun. Üzerinde yazan: \"Ayı'nın Şanslı Çipi!\""
+    },
+    "GINGER": {
+      "name": "Zencefil",
+      "description": "Artık Zayıf düşemezsin.",
+      "flavor": "Bir çok toniğin yapımında kullanılan kuvvetli bir bitki."
+    },
+    "GIRYA": {
+      "name": "Girya",
+      "description": "Artık Dinlenme Yerlerinde Kuvvet kazanabilirsin. (En fazla 3 kez)",
+      "flavor": "Bu Girya akıl almaz derecede ağır. Bununla kayde değer derecede kuvvetlenmek için çalışabilirsin."
+    },
+    "GOLDEN_IDOL": {
+      "name": "Altın Put",
+      "description": "Düşmanlar %25 daha fazla Altın düşürür.",
+      "flavor": "Saf altından yapılmış, sadece tutarak bile zengin olduğunu hissediyorsun."
+    },
+    "GREMLIN_HORN": {
+      "name": "Gremlin Boynuzu",
+      "description": "Bir düşman öldüğü zaman [E] kazan ve 1 kart çek.",
+      "flavor": "\"Gremlinlerin kafaları ölene kadar büyüyebilirler. Olağanüstü.\" - Ranwid"
+    },
+    "HAPPY_FLOWER": {
+      "name": "Mutlu Çiçek",
+      "description": "Her  turda bir [E] kazan.",
+      "flavor": "Bu durmaksızın neşeli olan çiçek asiller arasında popüler."
+    },
+    "ICE_CREAM": {
+      "name": "Dondurma",
+      "description": "Tur sonunda artan enerji sonraki tura devreder.",
+      "flavor": "\"Lezzetli!\""
+    },
+    "JUZU_BRACELET": {
+      "name": "Juzu Bileziği",
+      "description": "? odalarında artık düşmanlarla karşılaşılmaz.",
+      "flavor": "Bilinmeyenden korur."
+    },
+    "KUNAI": {
+      "name": "Kunai",
+      "description": "Bir tur içinde her ? Saldırı oynamanda 1 Çeviklik kazan.",
+      "flavor": "Uzaktan ölümcül olabilmesiyle suikastçiler tarafından sevilen bir bıçak."
+    },
+    "LANTERN": {
+      "name": "Fener",
+      "description": "Her dövüşe fazladan [E] ile başla.",
+      "flavor": "Yalnızca kullanıcısı için etrafı aydınlatan ürkütücü bir fener."
+    },
+    "LETTER_OPENER": {
+      "name": "Mektup Açacağı",
+      "description": "Bir tur içinde her 3 Beceri oynamanda TÜM düşmanlara 5 hasar ver.",
+      "flavor": "Olağanüstü keskinlikte."
+    },
+    "LIVING_BLADE": {
+      "name": "Yaşayan Kılıç",
+      "description": "Her karttan istediğin sayıda elde edebilirsin.",
+      "flavor": "KULLANILMIYOR"
+    },
+    "LIZARD_TAIL": {
+      "name": "Kertenkele Kuyruğu",
+      "description": "Öleceğin zaman, kaybetmek yerine, Maksimum CP'nin %50'si ile yeniden hayata dön (yalnızca 1 kere).",
+      "flavor": "Dövüş sırasında düşmanları yanıltmak için kullanılan sahte kuyruk."
+    },
+    "MAGIC_FLOWER": {
+      "name": "Büyülü Çiçek",
+      "description": "Dövüş boyuncaki tüm iyileşmeler %50 daha etkili.",
+      "flavor": "Uzun süredir soyunun tükendiği düşünülmüş bir çiçek, ancak mükemmel durumda."
+    },
+    "MANGO": {
+      "name": "Mango",
+      "description": "Aldığında Maksimum CP'ni şu kadar artır:",
+      "flavor": "En çok istenen unutulmuş meyve. Spire'ın yıkımından etkilenmeden kusursuz biçimde korunmuş."
+    },
+    "MARK_OF_PAIN": {
+      "name": "Acının Damgası",
+      "description": "Her tur başında [R] kazan. Her dövüş başında çekme yığınına 2 Yara karıştır.",
+      "flavor": "Bu damga kuzeyli kabileler tarafından acıyı hissetmemekte ustalaşmış dövüşçüleri belirtmek amaçlı kullanılmıştır."
+    },
+    "MATRYOSHKA": {
+      "name": "Matruşka",
+      "description": "Açacağın sonraki 2 boss harici sandık 2 Kalıntı içerir.Açacağın sonraki boss harici sandık 2 Kalıntı içerir.Bu kalıntı tamamen kullanıldı.",
+      "flavor": "Birbiri üzerine konulabilir oyuncak bebekler. Bilinmeyen beyaz gözlü, mavi tüylü bir kuş şeklinde boyanmış."
+    },
+    "MEAT_ON_THE_BONE": {
+      "name": "Kemikli Et",
+      "description": "Eğer CP'n dövüş sonunda %50 veya daha az ise 12 CP iyileş.",
+      "flavor": "Et sürekli yenileniyor, hiç bitmeyecek gibi görünüyor."
+    },
+    "MEDICAL_KIT": {
+      "name": "İlk Yardım Çantası",
+      "description": "Durum kartları artık oynanabilir. Durum kartlarını oynamak kartı Tüketir.",
+      "flavor": "\"İhtiyacın olan her şey var! Kaşınma karşıtı, yanık karşıtı, zehir karşıtı ve daha fazlası!\""
+    },
+    "MEMBERSHIP_CARD": {
+      "name": "Üyelik Kartı",
+      "description": "Aldığın an tüm ürünlerde %50 indirim!",
+      "flavor": "\"En değerli müşterilere özel bonus üyelik teklifi!\""
+    },
+    "MERCURY_HOURGLASS": {
+      "name": "Civa Kum Saati",
+      "description": "Her tur başında TÜM düşmanlara 3 hasar ver.",
+      "flavor": "Sonsuza kadar dökülen büyülü bir kum saati."
+    },
+    "MUMMIFIED_HAND": {
+      "name": "Mumyalanmış El",
+      "description": "Ne zaman Güç kartı oynarsan elindeki rastgele bir kartın maliyeti tur boyunca 0 olur.",
+      "flavor": "Sıkça seğiriyor, özellikle nabzın yüksekken."
+    },
+    "NECRONOMICON": {
+      "name": "Nekronomikon",
+      "description": "Her tur oynadığın ilk 2 ya da daha fazla maliyetli Saldırı 2 kez oynanır. Bu kalıntıyı aldığında özel bir Lanet edinirsin. ya da daha fazla maliyetli",
+      "flavor": "Yalnızca bir aptal bu kötü gücü kullanmaya çalışır. Gece rüyalarında bu kitabın aklını yiyip bitirdiğiyle ilgili rüyalar görüyorsun."
+    },
+    "NILRY_S_CODEX": {
+      "name": "Nilry'nin El Yazması",
+      "description": "Her tur sonunda verilen 3 rastgele karttan seçtiğin 1'ini çekme yığınına karıştır.",
+      "flavor": "Kötü şöhretli oyun yöneticisinin kendisi tarafından yazılmış. Okuyanının aklını yeni yönlerde genişlettiği söyleniyor."
+    },
+    "NINJA_SCROLL": {
+      "name": "Ninja Parşömeni",
+      "description": "Her dövüş başında eline 3 Kama ekle.",
+      "flavor": "Suikastin sırlarını içerir."
+    },
+    "NLOTH_S_GIFT": {
+      "name": "Nloth'un Hediyesi",
+      "description": "Dövüş ödüllerinde nadir kart çıkma şansını 3'e katla.",
+      "flavor": "N'loth'tan ilginç bir hediye. Ne zaman açmaya çalışsan içinde kaplanmış aynı boyutta başka bir kutu görüyorsun."
+    },
+    "NULLSTONE_PERIAPT": {
+      "name": "Boş Taş Tılsımı",
+      "description": "Düşmandan alacağın sıradaki Negatifi yok eder.\n10 turda yeniden şarj olur.",
+      "flavor": "KULLANILMIYOR."
+    },
+    "ODDLY_SMOOTH_STONE": {
+      "name": "Aşırı Pürüssüz Taş",
+      "description": "Her dövüşe 1 Çeviklik ile başla.",
+      "flavor": "Bu kadar pürüssüz ve saf bir şey görmemiştin. Eski çağlardakilerin işi olmalı."
+    },
+    "ODD_MUSHROOM": {
+      "name": "Garip Mantar",
+      "description": "Savunmasız iken %50 yerine %25 daha fazla hasar al.",
+      "flavor": "\"Trişinella parazitini sindirdikten sonra daha az... duyarlıydım.\" - Ranwid "
+    },
+    "OLD_COIN": {
+      "name": "Tarihi Sikke",
+      "description": "300 Altın kazan.",
+      "flavor": "Nadir paralar tarihi değerleri ve nadir metalik içeriklerinden dolayı Tüccarlar tarafından oldukça değerli görülüyorlar."
+    },
+    "OMAMORI": {
+      "name": "Omamori",
+      "description": "Sonraki 2 Laneti engelle.Sonraki Laneti engelle.Bu kalıntı tamamen kullanıldı.",
+      "flavor": "Kötü ruhları defetmek için kullanılan yaygın bir muska. Bu elindeki tanrısal enerji içeriyor gibi."
+    },
+    "ORICHALCUM": {
+      "name": "Orikalkum",
+      "description": "Eğer turun bittiğinde Bloğun yoksa 6 Blok kazan.",
+      "flavor": "Kökeni bilinmeyen işaretlenmiş yeşil bir tılsım. Yok edilemez gibi görünüyor."
+    },
+    "ORNAMENTAL_FAN": {
+      "name": "Süs Yelpazesi",
+      "description": "Bir tur içinde her 3 Saldırı oynamanda 4 Blok kazan.",
+      "flavor": "Bu yelpaze kan döküldükçe büyüyor ve güçleniyor gibi görünüyor."
+    },
+    "ORRERY": {
+      "name": "Güneş Sistemi Modeli",
+      "description": "Destene eklemek için 5 kart seç.Bilgi!",
+      "flavor": "\"Evreni anladığında...\" - Zoroth"
+    },
+    "PANDORA_S_BOX": {
+      "name": "Pandora'nın Kutusu",
+      "description": "Tüm Darbe ve Savunma kartlarını başka kartlara Dönüştür.Pandoranın Kutusu açıldı...",
+      "flavor": "Bunu açmak konusunda kötü hislerin var."
+    },
+    "PANTOGRAPH": {
+      "name": "Pantograf",
+      "description": "Boss dövüşlerinin başında 25 CP iyileş.",
+      "flavor": "\"Sağlam yapılar kazara olmaz. Planlamak bir gerekliliktir.\" - Mimar"
+    },
+    "PAPER_CRANE": {
+      "name": "Kağıttan Durna",
+      "description": "Zayıflatılmış düşmanlar %25 yerine %50 daha az hasar verir.",
+      "flavor": "Geçmiş çağlardan bir yaratığın origamisi."
+    },
+    "PAPER_FROG": {
+      "name": "Kağıttan Gurbağa",
+      "description": "Savunmasız düşmanlar %50 yerine %75 daha fazla hasar alır.",
+      "flavor": "Kağıt kendini sürekli küçük yaratık şekillerinde katlayıp geri açıyor."
+    },
+    "PEACE_PIPE": {
+      "name": "Barış Çubuğu",
+      "description": "Artık Dinlenme Yerlerinde destenden kart çıkarabilirsin.",
+      "flavor": "Aklı temizler ve ruhu arındırır."
+    },
+    "PEAR": {
+      "name": "Armut",
+      "description": "Aldığında Maksimum CP'ni şu kadar artır:",
+      "flavor": "Spire yıkımından önce yaygın olarak yetişen meyve."
+    },
+    "PEN_NIB": {
+      "name": "Dolma Kalem Ucu",
+      "description": "Oynadığın her 10. Saldırı çift hasar verir.",
+      "flavor": "Bu kalemi tutarak, önceki sahiplerinin öldürdüğü herkesi görebiliyorsun. Şiddet içeren bir geçmiş."
+    },
+    "PHILOSOPHER_S_STONE": {
+      "name": "Felsefe Taşı",
+      "description": "Her tur başında [E] kazan. TÜM düşmanlar fazladan 1 Kuvvet ile başlar.",
+      "flavor": "Taştan saf bir enerji yayılıyor, yakınındakilere güç veriyor."
+    },
+    "PRAYER_WHEEL": {
+      "name": "İbadet Çarkı",
+      "description": "Normal düşmanlar fazladan bir kart ödülü verir.",
+      "flavor": "Çark sürekli dönüyor, asla durmadan."
+    },
+    "QUESTION_CARD": {
+      "name": "Soru Kartı",
+      "description": "Kart ödüllerinde fazladan 1 kart gösterilir.",
+      "flavor": "\"Daha çok seçim şansı olan, kaosun olumsuz yanlarını minimuma indirir.\" - Kubilay Han"
+    },
+    "RED_CIRCLET": {
+      "name": "Kırmızı Taç",
+      "description": "Oldukça güzel görünüyor.",
+      "flavor": "Bulacak başka kalıntı kalmadı. Etkileyici!"
+    },
+    "RED_MASK": {
+      "name": "Kırmızı Maske",
+      "description": "Her dövüş başında TÜM düşmanlara 1 Zayıf uygula.",
+      "flavor": "Kırmızı Maske Haydutlarının liderine ait oldukça şık bir maske. Teknik olarak lider sen oluyorsun yani?"
+    },
+    "RED_SKULL": {
+      "name": "Kırmızı Kafatası",
+      "description": "CP'n %50 veya daha az ise 3 Kuvvet kazan.",
+      "flavor": "Dekoratif şekilde boyanmış küçük bir kafatası."
+    },
+    "REGAL_PILLOW": {
+      "name": "Kral Yastığı",
+      "description": "Dinlendiğinde fazladan 15 CP iyileş.",
+      "flavor": "Artık iyi bir uyku çekebilirsin."
+    },
+    "RING_OF_THE_SERPENT": {
+      "name": "Zehirli Yılan Yüzüğü",
+      "description": "Yılan Yüzüğü'nün yerini alır. Her tur başında fazladan 1? kart çek.",
+      "flavor": "Yüzüğün gelişti ve şekil değiştirdi."
+    },
+    "RUNIC_CUBE": {
+      "name": "Runik Küp",
+      "description": "Ne zaman CP kaybedersen 1 kart çek.",
+      "flavor": "Yazılanlar okunamaz halde."
+    },
+    "RUNIC_DOME": {
+      "name": "Runik Kubbe",
+      "description": "Artık düşmanların niyetlerini göremezsin.Her tur başında [E] kazan.",
+      "flavor": "Yazılanlar okunamaz halde."
+    },
+    "RUNIC_PYRAMID": {
+      "name": "Runik Piramit",
+      "description": "Artık tur sonunda elindeki kartlar atılmaz.",
+      "flavor": "Yazılanlar okunamaz halde."
+    },
+    "SELF_FORMING_CLAY": {
+      "name": "Kendini Oluşturan Kil",
+      "description": "Ne zaman CP kaybedersen sonraki tur 3 Blok kazan.",
+      "flavor": "\"En merak uyandıran şey bu! Görünüşe göre düşüncelerime göre kendini şekillendiriyor! Tele-kil?\" - Ranwid"
+    },
+    "SHOVEL": {
+      "name": "Kürek",
+      "description": "Artık Dinlenme Yerlerinde rastgele kalıntılar bulmak için Kazabilirsin.",
+      "flavor": "Spire geçmiş zamandaki uygarlıklara ve zamana yenilmiş güçlü maceracılara ev sahipliği yapmıştır. Şimdi gidip kazma zamanı!"
+    },
+    "SHURIKEN": {
+      "name": "Şuriken",
+      "description": "Bir tur içinde her ? Saldırı oynamanda 1 Kuvvet kazan.",
+      "flavor": "Hafif atılabilir silah. Gözlere nişan alınması önerilir."
+    },
+    "SINGING_BOWL": {
+      "name": "Uğultulu Çanak",
+      "description": "Kart ödüllerinde +2 Maksimum CP alınabilir.",
+      "flavor": "Bu özenle yapılmış nesne vurulduğunda güzel bir melodi çıkartıyor."
+    },
+    "SMILING_MASK": {
+      "name": "Gülen Maske",
+      "description": "Artık tüccarın kart çıkarma servisi hep 50 Altın fiyatında.",
+      "flavor": "Tüccar tarafından takılan maske. Yedekte bir kaç tane tutuyor olmalı..."
+    },
+    "RING_OF_THE_SNAKE": {
+      "name": "Yılan Yüzüğü",
+      "description": "Her dövüş başında fazladan 2 kart çek.",
+      "flavor": "Fosilleşmiş yılandan yapılmış. Avcılıktaki büyük yeteneği gösterir."
+    },
+    "SNECKO_EYE": {
+      "name": "Snecko'nun Gözü",
+      "description": "Her tur başında fazladan 2 kart çek. Her dövüşe Şaşkınlık ile başla.",
+      "flavor": "Snecko'nun düşürdüğü gözü. Hayal ettiğinden çok daha büyük."
+    },
+    "SNAKE_SKULL": {
+      "name": "Snecko'nun Kafatası",
+      "description": "Ne zaman Zehir uygularsan fazladan 1 Zehir uygula.",
+      "flavor": "Snecko'nun kafatası, bozulmamış halde. Gizemli bir şekilde temiz ve pürüssüz, açıklanamaz bir şekilde kir ve pislik tutmuyor."
+    },
+    "SOZU": {
+      "name": "Sozu",
+      "description": "Artık iksir edinemezsin.Her tur başında [E] kazan.",
+      "flavor": "Bu kalıntının yakınındayken sihirli sıvıların özelliklerini kaybettiğini görüyorsun."
+    },
+    "SPIRIT_POOP": {
+      "name": "Ruh Boku",
+      "description": "Pek hoş değil.",
+      "flavor": "Ruhlara sunduğun adağın kömürleşmeşmiş kalıntısı."
+    },
+    "STRANGE_SPOON": {
+      "name": "Garip Kaşık",
+      "description": "Oynandığında Tüketilen kartlar artık %50 ihtimalle atılır.",
+      "flavor": "Kaşığa baktığında, gözlerinin önünde bükülüyor ve dönüyor."
+    },
+    "STRAWBERRY": {
+      "name": "Çilek",
+      "description": "Aldığında Maksimum CP'ni şu kadar artır:",
+      "flavor": "\"Lezzetli! Bunlardan yıkımdan beridir görmemiştim.\" - Ranwid"
+    },
+    "SUNDIAL": {
+      "name": "Güneş Saati",
+      "description": "Çekme yığınını her . karıştırmanda [E] [E] kazan.",
+      "flavor": "\"İlk insanların zamanla olan aptalca takınsı bir yol göstermesi için göklere bakmalarına neden oldu, kalıcı bir şeyler bulabilmek için.\" - Zoroth"
+    },
+    "ANCIENT_TEA_SET": {
+      "name": "Antika Çay Seti",
+      "description": "Ne zaman Dinlenme Yerine girersen sonraki dövüşe [E] [E] ile başla.",
+      "flavor": "Geceleri yenileyici bir dinlenmenin anahtarı."
+    },
+    "WAR_PAINT": {
+      "name": "Savaş Boyası",
+      "description": "Aldığında rastgele 2 Beceri kartını Geliştir.",
+      "flavor": "Açıklama kayıp."
+    },
+    "DARKSTONE_PERIAPT": {
+      "name": "Karataş Tılsımı",
+      "description": "Ne zaman bir Lanet edinirsen Maksimum CP'ni şu kadar artır:",
+      "flavor": "Daş gücünü karanlık enerjiden alıyor ve taşıyanına can veriyor."
+    },
+    "TEST_1": {
+      "name": "Test 1",
+      "description": "",
+      "flavor": "Beta için test kalıntısı. Beğendiyseniz yapımcılara söyleyin."
+    },
+    "FROZEN_EYE": {
+      "name": "Donmuş Göz",
+      "description": "Çekme yığınındaki kartlar artık üstten alta sırayla gösterilir.",
+      "flavor": "Çekirdeğindeki kırık atan soğuk bir enerji ile dolu."
+    },
+    "TEST_2": {
+      "name": "Test 2",
+      "description": "Çekme Yığınında, kartlar artık dağıtlacakları sırayla gösterilir.",
+      "flavor": "Beta için test kalıntısı. Beğendiyseniz yapımcılara söyleyin."
+    },
+    "TEST_3": {
+      "name": "Test 3",
+      "description": "Alındığında, tüm Savunma kartlarını Geliştirir.",
+      "flavor": "Beta için test kalıntısı. Beğendiyseniz yapımcılara söyleyin."
+    },
+    "TEST_4": {
+      "name": "Test 4",
+      "description": "Dövüşün başında, tüm Vuruş kartları 0 enerji olur.",
+      "flavor": "Beta için test kalıntısı. Beğendiyseniz yapımcılara söyleyin."
+    },
+    "TEST_5": {
+      "name": "Test 5",
+      "description": "Aldığında rastgele 2 Beceriyi Geliştir.",
+      "flavor": "Beta için test kalıntısı. Beğendiyseniz yapımcılara söyleyin."
+    },
+    "TEST_6": {
+      "name": "Test 6",
+      "description": "Her turun sonunda, ? Blok kazanın, sahip olduğunuz her 100 Altın için.",
+      "flavor": "Beta için test kalıntısı. Beğendiyseniz yapımcılara söyleyin."
+    },
+    "TEST_7": {
+      "name": "Test 7",
+      "description": "Elitler yenildiklerinde 2 Kalıntı düşürürler.",
+      "flavor": "Beta için test kalıntısı. Beğendiyseniz yapımcılara söyleyin."
+    },
+    "TEST_8": {
+      "name": "Test 8",
+      "description": "Her tur 2 ek kart çekin. Her dövüşe Şaşkınlık ile başla.",
+      "flavor": "Beta için test kalıntısı. Beğendiyseniz yapımcılara söyleyin."
+    },
+    "THE_SPECIMEN": {
+      "name": "Numune",
+      "description": "Bir düşman öldüğünde üzerindeki Zehri rastgele bir düşmana geçir.",
+      "flavor": "\"Etkileyici! Şaşırtıcı toksik özellikler sergileyen mutasyona uğramış bir yaratık buldum. İleri zamanlarda araştırmak için bir örneğini saklayacağım.\" - Ranwid"
+    },
+    "THREAD_AND_NEEDLE": {
+      "name": "İğne İplik",
+      "description": "Her dövüşe 4 Kaplı Zırh ile başla.",
+      "flavor": "Vücudunda büyülü iple sarılı zırhla, dokulması daha güç gibi hissediyorsun."
+    },
+    "TINGSHA": {
+      "name": "Tingşa",
+      "description": "Ne zaman tur sırasında kart atarsan rastgele bir düşmana 3 hasar ver.",
+      "flavor": "Bu enstrüman acı verici ses seviyelerini yansıtabilecek kapasiteye sahip gibi görünüyor."
+    },
+    "TINY_CHEST": {
+      "name": "Küçük Sandık",
+      "description": "Her 4 ? odasında bir hazine bul.",
+      "flavor": "\"Güzel bir prototip.\" - Mimar"
+    },
+    "TINY_HOUSE": {
+      "name": "Küçük Ev",
+      "description": "Aldığında 1 iksir elde et.\n? Altın kazan.\nMaksimum CP'ni 5 artır.\nDestene 1 kart ekle.\nRastgele 1 kart geliştir.Küçük Ev!",
+      "flavor": "\"Minyatürize etmenin mükemmele çok yakın örneği. Bu güne kadarki en iyi işim, ancak hala yeterli değil.\" - Mimar"
+    },
+    "TOOLBOX": {
+      "name": "Alet Çantası",
+      "description": "Her dövüş başında verilen 3 rastgele renksiz karttan seçtiğin 1'ini eline ekle.",
+      "flavor": "Her iş için gereken aletler."
+    },
+    "TORII": {
+      "name": "Torii",
+      "description": "5 ya da daha az bloklanmamış Saldırı hasarı alacağın zaman o hasarı 1'e indir.",
+      "flavor": "Bu küçük Torii'yi tutarak, sakinlik ve güvenlik hissinin aklında hareket ettiğini hissediyorsun."
+    },
+    "TOUGH_BANDAGES": {
+      "name": "Sert Bandaj",
+      "description": "Ne zaman tur sırasında kart atarsan 3 Blok kazan.",
+      "flavor": "Kaybetmek kuvvet verir."
+    },
+    "TOY_ORNITHOPTER": {
+      "name": "Oyuncak Maket Uçak",
+      "description": "Ne zaman iksir kullanırsan 5 CP iyileş.",
+      "flavor": "\"Bu küçük oyuncak yalnız maceracı için mükemmel bir dost!\""
+    },
+    "UNCEASING_TOP": {
+      "name": "Durmayan Topaç",
+      "description": "Ne zaman tur sırasında elinde kart kalmazsa 1 kart çek.",
+      "flavor": "Topaç rüyadaymışsın gibi, çaba harcamadan durmaksızın dönüyor."
+    },
+    "VAJRA": {
+      "name": "Vajra",
+      "description": "Her dövüşe 1 Kuvvet ile başla.",
+      "flavor": "Savaşçıların dövüş sırasında ihtişamını sergilemesi için yapılmış süs kalıntı."
+    },
+    "VELVET_CHOKER": {
+      "name": "Kadife Gerdanlık",
+      "description": "Bir tur içinde en fazla  kart oynayabilirsin.Her tur başında [E] kazan.Tur başı en fazla",
+      "flavor": "\"Muazzam bir güç ama çok sınırlı.\" - Kubilay Han"
+    },
+    "LEE_S_WAFFLE": {
+      "name": "Lee'nin Waffle'ı",
+      "description": "Maksimum CP'ni 7 artır ve tamamen iyileş.",
+      "flavor": "\"Spire'da bulabileceğin en lezzetli tatlı! Bugün pişirildi, yalnızca senin için\""
+    },
+    "WHETSTONE": {
+      "name": "Bileme Taşı",
+      "description": "Aldığında rastgele 2 Saldırı kartını Geliştir.",
+      "flavor": "\"Et hiçbir zaman çeliği yenemez.\" - Kubilay Han"
+    },
+    "DERP_ROCK": {
+      "name": "Aptal Taş",
+      "description": "Her tur başında  Yük kazan.\n(Silinemez ya da dönüştürülemez.)",
+      "flavor": "Yer Tutucu"
+    },
+    "NEOWSBLESSING": {
+      "name": "Neow'un Lütfu",
+      "description": "Sonraki 3 dövüşteki düşmanlar 1 CP'ye sahip olacak.Kutsama kullanıldı.",
+      "flavor": "Neow tarafından söylenmiş ağıt ile gelen kutsama."
+    },
+    "WHITE_BEAST_STATUE": {
+      "name": "Beyaz Hayvan Heykeli",
+      "description": "Her dövüşten sonra iksir düşer.",
+      "flavor": "Daha önce hiç görmediğin bir yaratığın küçük beyaz heykeli."
+    },
+    "DATADISK": {
+      "name": "Veri Diski",
+      "description": "Her dövüş başında 1 Odak kazan.",
+      "flavor": "Bu disk yılanlar ve Kuşlarla ilgili önemli bilgiler içerir."
+    },
+    "NUCLEAR_BATTERY": {
+      "name": "Nükleer Pil",
+      "description": "Her dövüş başında 1 Plazma Aktar.",
+      "flavor": "Ooooh..."
+    },
+    "CRACKED_CORE": {
+      "name": "Çatlamış Çekirdek",
+      "description": "Her dövüş başında 1 Yıldırım Aktar.",
+      "flavor": "Yapay Zekayı Spire'da canlandıran bir güç. Çatlamış gibi görünüyor."
+    },
+    "TURNIP": {
+      "name": "Turp",
+      "description": "Artık Kırılgan olamazsın.",
+      "flavor": "En iyi zencefille gider."
+    },
+    "EMOTION_CHIP": {
+      "name": "Duygu Çipi",
+      "description": "Bir önceki tur CP kaybettiysen sonraki tur başında tüm Kürelerinin pasif özelliğini tetikle.",
+      "flavor": "...<3...?"
+    },
+    "INSERTER": {
+      "name": "Yerleştirici",
+      "description": "Her 2 turda 1 Küre yuvası kazan.",
+      "flavor": "Daha sonraki hasar çekirdeği dondurarak engellenebilir."
+    },
+    "CABLES": {
+      "name": "Altın Uçlu Kablo",
+      "description": "En sağdaki Kürenin pasif özelliğini fazladan bir kez daha tetikle.",
+      "flavor": "\"İlgi Çekici! Yapay Zekalar bile Plasebo'dan etkilenmiş.\" - Ranwid"
+    },
+    "RUNIC_CAPACITOR": {
+      "name": "Runik Kapasitör",
+      "description": "Her dövüşe fazladan 3 Küre yuvası ile başla.",
+      "flavor": "Daha fazla daha iyidir."
+    },
+    "SYMBIOTIC_VIRUS": {
+      "name": "Simbiyotik Virüs",
+      "description": "Her dövüş başında 1 Karanlık Aktar.",
+      "flavor": "Biraz kötülük çok fazla iyilik yapabilir..."
+    },
+    "POTION_BELT": {
+      "name": "İksir Kemeri",
+      "description": "Fazladan 2 iksir yuvası kazan.",
+      "flavor": "Bu kemerle daha fazla iksir alabilirim!"
+    },
+    "BOOT": {
+      "name": "Çizme",
+      "description": "Ne zaman 4 veya daha az saldırı hasarı vurursan verilen hasarı 5'e çıkart.",
+      "flavor": "Her yaralamada, çizme büyüyor."
+    },
+    "MARK_OF_THE_BLOOM": {
+      "name": "Gençliğin Damgası",
+      "description": "Artık hiçbir şekilde iyileşemezsin.",
+      "flavor": "İleride, düşünce ve gerçeklik birdir."
+    },
+    "BUSTED_CROWN": {
+      "name": "Kırık Taç",
+      "description": "Kart ödüllerinde 2 kart az görünür.Her tur başında [E] kazan.",
+      "flavor": "Şampiyon'un Tacı... yada sadece bir korku ürünü?"
+    },
+    "EMPTY_CAGE": {
+      "name": "Boş Kafes",
+      "description": "Aldığında destenden 2 kart çıkar.Çıkarmak için 2 kart seç.",
+      "flavor": "\"Taptığın kafes, ne de garip.\" - Ranwid"
+    },
+    "INCENSE_BURNER": {
+      "name": "Tütsü Yakıcı",
+      "description": "Her 6 turda 1 Soyutluk kazan.",
+      "flavor": "Geçmişten kalma bir tütsü yakıcı. Değerli odunları yakmak, hayal bile edilemez."
+    },
+    "FUSION_HAMMER": {
+      "name": "Erimiş Çekiç",
+      "description": "Artık dinlenme yerlerinde demircilik yapamazsın.Her tur başında [E] kazan.",
+      "flavor": "Bir kere alındı mı sahibi azla vazgeçemiyor."
+    },
+    "COFFEE_DRIPPER": {
+      "name": "Kahve Damlatıcı",
+      "description": "Artık dinlenme yerlerinde dinlenemezsin.Her tur başında [E] kazan.",
+      "flavor": "\"Evet, bir bardak daha lütfen. Haydi geri işe. İŞİNE DÖN!\" - Mimar"
+    },
+    "SSSERPENTHEAD": {
+      "name": "Yılannn Kafası",
+      "description": "Ne zaman ? odasına girersen 50 Altın kazan.",
+      "flavor": "En iyi hayat herşeyi alabildiğindir!"
+    },
+    "NLOTHSMASK": {
+      "name": "N'Loth'un Aç Suratı",
+      "description": "Bir sonraki boss harici sandık boş çıkacak.",
+      "flavor": "Aç hissediyorsun."
+    },
+    "FACEOFCLERIC": {
+      "name": "Rahip'in Siması",
+      "description": "Her dövüş sonunda Maksimum CP'ni 1 artır.",
+      "flavor": "Herkes Rahip'i seviyor."
+    },
+    "CULTISTMASK": {
+      "name": "Tarikatçı Başlığı",
+      "description": "Daha konuşkan hissediyorsun.GAK!\nGAAAK!",
+      "flavor": "Sürünün bir parçası!"
+    },
+    "GREMLINMASK": {
+      "name": "Gremlin'in Siması",
+      "description": "Her dövüşe 1 Zayıf ile başla.",
+      "flavor": "Kaçma Zamanı, Hey, HEY."
+    },
+    "THEABACUS": {
+      "name": "Abaküs",
+      "description": "Ne zaman çekme yığının karıştırılırsa 6 Blok kazan.",
+      "flavor": "1...2...3...ÖLDÜN!"
+    },
+    "DOLLYSMIRROR": {
+      "name": "Dolly'nin Aynası",
+      "description": "Aldığında destendeki 1 kartı birebir kopyala.Kopyalamak için 1 kart seç.",
+      "flavor": "\"Bunun içinde komik görünüyorum.\""
+    },
+    "CLOCKWORKSOUVENIR": {
+      "name": "Saat Mekanizması",
+      "description": "Her dövüşe 1 Yapı ile başla.",
+      "flavor": "\"Çok fazla parça var.\""
+    },
+    "MEALTICKET": {
+      "name": "Yemek Bileti",
+      "description": "Ne zaman dükkana girersen 15 CP iyileş.",
+      "flavor": "\"Her ziyarette 1 köftee!\""
+    },
+    "TWISTEDFUNNEL": {
+      "name": "Kıvrık Huni",
+      "description": "Her dövüş başında TÜM düşmanlara 4 Zehir uygula.",
+      "flavor": "\"Ben bundan birşey içmezdim.\""
+    },
+    "HANDDRILL": {
+      "name": "El Matkapı",
+      "description": "Ne zaman bir düşmanın bloğunu kırarsan 2 Savunmasız uygula.",
+      "flavor": "\"Spire Tehlikelidir.\""
+    },
+    "HOVERINGKITE": {
+      "name": "Süzülen Uçurtma",
+      "description": "Her turdaki ilk kart atımından sonra [G] kazan.",
+      "flavor": "Uçurtma savaş sırasında çevrende dönüyor, garip bir güç onu kontrol ediyor gibi."
+    },
+    "SLING": {
+      "name": "Cesaret Sapanı",
+      "description": "Her Elit dövüşüne 2 Kuvvet ile başla.",
+      "flavor": "\"Zor rakiplerle dişe diş gitmek için biçilmiş kaftan.\""
+    },
+    "FROZENCORE": {
+      "name": "Donmuş Çekirdek",
+      "description": "Çatlamış Çekirdek'in yerini alır. Tur sonunda boş Küre yuvan varsa 1 Ayaz Aktar.",
+      "flavor": "Çekirdeğindeki çatlak donmuş gibi."
+    },
+    "ORANGEPELLETS": {
+      "name": "Turuncu Topaklar",
+      "description": "Ne zaman aynı tur içinde Güç, Saldırı ve Beceri kartı oynarsan üzerindeki tüm olumsuz etkileri sil.",
+      "flavor": "\"Spire'daki birçok topakdan yapıldı, Herşeye karşı korurlar seni sen merak etme.\""
+    },
+    "WRISTBLADE": {
+      "name": "Bilek Bıçağı",
+      "description": "0 maliyetli Saldırı kartları fazladan 4 hasar verir.",
+      "flavor": "Suikastler için birebir."
+    },
+    "STONECALENDAR": {
+      "name": "Taş Takvim",
+      "description": "?. turunun sonunda TÜM düşmanlara 52 hasar ver.",
+      "flavor": "Spire içinde zamanın ilerlemesi algılanamaz."
+    },
+    "NUNCHAKU": {
+      "name": "Nunçaku",
+      "description": "Her  saldırı oynamanda [E] kazan.",
+      "flavor": "İyi bir antreman aracı. Kullananın duruşunu ve çevikliğini artırır."
+    },
+    "MAWBANK": {
+      "name": "Gırtlak Kumbarası",
+      "description": "Ne zaman bir kat çıkarsan 12 Altın kazan. Bir dükkanda Altın harcarsan etkisini kaybeder.Bu kumbara kırılıp açılmış.",
+      "flavor": "Gırtlak canavarlarının sayısız saldırısına rağmen baya popüler."
+    },
+    "MUTAGENICSTRENGTH": {
+      "name": "Mutajenik Güç",
+      "description": "Her dövüşe ? Kuvvet ile başla. İlk tur sonunda 3 Kuvvet kaybet.",
+      "flavor": "\"Testler stabil görünüyor, yalnızca denek tehlikeye girerse çalışıyorlar.\" - Bilinmiyor"
+    },
+    "BRIMSTONE": {
+      "name": "Kükürt",
+      "description": "Her tur başında ? Kuvvet kazan, ancak TÜM düşmanlar 1 Kuvvet kazanır.",
+      "flavor": "Şeytani bir ısı yayıyor."
+    },
+    "POCKETWATCH": {
+      "name": "Cep Saati",
+      "description": "Ne zaman bir tur içinde 3 veya daha az kart oynarsan sonraki tur başında fazladan 3 kart çek.",
+      "flavor": "Saat 15.00'ı gösterirken takılı kalmış."
+    },
+    "PRESERVEDINSECT": {
+      "name": "Korunmuş Böcek",
+      "description": "Elit dövüşlerindeki düşmanlar %25 daha az CP'ye sahip olur.",
+      "flavor": "Özellikle büyük düşmanları etkileyen bir aura yayıyor gibi görünüyor."
+    },
+    "FOSSILIZEDHELIX": {
+      "name": "Fosilleşmiş Helis",
+      "description": "Her dövüşteki ilk CP kaybını engelle.",
+      "flavor": "Yok edilemez gibi görünüyor, acaba nasıl bir yaratığa aitti?"
+    },
+    "PRISMATICSHARD": {
+      "name": "Prizmatik Parça",
+      "description": "Artık kart ödüllerinde renksiz ve diğer renklerden kartlar da görünür.",
+      "flavor": "Parçaya doğru baktığında, yepyeni bakış açıları görebildiğini fark ediyorsun."
+    },
+    "WARPEDTONGS": {
+      "name": "Çarpık Maşa",
+      "description": "Her tur başında elindeki rastgele bir kartı Geliştir.",
+      "flavor": "Lanetlenmiş maşa çalındığı yere geri dönebilmek için çok güçlü bir lanet yayıyor."
+    },
+    "WINGEDGREAVES": {
+      "name": "Kanatlı Çizmeler",
+      "description": "Üst kata çıkarken 3 kere yolları yok sayabilirsin.",
+      "flavor": "Havalı."
+    },
+    "CERAMICFISH": {
+      "name": "Porselen Balık",
+      "description": "Ne zaman destene kart eklenirse 9 Altın kazan.",
+      "flavor": "Özenle boyanmış, bahtınızı açacak."
+    },
+    "STRIKEDUMMY": {
+      "name": "Darbe Kuklası",
+      "description": "Adında \"Darbe\" olan kartlar fazladan 3 hasar vurur.",
+      "flavor": "Perişan halde."
+    },
+    "VIOLETLOTUS": {
+      "name": "Eflatun Nilüfer",
+      "description": "Ne zaman Huzur duruşundan çıkarsan fazladan [E] kazan.",
+      "flavor": "Eski yazılara göre \"enerji havuzları\" bu çiçekler ile doluymuş."
+    },
+    "SACREDBARK": {
+      "name": "Kutsal Ağaç Kabuğu",
+      "description": "İksirlerin etkisini iki katına çıkart.",
+      "flavor": "Söylenene göre Dünya Ağacı'ndan kopmuş."
+    },
+    "TEARDROPLOCKET": {
+      "name": "Gözyaşı Madalyonu",
+      "description": "Her dövüşe Huzur içinde başla.",
+      "flavor": "Sahibi kör, içindekiler görülmemiş."
+    },
+    "SLAVERSCOLLAR": {
+      "name": "Köle Tüccarının Tasması",
+      "description": "Boss ve Elit dövüşlerinde her tur başında [E] kazan.",
+      "flavor": "Paslı acınası zincirler."
+    },
+    "AKABEKO": {
+      "name": "Akabeko",
+      "description": "Dövüşlerdeki ilk saldırın fazladan 8 hasar verir.",
+      "flavor": "\"Mööööö~\""
+    },
+    "YANG": {
+      "name": "İkilik",
+      "description": "Ne zaman bir Saldırı oynarsan 1 geçici Çeviklik kazan.",
+      "flavor": "\"Ve güneş sonsuza kadar sönüyor, sanki perdeler önüne düşmüş gibi.\" - Zoroth"
+    },
+    "CLOAKCLASP": {
+      "name": "Pelerin Tokası",
+      "description": "Her tur sonunda elinde kalan her kart için 1 Blok kazan.",
+      "flavor": "Basit ama dayanıklı bir tasarım."
+    },
+    "MELANGE": {
+      "name": "Karışım",
+      "description": "Ne zaman çekme yığının karıştırılırsa 3 Keşif yap.",
+      "flavor": "Kaynağı bilinmeyen gizemli kumlar. Tarçın kokuyor."
+    },
+    "YIN": {
+      "name": "Yin",
+      "description": "Whenever you play a Skill, gain 1 temporary Strength.",
+      "flavor": "You cannot have light without dark. Or can you?"
+    },
+    "INKBOTTLE": {
+      "name": "Mürekkep Şişesi",
+      "description": "Her 10 kart oynamanda 1 kart çek.",
+      "flavor": "Tükendiğinde kendini farklı bir renk ile dolduruyor."
+    },
+    "TUNGSTENROD": {
+      "name": "Tungsten Çubuk",
+      "description": "Ne zaman CP kaybedecek olursan 1 CP daha az kaybet.",
+      "flavor": "Çok çok ağır."
+    },
+    "HOLYWATER": {
+      "name": "Kutsal Su",
+      "description": "Saf Su'yun yerini alır. Her dövüş başında eline 3 Mucize ekle.",
+      "flavor": "Spire'dan önceki bir zaman diliminde toplandı."
+    },
+    "PUREWATER": {
+      "name": "Saf Su",
+      "description": "Her dövüş başında eline bir Mucize ekle.",
+      "flavor": "İnce kum ile süzülmüş ve hiçbir kirlilik belirtisi yok."
+    },
+    "HORNCLEAT": {
+      "name": "Gemi Kelepçesi",
+      "description": "2. turun başında 14 Blok kazan.",
+      "flavor": "Elde tutmak hoş. Acaba ne için kullanılıyor?"
+    },
+    "CAPTAINSWHEEL": {
+      "name": "Kaptanın Dümeni",
+      "description": "3. turun başında 18 Blok kazan.",
+      "flavor": "Hassas bir işçilikle yapışmış ahşap biblo. Bir isim karılmış ama yabancı dilde."
+    },
+    "GOLDENEYE": {
+      "name": "Altın Göz",
+      "description": "Ne zaman Keşif yaparsan fazladan 2 kart Keşif yap.",
+      "flavor": "Yakınındakilerin aklından geçenleri gör ve gelecekteki hareketlerini tahmin et."
+    },
+    "DAMARU": {
+      "name": "Damaru",
+      "description": "Her tur başında 1 Mantra kazan.",
+      "flavor": "Bu küçük davulun sesi zihnini açık tutar, ileriye doğru bir yol açar."
+    }
+  },
+  "powers": {
+    "ACCURACY": {
+      "name": "İsabet",
+      "description": "Kamalar fazladan X hasar verir."
+    },
+    "AFTER_IMAGE": {
+      "name": "Ardıl Görüntü",
+      "description": "Ne zaman bir kart oynarsan X Blok kazan."
+    },
+    "ANGER": {
+      "name": "Kudurmuş",
+      "description": "Ne zaman bir Beceri oynarsan X Kuvvet kazanır."
+    },
+    "ANGRY": {
+      "name": "Asabi",
+      "description": "XHer saldırı hasarı aldığında X Kuvvet kazanır."
+    },
+    "ARTIFACT": {
+      "name": "Yapı",
+      "description": "Gelen X olumsuz etkiyi engeller.X olumsuz etkiyi engeller."
+    },
+    "ATTACK_BURN": {
+      "name": "Saldırı Yakıcı",
+      "description": "X tur, ne zaman bir Saldırı oynarsan onu Tüket.XX tur, ne zaman bir Saldırı oynarsan onu Tüket."
+    },
+    "BARRICADE": {
+      "name": "Barikat",
+      "description": "Blok tur başlarında kalkmaz.XBlok tur başlarında kalkmaz."
+    },
+    "BLUR": {
+      "name": "Bulanık",
+      "description": "Blok sonraki tur başında kalkmaz.XBlok sonraki X tur başında kalkmaz."
+    },
+    "BRUTALITY": {
+      "name": "Vahşilik",
+      "description": "Tur başında X CP kaybet ve X kart çek.XTur başında X CP kaybet ve X kart çek."
+    },
+    "BURST": {
+      "name": "Atılma",
+      "description": "Bu tur oynayacağın bir sonraki Beceri iki kez oynanır.XBu tur oynayacağın sonraki X Beceri iki kez oynanır."
+    },
+    "CHOKED": {
+      "name": "Boğulma",
+      "description": "Bu tur boyunca ne zaman bir kart oynarsan X CP kaybeder."
+    },
+    "COMBUST": {
+      "name": "İçten Yanma",
+      "description": "Tur sonunda X CP kaybet ve TÜM düşmanlara X hasar ver."
+    },
+    "CONFUSION": {
+      "name": "Şaşkınlık",
+      "description": "Ne zaman kart çekersen maliyetini rastgele belirle."
+    },
+    "CONSTRICTED": {
+      "name": "Sıkıştırılmış",
+      "description": "Turun bittiği anda X hasar al."
+    },
+    "CORRUPTION": {
+      "name": "Yozlaşma",
+      "description": "Tüm Beceri kartları 0 enerji olur. Beceri oynadığında onu Tüket.XBeceri oynadığında onu Tüket."
+    },
+    "CURIOSITY": {
+      "name": "Merak",
+      "description": "Ne zaman bir Güç kartı oynarsan X Kuvvet kazanır."
+    },
+    "CURL_UP": {
+      "name": "Kıvrılma",
+      "description": "Saldırı hasarı aldığında kıvrılır ve X Blok kazanır (yalnızca bir sefer)."
+    },
+    "DANCE_PUPPET": {
+      "name": "Dans Kuklası",
+      "description": "XXX"
+    },
+    "DARK_EMBRACE": {
+      "name": "Karanlık Kucak",
+      "description": "Ne zaman bir kart Tüketilirse 1 kart çek.XNe zaman bir kart Tüketilirse X kart çek."
+    },
+    "DEMON_FORM": {
+      "name": "İblis Formu",
+      "description": "Tur başında X Kuvvet kazan."
+    },
+    "DEXTERITY": {
+      "name": "Çeviklik",
+      "description": "Kartlardan kazanılan Bloğu şu sayıda artır: XKartlardan kazanılan Bloğu şu sayıda azalt: X."
+    },
+    "DOUBLE_DAMAGE": {
+      "name": "Çift Hasar",
+      "description": "Saldırılar iki kat hasar verir: X tur boyunca.X tur boyunca."
+    },
+    "DOUBLE_TAP": {
+      "name": "Çift Vuruş",
+      "description": "Bu tur oynayacağın bir sonraki Saldırı iki kez oynanır.XBu tur oynayacağın sonraki X Saldırı iki kez oynanır."
+    },
+    "DRAW_CARD": {
+      "name": "Kart Çekme",
+      "description": "Sonraki tur başında X kart fazla çek.X kart fazla çek."
+    },
+    "DRAW": {
+      "name": "Çekme",
+      "description": "Sonraki tur başında X kart fazla çek.X kart eksik çek.X kart fazla çek.X kart eksik çek."
+    },
+    "DRAW_DOWN": {
+      "name": "Eksik Çekme",
+      "description": "Sonraki tur başında X kart eksik çek.X kart eksik çek."
+    },
+    "DRAW_REDUCTION": {
+      "name": "Kart Çekme Azalması",
+      "description": "Sonraki tur 1 kart eksik çek.XX tur boyunca 1 kart eksik çek."
+    },
+    "ENERGIZED": {
+      "name": "Enerjik",
+      "description": "Sonraki tur fazladan X [G] kazan.X [G] kazan.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENTANGLED": {
+      "name": "Eli Ayağına Dolaşmış",
+      "description": "Bu tur boyunca Saldırı kartı oynayamazsın."
+    },
+    "ENVENOM": {
+      "name": "Bir Tutam Zehir",
+      "description": "Ne zaman bir Saldırın CP hasarı verirse X Zehir uygula."
+    },
+    "EVOLVE": {
+      "name": "Evrimleşme",
+      "description": "Ne zaman bir Durum kartı çekersen 1 kart çek.XNe zaman bir Durum kartı çekersen X kart çek."
+    },
+    "EXPLOSIVE": {
+      "name": "Patlayıcı",
+      "description": "X tur sonra patlar ve X hasar verir.XBu tur patlayacak ve vereceği hasar:"
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Acı Yok",
+      "description": "Ne zaman bir kart Tüketilirse X Blok kazan."
+    },
+    "FIRE_BREATHING": {
+      "name": "Ateş Püskürtme",
+      "description": "Ne zaman bir Durum veya Lanet kartı çekersen TÜM düşmanlara X hasar ver."
+    },
+    "FLAME_BARRIER": {
+      "name": "Alev Seti",
+      "description": "Saldırı geldiğinde saldırana geri X hasar ver."
+    },
+    "FLIGHT": {
+      "name": "Uçuş",
+      "description": "Saldırılardan %50 daha az hasar alır. Eğer bu tur boyunca X kez vurursan yere düşer."
+    },
+    "NULLIFY_ATTACK": {
+      "name": "Boşa Saldırı",
+      "description": "Her tur bir Saldırıyı tamamen Blokla."
+    },
+    "FRAIL": {
+      "name": "Kırılgan",
+      "description": "Kartlardan %25 daha az Blok kazanırsın: X tur boyunca.X tur boyunca."
+    },
+    "SHACKLED": {
+      "name": "Zincirlenmiş",
+      "description": "Turunun sonunda geri X Kuvvet kazanır."
+    },
+    "GAMBIT": {
+      "name": "Hesaplanmış",
+      "description": "X tur sonra, X tur sonra, X [B] kazan."
+    },
+    "HEX": {
+      "name": "Nazar",
+      "description": "Ne zaman Saldırı harici bir kart oynarsan çekme yığınına X Sersemlik karıştır."
+    },
+    "HIDE": {
+      "name": "Saklan",
+      "description": "XX"
+    },
+    "INFINITE_BLADES": {
+      "name": "Sonsuz Bıçak",
+      "description": "Tur başında eline X Kama ekle.X Kama ekle."
+    },
+    "BULLET_TIME": {
+      "name": "Yavaş Çekim",
+      "description": "Elindeki kartların maliyeti tur boyunca 0 olur. Eline yeni kart çekemezsin."
+    },
+    "INTANGIBLE": {
+      "name": "Soyutluk",
+      "description": "Bu tur alınan tüm hasarları ve CP kayıplarını 1'e indirir."
+    },
+    "INVERTED": {
+      "name": "Ters Çevrilmiş",
+      "description": "Hasar almaz. Blok kazanırsan o kadar CP kaybeder."
+    },
+    "JUGGERNAUT": {
+      "name": "Ezici Güç",
+      "description": "Ne zaman Blok kazanırsan rastgele bir düşmana X hasar ver."
+    },
+    "KNOWLEDGE": {
+      "name": "Bilgi",
+      "description": "Ne zaman bir Güç kartı oynarsan X kart çek."
+    },
+    "FLEX": {
+      "name": "Kasılma",
+      "description": "Tur sonunda X Kuvvet kaybet."
+    },
+    "MALLEABLE": {
+      "name": "Yumuşak",
+      "description": "Saldırılardan hasar aldığında X Blok kazanır. Blok kazanımı X tetiklendikçe artar. Sonraki tur başında X olarak tekrar başlar."
+    },
+    "METALLICIZE": {
+      "name": "Metalleşme",
+      "description": "Tur sonunda X Blok kazan.XTurunun sonunda X Blok kazanır."
+    },
+    "MINION": {
+      "name": "Minyon",
+      "description": "Minyonlar liderleri öldüğünde kaçarlar."
+    },
+    "MODE_SHIFT": {
+      "name": "Biçim Değişimi",
+      "description": "X hasar aldıktan sonra savunma duruşuna geçer."
+    },
+    "NEXT_TURN_BLOCK": {
+      "name": "Sonraki Tur Blok",
+      "description": "Sonraki tur başında X Blok kazan."
+    },
+    "NIGHT_TERROR": {
+      "name": "Kabus",
+      "description": "Sonraki tur başında eline X kart ekle."
+    },
+    "NO_DRAW": {
+      "name": "Kart Çekme Yok",
+      "description": "Tur sonuna kadar kart çekemezsin."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Zehirli Gazlar",
+      "description": "Tur başında TÜM düşmanlara X Zehir uygula."
+    },
+    "PANACHE": {
+      "name": "Gösteriş",
+      "description": "Eğer bu tur X kart daha oynarsan, TÜM düşmanlara X hasar ver.X kart daha oynarsan, TÜM düşmanlara"
+    },
+    "PEN_NIB": {
+      "name": "Dolma Kalem Ucu",
+      "description": "Sıradaki Saldırın iki kat hasar verir."
+    },
+    "PHANTASMAL": {
+      "name": "Hayali Katil",
+      "description": "Sonraki tur boyunca Çift Hasar ver.XSonraki X tur boyunca Çift Hasar ver."
+    },
+    "PLATED_ARMOR": {
+      "name": "Kaplı Zırh",
+      "description": "Tur sonunda X Blok kazan. Bir saldırıdan CP kaybetmek Kaplı Zırhı 1 azaltır.XTurunun sonunda X Blok kazanır. Bir saldırıdan CP kaybetmek Kaplı Zırhı 1 azaltır."
+    },
+    "POISON": {
+      "name": "Zehir",
+      "description": "Turunun başında X CP kaybeder ve Zehir 1 azalır.XTurunun başında"
+    },
+    "RAGE": {
+      "name": "Öfke",
+      "description": "Bu tur ne zaman bir Saldırı oynarsan X Blok kazan."
+    },
+    "REDUCE_DAMAGE": {
+      "name": "Hasar Düşür",
+      "description": ""
+    },
+    "REGENERATE": {
+      "name": "Yenileme",
+      "description": "Turunun sonunda X CP iyileşir."
+    },
+    "REGENERATION": {
+      "name": "Yenilenme",
+      "description": "Tur sonunda X CP iyileş ve Yenilenmeyi 1 azalt.X"
+    },
+    "LIFE_LINK": {
+      "name": "Hayat Bağı",
+      "description": "Bağlı oldukları hayattaysa 2 tur içinde %50 CP ile yeniden doğar."
+    },
+    "REPULSE": {
+      "name": "Kovma",
+      "description": "X"
+    },
+    "RETAIN_CARDS": {
+      "name": "Kart Saklama",
+      "description": "Tur sonunda seçtiğin X kartı saklayabilirsin.X kartı saklayabilirsin."
+    },
+    "RETAIN_HAND": {
+      "name": "Eli Sakla",
+      "description": "X tur boyunca, tur sonunda elindeki kartları atmazsın.XTur sonunda elindeki kartları atmazsın."
+    },
+    "RIPOSTE": {
+      "name": "Hazır Cevap",
+      "description": "X"
+    },
+    "RITUAL": {
+      "name": "Ayin",
+      "description": "Turunun sonunda X Kuvvet kazanır.XTur sonunda"
+    },
+    "GENERIC_STRENGTH_UP_POWER": {
+      "name": "Kuvvet Artırma",
+      "description": "Turunun sonunda X Kuvvet kazanır."
+    },
+    "RUPTURE": {
+      "name": "Yırtık",
+      "description": "Ne zaman oynadığın bir kart nedeniyle CP kaybedersen X Kuvvet kazan."
+    },
+    "SADISTIC": {
+      "name": "Sadistik Huy",
+      "description": "Ne zaman düşmana bir olumsuz etki uygularsan X hasar ver."
+    },
+    "SERPENTINE": {
+      "name": "Yılansı",
+      "description": "İksirler işlemez."
+    },
+    "SHARP_HIDE": {
+      "name": "Sivri Deri",
+      "description": "Saldırı kartı oynadığında X hasar alırsın."
+    },
+    "SHRIEK_FROM_BEYOND": {
+      "name": "Uzaktan Gelen Feryat",
+      "description": "Saldırı oynadığında rastgele bir kart at."
+    },
+    "PAINFUL_STABS": {
+      "name": "Acılı Bıçaklama",
+      "description": "Bu düşmandan hasar aldığında atma yığınına bir Yara eklenir."
+    },
+    "SKILL_BURN": {
+      "name": "Yanan Yetenek",
+      "description": "X tur boyunca, Beceri oynadığında onu Tüket.XSonraki X tur boyunca, Beceri oynadığında onu Tüket."
+    },
+    "SLOW": {
+      "name": "Yavaşlık",
+      "description": "Bu tur oynadığın her bir kart için X, Saldırı kartlarından %10 daha fazla hasar alır.X (Alacağı: %X daha fazla hasar)"
+    },
+    "SPLIT": {
+      "name": "İkiye Bölünme",
+      "description": "CP'si %50 veya altına düştüğünde 2 ufak parçaya bölünür ve parçalar X'in bölünürkenki CP'sine sahip olur."
+    },
+    "SPORE_CLOUD": {
+      "name": "Spor Bulutu",
+      "description": "Öldüğünde sana X Savunmasız uygular."
+    },
+    "STASIS": {
+      "name": "Durgunluk",
+      "description": "Bu düşman öldüğünde çaldığı X eline geri döner."
+    },
+    "EXTRA_CARDS": {
+      "name": "Fazladan Kart",
+      "description": "Sonraki tur fazladan 1 kart çek.XSonraki tur fazladan X kart çek."
+    },
+    "STRENGTH": {
+      "name": "Kuvvet",
+      "description": "Saldırı hasarını şu sayıda artır: XSaldırı hasarını şu sayıda azalt: X."
+    },
+    "THIEVERY": {
+      "name": "Hırsızlık",
+      "description": "her saldırısında X Altın çalar."
+    },
+    "THORNS": {
+      "name": "Diken",
+      "description": "Saldırıldığında geri X hasar verir."
+    },
+    "THOUSAND_CUTS": {
+      "name": "Binlerce Kesik",
+      "description": "Ne zaman bir kart oynarsan TÜM düşmanlara X hasar ver."
+    },
+    "BERSERK": {
+      "name": "Cinnet",
+      "description": "Tur başında fazladan X kazan."
+    },
+    "TIME_WARP": {
+      "name": "Zaman Tüneli",
+      "description": "Ne zaman X kart oynarsan senin turunu yarıda keser ve X Kuvvet kazanır."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Alet Edevat",
+      "description": "Tur başında X kart çek ve X kart at.X kart çek ve X kart at."
+    },
+    "UNAWAKENED": {
+      "name": "Uyanmamış",
+      "description": "Bu düşman henüz uyanmadı..."
+    },
+    "UNSTABLE": {
+      "name": "Dengesiz",
+      "description": ""
+    },
+    "VENOMOLOGY": {
+      "name": "Zehir Bilimi",
+      "description": "Zehir her tur azalmak yerine her tur X artar."
+    },
+    "VULNERABLE": {
+      "name": "Savunmasız",
+      "description": "Saldırılardan %X daha fazla hasar alır: X tur boyunca.X tur boyunca."
+    },
+    "WEAKENED": {
+      "name": "Zayıf",
+      "description": "Saldırıları %X daha az hasar verir: X tur boyunca.X tur boyunca."
+    },
+    "GROWTHPOWER": {
+      "name": "Büyüme",
+      "description": "Turunun sonunda X Kuvvet kazanır."
+    },
+    "INTANGIBLEPLAYER": {
+      "name": "Soyutluk",
+      "description": "Alınan tüm hasarları ve CP kayıplarını 1'e indir."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Hayalet Formu",
+      "description": "Tur sonunda, X Çeviklik kaybet."
+    },
+    "HEATSINK": {
+      "name": "Isı Yatağı",
+      "description": "Ne zaman bir Güç kartı oynarsan X kart çek.X kart çek."
+    },
+    "REPAIR": {
+      "name": "Onarım",
+      "description": "Dövüş sonunda X CP iyileş."
+    },
+    "STORM": {
+      "name": "Fırtına",
+      "description": "Ne zaman bir Güç kartı oynarsan X Yıldırım aktar."
+    },
+    "FOCUS": {
+      "name": "Odak",
+      "description": "Kürelerinin gücünü şu sayıda artır: XKürelerinin gücünü şu sayıda azalt: X."
+    },
+    "CONSERVE": {
+      "name": "Saklama",
+      "description": "Enerji bu tur saklanır.XEnerji sonraki X tur boyunca saklanır."
+    },
+    "MAGNETISM": {
+      "name": "Çekim",
+      "description": "Tur başında eline %s rastgele renksiz kart ekle.XTur başında eline %s rastgele renksiz kart ekle."
+    },
+    "BIAS": {
+      "name": "Taraflılık",
+      "description": "Tur başında X Odak kaybet."
+    },
+    "CREATIVE_AI": {
+      "name": "Yaratıcı AI",
+      "description": "Tur başında eline rastgele X Güç kartı ekle.X Güç kartı ekle."
+    },
+    "NO_ATTACK": {
+      "name": "Saldırı Yok",
+      "description": "Bu tur Saldırı oynayamazsın."
+    },
+    "AMPLIFY": {
+      "name": "Güçlendirme",
+      "description": "Bu tur oynayacağın bir sonraki Güç kartı iki kez oynanır.XBu tur oynayacağın sonraki X Güç kartı iki kez oynanır."
+    },
+    "BUFFER": {
+      "name": "Tampon",
+      "description": "Bir sonraki CP kaybını önle.XSonraki X CP kaybını önle."
+    },
+    "REBOUND": {
+      "name": "Geri Tepme",
+      "description": "Bu tur oynayacağın bir sonraki kart çekme yığınının üstüne konur.XBu tur oynayacağın sonraki X kart çekme yığınının üstüne konur."
+    },
+    "STATICDISCHARGE": {
+      "name": "Statik Boşalma",
+      "description": "Ne zaman Saldırı hasarı alırsan X Yıldırım Aktar."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Makine Öğrenimi",
+      "description": "Tur başında fazladan X kart çek.X kart çek."
+    },
+    "ECHO_FORM": {
+      "name": "Yankı Formu",
+      "description": "Tur başında oynanan ilk kart iki kez oynanır.XTur başında oynanan ilk X kart iki kez oynanır."
+    },
+    "PRIME": {
+      "name": "Lider",
+      "description": "Her Küre Aktardığında X kart çek.X kart çek."
+    },
+    "LOOP": {
+      "name": "Döngü",
+      "description": "Tur başında sıradaki kürenin pasif özelliğini tetikle.XTur başında sıradaki kürenin pasif özelliğini X kez tetikle."
+    },
+    "PRIMITIVE": {
+      "name": "İlkel",
+      "description": "Her Yaygın kart oynadığında X kart çek.X kart çek."
+    },
+    "HELLO": {
+      "name": "Merhaba Dünya",
+      "description": "Tur başında eline X yaygın kart ekle.X yaygın kart ekle."
+    },
+    "LOCKON": {
+      "name": "Kilitlenme",
+      "description": "Kürelerden %X daha fazla hasar alır: X tur boyunca.X tur boyunca."
+    },
+    "DEXLOSS": {
+      "name": "Çeviklik Kaybı",
+      "description": "Tur sonunda X Çeviklik kaybet."
+    },
+    "ELECTRO": {
+      "name": "Elektrodinamik",
+      "description": "Yıldırım TÜM düşmanlara vurur.XX"
+    },
+    "EQUILIBRIUM": {
+      "name": "Saklama",
+      "description": "Tur sonunda elini sakla.XElini X tur boyunca sakla."
+    },
+    "SHIFTING": {
+      "name": "Değişken",
+      "description": "XHasar aldığında, tur sonuna kadar, aldığı hasar kadar Kuvvet kaybı yaşar."
+    },
+    "FADING": {
+      "name": "Solma",
+      "description": "X tur içinde ölür.XBu tur ölecek."
+    },
+    "ENERGIZEDBLUE": {
+      "name": "Enerjili",
+      "description": "Sonraki tur fazladan X [B] kazan.X [B] kazan.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "TIMEMAZEPOWER": {
+      "name": "Zaman Labirenti",
+      "description": "Ne zaman X kart oynarsan turun yarıda kesilir."
+    },
+    "NOBLOCKPOWER": {
+      "name": "Blok Yok",
+      "description": "Kartlardan Blok kazanamazsın."
+    },
+    "MAYHEM": {
+      "name": "Kargaşa",
+      "description": "Tur başında çekme yığınının en üstündeki kartı oyna.XTur başında çekme yığınının en üstündeki X kartı oyna."
+    },
+    "THEBOMB": {
+      "name": "Bomba",
+      "description": "%1$s tur sonunda TÜM düşmanlara %2$s hasar ver.XBu tur sonunda TÜM düşmanlara %1$s hasar ver."
+    },
+    "CORPSEEXPLOSIONPOWER": {
+      "name": "Patlayan Ceset",
+      "description": "Bu düşman ölünce TÜM düşmanlara Maksimum CP'si kadar hasar ver.XBu düşman ölünce TÜM düşmanlara Maksimum CP'sinin X katı hasar ver."
+    },
+    "COMPULSIVE": {
+      "name": "Tepkili",
+      "description": "Saldırılardan hasar aldığında niyetini değiştirir."
+    },
+    "BEATOFDEATH": {
+      "name": "Ölümün Kalp Atışı",
+      "description": "Ne zaman bir kart oynarsan X hasar al."
+    },
+    "INVINCIBLE": {
+      "name": "Dokunulmaz",
+      "description": "Bu tur boyunca en fazla X can kaybedebilir.XBu turda artık can kaybedemez."
+    },
+    "SURROUNDED": {
+      "name": "Etrafın Sarıldı",
+      "description": "Arkadan gelen saldırılar %50 daha fazla hasar verir. Hedefli kartlar veya iksirler ile bakılan yön değiştirebilir."
+    },
+    "BACKATTACK": {
+      "name": "Arkadan Saldırı",
+      "description": "Arkadan saldırdığı için %50 daha fazla hasar verir."
+    },
+    "FREEATTACKPOWER": {
+      "name": "Maliyetsiz Saldırı",
+      "description": "Bir sonraki Saldırı kartının maliyetini sıfırla.XSonraki X Saldırı kartının maliyetlerini sıfırla."
+    },
+    "DUPLICATIONPOWER": {
+      "name": "Kopyalama",
+      "description": "Bu tur oynayacağın bir sonraki kart iki kez oynanır.XBu tur oynayacağın sonraki X kart iki kez oynanır."
+    },
+    "NOSKILLS": {
+      "name": "Beceri Yok",
+      "description": "Bu tur Beceri oynanamaz."
+    },
+    "MASTERY": {
+      "name": "DEPRECATED Mastery",
+      "description": "Whenever you attempt to switch Stances to your current Stance, gain X [B]."
+    },
+    "MASTERREALITYPOWER": {
+      "name": "Gerçeklik Ustası",
+      "description": "Ne zaman dövüş sırasında bir kart yaratılırsa onu Geliştir.XXX"
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED",
+      "description": "Whenever you lose HP, gain X Vigor."
+    },
+    "ESTABLISHMENTPOWER": {
+      "name": "Kuruluş",
+      "description": "Saklanan kartların maliyetini X azalt."
+    },
+    "CONTROLLED": {
+      "name": "Zihin Kalesi",
+      "description": "Ne zaman Duruş değişirsen X Blok kazan."
+    },
+    "FLOWPOWER": {
+      "name": "DEPRECATED FlowPower",
+      "description": "When you play an Attack, gain X temporary Strength. When you play a Skill, gain ,X temporary Dexterity."
+    },
+    "OMEGAPOWER": {
+      "name": "Omega",
+      "description": "Tur sonunda TÜM düşmanlara X hasar ver."
+    },
+    "NIRVANA": {
+      "name": "Nirvana",
+      "description": "Ne zaman Keşif yaparsan X Blok kazan."
+    },
+    "WIREHEADINGPOWER": {
+      "name": "Önsezi",
+      "description": "Tur başında X Keşif yap."
+    },
+    "BATTLEHYMN": {
+      "name": "Savaş İlahisi",
+      "description": "Tur başında eline X Ceza ekle.X Ceza ekle."
+    },
+    "GROUNDED": {
+      "name": "DEPRECATED Grounded",
+      "description": "Whenever you play a Skill, enter Calm."
+    },
+    "MANTRA": {
+      "name": "Mantra",
+      "description": "Her X Mantra topladığında Kutsal duruşa geçersin."
+    },
+    "STRIKEUP": {
+      "name": "Güçlü Darbe",
+      "description": "Adında Darbe olan kartlar X fazla hasar verir."
+    },
+    "FREETOPLAYPOWER": {
+      "name": "DEPRECATED Joy",
+      "description": "Ignore energy costs on the next card you play this turn.XIgnore energy costs on the next X cards you play this turn."
+    },
+    "ADAPTATION": {
+      "name": "Afallatma",
+      "description": "Ne zaman Gazaba girersen X kart çek.X kart çek."
+    },
+    "CANNOTCHANGESTANCEPOWER": {
+      "name": "Duruş Değişemez",
+      "description": "Bu tur duruş değişemezsin."
+    },
+    "VAULT": {
+      "name": "Vault",
+      "description": "Tur başında X hasar alır."
+    },
+    "BLOCKRETURNPOWER": {
+      "name": "Blok Dönüşü",
+      "description": "Saldırdığında X Blok kazan."
+    },
+    "HOTHOT": {
+      "name": "DEPRECATED Hot hot",
+      "description": "While you are in Wrath, deal X damage back whenever you receive attack damage."
+    },
+    "ANGELFORM": {
+      "name": "Sonsuz Yaşam",
+      "description": "Tur sonunda X Kaplı Zırh kazan."
+    },
+    "EMOTIONALTURMOILPOWER": {
+      "name": "DEPRECATED Emotional Turmoil",
+      "description": "At the start of your turn, enter a new random basic stance."
+    },
+    "ALWAYSMAD": {
+      "name": "DEPRECATED Always Mad",
+      "description": "No longer receive double damage while in Wrath."
+    },
+    "COLLECT": {
+      "name": "Toplama",
+      "description": "Bir sonraki tur başında eline Mucize+ ekle.XSonraki X tur boyunca, tur başlarında eline Mucize+ ekle."
+    },
+    "CONDENSE": {
+      "name": "DEPRECATED Condense",
+      "description": "You cannot take more than X from any attack."
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Serenity",
+      "description": "While you are in Calm, HP loss is reduced by"
+    },
+    "ENDTURNDEATH": {
+      "name": "Kafir",
+      "description": "Bir sonraki tur başında öl."
+    },
+    "VIGOR": {
+      "name": "Dinçlik",
+      "description": "Bir sonraki Saldırın fazladan X hasar verecek."
+    },
+    "DEVOTIONPOWER": {
+      "name": "Sadakat",
+      "description": "Tur başında X Mantra kazan."
+    },
+    "WRATHNEXTTURNPOWER": {
+      "name": "Kaynayan Öfke",
+      "description": "Sonraki tur başında Gazaba gir."
+    },
+    "DEVAFORM": {
+      "name": "Deva Formu",
+      "description": "Tur başında [W] kazanXTur başında X [W] kazanX ve her tur bunu X artır.XTRANSLATE NOTE: At the start of your turn, gain [W] 2 times and increase this by 1."
+    },
+    "OMNISCIENCEPOWER": {
+      "name": "Omniscience",
+      "description": "DEPERCATEDXDEPERCATED"
+    },
+    "WAVEOFTHEHANDPOWER": {
+      "name": "El Sallama",
+      "description": "Ne zaman Blok kazanırsan TÜM düşmanlara X Zayıf uygula."
+    },
+    "WAVEOFTHEHANDPOWER2": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATEDXDEPRECATED."
+    },
+    "ENERGYDOWNPOWER": {
+      "name": "Oruçlu",
+      "description": "Tur başında X kaybet."
+    },
+    "DISCIPLINEPOWER": {
+      "name": "DEPRECATED Discipline",
+      "description": "If you end your turn with unused [W] , draw that many additional cards next turn."
+    },
+    "FLICKPOWER": {
+      "name": "DEPRECATED Flick",
+      "description": "When this enemy gets Flick X2 more times, it receives X1 more time, it receives X damage."
+    },
+    "PATHTOVICTORYPOWER": {
+      "name": "Damgalı",
+      "description": "Ne zaman Hassas Noktalar oynarsan X CP kaybeder."
+    },
+    "LIKEWATERPOWER": {
+      "name": "Su Gibi",
+      "description": "Tur sonunda Huzur içindeysen X Blok kazan."
+    },
+    "STUDY": {
+      "name": "Çalışma",
+      "description": "Tur sonunda çekme yığınına X İçgörü karıştır.X İçgörü karıştır."
+    }
+  },
+  "potions": {
+    "ANCIENT_POTION": {
+      "name": "Antik İksir",
+      "description": "1 Yapı kazan."
+    },
+    "BLOCK_POTION": {
+      "name": "Blok İksiri",
+      "description": "12 Blok kazan."
+    },
+    "DEXTERITY_POTION": {
+      "name": "Çeviklik İksiri",
+      "description": "2 Çeviklik kazan."
+    },
+    "ELIXIR": {
+      "name": "Öz İksiri",
+      "description": "DEPRECATEDDEPRECATEDDEPRECATEDDEPRECATEDDEPRECATED"
+    },
+    "ENERGY_POTION": {
+      "name": "Enerji İksiri",
+      "description": "2 Enerji kazan."
+    },
+    "EXPLOSIVE_POTION": {
+      "name": "Patlayıcı İksir",
+      "description": "TÜM düşmanlara 10 hasar ver."
+    },
+    "FIRE_POTION": {
+      "name": "Ateş İksiri",
+      "description": "20 hasar ver."
+    },
+    "HEALTH_POTION": {
+      "name": "Can İksiri",
+      "description": "CP iyileş."
+    },
+    "POISON_POTION": {
+      "name": "Zehir İksiri",
+      "description": "6 Zehir uygula."
+    },
+    "POTION_SLOT": {
+      "name": "İksir Yuvası",
+      "description": "Dövüş sırasında bonuslar kazanmak veya düşmanlarını engellemek için iksir kullan.0İksir Yuvası"
+    },
+    "REGEN_POTION": {
+      "name": "Yenilenme İksiri",
+      "description": "5 Yenilenme kazan."
+    },
+    "STRENGTH_POTION": {
+      "name": "Kuvvet İksiri",
+      "description": "2 Kuvvet kazan."
+    },
+    "SWIFT_POTION": {
+      "name": "Çabukluk İksiri",
+      "description": "3 kart çek."
+    },
+    "WEAK_POTION": {
+      "name": "Zayıflatma İksiri",
+      "description": "3 Zayıf uygula."
+    },
+    "FRUIT_JUICE": {
+      "name": "Meyve Suyu",
+      "description": "5 Maksimum CP kazan."
+    },
+    "FEARPOTION": {
+      "name": "Korku İksiri",
+      "description": "3 Savunmasız uygula."
+    },
+    "SKILLPOTION": {
+      "name": "Beceri İksiri",
+      "description": "3 rastgele Beceri kartından 1 tanesini eline ekle, maliyeti o tur boyunca 0 olur.13 rastgele Beceri kartından 1 tanesinden 2 tane eline ekle, maliyetleri o tur boyunca 0 olur."
+    },
+    "ATTACKPOTION": {
+      "name": "Saldırı İksiri",
+      "description": "3 rastgele Saldırı kartından 1 tanesini eline ekle, maliyeti o tur boyunca 0 olur.13 rastgele Saldırı kartından 1 tanesinden 2 tane eline ekle, maliyetleri o tur boyunca 0 olur."
+    },
+    "POWERPOTION": {
+      "name": "Güç İksiri",
+      "description": "3 rastgele Güç kartından 1 tanesini eline ekle, maliyeti o tur boyunca 0 olur.13 rastgele Güç kartından 1 tanesinden 2 tane eline ekle, maliyetleri o tur boyunca 0 olur."
+    },
+    "STEROIDPOTION": {
+      "name": "Kasılma İksiri",
+      "description": "5 Kuvvet kazan. Bu tur sonunda  Kuvvet kaybet."
+    },
+    "SPEEDPOTION": {
+      "name": "Hız İksiri",
+      "description": "5 Çeviklik kazan. Bu tur sonunda  Çeviklik kaybet."
+    },
+    "GHOSTINAJAR": {
+      "name": "Kavanozdaki Hayalet",
+      "description": "1 Soyutluk kazan."
+    },
+    "FOCUSPOTION": {
+      "name": "Odak İksiri",
+      "description": "2 Odak kazan."
+    },
+    "SNECKOOIL": {
+      "name": "Snecko Yağı",
+      "description": "5 kart çek. Elindeki kartların maliyetlerini rastgele değiştir. Dövüş sonuna kadar maliyetleri öyle kalır."
+    },
+    "LIQUIDBRONZE": {
+      "name": "Sıvı Bronz",
+      "description": "3 Diken kazan."
+    },
+    "GAMBLERSBREW": {
+      "name": "Kumarcı Karışımı",
+      "description": "Elinden istediğin sayıda kart at ve attığın sayıda kart çek."
+    },
+    "ESSENCEOFSTEEL": {
+      "name": "Çelik Özü",
+      "description": "4 Kaplı Zırh kazan."
+    },
+    "BLOODPOTION": {
+      "name": "Kan İksiri",
+      "description": "Maksimum CP'nin %20'si kadar iyileş."
+    },
+    "FAIRYPOTION": {
+      "name": "Şişedeki Peri",
+      "description": "Öleceğin zaman, kaybetmek yerine, Maksimum CP'nin %30'u ile tekrar canlan. Otomatik kullanılır."
+    },
+    "SMOKEBOMB": {
+      "name": "Sis Bombası",
+      "description": "Boss harici bir dövüşten kaç. Ödül alınmaz.0Etrafım sarılmış!"
+    },
+    "ENTROPICBREW": {
+      "name": "Dengesiz İçki",
+      "description": "Boş iksir yuvalarını rastgele iksirler ile doldur."
+    },
+    "DUPLICATIONPOTION": {
+      "name": "Kopyalama İksiri",
+      "description": "Bu tur oynayacağın bir sonraki kart 2 kez oynanır.1Bu tur oynayacağın sonraki 2 kart 2 kez oynanır."
+    },
+    "STANCEPOTION": {
+      "name": "Duruş İksiri",
+      "description": "Seçimine göre Huzura veya Gazaba gir."
+    },
+    "ELIXIRPOTION": {
+      "name": "Öz İksiri",
+      "description": "Elinden istediğin sayıda kart Tüket."
+    },
+    "HEARTOFIRON": {
+      "name": "Demirin Kalbi",
+      "description": "6 Metalleşme kazan."
+    },
+    "CUNNINGPOTION": {
+      "name": "Kurnazlık İksiri",
+      "description": "Eline 3 Kama+ ekle."
+    },
+    "POTIONOFCAPACITY": {
+      "name": "Kapasite İksiri",
+      "description": "2 Küre yuvası kazan."
+    },
+    "ESSENCEOFDARKNESS": {
+      "name": "Karanlığın Özü",
+      "description": "Her küre yuvan için 1 Karanlık Aktar"
+    },
+    "BOTTLEDMIRACLE": {
+      "name": "Şişelenmiş Mucize",
+      "description": "Eline 2 Mucize ekle."
+    },
+    "AMBROSIA": {
+      "name": "Tanrı Yemeği",
+      "description": "Kutsal duruşa gir."
+    },
+    "DISTILLEDCHAOS": {
+      "name": "Damıtılmış Kaos",
+      "description": "Çekme yığınının üstündeki 3 kartı oyna."
+    },
+    "LIQUIDMEMORIES": {
+      "name": "Sıvı Hatıralar",
+      "description": "Atma yığını içinden bir kart seç ve eline döndür. Maliyeti o tur boyunca 0 olur.1Atma yığını içinden  kart seç ve eline döndür. Maliyetleri o tur boyunca 0 olur."
+    },
+    "CULTISTPOTION": {
+      "name": "Tarikatçi İksiri",
+      "description": "1 Ayin kazan."
+    },
+    "COLORLESSPOTION": {
+      "name": "Renksiz İksir",
+      "description": "3 rastgele renksiz karttan 1 tanesini eline ekle, maliyeti o tur boyunca 0 olur.13 rastgele renksiz karttan 1 tanesinden 2 tane eline ekle, maliyetleri o tur boyunca 0 olur."
+    },
+    "BLESSINGOFTHEFORGE": {
+      "name": "Demircinin Lütfu",
+      "description": "Elindeki tüm kartları dövüş sonuna kadar Geliştir."
+    }
+  },
+  "events": {
+    "GOLDEN_IDOL": {
+      "name": "Altın Put",
+      "description": "Göze çarpmayan bir sütunun üzerinde sakince duran parıltılı ve altından bir put görüyorsun. Oldukça değerli görünüyor. \n \n Etrafında herhangi bir tuzak varmış gibi görünmüyor.",
+      "choices": []
+    },
+    "GOLDEN_SHRINE": {
+      "name": "Altın Tapınak",
+      "description": "Karşında kadim bir ruha ait özenli bir mabet yatıyor.",
+      "choices": [
+        "[Dua Et] Altın kazan.",
+        "[Saygısızca Davran] 275 Altın kazan. Lanetlen - Pişmanlık.",
+        "[Ayrıl]"
+      ]
+    },
+    "BACK_TO_BASICS": {
+      "name": "Antik Yazıt",
+      "description": "Şehrin boyutunu aklına oturtmaya çalışırken antik yazılarla kaplı bir duvar görüyorsun. Şifreli sembollerin ve kabartmaların ne anlama geldiğini çözmeye çalışırken yazıt parlamaya başlıyor. \n Birdenbire yazı netleşiyor...",
+      "choices": [
+        "[Zerafet] Destenden bir kart çıkar.",
+        "[Basitlik] Tüm Darbe ve Savunma kartlarını geliştir. Çıkarmak için bir kart seç.",
+        "[Ayrıl]"
+      ]
+    },
+    "THE_MAUSOLEUM": {
+      "name": "Anıt Mezar",
+      "description": "Bir sıra mezar arasında gezerken yuvarlak bir odanın tam ortasında mücevherlerle işlenmiş büyük bir mezar taşıyla karşılaşıyorsun. \n Tabutun üzerindeki yazıyı okuyamıyorsun, fakat siyah bir dumanın kenarlardan sızdığını farkediyorsun.",
+      "choices": [
+        "[Tabutu Aç] Bir Kalıntı edin. % ihtimalle Lanetlen - Kıvranma.",
+        "[Ayrıl]"
+      ]
+    },
+    "THE_JOUST": {
+      "name": "Atlı Mızrak Dövüşü",
+      "description": "Geniş binalar arasından yol alırken iki tarafta da yüzleri birbirlerine dönük şövalyelerin olduğu dar bir köprüye geliyorsun. Yaklaşıyorsun... \n \"Dur!\" \n \n Şövalye dev mızrağıyla seni zorla durduruyor.",
+      "choices": [
+        "[Devam Et]",
+        "[Sahip] Altın Yatır - %30 ihtimalle Altın kazan.",
+        "[İzle]"
+      ]
+    },
+    "MINDBLOOM": {
+      "name": "Aydınlanma",
+      "description": "Spire'da yürürken ve onca kaosun içinden geçerken düşüncelerin birdenbire aşırı... gerçekçi... bir hal alıyor. \n \n Canavar ve zenginlik hayalleri birden gerçekliğe karışmaya başlıyor. \n Hisler çabucak geçmeye başlıyor. Ne yapacaksın?",
+      "choices": [
+        "[Ben Savaşım] Sahne 1'den bir Boss'la Savaş. Bir Nadir Kalıntı edin.",
+        "[Ben Zenginim] 999 Altın kazan. Lanetlen - 2 Olağanlık",
+        "[Ben Sağlıklıyım] Tamamen iyileş. Lanetlen - Şüphe",
+        "[Ben Uyanığım] Tüm Kartlarını geliştir. Artık iyileşemezsin.",
+        "[Ayrıl]"
+      ]
+    },
+    "KNOWING_SKULL": {
+      "name": "Bilge Kafatası",
+      "description": "Kendini dekore edilmiş eski bir odada buluyorsun. Odanın ortasındaki süslü bir sütunun üzerinde kocaman bir kafatası duruyor. Yaklaştığında kafatası alevler içinde kalıyor ve yüzünü sana dönüyor.",
+      "choices": [
+        "[Devam Et]",
+        "[Bilgi?] Boss'u açığa çıkart.",
+        "[Başarı?] Renksiz bir Kart al. CP kaybet.",
+        "[Canlandırıcı?] Bir İksir al. CP kaybet.",
+        "[Zenginlik?] Altın kazan. CP kaybet.",
+        "[Nasıl Ayrılabilirim?] CP kaybet.",
+        "[Ayrıl]"
+      ]
+    },
+    "BIG_FISH": {
+      "name": "Büyük Balık",
+      "description": "Uzun bir koridordan geçerken havada süzülen bir muz, bir çörek ve bir kutu görüyorsun. Hayır... daha yakından incelediğinde tavandaki deliklerden sarkan tellere bağlı olduklarını görüyorsun. Cisimlere yaklaşırken sessiz kıkırtılar duyulmaya başlıyor. \n Ne yapacaksın?",
+      "choices": [
+        "[Muz] CP iyileş.",
+        "[Çörek] Maksimum CP kazan.",
+        "[Kutu] Bir Kalıntı edin. Lanetlen - Pişmanlık.",
+        "[Ayrıl]"
+      ]
+    },
+    "WHEEL_OF_CHANGE": {
+      "name": "Değişim Çarkı",
+      "description": "Şık görünümlü, neşeli bir gremlinle karşılaşıyorsun. \n \"Çarkı döndürme zamanı! H A Z I R mısın? Tabii ki hazırsın!\"",
+      "choices": [
+        "[Oyna]"
+      ]
+    },
+    "WINDING_HALLS": {
+      "name": "Dolambaçlı Koridorlar",
+      "description": "Dolambaçlı yollarda yavaşça ilerlerken duvarlar ve yer izah edilemez bir şekilde değişiyor ve sürekli yolunu kaybetmene neden oluyor. \n \n Başının arkasından sürekli fısıldayan sesler de pek yardımcı sayılmazlar.",
+      "choices": [
+        "[Adımlarını Geri İzle] Maksimum CP kaybet.",
+        "[Deliliği Kabullen] 2 Delilik kazan. CP kaybet.",
+        "[Odaklan] Lanetlen - Kıvranma. CP iyileş."
+      ]
+    },
+    "SENSORYSTONE": {
+      "name": "Duyusal Taş",
+      "description": "Spire'ın Ötesine doğru ilerlerken parlayan dönen ve şekil değiştiren bir teseraktı havada asılı dururken buluyorsun.",
+      "choices": [
+        "[Geri Çağır] Destene 1 Renksiz kart ekle.",
+        "[Geri Çağır] Destene 2 Renksiz kart ekle. CP Kaybet.",
+        "[Geri Çağır] Destene 3 Renksiz kart ekle. CP Kaybet."
+      ]
+    },
+    "TRANSMORGRIFIER": {
+      "name": "Dönüştürücü",
+      "description": "Karşında unutulmuş bir ruha ait özenli bir mabet yatıyor.",
+      "choices": [
+        "[Dua Et] Bir Kart dönüştür.",
+        "[Ayrıl] Dönüştürmek için bir Kart seç."
+      ]
+    },
+    "FALLING": {
+      "name": "Düşüş",
+      "description": "Süzülen bir şekilden diğerine atlayıp tırmanırken birden ayağın kayıyor. \n \n Düşmeye başlıyorsun.",
+      "choices": [
+        "[Devam Et] [İniş] Kaybet:",
+        "[Kilitli] Gereken: Beceri Kartı [Güç Harca] Kaybet:",
+        "[Kilitli] Gereken: Güç Kartı [Vur] Kaybet:"
+      ]
+    },
+    "MATCH_AND_KEEP": {
+      "name": "Eşleştir ve Al!",
+      "description": "\" On İki kart! Onlara sahip olmak için eşleştir! Beş hak, tekrarlama yok. \n Hazır mısın? Hadi başlayalım!\"",
+      "choices": [
+        "[Devam Et]",
+        "[Ayrıl]",
+        "[Oyna] Kalan Hak:"
+      ]
+    },
+    "UPGRADE_SHRINE": {
+      "name": "Geliştirme Mabedi",
+      "description": "Karşında unutulmuş bir ruha ait özenli bir mabet yatıyor.",
+      "choices": [
+        "[Dua Et] Bir Kart Geliştir.",
+        "[Ayrıl] Geliştirmek için bir Kart seç."
+      ]
+    },
+    "MYSTERIOUS_SPHERE": {
+      "name": "Gizemli Küre",
+      "description": "Etrafındaki kaotik arazideki bir çıkıntıda, kemiksi bir küre parlak esrarengiz bir cismi sarmış şekilde duruyor. \n İçinde ne olduğunu merak ederken nöbetçilerin onu koruduğunu fark ediyorsun.",
+      "choices": [
+        "[Küreyi Aç] Dövüş. Ödül: Nadir Kalıntı.",
+        "[Ayrıl]",
+        "[Dövüş]"
+      ]
+    },
+    "SECRETPORTAL": {
+      "name": "Gizli Portal",
+      "description": "Önündeki manzarada bulunduğun yerdeki yabancı yapılara uymayan bir görüntü görüyorsun. Yaşayan duvarların birinin içine girdaplı büyülü bir geçit garip bir biçimde yerleşmiş ve girişi tamamen kapamış. \n \n Nereye gittiğinden emin değilsin ama belki de Spire'daki yolculuğunu hızlandırabilir.",
+      "choices": [
+        "[Geçite Gir] Direk Boss'a git.",
+        "[Ayrıl]"
+      ]
+    },
+    "GHOSTS": {
+      "name": "Hayaletlerin Meclisi",
+      "description": "Tırmanmana devam ederken kalın siyah bir duman yerden çıkarak çevreni sarıyor, üç tane maske şekline girip konuşmaya başlıyorlar. \n \n \"Sanırım Neow'un kuklalarından biri daha.\" \n \"KATILIYORUM! O HEP EN EĞLENCELİ OYUNCAKLARI YAPIYOR!\" \n \n Üçüncüleri sana devasa bir gülüş ile bakıp konuşmaya başlıyor. \n \"Diğerlerini boşver... bizim gücümüzü tatmak ister misin?\"",
+      "choices": [
+        "[Kabul Et] 5 Hayali Varlık kazan. Maksimum CP Kaybet",
+        "[Reddet]"
+      ]
+    },
+    "SCRAP_OOZE": {
+      "name": "Hurdalıktaki Sızıntı",
+      "description": "Metallerin şırıltı ve taşlama sesleriyle dolu bir odaya giriyorsun. Kendine zarar verecek kadar çok hurda metal parçası yemiş balçığımsı bir yaratık önünde yatıyor. Yaratığın ortasından garip ışık parıltıları geliyor, belki de büyülü bir şeydir? Onun... ağzından içeri ulaşabilirsen biraz ganimet elde edebilirsin gibi görünüyor. Ancak asit ve keskin cisimler canını yakabilir.",
+      "choices": [
+        "[İçine Uzan] CP Kaybet. % ihtimalle bir Kalıntı bul.",
+        "[Ayrıl]"
+      ]
+    },
+    "BONFIRE_ELEMENTALS": {
+      "name": "Kamp Ateşi Ruhları",
+      "description": "Büyük bir kamp ateşinin etrafında dans eden mor renkli ateş ruhlarına rastlıyorsun.",
+      "choices": [
+        "[Devam Et]",
+        "[Ayrıl]",
+        "[Adak Ver] Adağına göre bir kutsama al. Adak olarak Verilecek bir Kart Seç."
+      ]
+    },
+    "GOLDEN_WING": {
+      "name": "Kanat Heykeli",
+      "description": "Taşların ve kayaların arasında kanat görünümlü karmakarışık büyük mavi bir heykel görüyorsun. \n Çatlaklarından altınlar dökülüyor. Belki de içinde daha fazlası vardır...",
+      "choices": [
+        "[Dua Et] Destenden bir Kart çıkar. CP Kaybet.",
+        "[Parçala] - Altın kazan.",
+        "[Ayrıl]"
+      ]
+    },
+    "NOTEFORYOURSELF": {
+      "name": "Kendin İçin Bir Not",
+      "description": "Bir sütun içindeki gevşek bir tuğla gözüne çarpıyor.",
+      "choices": [
+        "[Devam Et]",
+        "[Al Ver] Kartını geri al yerine bir Kart koy.",
+        "[Görmezden Gel]",
+        "[Ayrıl]"
+      ]
+    },
+    "COLOSSEUM": {
+      "name": "Kolezyum",
+      "description": "Pataküt!!! \n .. \n ...... \n ... \n Baygın duruma düştün...",
+      "choices": [
+        "[Devam Et]",
+        "[Dövüş]",
+        "[KORKAKLIK] Kaçış.",
+        "[ZAFER] Birçok ödülle dolu haşmetli bir savaş."
+      ]
+    },
+    "DUPLICATOR": {
+      "name": "Kopyalayıcı",
+      "description": "Karşında kadim bir varlığa sunulmuş süslü bir adak taşı yatıyor.",
+      "choices": [
+        "[Dua Et] Destendeki bir kartı kopyala.",
+        "[Ayrıl] Kopyalamak için bir Kart seç."
+      ]
+    },
+    "FOUNTAIN_OF_CLEANSING": {
+      "name": "Kutsal Çeşme",
+      "description": "Yakındaki bir duvardan akan bitmeyen bir çeşmeyle karşılaşıyorsun, parıltılı bir su akıyor.",
+      "choices": [
+        "[İç] Destendeki tüm Lanetleri çıkar.",
+        "[Ayrıl]"
+      ]
+    },
+    "DRUG_DEALER": {
+      "name": "Kuvvetlendirici",
+      "description": "Göz bantlı bir adam yüzünde şeytani bir gülümsemeyle sana doğru yaklaşıyor. \n \"Selam olsun yabancı. Gelişmiş bilimle ilgilenir misin? Seni herhangi bir antrenmanın veya kutsamanın yapabileceğinden çok daha güçlü yapabilirim. Ölüm arzusuna sahip o kahramanlardan biriysen buna ihtiyacın olacak.\" \n \n \"Ne diyon?\"",
+      "choices": [
+        "[J.A.X. dene] JAXX'LAN.",
+        "[Test Deneği Ol] Destenden 2 Kart dönüştür.",
+        "[Mutajenleri Yut] Özel bir Kalıntı edin.",
+        "[Ayrıl]"
+      ]
+    },
+    "THE_LIBRARY": {
+      "name": "Kütüphane",
+      "description": "Terkedilmiş gibi görünen şatafatlı bir binayla karşılaşıyorsun. \n Duvardan kopmuş bir tabela yerde yatıyor. Üzerinde \"KÜTÜPHANE\" yazıyor. \n İçeride sayısız parşömenler, el yazmaları ve kitaplar buluyorsun. \n Birini seçiyorsun, bir koltuğa yerleşip bir süre sessizce vakit geçiriyorsun.",
+      "choices": [
+        "[Oku] Destene eklemek için 20 karttan birini seç.",
+        "[Uyu] CP iyileş."
+      ]
+    },
+    "LAB": {
+      "name": "Lab",
+      "description": "Kendini raflarında test tüpleri, beherler, şişeler, maşalar, sıkıştırma kelepçeleri, karıştırma çubukları, koruma gözlükleri, pipetler, silindirler, mercekler ve hatta nadir bulunan bir spiral tüpün bulunduğu bir odada buluyorsun. \n \n Tüm bu aletlerin isimlerini nereden biliyorsun? Önemi yok, etrafa bakınıyorsun.",
+      "choices": [
+        "[Ara] Birkaç İksir bul!"
+      ]
+    },
+    "CURSED_TOME": {
+      "name": "Lanetli Kitap",
+      "description": "Terkedilmiş bir tapınakta devasa bir kitap buluyorsun, içini açtığında şifrelenmiş yazılarla kaplı olduğunu görüyorsun. \n \n Yazıyı ayrıntılı bir şekilde inceleyip çevirmeye çalıştığında yazı dönmeye ve kaymaya başlıyor, tanıdık olduğun dile benzemeye başlıyor.",
+      "choices": [
+        "[Oku]",
+        "[Devam Et] 1 CP kaybet.",
+        "[Devam Et] 2 CP kaybet.",
+        "[Devam Et] 3 CP kaybet.",
+        "[Dur] 3 CP kaybet.",
+        "[Al] Kitabı al. CP kaybet.",
+        "[Ayrıl]"
+      ]
+    },
+    "TOMB_OF_LORD_RED_MASK": {
+      "name": "Lord Kırmızı Maske Türbesi",
+      "description": "Oldukça süslü bir türbe suyun üstündeki yolun sonunda görülebiliyor. Türbeye ulaştığında altın konulacak bir yer ve üzerinde bulunan bir yazıt görüyorsun.",
+      "choices": [
+        "[Kırmızı Maskeyi Tak] 222 Altın kazan.",
+        "[Adak: Altın] Tüm Altınlarını kaybet. Bir Kalıntı edin.",
+        "[Ayrıl]"
+      ]
+    },
+    "MUSHROOMS": {
+      "name": "Mantarlar",
+      "description": "Olağandışı yeme içgüdüne yenik düşüyorsun. Mantar üstüne mantar yerken, başının döndüğünü hissediyor ve bayılıyorsun. Uyandığında oldukça garip hissediyorsun. \n CP'nin %25'i kadar İyileşiyorsun ancak enfeksiyon kapıyorsun.",
+      "choices": [
+        "[Ez] Mantarları sinirlendir.",
+        "[Ye] CP İyileş. Lanetlen - Asalak.",
+        "[Dövüş]",
+        "[Ayrıl]"
+      ]
+    },
+    "MASKED_BANDITS": {
+      "name": "Maskeli Haydutlar",
+      "description": "Hehehe.. Altın için teşekkürler! \n Ohhh, altına bayılıyorum. Çok çok güzel. \n parlak parlak paralar!",
+      "choices": [
+        "[Öde] TÜM Altınlarını kaybet.",
+        "[Dövüş!]",
+        "[Devam Et]",
+        "[Ayrıl]"
+      ]
+    },
+    "THE_WOMAN_IN_BLUE": {
+      "name": "Mavi Giyen Kadın",
+      "description": "Karanlığın içinden bir kol seni küçük bir dükkana çekiyor. Gözlerin ortama alıştığında soluk tenli şık giyimli bir kadının duvarda dizilmiş iksirleri işaret ettiğini görüyorsun. \n \"İksir satın al. Hemen şimdi!\" diyor.",
+      "choices": [
+        "[1 İksir Al]",
+        "[2 İksir Al]",
+        "[3 İksir Al] Altın.",
+        "[Ayrıl]"
+      ]
+    },
+    "THE_MOAI_HEAD": {
+      "name": "Moai Kafası",
+      "description": "Bulunduğun dünyaya *ait* değilmiş gibi hissettiren bir şeyle karşılaşıyorsun. Karşında etrafından farklı görünen büyük bir duvar parçasından çıkan kocaman taş bir kafa bulunuyor. \n Ağzı sonuna kadar açık olan kafa kanla kırmızıya boyanmış korkutucu dişlerini gösteriyor. Heykelin yüzeyi kendilerini bu kafanın ağzına atan ve içinde sindirilen insanların hiyeroglifleriyle dolu. Neden biri böyle bir şey yapar ki?",
+      "choices": [
+        "[İçine Atla] Tamamen iyileş. Maksimum CP kaybet.",
+        "[Adak: Altın Put] 333 Altın kazan. Altın Put'u kaybet."
+      ]
+    },
+    "N_LOTH": {
+      "name": "N'loth",
+      "description": "Kambur sırtından dokunaçlar çıkan garip bir yaratık önündeki enkaz ve çöplerin içerisinde yemek aranıyor. Yaklaşırken sana doğru tehditkar olmayan bir biçimde gelmeye başlıyor. \n \"N'loth aç. N'loth'u besle.\"",
+      "choices": [
+        "[Teklif: ] Bu Kalıntıyı kaybet. Yeni özel bir Kalıntı edin.",
+        "[Ayrıl]"
+      ]
+    },
+    "SHINING_LIGHT": {
+      "name": "Parlak Işık",
+      "description": "Parıltılı bir ışık yığını odanın merkezini kuşatıyor. \n \n Sıcak parlak ve büyüleyici desenler seni içeriye davet ediyor.",
+      "choices": [
+        "[Gir] 2 rastgele kart geliştir. CP kaybet.",
+        "[Ayrıl]"
+      ]
+    },
+    "THE_CLERIC": {
+      "name": "Rahip",
+      "description": "Tuhaf mavi bir insanımsı yaratık kafasında altın renkli bir miğfer(?) ve koca bir gülümsemeyle sana doğru yaklaşıyor. \n \"Merhaba arkadaş! Ben Rahip! Hizmetlerimle ilgileniyor musun?!\" diyerek yüksek sesle bağırıyor.",
+      "choices": [
+        "[İyileş] 35 Altın: CP iyileş.",
+        "[Arındır] Altın: Destenden bir kart çıkar.",
+        "[Ayrıl]"
+      ]
+    },
+    "PURIFIER": {
+      "name": "Saflaştırıcı",
+      "description": "Karşında unutulmuş bir ruha ait özenli bir mabet yatıyor.",
+      "choices": [
+        "[Dua Et] Destenden bir Kart çıkar.",
+        "[Ayrıl] Çıkarmak için bir Kart seç."
+      ]
+    },
+    "DESIGNER": {
+      "name": "Spire'daki Tasarımcı",
+      "description": "Afişinde \"SPIRE'DAKİ\" yazan rengarenk bir dükkan keşfediyorsun ve merakla içine doğru yürüyorsun. \n \"Hayır, mümkünatsız. Hayır. Seni içeri alamam!\" \n \n Komik kıyafetler giyen bir adam seni durdurmak için girişte beliriyor.",
+      "choices": [
+        "[Ayarlama] Altın kaybet. Bir kart geliştir.",
+        "[Temizlik] Altın kaybet. Bir kart çıkar.",
+        "[Tam Hizmet] Altın kaybet. Bir kart çıkar ve rastgele bir kart geliştir.",
+        "[Yumrukla] CP kaybet."
+      ]
+    },
+    "SPIRE_HEART": {
+      "name": "Spire'ın Kalbi",
+      "description": "dı-dımm ... dı-dımm ... dı-dımm ... \n Derinden gelen dehşet dolu bir nabız sesi odanın her tarafında hissediliyor... \n Spire'ın kalbi bu mu? Kötülüğün kaynağı?",
+      "choices": [
+        "[Devam Et]"
+      ]
+    },
+    "FORGOTTEN_ALTAR": {
+      "name": "Unutulmuş Sunak",
+      "description": "Önünde unutulmuş bir tanrıya ait bir adak taşı görüyorsun. \n Sunağın üzerinde kolları dışarıya doğru açılmış şatafatlı bir kadın heykeli bulunuyor. \n Seni çağırıyor ve bir adak istiyor.",
+      "choices": []
+    },
+    "ACCURSED_BLACKSMITH": {
+      "name": "Uğursuz Demirci",
+      "description": "Küçük bir kulübeye giriyorsun. İçeride bir demirci masası görüyorsun. Demircilik aletleri tozla kaplanmış ancak ocaktan ateş yükseliyor. Bir şeyin eşiğindesin gibi...",
+      "choices": [
+        "[Ateşte Döv] Bir kart geliştir.",
+        "[Ortalığı Ara] Özel bir Kalıntı edin. Lanetlen - Acı.",
+        "[Ayrıl] Geliştirmek için bir Kart seç"
+      ]
+    },
+    "VAMPIRES": {
+      "name": "Vampirler(?)",
+      "description": "Işıklandırılmamış bir caddede yolunu bulmaya çalışırken karanlık bir ayinin ortasındaki kapüşonlu birkaç kişiyle karşılaşıyorsun. Yaklaştığında ürkütücü bir uyumla sana dönüyorlar. İçlerinden en uzunu azılı dişlerini ortaya çıkartıyor ve uzun, soluk elini sana doğru uzatıyor. \n \"Bize katıl kardeşim, ve Spire'ın sıcaklığını içinde hisset.\"",
+      "choices": [
+        "[Kabul Et] Tüm Darbe'leri çıkar. 5 Isırık al. Maksimum CP kaybet.",
+        "[Reddet]",
+        "[Ayrıl]"
+      ]
+    },
+    "ADDICT": {
+      "name": "Yalvaran Avare",
+      "description": "Yüzlerini gizlemiş bir kaç kişiye görünmeden geçmeye çalışırken içlerinden biri sana doğru yaklaşıyor. \n \"Benim için bir şeylerin var mı arkadaş? Lütfen... belki biraz Bozukluk atarsın?\" \n \"Sadece kalacak bir yere ihtiyacım var, değiş tokuş edebileceğim kıymetli mallarım var...\" \n Kuruntulu, ama zararsız görünüyor.",
+      "choices": [
+        "[Altın Ver] Altın: Bir Kalıntı edin.",
+        "[Soy] Bir Kalıntı edin. Lanetlen - Utanç.",
+        "[Ayrıl]"
+      ]
+    },
+    "WORLD_OF_GOOP": {
+      "name": "Yapışkanların Dünyası",
+      "description": "Bir gölete düşüyorsun. \n GÖLET BALÇIKLARDAN OLUŞUYOR!!! \n Yapışkanın seni yakmaya başladığını hissedene kadar birkaç dakika boyunca delice çırpınıyorsun. \n Kulaklarında, burnunda, her yerinde yapışkanı hissedebiliyorsun. \n \n Dışına çıkarken biraz altınının eksik olduğunu farkediyorsun. Gölete dönüp baktığında, eksik altınlarını diğer bahtsız maceracılarınkilerle karışmış şekilde yapışkan göletin içinde görüyorsun.",
+      "choices": [
+        "[Altınları Topla] Altın kazan. CP kaybet.",
+        "[Orada Bırak] Altın kaybet."
+      ]
+    },
+    "LIVING_WALL": {
+      "name": "Yaşayan Duvar",
+      "description": "Çıkmaz bir yola ulaşıp arkana döndüğünde duvarlar tavandan inerek aniden kapanıyor ve seni tuzağa düşürüyor! \n \n Duvarlarda üç tane yüz şekli oluşuyor ve konuşmaya başlıyorlar. \n \"Bildiklerini unutursan gitmene izin vereceğim.\" \n \"Yeni bir yer bulmam için değişim gerekiyor.\" \n \"Beni geçmek istiyorsan gelişmen gerek.\"",
+      "choices": [
+        "[Unut] Destenden bir kart çıkar.",
+        "[Değiş] Destenden bir kart dönüştür.",
+        "[Geliş] Destendeki bir kartı geliştir. Çıkarmak için bir Kart Seç. Dönüştürmek için bir Kart Seç. Geliştirmek için bir Kart Seç.",
+        "[Ayrıl]"
+      ]
+    },
+    "BEGGAR": {
+      "name": "Yaşlı Dilenci",
+      "description": "Kürk içinde gizlenmiş yaşlı bir dilenci yanından geçerken elini sana doğru uzatıyor. \"Fazla bozukluğun var mı, evlat?\"",
+      "choices": [
+        "[Altın Ver] Altın: Destenden bir kart çıkar.",
+        "[Devam Et]",
+        "[Ayrıl]"
+      ]
+    },
+    "WEMEETAGAIN": {
+      "name": "Yine Karşılaştık!",
+      "description": "\"Yine karşılaştık!\" \n Keyifli dağınık bir eleman sana neşeyle yaklaşıyor. Bu adamı tanımıyorsun. \n \n \"Benim, Ranwid! Bugün benlik malların var mı? Her zamankinden mi? Benim gibi bir adam kendi başına yapamaz biliyorsun ki.\" \n Ona kuşkuyla bakarken seçeneklerini düşünüyorsun...",
+      "choices": [
+        "[İksir Ver] Kaybet: . Bir Kalıntı edin",
+        "[Altın Ver] Altın kaybet . Bir Kalıntı edin",
+        "[Kart Ver] Kaybet: . Bir Kalıntı edin",
+        "[Saldır]"
+      ]
+    },
+    "NEST": {
+      "name": "Yuva",
+      "description": "Uzun bir kapüşonlu insan sırasının mütevazi bir katedrale \n girdiği görülüyor.",
+      "choices": [
+        "[Tarikata Katıl] Ayin Hançeri al. CP kaybet.",
+        "[Kap ve Kaç]"
+      ]
+    },
+    "FACETRADER": {
+      "name": "Yüz Tüccarı",
+      "description": "Birkaç maske tutan ürkütücü bir heykelin yanında geçiyorsun... \n Arkandan yumuşak bir ses fısıldıyor, \n \"Dur.\"",
+      "choices": [
+        "[Dokun] Kaybet: Altın.",
+        "[Takas Et] %50 ihtimalle İyi Yüz. %50 ihtimalle Kötü Yüz.",
+        "[Ayrıl]",
+        "[Devam Et] CP, Kazan:"
+      ]
+    },
+    "LIARS_GAME": {
+      "name": "Yııılaaaaan",
+      "description": "Yerde kocaman bir deliğin olduğu bir odaya giriyorsun. Deliğe yaklaştığında içinde devasa bir yılan yaratığı beliriyor. \n \n \"Ho hooo! Merhaba merhaba! burada kimler varmış? Merhaba maceracı, basit bir soru soracağım. \n En tatmin edici hayat her şeyi satın alabildiğindir! \n Katılıyor musun?\"",
+      "choices": [
+        "[Kabul Et] Altın kazan. Lanetlen - Şüphe.",
+        "[Reddet]"
+      ]
+    },
+    "DEAD_ADVENTURER": {
+      "name": "Ölü Maceracı",
+      "description": "Maceracının üstünü ararken gafil avlandın!",
+      "choices": [
+        "[Ara] Ganimet bul.",
+        "[Ayrıl]"
+      ]
+    }
+  },
+  "keywords": {
+    "ARTIFACT": {
+      "names": [
+        "yapı"
+      ],
+      "description": "Gelen olumsuz etkiyi engeller."
+    },
+    "BLOCK": {
+      "names": [
+        "blok",
+        "bloğu",
+        "bloğunu"
+      ],
+      "description": "Sonraki tur başına kadar gelen hasarı önler."
+    },
+    "BURN": {
+      "names": [
+        "yanık",
+        "yanıklar"
+      ],
+      "description": "Yanık kartı, sana hasar veren oynanamaz bir durum kartıdır."
+    },
+    "CHANNEL": {
+      "names": [
+        "aktarma",
+        "aktar",
+        "aktarılmış",
+        "aktarılan",
+        "aktarılır"
+      ],
+      "description": "Bir Küreyi aktarmak onu ilk boş küre yuvasına koyar. Eğer boş yuvan yoksa ilk Küren yer açmak için kendiliğinden Uyarılır."
+    },
+    "CONFUSED": {
+      "names": [
+        "şaşkınlık",
+        "şaşkın",
+        "şaşırmış"
+      ],
+      "description": "Ne zaman kart çekersen maliyetini rastgele belirle."
+    },
+    "CURSE": {
+      "names": [
+        "lanet",
+        "lanetten"
+      ],
+      "description": "Lanet kartları, destende bulunan zararlı özelliklere sahip kartlardır."
+    },
+    "DARK": {
+      "names": [
+        "karanlık",
+        "karanlık+"
+      ],
+      "description": "Küre: Her tur hasarı artar. Uyarıldığında en düşük CP'li düşmana hasar verir."
+    },
+    "DAZED": {
+      "names": [
+        "sersemlik"
+      ],
+      "description": "Sersemlik kartı, oynanamaz bir durum kartıdır."
+    },
+    "DEXTERITY": {
+      "names": [
+        "çeviklik"
+      ],
+      "description": "Çeviklik, kartlardan kazanılan Bloğu artırır."
+    },
+    "ETHEREAL": {
+      "names": [
+        "ruhani"
+      ],
+      "description": "Eğer bu kart tur sonunda elinde kaldıysa tüketilir. Tüketilen kartlar dövüşün sonuna kadar destenden kaldırılır."
+    },
+    "EVOKE": {
+      "names": [
+        "uyarma",
+        "uyar",
+        "uyarılmış",
+        "uyarılma"
+      ],
+      "description": "En sağdaki Küreni harca ve onun Uyarılma etkisini kullan."
+    },
+    "EXHAUST": {
+      "names": [
+        "tüketme",
+        "tüket",
+        "tükenmiş",
+        "tükense",
+        "tükenirse",
+        "tüketilirse",
+        "tüketilme",
+        "tükenir",
+        "tükenirler"
+      ],
+      "description": "Dövüşün sonuna kadar destenden kaldırılır."
+    },
+    "FOCUS": {
+      "names": [
+        "odak"
+      ],
+      "description": "Odak, Aktarılmış Kürelerin gücünü artırır."
+    },
+    "FRAIL": {
+      "names": [
+        "kırılgan"
+      ],
+      "description": "Kırılgan iken kartlardan %25 daha az Blok kazanırsın."
+    },
+    "FROST": {
+      "names": [
+        "ayaz",
+        "ayaz+"
+      ],
+      "description": "Küre: Blok kazandırır."
+    },
+    "INNATE": {
+      "names": [
+        "yerleşik"
+      ],
+      "description": "Her dövüşe elinde bu kartla başla."
+    },
+    "INTANGIBLE": {
+      "names": [
+        "soyutluk"
+      ],
+      "description": "Alınan her hasar ve CP kaybını 1'e indirir."
+    },
+    "LIGHTNING": {
+      "names": [
+        "yıldırım",
+        "yıldırım+"
+      ],
+      "description": "Küre: Rastgele bir düşmana hasar verir."
+    },
+    "LOCKED": {
+      "names": [
+        "kilitli"
+      ],
+      "description": "Bu kart henüz açılmadı."
+    },
+    "LOCK_ON": {
+      "names": [
+        "kilitlenme"
+      ],
+      "description": "Kilitlenilen düşmanlar Kürelerden %50 daha fazla hasar alır."
+    },
+    "OPENER": {
+      "names": [
+        "açılış"
+      ],
+      "description": "Açılış kartları her tur yalnızca ilk kart olarak oynanabilirler."
+    },
+    "PLASMA": {
+      "names": [
+        "plazma",
+        "plazma+"
+      ],
+      "description": "Küre: Enerji kazandırır."
+    },
+    "POISON": {
+      "names": [
+        "zehir",
+        "zehri",
+        "zehrini",
+        "zehirlenmiş",
+        "zehirlenmişse"
+      ],
+      "description": "Zehirlenmiş yaratıklar kendi turlarının başında CP kaybederler. Zehir her tur 1 azalır."
+    },
+    "RETAIN": {
+      "names": [
+        "saklama",
+        "sakla",
+        "sakladığın",
+        "saklanır",
+        "saklanma",
+        "saklandığında"
+      ],
+      "description": "Saklanan kartlar tur sonunda elinden atılmazlar."
+    },
+    "SHIV": {
+      "names": [
+        "kama",
+        "kamalar"
+      ],
+      "description": "Kama, maliyeti 0 olan bir Saldırı kartıdır ve oynandığında Tüketilir."
+    },
+    "STATUS": {
+      "names": [
+        "durum"
+      ],
+      "description": "Durum kartları dövüş sonunda kaldırılır."
+    },
+    "STRENGTH": {
+      "names": [
+        "kuvvet",
+        "kuvvetini"
+      ],
+      "description": "Kuvvet, saldırıların verdiği hasarı artırır."
+    },
+    "STRIKE": {
+      "names": [
+        "darbe"
+      ],
+      "description": "Adında \"Darbe\" geçen her kart."
+    },
+    "THORNS": {
+      "names": [
+        "diken"
+      ],
+      "description": "Her düşman Saldırısında geri hasar verir."
+    },
+    "TODO": {
+      "names": [
+        "todo",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE"
+      ],
+      "description": "This card is NOT IMPLEMENTED. Someone should really fix that..."
+    },
+    "TRANSFORM": {
+      "names": [
+        "dönüşüm",
+        "dönüştür",
+        "dönüşen",
+        "dönüştürülen"
+      ],
+      "description": "Dönüştürülen kartlar herhangi bir nadirlikten rastgele bir kart olurlar."
+    },
+    "UNKNOWN": {
+      "names": [
+        "bilinmeyen"
+      ],
+      "description": "Bu kartla henüz karşılaşılmadı."
+    },
+    "UNPLAYABLE": {
+      "names": [
+        "oynanamaz"
+      ],
+      "description": "Oynanamaz kartları elindeyken direkt olarak oynayamazsın."
+    },
+    "UPGRADE": {
+      "names": [
+        "geliştirme",
+        "geliştir",
+        "geliştirmek",
+        "geliştirilmiş",
+        "geliştirilebilir",
+        "geliştirir"
+      ],
+      "description": "Kartları geliştirmek onları daha güçlü yapar. Kartlar yalnızca bir kez geliştirilebilir."
+    },
+    "VOID": {
+      "names": [
+        "boşluk",
+        "boşluklar",
+        "boşlukları"
+      ],
+      "description": "Boşluk kartı, çekildiği an 1 enerji harcayan oynanamaz bir durum kartıdır."
+    },
+    "VULNERABLE": {
+      "names": [
+        "savunmasız"
+      ],
+      "description": "Savunmasız yaratıklar Saldırılardan %50 daha fazla hasar alır."
+    },
+    "WEAK": {
+      "names": [
+        "zayıf",
+        "zayıfı",
+        "zayıflamış",
+        "zayıflatır"
+      ],
+      "description": "Zayıf yaratıkların Saldırıları %25 daha az hasar verir."
+    },
+    "WOUND": {
+      "names": [
+        "yara",
+        "yaralar"
+      ],
+      "description": "Yara kartı, oynanamaz bir durum kartıdır."
+    },
+    "STANCE": {
+      "names": [
+        "duruş",
+        "duruşlar",
+        "duruşu",
+        "duruşa",
+        "duruştan"
+      ],
+      "description": "Aynı anda yalnızca tek bir duruşta olabilirsin."
+    },
+    "WRATH": {
+      "names": [
+        "gazap",
+        "gazaba"
+      ],
+      "description": "Bu Duruş sırasında gelen ve giden saldırıların hasarı iki katına çıkar."
+    },
+    "CALM": {
+      "names": [
+        "huzur",
+        "huzura",
+        "huzurlu"
+      ],
+      "description": "Bu Duruştan çıktığında [W] [W] kazan."
+    },
+    "DIVINITY": {
+      "names": [
+        "kutsal"
+      ],
+      "description": "Bu Duruşa girdiğinde [W] [W] [W] kazan. Saldırıların düşmana 3 kat hasar verir. Sonraki tur başında bu Duruştan çıkarsın."
+    },
+    "PRAYER": {
+      "names": [
+        "mantra",
+        "through violence"
+      ],
+      "description": "10 Mantra'ya ulaştığında Kutsal duruşa girersin."
+    },
+    "SCRY": {
+      "names": [
+        "keşif",
+        "keşfet"
+      ],
+      "description": "Çekme yığınının üstündeki X karta bak. İstediklerini atma yığınına yollayabilirsin."
+    },
+    "REGEN": {
+      "names": [
+        "yenilenme"
+      ],
+      "description": "Her tur sonunda yenilenme miktarı kadar iyileştirir. Her tur yenilenme 1 azalır."
+    },
+    "VIGOR": {
+      "names": [
+        "dinç",
+        "dinçlik"
+      ],
+      "description": "Bir sonraki Saldırın fazladan hasar verecek."
+    },
+    "RITUAL": {
+      "names": [
+        "ayin"
+      ],
+      "description": "Her tur sonunda Kuvvet kazan."
+    },
+    "FATAL": {
+      "names": [
+        "ölümcül"
+      ],
+      "description": "Eğer bu kart minyon harici bir düşmanı öldürürse devreye girer."
+    }
+  },
+  "monsters": {
+    "APOLOGY_SLIME": {
+      "name": "Kötü Örnek Balçık"
+    },
+    "CORRUPTHEART": {
+      "name": "Yozlaşmış Kalp",
+      "move_names": [
+        ""
+      ]
+    },
+    "NEMESIS": {
+      "name": "Ezeli Düşman",
+      "move_names": [
+        ""
+      ]
+    },
+    "CHOSEN": {
+      "name": "Seçilmiş",
+      "move_names": [
+        ""
+      ]
+    },
+    "BYRD": {
+      "name": "Guş",
+      "move_names": [
+        ""
+      ]
+    },
+    "SNECKO": {
+      "name": "Snecko",
+      "move_names": [
+        "Şaşırtıcı Parıltı",
+        "Kuyruk Kırbacı",
+        "Isırık"
+      ]
+    },
+    "GREMLINWIZARD": {
+      "name": "Gremlin Büyücüsü",
+      "move_names": [
+        "Şarj Ediyorum",
+        "Nihai Patlama"
+      ]
+    },
+    "BANDITCHILD": {
+      "name": "Sivri",
+      "move_names": [
+        ""
+      ]
+    },
+    "ORB_WALKER": {
+      "name": "Yürüyen Küre",
+      "move_names": [
+        "Kuvvet Toplama"
+      ]
+    },
+    "THEGUARDIAN": {
+      "name": "Gardiyan",
+      "move_names": [
+        "Savunma Modu",
+        "Sert Darbe",
+        "Yuvarlanma",
+        "Çift Ezme",
+        "Hortum",
+        "Dolduruyorum",
+        "Havalandırma Buharı"
+      ]
+    },
+    "GREMLINWARRIOR": {
+      "name": "Deli Gremlin",
+      "move_names": [
+        "Pençe"
+      ]
+    },
+    "GREMLINTHIEF": {
+      "name": "Sinsi Gremlin",
+      "move_names": [
+        ""
+      ]
+    },
+    "CULTIST": {
+      "name": "Tarikatçı",
+      "move_names": [
+        "",
+        "",
+        "Sihirli Sözler"
+      ]
+    },
+    "FLAMEBRUISER": {
+      "name": "Alevli Boksör",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINLEADER": {
+      "name": "Gremlin Lideri",
+      "move_names": [
+        "Koşun!"
+      ]
+    },
+    "CENTURION": {
+      "name": "Bölük Komutanı",
+      "move_names": [
+        ""
+      ]
+    },
+    "GIANTHEAD": {
+      "name": "Devasa Kafa",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITBEAR": {
+      "name": "Ayı",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITLEADER": {
+      "name": "Çapkın",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIKESLIME_M": {
+      "name": "Dikenli Balçık (O)",
+      "move_names": [
+        "Yalama"
+      ]
+    },
+    "SPIKESLIME_S": {
+      "name": "Dikenli Balçık (K)"
+    },
+    "MUGGER": {
+      "name": "Yan Kesici",
+      "move_names": [
+        "Hamle",
+        "Gasp"
+      ]
+    },
+    "TIMEEATER": {
+      "name": "Zaman Yiyen",
+      "move_names": [
+        ""
+      ]
+    },
+    "THECOLLECTOR": {
+      "name": "Koleksiyoncu",
+      "move_names": [
+        ""
+      ]
+    },
+    "TORCHHEAD": {
+      "name": "Meşale Kafa",
+      "move_names": [
+        ""
+      ]
+    },
+    "ACIDSLIME_M": {
+      "name": "Asitli Balçık (O)",
+      "move_names": [
+        "Aşındırıcı Tükürük",
+        "Yalama"
+      ]
+    },
+    "ACIDSLIME_S": {
+      "name": "Asitli Balçık (K)"
+    },
+    "SNAKEPLANT": {
+      "name": "Yılan Bitki",
+      "move_names": [
+        "Güçsüzleştiren Spor"
+      ]
+    },
+    "CHAMP": {
+      "name": "Şampiyon",
+      "move_names": [
+        "Savunma Duruşu",
+        "İdam",
+        "Tokatlama"
+      ]
+    },
+    "EXPLODER": {
+      "name": "Patlayan",
+      "move_names": [
+        ""
+      ]
+    },
+    "FUNGIBEAST": {
+      "name": "Mantarsı Canavar",
+      "move_names": [
+        "Büyüme"
+      ]
+    },
+    "SPIKER": {
+      "name": "Çivili",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERBOSS": {
+      "name": "Şef",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPULSOR": {
+      "name": "İtici",
+      "move_names": [
+        ""
+      ]
+    },
+    "LOOTER": {
+      "name": "Yağmacı",
+      "move_names": [
+        "Hamle",
+        "Gasp"
+      ]
+    },
+    "SENTRY": {
+      "name": "Nöbetçi",
+      "move_names": [
+        "Parçalara Ayırma"
+      ]
+    },
+    "FUZZYLOUSEDEFENSIVE": {
+      "name": "Bit",
+      "move_names": [
+        "Ağ Atma"
+      ]
+    },
+    "FUZZYLOUSENORMAL": {
+      "name": "Bit",
+      "move_names": [
+        "Büyüme"
+      ]
+    },
+    "PUPPETEER": {
+      "name": "Kuklacı",
+      "move_names": [
+        ""
+      ]
+    },
+    "SHELLED_PARASITE": {
+      "name": "Kabuklu Parazit",
+      "move_names": [
+        ""
+      ]
+    },
+    "BRONZEORB": {
+      "name": "Küre",
+      "move_names": [
+        ""
+      ]
+    },
+    "HEXAGHOST": {
+      "name": "Hexahayalet",
+      "move_names": [
+        "Alevlenme",
+        "Soldurma",
+        "Cehennem"
+      ]
+    },
+    "SLAVERRED": {
+      "name": "Köle Tüccarı",
+      "move_names": [
+        "Sıyrık",
+        "El Ayak Dolaştırma"
+      ]
+    },
+    "SLAVERBLUE": {
+      "name": "Köle Tüccarı",
+      "move_names": [
+        "Tırmık"
+      ]
+    },
+    "SLIMEBOSS": {
+      "name": "Balçık Reyiz",
+      "move_names": [
+        "Gömçürme",
+        "Hazırlanıyor",
+        "İkiye Ayrılma",
+        "Yapışkan Serpinti"
+      ]
+    },
+    "ACIDSLIME_L": {
+      "name": "Asitli Balçık (B)",
+      "move_names": [
+        "Aşındırıcı Tükürük",
+        "İkiye Bölünme",
+        "Yalama"
+      ]
+    },
+    "GREMLINTSUNDERE": {
+      "name": "Kalkancı Gremlin",
+      "move_names": [
+        "Koruma",
+        "Kalkan Vuruşu"
+      ]
+    },
+    "LAGAVULIN": {
+      "name": "Lagavulin",
+      "move_names": [
+        "Ruh Çekme"
+      ]
+    },
+    "JAWWORM": {
+      "name": "Çene Kurdu",
+      "move_names": [
+        "Feryat",
+        "Dayak Atma"
+      ]
+    },
+    "DONU": {
+      "name": "Donu",
+      "move_names": [
+        "Güç Halkası"
+      ]
+    },
+    "SERPENT": {
+      "name": "Engerek",
+      "move_names": [
+        ""
+      ]
+    },
+    "BRONZEAUTOMATON": {
+      "name": "Bronz Otomaton",
+      "move_names": [
+        "HİPERIŞIN"
+      ]
+    },
+    "HEALER": {
+      "name": "Şifacı",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINFAT": {
+      "name": "Şişko Gremlin",
+      "move_names": [
+        "Parçalama"
+      ]
+    },
+    "DECA": {
+      "name": "Deca",
+      "move_names": [
+        ""
+      ]
+    },
+    "BOOKOFSTABBING": {
+      "name": "Saplama Kitabı",
+      "move_names": [
+        ""
+      ]
+    },
+    "AWAKENEDONE": {
+      "name": "Uyanmış Olan",
+      "move_names": [
+        "Ruh Darbesi",
+        "Karanlık Yankısı",
+        "Temizlenme",
+        "Sulu Çamur"
+      ]
+    },
+    "SPIKESLIME_L": {
+      "name": "Dikenli Balçık (B)",
+      "move_names": [
+        "Yalama",
+        "İkiye Ayrılma"
+      ]
+    },
+    "FIREORB": {
+      "name": "Ateş Küresi",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPHERICGUARDIAN": {
+      "name": "Küresel Gardiyan",
+      "move_names": [
+        ""
+      ]
+    },
+    "DARKLING": {
+      "name": "Karanlıktaki",
+      "move_names": [
+        "Çap! Çap!"
+      ]
+    },
+    "MAW": {
+      "name": "Gırtlak Canavarı",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINNOB": {
+      "name": "Züppe Gremlin",
+      "move_names": [
+        "Kafa Darbesi",
+        "Kaba Güç"
+      ]
+    },
+    "TRANSIENT": {
+      "name": "Süreksiz",
+      "move_names": [
+        ""
+      ]
+    },
+    "DAGGER": {
+      "name": "Hançer",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPTOMANCER": {
+      "name": "Sürüngen Büyücü",
+      "move_names": [
+        ""
+      ]
+    },
+    "WRITHINGMASS": {
+      "name": "Kıvranan Kitle",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESHIELD": {
+      "name": "Spire Kalkanı",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESPEAR": {
+      "name": "Spire Mızrağı",
+      "move_names": [
+        ""
+      ]
+    }
+  },
+  "characters": {
+    "DEFECT": {
+      "name": "Arızalı",
+      "description": "Farkındalık kazanmış bir savaş robotu.\nAsırlar öncesinden bir teknoloji ona Küre kontrolü sağlıyor."
+    },
+    "IRONCLAD": {
+      "name": "Demirkaplı",
+      "description": "Demirkaplıların geriye kalan son askeri.\nŞeytani güçleri kullanabilmek için ruhunu sattı."
+    },
+    "THE_SILENT": {
+      "name": "Sessiz",
+      "description": "Sisli toprakların ölümcül kadın avcısı.\nDüşmanlarını zehir ve hançerlerle yok eder."
+    },
+    "WATCHER": {
+      "name": "Gözlemci",
+      "description": "Spire'ı \"Değerlendirmeye\" gelmiş kör bir sofu.\nİlahi Duruşların ustası."
+    }
+  }
+}

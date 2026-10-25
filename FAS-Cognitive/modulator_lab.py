@@ -8,7 +8,7 @@
 #   · 结果结算   → RewardSystem.evaluate() + release()（与 action_system 同一条路）
 #   · 手动拧旋钮 → InternalState.set_value(source="manual")（与前端滑杆同一条路）
 #   · 时间快进   → 与 continuous_cognition 的"状态拍"**同一族函数**逐块重放
-#                  （tick_decay → 昼夜漂移 → 需求漂移 → update_needs_from_signals），
+#                  （tick_decay → 需求漂移 → update_needs_from_signals），
 #                  而不是另写一份衰减公式——§26 的原文就是"测试接口应调用真实
 #                  Modulator event pipeline"。
 #
@@ -86,7 +86,7 @@ class ModulatorLab:
 
     def advance(self, minutes: float, chunk_min: float = DEFAULT_CHUNK_MIN) -> dict:
         """把虚拟时钟拨快 `minutes`，并且**逐块重放生产的状态拍**
-        （continuous_cognition.py 里那段：tick_decay → 昼夜漂移 → 需求漂移 →
+        （continuous_cognition.py 里那段：tick_decay → 需求漂移 →
         需求靶值收敛）。没有第二套衰减实现可以"快进"——快进的就是那些函数。
 
         要求会话已 open：Δt 的所有来源（写入时间戳 / 不应期 / 衰减）必须同
@@ -99,7 +99,7 @@ class ModulatorLab:
         chunk = max(0.5, min(float(chunk_min), 5.0))   # 与漂移钳位同界，不放大单拍
         before = self.numeric_view()
         blocks = 0
-        written_need = written_circ = decayed = 0
+        written_need = decayed = 0   # （circadian 漂移计数已删，2026-10-17）
         left = minutes
         while left > 1e-9:
             dt = min(chunk, left)
@@ -111,13 +111,12 @@ class ModulatorLab:
             self._offset_s += dt * 60.0
             decayed += self.st.tick_decay() or 0
             try:
-                rc = MS.apply_circadian_drift(self.kg, self.st, self.config,
-                                              dt_min=dt)
+                # （昼夜漂移重放已删，2026-10-17：生产 CC 拍里已无这一步，
+                #   快进同步只重放衰减+需求拍。）
                 rn = MS.apply_need_drift(self.kg, self.st, self.config, dt_min=dt)
                 bias = (MS.graph_biases(self.kg, self.st, self.config)
                         or {}).get("need") or {}
                 self.st.update_needs_from_signals(bias=bias)
-                written_circ += int((rc or {}).get("written") or 0)
                 written_need += int((rn or {}).get("written") or 0)
             except Exception as e:                      # noqa: BLE001
                 self._log("advance-error", {"why": str(e)})
@@ -126,7 +125,6 @@ class ModulatorLab:
         out = {"ok": True, "minutes": round(minutes, 2), "blocks": blocks,
                "chunk_min": chunk, "decayed": decayed,
                "need_drift_writes": written_need,
-               "circadian_drift_writes": written_circ,
                "diff": self._diff(before, after)}
         self._log("advance", {"minutes": out["minutes"], "blocks": blocks})
         return out

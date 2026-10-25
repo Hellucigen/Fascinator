@@ -108,22 +108,14 @@ class SelfGraphManager:
         with self.kg._lock:
             existing = self.kg.get_node(node_id)
             if existing:
-                # 强化已有 belief
+                # 强化已有 belief（带去重的证据写回，见 _reinforce_with_dedup）
                 old_conf = existing.confidence
-                ev = provenance.get("evidence_count", 1)
-                existing.confidence = min(0.95, old_conf + 0.05)
-                existing.extra_attrs["evidence_count"] = (
-                    existing.extra_attrs.get("evidence_count", 0) + ev
-                )
-                existing.extra_attrs["last_reinforced"] = provenance.get(
-                    "last_reinforced", now_str()
-                )
-                existing.extra_attrs["confidence"] = existing.confidence
-                existing.touch()
+                ev = _reinforce_with_dedup(existing, provenance)
                 logger.info(
                     f"[SelfModel] 强化 Belief: '{content}' "
                     f"conf={old_conf:.2f}→{existing.confidence:.2f} "
-                    f"evidence={existing.extra_attrs['evidence_count']}"
+                    f"新增证据={ev} "
+                    f"evidence={existing.extra_attrs.get('evidence_count')}"
                 )
                 try:  # 观测：信念强化（旧值→新值 + 证据来源，§15）
                     import fas_log
@@ -147,6 +139,9 @@ class SelfGraphManager:
                     "type": "belief",
                     "content": content,
                     "source": provenance["source"],
+                    "evidence_refs": [str(r)[:80]
+                                      for r in provenance.get(
+                                          "evidence_refs", [])],
                     "evidence_count": provenance.get("evidence_count", 1),
                     "first_observed": provenance.get("first_observed", now_str()),
                     "last_reinforced": provenance.get("last_reinforced", now_str()),
@@ -202,16 +197,7 @@ class SelfGraphManager:
             existing = self.kg.get_node(node_id)
             if existing:
                 old_conf = existing.confidence
-                ev = provenance.get("evidence_count", 1)
-                existing.confidence = min(0.95, old_conf + 0.05)
-                existing.extra_attrs["evidence_count"] = (
-                    existing.extra_attrs.get("evidence_count", 0) + ev
-                )
-                existing.extra_attrs["last_reinforced"] = provenance.get(
-                    "last_reinforced", now_str()
-                )
-                existing.extra_attrs["confidence"] = existing.confidence
-                existing.touch()
+                _reinforce_with_dedup(existing, provenance)
                 logger.info(
                     f"[SelfModel] 强化 Preference: '{target}' "
                     f"conf={old_conf:.2f}→{existing.confidence:.2f}"
@@ -227,6 +213,8 @@ class SelfGraphManager:
                     "type": "preference",
                     "target": target,
                     "source": provenance["source"],
+                    "evidence_refs": [str(r)[:80] for r in
+                                      provenance.get("evidence_refs", [])],
                     "evidence_count": provenance.get("evidence_count", 1),
                     "first_observed": provenance.get("first_observed", now_str()),
                     "last_reinforced": provenance.get("last_reinforced", now_str()),
@@ -700,6 +688,9 @@ class SelfMemoryUpdater:
             "first_observed": candidate.get("first_observed", ""),
             "last_reinforced": now_str(),
         }
+        if candidate.get("evidence"):      # 有引用列表 → 走去重写回
+            provenance["evidence_refs"] = [str(e)
+                                           for e in candidate["evidence"]]
         if ctype == "preference":
             result = self.manager.upsert_preference(
                 candidate.get("target", ""), provenance
@@ -760,19 +751,19 @@ class SelfMemoryUpdater:
                 status = "approved" if importance >= auto_threshold else "pending"
 
                 if ctype == "belief_update":
-                    prov = {
+                    self.manager.upsert_belief(content, {
                         "confidence": confidence, "source": source,
                         "evidence_count": len(cand.get("evidence", [])),
+                        "evidence_refs": [str(e) for e in cand.get("evidence", [])],
                         "first_observed": now_str(), "last_reinforced": now_str(),
-                    }
-                    self.manager.upsert_belief(content, prov)
+                    })
                 elif ctype == "preference_update":
-                    prov = {
+                    self.manager.upsert_preference(content, {
                         "confidence": confidence, "source": source,
                         "evidence_count": len(cand.get("evidence", [])),
+                        "evidence_refs": [str(e) for e in cand.get("evidence", [])],
                         "first_observed": now_str(), "last_reinforced": now_str(),
-                    }
-                    self.manager.upsert_preference(content, prov)
+                    })
 
                 entry = {"candidate": cand, "importance": importance,
                         "approval_status": status, "reflection_id": reflection_id}
@@ -813,6 +804,42 @@ class SelfMemoryUpdater:
 # ═══════════════════════════════════════════════════════════════
 # Helper Functions
 # ═══════════════════════════════════════════════════════════════
+
+def _reinforce_with_dedup(existing, provenance: dict) -> int:
+    """带去重的证据写回（2026-10-19，§五：同一经历不应算多份新证据）。
+
+    旧实现在每次强化时无条件 evidence_count += len(引用) 且 conf += 0.05，
+    而同一段经历会被不同反思窗口、不同共激活节点反复引用——两次反思
+    就能把置信度推到饱和，"长期倾向需要多次有意义的证据"名存实亡。
+
+    现在 provenance 可携带 "evidence_refs"（证据条目的引用列表）：
+    只有**没见过的引用**才计数、才升置信度；全部是旧引用时本次
+    只刷新 last_reinforced（记时刻，不注水证据）。
+    不带 refs 的调用方（如 explicit_statement 直陈 API）保持旧语义。
+    返回本次计入的新证据数。"""
+    refs = provenance.get("evidence_refs")
+    seen = existing.extra_attrs.setdefault("evidence_refs", [])
+    if isinstance(refs, list):
+        known = {str(s) for s in seen}
+        fresh = [str(r)[:80] for r in refs if str(r)[:80] not in known]
+        seen.extend(fresh)
+        if len(seen) > 60:                    # 引用账本有界（保最近 60 条）
+            del seen[: len(seen) - 60]
+        ev_add = len(fresh)
+    else:
+        ev_add = provenance.get("evidence_count", 1)
+    if ev_add:
+        existing.extra_attrs["evidence_count"] = (
+            existing.extra_attrs.get("evidence_count", 0) + ev_add
+        )
+        existing.confidence = min(0.95, existing.confidence + 0.05)
+    existing.extra_attrs["last_reinforced"] = provenance.get(
+        "last_reinforced", now_str()
+    )
+    existing.extra_attrs["confidence"] = existing.confidence
+    existing.touch()
+    return ev_add
+
 
 def _validate_provenance(provenance: dict):
     """验证 provenance 包含必须字段。"""

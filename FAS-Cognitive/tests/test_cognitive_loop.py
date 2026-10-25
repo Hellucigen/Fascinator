@@ -218,23 +218,36 @@ check("S5 同类意图并发不超过 max_active_per_kind",
       len(cc._active_intentions("communication")) <= 2,
       str(len(cc._active_intentions("communication"))))
 
-# ═══ 6. 一个意图连续获得支持：强化而非复制 ═══
+# ═══ 6. 一个意图连续获得支持：延续而非复制；只有有意义重访才计强化 ═══
+# 2026-10-16 语义修正：旧断言"同强度重复扫描 3 次 → reinforced≥3"测的正是
+# 刷计数缺陷本身（扫描/选中频率被当成重访）。现在重复扫描保持意图连续但
+# 不刷强化；间隔后强度创新高才算一次有意义的认知重访。
 kg, eng, cc = cc_with()
 mk_node(kg, "持续焦点", weight=0.7)
 mk_edge(kg, "用户", "持续焦点", relation="讲述")
-eng.topk = [FN("持续焦点", 3.0)]
-cc._pulse()
+KINDS6 = {"communication": 0.5, "exploration": 0.1}
+cc._merge_or_form([kg.nodes["持续焦点"]], 0.8, {"t": 1}, KINDS6, {})
 first = list(cc._active_intentions())
 ids1 = {c.id for c in first}
 for _ in range(3):
-    eng.topk = [FN("持续焦点", 3.0)]
-    cc._pulse()
+    cc._merge_or_form([kg.nodes["持续焦点"]], 0.8, {"t": 1}, KINDS6, {})
 now = cc._active_intentions()
-check("S6 同一焦点反复出现 → 同一意图被强化（数量不涨）",
+check("S6 同一焦点反复出现 → 同一意图延续（数量不涨）",
       {c.id for c in now} == ids1 and len(now) == 1, str([c.id for c in now]))
 ea6 = now[0].extra_attrs
-check("S6 reinforced 计数增长（积累可见）",
-      int(ea6.get("reinforced", 0)) >= 3, str(ea6.get("reinforced")))
+check("S6 同强度重复扫描不刷强化（reinforced 不再是选中次数）",
+      int(ea6.get("reinforced", 0)) == 0, str(ea6.get("reinforced")))
+check("S6 重复扫描仍记账（台账跟踪当前焦点强度）",
+      abs(float(ea6.get("score", 0)) - 0.8) < 1e-9, str(ea6.get("score")))
+ea6["born_ts"] = time.time() - 200     # 距上次强化/出生已过间隔
+cc._merge_or_form([kg.nodes["持续焦点"]], 0.9, {"t": 2}, KINDS6, {})
+check("S6 间隔后强度创新高 → 计一次有意义重访",
+      int(now[0].extra_attrs.get("reinforced", 0)) == 1,
+      str(now[0].extra_attrs.get("reinforced")))
+cc._merge_or_form([kg.nodes["持续焦点"]], 1.0, {"t": 3}, KINDS6, {})
+check("S6 再创新高但间隔未到 → 不重复计数（强化速率与扫描节拍解耦）",
+      int(now[0].extra_attrs.get("reinforced", 0)) == 1,
+      str(now[0].extra_attrs.get("reinforced")))
 
 # ═══ 7. 意图被其他意图抑制/焦点散去自然消亡 ═══
 for c in cc._active_intentions():

@@ -359,5 +359,7 @@ def link_event_to_now_bucket(kg, event_id: str):
         if not event_id:
             return
         link_event_to_bucket(kg, event_id, hour_bucket())
+        from time_chain import anchor_episode
+        anchor_episode(kg, event_id)   # 时段边统一在此挂→时间链也由此收口
     except Exception:                              # noqa: BLE001
         pass

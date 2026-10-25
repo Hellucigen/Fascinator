@@ -1,0 +1,550 @@
+\documentclass[10pt,a4paper]{ctexart}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+\usepackage{caption}
+\sloppy
+\setlength{\emergencystretch}{3em}
+\captionsetup{font=small,labelfont=bf}
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{2pt}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thesection}{S\arabic{section}}
+
+\title{\bfseries 补充材料\\
+《从具身经历到可复用的关系知识：可审计的统一图谱架构\\与基于激活访问的预注册边界分析》}
+\author{颜凯临}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{术语、证据等级与协议层}
+\label{s1:term}
+
+\paragraph{术语。}\emph{经历}：带时间戳与落定结果的时间有序动作--观测流。\emph{关系知识}：编码为图谱节点与分型加权有向边的分型断言——区别于原始日志条目与向量嵌入。\emph{写回}：把经历片段转为候选关系并晋升为持久结构的管线步骤；它是 FAS 中经历到知识的\emph{唯一}通路。\emph{持久}：结构跨会话/情节边界存续，运行时载荷（激活值）随之继承。\emph{复用}：与新情境相关的既有结构被重新点亮并进入认知工作集。\emph{功能性消费}：存储知识经显式消费者机制进入行动选择——不是“知识存在”，而是“知识改变行为”。
+
+\paragraph{生产口径与实验口径。}为避免混淆，全部证据归入四层，并在每次出现时标注：\textbf{P1 生产默认路径}——零 LLM 主体行为（图谱、激活、账本、调制、意图循环、回放门控）以生产配置运行于沙盒。\textbf{P2 生产机制、装配验证}——账本（实验 C）与事件框架（\texttt{enabled=False}）：机制存在于生产代码中，差异由实验装配暴露。\textbf{P3 机制隔离层}——核心增量价值战役与关系方向诊断：在由生产语义蒸馏的参考模型上做受控机制实验；不主张也不需要生产闭环中的行为收益。\textbf{P4 实验层 harness}——LLM 决策头（不接入生产）。
+
+两次装配审计如实报告。(i) 早期消融矩阵运行于缺失扩散执行器的装配（持续认知循环未接线），其零差异只支持“完成层对激活不敏感”；修复后，访问层实验承载机制证据。(ii) 第一版路由 harness 从未建边、吞掉 521/521 异常、首步焦点恒为空——被宣告无效并重建重跑（第 S11 节）；后续审计另发现生产应答管线原先不渲染注意/需求标注，现已接线到同一认知结构，使生产与 harness 路径在标注渲染上对齐——该对齐修复报告口径，但不改变任何实验数字。合并约束：机制级与装配级证据完全支持本文主张，但不得从中外推任何“生产优越性”陈述。
+
+\begin{table}[h]
+\centering\small
+\caption{证据等级 $\times$ 协议层（完整合并尺度；正文表~1 为简版）。}
+\label{tab:s-evidence}
+\begin{tabular}{L{3.4cm}L{4.8cm}L{6.4cm}}
+\toprule
+\textbf{等级} & \textbf{该级主张的含义} & \textbf{证据来源层} \\
+\midrule
+L1 表征 & 习得结构存在并再激活 & P1（生产默认路径，零 LLM） \\
+L2 机制 & 可测的激活/账本动力学 & P2（装配验证）与 P3（参考模型上的机制隔离） \\
+L3 行为 & 存储知识改变行动选择 & P2 消费者装配；P4 决策头 harness（探索性） \\
+L4 一般能力 & --- & \emph{任何地方均不主张} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{内部代号映射}
+\label{s2:codes}
+历史运行族代号出现于归档文件名与统计文件中。表~\ref{tab:s-codes} 给出其与论文中性名称的映射；正文避免使用代号。
+
+\begin{table}[h]
+\centering\small
+\caption{内部代号映射（用于查阅归档；正文不使用）。}
+\label{tab:s-codes}
+\begin{tabular}{L{3.6cm}L{4.6cm}L{6.6cm}}
+\toprule
+\textbf{内部代号} & \textbf{中性名称} & \textbf{备注} \\
+\midrule
+A10 & 信标任务 & 信息不对称闭卷任务（正文 5.1 节） \\
+B0/B1/B2（写回） & 写回隔离谱系 & 此处 B2 = 写回开启谱系；\emph{勿}与下条 B2 混淆 \\
+B2（core incremental value） & 平坦路径乘积基线 & 机制战役的闭式平坦基线；与写回谱系的 B2 含义不同 \\
+B2（diffusion\_b2） & 四条件访问族 & 该标签的第三种历史用法 \\
+B1（core incremental value） & 直接注入基线 & 无图对照 \\
+B3 / B4 & 随机激活 / 先知 & 等能量对照；生成器正确性预检 \\
+C-1..C-4 & 预注册条件 1--4 & 机制战役的四个确认性拓扑 \\
+O1--O3 & 拓扑探测器 O1--O3 & O3 = 共享枢纽（组合）拓扑 \\
+D-flat / D-noact & 嵌入检索 / 激活关闭对照 & 信标与路由条件 \\
+D（事件框架） & 事件框架实验 & 生产默认关闭通道的装配验证 \\
+C20e / C20g & 事件框架后续 & 真实失败回执变体 \\
+C-emo & 情感剂量实验 & 标量调制剂量响应 \\
+D-CI & 意图生命周期实验 & 持续意图形成到衰减 \\
+F（hebbian） & Hebbian 隔离 & 权重级隔离，行为亚阈值 \\
+G0/G1/G2 & 再激活条件 & 完整图谱 / 情景剥离 / 干净图谱 \\
+H/K/L（longchain） & 长链变体 & L0 全配置、L1 $-$扩散、L2 $-$写回、L3 $-$先验、L3b 先验恢复 \\
+I/U（envchange） & 环境变化族 & 规模不足；再验证探针 \\
+J/P（prior\_boundary） & 先验等级族 & P0 零先验、P1 仅机制表、P2 全部 \\
+M1--M3（minecraft） & 实况会话 & 仅观察性 \\
+T1--T4（战役） & 机制拓扑 & 3in/100n/25\% 到 5in/1000n/75\% \\
+T1--T4（路由） & 决策头任务类 & 知识复用 / 干扰抑制 / 重路由 / 竞争目标 \\
+I1--I3（关系方向） & 注入条件 & 单、单、双输入 \\
+F / B（关系方向） & 前向 / 双向投影 & 生产图谱 vs +反向边投影 \\
+A/B closure & 闭包掩蔽检查 & 完成层不敏感实例 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{实验族与归档普查}
+\label{s3:families}
+
+每次运行由运行记录器归档（元数据、事件流、起止图谱快照、指标）到内容寻址目录。行为族的归档普查共计 494 run（ablation 77、eventframe 53、sandbox 43、ci 34、transfer 32、reuse\_a2 31、prior\_boundary 31、longchain 29、reuse 28、emotion 25、hebbian 24、event\_transfer 22、diffusion\_b2 22、envchange 14、diffusion 12、baselines 8、prior\_conditions 7、minecraft 2）；此外，机制战役共 34,016 run（原始结果文件可按行清点），信标战役 80，路由战役 520，关系方向诊断 60，证伪战役 663；共享枢纽参数扫描（第 S8 节）另加 2,550 run。失败与试点全部保留。
+
+\begin{table}[h]
+\centering\small
+\caption{实验族 $\rightarrow$ 论文章节溯源。}
+\label{tab:s-family}
+\begin{tabular}{L{4.6cm}L{3.6cm}L{6.6cm}}
+\toprule
+\textbf{族（内部代号）} & \textbf{正文章节} & \textbf{目的 / 头条数字} \\
+\midrule
+信标（A10） & \S5.1 & 信息不对称：20/20 vs 0/20 vs 0/20 vs 20/20 \\
+A2 / reuse & \S5.2 & 8 轮每种子晋升 4 条关系 \\
+B0/B1/B2（写回） & \S5.2 & 写回隔离 0 vs 13 节点 \\
+G0/G1/G2 & \S5.2 & 跨情境再激活 4/12--0/8--0/0 \\
+实验 C（transfer） & \S5.2 & 账本通道 13 vs 16 tick \\
+实验 D / C20e/C20g & \S5.2 & 事件框架通道 @6 vs @9、@15 vs @17 \\
+实验 B（扩散） & S7 & 访问层分离（装配修复后） \\
+B2（diffusion\_b2） & S7 & 四条件分离 61.5/16.6/45.8/17.2 \\
+证伪 & \S5.3 & 663 run：JCG$>0$ 率 0.970、假设组 MRR@1$=1.0$ \\
+core incremental value & \S5.3、S7 & 34,016 run：C-1..C-4、combo、扫描、反事实、先知 \\
+共享枢纽扫描（新） & \S5.3、S8 & 2,550 run：84 格网格 + O3 复现 \\
+C-emo（emotion） & \S5.4 & 剂量响应 49.8/52.5/57.4 \\
+D-CI（ci） & \S5.4 & 意图生命周期每次 3--4 个；表达未达 \\
+F（hebbian） & \S5.4 & Hebbian 权重隔离 $+0.074$；行为亚阈值 \\
+H/K/L（longchain） & \S5.4 & 315 / 259 / 0-of-5 / 315 tick \\
+J/P（prior\_boundary） & \S5.4 & P0 0/25；P1$=$P2 25/25 \\
+I/U（envchange） & S12 & 环境变化规模不足 \\
+M1--M3（live） & \S5.4 & 观察形式；实况因果账本 \\
+A/B 矩阵（ablation） & S1 & 完成层掩蔽 \\
+routing v1（无效） & S11 & 宣告无效；不作为主张依据 \\
+routing v2 & \S5.4、S11 & 520 run，探索性边界 \\
+关系方向 & \S5.3、S9 & 方向语义机制诊断 \\
+确定性重跑（新） & \S5.5、S10 & 20 次重跑：结果 20/20、轨迹 7/20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{溯源备注。}(i) 机制战役的主数字以独立 663-run 证伪战役的统计为参考模型来源；名为 \texttt{experiments/mechanism\_campaign} 的目录是\emph{另一个}较晚的激活景观审计，其探针失败、正式运行从未执行——它不是数字来源。(ii) 路由战役的第一份统计文件已加 INVALID 后缀改名并注明；当前统计文件为官方 v2 战役。
+
+\section{组件状态}
+\label{s4:components}
+
+\begin{table}[h]
+\centering\small
+\caption{组件状态（实现 / 实验验证 / 证据等级 / 默认开关）。}
+\label{tab:s-components}
+\begin{tabular}{L{3.6cm}L{1.9cm}L{2.6cm}L{1.2cm}L{4.6cm}}
+\toprule
+\textbf{组件} & \textbf{实现} & \textbf{验证} & \textbf{等级} & \textbf{备注 / 默认} \\
+\midrule
+统一图谱（单图、7 标签类、8 关系类型、负权重） & 生产 & 全部实验 & L1 & 辅助层从不建结构 \\
+传播激活（衰减/增益/抑制/Top-$k$/发射即转移） & 生产 & 访问任务、四条件 & L2 & 每 tick 运行 \\
+证据加权写回（窗口/支持/置信/晋升） & 生产 & 隔离、复用、事件实验 & L1/L2 & 唯一结构写入通道 \\
+持久化与继承（结构 + 激活） & 生产 & 再激活、账本实验 & L1/L2 & 跨情节；快照轮换 + 收缩保护 \\
+账本消费者（奖励账本 + 试验账本） & 生产 & 迁移实验 & L3 & 先验加成 $\pm0.05$ \\
+事件框架（极性槽边） & 已实现 & 事件实验（装配） & L2/L3 & \textbf{生产默认 OFF} \\
+情感/神经调制（图公民：基线真值、导出水平、图为效应源） & 生产 & 剂量实验 & L2 & 每 tick \\
+Hebbian 共激活 & 生产 & 隔离实验 & L2 & 默认开；行为亚阈值 \\
+意图生命周期 & 生产 & 生命周期实验 & L2 & 表达级未验证 \\
+离线经历回放门控 & 生产 & 本文未触及 & --- & 空闲门控 \\
+情景缓冲（容量/遗忘/检索/晋升） & 生产 & 本文未触及 & --- & 短程整合层；只晋升标签 \\
+Web 搜索动作节点 & 生产 & 本文未触及 & --- & 外部知识获取 \\
+激素图公民（基线真值、导出水平、图为效应源） & 生产 & 本文未触及 & --- & 激素\emph{直接行为}控制未实现 \\
+LLM 决策头 & 实验 & 路由战役 520 run & L3（探索性） & 不接入生产 \\
+前瞻记忆、完整感知管线、符号推理、RL 策略节点 & 未实现 & --- & --- & 未来工作 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{写回：完整示例、分类与主张审计}
+\label{s5:wb}
+
+写回开启谱系（15 条关系）的完整晋升清单与相应图谱快照随工件提交。示例晋升（种子 1）：\texttt{gather\_resource(oak\_log)} leads-to \texttt{change:inventory:oak\_log:count\_increased}，8 轮后累计支持 8 / 置信 0.889，写时两端标记激活。
+
+\begin{table}[h]
+\centering\small
+\caption{写回谱系（种子 1）15 条晋升关系分类。按边内容分类；两条窗口污染对属实质类子集。}
+\label{tab:s-taxonomy}
+\begin{tabular}{L{6.6cm}L{2.2cm}L{5.2cm}}
+\toprule
+\textbf{晋升关系} & \textbf{类别} & \textbf{解读} \\
+\midrule
+\texttt{gather\_resource(oak\_log)} $\rightarrow$ \texttt{change:inventory:\newline oak\_log:count\_increased} & 实质 & 挖矿产出物品 \\
+\texttt{gather\_resource(oak\_log)} $\rightarrow$ \texttt{change:block:\newline oak\_log:disappeared} & 实质 & 挖矿移除方块 \\
+\texttt{craft\_item(oak\_planks)} $\rightarrow$ \texttt{change:inventory:\newline oak\_log:count\_decreased} & 实质 & 合成消耗原木 \\
+\texttt{craft\_item(oak\_planks)} $\rightarrow$ \texttt{change:inventory:\newline stick:count\_decreased} & 实质 & 合成消耗木棍 \\
+... (另有 7 对库存/方块) & 实质 & \\
+\midrule
+\texttt{gather\_resource(oak\_log)} $\rightarrow$ \texttt{change:inventory:\newline oak\_planks:count\_increased} & 实质、窗口污染 & 下游 craft 归到上游 gather \\
+\texttt{gather\_resource(oak\_log)} $\rightarrow$ \texttt{change:inventory:\newline stick:count\_increased} & 实质、窗口污染 & 同上 \\
+\midrule
+\texttt{$\{A\}$} $\rightarrow$ \texttt{change:self:\{A\}:succeeded}（$\times 4$） & 退化 & 动作 $\rightarrow$ 自身成功；同义反复 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\small
+\caption{实现 $\rightarrow$ 主张审计（节选；完整 17 条主张审计随工件提交）。判定：S = 机制存在且经实验验证；Q = 有条件/装配级；U = 不支持且如实报告。}
+\label{tab:s-audit}
+\begin{tabular}{L{4.6cm}L{3.2cm}L{3.6cm}L{1.7cm}}
+\toprule
+\textbf{主张} & \textbf{关键实现} & \textbf{审计备注} & \textbf{判定} \\
+\midrule
+S1 支架下经历 $\rightarrow$ 新关系结构 & 归因管线（scoring / aggregation / promotion）+ 写回开关 & 4 退化 + 2 窗口污染为自报伪影；代码相符 & S \\
+S2 持久化与跨情境再激活 & 图存/读 + 快照轮换 + 收缩保护 & 4/12 由情景结构承载（访问层） & S \\
+S3 账本通道改变行动选择 & 奖励/试验账本 $\rightarrow$ 候选先验加成 & 差异落在行动选择层而非完成层——与论文自限定相符 & S \\
+S4 事件框架改变行动选择 & 落定写回；\texttt{enabled=False}（配置） & 审计确认生产默认关、零图写入 & S（装配） \\
+S5 标量调制传播动力学 & 内部状态基线/水平；调制器为图公民；投影 & 图为效应源；剂量响应门运行 & S \\
+S6 机制表必要；零先验锁定 & 机制表 + 目标系统 & P0 锁定不可达目标 = 上游经历生成失败；行为与代码相符 & S \\
+S7 关系方向限制传播 & 有向图；8 白名单双向 vs 前向；配方边汇化 & 独立复核 $\rho$ .33$\rightarrow$.65、$r{=}.886$、10/10；无行为检验；生产图未改 & S（机制） \\
+Q1 扩散产生独特访问模式（非行为） & 扩散引擎（step/emit） & 独立证伪战役：663 run、JCG$>0$ 0.970 & Q \\
+U2 语义写回被规划器消费 & 规划器不读语义写回图 & 代码审计：无消费路径 & U \\
+U5 路由稳健优于基线 & 路由 harness & 520/520 有效；竞争目标原始 $p{=}.046$、校正 $p{\approx}1$；token 2.1--3.7$\times$ & U（方向性） \\
+（额外）生产应答管线渲染注意/需求 & 标注渲染开关（审计后接线） & 审计发现的口径缺口已修复；以投影引用渲染，数值不暴露 & 已修复 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{信标任务：案例研究与嵌入基线检验}
+\label{s6:beacon}
+
+\begin{figure}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  bn/.style={draw, rounded corners, align=center, inner sep=6pt, font=\scriptsize},
+  sc/.style={bn, fill=blue!8}, wb/.style={bn, fill=orange!12}, ob/.style={bn, fill=gray!8},
+  res/.style={bn, fill=green!10}, neg/.style={bn, fill=red!6},
+  flow/.style={-{Latex}, semithick}, note/.style={font=\scriptsize, gray!50, align=center}]
+\node[sc] (prac) at (0,0) {practice phase (8 rounds)\\ \scriptsize \strut action--observation stream\strut};
+\node[wb] (wbk) at (0,-2.1) {write-back (attribution pipeline)\\ \scriptsize \strut \texttt{gather\_resource(oak\_log)} leads-to ($w{=}0.889$)\\ \scriptsize \strut \texttt{change:inventory:oak\_log:count\_increased}\\ \scriptsize \strut support 8, confidence 0.889, promotion + mark-active\strut};
+\node[sc] (gra) at (0,-4.6) {persistent unified graph (structure + activation inheritance)};
+\draw[flow] (prac) -- (wbk); \draw[flow] (wbk) -- (gra);
+\node[ob] (bk) at (9.5,0) {beacon task (closed-book, n=20)\\ \scriptsize \strut recipe only in memory, menu gating, facts stripped\strut};
+\node[res] (fas) at (5.6,-2.3) {\textbf{fas\_full}:\\ persistent graph + activation context\\ 20/20 completed ($\bar{x}$ decisions 2.15)\\ first action \texttt{gather\_oak\_log} 20/20};
+\node[res] (dflat) at (14.0,-2.3) {\textbf{D-flat}:\\ embedding-retrieval control\\ 20/20 completed ($\bar{x}$ decisions 2.1)};
+\node[neg] (dno) at (7.2,-4.6) {\textbf{D-noact} 0/20\\ structure present, runtime absent};
+\node[neg] (dir) at (12.2,-4.6) {\textbf{llm\_direct} 0/20\\ no memory context};
+\draw[flow] (bk) -- (fas); \draw[flow] (bk) -- (dflat);
+\draw[flow] (bk) -- (dno); \draw[flow] (bk) -- (dir);
+\draw[flow] (gra.east) to[out=0,in=190] (bk.west);
+\node[note] at (9.3,-5.9) {McNemar exact: fas vs direct $p{=}2\times10^{-6}$; fas vs D-noact $p{=}2\times10^{-6}$;\\ fas vs D-flat $p{=}1.0$ (decision Wilcoxon $p{=}0.72$)---\emph{persistent relational reuse supported;}\\\emph{activation necessity not supported}.};
+\end{tikzpicture}}%
+\caption{完整真实案例研究：木料$\rightarrow$木板链从练习经历，经证据加权写回进入持久图谱结构，到信息不对称信标任务中的行为收益。全部数字来自归档信标分析（80 run，四条件 $\times$ 20 配对种子）。}
+\label{fig:s-case}
+\end{figure}
+
+\paragraph{D-flat 是哪种检索器？}D-flat 是真正的句向量检索器：它用公开、可本地运行的句向量模型（BAAI/bge-small-zh-v1.5）编码全部图谱节点标识符，按与任务文本的余弦相似度排序——无激活、无传播、无路径结构。我们已在导入级核实（检索路径实例化嵌入提供器并计算归一化余弦相似度；扩散调用不可从其到达）。
+
+\paragraph{零 LLM 可达性检验。}设计在运行前冻结：对 20 个配对种子逐一重建信标 step-0 装配（生产建图路径含配方闭包；不注入任何观测），用与战役完全相同的目标文本计算全图嵌入相似度排序，记录配方与资源节点的名次。结果：20 个种子装配的图谱完全相同（44 节点；构造确定性）；\texttt{item:oak\_planks} 在每次装配中均排第 \textbf{2}，\texttt{item:oak\_log} 均排第 \textbf{4}——都在 D-flat 呈给决策头的 Top-8 上下文窗口内。这就是 D-flat 20/20 结果的使能条件，且在零 LLM 调用下验证。此为纯描述性测量，对单一确定性装配状态不适用统计检验。
+
+\section{激活机制：访问层分离}
+\label{s7:activation}
+
+\emph{四条件访问任务（$n{=}5$，确定性）。}在访问任务上——扩散开；扩散关（$\beta{=}0$，仅注入）；随机激活对照（等能量注入随机语义节点）；检索先知对照（每 tick 抬升目标链节点）——完全扩散产生激活质量 61.5（点亮场 39 节点）；扩散关 16.6（17）；随机对照质量相当（45.8）但场更大且无结构，其视野外目标在漂移时刻（跨种子 tick 1--9）点亮而非固定模式；先知 17.2（18）（图~\ref{fig:s-diffusion}）。结构扩散因此在知识访问层可与噪声和查表区分。
+
+\emph{伴随因果实验（装配修复后重跑）。}缺口“被指向”实体激活 1.5$\rightarrow$5.0 封顶（对照游移 1.1--1.7）；\emph{视野外}纯扩散信号 \texttt{oak\_log} 0.43 vs 0.0；缺口源能量在发射即转移下流失（1.43$\rightarrow$0.16）而对照保持；2 跳点亮场 5 vs 4。完成层：两实验均零差异（闭包掩蔽；正文 5.4 节）。
+
+\emph{机制战役辅助结果。}B1 直接注入与 B3 随机激活确认对照装置独立于图谱成立；B4 先知预检（四拓扑 MRR$=1.0$）排除生成器侧错误。隐藏先知（30 种子、标签/ID 置换）：目标排名 22.5 不变。插入序：10 个置换 CV$=0.0$。反事实 C2（无联合目标）：四法全 0.0。负边检验：联合 top-1 0.0333$=$0.0333、总分 17.41 不变（无塌缩）。
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_diffusion.pdf}
+\caption{四条件激活任务（$n{=}5$，确定性）。结构扩散产生独特访问场；等能量随机激活无法复现；目标链先知更窄。}
+\label{fig:s-diffusion}
+\end{figure}
+
+\emph{逐条件确认性数字（预注册，各 $n{=}50$ 配对种子）。}中位 $\Delta$JCG：$-0.402$（C-1）、$-0.402$（C-2）、$-0.784$（C-3）、$-0.782$（C-4）；单侧 Wilcoxon 加 Holm 校正 $p{=}1.5\times10^{-9}$；效应量 $r{=}0.615$；FAS 胜过平坦的种子 0/200。MRR（FAS vs 平坦路径乘积）：两个较小拓扑 0.0435/0.0426 vs 0.5/0.5；两个较大拓扑 1.0 平手。稳健性扫描：斜率 0.0076（平坦 0.0），AUC 0.0427 vs 0.04，临界噪声 0.0$=$0.0。权重扫描：两法同时于 $w{=}0.7$ 达 MRR$=1.0$（FAS 0.083@0.5 $\rightarrow$ 1.0@0.7；平坦 0.077 $\rightarrow$ 1.0）。
+
+\section{共享枢纽参数扫描：设计与完整数据}
+\label{s8:sweep}
+
+\paragraph{设计（运行前冻结）。}问题：在（边权 $w$、汇聚输入数 $k$、私有路径深度 $d$）空间的何处，激活式访问在共享枢纽结构上胜过闭式平坦基线？每格每种子拓扑：$k$ 个输入，各经 $d$ 跳私有边（权重 $w$）连到共享枢纽，再 1 跳（$w$）到联合目标 T；每个输入另有 2 跳私有路径（权重固定 0.8/0.8，复刻原共享枢纽设计的分支强度）到单目标 $S_i$；每个输入携带 4 个两跳干扰（权重 0.3），其中 2 个进入候选排名域；候选 $=$ $\{T\} \cup \{S_i\} \cup$ 干扰。网格：$w\in\{0.3,\ldots,0.9\}$（7）$\times$ $k\in\{2,3,4,6\}$（4）$\times$ $d\in\{0,1,2\}$（3）$=$ 84 格，每格 30 配对种子；外加原共享枢纽配置（$k{=}2$、$d{=}0$、$w{=}0.5$、无干扰）的精确复现格作硬性预检。扩散参数与预注册战役一致（步数 $=$ 联合跳数 $+ 2$；种子强度 5.0；ratio 0.5；发射即转移 1.0；衰减 0.05；上限 5.0）。指标：T 的 success@1（主）、MRR、JCG。统计：逐格配对精确 McNemar（success）与双侧 Wilcoxon（MRR）；本扫描为\emph{描述性}——不做全域多重校正，任何单格 $p$ 不作确认性使用；正文只引用符号一致的格计数与曲面形状。失败判据（预先声明）：若没有任何格 FAS 严格更优，论文表述回退为“单格正差未获参数区支持”。设计修订（v1.1，任何正式数据产生前）：$d$ 最初误定义，使原配置不可达；预检按设计失败，$d$ 重定义为私有跳数、范围 $\{0,1,2\}$，修正后设计在任何数据产生前重新冻结。
+
+\paragraph{结果（2,550 run）。}预检复现：FAS 30/30 vs 平坦 0/30（McNemar $p{=}1.9\times10^{-9}$）——原单设计发现精确复现。网格：FAS 严格更优 \textbf{11/84} 格，平坦严格更优 \textbf{9/84} 格，平手 64 格。
+
+\begin{table}[h]
+\centering\small
+\caption{FAS 严格更优的格（30 种子 success@1；全部 $w{\le}0.5$ 且 $d{\le}1$）。}
+\label{tab:s-sweepwin}
+\begin{tabular}{lllll}
+\toprule
+$k$ & $d$ & $w$ & FAS & 平坦 \\
+\midrule
+2 & 0 & 0.4 & 8/30 & 0/30 \\
+2 & 0 & 0.5 & 30/30 & 0/30 \\
+3 & 0 & 0.3 & 30/30 & 0/30 \\
+3 & 0 & 0.4 & 30/30 & 0/30 \\
+4 & 0 & 0.3 & 30/30 & 0/30 \\
+4 & 0 & 0.4 & 30/30 & 9/30 \\
+6 & 0 & 0.3 & 30/30 & 0/30 \\
+4 & 1 & 0.4 & 9/30 & 0/30 \\
+4 & 1 & 0.5 & 30/30 & 0/30 \\
+6 & 1 & 0.3 & 30/30 & 0/30 \\
+6 & 1 & 0.4 & 30/30 & 0/30 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\small
+\caption{平坦严格更优的格（全部 $w{\ge}0.7$ 且 $d{\ge}1$）。}
+\label{tab:s-sweeplose}
+\begin{tabular}{lllll}
+\toprule
+$k$ & $d$ & $w$ & FAS & 平坦 \\
+\midrule
+2 & 1 & 0.7 & 0/30 & 30/30 \\
+2 & 1 & 0.8 & 8/30 & 30/30 \\
+2 & 2 & 0.8 & 0/30 & 30/30 \\
+2 & 2 & 0.9 & 0/30 & 30/30 \\
+3 & 2 & 0.7 & 0/30 & 30/30 \\
+3 & 2 & 0.8 & 0/30 & 30/30 \\
+3 & 2 & 0.9 & 0/30 & 30/30 \\
+4 & 2 & 0.7 & 0/30 & 30/30 \\
+4 & 2 & 0.8 & 9/30 & 30/30 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+原配置轴（$k{=}2$、$d{=}0$）：$w{=}0.3$ 时 FAS/平坦 success 0/0，0.4 时 8/0，0.5 时 30/0，$w\ge0.6$ 时 30/30——平坦恰在枢纽路径权重达 0.6 时追平（中位 MRR：FAS 0.33/0.50/1.00 vs 平坦 0.33/0.33/0.33/1.00，$w{=}0.3$--0.6）。全部 84 行格级结果、逐种子原始指标与提取脚本随工件提交；本节与正文的数字均程序化读取自 \texttt{sweep\_summary.csv} / \texttt{paper\_numbers.json}。
+
+\section{关系方向诊断：完整数据}
+\label{s9:reldir}
+
+\emph{静态审计}（生产配方图，44 节点/53 边）：五个关系类（produces 8 / belongs 18 / drops 13 / needs 11 / needs-tool 3）的目标全为汇点（汇点比例 $=1.0$）；\texttt{item:*} 13/13 零出边；深度 1 星形森林；前向 2 跳可达性为 0。构造图 B $=$ 生产图 F $+$ 41 条通用反向投影（53$\rightarrow$94 边，无节点特判；仅沙盒记忆，生产图零修改）。60 run $=$ 2 图 $\times$ 3 注入条件（I1/I2 单输入、I3 双输入）$\times$ 10 配对种子。全部 21 项配对检验 $p{=}0.001953$——$n{=}10$ 可得最小值（全种子同向），$r{=}0.886$，10/10 种子同向；这只证明方向一致，不证明效应量。
+
+\emph{主轴数字}：前向 2 跳可达性 F 恒 0、B 为 10/9/12；3 跳 B 为 6；点亮节点 F 6/6/9 vs B 22/21/27；拓扑分数与扩散激活的秩相关 $\rho$ F 0.265/0.275/0.325 vs B 0.542/0.513/0.645（双输入：$p{=}0.002$）；共享节点（\texttt{item:stick}）绝对激活（双输入）F 0.833 vs B 0.475（单输入 0.417 vs 0.253/0.239）；加性预测 0.491 $\approx$ 实测 0.475；Gini 0.417 $\rightarrow$ 0.792--0.824。
+
+\emph{未运行、如实记录}：抑制关闭对照不可用（架构无全局负权开关）；本轮无行为实验；生产图未修改。
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  bar/.style={draw, fill=blue!25, minimum height=0pt, anchor=south west},
+  bbar/.style={draw, fill=orange!45, minimum height=0pt, anchor=south west},
+  lbl/.style={font=\scriptsize},
+  axis/.style={gray!60, thin}]
+\node[lbl, anchor=west] at (0,2.7) {(a) 2-hop reachability (reach2 / reach3)};
+\draw[axis] (0,0) -- (5.0,0);
+\fill[blue!25] (0.05,0) rectangle (0.6,0.9); \node[lbl, anchor=west] at (0.4,-0.32) {F: 0};
+\fill[orange!45] (1.2,0) rectangle (1.2+12*0.07,2.0); \node[lbl, anchor=west] at (1.2,-0.32) {B: 9--12 (reach2)};
+\fill[orange!60] (3.4,0) rectangle (3.4+6*0.07,1.2); \node[lbl, anchor=west] at (3.4,-0.32) {B: 6 (reach3)};
+\node[lbl, anchor=west] at (0,-2.15) {(b) topological alignment $\rho(\mathrm{score},\mathrm{act})$ (I3)};
+\draw[axis] (0,-1.75) -- (11.0,-1.75);
+\fill[blue!25] (0.05,-1.75) rectangle (0.05+0.325*8,-1.75+0.9); \node[lbl, anchor=west] at (0.05,-2.62) {F: 0.325};
+\fill[orange!45] (4.2,-1.75) rectangle (4.2+0.645*8,-1.75+0.9); \node[lbl, anchor=west] at (4.2,-2.62) {B: 0.645};
+\node[lbl, anchor=west] at (0,-4.45) {(c) shared-node absolute activation (\texttt{item:stick}, I3)};
+\draw[axis] (0,-4.05) -- (9.0,-4.05);
+\fill[blue!25] (0.05,-4.05) rectangle (0.05+0.833*6,-4.05+0.9); \node[lbl, anchor=west] at (0.05,-4.92) {F: 0.833};
+\fill[orange!45] (4.2,-4.05) rectangle (4.2+0.475*6,-4.05+0.9); \node[lbl, anchor=west] at (4.2,-4.92) {B: 0.475};
+\node[lbl, align=left, anchor=west] at (0,-5.7) {$\rho$ doubles but single-node activation dilutes: the bidirectional projection improves alignment\\ and coverage, not guaranteed higher shared-node absolute activation.};
+\end{tikzpicture}
+\caption{关系方向实验摘要（$n{=}10$ 配对种子；全部 21 项检验 $p{=}0.001953$、$r{=}0.886$、10/10 种子同向）。(a) 双向投影恢复多跳可达性；(b) 双输入下拓扑对齐翻倍；(c) 共享节点绝对激活反而更低——收益伴随稀释代价。}
+\label{fig:s-reldir}
+\end{figure}
+
+\section{决策头族的确定性重跑}
+\label{s10:rerun}
+
+设计（运行前冻结）：在全新输出目录重跑信标战役的 5 种子 $\times$ 4 条件子集（种子 0--4；条件 fas\_full / D-noact / D-flat / llm-direct；代码路径全同），与归档战役逐行对比 success、决策数、steps-to-craft、首动作与完整动作序列。
+
+\begin{table}[h]
+\centering\small
+\caption{确定性重跑：与归档战役的一致性（5 种子 $\times$ 4 条件）。}
+\label{tab:s-rerun}
+\begin{tabular}{L{3.2cm}L{3.6cm}L{3.6cm}L{3.6cm}}
+\toprule
+\textbf{条件} & \textbf{success 一致} & \textbf{首动作一致} & \textbf{完整序列一致} \\
+\midrule
+fas\_full & 5/5 & 5/5 & 3/5 \\
+D-flat（嵌入检索） & 5/5 & 4/5 & 4/5 \\
+D-noact & 5/5 & 5/5 & 0/5 \\
+llm-direct & 5/5 & 5/5 & 0/5 \\
+\midrule
+合计 & 20/20 & 19/20 & 7/20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+解读：任务结果精确复现，但轨迹不能——远程 LLM 端点即便温度 0 也非位级确定（提供方内部状态不受我们控制）。因此论文只对零 LLM 族主张轨迹级确定性；决策头族结果稳健但不可轨迹复现，任何主张均不依赖其确切轨迹。
+
+\section{路由战役：完整结果}
+\label{s11:routing}
+
+\paragraph{v1 无效记录。}第一版战役在正式写作前被装配审计拒绝：(R1) 实验图零边（runner 从未建边；激活只在既有边上传播）；(R2) 521/521 需求/缺口/路由调用抛错并被吞入占位文本（“$-$需求”消融成为恒等）；(R3) 80/80 首步焦点为空。任何 v1 数字（含早期论文草稿所引）均不构成本文主张依据；过期统计文件已加 INVALID 后缀改名并注明，当前统计文件为官方 v2 战役。
+
+\paragraph{v2 结果。}重建的官方战役运行于生产建边路径：真实图谱播种（37 节点）、真实观测驱动建边、核心异常传播、9 条 harness 不变量快速失败；$5\times4\times20+3\times2\times20=520$ run 全部有效。Token 统计（逐决策提示均值）：FAS 上下文 1456/1084/2070/2662（T1--T4）vs 无上下文 661/528/554/1267，即 2.1--3.7$\times$；全部 20 项主要 token 比较 $p\le0.003$。机制遥测（消融族 $n{=}40$）：扩散开使激活散度 2.4$\rightarrow$9.9，选择精度 0.717 vs 0.734，需求标注在场 100\% vs 0\%。
+
+\begin{table}[h]
+\centering\small
+\caption{路由 v2：任务级结果（$n{=}20$ 配对种子，Wilcoxon；未校正 $p$）。}
+\label{tab:s-routing}
+\begin{tabular}{L{3.4cm}L{3.0cm}L{3.4cm}L{4.0cm}}
+\toprule
+\textbf{任务} & \textbf{关键对比} & \textbf{数字} & \textbf{显著性（未校正）} \\
+\midrule
+T1 知识复用 & FAS vs direct 决策数 & 3.25 vs 4.2 & $p{=}0.064$（方向性更少） \\
+T1 知识复用 & FAS vs history & 3.25 vs 2.5 & $p{=}0.035$（更差） \\
+T2 干扰抑制 & 全条件完成 & 20/20 & 无（天花板） \\
+T3 环境重路由 & FAS vs history / rag & 4.15 vs 2.3 / 2.8 & $p{=}0.003$ / $0.044$：更慢 \\
+T4 竞争目标 & FAS vs direct 完成 & 19/20 vs 15/20 & $p{=}0.046$（方向性） \\
+T4 竞争目标 & 决策数 & 5.45 vs 7.25 & $p{=}0.029$ \\
+T4 竞争目标 & 目标利用率 & 0.48 vs 0.30 & $p{=}0.010$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{解读。}经战役 280 项检验的 Bonferroni 校正后，竞争目标三项指标 $p{\approx}1$；该任务仅为方向性。正面读法是“FAS 上下文 $\neq$ 无上下文”出现在信息竞争情境中；机制遥测与共享枢纽分析联合指向观测共现子图上的联想召回（而非配方知识传播）为承载者。重路由效率赤字与 token 开销是稳健的成本侧。战役的边界假设（任务完全可观测 $\Rightarrow$ 记忆上下文边际价值有限）已在正文声明，其未测补集（信息不对称）——信标任务恰好为该补集提供了首个闭合证据。
+
+\section{系统级细节}
+\label{s12:system}
+
+\paragraph{长链。}14 步链（13 步在配方内 + 已记录的冶炼即落定简化、一个双工具中介分支、诱饵资源）在全配置下 5/5 种子 315 tick 完成（L0）。移除图谱先验边\emph{与}冶炼任务先验（L3）：0/5（65 动作 / 58 冗余 / 33 失败）——智能体无法规划配方外转移。仅恢复冶炼先验（L3b）即恢复逐字节相同的 315 tick。$-$扩散（L1）更快（259 tick）；$-$写回晋升（L2，0 晋升）等于 L0（315 tick）——完成对知识组织差异不敏感。
+
+\paragraph{零先验饥饿。}三个先验等级：P2（全先验）、P1（仅机制表）、P0（零先验）；两步合成任务，每种子五个情节。P1 与 P2：25 情节全部完成（中位 4 tick，不可区分）。P0：\textbf{0/25}。直接回放诊断：P0 下闭包规划器找不到到达目标产物的路径，目标系统退化为持续 \texttt{explore\_area(target)}；60 tick 后库存为空、归因账本完全未被触碰（0 聚合 / 0 假设 / 0 晋升）——而图谱仍因感知增长（5 情节 $+29$ 节点）。零先验\emph{不}构成学习能力的小样本检验：智能体已在上游经历生成处失败。
+
+\paragraph{环境变化。}环境变化族的规模不足以支撑预期的再验证问题（如实记录）；其再验证探针（Q1--Q3）确认了装配完整性。
+
+\paragraph{实况观察。}真实 Minecraft 桥（动作路径零 LLM）：M1（25 分钟，发现形式）净增长 $+100$ 节点、$+365$ 边、400 事件（记录器缺陷丢失 86，已修补并如实标注）；M2（25 分钟，汇聚形式）仅 $+35$/$+95$ 且主导行为转向已习得目标（investigate 89）；实况因果账本（89 聚合 / 78 假设 / 29 晋升）完全来自真实行为。写回$\rightarrow$行为改进的因果桥梁\emph{未}在实况窗口建立（M2 无 obtain 闭环——诚实的负观察）。
+
+\paragraph{基线族。}反应式、纯记忆、图检索与 LLM 重度基线装配存在于归档中，作为主体实验的无认知对照；它们出现在闭包掩蔽检查中（闭包保证任务上全部同样完成）。
+
+\section{配置与可复现性}
+\label{s13:config}
+
+沙盒时钟 16 s/tick；归因窗口 8--120 s；晋升阈值 $s\ge5$、$\mathrm{conf}\ge0.80$（Laplace $s/(s+c+2)$）；扩散受逐空间上限约束（情景 3.0 / 全局 5.0）、类别相关 $\lambda$、发射按正权归一、发射即转移系数 1.0（源豁免）；调制 clip $[0.7,1.6]$；Hebbian $\epsilon{=}0.0015$、$\gamma_{\max}{=}0.5$、白名单类 \{\texttt{semantic-relation}, \texttt{emotional-relation}\}；意图上限 3、形成 0.55、表达 0.78、丢弃 0.10、冷场阈值 0.35；事件框架生产开关 \texttt{experience\_eventframe.enabled=False}；信标钩子：闭卷配方、工艺菜单门控、事实剥离、目标不进种子；机制战役：T1--T4 拓扑（3in/100n/25\%、3in/300n/50\%、5in/300n/50\%、5in/1000n/75\%）、B1--B4 生成器、JCG 定义、Holm 校正、提交种子库（完整机器可读配置随工件提交）。写作时回归全部通过：pytest 单元套件 82 项，回归脚本运行器 108/108。
+
+\paragraph{工件。}仓库包含：(i) 确定性沙盒与生产栈；(ii) 全部归档战役输出（原始运行记录、图谱快照、统计文件）；(iii) 零 LLM 复现的一键脚本（机制战役、共享枢纽扫描、嵌入可达性检验）；(iv) 预注册记录；(v) 主张--证据映射（第 S14 节）。决策头复现需要（匿名化的）LLM 端点配置，且复现结果级而非逐字节轨迹（第 S10 节）。
+
+\section{主张 $\rightarrow$ 证据 $\rightarrow$ 来源映射}
+\label{s14:claims}
+
+\begin{table}[h]
+\centering\small
+\caption{主张 $\rightarrow$ 证据 $\rightarrow$ 来源映射（来源均为程序化读取的归档文件）。}
+\label{tab:s-claims}
+\begin{tabular}{L{4.6cm}L{4.6cm}L{5.6cm}}
+\toprule
+\textbf{主张} & \textbf{证据} & \textbf{来源（归档）} \\
+\midrule
+信标：持久复用 20/20 vs 0/20 & McNemar $2\times10^{-6}$；首动作 20/20 & 信标战役分析（80 run） \\
+信标：激活非必要 & D-flat 20/20；决策 Wilcoxon $p{=}0.72$ & 同上 + 嵌入可达性检验（S6） \\
+写回为唯一结构来源 & 0 vs 13 习得节点；15 晋升（11+2+4） & 写回隔离 + 晋升分类（S5） \\
+跨情境再激活 & 4/12 vs 0/8 vs 0/0（$a\ge0.05$） & 再激活战役逐种子记录 \\
+账本通道翻转行动选择 & 13 vs 16 tick；先验 (1.0, obs$=$8) vs (None, 0) & 迁移战役分析 \\
+事件框架翻转行动选择 & @6 vs @9；回执 @15 vs @17 & 事件框架战役（装配） \\
+汇聚机制运行 & JCG$>0$ 200/200；假设组 MRR@1$=1.0$ & 机制战役统计 + 663-run 证伪 \\
+H3 被拒绝 & $\Delta$JCG $-0.402/-0.402/-0.784/-0.782$；Holm $1.5\times10^{-9}$；0/200 & 机制战役统计（预注册） \\
+共享枢纽例外 & FAS 30/30 vs 0/30（单权重） & 组合拓扑族 \\
+优势区已映射 & 11/84 胜、9/84 负、64 平；O3 复现 30/30 & 共享枢纽扫描 \texttt{paper\_numbers.json}（S8） \\
+稀释权衡 & $\rho$ $-0.445$ / $-0.656$ & 机制战役稀释扫描 \\
+方向语义限制 & $\rho$ 0.325$\rightarrow$0.645；reach2 0$\rightarrow$10/9/12 & 关系方向战役（S9） \\
+路由：仅方向性 & 19/20 vs 15/20；校正 $p{\approx}1$；token 2.1--3.7$\times$ & 路由 v2 战役统计（S11） \\
+零先验饥饿 & 0/25；账本 0/0/0；$+29$ 节点 & 先验边界战役（S12） \\
+长链需任务先验 & 315 / 0-of-5 / 315；$-$扩散 259 & 长链战役（S12） \\
+Hebbian 亚阈值 & 3 边、$+0.074$；行为持平 & Hebbian 隔离战役（S12） \\
+情感：访问非行动 & 49.8/52.5/57.4；禁用逐位中性 & 情感剂量战役（S12） \\
+意图表达未达 & 峰值 0.46 $<$ 0.78 & 意图生命周期战役（S12） \\
+决策头确定性 & 结果 20/20、轨迹 7/20 & 确定性重跑（S10） \\
+持久性因果有效（上下文移除） & T2 FAS-full 10/10 vs reset 0/10，McNemar $p{=}0.00195$；T3 重复 2.8 vs 7.7，Wilcoxon $p{=}0.00098$ & 持久状态实验（S16） \\
+保结构对照：T2 未检出差异；T3 混杂 & C3/C4 10/10（T2）、12.0/11.7（T3）；失败证据可见性；修订对照待完成 & 对照实验与 T3 审计（S16） \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{能力缺口战役 v2:协议与表格}
+\label{s15:campaign}
+
+第二轮基线受控战役(508 run 正式归档;设计冻结于
+\texttt{experiments/capability\_gap\_v2/})在行为层检验持久状态。
+两次中途混淆被捕获并修复,归档完全分离(门控规则 v1$\rightarrow$v2;
+P3 库存遗留);一个自我模型消融钩子指向不存在的方法,已重建并以
+遥测验证(表~\ref{tab:s-campaign-zh})。
+
+\begin{table}[h]
+\centering\small
+\caption{战役 v2 头条结果($n{=}10$ 配对种子,另注者除外)。}
+\label{tab:s-campaign-zh}
+\begin{tabular}{L{4.6cm}L{4.6cm}L{5.6cm}}
+\toprule
+\textbf{问题} & \textbf{FAS} & \textbf{基线} \\
+\midrule
+目标重拾(C,闭卷自由相) & \textbf{9/10} & history 0/10;direct 0/10(McNemar $p{=}0.0039$) \\
+重拾的机制标签 & 零经历对照复现同一工作集 & 先验闭包边+观测触发激活(非意图机制) \\
+目标修订(E) & 10.5 次失败重复;转向 7/10 @4.7 & history 1.0 次;转向 10/10 @1.0(FAS 更差) \\
+E 修复(事件框架极性接入) & \textbf{7.2 次};转向 9/10 @3.1(Wilcoxon $p{=}0.011$) & 方向确认,未达 parity(E1/E3 残留) \\
+自我模型(F) & 写入路径验证(5/5/5 vs 0/0/0);consumer 修复:gathers 1.0$\rightarrow$6.0 & \texttt{current\_goal} 生产零读取者(只写) \\
+行为汇聚(I) & 0--2/10(含 $k{=}16/32$ 与富序列化 0/30) & 原始历史 \textbf{10/10}(Holm $p{=}0.041$) \\
+信用地平线(B,零 LLM,每延迟 $n{=}10$) & $\le$80\,s:10/10 归因;160\,s:0/10 & 90\,s 归因窗=信用地平线 \\
+100 周期稳定性(J,零 LLM) & 节点 $+3.7\%$,激活受钳制 & 晋升 0(重复饥饿) \\
+历史压缩(K) & 923 tokens/run,10/10 & history-200 13{,}290 tokens/run,10/10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+重拾优势是状态依赖的(仅短经历流)。完整协议、混淆修复日志与故障
+分类表随战役归档提交。
+
+
+\section{持久状态优势与对照实验:表格}
+\label{s16:psa}
+
+\begin{table}[h]
+\centering\small
+\caption{持久状态优势实验($n{=}10$ 配对种子)。}
+\label{tab:s-psa-zh}
+\begin{tabular}{L{4.2cm}L{4.2cm}L{5.6cm}}
+\toprule
+\textbf{任务} & \textbf{FAS-full} & \textbf{基线} \\
+\midrule
+T2 目标完成 & \textbf{10/10} & reset 0/10(McNemar $p{=}0.00195$);direct 0/10;h128/h512/h2048 10/10,10/10,9/10;RAG 10/10 \\
+T3 失败信息 & 重复 \textbf{2.8};转向 11/11 & reset 重复 7.7(Wilcoxon $p{=}0.00098$);direct 11.2;h2048 0.0;RAG 0.0 \\
+T1 饥饿(sanity) & 饥饿恢复 11/11 & 全条件 10--11/11(天花板) \\
+\midrule
+FAS-sham(节点无边) & 10/10 on T2 & $\approx$ FAS-full(节点痕迹+门控已足) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\small
+\caption{对照:扁平存储与图无激活($n{=}10$ 配对种子)。}
+\label{tab:s-controls-zh}
+\begin{tabular}{L{3.0cm}L{3.0cm}L{3.0cm}L{5.4cm}}
+\toprule
+\textbf{条件} & \textbf{T2 成功} & \textbf{T3 均失败} & \textbf{解读} \\
+\midrule
+C1 FAS-full & 10/10 & 2.8 & 参照 \\
+C2 FAS-reset & 0/10 & 7.7 & 无持久状态 \\
+C3 Flat-Store & 10/10 & 12.0 & 无图结构的持久化 \\
+C4 Graph-NoAct & 10/10 & 11.7 & 图无扩散 \\
+\midrule
+C1 vs C3 (T3) & --- & --- & HL${=}{-}$9, Bonf $p{=}$.0156: C1 优 \\
+C1 vs C4 (T3) & --- & --- & HL${=}{-}$9, Bonf $p{=}$.0156: C1 优 \\
+C3 vs C2 (T3) & --- & --- & HL${=}{+}$4.5: C3 劣于 reset \\
+C4 vs C2 (T3) & --- & --- & HL${=}{+}$4.0: C4 劣于 reset \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+解读:T2 上 FAS-full 与保结构对照之间未检出差异(各 10/10,
+$n{=}10$,功效有限)——起作用的是目标语境的持久化,无论其载体。
+T3 上 C1 的失败重复少于 C3/C4(Bonferroni 显著),但事后审计把该
+差异追溯到失败证据可见性:对照实现结构性地把失败信息排除出决策
+上下文(且朴素排序规则把失败事实排在末位),图结构或扩散的独立
+贡献在此未确立。等价呈现的修订版对照尚未完成
+([PENDING-REVISION-CONTROLS])。详见战役归档中的 PREREGISTRATION、
+ADDENDUM\_T3\_AUDIT 与 AUDIT\_REPORT。
+
+\end{document}

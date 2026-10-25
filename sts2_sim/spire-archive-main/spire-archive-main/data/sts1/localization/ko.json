@@ -1,0 +1,5019 @@
+{
+  "cards": {
+    "A_THOUSAND_CUTS": {
+      "name": "능지처참",
+      "description": "카드를 사용할 때마다 적 전체에게 피해를 1 줍니다."
+    },
+    "ACCURACY": {
+      "name": "정밀",
+      "description": "단도 의 피해량이 4 증가합니다."
+    },
+    "ACROBATICS": {
+      "name": "곡예",
+      "description": "카드를 3 장 뽑습니다.\n카드를 1 장 버립니다."
+    },
+    "ADAPTATION": {
+      "name": "추월",
+      "description": "진노할 때마다 카드를 2 장 뽑습니다.",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "ADRENALINE": {
+      "name": "아드레날린",
+      "description": "[G] 를 얻습니다.\n카드를 2 장 뽑습니다.\n소멸.",
+      "upgradeDescription": "[G] [G] 를 얻습니다.\n카드를 2 장 뽑습니다.\n소멸."
+    },
+    "AFTER_IMAGE": {
+      "name": "잔상",
+      "description": "카드를 사용할 때마다 방어도를 1 얻습니다.",
+      "upgradeDescription": "선천성.\n카드를 사용할 때마다 방어도를 1 얻습니다."
+    },
+    "AGGREGATE": {
+      "name": "합하기",
+      "description": "뽑을 카드 더미에 있는 카드 4 장마다 [B] 를 얻습니다."
+    },
+    "ALL_FOR_ONE": {
+      "name": "하나를 위한 모두",
+      "description": "피해를 10 줍니다. 버린 카드 더미에 있는 비용이 0인 카드를 모두 손으로 가져옵니다."
+    },
+    "ALL_OUT_ATTACK": {
+      "name": "총공격",
+      "description": "적 전체에게 피해를 10 줍니다.\n무작위 카드를 1장 버립니다."
+    },
+    "ALLOCATE": {
+      "name": "할당",
+      "description": "밀집을 !M! 얻습니다.\n힘을 1 잃습니다.\n민첩을 1 잃습니다."
+    },
+    "ALPHA": {
+      "name": "알파",
+      "description": "뽑을 카드 더미에 베타 를 섞어 넣습니다.\n소멸.",
+      "upgradeDescription": "선천성.\n뽑을 카드 더미에 베타 를 섞어 넣습니다.\n소멸."
+    },
+    "AMPLIFY": {
+      "name": "증폭",
+      "description": "이번 턴에 사용하는 다음 파워 카드가 두 번 사용됩니다.",
+      "upgradeDescription": "이번 턴에 사용하는 다음 파워 카드 +1 장이 두 번 사용됩니다."
+    },
+    "ANGER": {
+      "name": "분노",
+      "description": "피해를 6 줍니다.\n이 카드를 한 장 복사해 버린 카드 더미에 섞어 넣습니다."
+    },
+    "APOTHEOSIS": {
+      "name": "신성",
+      "description": "모든 카드를 이번 전투 동안 강화합니다.\n소멸."
+    },
+    "ARMAMENTS": {
+      "name": "전투장비",
+      "description": "방어도를 5 얻습니다.\n카드 1 장을 이번 전투 동안 강화합니다.",
+      "upgradeDescription": "방어도를 5 얻습니다.\n손에 있는 모든 카드를 이번 전투 동안 강화합니다."
+    },
+    "ASCENDERSBANE": {
+      "name": "등반자의 골칫거리",
+      "description": "사용불가.\n휘발성.\n덱에서 제거할 수 없습니다."
+    },
+    "AUTO_SHIELDS": {
+      "name": "자동 방패",
+      "description": "방어도가 없으면 방어도를 11 얻습니다."
+    },
+    "AWAKENEDSTRIKE": {
+      "name": "DEPRECATED Awakened Strike",
+      "description": "Deal !D! damage."
+    },
+    "AXE_KICK": {
+      "name": "엑스 킥",
+      "description": "피해를 !D! 줍니다.\n가장 오른쪽의 구체를 발현합니다."
+    },
+    "BACKFLIP": {
+      "name": "공중제비",
+      "description": "방어도를 5 얻습니다.\n카드를 2 장 뽑습니다."
+    },
+    "BACKSTAB": {
+      "name": "배신",
+      "description": "선천성.\n피해를 11 줍니다.\n소멸."
+    },
+    "BALL_LIGHTNING": {
+      "name": "번개 구체",
+      "description": "피해를 7 줍니다. 전기를 1 번 영창합니다."
+    },
+    "BANDAGE_UP": {
+      "name": "붕대 감기",
+      "description": "체력을 4 회복합니다.\n소멸."
+    },
+    "BANE": {
+      "name": "파멸",
+      "description": "피해를 7 줍니다.\n적이 중독된 상태면 다시 피해를 7 줍니다."
+    },
+    "BARRAGE": {
+      "name": "일제 사격",
+      "description": "영창된 구체 하나당 피해를 4 줍니다."
+    },
+    "BARRICADE": {
+      "name": "바리케이드",
+      "description": "턴 시작 시 방어도가 사라지지 않습니다."
+    },
+    "BASH": {
+      "name": "강타",
+      "description": "피해를 8 줍니다.\n취약을 2 부여합니다."
+    },
+    "BATTLE_TRANCE": {
+      "name": "전투 최면",
+      "description": "카드를 3 장 뽑습니다.\n이번 턴 동안 더 이상 카드를 뽑을 수 없습니다."
+    },
+    "BATTLEHYMN": {
+      "name": "전투 찬가",
+      "description": "매 턴 시작 시 엄벌 을 1 장 얻습니다.",
+      "upgradeDescription": "선천성.\n매 턴 시작 시 엄벌 을 1 장 얻습니다."
+    },
+    "BEAM_CELL": {
+      "name": "레이저 포인터",
+      "description": "피해를 3 줍니다.\n취약을 1 부여합니다."
+    },
+    "BECOMEALMIGHTY": {
+      "name": "전능",
+      "description": "힘을 !M! 얻습니다."
+    },
+    "BERSERK": {
+      "name": "광폭화",
+      "description": "취약을 2 받습니다. 내 턴 시작 시마다 [R] 을 얻습니다."
+    },
+    "BETA": {
+      "name": "베타",
+      "description": "뽑을 카드에 오메가 를 섞어 넣습니다.\n소멸."
+    },
+    "BIASED_COGNITION": {
+      "name": "인지 편향",
+      "description": "밀집을 4 얻습니다.\n내 턴 시작 시 밀집을 1 잃습니다."
+    },
+    "BIGBRAIN": {
+      "name": "DEPRECATED Big Brain",
+      "description": "Draw 1 card.\nRetains.\nExhaust.",
+      "upgradeDescription": "Draw 1 card.\nRetains."
+    },
+    "BITE": {
+      "name": "흡혈",
+      "description": "피해를 7 줍니다.\n체력을 2 회복합니다."
+    },
+    "BLADE_DANCE": {
+      "name": "검무",
+      "description": "단도 를 3 장 얻습니다."
+    },
+    "BLASPHEMY": {
+      "name": "신성 모독",
+      "description": "강림합니다.\n다음 턴에 죽습니다.\n소멸.",
+      "upgradeDescription": "보존.\n강림합니다.\n다음 턴에 죽습니다.\n소멸."
+    },
+    "BLASTER": {
+      "name": "블래스터-Deprecated",
+      "description": "적 전체에게 피해를 !D! 줍니다.\n영창된 구체 하나당 [B] 를 얻습니다.\n소멸"
+    },
+    "BLESSED": {
+      "name": "DEPRECATED Blessed",
+      "description": "Shuffle !M! Miracles into your draw pile.\nExhaust.",
+      "upgradeDescription": "Shuffle !M! Upgraded Miracles into your draw pile.\nExhaust."
+    },
+    "BLIND": {
+      "name": "실명",
+      "description": "약화를 2 부여합니다.",
+      "upgradeDescription": "적 전체에게 약화를 2 부여합니다."
+    },
+    "BLIZZARD": {
+      "name": "눈보라",
+      "description": "이번 전투에서 영창된 냉기의 2 배만큼 적 전체에게 피해를 줍니다."
+    },
+    "BLOOD_FOR_BLOOD": {
+      "name": "피에는 피",
+      "description": "이번 전투에서 체력을 잃을 때마다 이 카드의 비용이 [R] 감소합니다.\n피해를 18 줍니다."
+    },
+    "BLOODLETTING": {
+      "name": "사혈",
+      "description": "체력을 3 잃습니다.\n[R] [R] 을 얻습니다.",
+      "upgradeDescription": "체력을 3 잃습니다.\n[R] [R] [R] 을 얻습니다."
+    },
+    "BLUDGEON": {
+      "name": "몽둥이질",
+      "description": "피해를 32 줍니다."
+    },
+    "BLUR": {
+      "name": "흐릿함",
+      "description": "방어도를 5 얻습니다.\n한 턴간 다음 턴 시작 시에도 방어도가 사라지지 않습니다."
+    },
+    "BODY_SLAM": {
+      "name": "몸통 박치기",
+      "description": "현재 방어도만큼 피해를 줍니다.",
+      "upgradeDescription": "(피해를 0 줍니다.)"
+    },
+    "BOOTSEQUENCE": {
+      "name": "부팅 과정",
+      "description": "방어도를 10 얻습니다.\n선천성.\n소멸."
+    },
+    "BOUNCING_FLASK": {
+      "name": "탄성 플라스크",
+      "description": "무작위 적들에게 중독을 3 만큼 3 번 부여합니다."
+    },
+    "BOWLINGBASH": {
+      "name": "충돌 강타",
+      "description": "전투 중인 적 하나당 피해를 7 줍니다."
+    },
+    "BRILLIANCE": {
+      "name": "광휘",
+      "description": "피해를 12 줍니다.\n이번 전투에서 얻었던 만트라만큼 추가 피해를 줍니다."
+    },
+    "BRILLIANCEAURA": {
+      "name": "DEPRECATED Brilliance Aura",
+      "description": "Exhaust.\nAt the start of your turn, draw 1 card.\nRetains."
+    },
+    "BRUTALITY": {
+      "name": "잔혹성",
+      "description": "내 턴 시작 시 체력을 1 잃고 카드를 1 장 뽑습니다.",
+      "upgradeDescription": "선천성.\n내 턴 시작 시 체력을 1 잃고 카드를 1장 뽑습니다."
+    },
+    "BUFFER": {
+      "name": "버퍼",
+      "description": "체력을 잃는 것을 1 번 막아줍니다.",
+      "upgradeDescription": "체력을 잃는 것을 +1 번 막아줍니다."
+    },
+    "BULLET_TIME": {
+      "name": "불릿 타임",
+      "description": "이번 턴 동안 더 이상 카드를 뽑을 수 없습니다. 이번 턴 동안 손에 있는 모든 카드의 비용을 0 으로 바꿉니다."
+    },
+    "BURN": {
+      "name": "화상",
+      "description": "사용불가.\n내 턴 종료 시 피해를 2 받습니다.",
+      "upgradeDescription": "사용불가.\n내 턴 종료 시 피해를 4 받습니다."
+    },
+    "BURNING_PACT": {
+      "name": "불타는 조약",
+      "description": "카드를 1 장 소멸시킵니다.\n카드를 2 장 뽑습니다."
+    },
+    "BURST": {
+      "name": "폭주",
+      "description": "이번 턴에 사용하는 다음 스킬 카드가 두 번 사용됩니다.",
+      "upgradeDescription": "이번 턴에 사용하는 다음 스킬 카드 +1 장이 두 번 사용됩니다."
+    },
+    "CALCULATED_GAMBLE": {
+      "name": "계산된 도박",
+      "description": "카드를 전부 버립니다.\n그 수만큼 카드를 다시 뽑습니다.\n소멸.",
+      "upgradeDescription": "카드를 전부 버립니다.\n그 수만큼 카드를 다시 뽑습니다."
+    },
+    "CALM": {
+      "name": "명상",
+      "description": "명상을 끝내면 [W] [W] 를 얻습니다."
+    },
+    "CALTROPS": {
+      "name": "마름쇠",
+      "description": "공격을 받을 때마다 공격한 적에게 피해를 3 줍니다."
+    },
+    "CAPACITOR": {
+      "name": "축전기",
+      "description": "구체 슬롯 2 개를 얻습니다.",
+      "upgradeDescription": "구체 슬롯 +1 개를 얻습니다."
+    },
+    "CARNAGE": {
+      "name": "대학살",
+      "description": "휘발성.\n피해를 20 줍니다."
+    },
+    "CARVEREALITY": {
+      "name": "현실 개척",
+      "description": "피해를 6 줍니다. 엄벌 을 1 장 얻습니다.",
+      "upgradeDescription": "피해를 +4 줍니다. 엄벌+ 을 1 장 얻습니다."
+    },
+    "CATALYST": {
+      "name": "촉매",
+      "description": "적의 중독을 2 배로 늘립니다.\n소멸.",
+      "upgradeDescription": "적의 중독을 3 배로 늘립니다.\n소멸."
+    },
+    "CAUSALITY": {
+      "name": "인과",
+      "description": "손이 가득 찰 때까지 카드를 뽑습니다.\n소멸.",
+      "upgradeDescription": "손이 가득 찰 때까지 카드를 뽑습니다.\n보존.\n소멸."
+    },
+    "CHAOS": {
+      "name": "혼돈",
+      "description": "무작위 구체를 1 번 영창합니다.",
+      "upgradeDescription": "무작위 구체를 +1 번 영창합니다."
+    },
+    "CHILL": {
+      "name": "오한",
+      "description": "전투 중인 적 하나당 냉기를 1 번 영창합니다.\n소멸.",
+      "upgradeDescription": "선천성.\n전투 중인 적 하나당 냉기를 1 번 영창합니다.\n소멸."
+    },
+    "CHOKE": {
+      "name": "교살",
+      "description": "피해를 12 줍니다.\n이번 턴에 카드를 사용할 때마다 대상은 체력을 3 만큼 잃습니다."
+    },
+    "CHRYSALIS": {
+      "name": "번데기",
+      "description": "무작위 스킬 카드 3 장을 뽑을 카드 더미에 추가합니다. 이번 전투 동안 그 카드들의 비용이 0이 됩니다.\n소멸."
+    },
+    "CLARITY": {
+      "name": "분명",
+      "description": "뽑을 카드 더미의 카드를 위에서부터 !M! 장 봅니다. 1 장을 손으로 가져옵니다.\n남은 카드는 소멸합니다.",
+      "upgradeDescription": "뽑을 카드 더미의 카드를 위에서부터 !M! 장 봅니다. 1 장을 손으로 가져옵니다.\n남은 카드는 소멸합니다."
+    },
+    "CLASH": {
+      "name": "격돌",
+      "description": "손에 있는 카드가 전부 공격 카드일 때만 사용할 수 있습니다.\n피해를 14 줍니다."
+    },
+    "CLEANSEEVIL": {
+      "name": "악의 정화",
+      "description": "엄벌 을 X 장 얻습니다.",
+      "upgradeDescription": "엄벌+ 를 X 장 얻습니다."
+    },
+    "CLEARTHEMIND": {
+      "name": "고요함",
+      "description": "보존.\n명상합니다.\n소멸."
+    },
+    "CLEAVE": {
+      "name": "절단",
+      "description": "적 전체에게 피해를 8 줍니다."
+    },
+    "CLOAK_AND_DAGGER": {
+      "name": "망토와 단검",
+      "description": "방어도를 6 얻습니다.\n단도 를 1 장 얻습니다.",
+      "upgradeDescription": "방어도를 6 얻습니다.\n단도 를 +1 장 얻습니다."
+    },
+    "CLOTHESLINE": {
+      "name": "클로스라인",
+      "description": "피해를 12 줍니다.\n약화를 2 부여합니다."
+    },
+    "CLUMSY": {
+      "name": "서투름",
+      "description": "사용불가.\n휘발성."
+    },
+    "COLD_SNAP": {
+      "name": "꽃샘추위",
+      "description": "피해를 6 줍니다. 냉기를 1 번 영창합니다."
+    },
+    "COLLECT": {
+      "name": "수집",
+      "description": "다음 X 턴 동안 내 턴 시작 시 손으로 기적+ 를 가져옵니다.\n소멸.",
+      "upgradeDescription": "다음 X+1 턴 동안 내 턴 시작 시 손으로 기적+ 를 가져옵니다.\n소멸."
+    },
+    "COMBUST": {
+      "name": "연소",
+      "description": "내 턴 종료 시 체력을 1 잃고 적 전체에게 피해를 5 줍니다."
+    },
+    "COMPILE_DRIVER": {
+      "name": "컴파일 드라이버",
+      "description": "피해를 7 줍니다.\n영창된 구체의 종류 하나당 카드를 1 장 뽑습니다."
+    },
+    "CONCENTRATE": {
+      "name": "집중",
+      "description": "카드를 3 장 버립니다.\n[G] [G] 를 얻습니다."
+    },
+    "CONCLUDE": {
+      "name": "결론",
+      "description": "적 전체에게 피해를 12 줍니다.\n턴을 종료합니다."
+    },
+    "CONJUREBLADE": {
+      "name": "마술 칼날",
+      "description": "뽑을 카드 더미에 말살검 을 섞어 넣습니다.\n소멸.",
+      "upgradeDescription": "뽑을 카드 더미에 X+1 된 말살검 을 섞어 넣습니다.\n소멸."
+    },
+    "CONSECRATE": {
+      "name": "축성",
+      "description": "적 전체에게 피해를 5 줍니다."
+    },
+    "CONSERVE_BATTERY": {
+      "name": "배터리 충전",
+      "description": "방어도를 7 얻습니다.\n다음 턴에 [B] 를 얻습니다."
+    },
+    "CONSUME": {
+      "name": "소비",
+      "description": "밀집을 2 얻습니다.\n구체 슬롯을 1 개 잃습니다."
+    },
+    "COOLHEADED": {
+      "name": "냉정함",
+      "description": "냉기를 1 번 영창합니다.\n카드를 1 장 뽑습니다.",
+      "upgradeDescription": "냉기를 1 번 영창합니다.\n카드를 +1 장 뽑습니다."
+    },
+    "CORE_SURGE": {
+      "name": "코어 서지",
+      "description": "피해를 11 줍니다.\n인공물을 1 얻습니다.\n소멸."
+    },
+    "CORPSE_EXPLOSION": {
+      "name": "시체 폭발",
+      "description": "중독을 6 부여합니다.\n적이 죽을 경우 적 전체에게 대상의 최대 체력만큼 피해를 줍니다.",
+      "upgradeDescription": "deprecated"
+    },
+    "CORRUPTION": {
+      "name": "타락",
+      "description": "스킬 카드의 비용이 0이 됩니다.\n스킬 카드를 사용할 때마다 소멸시킵니다."
+    },
+    "CREATIVE_AI": {
+      "name": "창의적인 인공지능",
+      "description": "매 턴 시작 시 무작위 파워 카드를 1 장 얻습니다."
+    },
+    "CRESCENDO": {
+      "name": "백열",
+      "description": "보존.\n진노합니다.\n소멸."
+    },
+    "CRESCENTKICK": {
+      "name": "DEPRECATED Crescent Kick",
+      "description": "Deal !D! damage.\nIf you have Vigor,\ngain [W] and\ndraw 1 card."
+    },
+    "CRIPPLING_POISON": {
+      "name": "신경독",
+      "description": "적 전체에게 중독을 4 부여하고 약화를 2 부여합니다.\n소멸."
+    },
+    "CRUSHJOINTS": {
+      "name": "관절 부수기",
+      "description": "피해를 8 줍니다.\n이번 전투에서 직전에 사용한 카드가 스킬 카드일 경우 취약을 1 부여합니다."
+    },
+    "CURSEOFTHEBELL": {
+      "name": "방울의 저주",
+      "description": "사용불가.\n덱에서 제거할 수 없습니다."
+    },
+    "CUTTHROUGHFATE": {
+      "name": "운명 가르기",
+      "description": "피해를 7 줍니다.\n예지 2.\n카드를 1 장 뽑습니다."
+    },
+    "DAGGER_SPRAY": {
+      "name": "단검 분사",
+      "description": "적 전체에게 피해를 4 만큼 2 번 줍니다."
+    },
+    "DAGGER_THROW": {
+      "name": "단검 투척",
+      "description": "피해를 9 줍니다.\n카드를 1 장 뽑습니다.\n카드를 1 장 버립니다."
+    },
+    "DARK_EMBRACE": {
+      "name": "어둠의 포옹",
+      "description": "카드가 소멸될 때마다\n1 장의 카드를 뽑습니다."
+    },
+    "DARK_SHACKLES": {
+      "name": "어둠의 족쇄",
+      "description": "이번 턴에만 힘을 9 감소시킵니다.\n소멸."
+    },
+    "DARKNESS": {
+      "name": "어둠",
+      "description": "암흑을 1 번 영창합니다.",
+      "upgradeDescription": "암흑을 1 번 영창합니다.\n모든 암흑의 지속 효과를 발동합니다."
+    },
+    "DASH": {
+      "name": "돌진",
+      "description": "방어도를 10 얻습니다.\n피해를 10 줍니다."
+    },
+    "DAZED": {
+      "name": "어지러움",
+      "description": "사용불가.\n휘발성."
+    },
+    "DEADLY_POISON": {
+      "name": "맹독",
+      "description": "중독을 5 부여합니다."
+    },
+    "DECAY": {
+      "name": "부패",
+      "description": "사용불가.\n내 턴 종료 시 피해를 2 입습니다."
+    },
+    "DECEIVEREALITY": {
+      "name": "현실 속이기",
+      "description": "방어도를 4 얻습니다. 안전 을 1 장 생성합니다."
+    },
+    "DEEP_BREATH": {
+      "name": "심호흡",
+      "description": "버린 카드 더미를 뽑을 카드 더미에 넣고 섞습니다.\n카드를 1 장 뽑습니다.",
+      "upgradeDescription": "버린 카드 더미를 뽑을 카드 더미에 넣고 섞습니다.\n카드를 +1 장 뽑습니다."
+    },
+    "DEFEND_B": {
+      "name": "수비",
+      "description": "방어도를 5 얻습니다."
+    },
+    "DEFEND_G": {
+      "name": "수비",
+      "description": "방어도를 5 얻습니다."
+    },
+    "DEFEND_P": {
+      "name": "수비",
+      "description": "방어도를 5 얻습니다."
+    },
+    "DEFEND_R": {
+      "name": "수비",
+      "description": "방어도를 5 얻습니다."
+    },
+    "DEFLECT": {
+      "name": "튕겨내기",
+      "description": "방어도를 4 얻습니다."
+    },
+    "DEFRAGMENT": {
+      "name": "조각모음",
+      "description": "밀집을 1 얻습니다."
+    },
+    "DEMON_FORM": {
+      "name": "악마의 형상",
+      "description": "내 턴 시작 시 힘을 2 얻습니다."
+    },
+    "DEUSEXMACHINA": {
+      "name": "데우스 엑스 마키나",
+      "description": "사용불가.\n이 카드를 뽑으면 소멸하면서 기적 을 2 장 얻습니다."
+    },
+    "DEVAFORM": {
+      "name": "천신의 형상",
+      "description": "휘발성.\n내 턴 시작 시 [W] 를 얻습니다. 얻는 [W] 는 매 턴 1 만큼 증가합니다.",
+      "upgradeDescription": "내 턴 시작 시 [W] 를 얻습니다. 얻는 [W] 는 매 턴 1 만큼 증가합니다."
+    },
+    "DEVOTION": {
+      "name": "헌신",
+      "description": "내 턴 시작 시 만트라를 2 얻습니다."
+    },
+    "DIE_DIE_DIE": {
+      "name": "죽어 죽어 죽어",
+      "description": "적 전체에게 피해를 13 줍니다.\n소멸."
+    },
+    "DISARM": {
+      "name": "무장 해제",
+      "description": "적의 힘을 2 감소시킵니다.\n소멸."
+    },
+    "DISCIPLINE": {
+      "name": "DEPRECATED 규율",
+      "description": "턴을 마친 뒤 이번 턴에 사용하지 않은 [W] 만큼 다음 턴에 추가로 카드를 뽑습니다."
+    },
+    "DISCOVERY": {
+      "name": "발견",
+      "description": "무작위 세 카드 중 하나를 선택해 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다.\n소멸.",
+      "upgradeDescription": "무작위 세 카드 중 하나를 선택해 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다."
+    },
+    "DISTRACTION": {
+      "name": "방해",
+      "description": "무작위 스킬 카드 1 장을 얻습니다.\n이번 턴 동안 그 카드의 비용이 0이 됩니다.\n소멸."
+    },
+    "DODGE_AND_ROLL": {
+      "name": "구르기",
+      "description": "방어도를 4 얻습니다.\n다음 턴에 방어도를 4 얻습니다."
+    },
+    "DOOM_AND_GLOOM": {
+      "name": "암울한 전망",
+      "description": "적 전체에게 피해를 10 줍니다.\n암흑을 1 번 영창합니다."
+    },
+    "DOPPELGANGER": {
+      "name": "도플갱어",
+      "description": "다음 턴에 카드를 X장 더 뽑고 X [G] 를 얻습니다.\n소멸.",
+      "upgradeDescription": "다음 턴에 카드를 X+1장 더 뽑고 X+1 [G] 를 얻습니다.\n소멸."
+    },
+    "DOUBLE_ENERGY": {
+      "name": "에너자이저",
+      "description": "에너지를 2 배로 만듭니다.\n소멸.",
+      "upgradeDescription": "에너지를 2 배로 만듭니다."
+    },
+    "DOUBLE_TAP": {
+      "name": "연사",
+      "description": "이번 턴 동안 다음에 사용하는 공격 카드가 두 번 사용됩니다.",
+      "upgradeDescription": "이번 턴 동안 다음에 사용하는 공격 카드 +1 장이 두 번 사용됩니다."
+    },
+    "DOUBT": {
+      "name": "의심",
+      "description": "사용불가.\n내 턴 종료 시 약화를 1 받습니다."
+    },
+    "DRAMATIC_ENTRANCE": {
+      "name": "극적인 입장",
+      "description": "선천성.\n적 전체에게 피해를 8 줍니다.\n소멸."
+    },
+    "DROPKICK": {
+      "name": "드롭킥",
+      "description": "피해를 5 줍니다.\n적이 취약 상태라면\n[R] 를 얻고\n카드를 1 장 뽑습니다."
+    },
+    "DUAL_WIELD": {
+      "name": "이도류",
+      "description": "공격 또는 파워 카드를 복사합니다.",
+      "upgradeDescription": "공격 또는 파워 카드를 2 장 복사합니다."
+    },
+    "DUALCAST": {
+      "name": "이중 시전",
+      "description": "가장 오른쪽의 구체를 2 번 발현합니다."
+    },
+    "ECHO_FORM": {
+      "name": "메아리의 형상",
+      "description": "휘발성.\n매 턴 처음 사용하는 카드가 두 번 사용됩니다.",
+      "upgradeDescription": "매 턴 처음 사용하는 카드가 두 번 사용됩니다."
+    },
+    "ELECTRODYNAMICS": {
+      "name": "전기 역학",
+      "description": "전기가 이제 모든 적을 대상으로 합니다.\n전기를 2 번 영창합니다."
+    },
+    "EMPTYBODY": {
+      "name": "육체 수양",
+      "description": "방어도를 7 얻습니다.\n현재 경지에서 벗어납니다."
+    },
+    "EMPTYFIST": {
+      "name": "정권 수양",
+      "description": "피해를 9 줍니다.\n현재 경지에서 벗어납니다."
+    },
+    "EMPTYMIND": {
+      "name": "정신 수양",
+      "description": "카드를 2 장 뽑습니다.\n현재 경지에서 벗어납니다.",
+      "upgradeDescription": "카드를 +1 장 뽑습니다.\n현재 경지에서 벗어납니다."
+    },
+    "ENDLESS_AGONY": {
+      "name": "영원한 고통",
+      "description": "피해를 4 줍니다.\n이 카드를 뽑으면 이 카드를 한 장 복사하여 얻습니다.\n소멸."
+    },
+    "ENERGY_PULSE": {
+      "name": "에너지 맥동",
+      "description": "에너지만큼 방어도를 얻습니다.",
+      "upgradeDescription": "에너지의 두배만큼의 방어도를 얻습니다."
+    },
+    "ENLIGHTENMENT": {
+      "name": "계몽",
+      "description": "이번 턴 동안 손에 있는 모든 카드의 비용을 1로 낮춥니다.",
+      "upgradeDescription": "이번 전투 동안 손에 있는 모든 카드의 비용을 1로 낮춥니다."
+    },
+    "ENTRENCH": {
+      "name": "참호",
+      "description": "방어도를 2 배로 만듭니다.",
+      "upgradeDescription": "방어도를 2 배로 만듭니다."
+    },
+    "ENVENOM": {
+      "name": "독 바르기",
+      "description": "공격으로 막히지 않은 피해를 줄 때마다 중독을 1 부여합니다."
+    },
+    "ERUPTION": {
+      "name": "분화",
+      "description": "피해를 9 줍니다.\n진노합니다."
+    },
+    "ESCAPE_PLAN": {
+      "name": "탈출구",
+      "description": "카드를 1 장 뽑습니다.\n뽑은 카드가 스킬 카드라면 방어도를 3 얻습니다."
+    },
+    "ESTABLISHMENT": {
+      "name": "지배",
+      "description": "카드가 보존될 때마다 그 카드의 비용을 이번 전투 동안 1 낮춥니다.",
+      "upgradeDescription": "선천성.\n카드가 보존될 때마다 그 카드의 비용을 이번 전투 동안 1 낮춥니다."
+    },
+    "EVALUATE": {
+      "name": "평가",
+      "description": "방어도를 6 얻습니다.\n뽑을 카드 더미에 통찰 을 섞어 넣습니다.",
+      "upgradeDescription": "방어도를 +4 얻습니다.\n뽑을 카드 더미에 통찰+ 을 섞어 넣습니다."
+    },
+    "EVISCERATE": {
+      "name": "내장 해체",
+      "description": "이번 턴에 버려진 카드의 수만큼 이 카드의 비용이 [G] 감소합니다.\n피해를 7 만큼 3 번 줍니다."
+    },
+    "EVOLVE": {
+      "name": "진화",
+      "description": "상태이상 카드를 뽑을 때마다 카드를 1 장 뽑습니다.",
+      "upgradeDescription": "상태이상 카드를 뽑을 때마다 카드를 +1 장 뽑습니다."
+    },
+    "EXHUME": {
+      "name": "발굴",
+      "description": "소멸된 카드 더미에서 1 장을 선택하여 가져옵니다.\n소멸."
+    },
+    "EXPERIENCED": {
+      "name": "DEPRECATED Experienced",
+      "description": "Gain !B! Block for each Upgraded card in your hand."
+    },
+    "EXPERTISE": {
+      "name": "전문성",
+      "description": "손에 카드가 6 장이 될 때까지 카드를 뽑습니다."
+    },
+    "EXPUNGER": {
+      "name": "말살검",
+      "description": "피해를 !D! 만큼 X 번 줍니다."
+    },
+    "FTL": {
+      "name": "FTL",
+      "description": "피해를 5 줍니다. 이번 턴에 카드를 3 장 미만으로 사용했다면 카드를 1 장 뽑습니다."
+    },
+    "FAMEANDFORTUNE": {
+      "name": "부와 명예",
+      "description": "골드를 !M! 얻습니다."
+    },
+    "FASTING": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "FASTING2": {
+      "name": "단식",
+      "description": "힘을 3 얻습니다.\n민첩을 3 얻습니다.\n매 턴 시작 시 [W] 를 1 적게 얻습니다."
+    },
+    "FEARNOEVIL": {
+      "name": "무외",
+      "description": "피해를 8 줍니다.\n적이 공격할 의도가 있다면 명상합니다."
+    },
+    "FEED": {
+      "name": "포식",
+      "description": "피해를 10 줍니다.\n치명타라면 최대 체력이 3 증가합니다. 소멸."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "무감각",
+      "description": "카드가 소멸될 때마다\n방어도를 3 얻습니다."
+    },
+    "FIEND_FIRE": {
+      "name": "지옥불",
+      "description": "카드를 전부 소멸시킵니다.\n그 수만큼 피해를 7 줍니다.\n소멸."
+    },
+    "FINESSE": {
+      "name": "능숙",
+      "description": "방어도를 2 얻습니다.\n카드를 1장 뽑습니다."
+    },
+    "FINISHER": {
+      "name": "마무리",
+      "description": "이번 턴에 사용한 공격 카드 1 장당 피해를 6 줍니다."
+    },
+    "FIRE_BREATHING": {
+      "name": "불 뿜기",
+      "description": "상태이상이나 저주 카드를 뽑을 경우 적 전체에게 피해를 6 줍니다."
+    },
+    "FISSION": {
+      "name": "핵분열",
+      "description": "모든 구체를 제거한 후 제거된 구체 하나당 [B] 를 얻고 카드를 1 장 뽑습니다.\n소멸.",
+      "upgradeDescription": "모든 구체를 발현시킨 후 발현된 구체 하나당 [B] 를 얻고 카드를 1 장 뽑습니다.\n소멸."
+    },
+    "FLAME_BARRIER": {
+      "name": "화염 장벽",
+      "description": "방어도를 12 얻습니다.\n이번 턴에 공격을 받을 때마다 공격한 대상에게 피해를 4 줍니다."
+    },
+    "FLAMEMASTERY": {
+      "name": "DEPRECATED Flame Mastery",
+      "description": "Gain !M! Strength."
+    },
+    "FLARE": {
+      "name": "DEPRECATED Flare",
+      "description": "Deal !D! damage to ALL enemies.\nWrath: Gain [W] [W] ."
+    },
+    "FLASH_OF_STEEL": {
+      "name": "강철의 섬광",
+      "description": "피해를 3 줍니다.\n카드를 1 장 뽑습니다."
+    },
+    "FLECHETTES": {
+      "name": "프레췌",
+      "description": "손에 있는 스킬 카드 1 장당 피해를 4 줍니다."
+    },
+    "FLEX": {
+      "name": "몸 풀기",
+      "description": "힘을 2 얻습니다.\n이번 턴이 끝날 때 힘을 2 잃습니다."
+    },
+    "FLICK": {
+      "name": "DEPRECATED Flick",
+      "description": "Deal !D! damage.\nIf an enemy is Flicked 3 times, they take !M! damage."
+    },
+    "FLICKER": {
+      "name": "DEPRECATED Flicker",
+      "description": "Deal !D! damage. If this kills the enemy, return this card to your hand."
+    },
+    "FLOW": {
+      "name": "DEPRECATED Flow",
+      "description": "When you play an Attack, gain 1 temporary Dexterity. When you play a Skill, gain 1 temporary Strength."
+    },
+    "FLOWSTATE": {
+      "name": "DEPRECATED 몰입",
+      "description": "진노: 명상합니다.\n명상: 진노합니다.\n소멸.",
+      "upgradeDescription": "진노: 명상합니다.\n명상: 진노합니다."
+    },
+    "FLURRYOFBLOWS": {
+      "name": "일진광풍",
+      "description": "피해를 4 줍니다.\n경지를 바꿀 때마다 버린 카드 더미에서 손으로 가져옵니다."
+    },
+    "FLUX_CAPACITOR": {
+      "name": "유동 콘덴서",
+      "description": "모든 영창된 구체를 플라즈마로 교체합니다.\n소멸."
+    },
+    "FLYING_KNEE": {
+      "name": "플라잉 니킥",
+      "description": "피해를 8 줍니다.\n다음 턴에 [G] 를 얻습니다."
+    },
+    "FLYINGSLEEVES": {
+      "name": "흩날리는 소매",
+      "description": "보존.\n피해를 4 만큼 2 번 줍니다."
+    },
+    "FOLLOWUP": {
+      "name": "뒤처리",
+      "description": "피해를 7 줍니다.\n이번 전투에서 직전에 사용한 카드가 공격 카드일 경우 [W] 를 얻습니다."
+    },
+    "FOOTWORK": {
+      "name": "발놀림",
+      "description": "민첩을 2 얻습니다."
+    },
+    "FORCE_FIELD": {
+      "name": "역장",
+      "description": "이번 전투에 사용된 파워 카드의 수만큼 이 카드의 비용이 [B] 감소합니다.\n방어도를 12 얻습니다."
+    },
+    "FOREIGNINFLUENCE": {
+      "name": "외세",
+      "description": "모든 직업의 공격 카드 셋 중 하나를 선택해 얻습니다.\n소멸.",
+      "upgradeDescription": "모든 직업의 공격 카드 셋 중 하나를 선택해 얻습니다.\n이번 턴 동안 그 카드의 비용이 0 이 됩니다.\n소멸."
+    },
+    "FORETHOUGHT": {
+      "name": "대비",
+      "description": "손에 있는 카드 하나를 뽑을 카드 더미 맨 밑에 둡니다.\n사용하기 전까지 그 카드의 비용은 0 이 됩니다.",
+      "upgradeDescription": "손에 있는 카드를 원하는 만큼 뽑을 카드 더미 맨 밑에 둡니다.\n사용하기 전까지 그 카드의 비용은 0 이 됩니다."
+    },
+    "FURYAURA": {
+      "name": "DEPRECATED Fury Aura",
+      "description": "Gain !M! temporary Strength.\nAt the start of your turn, gain 1 temporary Strength. Retains."
+    },
+    "FUSION": {
+      "name": "융합",
+      "description": "플라즈마를 1 번 영창합니다."
+    },
+    "GASH": {
+      "name": "후벼 파기",
+      "description": "피해를 3 줍니다.\n이번 전투 동안 모든 후벼 파기 카드의 피해량이 2 증가합니다."
+    },
+    "GENETIC_ALGORITHM": {
+      "name": "유전 알고리즘",
+      "description": "방어도를 !B! 얻습니다. 영구적으로 이 카드의 방어도를 2 증가시킵니다.\n소멸."
+    },
+    "GHOSTLY": {
+      "name": "영체화",
+      "description": "휘발성.\n불가침을 1 얻습니다.\n소멸.",
+      "upgradeDescription": "불가침을 1 얻습니다.\n소멸."
+    },
+    "GHOSTLY_ARMOR": {
+      "name": "유령 갑옷",
+      "description": "휘발성.\n방어도를 10 얻습니다."
+    },
+    "GLACIER": {
+      "name": "빙하",
+      "description": "방어도를 7 얻습니다.\n냉기를 2 번 영창합니다.",
+      "upgradeDescription": "방어도를 +3 얻습니다.\n냉기를 2 번 영창합니다."
+    },
+    "GLASS_KNIFE": {
+      "name": "유리칼",
+      "description": "피해를 8 만큼 2 번 줍니다. 이번 전투 동안 이 카드의 피해량이 2 감소합니다."
+    },
+    "GO_FOR_THE_EYES": {
+      "name": "눈 할퀴기",
+      "description": "피해를 3 줍니다. 적이 공격할 의도가 있다면 약화를 1 부여합니다."
+    },
+    "GOOD_INSTINCTS": {
+      "name": "직감",
+      "description": "방어도를 6 얻습니다."
+    },
+    "GRAND_FINALE": {
+      "name": "대단원의 막",
+      "description": "뽑을 카드 더미가 비어있을 때만 사용 가능합니다.\n적 전체에게 피해를 50 줍니다.",
+      "upgradeDescription": "뽑을 카드 더미가\n비어 있어야만 한다."
+    },
+    "HALT": {
+      "name": "저지",
+      "description": "방어도를 3 얻습니다.\n진노 중일 경우 방어도를 추가로 9 얻습니다."
+    },
+    "HANDOFGREED": {
+      "name": "탐욕의 손",
+      "description": "피해를 20 줍니다.\n치명타라면 골드를 20 얻습니다."
+    },
+    "HAVOC": {
+      "name": "파괴",
+      "description": "뽑을 카드 더미 맨 위의 카드를 사용한 뒤 소멸시킵니다."
+    },
+    "HEADBUTT": {
+      "name": "박치기",
+      "description": "피해를 9 줍니다.\n버린 카드 더미에서 카드를 1 장 선택해 뽑을 카드 더미 맨 위에 놓습니다."
+    },
+    "HEATSINKS": {
+      "name": "방열판",
+      "description": "파워 카드를 낼 때마다 카드를 1 장 뽑습니다.",
+      "upgradeDescription": "파워 카드를 낼 때마다 카드를 +1 장 뽑습니다."
+    },
+    "HEAVY_BLADE": {
+      "name": "대검",
+      "description": "피해를 14 줍니다.\n힘의 효과가 3 배로 적용됩니다.",
+      "upgradeDescription": "피해를 14 줍니다.\n힘의 효과가 +2 배로 적용됩니다."
+    },
+    "HEEL_HOOK": {
+      "name": "다리 꺾기",
+      "description": "피해를 5 줍니다.\n적이 약화 상태라면,\n[G] 를 얻고\n카드를 1 장 뽑습니다."
+    },
+    "HELLO_WORLD": {
+      "name": "Hello World",
+      "description": "턴 시작 시 무작위 일반 등급 카드를 1 장 얻습니다.",
+      "upgradeDescription": "선천성.\n턴 시작 시 무작위 일반 등급 카드를 1 장 얻습니다."
+    },
+    "HEMOKINESIS": {
+      "name": "혈류",
+      "description": "체력을 2 잃습니다.\n피해를 15 줍니다."
+    },
+    "HIDE": {
+      "name": "은신",
+      "description": "다음 턴이 시작될 때까지 체력을 잃지 않습니다.\n소멸"
+    },
+    "HOLOGRAM": {
+      "name": "홀로그램",
+      "description": "방어도를 3 얻습니다.\n버린 카드 더미에서 카드 한 장을 선택해서 손으로 가져옵니다.\n소멸.",
+      "upgradeDescription": "방어도를 +2 얻습니다.\n버린 카드 더미에서 카드 한 장을 선택해서 손으로 가져옵니다."
+    },
+    "HYPERBEAM": {
+      "name": "파괴광선",
+      "description": "적 전체에게 피해를 26 줍니다.\n밀집을 3 잃습니다."
+    },
+    "IMMOLATE": {
+      "name": "화형",
+      "description": "적 전체에게 피해를 21 줍니다.\n버린 카드 더미에 화상 을 넣습니다."
+    },
+    "IMPATIENCE": {
+      "name": "성급함",
+      "description": "손에 공격 카드가 없다면 카드를 2 장 뽑습니다."
+    },
+    "IMPERVIOUS": {
+      "name": "무적",
+      "description": "방어도를 30 얻습니다.\n소멸."
+    },
+    "INDIGNATION": {
+      "name": "분개",
+      "description": "진노 중이라면 적 전체에게 취약을 3 부여합니다. 그렇지 않으면 진노합니다."
+    },
+    "INFERNAL_BLADE": {
+      "name": "지옥검",
+      "description": "무작위 공격 카드를 1 장 얻습니다.\n이번 턴 동안 그 카드의 비용이 0 이 됩니다. 소멸."
+    },
+    "INFINITE_BLADES": {
+      "name": "무한의 검날",
+      "description": "내 턴 시작 시 단도 를 1 장 얻습니다.",
+      "upgradeDescription": "선천성.\n내 턴 시작 시 단도 를 1 장 얻습니다."
+    },
+    "INFLAME": {
+      "name": "발화",
+      "description": "힘을 2 얻습니다."
+    },
+    "INJURY": {
+      "name": "상처",
+      "description": "사용불가."
+    },
+    "INNERPEACE": {
+      "name": "내면의 평화",
+      "description": "명상 중이라면 카드를 3 장 뽑습니다. 그렇지 않으면 명상합니다."
+    },
+    "INSIGHT": {
+      "name": "통찰",
+      "description": "보존.\n카드를 !M! 장 뽑습니다.\n소멸.",
+      "upgradeDescription": "보존.\n카드를 !M! 장 뽑습니다.\n소멸."
+    },
+    "INTIMIDATE": {
+      "name": "위압",
+      "description": "적 전체에게 약화를 1 부여합니다.\n소멸."
+    },
+    "IRON_WAVE": {
+      "name": "철의 파동",
+      "description": "방어도를 5 얻습니다.\n피해를 5 줍니다."
+    },
+    "J_A_X": {
+      "name": "J.A.X.",
+      "description": "체력을 3 잃습니다.\n힘을 2 얻습니다."
+    },
+    "JACK_OF_ALL_TRADES": {
+      "name": "팔방미인",
+      "description": "무작위 무색 카드를 1 장 얻습니다.\n소멸.",
+      "upgradeDescription": "무작위 무색 카드를 +1 장 얻습니다.\n소멸."
+    },
+    "JUDGEMENT": {
+      "name": "심판",
+      "description": "적의 체력이 30 이하일 경우\n체력을 0으로 만듭니다."
+    },
+    "JUGGERNAUT": {
+      "name": "절대적인 힘",
+      "description": "방어도를 얻을 때마다 무작위 적에게 5 의 피해를 줍니다."
+    },
+    "JUSTLUCKY": {
+      "name": "요행",
+      "description": "예지 1.\n방어도를 2 얻습니다.\n피해를 3 줍니다."
+    },
+    "LEAP": {
+      "name": "도약",
+      "description": "방어도를 9 얻습니다."
+    },
+    "LEG_SWEEP": {
+      "name": "다리 걸기",
+      "description": "약화를 2 부여합니다.\n방어도를 11 얻습니다."
+    },
+    "LESSONLEARNED": {
+      "name": "교훈",
+      "description": "피해를 10 줍니다.\n치명타라면 덱에 있는 무작위 카드를 영구히 강화합니다. 소멸."
+    },
+    "LETFATEDECIDE": {
+      "name": "DEPRECATED Let Fate Decide",
+      "description": "Play the top X cards of your draw pile. If X is 3 or more, Retain X cards."
+    },
+    "LIKEWATER": {
+      "name": "여류",
+      "description": "턴 종료 시 명상 중이라면 방어도를 5 얻습니다."
+    },
+    "LIMIT_BREAK": {
+      "name": "한계 돌파",
+      "description": "힘을 2 배로 만듭니다.\n소멸.",
+      "upgradeDescription": "힘을 2 배로 만듭니다."
+    },
+    "LIVEFOREVER": {
+      "name": "영생",
+      "description": "판금 갑옷 을 !M! 얻습니다."
+    },
+    "LOCKON": {
+      "name": "명중",
+      "description": "피해를 8 줍니다.\n조준을 2 부여합니다."
+    },
+    "LOOP": {
+      "name": "반복",
+      "description": "내 턴 시작 시 가장 오른쪽 구체의 지속 효과를 발동시킵니다.",
+      "upgradeDescription": "내 턴 시작 시 가장 오른쪽 구체의 지속 효과를 +1 번 발동시킵니다."
+    },
+    "MACHINE_LEARNING": {
+      "name": "기계학습",
+      "description": "내 턴 시작 시 카드를 1 장 더 뽑습니다.",
+      "upgradeDescription": "선천성.\n내 턴 시작 시 카드를 1 장 더 뽑습니다."
+    },
+    "MADNESS": {
+      "name": "광기",
+      "description": "손에 있는 무작위 카드 1 장의 비용이 이번 전투 동안 0 이 됩니다.\n소멸."
+    },
+    "MAGNETISM": {
+      "name": "자기력",
+      "description": "내 턴 시작 시 무작위 무색 카드를 1 장 얻습니다."
+    },
+    "MALAISE": {
+      "name": "불쾌",
+      "description": "적의 힘을 X 감소시킵니다. 약화를 X 부여합니다.\n소멸.",
+      "upgradeDescription": "적의 힘을 X+1 감소시킵니다. 약화를 X+1 부여합니다.\n소멸."
+    },
+    "MASTER_OF_STRATEGY": {
+      "name": "전략의 천재",
+      "description": "카드를 3 장 뽑습니다.\n소멸."
+    },
+    "MASTERREALITY": {
+      "name": "현실 지배",
+      "description": "전투 중에 카드를 생성할 때마다 그 카드를 강화합니다."
+    },
+    "MASTERFUL_STAB": {
+      "name": "능숙한 찌르기",
+      "description": "이번 전투 중 체력을 잃을 때마다 이 카드의 비용이 [G] 증가합니다.\n피해를 12 줍니다."
+    },
+    "MASTERY": {
+      "name": "DEPRECATED Mastery",
+      "description": "Whenever you attempt to switch Stances to your current Stance, gain [B]."
+    },
+    "MAYHEM": {
+      "name": "대혼란",
+      "description": "내 턴 시작 시 뽑을 카드 더미 맨 위에 있는 카드를 사용합니다."
+    },
+    "MEDITATE": {
+      "name": "사색",
+      "description": "버린 카드 더미에서 카드 1 장을 손으로 들고 온 뒤 보존합니다.\n명상합니다.\n턴을 종료합니다.",
+      "upgradeDescription": "버린 카드 더미에서 카드 2 장을 손으로 들고 온 뒤 보존합니다.\n명상합니다.\n턴을 종료합니다."
+    },
+    "MELTER": {
+      "name": "용해 장치",
+      "description": "적의 모든 방어도를 없앱니다.\n피해를 10 줍니다."
+    },
+    "MENTALFORTRESS": {
+      "name": "마음의 요새",
+      "description": "경지를 바꿀 때마다, 방어도를 4 얻습니다."
+    },
+    "METALLICIZE": {
+      "name": "금속화",
+      "description": "내 턴 종료 시 방어도를 3 얻습니다."
+    },
+    "METAMORPHOSIS": {
+      "name": "탈바꿈",
+      "description": "무작위 공격 카드 3 장을 뽑을 카드 더미에 섞어 넣습니다. 이번 전투 동안 그 카드들의 비용이 0 이 됩니다.\n소멸."
+    },
+    "METAPHYSICS": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "METEOR_STRIKE": {
+      "name": "유성 타격",
+      "description": "피해를 24 줍니다. 플라즈마를 3 번 영창합니다."
+    },
+    "MIND_BLAST": {
+      "name": "정신 공격",
+      "description": "선천성.\n뽑을 카드 더미에 있는 카드의 수만큼 피해를 줍니다."
+    },
+    "MIRACLE": {
+      "name": "기적",
+      "description": "보존.\n[W] 를 얻습니다.\n소멸.",
+      "upgradeDescription": "보존.\n[W] [W] 를 얻습니다.\n소멸."
+    },
+    "MULTI_CAST": {
+      "name": "다중 시전",
+      "description": "가장 오른쪽의 구체를 X 번 발현합니다.",
+      "upgradeDescription": "가장 오른쪽의 구체를 X+1 번 발현합니다."
+    },
+    "NECRONOMICURSE": {
+      "name": "네크로노미콘의 저주",
+      "description": "사용불가.\n이 저주에서 벗어날 수 없습니다."
+    },
+    "NEUTRALIZE": {
+      "name": "무력화",
+      "description": "피해를 3 줍니다.\n약화를 1 부여합니다."
+    },
+    "NIGHT_TERROR": {
+      "name": "악몽",
+      "description": "카드를 선택합니다.\n다음 턴에 그 카드를 3 장 복사해 가져옵니다.\n소멸."
+    },
+    "NIRVANA": {
+      "name": "열반",
+      "description": "예지할 때마다 방어도를 3 얻습니다."
+    },
+    "NORMALITY": {
+      "name": "규칙 준수",
+      "description": "사용불가.\n손에 있다면 이번 턴 동안 카드를 3 장까지만 사용할 수 있습니다."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "유독 가스",
+      "description": "내 턴 시작 시 적 전체에게 중독을 2 부여합니다."
+    },
+    "OFFERING": {
+      "name": "제물",
+      "description": "체력을 6 잃습니다.\n[R] [R] 를 얻습니다.\n카드를 3 장 뽑습니다.\n소멸.",
+      "upgradeDescription": "체력을 6 잃습니다.\n[R] [R] 를 얻습니다.\n카드를 +2 장 뽑습니다.\n소멸."
+    },
+    "OMEGA": {
+      "name": "오메가",
+      "description": "턴 종료 시 적 전체에게 피해를 !M! 줍니다."
+    },
+    "OMNISCIENCE": {
+      "name": "전지",
+      "description": "뽑을 카드 더미에서 카드를 1 장 선택합니다.\n선택한 카드를 두 번 사용하고 소멸시킵니다.\n소멸."
+    },
+    "OUTMANEUVER": {
+      "name": "압도",
+      "description": "다음 턴에\n[G] [G] 를 얻습니다.",
+      "upgradeDescription": "다음 턴에\n[G] [G] [G] 를 얻습니다."
+    },
+    "PAIN": {
+      "name": "고통",
+      "description": "사용불가.\n손에 있는 동안\n다른 카드를 사용할 때마다 체력을 1 씩 잃습니다."
+    },
+    "PALMTHATRESTRAINS": {
+      "name": "DEPRECATED Restraining Palm",
+      "description": "Deal !D! damage.\nApply !M! Weak."
+    },
+    "PANACEA": {
+      "name": "만병통치약",
+      "description": "인공물을 1 얻습니다.\n소멸."
+    },
+    "PANACHE": {
+      "name": "위풍당당",
+      "description": "한 턴에 5 장의 카드를 사용할 때마다 적 전체에게 피해를 10 줍니다."
+    },
+    "PANICBUTTON": {
+      "name": "비상 단추",
+      "description": "방어도를 30 얻습니다. 다음 2 턴 동안 카드를 통해 방어도를 얻을 수 없습니다.\n소멸."
+    },
+    "PARASITE": {
+      "name": "기생충",
+      "description": "사용불가.\n변화되거나 덱에서 제거 될 시 최대 체력이 3 감소합니다."
+    },
+    "PATHTOVICTORY": {
+      "name": "급소",
+      "description": "표식 을 8 부여합니다. 모든 적의 체력을 대상에게 부여된 표식 만큼 감소시킵니다."
+    },
+    "PEACE": {
+      "name": "평화",
+      "description": "보존\n모든 적의 힘을 이번 턴 동안 !M! 감소시킵니다.\n소멸."
+    },
+    "PERFECTED_STRIKE": {
+      "name": "완벽한 타격",
+      "description": "피해를 6 줍니다. 보유 중인 카드 중 이름에 \"타격\" 이 포함된 카드 하나당 피해량이 2 증가합니다.",
+      "upgradeDescription": "피해를 6 줍니다. 보유 중인 카드 중 이름에 \"타격\" 이 포함된 카드 하나당 피해량이 3 증가합니다."
+    },
+    "PERFECTEDFORM": {
+      "name": "DEPRECATED Perfected Form",
+      "description": "If you have entered all basic Stances this turn, enter Divinity.\nExhaust.",
+      "upgradeDescription": "If you have entered all basic Stances this turn, enter Divinity."
+    },
+    "PERSEVERANCE": {
+      "name": "인내",
+      "description": "보존.\n방어도를 5 얻습니다.\n보존될 때마다 이번 전투 동안 이 카드의 방어도가 2 증가합니다."
+    },
+    "PHANTASMAL_KILLER": {
+      "name": "환영 살인마",
+      "description": "다음 턴 동안 공격 카드가 두 배의 피해를 줍니다"
+    },
+    "PIERCINGWAIL": {
+      "name": "귀를 찢는 비명",
+      "description": "적 전체의 힘을 이번 턴 동안 6 감소시킵니다.\n소멸."
+    },
+    "POISONED_STAB": {
+      "name": "독 찌르기",
+      "description": "피해를 6 줍니다.\n중독을 3 부여합니다."
+    },
+    "POLYMATH": {
+      "name": "DEPRECATED Polymath",
+      "description": "Enter Calm or Wrath.\nExhaust."
+    },
+    "POMMEL_STRIKE": {
+      "name": "폼멜 타격",
+      "description": "피해를 9 줍니다.\n카드를 1 장 뽑습니다.",
+      "upgradeDescription": "피해를 +1 줍니다.\n카드를 +1 장 뽑습니다."
+    },
+    "POWER_THROUGH": {
+      "name": "난관 극복",
+      "description": "부상 을 2 장 얻습니다.\n방어도를 15 얻습니다."
+    },
+    "PRAY": {
+      "name": "기도",
+      "description": "만트라를 3 얻습니다.\n뽑을 카드 더미에 통찰 을 1 장 섞어 넣습니다.",
+      "upgradeDescription": "만트라를 +1 얻습니다.\n뽑을 카드 더미에 통찰+ 을 1 장 섞어 넣습니다."
+    },
+    "PREDATOR": {
+      "name": "천적",
+      "description": "피해를 15 줍니다.\n다음 턴에 카드를 2 장 더 뽑습니다."
+    },
+    "PREDICTION": {
+      "name": "DEPRECATED Prediction",
+      "description": "Gain !B! Block at the start of your next turn."
+    },
+    "PREPARED": {
+      "name": "예비",
+      "description": "카드를 1 장 뽑습니다.\n카드를 1 장 버립니다.",
+      "upgradeDescription": "카드를 +1 장 뽑습니다.\n카드를 +1 장 버립니다."
+    },
+    "PRIDE": {
+      "name": "긍지",
+      "description": "선천성.\n내 턴 종료 시 이 카드를 복사해 뽑을 카드 더미 맨 위에 놓습니다.\n소멸."
+    },
+    "PROSTRATE": {
+      "name": "부복",
+      "description": "만트라를 2 얻습니다.\n방어도를 4 얻습니다."
+    },
+    "PROTECT": {
+      "name": "보호",
+      "description": "보존.\n방어도를 12 얻습니다."
+    },
+    "PUMMEL": {
+      "name": "연타",
+      "description": "피해를 2 만큼 4 번 줍니다.\n소멸.",
+      "upgradeDescription": "피해를 2 만큼 +1 번 줍니다.\n소멸."
+    },
+    "PUNISHMENT": {
+      "name": "DEPRECATED Punishment",
+      "description": "Enter Punishment Stance."
+    },
+    "PURITY": {
+      "name": "순수",
+      "description": "손에 있는 카드 중 최대 3 장을 선택해 소멸시킵니다.\n소멸."
+    },
+    "QUICK_SLASH": {
+      "name": "전광석화",
+      "description": "피해를 8 줍니다.\n카드를 1 장 뽑습니다."
+    },
+    "RAGE": {
+      "name": "격노",
+      "description": "이번 턴에 공격 카드를 사용할 때마다 방어도를 3 얻습니다."
+    },
+    "RAGNAROK": {
+      "name": "라그나로크",
+      "description": "무작위 적들에게 피해를 5 만큼 5 번 줍니다."
+    },
+    "RAINBOW": {
+      "name": "무지개",
+      "description": "전기를 1 번,\n냉기를 1 번,\n암흑을 1 번 영창합니다.\n소멸.",
+      "upgradeDescription": "전기를 1 번,\n냉기를 1 번,\n암흑을 1 번 영창합니다."
+    },
+    "RAMPAGE": {
+      "name": "광란",
+      "description": "피해를 8 줍니다.\n이번 전투 동안 이 카드의 피해량이 5 증가합니다."
+    },
+    "REACHHEAVEN": {
+      "name": "천국의 계단",
+      "description": "피해를 10 줍니다.\n뽑을 카드 더미에 무력 돌파 를 1 장 섞어 넣습니다.",
+      "upgradeDescription": "피해를 +5 줍니다.\n뽑을 카드 더미에 무력 돌파+ 를 1 장 섞어 넣습니다."
+    },
+    "REAPER": {
+      "name": "사신",
+      "description": "적 전체에게 피해를 4 줍니다. 막히지 않은 피해만큼 체력을 회복합니다.\n소멸."
+    },
+    "REBOOT": {
+      "name": "다시 시작",
+      "description": "모든 카드를 뽑을 카드 더미에 섞어 넣습니다.\n카드를 4 장 뽑습니다.\n소멸."
+    },
+    "REBOUND": {
+      "name": "되돌리기",
+      "description": "피해를 9 줍니다.\n이번 턴에 사용하는 다음 카드를 뽑을 카드 더미의 맨 위에 놓습니다."
+    },
+    "RECKLESS_CHARGE": {
+      "name": "무모한 돌진",
+      "description": "피해를 7 줍니다.\n뽑을 카드 더미에 어지러움 을 섞어 넣습니다."
+    },
+    "RECYCLE": {
+      "name": "재활용",
+      "description": "카드를 1 장 소멸시킵니다.\n그 카드의 비용만큼 [B] 를 얻습니다."
+    },
+    "REDO": {
+      "name": "재귀",
+      "description": "가장 오른쪽의 구체를 발현시킵니다.\n발현된 구체를 그대로 영창합니다."
+    },
+    "REFLEX": {
+      "name": "반사 신경",
+      "description": "사용불가.\n이 카드가 버려지면 카드를 2 장 뽑습니다.",
+      "upgradeDescription": "사용불가.\n이 카드가 버려지면 카드를 +1 장 뽑습니다."
+    },
+    "REGRET": {
+      "name": "후회",
+      "description": "사용불가.\n내 턴 종료 시 손에 있는 카드의 수만큼 체력을 잃습니다."
+    },
+    "REINFORCED_BODY": {
+      "name": "강화된 몸체",
+      "description": "방어도를 7 만큼 X 번 얻습니다."
+    },
+    "REPROGRAM": {
+      "name": "재구성",
+      "description": "밀집을 1 잃습니다.\n힘을 1 얻습니다.\n민첩을 1 얻습니다."
+    },
+    "RETREATINGHAND": {
+      "name": "DEPRECATED Retreating Hand",
+      "description": "Ethereal.\nGain !B! Block. If the previous card played was an Attack, return this card to your hand.",
+      "upgradeDescription": "Gain !B! Block. If the previous card played was an Attack, return this card to your hand."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Retribution",
+      "description": "Whenever you lose HP, gain !M! Vigor."
+    },
+    "RIDDLE_WITH_HOLES": {
+      "name": "벌집",
+      "description": "피해를 3 만큼 5 번 줍니다."
+    },
+    "RIP_AND_TEAR": {
+      "name": "날뛰기",
+      "description": "무작위 적들에게 피해를 7 만큼 2 번 줍니다."
+    },
+    "RITUALDAGGER": {
+      "name": "의식용 단검",
+      "description": "피해를 !D! 줍니다.\n치명타라면 이 카드의 피해량이 영구적으로 3 만큼 증가합니다.\n소멸."
+    },
+    "RUPTURE": {
+      "name": "파열",
+      "description": "카드의 효과로 체력을 잃을 때마다\n힘을 1 얻습니다."
+    },
+    "SADISTIC_NATURE": {
+      "name": "가학적 본성",
+      "description": "적에게 부정적인 효과를 부여할 때마다 대상에게 피해를 5 줍니다."
+    },
+    "SAFETY": {
+      "name": "안전",
+      "description": "방어도를 !B! 얻습니다.\n보존.\n소멸."
+    },
+    "SANCTITY": {
+      "name": "존엄",
+      "description": "방어도를 6 얻습니다.\n이번 전투에서 직전에 사용한 카드가 스킬 카드일 경우 카드를 2 장 뽑습니다."
+    },
+    "SANDSOFTIME": {
+      "name": "시간의 모래",
+      "description": "보존.\n피해를 20 줍니다.\n보존될 때마다 이번 전투 동안 이 카드의 비용이 1 만큼 줄어듭니다."
+    },
+    "SASHWHIP": {
+      "name": "벨트 휘두르기",
+      "description": "피해를 8 줍니다.\n이번 전투에서 직전에 사용한 카드가 공격 카드일 경우 약화를 1 부여합니다."
+    },
+    "SCRAPE": {
+      "name": "긁어내기",
+      "description": "피해를 7 줍니다.\n카드를 4 장 뽑습니다.\n뽑아온 카드 중 비용이 0이 아닌 카드를 모두 버립니다."
+    },
+    "SCRAWL": {
+      "name": "휘갈김",
+      "description": "손이 가득 찰 때까지 카드를 뽑습니다.\n소멸."
+    },
+    "SEARING_BLOW": {
+      "name": "불태우는 일격",
+      "description": "피해를 12 줍니다.\n강화 횟수에 제한이 없습니다."
+    },
+    "SECOND_WIND": {
+      "name": "기사회생",
+      "description": "손에 있는 공격 카드를 제외한 모든 카드를 소멸시킵니다. 소멸시킨 카드 한 장당 방어도를 5 얻습니다."
+    },
+    "SECRET_TECHNIQUE": {
+      "name": "비밀 기술",
+      "description": "뽑을 카드 더미에서 스킬 카드를 1 장 선택해 가져옵니다.\n소멸.",
+      "upgradeDescription": "뽑을 카드 더미에서 스킬 카드를 1 장 선택해 가져옵니다."
+    },
+    "SECRET_WEAPON": {
+      "name": "비밀 병기",
+      "description": "뽑을 카드 더미에서 공격 카드를 1 장 선택해 가져옵니다.\n소멸.",
+      "upgradeDescription": "뽑을 카드 더미에서 공격 카드를 1 장 선택해 가져옵니다."
+    },
+    "SEEING_RED": {
+      "name": "혈안",
+      "description": "[R] [R] 을 얻습니다.\n소멸."
+    },
+    "SEEK": {
+      "name": "탐색",
+      "description": "뽑을 카드 더미에서 카드 1 장을 골라 손으로 가져옵니다.\n소멸.",
+      "upgradeDescription": "뽑을 카드 더미에서 카드 +1 장을 골라 손으로 가져옵니다.\n소멸."
+    },
+    "SELF_REPAIR": {
+      "name": "자가 수리",
+      "description": "전투 종료 시 체력을 7 회복합니다."
+    },
+    "SENTINEL": {
+      "name": "감시병",
+      "description": "방어도를 5 얻습니다.\n이 카드가 소멸되면\n[R] [R] 를 얻습니다.",
+      "upgradeDescription": "방어도를 +3 얻습니다.\n이 카드가 소멸되면\n[R] [R] [R] 를 얻습니다."
+    },
+    "SERENITY": {
+      "name": "평온",
+      "description": "현재 명상 중일 경우 HP 감소량이 !M! 만큼 줄어듭니다."
+    },
+    "SETUP": {
+      "name": "설치",
+      "description": "카드 1 장을 뽑을 카드 더미 맨 위에 놓습니다.\n사용 전까지 그 카드의 비용이 0 이 됩니다."
+    },
+    "SEVER_SOUL": {
+      "name": "영혼 절단",
+      "description": "손에 있는 공격 카드를 제외한 모든 카드를 소멸시킵니다.\n피해를 16 줍니다."
+    },
+    "SHAME": {
+      "name": "수치",
+      "description": "사용불가.\n턴 종료 시 손상을 1 받습니다."
+    },
+    "SHIELD": {
+      "name": "DEPRECATED Shield",
+      "description": "Gain !B! Block.\nRetains.\nExhaust."
+    },
+    "SHIV": {
+      "name": "단도",
+      "description": "피해를 !D! 줍니다.\n소멸."
+    },
+    "SHOCKWAVE": {
+      "name": "충격파",
+      "description": "적 전체에게 약화와 취약을 3 부여합니다.\n소멸."
+    },
+    "SHRUG_IT_OFF": {
+      "name": "흘려보내기",
+      "description": "방어도를 8 얻습니다.\n카드를 1장 뽑습니다."
+    },
+    "SIGNATUREMOVE": {
+      "name": "개인기",
+      "description": "이 카드가 손에 있는 유일한 공격 카드일 경우에만 사용 가능합니다. 피해를 30 줍니다."
+    },
+    "SKEWER": {
+      "name": "꼬챙이",
+      "description": "피해를 7 만큼 X 번 줍니다."
+    },
+    "SKIM": {
+      "name": "걷어내기",
+      "description": "카드를 3 장 뽑습니다."
+    },
+    "SLICE": {
+      "name": "칼질",
+      "description": "피해를 6 줍니다."
+    },
+    "SLIMED": {
+      "name": "점액투성이",
+      "description": "소멸."
+    },
+    "SMITE": {
+      "name": "엄벌",
+      "description": "보존.\n피해를 !D! 줍니다.\n소멸."
+    },
+    "SOOTHINGAURA": {
+      "name": "DEPRECATED Soothing Aura",
+      "description": "Apply !M! Weak.\nAt the start of your turn, apply 1 Weak to a random enemy.\nRetains."
+    },
+    "SPIRITSHIELD": {
+      "name": "영혼 방패",
+      "description": "손에 있는 카드 한 장당 방어도를 3 얻습니다."
+    },
+    "SPOT_WEAKNESS": {
+      "name": "약점 분석",
+      "description": "선택한 적이 공격할 의도가 있다면 힘을 3 얻습니다."
+    },
+    "STACK": {
+      "name": "스택",
+      "description": "버린 카드 더미에 있는 카드의 수만큼 방어도를 얻습니다.",
+      "upgradeDescription": "버린 카드 더미에 있는 카드의 수에 3을 더한 만큼 방어도를 얻습니다."
+    },
+    "STATIC_DISCHARGE": {
+      "name": "정전기 방전",
+      "description": "막히지 않은 공격 피해를 받을 때마다 전기를 1 번 영창합니다.",
+      "upgradeDescription": "막히지 않은 공격 피해를 받을 때마다 전기를 +1 번 영창합니다."
+    },
+    "STEAM": {
+      "name": "증기 장벽",
+      "description": "방어도를 6 얻습니다. 이번 전투동안 이 카드의 방어도가 1 감소합니다."
+    },
+    "STEAM_POWER": {
+      "name": "오버클럭",
+      "description": "카드를 2 장 뽑습니다.\n화상 을 버린 카드 더미에 넣습니다."
+    },
+    "STEPANDSTRIKE": {
+      "name": "회피 후 타격",
+      "description": "이번 턴에 경지를 바꿀 때마다 비용이 1 만큼 감소합니다.\n방어도를 !B! 얻습니다.\n피해를 !D! 줍니다."
+    },
+    "STORM": {
+      "name": "폭풍",
+      "description": "파워 카드를 사용할 때마다 전기를 1 번 영창합니다.",
+      "upgradeDescription": "선천성.\n파워 카드를 사용할 때마다 전기를 1 번 영창합니다."
+    },
+    "STORM_OF_STEEL": {
+      "name": "강철의 폭풍",
+      "description": "카드를 전부 버립니다.\n버린 카드 수만큼 단도 를 얻습니다.",
+      "upgradeDescription": "카드를 전부 버립니다.\n버린 카드 수만큼 단도+ 를 얻습니다."
+    },
+    "STREAMLINE": {
+      "name": "최적화",
+      "description": "피해를 15 줍니다.\n이 카드를 사용할 때마다 이번 전투 동안 이 카드의 비용이 1 감소합니다."
+    },
+    "STRIKE_B": {
+      "name": "타격",
+      "description": "피해를 6 줍니다."
+    },
+    "STRIKE_G": {
+      "name": "타격",
+      "description": "피해를 6 줍니다."
+    },
+    "STRIKE_P": {
+      "name": "타격",
+      "description": "피해를 6 줍니다."
+    },
+    "STRIKE_R": {
+      "name": "타격",
+      "description": "피해를 6 줍니다."
+    },
+    "STUDY": {
+      "name": "학습",
+      "description": "내 턴 종료 시 뽑을 카드 더미에 통찰 을 섞어넣습니다."
+    },
+    "SUBLIMESLICE": {
+      "name": "DEPRECATED Sublime Slice",
+      "description": "Deal !D! damage.\nEnter a random Stance."
+    },
+    "SUCKER_PUNCH": {
+      "name": "불의의 일격",
+      "description": "피해를 7 줍니다.\n약화를 1 부여합니다."
+    },
+    "SUNDER": {
+      "name": "찢기",
+      "description": "피해를 24 줍니다.\n이 공격으로 적이 죽으면 [B] [B] [B] 를 얻습니다."
+    },
+    "SURVEY": {
+      "name": "DEPRECATED Survey",
+      "description": "Gain !B! Block.\nGain !M! Vigor."
+    },
+    "SURVIVOR": {
+      "name": "생존자",
+      "description": "방어도를 8 얻습니다.\n카드를 1 장 버립니다."
+    },
+    "SWEEPING_BEAM": {
+      "name": "광선 휩쓸기",
+      "description": "적 전체에게 피해를 6 줍니다.\n카드를 1 장 뽑습니다."
+    },
+    "SWIFT_STRIKE": {
+      "name": "재빠른 타격",
+      "description": "피해를 7 줍니다."
+    },
+    "SWIPE": {
+      "name": "DEPRECATED Swipe",
+      "description": "Deal !D! damage. Deal half this damage to all other enemies."
+    },
+    "SWIVEL": {
+      "name": "회전",
+      "description": "방어도를 8 얻습니다.\n다음에 사용하는 공격 카드의 비용이 0이 됩니다."
+    },
+    "SWORD_BOOMERANG": {
+      "name": "부메랑 칼날",
+      "description": "무작위 적들에게 피해를 3 만큼 3 번 줍니다."
+    },
+    "TACTICIAN": {
+      "name": "전략가",
+      "description": "사용불가.\n이 카드가 버려지면 [G] 를 얻습니다.",
+      "upgradeDescription": "사용불가.\n이 카드가 버려지면 [G] [G] 를 얻습니다."
+    },
+    "TALKTOTHEHAND": {
+      "name": "손절",
+      "description": "피해를 5 줍니다.\n해당 적을 공격할 때마다 방어도를 2 얻습니다.\n소멸."
+    },
+    "TANTRUM": {
+      "name": "격분",
+      "description": "피해를 3 만큼\n3 번 줍니다.\n진노합니다.\n이 카드를 뽑을 카드 더미에 섞어넣습니다."
+    },
+    "TEMPEST": {
+      "name": "뇌우",
+      "description": "전기를 X 번 영창합니다.\n소멸.",
+      "upgradeDescription": "전기를 X+1 번 영창합니다.\n소멸."
+    },
+    "TERROR": {
+      "name": "공포",
+      "description": "취약을 99 부여합니다.\n소멸."
+    },
+    "THE_BOMB": {
+      "name": "폭탄",
+      "description": "3 턴 후 턴 종료 시 적 전체에게 피해를 40 줍니다."
+    },
+    "THINKING_AHEAD": {
+      "name": "미래 예지",
+      "description": "카드를 2 장 뽑은 뒤 카드 1 장을 뽑을 카드 더미 맨 위에 놓습니다.\n소멸.",
+      "upgradeDescription": "카드를 2 장 뽑은 뒤 카드 1 장을 뽑을 카드 더미 맨 위에 놓습니다."
+    },
+    "THIRDEYE": {
+      "name": "제 3의 눈",
+      "description": "방어도를 7 얻습니다.\n예지 3."
+    },
+    "THROUGHVIOLENCE": {
+      "name": "무력 돌파",
+      "description": "보존.\n피해를 !D! 줍니다.\n소멸."
+    },
+    "THUNDER_STRIKE": {
+      "name": "전류 타격",
+      "description": "이번 전투에서 영창된 전기 하나당 무작위 적에게 피해를 7 줍니다."
+    },
+    "THUNDERCLAP": {
+      "name": "천둥",
+      "description": "적 전체에게 피해를 4 주고 취약을 1 부여합니다."
+    },
+    "THWACK": {
+      "name": "DEPRECATED Thwack",
+      "description": "Deal !D! damage."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "작업 도구",
+      "description": "내 턴 시작 시 카드를 1 장 뽑고 1 장 버립니다."
+    },
+    "TORRENT": {
+      "name": "DEPRECATED Torrent",
+      "description": "Deal !D! damage to ALL enemies !M! times.\nExhaust."
+    },
+    "TRANSCENDENCE": {
+      "name": "초월",
+      "description": "손에 있는 보존된 카드를 모두 강화합니다."
+    },
+    "TRANSMUTATION": {
+      "name": "변성",
+      "description": "무작위 무색 카드를 X 장 얻습니다. 이번 턴 동안 그 카드들의 비용이 0 이 됩니다.\n소멸.",
+      "upgradeDescription": "강화된 무작위 무색 카드를 X 장 얻습니다. 이번 턴 동안 그 카드들의 비용이 0 이 됩니다.\n소멸."
+    },
+    "TRIP": {
+      "name": "헛디딤",
+      "description": "취약을 2 부여합니다.",
+      "upgradeDescription": "적 전체에게 취약을 2 부여합니다."
+    },
+    "TRUE_GRIT": {
+      "name": "진정한 끈기",
+      "description": "방어도를 7 얻습니다.\n무작위 카드를 1 장 소멸시킵니다.",
+      "upgradeDescription": "방어도를 +2 얻습니다.\n카드를 1 장 소멸시킵니다."
+    },
+    "TRUTH": {
+      "name": "진실",
+      "description": "보존.\n피해를 !D! 줍니다.\n카드를 !M! 장 뽑습니다.\n소멸.",
+      "upgradeDescription": "보존.\n피해를 !D! 줍니다.\n카드를 !M! 장 뽑습니다.\n소멸."
+    },
+    "TURBO": {
+      "name": "터보",
+      "description": "[B] [B] 를 얻습니다.\n버린 카드 더미에 공허 를 섞어 넣습니다.",
+      "upgradeDescription": "[B] [B] [B] 를 얻습니다.\n버린 카드 더미에 공허 를 섞어 넣습니다."
+    },
+    "TWIN_STRIKE": {
+      "name": "이중 타격",
+      "description": "피해를 5 만큼 2 번 줍니다."
+    },
+    "UNDERHANDED_STRIKE": {
+      "name": "비열한 타격",
+      "description": "피해를 12 줍니다.\n이번 턴에 버린 카드가 있으면 [G] [G] 를 얻습니다."
+    },
+    "UNDO": {
+      "name": "평형",
+      "description": "방어도를 13 얻습니다.\n이번 턴 종료 시 카드를 버리지 않습니다."
+    },
+    "UNLOAD": {
+      "name": "처분",
+      "description": "피해를 14 줍니다.\n공격 카드를 제외한 카드를 모두 버립니다."
+    },
+    "UNRAVELING": {
+      "name": "타개",
+      "description": "모든 카드를 왼쪽부터 순서대로 사용합니다. 대상은 무작위로 지정됩니다.\n소멸."
+    },
+    "UPPERCUT": {
+      "name": "어퍼컷",
+      "description": "피해를 13 줍니다.\n약화를 1 부여합니다.\n취약을 1 부여합니다."
+    },
+    "VAULT": {
+      "name": "회피 도약",
+      "description": "이번 턴 후에 내 턴을 추가로 진행합니다.\n턴을 종료합니다.\n소멸."
+    },
+    "VENGEANCE": {
+      "name": "들끓는 울화",
+      "description": "다음 턴 시작 시 진노하고 카드를 2 장 뽑습니다."
+    },
+    "VENOMOLOGY": {
+      "name": "연금",
+      "description": "무작위 포션 하나를 얻습니다.\n소멸."
+    },
+    "VIGILANCE": {
+      "name": "경각",
+      "description": "방어도를 8 얻습니다. 명상합니다."
+    },
+    "VIOLENCE": {
+      "name": "폭력",
+      "description": "뽑을 카드 더미에서 무작위로 공격 카드 3 장을 손으로 가져옵니다.\n소멸."
+    },
+    "VOID": {
+      "name": "공허",
+      "description": "사용불가.\n휘발성.\n이 카드를 뽑으면, 에너지를 1 잃습니다."
+    },
+    "WALLOP": {
+      "name": "맹공",
+      "description": "피해를 9 줍니다.\n막히지 않은 피해량만큼 방어도를 얻습니다."
+    },
+    "WARCRY": {
+      "name": "전투의 함성",
+      "description": "카드를 1 장 뽑습니다.\n카드 1 장을 뽑을 카드 더미 맨 위에 놓습니다.\n소멸.",
+      "upgradeDescription": "카드를 2 장 뽑습니다.\n카드 1 장을 뽑을 카드 더미 맨 위에 놓습니다.\n소멸."
+    },
+    "WARDAURA": {
+      "name": "DEPRECATED Ward Aura",
+      "description": "Gain !B! Block.\nAt the start of your turn, gain !M! Block.\nRetains."
+    },
+    "WAVEOFTHEHAND": {
+      "name": "장법",
+      "description": "이번 턴 동안 방어도를 얻을 때마다 적 전체에게 약화를 1 만큼 부여합니다."
+    },
+    "WAVEOFTHEHAND2": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "WEAVE": {
+      "name": "횡행",
+      "description": "피해를 4 줍니다.\n예지할 때마다 이 카드를 버린 카드 더미에서 손으로 들고 옵니다."
+    },
+    "WELL_LAID_PLANS": {
+      "name": "괜찮은 전략",
+      "description": "내 턴 종료 시 1 장까지 카드를 보존합니다.",
+      "upgradeDescription": "내 턴 종료 시 +1 장까지 카드를 보존합니다."
+    },
+    "WHEELKICK": {
+      "name": "돌려차기",
+      "description": "피해를 15 줍니다.\n카드를 2 장 뽑습니다.",
+      "upgradeDescription": "피해를 +5 줍니다.\n카드를 2 장 뽑습니다."
+    },
+    "WHIRLWIND": {
+      "name": "소용돌이",
+      "description": "적 전체에게 피해를 5 만큼 X 번 줍니다."
+    },
+    "WHITE_NOISE": {
+      "name": "백색 소음",
+      "description": "무작위 파워 카드 1 장을 얻습니다.\n이번 턴 동안 그 카드의 비용이 0이 됩니다.\n소멸."
+    },
+    "WILD_STRIKE": {
+      "name": "난폭한 타격",
+      "description": "피해를 12 줍니다.\n뽑을 카드 더미에 부상 을 섞어 넣습니다."
+    },
+    "WINDMILLSTRIKE": {
+      "name": "회오리 타격",
+      "description": "보존.\n피해를 7 줍니다.\n보존될 때마다 이번 전투 동안 이 카드의 피해량이 4 만큼 증가합니다."
+    },
+    "WINDUP": {
+      "name": "DEPRECATED Windup",
+      "description": "Deal !D! damage.\nGain !M! Vigor."
+    },
+    "WIREHEADING": {
+      "name": "선견지명",
+      "description": "내 턴 시작 시 예지 3"
+    },
+    "WISDOM": {
+      "name": "지혜",
+      "description": "보존.\n카드를 !M! 장 뽑습니다.\n소멸."
+    },
+    "WISH": {
+      "name": "염원",
+      "description": "하나 선택:\n판금 갑옷을 6 얻거나, 힘을 3 얻거나, 골드를 25 얻습니다.\n소멸."
+    },
+    "WORSHIP": {
+      "name": "숭배",
+      "description": "만트라를 5 얻습니다.",
+      "upgradeDescription": "보존.\n만트라를 5 얻습니다."
+    },
+    "WOUND": {
+      "name": "부상",
+      "description": "사용불가."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "유령의 형상",
+      "description": "불가침을 2 얻습니다.\n내 턴 종료 시 민첩을 1 잃습니다."
+    },
+    "WRATH": {
+      "name": "진노",
+      "description": "공격으로 주는 피해와 적에게 받는 피해가 두 배가 됩니다."
+    },
+    "WREATHOFFLAME": {
+      "name": "불의 고리",
+      "description": "다음에 사용하는 공격 카드의 피해량이 5 증가합니다."
+    },
+    "WRITHE": {
+      "name": "몸부림",
+      "description": "사용불가.\n선천성."
+    },
+    "ZAP": {
+      "name": "파지직",
+      "description": "전기를 1 번 영창합니다."
+    }
+  },
+  "relics": {
+    "AKABEKO": {
+      "name": "아카베코",
+      "description": "매 전투마다 처음으로 사용하는 공격 카드가 추가로 8 의 피해를 줍니다.",
+      "flavor": "\"음머어~\""
+    },
+    "ANCHOR": {
+      "name": "닻",
+      "description": "전투 시작 시 방어도를 10 얻습니다.",
+      "flavor": "이 장신구를 잡고 있으면 당신은 강한 안정감을 느낍니다."
+    },
+    "ANCIENT_TEA_SET": {
+      "name": "고대의 차 세트",
+      "description": "휴식 장소를 거친 다음 전투의 첫 턴에 [E] [E] 를 얻습니다.",
+      "flavor": "밤에 상쾌한 휴식을 즐기기 위해 필요한 것입니다."
+    },
+    "ART_OF_WAR": {
+      "name": "병법서",
+      "description": "한 턴 동안 공격 카드를 사용하지 않으면 다음 턴에 [E] 를 추가로 얻습니다.",
+      "flavor": "이 고대의 원고는 과거 시대의 지혜를 담고 있습니다."
+    },
+    "ASTROLABE": {
+      "name": "아스트롤라베",
+      "description": "획득 시 3 장의 카드를 변화시키고 강화합니다.카드를 3 장 선택:",
+      "flavor": "별들에게서 유용한 지식을 얻을 때 사용하던 도구입니다."
+    },
+    "BAG_OF_MARBLES": {
+      "name": "구슬 주머니",
+      "description": "전투 시작 시 적 전체에게 취약을 1 부여합니다.",
+      "flavor": "도시에서 한 때 인기 있던 장난감입니다. 적의 균형을 무너뜨리기 좋습니다. "
+    },
+    "BAG_OF_PREPARATION": {
+      "name": "준비된 가방",
+      "description": "첫 턴에만 2 장의 카드를 추가로 뽑습니다.",
+      "flavor": "대형 모험가의 배낭. 많은 주머니와 끈이 있습니다."
+    },
+    "BIRD_FACED_URN": {
+      "name": "새 머리 항아리",
+      "description": "파워 카드를 사용할 때마다 체력을 2 회복합니다.",
+      "flavor": "이 항아리는 까마귀 신 마잘레스의 짓궂은 모습을 보여줍니다."
+    },
+    "BLACK_BLOOD": {
+      "name": "어두운 피",
+      "description": "불타는 혈액과 교체됩니다. 전투 종료 시 체력을 12 회복합니다.",
+      "flavor": "분노가 짙어집니다."
+    },
+    "BLACK_STAR": {
+      "name": "검은 별",
+      "description": "엘리트 격파 시 유물을 추가로 하나 더 얻을 수 있습니다.",
+      "flavor": "뱀 마을의 고독히 서 있는 촛불 옆에서 발견되었습니다."
+    },
+    "BLOOD_VIAL": {
+      "name": "피가 담긴 병",
+      "description": "전투 시작 시 체력을 2 회복합니다.",
+      "flavor": "나이가 많은 순혈 흡혈귀의 피가 담긴 유리병."
+    },
+    "BLOODY_IDOL": {
+      "name": "피묻은 우상",
+      "description": "골드를 획득할 때마다 체력을 5 회복합니다.",
+      "flavor": "지금부터 이 우상은 끊임없는 핏줄기가 흘러 내립니다."
+    },
+    "BLUE_CANDLE": {
+      "name": "푸른 양초",
+      "description": "사용 불가인 저주 카드를 사용할 수 있게 됩니다.\n저주 카드를 사용하면 체력을 1 잃고 그 카드를 소멸시킵니다.",
+      "flavor": "어둠이 사라지자 불꽃이 점화됩니다."
+    },
+    "BOOT": {
+      "name": "장화",
+      "description": "막히지 않은 피해를 4 이하로 줄 때마다 피해량을 5 로 증가시킵니다.",
+      "flavor": "분위기가 고조될 때마다 장화의 크기가 커집니다."
+    },
+    "BOTTLED_FLAME": {
+      "name": "병 속의 불꽃",
+      "description": "획득 시 공격 카드를 하나 선택합니다. 선택한 카드는 전투 시작 시 뽑는 카드에 포함됩니다.카드를 선택하세요: 전투 시작 시  카드가 뽑는 카드에 포함됩니다.",
+      "flavor": "유리병 속에는 영원히 타오르는 불꽃이 있습니다."
+    },
+    "BOTTLED_LIGHTNING": {
+      "name": "병 속의 번개",
+      "description": "획득 시 스킬 카드를 하나 선택합니다. 선택한 카드는 전투 시작 시 뽑는 카드에 포함됩니다.카드를 선택하세요: 전투 시작 시  카드가 뽑는 카드에 포함됩니다.",
+      "flavor": "몰아치는 소용돌이를 지켜보고 있으면 병에 비친 당신의 얼굴이 되돌아보고 있습니다."
+    },
+    "BOTTLED_TORNADO": {
+      "name": "병 속의 폭풍",
+      "description": "획득 시 파워 카드를 하나 선택합니다. 선택한 카드는 전투 시작 시 뽑는 카드에 포함됩니다.카드를 선택하세요: 전투 시작 시  카드가 뽑는 카드에 포함됩니다.",
+      "flavor": "병이 부드럽게 윙윙거리고 흔들립니다."
+    },
+    "BRIMSTONE": {
+      "name": "유황",
+      "description": "내 턴 시작 시 힘을 ? 얻고, 모든 적들이 힘을 1 얻습니다.",
+      "flavor": "지옥과도 같은 열기를 내뿜습니다."
+    },
+    "BRONZE_SCALES": {
+      "name": "청동 비늘",
+      "description": "전투 시작 시 가시를 3 얻습니다.",
+      "flavor": "수호자의 날카로운 비늘입니다. 사용자를 보호하기 위해서 스스로 재배치합니다."
+    },
+    "BURNING_BLOOD": {
+      "name": "불타는 혈액",
+      "description": "전투 종료 시 체력을 6 회복합니다.",
+      "flavor": "당신의 몸에 흐르는 피는 꺼지지 않는 분노로 타오르고 있습니다."
+    },
+    "BUSTED_CROWN": {
+      "name": "부서진 왕관",
+      "description": "카드 보상을 받을 때 선택할 수 있는 카드가 2 장 줄어듭니다.매 턴 시작 시 [E] 를 얻습니다.",
+      "flavor": "투사의 왕관...혹은 조악한 모조품?"
+    },
+    "CABLES": {
+      "name": "판금 케이블",
+      "description": "가장 오른쪽에 있는 구체의 지속 효과가 한번 더 발동합니다.",
+      "flavor": "\"흥미롭군요! 전투 자동인형도 플라시보의 영향을 받네요.\" - 랜위드"
+    },
+    "CALIPERS": {
+      "name": "캘리퍼스",
+      "description": "매 턴 시작 시 방어도가 완전히 사라지지 않고 방어도를 15 만큼만 잃습니다.",
+      "flavor": "\"기계적인 정밀함이 위대함을 이끌어 낸다.\" - 건축가"
+    },
+    "CALLING_BELL": {
+      "name": "방울",
+      "description": "획득 시, 특별한 저주와 3 개의 유물을 획득합니다.방울 소리가 울려퍼진다...보상 넘기기닫기",
+      "flavor": "이 어두운 철제 방울은 당신이 발견했을 때 3번 울렸지만 지금은 침묵을 지키고 있습니다."
+    },
+    "CAPTAINSWHEEL": {
+      "name": "선장의 타륜",
+      "description": "3번째 턴 시작 시 방어도를 18 얻습니다.",
+      "flavor": "섬세하게 조각된 목제 장신구입니다. 알 수 없는 언어로 이름이 새겨져 있습니다."
+    },
+    "CAULDRON": {
+      "name": "가마솥",
+      "description": "획득 시 5 개의 무작위 포션을 양조합니다.섞고 섞고 섞는다...!",
+      "flavor": "상인은 사실 다소 숙련 된 포션 제조기술을 가지고 있습니다. 4개를 사면 1개는 무료로 얻습니다."
+    },
+    "CENTENNIAL_PUZZLE": {
+      "name": "백년퍼즐",
+      "description": "매 전투에서 처음 피해를 입을 때 카드를 3 장 뽑습니다.",
+      "flavor": "퍼즐을 푸는 순간 당신의 가슴에 강한 온기가 느껴집니다."
+    },
+    "CERAMICFISH": {
+      "name": "물고기 도자기",
+      "description": "덱에 카드를 추가할 때마다 9 골드 를 획득합니다.",
+      "flavor": "세심하게 색칠된 이 물고기들은, 행운을 불러온다며 모셔지고 있었습니다."
+    },
+    "CHAMELEON_RING": {
+      "name": "카멜레온 반지",
+      "description": "휴식 장소에서 포션 제조를 할 수 있습니다.",
+      "flavor": "설명이 없습니다."
+    },
+    "CHAMPION_BELT": {
+      "name": "챔피언 벨트",
+      "description": "적에게 취약을 부여할 때마다 약화도 1 부여합니다.",
+      "flavor": "오직 가장 위대한 자만 이 벨트를 착용할 수 있습니다."
+    },
+    "CHARON_S_ASHES": {
+      "name": "카론의 유골",
+      "description": "카드가 소멸될 때마다 적 전체에게 3 피해를 줍니다.",
+      "flavor": "카론은 타오르는 불꽃 속에서 영원히 죽기와 되살아나기를 반복하는 부활의 신이라 전해집니다."
+    },
+    "CHEMICAL_X": {
+      "name": "케미컬 X",
+      "description": "비용이 X 인 카드의 효과가 +2 만큼 증가합니다.",
+      "flavor": "경고: 설탕, 향신료 그리고 모든 멋진 것과 섞지 마세요."
+    },
+    "CIRCLET": {
+      "name": "관",
+      "description": "모을 수 있는 만큼 모아보세요.",
+      "flavor": "당신은 더 이상 발견할 유물이 없습니다. 놀랍군요!"
+    },
+    "CLOAKCLASP": {
+      "name": "잠금 걸쇠",
+      "description": "턴 종료 시 손에 있는 카드 한 장당 1 의 방어도를 얻습니다.",
+      "flavor": "단순하지만 튼튼한 디자인입니다."
+    },
+    "CLOCKWORKSOUVENIR": {
+      "name": "태엽장치 기념품",
+      "description": "전투 시작 시 인공물을 1 얻습니다.",
+      "flavor": "\"복잡한 톱니바퀴가 정말 많네요.\""
+    },
+    "COFFEE_DRIPPER": {
+      "name": "커피 드리퍼",
+      "description": "를 얻습니다. 더 이상 휴식 장소에서 휴식을 선택할 수 없습니다.내 턴 시작 시 [E]",
+      "flavor": "\"네, 한 잔 더 주세요. 일하러 돌아가. 시작해!\" - 건축가"
+    },
+    "CRACKED_CORE": {
+      "name": "부서진 핵",
+      "description": "전투 시작 시 전기를 1 번 영창합니다.",
+      "flavor": "첨탑에 있는 자동인형에게 미지의 생명의 힘을 동력으로 공급하는 장치입니다. 부서진 것 같아 보입니다."
+    },
+    "CULTISTMASK": {
+      "name": "광신자 머리",
+      "description": "당신은 조금 더 수다스러워집니다.까악!\n까아아악",
+      "flavor": "무리의 일부!"
+    },
+    "CURSED_KEY": {
+      "name": "저주받은 열쇠",
+      "description": "를 추가로 얻습니다. 상자를 열 때마다 저주 카드를 받습니다.내 턴 시작 시 [E]",
+      "flavor": "당신은 열쇠에서 흘러나오는 악의 기운을 느낍니다. 힘에는 대가가 따릅니다."
+    },
+    "DAMARU": {
+      "name": "다마루",
+      "description": "내 턴 시작 시 만트라를 1 얻습니다.",
+      "flavor": "작은 북소리가 정신이 번쩍 들게 하고, 앞으로 가는 길을 드러냅니다."
+    },
+    "DARKSTONE_PERIAPT": {
+      "name": "흑옥 부적",
+      "description": "저주 카드를 받을 때마다 최대 체력 +",
+      "flavor": "이 부적은 암흑 에너지를 끌어모아 착용자의 생명력으로 변환합니다."
+    },
+    "DATADISK": {
+      "name": "데이터 디스크",
+      "description": "전투 시작 시 밀집을 1 얻습니다.",
+      "flavor": "이 디스크는 새와 뱀의 예전 정보를 담고 있습니다."
+    },
+    "DEAD_BRANCH": {
+      "name": "말라죽은 가지",
+      "description": "카드가 소멸될 때마다 무작위 카드를 1 장 얻습니다.",
+      "flavor": "잊힌 시대의 나뭇가지입니다."
+    },
+    "DERP_ROCK": {
+      "name": "Derp Rock",
+      "description": "매 턴 시작 시,  의 충전을 얻습니다.\n(제거하거나 변화시킬 수 없습니다..)",
+      "flavor": "Placeholder"
+    },
+    "DISCERNING_MONOCLE": {
+      "name": "감별용 단안경",
+      "description": "상점의 물건들이 20% 할인됩니다.",
+      "flavor": "매우 날렵해 보이는 단안경입니다."
+    },
+    "DODECAHEDRON": {
+      "name": "DEPRECATED 룬 12면체",
+      "description": "체력이 가득 차 있으면 매 턴 시작 시 [E] 를 추가로 얻습니다.",
+      "flavor": "이 룬문자들은 해석할 수가 없습니다."
+    },
+    "DOLLYSMIRROR": {
+      "name": "돌리의 거울",
+      "description": "획득 시 덱에서 카드를 선택해 복제합니다.복제할 카드를 1장 선택하세요.",
+      "flavor": "\"이걸로 보니까 재밌게 생겼네.\""
+    },
+    "DREAM_CATCHER": {
+      "name": "드림 캐쳐",
+      "description": "휴식할 때마다 카드 보상을 받습니다.",
+      "flavor": "북쪽에 사는 부족들은 종종 밤에 드림 캐쳐를 사용했으며, 이를 통하여 정신 수양을 할 수 있다고 믿었습니다."
+    },
+    "DU_VU_DOLL": {
+      "name": "저주 인형",
+      "description": "덱에 있는 저주 카드의 수만큼 힘을 1 얻습니다. 저주 카드를 가지고 있지 않습니다.  장의 저주 카드를 가지고 있습니다.",
+      "flavor": "악한 기운에서 힘을 얻기 위해 만들어진 인형입니다."
+    },
+    "ECTOPLASM": {
+      "name": "외형질",
+      "description": "앞으로 골드를 얻을 수 없습니다.매 턴 시작 시 [E] 를 추가로 얻습니다.",
+      "flavor": "이 점액질의 기운과 방울은 생명력이 넘쳐보입니다."
+    },
+    "EMOTION_CHIP": {
+      "name": "감정의 조각",
+      "description": "이전 턴에 체력을 잃었다면 턴 시작 시 모든 구체의 지속 효과를 발동시킵니다.",
+      "flavor": "...<3...?"
+    },
+    "EMPTY_CAGE": {
+      "name": "빈 새장",
+      "description": "획득 시 덱에서 2 장의 카드를 제거합니다.제거할 2장의 카드를 선택하세요.",
+      "flavor": "\"당신이 숭배하는 게 우리에 가둬져 있다는 건 드문 일이죠.\" - 랜위드"
+    },
+    "ENCHIRIDION": {
+      "name": "교본",
+      "description": "전투 시작 시 무작위 파워 카드를 1장 얻습니다. 첫 턴 동안 그 카드의 비용이 0 이 됩니다.",
+      "flavor": "고대 리치의 전설적인 학술지입니다."
+    },
+    "ETERNAL_FEATHER": {
+      "name": "영원의 깃털",
+      "description": "덱에 있는 ? 장의 카드마다 휴식 장소에서 3 씩 체력을 회복합니다.",
+      "flavor": "이 깃털은 전혀 파괴할 수가 없습니다. 도대체 어떤 새의 것일까요?"
+    },
+    "FACEOFCLERIC": {
+      "name": "성직자의 얼굴",
+      "description": "매 전투가 끝난 뒤 최대 체력이 1 상승합니다.",
+      "flavor": "다들 성직자를 사랑합니다."
+    },
+    "FOSSILIZEDHELIX": {
+      "name": "조개화석",
+      "description": "전투마다 한 번, 체력을 잃는 것을 막아줍니다.",
+      "flavor": "쉽게 부술 수 없어 보이는데, 어떤 생물의 것인지 궁금하지 않나요?"
+    },
+    "FROZEN_EGG_2": {
+      "name": "얼어붙은 알",
+      "description": "파워 카드를 얻을 때마다 그 카드를 강화합니다.",
+      "flavor": "이 알은 비활성 상태에서 얼어붙어 절대로 부화되지 않습니다."
+    },
+    "FROZEN_EYE": {
+      "name": "얼어붙은 눈",
+      "description": "뽑을 카드 더미를 누르면 카드들이 뽑을 순서대로 나타납니다.",
+      "flavor": "눈을 주시하자, 미래가 흘낏 보이는 것 같습니다."
+    },
+    "FROZENCORE": {
+      "name": "얼어붙은 핵",
+      "description": "부서진 핵과 교체됩니다. 턴 종료 시 빈 구체 슬롯이 있을 경우, 냉기를 1 번 영창합니다.",
+      "flavor": "당신이 지닌 핵의 균열이 차가운 에너지로 가득 차올라 맥동하기 시작합니다."
+    },
+    "FUSION_HAMMER": {
+      "name": "핵융합 망치",
+      "description": "를 얻습니다. 더 이상 휴식 장소에서 재련을 선택할 수 없습니다.내 턴 시작 시 [E]",
+      "flavor": "한 번 휘둘러보면, 소유자는 절대로 이 망치를 놓을 수 없습니다."
+    },
+    "GAMBLING_CHIP": {
+      "name": "도박 칩",
+      "description": "전투 시작 시 원하는 만큼 카드를 버리고 그 만큼 새로운 카드를 뽑습니다.",
+      "flavor": "당신은 한 쪽면에 적혀있는 작은 비문을 볼 수 있습니다:\"베어의 행운 칩!\""
+    },
+    "GINGER": {
+      "name": "생강",
+      "description": "더 이상 약화를 받지 않습니다.",
+      "flavor": "많은 강장제 중에서 잠재력이 으뜸입니다."
+    },
+    "GIRYA": {
+      "name": "케틀벨",
+      "description": "휴식 장소에서 힘을 증가시킬 수 있습니다. (최대 3번 가능합니다.)",
+      "flavor": "이 케틀벨은 측정 할 수 없을 정도로 무겁습니다. 당신은 이것으로 훨씬 더 강해질 수 있도록 훈련 할 수 있습니다."
+    },
+    "GOLDEN_IDOL": {
+      "name": "황금 우상",
+      "description": "적 처치 시 얻는 골드의 양이 25% 증가합니다.",
+      "flavor": "당신은 이 순금 덩어리를 쥐기만 해도 부유해진 느낌이 듭니다."
+    },
+    "GOLDENEYE": {
+      "name": "황금 눈",
+      "description": "예지할 때마다 2 장의 카드를 추가로 예지합니다.",
+      "flavor": "근처에 있는 이들의 움직임을 예지하면서, 그들의 마음을 들여다보세요."
+    },
+    "GREMLIN_HORN": {
+      "name": "그렘린 뿔",
+      "description": "적을 처치할 때마다 [E] 를 얻고 카드를 1 장 뽑습니다.",
+      "flavor": "\"상위 그렘린은 죽을 때까지 성장합니다. 놀랍군요.\" - 랜위드"
+    },
+    "GREMLINMASK": {
+      "name": "그렘린 얼굴",
+      "description": "매 전투를 1 의 약화가 부여된 상태로 시작합니다.",
+      "flavor": "도망칠 시간입니다."
+    },
+    "HANDDRILL": {
+      "name": "핸드 드릴",
+      "description": "적의 방어도를 넘어선 피해를 줄 시, 취약을 2 부여합니다.",
+      "flavor": "\"첨탑은 위험합니다.\""
+    },
+    "HAPPY_FLOWER": {
+      "name": "행복한 꽃",
+      "description": "턴마다 [E] 를 얻습니다.",
+      "flavor": "기쁨으로 넘치는 이 식물은 귀족들 사이에서 인기가 있는 신기한 물건입니다."
+    },
+    "HOLYWATER": {
+      "name": "성수",
+      "description": "순수한 물과 교체됩니다. 매 전투 시작 시, 기적을 3 장 손으로 가져옵니다.",
+      "flavor": "첨탑이 생겨나기 전에 퍼낸 것입니다."
+    },
+    "HORNCLEAT": {
+      "name": "소뿔모양 걸이",
+      "description": "2 번째 턴 시작 시, 방어도를 14 얻습니다.",
+      "flavor": "손에 들기 좋은 형태입니다. 무슨 용도인걸까요?"
+    },
+    "HOVERINGKITE": {
+      "name": "배회하는 연",
+      "description": "매 턴마다 처음으로 카드를 버릴 경우, [E] 를 얻습니다.",
+      "flavor": "연은 미지의 힘으로 날아올라 전투 동안 당신의 주위를 맴돕니다."
+    },
+    "ICE_CREAM": {
+      "name": "아이스크림",
+      "description": "턴 종료 시 남은 에너지가 사라지지 않습니다.",
+      "flavor": "\"맛있네요!\""
+    },
+    "INCENSE_BURNER": {
+      "name": "향로",
+      "description": "6 턴 마다, 불가침을 1 얻습니다.",
+      "flavor": "아주 오래전부터 존재했던 향로입니다. 귀한 나무를 연료로 쓰다니 상상도 할 수 없을 것 같네요."
+    },
+    "INKBOTTLE": {
+      "name": "잉크병",
+      "description": "카드를 10 장 사용할 때마다 카드를 1 장 뽑습니다.",
+      "flavor": "전부 쓰면, 다른 색의 잉크로 다시 채워지는 것 같습니다."
+    },
+    "INSERTER": {
+      "name": "투입기",
+      "description": "2 턴마다 구체 슬롯을 1 개 얻습니다.",
+      "flavor": "투입. 투출. 스택. 반복."
+    },
+    "JUZU_BRACELET": {
+      "name": "염주",
+      "description": "? 방에서 더 이상 이벤트가 아닌 전투가 발생하지 않습니다.",
+      "flavor": "알 수 없는 기운으로부터 보호받습니다."
+    },
+    "KUNAI": {
+      "name": "수리검",
+      "description": "한 턴에 공격 카드를 ? 장 사용할 때마다 민첩을 1 얻습니다.",
+      "flavor": "원거리에서의 치명도가 높아 암살자들이 애용한 물건입니다."
+    },
+    "LANTERN": {
+      "name": "전등",
+      "description": "전투 시작 후 첫 턴에 [E] 를 얻습니다.",
+      "flavor": "들고 있는 사람만 밝혀주는 으스스한 랜턴입니다."
+    },
+    "LEE_S_WAFFLE": {
+      "name": "리의 와플",
+      "description": "획득 시 최대 체력을 7 얻고 체력을 전부 회복합니다.",
+      "flavor": "\"당신이 모든 첨탑에서 찾을 수 있는 가장 맛있는 음식입니다! 오늘 당신만을 위해 구운 것입니다.\""
+    },
+    "LETTER_OPENER": {
+      "name": "편지 칼",
+      "description": "한 턴에 스킬 카드를 3 장 사용할 때마다 적 전체에게 피해를 5 줍니다.",
+      "flavor": "이상할 정도로 날카롭습니다."
+    },
+    "LIVING_BLADE": {
+      "name": "살아있는 칼",
+      "description": "You can get any number of any card.",
+      "flavor": "설명이 없습니다."
+    },
+    "LIZARD_TAIL": {
+      "name": "도마뱀 꼬리",
+      "description": "사망 시 한 번에 한해 체력을 50% 까지 회복시킵니다.",
+      "flavor": "전투 중에 적들을 속이는 가짜 꼬리입니다."
+    },
+    "MAGIC_FLOWER": {
+      "name": "마법 꽃",
+      "description": "전투 중 회복 효율이 50% 증가합니다.",
+      "flavor": "이 꽃은 오랫동안 멸종되었다고 생각됐지만 어째서인지 완벽한 상태로 보존되어 있었습니다."
+    },
+    "MANGO": {
+      "name": "망고",
+      "description": "획득 시 최대 체력 +",
+      "flavor": "가장 탐스러운 잊혀졌던 열매입니다. 역병의 흔적 없이 온전히 보존되어 있습니다."
+    },
+    "MARK_OF_PAIN": {
+      "name": "고통의 표식",
+      "description": "매 턴 시작 시 [R] 를 얻습니다. 전투를 시작할 때 2 장의 부상 카드를 뽑을 카드 더미에 넣고 섞습니다.",
+      "flavor": "이 표식은 북부에 사는 부족들이 전쟁에서 고통에 숙달된 전사들을 나타내기 위해 사용되었습니다."
+    },
+    "MARK_OF_THE_BLOOM": {
+      "name": "개화의 표식",
+      "description": "더 이상 회복할 수 없습니다.",
+      "flavor": "저 편에서, 생각과 현실은 하나입니다."
+    },
+    "MATRYOSHKA": {
+      "name": "마트료시카",
+      "description": "앞으로 열 2 개의 상자에 유물이 2 개씩 들어 있습니다. (보스 상자 제외)다음 열 상자에 유물이 2 개 들어 있습니다. (보스 상자 제외)유물에서 더 이상 힘이 느껴지지 않습니다.",
+      "flavor": "겹쳐 놓을 수 있는 도색된 인형세트입니다. 도색은 하얀 눈과 푸른 깃털을 가진 알려지지 않은 새를 표현하고 있습니다."
+    },
+    "MAWBANK": {
+      "name": "아귀 저금통",
+      "description": "첨탑을 한 층 오를 때마다 12 골드를 얻습니다. 상점에서 어떤 방식으로든 골드를 사용한다면 이후 발동하지 않습니다.이미 사용된 유물입니다.",
+      "flavor": "아귀가 주기적으로 사람들을 공격함에도 불구하고, 매우 인기가 좋습니다."
+    },
+    "MEALTICKET": {
+      "name": "식권",
+      "description": "상점 방에 진입할 경우 체력을 15 회복합니다.",
+      "flavor": "\"매번 방문 시 미트볼을 무료로 제공합니다!\""
+    },
+    "MEAT_ON_THE_BONE": {
+      "name": "고기 덩어리",
+      "description": "전투 종료 시 체력이 50% 이하라면 체력을 12 회복합니다.",
+      "flavor": "계속 고기가 보충되어서 없어질 기미가 보이지 않습니다."
+    },
+    "MEDICAL_KIT": {
+      "name": "구급 상자",
+      "description": "사용 불가인 상태이상 카드를 사용할 수 있게 됩니다. 사용한 상태이상 카드는 소멸 됩니다.",
+      "flavor": "\"당신에게 필요한 모든 것이 있습니다!  가려움 치료제, 화상 치료제, 해독제 그리고 더!\""
+    },
+    "MELANGE": {
+      "name": "혼합물",
+      "description": "덱을 섞을 때마다, 예지 3.",
+      "flavor": "어디서 온 건지 알 수 없는 미지의 모래입니다. 시나몬 향이 납니다."
+    },
+    "MEMBERSHIP_CARD": {
+      "name": "멤버십 카드",
+      "description": "모든 상품 50% 할인!",
+      "flavor": "\"가장 소중한 고객분들을 위해서 보너스 멤버쉽을 제공합니다!\""
+    },
+    "MERCURY_HOURGLASS": {
+      "name": "수은 모래시계",
+      "description": "내 턴 시작 시 적 전체에게 피해를 3 줍니다.",
+      "flavor": "영원히 흐르는 마법의 모래시계입니다."
+    },
+    "MOLTEN_EGG_2": {
+      "name": "녹아내린 알",
+      "description": "공격 카드를 얻을 때마다 그 카드를 강화합니다.",
+      "flavor": "불사조의 알입니다. 부글부글 끓고 있는 용암으로 빨갛게 타오르고 있습니다."
+    },
+    "MUMMIFIED_HAND": {
+      "name": "미라의 손",
+      "description": "파워 카드를 사용할 때마다 무작위 카드 1장의 비용이 이번 턴 동안 0 이 됩니다.",
+      "flavor": "당신의 맥박이 빨라질 때 특히 자주 꿈틀거립니다."
+    },
+    "MUTAGENICSTRENGTH": {
+      "name": "돌연변이의 힘",
+      "description": "전투 시작 시 힘을 ? 얻습니다. 첫번째 턴 종료 시 힘을 3 잃습니다.",
+      "flavor": "\"실험 결과는 피험체가 위기에 처했을 때, 순간적으로 나타납니다.\" - 불명"
+    },
+    "NECRONOMICON": {
+      "name": "네크로노미콘",
+      "description": "매 턴 처음 사용한 비용이 2 이상인 공격 카드가 2 번 사용됩니다. 이 유물을 획득할 시 저주 카드를 받습니다. 이상의 공격 카드가 두 번 사용됩니다.",
+      "flavor": "어리석은 자만 이 사악한 힘을 사용할 것입니다. 밤마다 당신은 정신이 책에게 잡아먹히는 꿈을 꾸게 됩니다."
+    },
+    "NEOWSBLESSING": {
+      "name": "니오우의 비탄",
+      "description": "앞으로 3 번의 전투 동안 적의 체력이 1 이 됩니다..이미 사용된 성물입니다.",
+      "flavor": "니오우가 비탄하며 수여한 성물입니다."
+    },
+    "NILRY_S_CODEX": {
+      "name": "닐리의 고서",
+      "description": "턴이 끝날 때 마다 세 무작위 카드 중 하나를 골라 카드 더미에 섞어 넣습니다.",
+      "flavor": "악명이 자자한 게임 마스터가 편찬했습니다. 읽는 사람의 시야를 넓혀준다고 합니다."
+    },
+    "NINJA_SCROLL": {
+      "name": "닌자 두루마리",
+      "description": "첫 턴에 3 장의 단도 카드를 얻습니다.",
+      "flavor": "암살의 비법이 적혀 있습니다."
+    },
+    "NLOTH_S_GIFT": {
+      "name": "느로스의 선물",
+      "description": "앞으로 몬스터 보상에서 희귀 카드가 나올 확률이 3 배 증가합니다.",
+      "flavor": "느로스의 이상한 선물 입니다. 당신이 그것을 풀려고 할때마다, 동일한 크기의 다른 상자가 안에 있습니다."
+    },
+    "NLOTHSMASK": {
+      "name": "느로스의 배고픈 얼굴",
+      "description": "다음에 열게 될 보스 상자가 아닌 상자는 비어있습니다.",
+      "flavor": "당신은 허기를 느낍니다."
+    },
+    "NUCLEAR_BATTERY": {
+      "name": "핵 배터리",
+      "description": "전투 시작 시 플라즈마 를 1 번 영창합니다.",
+      "flavor": "오오..."
+    },
+    "NULLSTONE_PERIAPT": {
+      "name": "Nullstone Periapt",
+      "description": "적이 당신에게 시전하는 디버프를 반사합니다.\n10턴 이 지나면 재충전 됩니다.",
+      "flavor": "설명이 없습니다."
+    },
+    "NUNCHAKU": {
+      "name": "쌍절곤",
+      "description": "공격 카드를  장 사용할 때마다 [E] 를 얻습니다.",
+      "flavor": "좋은 훈련 도구입니다. 사용자의 자세를 바로잡고 민첩성을 향상시킵니다."
+    },
+    "ODD_MUSHROOM": {
+      "name": "이상한 버섯",
+      "description": "플레이어가 취약에 걸렸을 때 50% 대신 25% 의 추가 피해량을 받습니다.",
+      "flavor": "\"이상한 버섯을 섭취하자 나는 점점 더...둔감해져갔다.\" - 랜위드 "
+    },
+    "ODDLY_SMOOTH_STONE": {
+      "name": "매끄러운 돌",
+      "description": "민첩을 1 얻은 채로 전투를 시작합니다.",
+      "flavor": "당신은 이토록 매끄럽고 깨끗한 것을 본 적이 없습니다.  틀림없이 이것은 고대의 작품일 것입니다."
+    },
+    "OLD_COIN": {
+      "name": "낡은 동전",
+      "description": "획득 시 300 골드 를 얻습니다.",
+      "flavor": "독특한 동전은 상인들의 역사적 가치와 희귀한 금속 재질로 높은 값어치를 지니고 있습니다."
+    },
+    "OMAMORI": {
+      "name": "부적",
+      "description": "앞으로 얻을 2 장의 저주를 막아줍니다.앞으로 얻을 1 장의 저주를 막아줍니다.유물에서 더 이상 힘이 느껴지지 않습니다.",
+      "flavor": "악령을 막아주는 평범한 부적입니다. 이것은 신성한 에너지를 가지고 있는 것 같습니다."
+    },
+    "ORANGEPELLETS": {
+      "name": "오렌지 알약",
+      "description": "한 턴에 파워 카드, 공격 카드, 스킬 카드를 전부 사용할 경우 현재 지닌 모든 해로운 효과를 제거합니다.",
+      "flavor": "\"첨탑 전체에서 발견되는 다양한 균류들로 만들어진 이 알약은, 그 어떤 고통도 이겨낼 수 있게 합니다.\""
+    },
+    "ORICHALCUM": {
+      "name": "오리하르콘",
+      "description": "턴 종료 시 방어도가 없다면 방어도를 6 얻습니다.",
+      "flavor": "녹색으로 빛나는 근원을 알 수 없는 금속. 파괴가 불가능해 보입니다."
+    },
+    "ORNAMENTAL_FAN": {
+      "name": "장식용 부채",
+      "description": "한 턴에 공격 카드를 3 장 사용할 때마다 방어도를 4 얻습니다.",
+      "flavor": "피를 쏟을수록 이 부채는 늘어나고 단단해지는 것 같습니다."
+    },
+    "ORRERY": {
+      "name": "태양계 모형",
+      "description": "획득 시 카드 보상을 5 회 받습니다.지식!",
+      "flavor": "\"일단 우주를 이해하게 되면...\" - 조로스"
+    },
+    "PANDORA_S_BOX": {
+      "name": "판도라의 상자",
+      "description": "획득 시 모든 타격과 수비가 변화합니다.판도라의 상자가 열렸다...",
+      "flavor": "당신은 이것을 열자 불길한 기운을 느낍니다."
+    },
+    "PANTOGRAPH": {
+      "name": "팬터그래프",
+      "description": "보스 전투 시작 시 체력을 25 회복합니다.",
+      "flavor": "\"견고한 토대는 우연이 아닙니다. 계획을 위한 도구는 반드시 필요합니다.\" - 건축가"
+    },
+    "PAPER_CRANE": {
+      "name": "종이 핰",
+      "description": "약화된 적의 공격 피해량이 25% 대신 40% 만큼 감소합니다.",
+      "flavor": "옛 시대의 동물의 모습을 표현한 종이 모형입니다."
+    },
+    "PAPER_FROG": {
+      "name": "종이 게구리",
+      "description": "취약 상태의 적이 50% 대신 75% 의 피해를 추가로 받습니다.",
+      "flavor": "그 종이는 계속 접혀지며 스스로 작은 생명체로 변화합니다."
+    },
+    "PEACE_PIPE": {
+      "name": "평화의 담뱃대",
+      "description": "휴식 장소에서 카드를 제거할 수 있게 됩니다.",
+      "flavor": "마음과 영혼을 정화합니다."
+    },
+    "PEAR": {
+      "name": "배",
+      "description": "획득 시 최대 체력 +",
+      "flavor": "역병이 있기 전에 흔하게 보이던 과일입니다."
+    },
+    "PEN_NIB": {
+      "name": "펜 촉",
+      "description": "10 번 째 사용하는 공격 카드의 피해량이 두 배로 증가합니다.",
+      "flavor": "펜 촉을 잡자, 당신은 펜의 이전 소유자가 해왔던 모든 학살을 볼 수 있습니다. 폭력의 역사를."
+    },
+    "PHILOSOPHER_S_STONE": {
+      "name": "현자의 돌",
+      "description": "매 턴 시작 시 [E] 를 추가로 얻습니다. 전투 시작 시 모든 적이 힘을 1 얻습니다.",
+      "flavor": "돌에서 뿜어져 나오는 가공되지 않은 힘은 근처의 모두에게 힘을 부여합니다."
+    },
+    "POCKETWATCH": {
+      "name": "회중시계",
+      "description": "한 턴에 카드를 3 장 이하로 사용할 경우 다음 턴 시작 시 3 장의 카드를 추가로 뽑습니다.",
+      "flavor": "바늘은 3시 정각에 고정되어 있는 것 같습니다."
+    },
+    "POTION_BELT": {
+      "name": "포션 벨트",
+      "description": "획득 시 포션 슬롯을 2 개 얻습니다.",
+      "flavor": "이 벨트가 있으면 포션을 더 많이 들고 다닐 수 있어!"
+    },
+    "PRAYER_WHEEL": {
+      "name": "전경기",
+      "description": "일반적인 적에게서 카드 보상을 추가로 얻을 수 있습니다.",
+      "flavor": "바퀴는 계속 돌고 있으며 멈추지 않습니다."
+    },
+    "PRESERVEDINSECT": {
+      "name": "곤충 박제",
+      "description": "엘리트 방의 적들이 25% 적은 HP를 지닙니다.",
+      "flavor": "이 곤충은 특히 큰 적을 위축시키는 기운을 뿜어낼 수 있었던 것으로 보입니다."
+    },
+    "PRISMATICSHARD": {
+      "name": "프리즘 조각",
+      "description": "이제 전투 보상 화면에 무색 카드와 다른 색상의 카드가 포함됩니다.",
+      "flavor": "조각을 통해, 완전히 새로운 관점으로 무언가를 바라볼 수 있게 됐습니다."
+    },
+    "PUREWATER": {
+      "name": "순수한 물",
+      "description": "매 전투 시작 시 기적을 손으로 가져옵니다.",
+      "flavor": "고운 모래를 통해 여과되어 불순물이 없습니다."
+    },
+    "QUESTION_CARD": {
+      "name": "물음표 카드",
+      "description": "앞으로의 카드 보상에서 카드 선택지가 1 개 더 주어집니다.",
+      "flavor": "\"더 많은 선택지는 혼돈의 위험을 줄여줍니다.\" - 위대한 쿠빌라이"
+    },
+    "RED_CIRCLET": {
+      "name": "붉은 왕관",
+      "description": "매우 가치가 있어 보이는군요.",
+      "flavor": "당신은 더 이상 발견할 유물이 없습니다. 놀랍군요!"
+    },
+    "RED_MASK": {
+      "name": "붉은 가면",
+      "description": "전투 시작 시 적 전체에게 약화를 1 부여합니다.",
+      "flavor": "붉은 가면 도적단 우두머리의 세련된 가면입니다. 이제는 이것을 쓰고 있는 당신이 리더인 것일까요?"
+    },
+    "RED_SKULL": {
+      "name": "붉은 해골",
+      "description": "체력이 50% 이하일 때 힘을 3 얻습니다.",
+      "flavor": "장식용 도색으로 덮힌 작은 해골입니다."
+    },
+    "REGAL_PILLOW": {
+      "name": "호화로운 베개",
+      "description": "휴식 을 취할 때마다 15 의 체력을 추가로 회복합니다.",
+      "flavor": "숙면을 위한 필수품입니다."
+    },
+    "RING_OF_THE_SERPENT": {
+      "name": "구렁이의 반지",
+      "description": "뱀의 반지 와 교체됩니다. ?매 턴 시작 시, 카드를 1 장 추가로 뽑습니다.",
+      "flavor": "당신의 반지는 모습을 바꾸며 변화합니다."
+    },
+    "RING_OF_THE_SNAKE": {
+      "name": "뱀의 반지",
+      "description": "첫 턴에만 2 장의 카드를 추가로 뽑습니다.",
+      "flavor": "화석이 된 뱀으로 만들었습니다. 뛰어난 기술을 가진 여사냥꾼을 나타냅니다."
+    },
+    "RUNIC_CAPACITOR": {
+      "name": "룬 축전기",
+      "description": "매 전투를 3 개의 구체 슬롯을 더 가진 채로 시작합니다.",
+      "flavor": "다다익선."
+    },
+    "RUNIC_CUBE": {
+      "name": "룬 큐브",
+      "description": "체력을 잃을 때마다 카드를 1 장 뽑습니다.",
+      "flavor": "이 룬문자들은 해석할 수가 없습니다."
+    },
+    "RUNIC_DOME": {
+      "name": "룬 반구",
+      "description": "를 추가로 얻습니다. 더 이상 적의 의도 를 알 수 없게 됩니다.매 턴 시작 시 [E]",
+      "flavor": "이 룬문자들은 해석할 수가 없습니다."
+    },
+    "RUNIC_PYRAMID": {
+      "name": "룬 피라미드",
+      "description": "더 이상 자신의 턴이 끝날 때 카드를 버리지 않습니다.",
+      "flavor": "이 룬문자들은 해석할 수가 없습니다."
+    },
+    "SACREDBARK": {
+      "name": "성스러운 나무껍질",
+      "description": "포션의 효과가 두 배가 됩니다.",
+      "flavor": "세계수에서 떨어져나왔다는 소문이 있습니다."
+    },
+    "SELF_FORMING_CLAY": {
+      "name": "자가 형성 점토",
+      "description": "전투 중 체력을 잃을 때마다 다음 턴에 방어도를 3 씩 얻습니다.",
+      "flavor": "\"흥미롭군요! 제가 생각하는대로 모습이 바뀌는 것 같은데 말이죠! 텔레-점토라고 하면 되려나요?\" - 랜위드"
+    },
+    "SHOVEL": {
+      "name": "삽",
+      "description": "휴식 장소에서 유물을 발굴 할 수 있게 됩니다.",
+      "flavor": "첨탑에는 과거 문명의 모든 유물과 잊힌 시대의 강력한 모험가가 있습니다. 그것을 발굴할 시간입니다!"
+    },
+    "SHURIKEN": {
+      "name": "표창",
+      "description": "한 턴에 공격 카드를 ? 장 사용할 때마다 힘을 1 얻습니다.",
+      "flavor": "경량화된 투척 무기입니다. 눈을 향해 던지는 것을 추천합니다."
+    },
+    "SINGING_BOWL": {
+      "name": "노래하는 그릇",
+      "description": "카드 보상을 얻는 대신 최대 체력을 2 증가시킬 수 있습니다.",
+      "flavor": "자주 사용되는 이 공예품은 부딪힐 때 아름다운 선율이 울려 퍼집니다."
+    },
+    "SLAVERSCOLLAR": {
+      "name": "노예 상인의 목걸이",
+      "description": "보스와 엘리트 전투 동안, 매 턴 시작 시 [E] 를 추가로 얻습니다.",
+      "flavor": "비참하게 녹슨 사슬입니다."
+    },
+    "SLING": {
+      "name": "용기의 투석구",
+      "description": "엘리트와의 전투에서, 힘을 2 얻은 채로 전투를 시작합니다.",
+      "flavor": "\"강한 상대를 처리할 때 특히 편리한 도구입니다.\""
+    },
+    "SMILING_MASK": {
+      "name": "미소짓는 가면",
+      "description": "상인의 카드 제거 비용이 50 골드 로 고정됩니다.",
+      "flavor": "상인이 사용한 가면입니다. 그는 예비품을 가지고 있는 모양입니다..."
+    },
+    "SNAKE_SKULL": {
+      "name": "스네코의 해골",
+      "description": "중독 을 부여할 때마다 중독을 1 추가로 부여합니다.",
+      "flavor": "새 것 같은 스네코의 해골입니다.  신기할 정도로 깨끗하고 매끈하며 왠지 모르게 먼지와 때가 사라집니다."
+    },
+    "SNECKO_EYE": {
+      "name": "스네코의 눈",
+      "description": "매 턴 2 장의 카드를 더 뽑습니다. 모든 전투를 혼란 상태로 시작합니다.",
+      "flavor": "타락한 스네코의 눈입니다. 당신이 생각했던 것보다 훨씬 거대합니다."
+    },
+    "SOZU": {
+      "name": "소주",
+      "description": "더 이상 포션을 획득할 수 없게 됩니다. 매 턴 시작 시 [E] 를 추가로 얻습니다.",
+      "flavor": "당신이 이 유물 근처에 있자 마법의 액체들이 그것들의 특성을 잃어 버린다는 것을 깨달았습니다."
+    },
+    "SPIRIT_POOP": {
+      "name": "정령의 똥",
+      "description": "매우 불쾌합니다.",
+      "flavor": "정령들에게 제물로 바친 것의 잔해입니다."
+    },
+    "SSSERPENTHEAD": {
+      "name": "배애애애앰 머리",
+      "description": "? 방에 들어갈 시, 골드를 50 얻습니다.",
+      "flavor": "삶에서 가장 만족스러운 일은 바로 뭐든지 살 수 있다는 것이죠!"
+    },
+    "STONECALENDAR": {
+      "name": "석재 달력",
+      "description": "? 번째 턴 종료 시, 적 전체에게 피해를 52 줍니다.",
+      "flavor": "첨탑 내부에서는 시간의 흐름을 감지할 수 없습니다."
+    },
+    "STRANGE_SPOON": {
+      "name": "이상한 숟가락",
+      "description": "50% 의 확률로 카드가 소멸 되는 대신 버려집니다.",
+      "flavor": "숟가락을 주시하다 보면, 당신의 눈 앞에서 그것은 구부러지고 휘어지는 것처럼 보입니다."
+    },
+    "STRAWBERRY": {
+      "name": "딸기",
+      "description": "최대 체력 +",
+      "flavor": "\"정말 맛있군요! 역병이 돌았던 이래로 이렇게 맛있는 것은 본 적이 없어요.\" - 랜위드"
+    },
+    "STRIKEDUMMY": {
+      "name": "타격용 인형",
+      "description": "이름에 \"타격\"을 포함한 카드가 추가로 피해를 3 줍니다.",
+      "flavor": "흠씬 두들겨 맞았습니다."
+    },
+    "SUNDIAL": {
+      "name": "해시계",
+      "description": "덱을  번 섞을 때마다 [E] [E] 를 얻습니다.",
+      "flavor": "\"전 시대의 사람들의 시간에 대한 어리석은 집착은 하늘로부터 계시를 구하고 영원함을 갈망하게 했습니다.\" - 조로스"
+    },
+    "SYMBIOTIC_VIRUS": {
+      "name": "공생 바이러스",
+      "description": "전투 시작 시 어둠 을 1 개 영창합니다.",
+      "flavor": "좋은 것을 많이 하는 약간 나쁜 것..."
+    },
+    "TEARDROPLOCKET": {
+      "name": "눈물 모양 목걸이",
+      "description": "모든 전투 시작 시 명상합니다.",
+      "flavor": "소유주의 눈이 멀었기 때문에, 내용물은 볼 수 없습니다."
+    },
+    "TEST_1": {
+      "name": "테스트용 1",
+      "description": "",
+      "flavor": "베타 테스트를 위한 유물입니다. 개발 전에는 알 수 없습니다."
+    },
+    "TEST_2": {
+      "name": "테스트용 2",
+      "description": "뽑을 카드 더미를 눌러 보면 뽑올 카드의 순서를 알 수 있습니다.",
+      "flavor": "베타 테스트를 위한 유물입니다. 개발 전에는 알 수 없습니다."
+    },
+    "TEST_3": {
+      "name": "테스트용 3",
+      "description": "획득 시, 모든 방어 카드가 강화 됩니다.",
+      "flavor": "베타 테스트를 위한 유물입니다. 개발 전에는 알 수 없습니다."
+    },
+    "TEST_4": {
+      "name": "테스트용 4",
+      "description": "전투 시작 시, 모든 타격 카드의 비용이 0 이 됩니다.",
+      "flavor": "베타 테스트를 위한 유물입니다. 개발 전에는 알 수 없습니다."
+    },
+    "TEST_5": {
+      "name": "테스트용 5",
+      "description": "획득 시 2 장의 스킬 카드를 무작위로 강화 합니다.",
+      "flavor": "베타 테스트를 위한 유물입니다. 개발 전에는 알 수 없습니다."
+    },
+    "TEST_6": {
+      "name": "테스트용 6",
+      "description": "턴이 끝날 때 마다, ? 방어도를 100 골드 만큼 얻습니다.",
+      "flavor": "베타 테스트를 위한 유물입니다. 개발 전에는 알 수 없습니다."
+    },
+    "TEST_7": {
+      "name": "테스트용 7",
+      "description": "엘리트 처치 시 유물 을 추가로 하나 더 얻을 수 있습니다.",
+      "flavor": "베타 테스트를 위한 유물입니다. 개발 전에는 알 수 없습니다."
+    },
+    "TEST_8": {
+      "name": "테스트용 8",
+      "description": "매 턴 2 장의 카드를 더 뽑습니다. 모든 전투를 혼란 상태로 시작합니다.",
+      "flavor": "베타 테스트를 위한 유물입니다. 개발 전에는 알 수 없습니다."
+    },
+    "THE_COURIER": {
+      "name": "배달원",
+      "description": "상인의 상품이 품절되지 않으며 비용 또한 20% 감소합니다.",
+      "flavor": "상인의 애완동물입니다!"
+    },
+    "THE_SPECIMEN": {
+      "name": "표본",
+      "description": "적이 죽을 때 갖고 있던 중독 이 무작위로 다른 적에게 옮겨집니다.",
+      "flavor": "\"놀랍군요! 놀라운 독성을 가진 돌연변이 생물체를 발견했어요. 나중에 조사할 수 있도록 샘플은 보관해두세요.\" - 랜위드"
+    },
+    "THEABACUS": {
+      "name": "주판",
+      "description": "덱을 섞을 때마다 방어도를 6 얻습니다.",
+      "flavor": "\"하나...둘...셋...\""
+    },
+    "THREAD_AND_NEEDLE": {
+      "name": "실과 바늘",
+      "description": "전투 시작 시 판금 갑옷 을 4 얻습니다.",
+      "flavor": "당신의 몸 주위에 마법의 실을 두르자 더 단단해진 것을 느낍니다 ."
+    },
+    "TINGSHA": {
+      "name": "팅샤",
+      "description": "자신의 턴에 카드를 버릴 때마다 무작위 적에게 피해를 3 줍니다.",
+      "flavor": "이 악기가 내는 소리는 고통을 줄 수 있는 음량까지 반향을 일으킬 수 있는 것 같습니다."
+    },
+    "TINY_CHEST": {
+      "name": "작은 상자",
+      "description": "매 4 번째 방문하는 #? 방은 보물 방이 됩니다.",
+      "flavor": "\"훌륭한 시제품이군요.\" - 건축가"
+    },
+    "TINY_HOUSE": {
+      "name": "작은 집",
+      "description": "포션을 1 개 획득합니다.\n? 골드를 획득합니다.\n최대 체력을 5 얻습니다.\n카드를 보상을 획득합니다.\n무작위 카드 1 장을 강화합니다.작은 집!",
+      "flavor": "\"완벽한 소형화 기술로 구현했습니다. 내 인생 최고의 작품이지만 아직 부족합니다.\" - 건축가"
+    },
+    "TOOLBOX": {
+      "name": "공구함",
+      "description": "전투 시작 시 무작위 무색 카드를 셋 중 하나를 골라 손으로 가져옵니다.",
+      "flavor": "모든 작업을 위한 도구입니다."
+    },
+    "TORII": {
+      "name": "토리이",
+      "description": "5  이하의 체력을 잃을 때 대신 1 만 잃습니다.",
+      "flavor": "작은 토리이를 잡자, 당신은 마음이 평온해지고 안정감이 느껴집니다."
+    },
+    "TOUGH_BANDAGES": {
+      "name": "질긴 붕대",
+      "description": "내 턴에 카드를 버릴 때마다 방어도를 3 를 얻습니다.",
+      "flavor": "버리는 만큼 힘을 얻습니다."
+    },
+    "TOXIC_EGG_2": {
+      "name": "유독성 알",
+      "description": "스킬 카드를 얻을 때마다 그 카드를 강화 합니다.",
+      "flavor": "\"정말 놀라운 발견이군요! 어떤 마법생물의 비활성화된 알 같군요. 누가 이것을 만들었을까요?\" - 랜위드"
+    },
+    "TOY_ORNITHOPTER": {
+      "name": "장난감 비행기",
+      "description": "포션을 사용할 때마다 체력을 5 회복합니다.",
+      "flavor": "\"이 작은 장난감은 외로운 모험가에게 최고의 동반자입니다!\""
+    },
+    "TUNGSTENROD": {
+      "name": "텅스텐 막대",
+      "description": "체력을 잃을 때마다, 1 만큼 덜 잃습니다.",
+      "flavor": "정말 정말 무겁습니다."
+    },
+    "TURNIP": {
+      "name": "순무",
+      "description": "더 이상 손상 을 받지 않습니다.",
+      "flavor": "생강과 함께라면 최고죠."
+    },
+    "TWISTEDFUNNEL": {
+      "name": "뒤틀린 깔때기",
+      "description": "전투 시작 시, 적 전체에게 4 의 중독 을 부여합니다.",
+      "flavor": "\"여기에 뭔갈 담아서 마시고 싶진 않네요.\""
+    },
+    "UNCEASING_TOP": {
+      "name": "멈추지 않는 팽이",
+      "description": "당신의 턴 동안 손에 카드가 없으면 카드를 1장 뽑습니다.",
+      "flavor": "팽이는 당신의 꿈에 있는 것처럼 쉽게 돌아갑니다."
+    },
+    "VAJRA": {
+      "name": "금강저",
+      "description": "힘을 1 얻은 채로 전투를 시작합니다.",
+      "flavor": "명예로운 전투를 한 전사에게 주어진 장식용 유물입니다."
+    },
+    "VELVET_CHOKER": {
+      "name": "벨벳 초커",
+      "description": "한 턴에  장의 카드만 사용할 수 있습니다. 매 턴 시작 시 [E] 를 얻습니다.이번 턴에 이미 카드를 다 사용했어. 카드 제한 :",
+      "flavor": "\"엄청난 힘이지만, 너무 제한적입니다.\" - 위대한 쿠빌라이"
+    },
+    "VIOLETLOTUS": {
+      "name": "보라색 연꽃",
+      "description": "명상이 끝날 경우, [E] 를 추가로 얻습니다.",
+      "flavor": "옛 문헌에 따르면, \"마나 호수\" 위에 이 꽃들이 흩어져 있었다고 합니다."
+    },
+    "WAR_PAINT": {
+      "name": "위장크림",
+      "description": "획득 시 스킬 카드 2 장이 무작위로 강화 됩니다.",
+      "flavor": "과거에, 아이언클래드들은 전투에 나가기 전 마법의 위장크림을 사용했다고 전해집니다."
+    },
+    "WARPEDTONGS": {
+      "name": "휘어진 집게",
+      "description": "매턴 시작 시, 손에 있는 무작위 카드를 이번 전투 동안 강화합니다.",
+      "flavor": "이 저주받은 집게는 원래 있었던 곳으로 돌아가고 싶은 욕구를 강하게 발산 중입니다."
+    },
+    "WHETSTONE": {
+      "name": "숫돌",
+      "description": "획득 시 공격 카드 2 장이 무작위로 강화 됩니다.",
+      "flavor": "\"육체는 결코 강철을 능가할 수 없습니다.\" - 위대한 쿠빌라이"
+    },
+    "WHITE_BEAST_STATUE": {
+      "name": "하얀 짐승 석상",
+      "description": "전투가 끝날 때 항상 포션을 얻습니다.",
+      "flavor": "당신이 한 번도 본 적이 없는 생물의 작고 하얀 조각상입니다."
+    },
+    "WINGEDGREAVES": {
+      "name": "윙 부츠",
+      "description": "다음 방을 선택할 때 경로를 3 번까지 무시할 수 있습니다.",
+      "flavor": "멋짐."
+    },
+    "WRISTBLADE": {
+      "name": "손목검",
+      "description": "비용이 0 인 공격 카드가 4 의 피해를 추가로 줍니다.",
+      "flavor": "암살에 용이합니다."
+    },
+    "YANG": {
+      "name": "음양성",
+      "description": "공격 카드를 사용할 때마다, 임시로 민첩을 1 얻습니다.",
+      "flavor": "\"그리고 태양은, 마치 제 앞에 커튼이 닫히듯이 영원히 빛을 잃었다.\" - 조로스"
+    },
+    "YIN": {
+      "name": "음",
+      "description": "스킬 카드를 사용할 때마다, 임시로 1 의 힘을 얻습니다.",
+      "flavor": "어둠이 없다면 빛도 가질 수 없죠. 그렇지 않습니까?"
+    }
+  },
+  "powers": {
+    "ACCURACY": {
+      "name": "정밀",
+      "description": "단도의 피해량이 X 증가합니다."
+    },
+    "ADAPTATION": {
+      "name": "추월",
+      "description": "진노할 때마다 카드를 X 장 뽑습니다.X 장 뽑습니다."
+    },
+    "AFTER_IMAGE": {
+      "name": "잔상",
+      "description": "카드를 사용할 때마다 방어도를 X 얻습니다."
+    },
+    "ALWAYSMAD": {
+      "name": "DEPRECATED Always Mad",
+      "description": "No longer receive double damage while in Wrath."
+    },
+    "AMPLIFY": {
+      "name": "증폭",
+      "description": "이번 턴에 사용하는 다음 파워 카드를 두 번 사용합니다.X이번 턴에 사용하는 다음 X 장의 파워 카드를 두 번 사용합니다."
+    },
+    "ANGELFORM": {
+      "name": "데바",
+      "description": "턴 종료 시 판금 갑옷 을 X 얻습니다."
+    },
+    "ANGER": {
+      "name": "격분",
+      "description": "스킬 카드를 사용하면 힘 을 X 얻습니다."
+    },
+    "ANGRY": {
+      "name": "분노",
+      "description": "X공격 피해를 입을 때마다, 힘을 X 얻습니다."
+    },
+    "ARTIFACT": {
+      "name": "인공물",
+      "description": "해로운 효과를 X 번 무효화 합니다.X 번 무효화 합니다."
+    },
+    "ATTACK_BURN": {
+      "name": "공격 불사르기",
+      "description": "사용한 공격 카드를 소멸 시킵니다.\n지속 턴수 : XX사용한 공격 카드를 소멸 시킵니다.\n지속 턴수 : X"
+    },
+    "BACKATTACK": {
+      "name": "백 어택",
+      "description": "당신의 뒤에서 공격해, 50% 더 많은 피해를 줍니다."
+    },
+    "BARRICADE": {
+      "name": "바리케이드",
+      "description": "턴 시작 시 방어도 가 사라지지 않습니다.X턴 시작 시 방어도 가 사라지지 않습니다."
+    },
+    "BATTLEHYMN": {
+      "name": "전투 찬가",
+      "description": "매 턴 시작 시, 엄벌 을 X 장 손으로 가져옵니다.X 장 손으로 가져옵니다."
+    },
+    "BEATOFDEATH": {
+      "name": "죽음의 고동",
+      "description": "카드를 사용할 때마다, 플레이어가 피해를 X 받습니다."
+    },
+    "BERSERK": {
+      "name": "광폭화",
+      "description": "턴 시작 시 X 을 얻습니다."
+    },
+    "BIAS": {
+      "name": "편향",
+      "description": "턴 시작 시 밀집 을 X 잃습니다."
+    },
+    "BLOCKRETURNPOWER": {
+      "name": "방어도 반환",
+      "description": "공격받을 경우, 방어도를 X 획득합니다."
+    },
+    "BLUR": {
+      "name": "흐릿함",
+      "description": "다음 턴 시작 시 방어도 가 사라지지 않습니다.X다음 턴 시작 시 방어도 가 사라지지 않습니다.\n지속 턴수 : X"
+    },
+    "BRUTALITY": {
+      "name": "무자비",
+      "description": "턴 시작 시 체력 을 X 잃고 카드 X 장을 뽑습니다.X턴 시작 시 체력 을 X 잃고 카드 X 장을 뽑습니다."
+    },
+    "BUFFER": {
+      "name": "버퍼",
+      "description": "다음 번에 체력 을 잃는 것을 막아줍니다.X다음 X 번 체력 을 잃는 것을 막아줍니다."
+    },
+    "BULLET_TIME": {
+      "name": "불릿 타임",
+      "description": "현재 모든 녹색 카드의 비용은 0입니다."
+    },
+    "BURST": {
+      "name": "폭주",
+      "description": "이번 턴에 사용하는 다음 스킬 카드를 두 번 사용합니다.X이번 턴에 사용하는 다음 X 장의 스킬 카드를 두 번 사용합니다."
+    },
+    "CANNOTCHANGESTANCEPOWER": {
+      "name": "경지 전환 불가",
+      "description": "이번 턴 동안 경지 를 바꿀 수 없습니다."
+    },
+    "CHOKED": {
+      "name": "교살",
+      "description": "이번 턴에 카드를 사용할 때마다 X 의 피해를 받습니다."
+    },
+    "COLLECT": {
+      "name": "수집",
+      "description": "다음 턴 시작 시, 기적+ 를 손으로 가져옵니다.X다음 X 턴 동안 턴 시작 시, 기적+ 를 손으로 가져옵니다."
+    },
+    "COMBUST": {
+      "name": "연소",
+      "description": "턴 종료 시 체력 을 X 잃고 적 전체에게 X 의 피해를 줍니다."
+    },
+    "COMPULSIVE": {
+      "name": "반응",
+      "description": "공격 피해를 입을 시, 의도를 변경합니다."
+    },
+    "CONDENSE": {
+      "name": "DEPRECATED Condense",
+      "description": "You cannot take more than X from any attack."
+    },
+    "CONFUSION": {
+      "name": "혼란",
+      "description": "카드를 뽑을 때 마다 비용이 무작위로 정해집니다."
+    },
+    "CONSERVE": {
+      "name": "보존",
+      "description": "에너지 가 다음 턴까지 보존됩니다.X에너지 가 다음 X 턴 동안 보존됩니다."
+    },
+    "CONSTRICTED": {
+      "name": "포박",
+      "description": "턴 종료 시 X 의 피해를 받습니다."
+    },
+    "CONTROLLED": {
+      "name": "마음의 요새",
+      "description": "경지를 바꿀 때마다, 방어도를 X 얻습니다."
+    },
+    "CORPSEEXPLOSIONPOWER": {
+      "name": "시체 폭발",
+      "description": "적이 죽게 될 경우, 적 전체에게 해당 적의 최대 체력만큼의 피해를 줍니다.X적이 죽게 될 경우, 적 전체에게 해당 적의 최대 체력 X 배 만큼의 피해를 줍니다."
+    },
+    "CORRUPTION": {
+      "name": "타락",
+      "description": "스킬 카드의 비용이 0 입니다.\n스킬 카드를 사용할 때마다 소멸 시킵니다.X스킬 카드를 사용할 때마다 소멸 시킵니다."
+    },
+    "CREATIVE_AI": {
+      "name": "창의적인 인공지능",
+      "description": "턴 시작 시 무작위 파워 카드를 X 장 얻습니다.X 장 얻습니다."
+    },
+    "CURIOSITY": {
+      "name": "호기심",
+      "description": "파워 카드를 사용할 때마다 힘 을 X 얻습니다."
+    },
+    "CURL_UP": {
+      "name": "몸 말기",
+      "description": "공격 피해를 받으면, 몸을 말고 방어도 를 X 얻습니다."
+    },
+    "DANCE_PUPPET": {
+      "name": "인형 놀이",
+      "description": "스킬 카드를 제외한 카드를 사용할 때마다 X 의 피해를 받습니다. (카드 유형은 매 턴 변합니다)X공격 카드를 제외한 카드를 사용할 때마다 인형 놀이 X+1 을 받습니다."
+    },
+    "DARK_EMBRACE": {
+      "name": "어둠의 포옹",
+      "description": "카드가 소멸 될 때마다 카드를 1 장 뽑습니다.X카드가 소멸 될 때마다 카드를 X 장을 뽑습니다."
+    },
+    "DEMON_FORM": {
+      "name": "악마화",
+      "description": "턴 시작 시 힘을 X 얻습니다."
+    },
+    "DEVAFORM": {
+      "name": "천신",
+      "description": "턴 시작 시, [W] 를X턴 시작 시, [W] 를 X 번 X 얻고, 얻을 수 있는 양이 X 만큼 증가합니다.XTRANSLATE NOTE: At the start of your turn, gain [W] 2 times and increase this by 1."
+    },
+    "DEVOTIONPOWER": {
+      "name": "헌신",
+      "description": "턴 시작 시, 만트라 를 X 얻습니다."
+    },
+    "DEXLOSS": {
+      "name": "민첩 감소",
+      "description": "턴 종료 시 민첩 을 X 잃습니다."
+    },
+    "DEXTERITY": {
+      "name": "민첩",
+      "description": "카드에서 얻는 방어도 가 다음 수치만큼 증가합니다 : X카드에서 얻는 방어도 가 다음 수치만큼 감소합니다 : X."
+    },
+    "DISCIPLINEPOWER": {
+      "name": "규율",
+      "description": "턴을 마친 뒤 이번 턴에 사용하지 않은 [W] 만큼 다음 턴에 추가로 카드를 뽑습니다."
+    },
+    "DOUBLE_DAMAGE": {
+      "name": "두 배의 피해",
+      "description": "공격 이 X 턴간 두 배의 피해를 줍니다.X 턴간 두 배의 피해를 줍니다."
+    },
+    "DOUBLE_TAP": {
+      "name": "연사",
+      "description": "이번 턴에 사용하는 다음 공격 카드가 두 번 사용됩니다.X이번 턴에 사용하는 다음 X 장의 공격 카드가 두 번 사용됩니다."
+    },
+    "DRAW": {
+      "name": "드로우",
+      "description": "매 턴 X 장의 카드를 더 뽑습니다.X 장의 카드를 덜 뽑습니다.X 장의 카드를 더 뽑습니다.X 장의 카드를 덜 뽑습니다."
+    },
+    "DRAW_CARD": {
+      "name": "카드 뽑기",
+      "description": "다음턴 X 장의 카드를 뽑습니다.X 장의 카드를 뽑습니다."
+    },
+    "DRAW_DOWN": {
+      "name": "드로우 저하",
+      "description": "다음 턴 X 장의 카드를 덜 뽑습니다.X 장의 카드를 덜 뽑습니다."
+    },
+    "DRAW_REDUCTION": {
+      "name": "드로우 저하",
+      "description": "다음 턴에 카드를 1 장 덜 뽑습니다.X1 장의 카드를 X 턴 동안 덜 뽑습니다."
+    },
+    "DUPLICATIONPOWER": {
+      "name": "복제",
+      "description": "이번 턴에 사용하는 다음 카드를 두 번 사용합니다.X이번 턴에 사용하는 다음X 장의 카드를 두 번 사용합니다."
+    },
+    "ECHO_FORM": {
+      "name": "메아리",
+      "description": "매 턴 처음 사용하는 카드가 두 번 사용됩니다.X매 턴 처음 사용하는 X 장의 카드가 두 번 사용됩니다."
+    },
+    "ELECTRO": {
+      "name": "전기판",
+      "description": "전기 모든 적을 대상으로 합니다.XX"
+    },
+    "EMOTIONALTURMOILPOWER": {
+      "name": "DEPRECATED Emotional Turmoil",
+      "description": "At the start of your turn, enter a new random basic stance."
+    },
+    "ENDTURNDEATH": {
+      "name": "모독자",
+      "description": "턴 시작 시, 죽습니다."
+    },
+    "ENERGIZED": {
+      "name": "혈기왕성",
+      "description": "다음 턴에 X [G] 를 추가로 얻습니다. X [G] 를 추가로 얻습니다. X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENERGIZEDBLUE": {
+      "name": "가압",
+      "description": "다음 턴에 X [B] 를 추가로 얻습니다. X [B] 를 추가로 얻습니다. X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENERGYDOWNPOWER": {
+      "name": "단식",
+      "description": "턴 시작 시, X 를(을) 잃습니다."
+    },
+    "ENTANGLED": {
+      "name": "속박",
+      "description": "1 턴 동안 공격 카드를 사용할 수 없습니다."
+    },
+    "ENVENOM": {
+      "name": "독 바르기",
+      "description": "방어되지 않은 공격 피해를 입힐 때마다 X 의 중독 을 부여합니다."
+    },
+    "EQUILIBRIUM": {
+      "name": "평형",
+      "description": "이번 턴 종료 시 카드를 버리지 않습니다.XX 턴 동안 턴 종료 시 카드를 버리지 않습니다."
+    },
+    "ESTABLISHMENTPOWER": {
+      "name": "지배",
+      "description": "카드가 보존될 경우, 그 카드의 비용을 X 낮춥니다."
+    },
+    "EVOLVE": {
+      "name": "진화",
+      "description": "상태이상 카드를 가져올 때마다 카드를 1 장 뽑습니다.X 상태이상 카드를 뽑을 때마다 카드를 X 장을 뽑습니다."
+    },
+    "EXPLOSIVE": {
+      "name": "폭발성",
+      "description": "X 턴 뒤, 폭발하며 X 의 피해를 줍니다.X자신의 턴에 폭발하며 다음 수치만큼 피해를 줍니다. :"
+    },
+    "EXTRA_CARDS": {
+      "name": "추가 카드",
+      "description": "다음 턴 1 장 더 카드를 뽑습니다.X다음턴 X 장 더 카드를 뽑습니다."
+    },
+    "FADING": {
+      "name": "희미해짐",
+      "description": "X 턴 뒤 죽습니다.X이번 턴에 죽습니다."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "무감각",
+      "description": "카드가 소멸 될 때마다 방어도 를 X 얻습니다."
+    },
+    "FIRE_BREATHING": {
+      "name": "불 뿜기",
+      "description": "턴 종료 시 이번 턴에 사용된 공격 카드 수만큼 적 전체에게 X 의 피해를 줍니다."
+    },
+    "FLAME_BARRIER": {
+      "name": "화염 장벽",
+      "description": "공격 피해를 받을 시, 피해를 X 줍니다."
+    },
+    "FLEX": {
+      "name": "몸 풀기",
+      "description": "턴 종료 시 힘을 X 잃습니다."
+    },
+    "FLICKPOWER": {
+      "name": "Flick",
+      "description": "When this enemy gets Flick X2 more times, it receives X1 more time, it receives X damage."
+    },
+    "FLIGHT": {
+      "name": "비행",
+      "description": "받는 피해가 50% 로 감소합니다. 한 턴 동안 공격 피해를 X 번 입을 시 사라집니다."
+    },
+    "FLOWPOWER": {
+      "name": "DEPRECATED 흐름의 힘",
+      "description": "공격 카드를 사용할 때마다 임시로 힘 을 X 얻습니다. 스킬 카드를 사용할 때마다 임시로 민첩 을 ,X 얻습니다."
+    },
+    "FOCUS": {
+      "name": "밀집",
+      "description": "구체 의 효과를 다음 수치만큼 증가시킵니다: X구체 의 효과를 다음 수치만큼 감소시킵니다: X."
+    },
+    "FRAIL": {
+      "name": "손상",
+      "description": "카드로부터 얻는 방어도 가 25% 감소합니다.\n지속 턴수 : XX"
+    },
+    "FREEATTACKPOWER": {
+      "name": "무료 공격 파워",
+      "description": "다음 공격 의 에너지 비용을 무시합니다.X다음 X 장의 공격 의 에너지 비용을 무시합니다."
+    },
+    "FREETOPLAYPOWER": {
+      "name": "DEPRECATED Joy",
+      "description": "Ignore energy costs on the next card you play this turn.XIgnore energy costs on the next X cards you play this turn."
+    },
+    "GAMBIT": {
+      "name": "도박",
+      "description": "X 턴 후X 턴 후X [B] 를 얻습니다 ."
+    },
+    "GROUNDED": {
+      "name": "DEPRECATED Grounded",
+      "description": "Whenever you play a Skill, enter Calm."
+    },
+    "GROWTHPOWER": {
+      "name": "성장",
+      "description": "매 턴 종료 시 힘을 X  얻습니다."
+    },
+    "HEATSINK": {
+      "name": "방열",
+      "description": "파워 카드를 사용할 때마다 카드를 X 장 뽑습니다.X 장 뽑습니다."
+    },
+    "HELLO": {
+      "name": "안녕하세요",
+      "description": "턴 시작 시 무작위 일반 카드를 X 장 얻습니다.X 장 얻습니다."
+    },
+    "HEX": {
+      "name": "주술",
+      "description": "공격 카드를 제외한 카드를 사용할 때마다 X 장의 어지러움 카드를 뽑을 카드 더미에 섞습니다."
+    },
+    "HIDE": {
+      "name": "은신",
+      "description": "다음 턴이 시작할 때까지 체력 을 잃지 않습니다.XX 턴 동안 체력 을 잃지 않습니다."
+    },
+    "HOTHOT": {
+      "name": "DEPRECATED Hot hot",
+      "description": "While you are in Wrath, deal X damage back whenever you receive attack damage."
+    },
+    "INFINITE_BLADES": {
+      "name": "무한의 검날",
+      "description": "턴 시작 시 단도 카드 X 장을 손에 추가합니다.X 장을 손에 추가합니다."
+    },
+    "INTANGIBLE": {
+      "name": "불가침",
+      "description": "이번 턴 동안 받는 피해와 체력 손실을 전부 1 로 감소시킵니다. 불가침은 2턴 마다 다시 부여됩니다."
+    },
+    "INTANGIBLEPLAYER": {
+      "name": "불가침",
+      "description": "받는 피해와 체력 손실을 전부 1 로 감소시킵니다."
+    },
+    "INVERTED": {
+      "name": "뒤집힘",
+      "description": "피해에 면역입니다. 당신이 방어도 를 얻으면, 그만큼 체력 을 잃습니다."
+    },
+    "INVINCIBLE": {
+      "name": "천하무적",
+      "description": "이번 턴에 X 체력 이상을 잃지 않습니다.X이번 턴에 더 이상 피해를 입지 않습니다."
+    },
+    "JUGGERNAUT": {
+      "name": "절대적인 힘",
+      "description": "방어도 를 얻을 때마다 무작위의 적에게 X의 피해를 줍니다."
+    },
+    "KNOWLEDGE": {
+      "name": "지식",
+      "description": "파워 카드를 사용할 때마다 카드를 X 장 뽑습니다."
+    },
+    "LIFE_LINK": {
+      "name": "생명 연결",
+      "description": "다른 적이 살아 있다면 2 턴 뒤 체력 이 50% 인 상태로 부활합니다."
+    },
+    "LIKEWATERPOWER": {
+      "name": "여류",
+      "description": "턴 종료 시, 명상 중일 경우, 방어도를 X 얻습니다."
+    },
+    "LOCKON": {
+      "name": "목표 지정됨",
+      "description": "구체로부터 받는 피해가 X% 증가합니다. X 턴 지속됩니다.X 턴 지속됩니다."
+    },
+    "LOOP": {
+      "name": "반복",
+      "description": "턴 시작 시 가장 오른쪽 구체 의 지속 효과를 발동시킵니다.X턴 시작 시 가장 오른쪽 구체의 지속 효과를 X 번 발동시킵니다."
+    },
+    "MACHINE_LEARNING": {
+      "name": "기계학습",
+      "description": "턴 시작 시 카드를 X 장 더 뽑습니다.X 장 더 뽑습니다."
+    },
+    "MAGNETISM": {
+      "name": "자기력",
+      "description": "턴 시작 시 무작위 무색 카드 %s 장을 얻습니다.X턴 시작 시 무작위 무색 카드 %s 장을 얻습니다."
+    },
+    "MALLEABLE": {
+      "name": "탄성",
+      "description": "체력 을 잃을 시 방어도 를 X 얻습니다. X 이 효과를 발휘할 때마다 얻는 방어도 가 증가합니다. 내 턴의 시작에 다시 X 으로 리셋됩니다."
+    },
+    "MANTRA": {
+      "name": "만트라",
+      "description": "만트라 를 X 획득할 경우, 강림 합니다."
+    },
+    "MASTERREALITYPOWER": {
+      "name": "현실 지배",
+      "description": "카드가 생성될 때마다 그 카드를 강화합니다.Xdep.Xdep.Xdep."
+    },
+    "MASTERY": {
+      "name": "DEPRECATED 선불선",
+      "description": "현재 경지 와 다른 경지 에 도달하게 되면, X [B] 를 얻습니다."
+    },
+    "MAYHEM": {
+      "name": "대혼란",
+      "description": "턴 시작 시, 뽑을 카드 더미 맨 위에 있는 카드를 사용합니다.X턴 시작 시, 뽑을 카드 더미 맨 위에 있는 카드를 X 장 사용합니다."
+    },
+    "METALLICIZE": {
+      "name": "금속화",
+      "description": "매 턴 종료 시 X 방어도 를 얻습니다.X매 턴 종료 시 X 방어도 를 얻습니다."
+    },
+    "MINION": {
+      "name": "하수인",
+      "description": "하수인들은 그들의 지도자가 죽으면 전투를 포기합니다."
+    },
+    "MODE_SHIFT": {
+      "name": "모드 전환",
+      "description": "X 의 피해를 입으면, 방어 모드로 전환합니다."
+    },
+    "NEXT_TURN_BLOCK": {
+      "name": "다음 턴 방어",
+      "description": "다음 턴 시작 시 방어도 를 X 얻습니다."
+    },
+    "NIGHT_TERROR": {
+      "name": "악몽",
+      "description": "다음 턴 시작 시 X 카드를 얻습니다."
+    },
+    "NIRVANA": {
+      "name": "열반",
+      "description": "예지할 때마다 방어도를 X 얻습니다."
+    },
+    "NO_ATTACK": {
+      "name": "공격 불가",
+      "description": "이번 턴에 공격 카드를 사용할 수 없습니다."
+    },
+    "NO_DRAW": {
+      "name": "드로우 불가",
+      "description": "턴 종료까지 카드를 뽑을 수 없습니다."
+    },
+    "NOBLOCKPOWER": {
+      "name": "방어 불가",
+      "description": "카드를 통해 방어도 를 얻을 수 없습니다."
+    },
+    "NOSKILLS": {
+      "name": "스킬 불가",
+      "description": "이번 턴에 스킬 을 사용할 수 없습니다."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "유독 가스",
+      "description": "매 턴 시작 시 적 전체에게 X의 중독 을 부여합니다."
+    },
+    "NULLIFY_ATTACK": {
+      "name": "공격 무효화",
+      "description": "매 턴 한번의 공격 을 완전히 Blocks 합니다."
+    },
+    "OMEGAPOWER": {
+      "name": "오메가 파워",
+      "description": "턴 종료 시 적 전체에게 피해를 X 줍니다."
+    },
+    "OMNISCIENCEPOWER": {
+      "name": "전지",
+      "description": "DEPERCATEDXDEPERCATED"
+    },
+    "PAINFUL_STABS": {
+      "name": "깊은 자상",
+      "description": "이 적에게 피해를 입을 때마다, 부상 카드를 버린 카드 더미에 더합니다."
+    },
+    "PANACHE": {
+      "name": "위풍당당",
+      "description": "이번 턴에 X 장 이상의 카드를 사용하면, 적 전체에게 X 피해를 가합니다.X 장 이상의 카드를 사용하면, 적 전체에게"
+    },
+    "PATHTOVICTORYPOWER": {
+      "name": "표식",
+      "description": "급소 를 사용할 때마다, 대상 적이 HP를 X 잃습니다."
+    },
+    "PEN_NIB": {
+      "name": "펜 촉",
+      "description": "다음 공격은 두 배의 피해를 가합니다."
+    },
+    "PHANTASMAL": {
+      "name": "환영",
+      "description": "다음 턴에 두 배 의 피해 를 줍니다.X다음 X 턴 동안 두 배 의 피해 를 줍니다.."
+    },
+    "PLATED_ARMOR": {
+      "name": "판금 갑옷",
+      "description": "턴 종료 시 X 방어도 를 얻습니다. 막히지 않은 공격 피해를 받으면 판금 갑옷 이 1 감소합니다.X턴 종료 시 X 방어도 를 얻습니다. 막히지 않은 공격 피해를 받으면 판금 갑옷 이 1 감소합니다."
+    },
+    "POISON": {
+      "name": "중독",
+      "description": "턴 시작 시 X 의 피해를 받고, 중독 이 1 감소합니다.X턴 시작 시"
+    },
+    "PRIME": {
+      "name": "밑작업",
+      "description": "구체 를 영창 할 때마다 카드를 X 장 뽑습니다.X 장 뽑습니다."
+    },
+    "PRIMITIVE": {
+      "name": "depre.",
+      "description": "Whenever you play a Common card, draw X card.X cards."
+    },
+    "RAGE": {
+      "name": "격노",
+      "description": "이번 턴에 피해를 줄 때마다 방어도 를 X 얻습니다."
+    },
+    "REBOUND": {
+      "name": "되돌리기",
+      "description": "이번 턴에 사용하는 다음 카드를 뽑을 카드 더미의 맨 위에 올립니다.X이번 턴에 사용하는 다음 X 장의 카드를 뽑을 카드 더미의 맨 위에 올립니다."
+    },
+    "REDUCE_DAMAGE": {
+      "name": "피해 감소",
+      "description": "다음 수치만큼 받는 피해를 감소시킵니다 :"
+    },
+    "REGENERATE": {
+      "name": "재생",
+      "description": "턴 종료 시 체력 을 X 회복합니다."
+    },
+    "REGENERATION": {
+      "name": "재생",
+      "description": "턴 종료 시 체력 을 X 만큼 회복합니다.\n지속 턴수 : X"
+    },
+    "REPAIR": {
+      "name": "수리",
+      "description": "전투 종료 시 체력 을 X 회복합니다."
+    },
+    "REPULSE": {
+      "name": "현기증 유발",
+      "description": "X 공격 피해를 받으면, 당신의 손에 부상 카드를 추가합니다."
+    },
+    "RETAIN_CARDS": {
+      "name": "카드 보존",
+      "description": "매 턴 종료 시, X 장까지 카드를 보존할 수 있습니다.X 장까지 카드를 보존할 수 있습니다."
+    },
+    "RETAIN_HAND": {
+      "name": "카드 보존",
+      "description": "턴 종료 시 X 턴 동안 카드를 버리지 않습니다.X턴 종료 시 카드를 버리지 않습니다."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED 회개",
+      "description": "HP를 잃을 떄마다, 원기 를 X 획득합니다."
+    },
+    "RIPOSTE": {
+      "name": "응수",
+      "description": "한 턴에 한 번 공격 카드를 사용하면 X 의 피해를 줍니다."
+    },
+    "RITUAL": {
+      "name": "의식",
+      "description": "턴 종료 시, 힘을 X 얻습니다.X턴 종료 시, 힘을"
+    },
+    "RUPTURE": {
+      "name": "파열",
+      "description": "카드의 효과로 체력 을 잃을 때마다 힘을 X 얻습니다."
+    },
+    "SADISTIC": {
+      "name": "가학적",
+      "description": "적에게 디버프를 부여할 때마다 X 의 피해를 줍니다."
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Serenity",
+      "description": "While you are in Calm, HP loss is reduced by"
+    },
+    "SERPENTINE": {
+      "name": "거대뱀",
+      "description": "포션 에 면역입니다."
+    },
+    "SHACKLED": {
+      "name": "족쇄",
+      "description": "턴 종료 시 힘을 X 다시 얻습니다."
+    },
+    "SHARP_HIDE": {
+      "name": "날카로운 껍질",
+      "description": "공격 을 받을 때마다 당신은 X 의 피해를 받습니다."
+    },
+    "SHIFTING": {
+      "name": "변하는 중",
+      "description": "X체력을 잃을 때마다, 턴 종료까지 그만큼의 힘 을 잃습니다."
+    },
+    "SHRIEK_FROM_BEYOND": {
+      "name": "저편에서의 비명",
+      "description": "공격 카드를 낼 때마다, 임의의 카드를 버립니다."
+    },
+    "SKILL_BURN": {
+      "name": "스킬 불사르기",
+      "description": "X 턴 동안 사용한 스킬 카드를 소멸 시킵니다.XX 턴 동안 사용한 스킬 카드를 소멸 시킵니다."
+    },
+    "SLOW": {
+      "name": "둔화",
+      "description": "이번 턴 사용한 카드 한 장당, X 는 공격 카드로 인한 피해를 10% 더 받습니다.X ( X% 피해를 추가로 받습니다.)"
+    },
+    "SPLIT": {
+      "name": "분열",
+      "description": "체력 이 50% 이하가 되면 2 개의 작은 슬라임으로 분열하며, 각각 X 의 현재 체력 과 동일한 체력 을 가집니다."
+    },
+    "SPORE_CLOUD": {
+      "name": "포자 구름",
+      "description": "사망 시, 당신에게 취약 을 X 부여합니다."
+    },
+    "STASIS": {
+      "name": "정지",
+      "description": "사망 시, 당신에게 X 카드를 돌려줍니다."
+    },
+    "STATICDISCHARGE": {
+      "name": "정전기 방전",
+      "description": "공격 피해를 받을 때마다 전기 를 X 번 영창 합니다."
+    },
+    "STORM": {
+      "name": "폭풍",
+      "description": "파워 카드를 사용할 때마다 전기 를 X 번 영창 합니다."
+    },
+    "STRENGTH": {
+      "name": "힘",
+      "description": "공격 피해가 다음 수치만큼 증가합니다 : X공격 피해가 다음 수치만큼 감소합니다 : X."
+    },
+    "STRIKEUP": {
+      "name": "타격 강화",
+      "description": "이름에 타격 을 포함한 카드가 추가로 피해를 X 줍니다."
+    },
+    "STUDY": {
+      "name": "학습",
+      "description": "턴 종료 시, 뽑을 카드 더미에 통찰을 X 장 섞어 넣습니다.X 장 섞어 넣습니다."
+    },
+    "SURROUNDED": {
+      "name": "포위됨",
+      "description": "당신의 뒤에서 공격할 시 추가로 50%의 피해를 줍니다. 보는 방향을 변경하려면 대상을 지정하는 카드나 포션을 사용하십시오."
+    },
+    "THEBOMB": {
+      "name": "폭탄",
+      "description": "%1$s 턴 후 턴 종료 시, 적 전체에게 피해를 %2$s 줍니다.X이번 턴 종료 시, 적 전체에게 피해를 %1$s 줍니다."
+    },
+    "THIEVERY": {
+      "name": "도둑질",
+      "description": "은(는) 공격할 때마다 X 골드 를 훔칩니다."
+    },
+    "THORNS": {
+      "name": "가시",
+      "description": "공격 피해를 받을 때마다, X 의 피해를 돌려줍니다."
+    },
+    "THOUSAND_CUTS": {
+      "name": "능지처참",
+      "description": "카드를 낼 때마다, X 의 피해를 줍니다."
+    },
+    "TIME_WARP": {
+      "name": "시간 왜곡",
+      "description": "카드를 X 장 낼 때마다,  당신의 턴이 종료되고 시간 포식자가 힘을 X 얻습니다."
+    },
+    "TIMEMAZEPOWER": {
+      "name": "시간 미로",
+      "description": "카드를 X 장 낼 때마다, 당신의 턴이 종료됩니다."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "작업 도구",
+      "description": "턴 시작 시, X 장 뽑고 X 장 버립니다.X 장 뽑고 X 장 버립니다."
+    },
+    "UNAWAKENED": {
+      "name": "비활성",
+      "description": "이 적은 아직 깨어나지 않았습니다..."
+    },
+    "UNSTABLE": {
+      "name": "불안정",
+      "description": "충분한 피해를 줘 균형을 무너뜨리십시오."
+    },
+    "VAULT": {
+      "name": "잠금",
+      "description": "다음 턴 시작 시 피해를 X 줍니다."
+    },
+    "VENOMOLOGY": {
+      "name": "독소학",
+      "description": "중독 이 감소하는 대신 매 턴 X 만큼 증가합니다."
+    },
+    "VIGOR": {
+      "name": "활력",
+      "description": "다음 공격 이 추가로 X 피해를 줍니다."
+    },
+    "VULNERABLE": {
+      "name": "취약",
+      "description": "공격 으로부터 X% 더 많은 피해를 받습니다.\n지속 턴수 : XX"
+    },
+    "WAVEOFTHEHANDPOWER": {
+      "name": "장법",
+      "description": "방어도를 얻을 때마다 적 전체에게 약화를 X 부여합니다."
+    },
+    "WAVEOFTHEHANDPOWER2": {
+      "name": "dep",
+      "description": "dep.Xdep."
+    },
+    "WEAKENED": {
+      "name": "약화",
+      "description": "공격 이 X% 더 적은 피해를 줍니다.\n지속 턴수 : XX"
+    },
+    "WIREHEADINGPOWER": {
+      "name": "선견지명",
+      "description": "턴 시작 시, 예지 X."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "유령화",
+      "description": "턴 종료 시 민첩을 X 잃습니다."
+    },
+    "WRATHNEXTTURNPOWER": {
+      "name": "들끓는 울화",
+      "description": "다음 턴 시작 시 진노합니다."
+    }
+  },
+  "potions": {
+    "AMBROSIA": {
+      "name": "암브로시아",
+      "description": "강림합니다."
+    },
+    "ANCIENT_POTION": {
+      "name": "고대 포션",
+      "description": "인공물을 1 얻습니다."
+    },
+    "ATTACKPOTION": {
+      "name": "공격 포션",
+      "description": "무작위 공격 카드 셋 중 하나를 선택해 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다.1무작위 공격 카드 셋 중 하나를 선택해 2 장을 얻습니다. 이번 턴 동안 해당 카드의 비용이 0 이 됩니다."
+    },
+    "BLESSINGOFTHEFORGE": {
+      "name": "재련의 축복",
+      "description": "손에 있는 모든 카드를 이번 전투 동안 강화합니다."
+    },
+    "BLOCK_POTION": {
+      "name": "방어도 포션",
+      "description": "방어도를 12 얻습니다."
+    },
+    "BLOODPOTION": {
+      "name": "피 포션",
+      "description": "최대 체력의 20% 를 회복합니다."
+    },
+    "BOTTLEDMIRACLE": {
+      "name": "병 속의 기적",
+      "description": "기적을 2 장 얻습니다."
+    },
+    "COLORLESSPOTION": {
+      "name": "무색 포션",
+      "description": "무색 카드 셋 중 하나를 선택해 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다.1무색 카드 셋 중 하나를 선택해 2 장을 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다."
+    },
+    "CULTISTPOTION": {
+      "name": "광신자 포션",
+      "description": "의식을 1 얻습니다."
+    },
+    "CUNNINGPOTION": {
+      "name": "교활함 포션",
+      "description": "단도+ 를 3 장 얻습니다."
+    },
+    "DEXTERITY_POTION": {
+      "name": "민첩 포션",
+      "description": "민첩을 2 얻습니다."
+    },
+    "DISTILLEDCHAOS": {
+      "name": "정제된 혼돈",
+      "description": "뽑을 카드 더미 위에서부터 3 장의 카드를 사용합니다."
+    },
+    "DUPLICATIONPOTION": {
+      "name": "복제 포션",
+      "description": "이번 턴에, 다음으로 내는 카드가 두 번 사용됩니다.1이번 턴에, 다음으로 내는 2 장의 카드가 두 번 사용됩니다."
+    },
+    "ELIXIR": {
+      "name": "엘릭서",
+      "description": "손패에 있는 모든 상태이상 과 저주 카드를 소멸 시킵니다.아무 일도 일어나지 않았다..."
+    },
+    "ELIXIRPOTION": {
+      "name": "엘릭서",
+      "description": "손에 있는 카드를 원하는 만큼 소멸시킵니다."
+    },
+    "ENERGY_POTION": {
+      "name": "에너지 포션",
+      "description": "에너지를 2 얻습니다."
+    },
+    "ENTROPICBREW": {
+      "name": "엔트로피의 영액",
+      "description": "빈 포션 슬롯을 무작위 포션으로 채웁니다."
+    },
+    "ESSENCEOFDARKNESS": {
+      "name": "암흑의 정수",
+      "description": "모든 구체 슬롯에 암흑을 1 번 영창합니다."
+    },
+    "ESSENCEOFSTEEL": {
+      "name": "강철의 정수",
+      "description": "판금 갑옷을 4 얻습니다."
+    },
+    "EXPLOSIVE_POTION": {
+      "name": "폭발 포션",
+      "description": "적 전체에게 피해를 10 줍니다."
+    },
+    "FAIRYPOTION": {
+      "name": "병 속의 요정",
+      "description": "사망 시 이 포션을 버리는 대신 최대 체력의 30% 까지 체력을 회복합니다."
+    },
+    "FEARPOTION": {
+      "name": "공포 포션",
+      "description": "취약을 3 부여합니다."
+    },
+    "FIRE_POTION": {
+      "name": "화염 포션",
+      "description": "피해를 20 줍니다."
+    },
+    "FOCUSPOTION": {
+      "name": "밀집 포션",
+      "description": "밀집을 2 얻습니다."
+    },
+    "FRUIT_JUICE": {
+      "name": "과일 주스",
+      "description": "최대 체력을 5 얻습니다."
+    },
+    "GAMBLERSBREW": {
+      "name": "도박꾼의 영액",
+      "description": "원하는 만큼 카드를 버리고 버린 만큼 카드를 뽑습니다."
+    },
+    "GHOSTINAJAR": {
+      "name": "단지 속의 유령",
+      "description": "불가침을 1 얻습니다."
+    },
+    "HEALTH_POTION": {
+      "name": "체력 포션",
+      "description": "체력을  회복합니다."
+    },
+    "HEARTOFIRON": {
+      "name": "무쇠의 심장",
+      "description": "금속화를 6 얻습니다."
+    },
+    "LIQUIDBRONZE": {
+      "name": "청동 액체",
+      "description": "가시를 3 얻습니다."
+    },
+    "LIQUIDMEMORIES": {
+      "name": "액상 기억",
+      "description": "버린 카드 더미에서 카드를 선택해 손으로 들고 옵니다. 이번 턴에 비용이 0 이 됩니다.1버린 카드 더미에서 카드를  장 선택해 손으로 들고 옵니다. 이번 턴에 비용이 0 이 됩니다."
+    },
+    "POISON_POTION": {
+      "name": "중독 포션",
+      "description": "중독을 6 부여합니다."
+    },
+    "POTION_SLOT": {
+      "name": "포션 슬롯",
+      "description": "포션을 사용해서 자신에게 유리한 효과를 얻거나 적에게 불리한 효과를 줄 수 있습니다.0포션 슬롯"
+    },
+    "POTIONOFCAPACITY": {
+      "name": "수용의 포션",
+      "description": "구체 슬롯을 2 개 얻습니다."
+    },
+    "POWERPOTION": {
+      "name": "파워 포션",
+      "description": "무작위 파워 카드 셋 중 하나를 선택해 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다.1무작위 파워 카드 셋 중 하나를 선택해 2 장 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다."
+    },
+    "REGEN_POTION": {
+      "name": "재생 포션",
+      "description": "재생을 5 얻습니다."
+    },
+    "SKILLPOTION": {
+      "name": "스킬 포션",
+      "description": "무작위 스킬 카드 셋 중 하나를 선택해 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다.1무작위 스킬 카드 셋 중 하나를 선택해 2 장 얻습니다. 이번 턴 동안 그 카드의 비용이 0 이 됩니다."
+    },
+    "SMOKEBOMB": {
+      "name": "연막탄",
+      "description": "보스가 아닌 적으로부터 도망칩니다. 보상은 얻을 수 없습니다.0포위당했어!"
+    },
+    "SNECKOOIL": {
+      "name": "스네코 기름",
+      "description": "카드를 5 장 뽑습니다. 손에 있는 카드의 비용을 무작위로 변경합니다."
+    },
+    "SPEEDPOTION": {
+      "name": "속도 포션",
+      "description": "민첩을 5 얻습니다. 턴 종료 시 민첩을  잃습니다."
+    },
+    "STANCEPOTION": {
+      "name": "경지 포션",
+      "description": "선택: 명상 하거나 진노 합니다."
+    },
+    "STEROIDPOTION": {
+      "name": "몸풀기용 포션",
+      "description": "힘을 5 얻습니다. 턴 종료 시 힘을  잃습니다."
+    },
+    "STRENGTH_POTION": {
+      "name": "힘 포션",
+      "description": "힘을 2 얻습니다."
+    },
+    "SWIFT_POTION": {
+      "name": "신속 포션",
+      "description": "3카드를  장 뽑습니다."
+    },
+    "WEAK_POTION": {
+      "name": "약화 포션",
+      "description": "약화를 3 부여합니다."
+    }
+  },
+  "events": {
+    "MASKED_BANDITS": {
+      "name": "가면 도적단",
+      "description": "헤헤헤.. 골드 고마워! \n 오, 난 골드가 좋아. 너무 멋있어. \n 반짝 반짝, 얻을 수 있다면 뭐든 할 수 있지!",
+      "choices": [
+        "[지불] 골드를 전부 잃습니다.",
+        "[전투!]",
+        "[계속]",
+        "[떠난다]"
+      ]
+    },
+    "SENSORYSTONE": {
+      "name": "감각석",
+      "description": "저편을 탐험하는 중, 당신은 허공에서 빛나는 4차원의 도형이 회전하고 변화하는 것을 발견합니다.",
+      "choices": [
+        "[회상] 1장의 무색 카드 보상을 획득합니다.",
+        "[회상] 2장의 무색 카드 보상을 획득합니다. 체력을 잃습니다.",
+        "[회상] 3장의 무색 카드 보상을 획득합니다. 체력을 잃습니다."
+      ]
+    },
+    "UPGRADE_SHRINE": {
+      "name": "강화 성소",
+      "description": "당신 앞에 잊힌 영혼을 기리는 공들인 성소가 놓여있습니다.",
+      "choices": [
+        "[기도] 카드 1장을 강화합니다.",
+        "[떠난다] 강화할 카드를 선택하십시오."
+      ]
+    },
+    "BACK_TO_BASICS": {
+      "name": "고대 문자",
+      "description": "도시를 오르면서 당신은 고대의 존재들의 글이 쓰여진 벽을 발견합니다. 수수께끼 같은 기호와 문자들이 무엇을 의미하는지 파악하려고 노력하여 그 글이 빛 이란 단어로 시작한다는 것을 알아냈습니다. 갑자기 글의 내용이 명확해져 갑니다...",
+      "choices": [
+        "[우아] 덱에서 카드를 1장 제거합니다.",
+        "[단순] 타격 카드와 수비 카드를 전부 강화합니다. 제거할 카드를 선택하십시오.",
+        "[떠난다]"
+      ]
+    },
+    "WORLD_OF_GOOP": {
+      "name": "끈적이 천지",
+      "description": "당신은 물웅덩이에 빠졌습니다. \n 그 웅덩이는 끈적이 슬라임으로 가득 차 있습니다!! \n 서서히 끈적이들이 타오르는 것을 느낀 당신은 극도로 흥분하여 수분간 스스로를 긁었습니다. \n 귀와 코를 포함한 모든 곳에서 끈적임이 느껴집니다. \n \n 기어 올라와보니 당신은 일부 골드가 사라진 것을 알아차렸습니다. 웅덩이를 되돌아보니 당신은 잃어버린 동전들이 다른 불행한 모험가들의 골드와 함께 웅덩이 속에 섞여있는 것을 알아차렸습니다.",
+      "choices": [
+        "[골드를 챙긴다] 골드를 획득합니다. 체력을 잃습니다.",
+        "[건드리지 않는다] 골드를 잃습니다."
+      ]
+    },
+    "GOLDEN_WING": {
+      "name": "날개 조각상",
+      "description": "돌과 바위들 사이에서, 당신은 날개 모양의 복잡하고 커다란 푸른 조각상을 발견했습니다. \n 당신은 그것의 틈새로부터 쏟아져 나오는 골드를 발견했습니다. \n 아마 안쪽에는 더 많이 있겠죠...",
+      "choices": [
+        "[기도] 카드 1장을 덱에서 제거합니다. 체력을 잃습니다.",
+        "[파괴] 골드를 - 획득합니다.",
+        "[떠난다]"
+      ]
+    },
+    "SCRAP_OOZE": {
+      "name": "날붙이 수액",
+      "description": "방으로 들어가 보니 콸콸 흐르는 소리 와 철이 갈리는 소리 가 들립니다. 당신 앞에는 동강난 날붙이들을 마구 먹어댄 슬라임 같은 생물이 있습니다. 그 생물의 중심 부분에서 이상한 빛이 반짝입니다. 마법으로 인한 것일까요? 만약 이 생물의 틈 안쪽에 도달하면... 보물을 좀 얻을 수 있을 것 같이 보입니다. 하지만 산과 날붙이들이 피해를 끼칠 수 있습니다.",
+      "choices": [
+        "[팔을 뻗어 뒤져본다] 체력을 잃습니다. % 유물을 찾아냅니다.",
+        "[떠난다]"
+      ]
+    },
+    "N_LOTH": {
+      "name": "느로스",
+      "description": "촉수가 자라나있는 기이한 꼽추 생물이 당신 앞의 쓰래기와 잔해 더미를 여기저기 뒤지고 있습니다. 가까이 다가가자, 그 생물은 위협적이지 않은 태도로 발을 끌며 다가옵니다. \n \"느로스 배고프다. 느로스 밥 줘.\"",
+      "choices": [
+        "[제물: ] 이 유물을 잃습니다. 특별한 유물을 획득합니다.",
+        "[떠난다]"
+      ]
+    },
+    "BEGGAR": {
+      "name": "늙은 거지",
+      "description": "당신이 지나갈 때 털옷으로 가려진 늙은 거지가 당신을 향해 손을 내밀었습니다. \"몇 푼 좀 내주겠니, 꼬마야?\"",
+      "choices": [
+        "[골드를 준다] 골드: 덱에서 카드를 1장 제거합니다.",
+        "[계속]",
+        "[떠난다]"
+      ]
+    },
+    "THE_LIBRARY": {
+      "name": "도서관",
+      "description": "당신이 우연히 발견한 건물은 화려하게 장식되어 있지만 버려진 것 같습니다. \n 벽으로부터 뜯겨 나간 명판이 바닥에 놓여 있습니다. \"도서관\". \n 건물 안에는 무수히 많은 두루마리, 원고, 책들이 줄줄이 늘어서 있습니다. \n 당신은 그 중 하나를 집어들고 한동안 조용히 의자에 앉아 아늑함을 느낍니다.",
+      "choices": [
+        "[읽는다] 20장 중에 1장의 카드를 선택해 가져갑니다.",
+        "[잔다] 체력을 회복합니다."
+      ]
+    },
+    "WINDING_HALLS": {
+      "name": "돌고 도는 회랑",
+      "description": "구불구불한 길을 따라 천천히 걸어갈수록, 당신은 벽과 바닥이 알아볼 수 없을 정도로 움직여서 길을 헤메고 있다는 생각이 듭니다. \n \n 당신의 머리 뒤에서 계속해서 들리는 속삭이는 목소리 도 헤메게 하는 이유 중 하나인 것 같습니다.",
+      "choices": [
+        "[왔던 길로 돌아간다] 최대 체력을 잃습니다.",
+        "[광기를 받아들인다] 광기 카드를 2 장 획득합니다. 체력을 잃습니다.",
+        "[집중] 저주를 받습니다. - 몸부림. 체력을 회복합니다."
+      ]
+    },
+    "NEST": {
+      "name": "둥지",
+      "description": "길게 줄지어 늘어선 모자를 눌러쓴 무리 가 알려지지 않은 대성당 으로 들어서는 것이 보입니다.",
+      "choices": [
+        "[줄에 서 있는다] 의식용 단검 카드를 획득합니다. 체력을 잃습니다.",
+        "[깨부수고 탈취한다] 골드를"
+      ]
+    },
+    "WEMEETAGAIN": {
+      "name": "또 만났네요!",
+      "description": "\"또 만났네요!\" \n 너저분한 옷을 입은 쾌활한 남자가 신이 나서 당신에게 다가옵니다. 처음 보는 남자인데 말이죠. \n \n \"저잖아요, 랜위드! 오늘 저한테 줄 거 있나요? 늘 주시던 그거? 저 같은 놈은 혼자서는 성공할 수 없다는 거 잘 아시잖아요?\" \n 당신은 그를 수상쩍게 바라보며 어떻게 할지 고민합니다...",
+      "choices": [
+        "[포션을 준다] 을(를) 잃습니다. 유물을 1개 획득합니다",
+        "[골드를 준다] 골드 을(를) 잃습니다. 유물을 1개 획득합니다",
+        "[카드를 준다] 을(를) 잃습니다. 유물을 1개 획득합니다",
+        "[공격한다]"
+      ]
+    },
+    "THE_JOUST": {
+      "name": "마상 시합",
+      "description": "커다란 건물들 사이를 지나가던 중, 길고 좁은 다리와 마주쳤습니다. 다리의 양 끝에는 기사들이 서로를 마주보고 있습니다. 다가갑니다... \n \"멈춰라!\" \n \n 한 기사가 거대한 창으로 힘차게 당신에게 멈추라는 몸짓을 합니다.",
+      "choices": [
+        "[계속]",
+        "[주인] 골드를 건다 - 30%: 골드를 획득합니다.",
+        "[구경]"
+      ]
+    },
+    "MATCH_AND_KEEP": {
+      "name": "맞추고 가져가!",
+      "description": "\" 카드는 12장! 짝을 맞추면 가져가도 된다! 기회는 5번, 무르기 없기다. \n 준비됐느냐? 시작하자꾸나!\"",
+      "choices": [
+        "[계속]",
+        "[떠난다]",
+        "[시작] 남은 횟수:"
+      ]
+    },
+    "BONFIRE_ELEMENTALS": {
+      "name": "모닥불 정령들",
+      "description": "당신은 보랏빛의 불의 정령처럼 보이는 무리가 커다란 모닥불 주위에서 춤추고 있는 것을 우연히 발견했습니다.",
+      "choices": [
+        "[계속]",
+        "[떠난다]",
+        "[제물] 제물의 종류에 따른 보상을 획득합니다. 제물로 사용할 카드를 선택하십시오"
+      ]
+    },
+    "THE_MOAI_HEAD": {
+      "name": "모아이 석상",
+      "description": "*정말로* 위화감이 느껴지는 무언가와 우연히 마주쳤습니다. 당신 앞에 거대한 돌 무더기 머리가 커다란 벽의 단편으로부터 등장합니다. 벽은 이 구역의 나머지와 같이 움직이거나 변화하지 못합니다. \n 머리의 입은 활짝 열려있으며, 피로 붉게 얼룩진 커다랗고 겁주는 이빨을 드러냅니다. 석상의 표면은 상형문자 투성이입니다. 이 문자는 마치 머리의 입에 몸을 던져 삼켜지는 사람들을 가리키는 것 같습니다. 왜 굳이 그런 짓을 할까요?",
+      "choices": [
+        "[안으로 들어간다] 체력을 전부 회복. 손실: 최대 체력.",
+        "[제물: 황금 우상] 333 골드를 획득합니다. 황금 우상을 잃습니다."
+      ]
+    },
+    "DEAD_ADVENTURER": {
+      "name": "모험가의 시체",
+      "description": "모험가를 조사하던 중 기습을 당했습니다!",
+      "choices": [
+        "[조사] 시체를 뒤집니다.",
+        "[떠난다]"
+      ]
+    },
+    "KNOWING_SKULL": {
+      "name": "뭐든지 아는 해골",
+      "description": "당신은 장식으로 꾸며진 낡은 방에 들어섭니다. 화려하게 장식된 받침대 위에 놓여진 커다란 해골이 방 한가운데에 있습니다. 가까이 다가가자 해골이 갑자기 불꽃을 내뿜으며 당신을 바라봅니다.",
+      "choices": [
+        "[계속]",
+        "[정보?] 보스를 보여줍니다. 체력을",
+        "[성공?] 무색 카드를 얻습니다. 체력을 잃습니다.",
+        "[정신자극제?] 포션을 얻습니다. 체력을 잃습니다.",
+        "[재물?] 골드를 획득합니다. 체력을 잃습니다.",
+        "[어떻게 나가죠?] 체력을 잃습니다.",
+        "[떠난다]"
+      ]
+    },
+    "SHINING_LIGHT": {
+      "name": "밝은 빛",
+      "description": "당신은 방 한가운데에서 일렁이는 빛의 덩어리 를 발견했습니다. \n \n 따뜻한 빛과 황홀한 문양이 당신을 향해 손짓합니다.",
+      "choices": [
+        "[들어간다] 무작위의 카드 2장을 강화합니다. 체력을 잃습니다.",
+        "[떠난다]"
+      ]
+    },
+    "LIARS_GAME": {
+      "name": "배애애애앰",
+      "description": "당신은 땅에 뚫린 큰 구멍을 보고 방으로 들어갔습니다. 구멍 앞에 도달하자 갑자기 커다란 뱀이 튀어나왔습니다. \n \n \"하 하하! 안녕 안녕? 무엇이 우리를 여기로 이끌었을까? 안녕 모험가, 간단한 질문을 하나 할게. \n 인생의 가장 좋은 점은 바로 뭐든지 살 수 있다는 것 아니겠어? \n 너도 그렇게 생각하지?\"",
+      "choices": [
+        "[동의한다] 골드를 획득합니다. 저주를 받습니다 - 의심.",
+        "[동의하지 않는다]"
+      ]
+    },
+    "MUSHROOMS": {
+      "name": "버섯",
+      "description": "당신은 부자연스러운 식욕에 굴복하고 맙니다.버섯을 잇달아 섭취하자, 점점 멍해지는 것을 느끼며 의식을 잃었습니다. 일어나보니 매우 이상한 기분이 듭니다. \n 체력의 25% 를 회복 하지만, 감염 됩니다.",
+      "choices": [
+        "[짓밟는다] 버섯들을 화나게 합니다.",
+        "[식사] 체력을 회복합니다. 저주를 받습니다. - 기생충",
+        "[전투]",
+        "[떠난다]"
+      ]
+    },
+    "TRANSMORGRIFIER": {
+      "name": "변환 성소",
+      "description": "당신 앞에 잊힌 영혼을 기리는 공들인 성소가 놓여있습니다.",
+      "choices": [
+        "[기도] 카드 1장을 변화시킵니다.",
+        "[떠난다] 변화시킬 카드를 선택하십시오."
+      ]
+    },
+    "DUPLICATOR": {
+      "name": "복제 성소",
+      "description": "당신 앞에 고대의 영혼을 기리는 공들인 제단이 놓여있습니다.",
+      "choices": [
+        "[기도] 덱에 있는 카드 1장을 복제합니다.",
+        "[떠난다] 복제할 카드를 선택하십시오."
+      ]
+    },
+    "TOMB_OF_LORD_RED_MASK": {
+      "name": "붉은 가면 왕의 무덤",
+      "description": "둥둥 떠있는 길의 반대 쪽에 매우 화려하게 장식된 무덤이 보입니다. 무덤에 이르자마자 비문이 지워진 금화 구멍이 있는 것을 알아차렸습니다.",
+      "choices": [
+        "[붉은 가면을 쓴다] 222 골드를 획득합니다.",
+        "[제물: 골드] 골드를 전부 잃습니다. 유물을 하나 얻습니다.",
+        "[떠난다]"
+      ]
+    },
+    "SECRETPORTAL": {
+      "name": "비밀 포탈",
+      "description": "당신 앞에 미지의 풍경이 펼쳐져 있습니다. 소용돌이치는 마법의 포탈 이 있는 돌 입구를 저편의 움직이는 벽이 둘러싸고 있습니다. \n \n 어디로 가게 될지는 모르지만, 첨탑의 여정을 조금 단축시켜 줄 것 같아 보입니다.",
+      "choices": [
+        "[포탈에 들어간다] 즉시 보스를 조우합니다.",
+        "[떠난다]"
+      ]
+    },
+    "LIVING_WALL": {
+      "name": "살아있는 벽",
+      "description": "막다른 길에 다다라 뒤를 돌아서려할 때, 천장에서 벽이 쾅 내려와 당신을 가둡니다! \n \n 벽에서 세 개의 얼굴이 솟아나와 말을 합니다. \n \"네가 알던 것을 잊으면, 너를 보내 주마.\" \n \"변화해야만 새로운 장소에 다다를 수 있다.\" \n \"나를 지나가려면, 성장해야 한다.\"",
+      "choices": [
+        "[망각] 덱에서 카드를 1장 제거합니다.",
+        "[변화] 덱에서 카드를 1장 변화시킵니다.",
+        "[성장] 덱에서 카드를 1장 강화합니다. 제거할 카드를 선택하십시오. 변화시킬 카드를 선택하십시오. 강화할 카드를 선택하십시오.",
+        "[떠난다]"
+      ]
+    },
+    "THE_CLERIC": {
+      "name": "성직자",
+      "description": "황금 투구(?)를 낀 이상한 푸른 색의 인간형 생물이 크게 미소지으며 당신에게 다가옵니다. \n \"안녕하신가 친구! 난 성직자라네! 나의 서비스에 관심있나?!\" 그가 크게 소리칩니다.",
+      "choices": [
+        "[회복] 35 골드 : 체력 회복 : .",
+        "[정화] 골드: 덱에서 카드 1장을 제거합니다.",
+        "[떠난다]"
+      ]
+    },
+    "ACCURSED_BLACKSMITH": {
+      "name": "수상한 대장간",
+      "description": "당신은 작은 헛간을 발견했습니다. 그 안은 대장간처럼 보입니다. 모루는 먼지에 뒤덮여있지만, 화로에는 아직 불이 붙어있습니다. 당신은 불안해집니다...",
+      "choices": [
+        "[재련] 덱에 있는 카드 1장을 강화합니다.",
+        "[뒤지기] 특별한 유물을 획득합니다. 저주를 받습니다 - 고통.",
+        "[떠난다] 강화할 카드를 선택하십시오"
+      ]
+    },
+    "MYSTERIOUS_SPHERE": {
+      "name": "신비한 구체",
+      "description": "뼈 구체가 주변의 무질서한 영역으로부터 돌출되어 있습니다. 구체는 기이한 백열의 물체를 그 안에 감싸고 있습니다. \n 당신은 그 안에 뭐가 들었을지 궁금해하다가 어떤 파수꾼들이 그것을 감시한다는 것을 알아차렸습니다.",
+      "choices": [
+        "[구체를 열어본다] 전투. 보상: 희귀 유물.",
+        "[떠난다]",
+        "[전투]"
+      ]
+    },
+    "FOUNTAIN_OF_CLEANSING": {
+      "name": "신성한 샘",
+      "description": "근처 벽에 달린 분수로부터 끝없이 흘러나오는 일렁이는 물과 우연히 마주쳤습니다.",
+      "choices": [
+        "[마신다] 덱에서 모든 저주 카드를 제거합니다.",
+        "[떠난다]"
+      ]
+    },
+    "ADDICT": {
+      "name": "애원하는 부랑자",
+      "description": "수의를 걸친 사람들 무리를 몰래 지나쳐 가려고 할 때, 벌거벗은 붉은 피부의 남자가 당신에게 다가옵니다. \n \" J.A.X 좀 없어 친구? 나 떨림이 너무 심해! 제발... 아니면 동전이라도?\" 편집증 증세가 있어 보이긴 하지만 악의는 없어 보입니다.",
+      "choices": [
+        "[골드를 준다] 골드: 유물을 획득합니다.",
+        "[강탈한다] 유물을 획득합니다. 저주를 받습니다. - 수치.",
+        "[떠난다]"
+      ]
+    },
+    "FACETRADER": {
+      "name": "얼굴 상인",
+      "description": "당신은 가면 여럿을 들고 있는 으스스한 동상 옆을 지나갑니다... \n 당신 뒤에서 무언가가 조용히 속삭입니다, \n \"멈춰.\"",
+      "choices": [
+        "[만진다] 체력을 얻습니다.",
+        "[거래한다] 50%: 좋은 얼굴. 50%: 나쁜 얼굴.",
+        "[떠난다]",
+        "[계속] 잃고, 골드를"
+      ]
+    },
+    "LAB": {
+      "name": "연구실",
+      "description": "당신이 들어선 방은 실험관, 비커, 플라스크, 포셉, 핀치 클램프, 교반 막대, 집게, 고글, 보안경, 깔때기, 파이펫, 실린더, 응축기, 희귀한 유리 나선관까지 있는 선반으로 가득합니다. \n \n 왜 이런 기구들의 이름을 모두 알고 있는 건지는 모르겠지만 당신은 주위를 살펴봅니다.",
+      "choices": [
+        "[조사] 포션을 좀 찾아본다."
+      ]
+    },
+    "THE_MAUSOLEUM": {
+      "name": "영묘",
+      "description": "일련의 무덤 사이를 지나가던 중, 원형 방의 중심에 놓인 보석으로 가득한 커다란 석관과 마주쳤습니다. \n 관에 적혀 있는 글을 알아볼 수는 없지만, 검은 안개 가 옆에서 스며 나오는 것을 볼 수 있습니다.",
+      "choices": [
+        "[열어본다] 유물을 획득합니다. %: 저주를 받습니다. - 몸부림.",
+        "[떠난다]"
+      ]
+    },
+    "WHEEL_OF_CHANGE": {
+      "name": "운명의 돌림판",
+      "description": "당신은 말쑥해보이는 쾌활한 그렘린과 우연히 마주쳤습니다. \n \"돌림판을 돌릴 시간이예요! 준 비 됐 나 요 ? 당연히 돼 있죠!\"",
+      "choices": [
+        "[시작]"
+      ]
+    },
+    "BIG_FISH": {
+      "name": "월척",
+      "description": "당신은 긴 복도를 따라 걷다가 허공에 떠있는 바나나, 도넛, 그리고 상자 를 발견했습니다. 이런... 자세히 살펴보니 그것들은 천장의 구멍에서 나온 끈에 묶여 있습니다. 당신이 접근하자 위에서 부스럭거리는 소리가 들려옵니다. \n 무엇을 할 건가요?",
+      "choices": [
+        "[바나나] 체력을 회복합니다.",
+        "[도넛] 최대 체력 + .",
+        "[상자] 유물을 획득합니다. 저주를 받습니다 - 후회.",
+        "[떠난다]"
+      ]
+    },
+    "GHOSTS": {
+      "name": "유령 의회",
+      "description": "계속 올라가다 보니, 짙고 검은 연기 가 주변의 땅과 벽에서 차오르더니 가면을 쓴 세 형상으로 합쳐집니다. \n \n \"내가 보기엔 니오우 의 또 다른 하수인인 것 같은데.\" \n \"동의하네! 그녀는 항상 재미난 장난감을 만든단 말이지!\" \n \n 당신은 세 번째 존재가 지나칠 정도로 큰 미소를 짓는 걸 알아챕니다. \n \"다른 자들은 신경쓰지 말게... 우리의 힘 을 맛보고 싶은가?\"",
+      "choices": [
+        "[승낙] 영체화 카드 5장 획득. 최대 체력을 잃습니다.",
+        "[거절]"
+      ]
+    },
+    "MINDBLOOM": {
+      "name": "의식의 개화",
+      "description": "첨탑 속의 혼돈을 가로지르며 걷는 동안, 당신의 생각이 갑자기 매우... 현실적으로 느껴지기 시작합니다... \n \n 상상 속에 있던 괴물 과 재물 들이 현실 속에 모습을 드러냅니다. \n 그 감각은 순식간에 사라져가고 있습니다. 어떻게 할까요?",
+      "choices": [
+        "[나는 전쟁이다] 무작위 1막의 보스와 전투. 희귀 유물을 하나 획득합니다.",
+        "[나는 부유하다] 골드를 999 획득합니다. 저주를 받습니다. - 2 규칙 준수.",
+        "[나는 건강하다] 체력을 모두 회복합니다. 저주를 받습니다. - 부패.",
+        "[나는 깨어있다] 모든 카드를 강화합니다. 더 이상 회복할 수 없습니다.",
+        "[떠난다]"
+      ]
+    },
+    "FORGOTTEN_ALTAR": {
+      "name": "잊힌 제단",
+      "description": "당신 앞에 잊힌 신에게 바치는 제단이 놓여있습니다. \n 제단의 꼭대기에는 화려한 장식의 여자 조각상이 팔을 쭉 뻗은 채로 놓여있습니다. \n 그녀는 희생을 요구하며, 당신을 부릅니다.",
+      "choices": []
+    },
+    "NOTEFORYOURSELF": {
+      "name": "자신을 위한 기록",
+      "description": "당신은 기둥 속에 느슨하게 빠져있는 벽돌을 발견합니다.",
+      "choices": [
+        "[계속]",
+        "[가져간 뒤 카드를 둔다] 을(를) 받고 카드 1장을 보관합니다.",
+        "[무시]",
+        "[떠난다]"
+      ]
+    },
+    "CURSED_TOME": {
+      "name": "저주받은 고서",
+      "description": "당신은 버려진 사원에서 거대한 책을 발견하고 열어서 수수께끼같은 글 을 풀었습니다. \n \n 정교한 문자를 해석하려 하자 그것은 당신에게 친숙한 언어로 바뀌기 시작했습니다.",
+      "choices": [
+        "[읽는다]",
+        "[계속] 체력을 1 잃습니다.",
+        "[계속] 체력을 2 잃습니다.",
+        "[계속] 체력을 3 잃습니다.",
+        "[그만] 체력을 3 잃습니다.",
+        "[가져간다] 책을 획득합니다. 체력을 잃습니다.",
+        "[떠난다]"
+      ]
+    },
+    "PURIFIER": {
+      "name": "정화 성소",
+      "description": "당신 앞에 잊힌 영혼을 기리는 공들인 성소가 놓여있습니다.",
+      "choices": [
+        "[기도] 덱에서 카드 1장을 제거합니다.",
+        "[떠난다] 제거할 카드를 선택하십시오."
+      ]
+    },
+    "DRUG_DEALER": {
+      "name": "증강자",
+      "description": "안대를 낀 채로 사악한 웃음을 짓는 남자가 당신에게 다가옵니다. \n \"여보게 거기, 낯선 이여. 과학의 발전에 관심이 있나? 그 어떤 훈련이나 축복보다도 당신을 강하게 만들어줄 수 있지. 당신이 죽고 싶어 안달이 난 저 영웅들 중 하나라면, 이게 필요할 걸세.\" \n \n \"어떻게 할 텐가?\"",
+      "choices": [
+        "[J.A.X.를 시험한다] J.A.X 를 얻습니다.",
+        "[실험의 피험체가 된다] 2장의 카드를 변화시킵니다.",
+        "[돌연변이 인자를 삼킨다] 특별한 유물을 획득합니다.",
+        "[떠난다]"
+      ]
+    },
+    "SPIRE_HEART": {
+      "name": "첨탑의 심장",
+      "description": "쿠-쿵 ... 쿠-쿵 ... 쿠-쿵 ... \n 깊이 고동치는 공포가 방 전체에 걸쳐 느껴집니다... \n 이것이 첨탑의 심장 일까요? 이 모든 악의 근원인 걸까요?",
+      "choices": [
+        "[계속]"
+      ]
+    },
+    "FALLING": {
+      "name": "추락",
+      "description": "당신은 부유체에서 다른 부유체로 점프하려다가 미끄러졌습니다. \n \n 당신은 추락하기 시작했습니다.",
+      "choices": [
+        "[계속] [착지] 손실 :",
+        "[잠김] 조건: 스킬 카드 [마법] 손실 :",
+        "[잠김] 조건: 파워 카드 [검술] 손실 :"
+      ]
+    },
+    "COLOSSEUM": {
+      "name": "콜로세움",
+      "description": "찰싹!!! \n .. \n ...... \n ... \n 당신은 의식을 잃었습니다...",
+      "choices": [
+        "[계속]",
+        "[싸운다]",
+        "[겁쟁이] 탈출한다.",
+        "[승리] 많은 보상을 위한 강력한 적과의 전투."
+      ]
+    },
+    "DESIGNER": {
+      "name": "탑-클래스 디자이너",
+      "description": "당신은 \"탑-클래스\"라는 간판이 걸린 화려한 상점을 발견하고 안에 무엇이 있는지 확인하려고 들어갑니다. \n \"아니, 안 돼. 절대로. 들어오게 둘 순 없어!\" \n \n 우스꽝스러운 옷을 입은 남자가 나타나 입구를 가로막습니다.",
+      "choices": [
+        "[교정] 골드를 잃습니다. 1장을 강화합니다.",
+        "[정돈한다] 골드를 잃습니다. 카드를 제거합니다.",
+        "[풀 서비스] 골드를 잃습니다. 카드 1장을 제거하고, 무작위 카드 1장을 강화합니다.",
+        "[때린다] 체력을 잃습니다."
+      ]
+    },
+    "THE_WOMAN_IN_BLUE": {
+      "name": "파란 옷의 여자",
+      "description": "어둠으로부터 팔이 나타나 당신을 작은 가게로 끌어당깁니다. 눈이 어둠에 적응할 때 쯤 멋진 옷차림의 창백한 여자가 포션 진열장을 가리키는게 보입니다. \n \"포션 사세요. 당장!\" 그녀가 말합니다.",
+      "choices": [
+        "[포션을 1개 구매]",
+        "[포션을 2개 구매]",
+        "[포션을 3개 구매] 골드",
+        "[떠난다]"
+      ]
+    },
+    "GOLDEN_SHRINE": {
+      "name": "황금 성소",
+      "description": "당신 앞에 고대의 영혼을 기리는 공들인 성소가 놓여있습니다.",
+      "choices": [
+        "[기도] 골드를 획득합니다.",
+        "[신성 모독] 275 골드를 받습니다. 저주를 받습니다. - 후회.",
+        "[떠난다]"
+      ]
+    },
+    "GOLDEN_IDOL": {
+      "name": "황금 우상",
+      "description": "당신은 눈에 띄지 않는 곳에서 받침대 위에 평화로이 앉아있는 빛나는 황금 우상을 발견했습니다. \n \n 주변에 보이는 함정은 없습니다.",
+      "choices": []
+    },
+    "VAMPIRES": {
+      "name": "흡혈귀(?)",
+      "description": "불이 밝혀지지 않은 어두운 거리로 나아가자, 어두운 의식을 치르고 있는 후드를 눌러쓴 자들이 몇몇 보입니다. 당신이 다가가자 그들이 기분나쁜 미소를 지으며 돌아섰습니다. 그들 중 가장 키가 큰 자는 송곳니가 길게 삐져 나와 있습니다. 그가 당신에게 창백한 손을 내밉니다. \n \"우리와 함께 하자, 형제여. 첨탑의 따스함을 느낄 수 있다네.\"",
+      "choices": [
+        "[승낙] 모든 타격 카드 제거. 흡혈 카드 5장 획득. 최대 체력을 잃습니다.",
+        "[동의하지 않는다]",
+        "[떠난다]"
+      ]
+    }
+  },
+  "keywords": {
+    "ARTIFACT": {
+      "names": [
+        "인공물",
+        "인공물을",
+        "인공물이",
+        "artifact"
+      ],
+      "description": "다음에 걸리는 대부분의 해로운 효과를 무효화합니다."
+    },
+    "BLOCK": {
+      "names": [
+        "방어도",
+        "방어도를",
+        "방어도가",
+        "방어도만큼",
+        "block",
+        "blocks"
+      ],
+      "description": "다음 턴까지 피해량을 감소시킵니다."
+    },
+    "CURSE": {
+      "names": [
+        "저주",
+        "저주가",
+        "저주를",
+        "저주에서",
+        "curse"
+      ],
+      "description": "자신에게 부정적인 효과를 갖고 있는 카드입니다."
+    },
+    "DEXTERITY": {
+      "names": [
+        "민첩",
+        "민첩을",
+        "민첩이",
+        "dexterity"
+      ],
+      "description": "카드 사용시 얻는 방어도를 증가시킵니다."
+    },
+    "ETHEREAL": {
+      "names": [
+        "휘발성"
+      ],
+      "description": "턴 종료시 손에 있을 경우 소멸되는 카드입니다. 소멸된 카드는 전투가 종료될 때까지 덱에서 제외됩니다."
+    },
+    "EXHAUST": {
+      "names": [
+        "소멸",
+        "소멸된",
+        "소멸합니다",
+        "소멸됩니다",
+        "소멸시키고",
+        "소멸될",
+        "소멸시킵니다",
+        "소멸시킨",
+        "소멸되면",
+        "소멸하면서",
+        "exhausted",
+        "exhausts"
+      ],
+      "description": "전투가 종료될 때까지 덱에서 제외됩니다."
+    },
+    "INNATE": {
+      "names": [
+        "선천성",
+        "innate"
+      ],
+      "description": "전투 시작 시 뽑는 카드에 포함됩니다."
+    },
+    "LOCKED": {
+      "names": [
+        "잠김",
+        "locked"
+      ],
+      "description": "아직 해금되지 않은 카드입니다."
+    },
+    "POISON": {
+      "names": [
+        "중독",
+        "중독이",
+        "중독을",
+        "중독의",
+        "중독된",
+        "posion",
+        "posioned"
+      ],
+      "description": "상대 턴이 시작할 때 중독된 적은 그 만큼 피해를 받습니다. 중독은 매 턴 1 씩 감소합니다."
+    },
+    "RETAIN": {
+      "names": [
+        "보존",
+        "보존될",
+        "보존된",
+        "보존합니다",
+        "retain"
+      ],
+      "description": "턴 종료시 버려지지 않습니다."
+    },
+    "SHIV": {
+      "names": [
+        "단도",
+        "단도를"
+      ],
+      "description": "사용 시 소멸되는 비용이 0 인 카드입니다."
+    },
+    "STATUS": {
+      "names": [
+        "상태이상",
+        "상태이상을",
+        "상태이상이",
+        "상태이상이나"
+      ],
+      "description": "전투가 끝나면 사라지는 카드입니다."
+    },
+    "STRENGTH": {
+      "names": [
+        "힘",
+        "힘을",
+        "힘이",
+        "힘의"
+      ],
+      "description": "가하는 공격 피해량을 증가시킵니다."
+    },
+    "TRANSFORM": {
+      "names": [
+        "변화",
+        "변화된",
+        "변화하는",
+        "변화를",
+        "변화가",
+        "변화되거나",
+        "변화시키고"
+      ],
+      "description": "무작위로 정해진 카드로 교체됩니다."
+    },
+    "UNKNOWN": {
+      "names": [
+        "미지"
+      ],
+      "description": "아직 본 적 없는 카드입니다."
+    },
+    "UNPLAYABLE": {
+      "names": [
+        "사용불가"
+      ],
+      "description": "사용할 수 없는 카드입니다."
+    },
+    "UPGRADE": {
+      "names": [
+        "강화",
+        "강화된",
+        "강화합니다",
+        "강화됩니다"
+      ],
+      "description": "강화를 통해 카드를 더욱 강력하게 만들 수 있습니다. 이는 카드당 한 번만 가능합니다."
+    },
+    "VULNERABLE": {
+      "names": [
+        "취약",
+        "취약을",
+        "취약이",
+        "취약과",
+        "취약에"
+      ],
+      "description": "공격을 받을 시 50% 의 피해를 추가로 받습니다."
+    },
+    "WEAK": {
+      "names": [
+        "약화",
+        "weaken",
+        "약화된",
+        "weakens",
+        "약화를",
+        "약화가",
+        "약화와"
+      ],
+      "description": "공격 시 피해량이 25% 감소합니다."
+    },
+    "WOUND": {
+      "names": [
+        "부상",
+        "부상"
+      ],
+      "description": "사용 불가인 상태이상 카드입니다."
+    },
+    "FRAIL": {
+      "names": [
+        "손상",
+        "손상을",
+        "손상이",
+        "손상과"
+      ],
+      "description": "카드로부터 얻는 방어도 가 25% 감소합니다."
+    },
+    "STRIKE": {
+      "names": [
+        "타격"
+      ],
+      "description": "\"타격\"이 이름에 포함되어 있는 카드입니다."
+    },
+    "CONFUSED": {
+      "names": [
+        "혼란",
+        "혼란을",
+        "혼란이"
+      ],
+      "description": "카드를 가져올 때 마다 비용이 무작위로 정해집니다."
+    },
+    "TODO": {
+      "names": [
+        "todo",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE"
+      ],
+      "description": "This card is NOT IMPLEMENTED. Someone should really fix that..."
+    },
+    "INTANGIBLE": {
+      "names": [
+        "불가침",
+        "불가침을",
+        "불가침이"
+      ],
+      "description": "받는 공격 피해와 체력 손실을 전부 1 로 감소시킵니다."
+    },
+    "BURN": {
+      "names": [
+        "화상",
+        "화상들"
+      ],
+      "description": "화상은 턴 종료 시 손에 있으면 자신에게 피해를 주는 사용 불가인 상태이상 카드입니다."
+    },
+    "DAZED": {
+      "names": [
+        "어지러움"
+      ],
+      "description": "어지러움은 사용 불가인 상태이상 카드입니다."
+    },
+    "VOID": {
+      "names": [
+        "공허",
+        "공허들"
+      ],
+      "description": "공허는 카드를 뽑을 때 에너지를 잃는 사용 불가인 상태이상 카드입니다."
+    },
+    "FOCUS": {
+      "names": [
+        "밀집",
+        "밀집을",
+        "밀집이"
+      ],
+      "description": "밀집은 영창된 구체의 효율을 증가시킵니다."
+    },
+    "EVOKE": {
+      "names": [
+        "발현",
+        "발현된",
+        "발현합니다",
+        "발현한",
+        "발현시킵니다",
+        "발현시킨"
+      ],
+      "description": "가장 오른쪽의 구체를 사용해서 발현 효과를 발동시킵니다."
+    },
+    "PLASMA": {
+      "names": [
+        "플라즈마",
+        "플라즈마+",
+        "플라즈마가",
+        "플라즈마+가",
+        "플라즈마를",
+        "플라즈마+를",
+        "플라즈마로"
+      ],
+      "description": "구체: (지속/발현)에너지를 얻습니다."
+    },
+    "CHANNEL": {
+      "names": [
+        "영창",
+        "영창된",
+        "영창합니다",
+        "영창을",
+        "영창이",
+        "영창했습니다"
+      ],
+      "description": "구체를 영창하면 가장 오른쪽의 빈 슬롯에 구체를 넣습니다. 빈 슬롯이 없을 경우, 가장 오른쪽의 구체가 발현 되어 자리를 비웁니다."
+    },
+    "DARK": {
+      "names": [
+        "암흑",
+        "암흑+",
+        "암흑을",
+        "암흑+를",
+        "암흑이",
+        "암흑+가",
+        "암흑의"
+      ],
+      "description": "구체: (지속)매 턴 피해량을 증가시킵니다. (발현)체력이 가장 낮은 적에게 누적된 피해를 줍니다."
+    },
+    "OPENER": {
+      "names": [
+        "개전"
+      ],
+      "description": "개전 카드는 매 턴의 첫번째 카드로만 사용할 수 있습니다."
+    },
+    "LIGHTNING": {
+      "names": [
+        "전기",
+        "전기+",
+        "전기를",
+        "전기+를",
+        "전기가",
+        "전기+가"
+      ],
+      "description": "구체: (지속/발현)무작위 적에게 피해를 줍니다."
+    },
+    "FROST": {
+      "names": [
+        "냉기",
+        "냉기+",
+        "냉기를",
+        "냉기+를",
+        "냉기가",
+        "냉기+가",
+        "냉기의"
+      ],
+      "description": "구체: (지속/발현) 방어도 를 얻습니다."
+    },
+    "THORNS": {
+      "names": [
+        "가시",
+        "가시를",
+        "가시가"
+      ],
+      "description": "공격 피해를 받을 때, 공격한 상대에게 피해를 줍니다."
+    },
+    "LOCK_ON": {
+      "names": [
+        "조준",
+        "조준을",
+        "조준이"
+      ],
+      "description": "조준된 대상은 구체의 피해를 50% 추가로 받습니다."
+    },
+    "STANCE": {
+      "names": [
+        "경지",
+        "경지들",
+        "경지에서",
+        "경지에서는",
+        "경지만",
+        "경지를",
+        "경지가",
+        "경지에"
+      ],
+      "description": "동시에 하나의 경지만 가질 수 있습니다."
+    },
+    "WRATH": {
+      "names": [
+        "진노",
+        "진노가",
+        "진노를",
+        "진노하고",
+        "진노할",
+        "진노합니다"
+      ],
+      "description": "이 경지에서는, 주고 받는 공격 피해가 2배가 됩니다."
+    },
+    "CALM": {
+      "names": [
+        "명상",
+        "명상을",
+        "명상이",
+        "명상합니다"
+      ],
+      "description": "이 경지에서 벗어나면 [W] [W] 를 얻습니다."
+    },
+    "DIVINITY": {
+      "names": [
+        "강림",
+        "강림을",
+        "강림이",
+        "강림합니다"
+      ],
+      "description": "이 경지 에 도달하면 [W] [W] [W] 를 얻습니다. 공격이 3배의 피해를 줍니다. 다음 턴 시작 시 이 경지 에서 벗어납니다."
+    },
+    "PRAYER": {
+      "names": [
+        "만트라",
+        "만트라를",
+        "만트라가",
+        "만트라만큼",
+        "무력 돌파"
+      ],
+      "description": "10 만트라를 얻으면, 강림합니다."
+    },
+    "SCRY": {
+      "names": [
+        "예지",
+        "예지할",
+        "예지로",
+        "예지합니다"
+      ],
+      "description": "뽑을 카드 더미 위에서 X장의 카드를 봅니다. 원하는 만큼 버릴 수 있습니다."
+    },
+    "REGEN": {
+      "names": [
+        "재생",
+        "재생을",
+        "재생이"
+      ],
+      "description": "턴 종료 시 체력을 회복합니다. 재생은 매 턴 1 씩 감소합니다."
+    },
+    "VIGOR": {
+      "names": [
+        "활력"
+      ],
+      "description": "다음 공격 이 추가 피해를 줍니다."
+    },
+    "RITUAL": {
+      "names": [
+        "의식",
+        "의식을"
+      ],
+      "description": "턴 종료 시 힘을 얻습니다."
+    },
+    "FATAL": {
+      "names": [
+        "치명타",
+        "치명타라면",
+        "치명타일"
+      ],
+      "description": "이 카드를 통해 하수인이 아닌 적을 죽일 경우 발동합니다."
+    }
+  },
+  "monsters": {
+    "ACIDSLIME_L": {
+      "name": "산성 슬라임 (대)",
+      "move_names": [
+        "부식의 침",
+        "분열",
+        "핥기"
+      ]
+    },
+    "ACIDSLIME_M": {
+      "name": "산성 슬라임 (중)",
+      "move_names": [
+        "부식의 침",
+        "핥기"
+      ]
+    },
+    "ACIDSLIME_S": {
+      "name": "산성 슬라임 (소)"
+    },
+    "APOLOGY_SLIME": {
+      "name": "Apology Slime"
+    },
+    "AWAKENEDONE": {
+      "name": "깨어난 자",
+      "move_names": [
+        "영혼 타격",
+        "어둠의 메아리",
+        "정화",
+        "폐기물"
+      ]
+    },
+    "BANDITBEAR": {
+      "name": "곰",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITCHILD": {
+      "name": "촉새",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITLEADER": {
+      "name": "로미오",
+      "move_names": [
+        ""
+      ]
+    },
+    "BOOKOFSTABBING": {
+      "name": "칼부림의 책",
+      "move_names": [
+        ""
+      ]
+    },
+    "BRONZEAUTOMATON": {
+      "name": "청동 자동인형",
+      "move_names": [
+        "파괴광선"
+      ]
+    },
+    "BRONZEORB": {
+      "name": "구체",
+      "move_names": [
+        ""
+      ]
+    },
+    "BYRD": {
+      "name": "섀",
+      "move_names": [
+        ""
+      ]
+    },
+    "CENTURION": {
+      "name": "백부장",
+      "move_names": [
+        ""
+      ]
+    },
+    "CHAMP": {
+      "name": "투사",
+      "move_names": [
+        "방어 태세",
+        "사형 집행",
+        "따귀 때리기"
+      ]
+    },
+    "CHOSEN": {
+      "name": "선택받은 자",
+      "move_names": [
+        ""
+      ]
+    },
+    "CORRUPTHEART": {
+      "name": "타락한 심장",
+      "move_names": [
+        ""
+      ]
+    },
+    "CULTIST": {
+      "name": "광신자",
+      "move_names": [
+        "",
+        "",
+        "주문"
+      ]
+    },
+    "DAGGER": {
+      "name": "단검",
+      "move_names": [
+        ""
+      ]
+    },
+    "DARKLING": {
+      "name": "어두미",
+      "move_names": [
+        "쩝! 쩝!"
+      ]
+    },
+    "DECA": {
+      "name": "데카",
+      "move_names": [
+        ""
+      ]
+    },
+    "DONU": {
+      "name": "도누",
+      "move_names": [
+        "힘의 원형"
+      ]
+    },
+    "EXPLODER": {
+      "name": "폭탄기",
+      "move_names": [
+        ""
+      ]
+    },
+    "FIREORB": {
+      "name": "화염 구체",
+      "move_names": [
+        ""
+      ]
+    },
+    "FLAMEBRUISER": {
+      "name": "화염 싸움꾼",
+      "move_names": [
+        ""
+      ]
+    },
+    "FUNGIBEAST": {
+      "name": "동물하초",
+      "move_names": [
+        "성장"
+      ]
+    },
+    "FUZZYLOUSEDEFENSIVE": {
+      "name": "공벌레",
+      "move_names": [
+        "거미줄 분사"
+      ]
+    },
+    "FUZZYLOUSENORMAL": {
+      "name": "공벌레",
+      "move_names": [
+        "성장"
+      ]
+    },
+    "GIANTHEAD": {
+      "name": "거인의 머리",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINFAT": {
+      "name": "뚱뚱한 그렘린",
+      "move_names": [
+        "강타"
+      ]
+    },
+    "GREMLINLEADER": {
+      "name": "그렘린 리더",
+      "move_names": [
+        "집합!"
+      ]
+    },
+    "GREMLINNOB": {
+      "name": "귀족 그렘린",
+      "move_names": [
+        "두개골 강타",
+        "황소 돌진"
+      ]
+    },
+    "GREMLINTHIEF": {
+      "name": "교활한 그렘린",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINTSUNDERE": {
+      "name": "방패 그렘린",
+      "move_names": [
+        "보호",
+        "방패 강타"
+      ]
+    },
+    "GREMLINWARRIOR": {
+      "name": "화난 그렘린",
+      "move_names": [
+        "할퀴기"
+      ]
+    },
+    "GREMLINWIZARD": {
+      "name": "그렘린 마법사",
+      "move_names": [
+        "충전 중",
+        "궁극의 폭발"
+      ]
+    },
+    "HEALER": {
+      "name": "신비주의자",
+      "move_names": [
+        ""
+      ]
+    },
+    "HEXAGHOST": {
+      "name": "육각령",
+      "move_names": [
+        "발화",
+        "그을리기",
+        "지옥염"
+      ]
+    },
+    "JAWWORM": {
+      "name": "턱벌레",
+      "move_names": [
+        "외침",
+        "난동부리기"
+      ]
+    },
+    "LAGAVULIN": {
+      "name": "라가불린",
+      "move_names": [
+        "영혼 흡수"
+      ]
+    },
+    "LOOTER": {
+      "name": "도적",
+      "move_names": [
+        "찌르기",
+        "훔치기"
+      ]
+    },
+    "MAW": {
+      "name": "아귀",
+      "move_names": [
+        ""
+      ]
+    },
+    "MUGGER": {
+      "name": "강도",
+      "move_names": [
+        "찌르기",
+        "훔치기"
+      ]
+    },
+    "NEMESIS": {
+      "name": "네메시스",
+      "move_names": [
+        ""
+      ]
+    },
+    "ORB_WALKER": {
+      "name": "구체 순찰기",
+      "move_names": [
+        "힘 증가"
+      ]
+    },
+    "PUPPETEER": {
+      "name": "인형술사",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPTOMANCER": {
+      "name": "파충류 주술사",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPULSOR": {
+      "name": "현혹기",
+      "move_names": [
+        ""
+      ]
+    },
+    "SENTRY": {
+      "name": "보초기",
+      "move_names": [
+        "붕괴"
+      ]
+    },
+    "SERPENT": {
+      "name": "첨탑 암종",
+      "move_names": [
+        ""
+      ]
+    },
+    "SHELLED_PARASITE": {
+      "name": "갑각기생충",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERBLUE": {
+      "name": "노예 상인",
+      "move_names": [
+        "갈퀴질"
+      ]
+    },
+    "SLAVERBOSS": {
+      "name": "노예 관리자",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERRED": {
+      "name": "노예 상인",
+      "move_names": [
+        "긁기",
+        "속박"
+      ]
+    },
+    "SLIMEBOSS": {
+      "name": "대왕 슬라임",
+      "move_names": [
+        "강타",
+        "준비 중",
+        "분열",
+        "끈적이 분사"
+      ]
+    },
+    "SNAKEPLANT": {
+      "name": "뱀 식물",
+      "move_names": [
+        "약화 포자"
+      ]
+    },
+    "SNECKO": {
+      "name": "스네코",
+      "move_names": [
+        "당황스러운 째려보기",
+        "꼬리 흔들기",
+        "물기"
+      ]
+    },
+    "SPHERICGUARDIAN": {
+      "name": "구체형 수호기",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIKESLIME_L": {
+      "name": "가시 슬라임 (대)",
+      "move_names": [
+        "핥기",
+        "분열"
+      ]
+    },
+    "SPIKESLIME_M": {
+      "name": "가시 슬라임 (중)",
+      "move_names": [
+        "핥기"
+      ]
+    },
+    "SPIKESLIME_S": {
+      "name": "가시 슬라임 (소)"
+    },
+    "SPIKER": {
+      "name": "반사기",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESHIELD": {
+      "name": "첨탑의 방패",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESPEAR": {
+      "name": "첨탑의 창",
+      "move_names": [
+        ""
+      ]
+    },
+    "THECOLLECTOR": {
+      "name": "수집가",
+      "move_names": [
+        ""
+      ]
+    },
+    "THEGUARDIAN": {
+      "name": "수호자",
+      "move_names": [
+        "수비 모드",
+        "매서운 강타",
+        "구르기",
+        "두번 내려찍기",
+        "회오리바람",
+        "충전 중",
+        "증기 배출"
+      ]
+    },
+    "TIMEEATER": {
+      "name": "시간 포식자",
+      "move_names": [
+        ""
+      ]
+    },
+    "TORCHHEAD": {
+      "name": "횃불 머리",
+      "move_names": [
+        ""
+      ]
+    },
+    "TRANSIENT": {
+      "name": "과도자",
+      "move_names": [
+        ""
+      ]
+    },
+    "WRITHINGMASS": {
+      "name": "꿈틀대는 덩어리",
+      "move_names": [
+        ""
+      ]
+    }
+  },
+  "characters": {
+    "DEFECT": {
+      "name": "디펙트",
+      "description": "자아를 깨달은 전투 자동인형입니다.\n고대의 기술로 구체를 만들 수 있습니다."
+    },
+    "IRONCLAD": {
+      "name": "아이언클래드",
+      "description": "아이언클래드의 살아남은 병사입니다.\n악마의 힘을 사용하기 위해 영혼을 팔았습니다."
+    },
+    "THE_SILENT": {
+      "name": "사일런트",
+      "description": "안개 지대에서 온 치명적인 사냥꾼입니다.\n단검과 독으로 적들을 박멸합니다."
+    },
+    "WATCHER": {
+      "name": "와쳐",
+      "description": "첨탑을 \"평가\" 하기 위해 찾아온 눈먼 수도사입니다.\n강림의 경지에 이른 고수입니다."
+    }
+  }
+}

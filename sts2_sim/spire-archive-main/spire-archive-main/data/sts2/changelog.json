@@ -1,0 +1,1319 @@
+[
+  {
+    "version": "0.107.1",
+    "previousVersion": "0.103.2",
+    "date": "2026-06-18",
+    "changes": {
+      "cards": {
+        "modified": {
+          "ASTRAL_PULSE": {
+            "description": {
+              "old": "Deal 14 damage to ALL enemies.",
+              "new": "Deal 6 damage to ALL enemies twice."
+            },
+            "upgrade.damage": {
+              "old": 4,
+              "new": 2
+            }
+          },
+          "BULWARK": {
+            "description": {
+              "old": "Gain 13 Block.\nForge 10.",
+              "new": "Gain 12 Block.\nForge 10."
+            }
+          },
+          "CONFLAGRATION": {
+            "description": {
+              "old": "Deal 8 damage to ALL enemies.\nDeals 2 additional damage for each other Attack you've played this turn.",
+              "new": "Deal 2 damage to ALL enemies 4 times."
+            },
+            "upgrade.description": {
+              "old": null,
+              "new": "Deal 2 damage to ALL enemies 5 times."
+            },
+            "upgrade.repeat": {
+              "old": null,
+              "new": 1
+            }
+          },
+          "CRESCENT_SPEAR": {
+            "description": {
+              "old": "Deal 6 damage.\nDeals 2 additional damage for ALL your cards that have a [S] cost.",
+              "new": "Deal 8 damage.\nDeals 2 additional damage for ALL your cards that have a [S] cost."
+            }
+          },
+          "DEATH_MARCH": {
+            "description": {
+              "old": "Deal 8 damage.\nDeals 3 additional damage for each card drawn during your turn.",
+              "new": "Deal 8 damage.\nDeals 4 additional damage for each card drawn during your turn."
+            }
+          },
+          "DEBILITATE": {
+            "description": {
+              "old": "Deal 10 damage.\nVulnerable and Weak are twice as effective against the enemy for the next 3 turns.",
+              "new": "Deal 10 damage.\nVulnerable and Weak are twice as effective against the enemy for the next 2 turns."
+            },
+            "upgrade.description": {
+              "old": "Deal 12 damage.\nVulnerable and Weak are twice as effective against the enemy for the next 4 turns.",
+              "new": "Deal 12 damage.\nVulnerable and Weak are twice as effective against the enemy for the next 3 turns."
+            }
+          },
+          "DRUM_OF_BATTLE": {
+            "cost": {
+              "old": 0,
+              "new": 1
+            },
+            "type": {
+              "old": "Power",
+              "new": "Skill"
+            },
+            "description": {
+              "old": "Draw 2 cards.\nAt the start of your turn, Exhaust the top card of your Draw Pile.",
+              "new": "Draw 2 cards.\nWhen this card is Exhausted, gain [E][E]."
+            },
+            "upgrade.cards": {
+              "old": 1,
+              "new": null
+            },
+            "upgrade.description": {
+              "old": null,
+              "new": "Draw 2 cards.\nWhen this card is Exhausted, gain [E][E][E]."
+            },
+            "upgrade.energy": {
+              "old": null,
+              "new": 1
+            }
+          },
+          "EXTERMINATE": {
+            "description": {
+              "old": "Deal 3 damage 4 times to ALL enemies.",
+              "new": "Deal 3 damage to ALL enemies 4 times."
+            }
+          },
+          "FASTEN": {
+            "description": {
+              "old": "Gain an additional 5 Block from Defend cards.",
+              "new": "Gain an additional 4 Block from Defend cards."
+            }
+          },
+          "FURNACE": {
+            "description": {
+              "old": "At the start of your turn, Forge 4.",
+              "new": "At the start of your turn, Forge 5."
+            }
+          },
+          "FUSION": {
+            "cost": {
+              "old": 2,
+              "new": 1
+            },
+            "keywords": {
+              "old": [],
+              "new": [
+                "Exhaust"
+              ]
+            },
+            "upgrade.cost": {
+              "old": 1,
+              "new": null
+            },
+            "upgrade.remove_keywords": {
+              "old": null,
+              "new": [
+                "Exhaust"
+              ]
+            }
+          },
+          "HOWL_FROM_BEYOND": {
+            "description": {
+              "old": "Deal 16 damage to ALL enemies.\nAt the start of your turn, if this is in your Exhaust Pile, play it.",
+              "new": "Deal 16 damage to ALL enemies.\nAt the end of your turn, if this is in your Exhaust Pile, play it."
+            }
+          },
+          "HYPERBEAM": {
+            "description": {
+              "old": "Deal 26 damage to ALL enemies.\nLose 3 Focus.",
+              "new": "Deal 28 damage to ALL enemies.\nLose 3 Focus."
+            }
+          },
+          "JUGGERNAUT": {
+            "description": {
+              "old": "Whenever you gain Block, deal 5 damage to a random enemy.",
+              "new": "Whenever you gain Block, deal 6 damage to a random enemy."
+            }
+          },
+          "MINION_SACRIFICE": {
+            "description": {
+              "old": "Gain 9 Block.",
+              "new": "Gain 8 Block."
+            }
+          },
+          "MINION_STRIKE": {
+            "tags": {
+              "old": [
+                "Minion",
+                "Strike"
+              ],
+              "new": [
+                "Strike",
+                "Minion"
+              ]
+            }
+          },
+          "MONARCHS_GAZE": {
+            "cost": {
+              "old": 3,
+              "new": 2
+            },
+            "upgrade.cost": {
+              "old": 2,
+              "new": 1
+            }
+          },
+          "NEOWS_FURY": {
+            "description": {
+              "old": "Deal 10 damage.\nPut 2 random cards from your Discard Pile into your Hand.",
+              "new": "Deal 10 damage.\nPut up to 2 cards from your Discard Pile into your Hand."
+            },
+            "upgrade.description": {
+              "old": "Deal 14 damage.\nPut 3 random cards from your Discard Pile into your Hand.",
+              "new": "Deal 14 damage.\nPut up to 3 cards from your Discard Pile into your Hand."
+            }
+          },
+          "PACTS_END": {
+            "description": {
+              "old": "Can only be played if you have 3 or more cards in your Exhaust Pile.\nDeal 17 damage to ALL enemies.",
+              "new": "If you have 3 or more cards in your Exhaust Pile,\ndeal 17 damage to ALL enemies."
+            },
+            "upgrade.description": {
+              "old": "Can only be played if you have 3 or more cards in your Exhaust Pile.\nDeal 23 damage to ALL enemies.",
+              "new": "If you have 3 or more cards in your Exhaust Pile,\ndeal 23 damage to ALL enemies."
+            }
+          },
+          "PARRY": {
+            "description": {
+              "old": "Whenever you play Sovereign Blade, gain 10 Block.",
+              "new": "Sovereign Blade now gains 10 Block."
+            }
+          },
+          "PATTER": {
+            "description": {
+              "old": "Gain 9 Block.\nGain 2 Vigor.",
+              "new": "Gain 8 Block.\nGain 2 Vigor."
+            }
+          },
+          "POUNCE": {
+            "description": {
+              "old": "Deal 12 damage.\nThe next Skill you play costs 0 [E].",
+              "new": "Deal 14 damage.\nThe next Skill you play costs 0 [E]."
+            }
+          },
+          "PREDATOR": {
+            "rarity": {
+              "old": "Uncommon",
+              "new": "Common"
+            }
+          },
+          "REAPER_FORM": {
+            "description": {
+              "old": "Whenever Attacks deal damage, they also apply that much Doom.",
+              "new": "Whenever Attacks deal damage, apply that much Doom."
+            }
+          },
+          "REFLECT": {
+            "description": {
+              "old": "Gain 17 Block.\nBlocked attack damage is reflected to your attacker this turn.",
+              "new": "Gain 15 Block.\nBlocked attack damage is reflected to your attacker this turn."
+            },
+            "upgrade.block": {
+              "old": 4,
+              "new": 5
+            }
+          },
+          "ROYALTIES": {
+            "upgrade.gold": {
+              "old": 5,
+              "new": 10
+            }
+          },
+          "SHATTER": {
+            "description": {
+              "old": "Deal 11 damage to ALL enemies.\nEvoke all of your Orbs.",
+              "new": "Deal 7 damage to ALL enemies.\nEvoke all of your Orbs twice."
+            }
+          },
+          "SIC_EM": {
+            "description": {
+              "old": "Osty deals 5 damage.\nWhenever Osty hits this enemy this turn, Summon 2.",
+              "new": "Osty deals 5 damage.\nWhenever Osty hits this enemy this turn, Summon 3."
+            }
+          },
+          "SUMMON_FORTH": {
+            "description": {
+              "old": "Forge 8.\nPut Sovereign Blade into your Hand from anywhere.",
+              "new": "Put Sovereign Blade into your Hand from anywhere.\nForge 8."
+            }
+          },
+          "SWORD_SAGE": {
+            "description": {
+              "old": "Sovereign Blade now hits an additional time.",
+              "new": "Sovereign Blade gains Replay 1."
+            }
+          },
+          "SYNTHESIS": {
+            "description": {
+              "old": "Deal 12 damage.\nThe next Power you play costs 0 [E].",
+              "new": "Deal 14 damage.\nThe next Power you play costs 0 [E]."
+            }
+          },
+          "TESLA_COIL": {
+            "upgrade.damage": {
+              "old": 3,
+              "new": 1
+            },
+            "upgrade.description": {
+              "old": null,
+              "new": "Deal 4 damage.\nTrigger all Lightning against the enemy twice."
+            }
+          },
+          "THE_SCYTHE": {
+            "description": {
+              "old": "Deal 13 damage.\nPermanently increase this card's damage by 3.",
+              "new": "Deal 13 damage.\nPermanently increase this card's damage by 4."
+            }
+          },
+          "THE_SEALED_THRONE": {
+            "upgrade.add_keywords": {
+              "old": [
+                "Innate"
+              ],
+              "new": null
+            },
+            "upgrade.cost": {
+              "old": null,
+              "new": 0
+            }
+          },
+          "UNRELENTING": {
+            "description": {
+              "old": "Deal 12 damage.\nThe next Attack you play costs 0 [E].",
+              "new": "Deal 14 damage.\nThe next Attack you play costs 0 [E]."
+            }
+          },
+          "UNTOUCHABLE": {
+            "upgrade.block": {
+              "old": 2,
+              "new": 3
+            }
+          },
+          "UPROAR": {
+            "description": {
+              "old": "Deal 5 damage twice.\nPlay a random Attack from your Draw Pile.",
+              "new": "Deal 6 damage twice.\nPlay a random Attack from your Draw Pile."
+            }
+          }
+        },
+        "added": [
+          "SCARE",
+          "WITHER"
+        ],
+        "removed": [
+          "FOLLOW_THROUGH"
+        ]
+      },
+      "relics": {
+        "modified": {
+          "BOOMING_CONCH": {
+            "description": {
+              "old": "At the start of Elite combats, draw 2 additional cards.",
+              "new": "At the start of Elite combats, draw 2 additional cards and gain [E]."
+            }
+          },
+          "BRILLIANT_SCARF": {
+            "description": {
+              "old": "The 5th card you play each turn is free.",
+              "new": "The 5th card you play from your hand each turn is free."
+            }
+          },
+          "INFUSED_CORE": {
+            "description": {
+              "old": "At the start of each combat, Channel 3 Lightning.",
+              "new": "At the start of each combat, Channel 3 Lightning. Lightning deals 1 additional damage."
+            }
+          },
+          "JEWELED_MASK": {
+            "description": {
+              "old": "At the start of combat put a random Power from your Draw Pile into your Hand, it's free to play.",
+              "new": "At the start of each combat, put a random Power from your Draw Pile into your Hand. It's free to play this combat."
+            }
+          },
+          "PUMPKIN_CANDLE": {
+            "description": {
+              "old": "Gain [E] at the start of each turn. Extinguishes at the start of Act 3.",
+              "new": "Gain [E] at the start of each turn. Extinguishes after 5 combats. Can be Kindled at Rest Sites."
+            }
+          },
+          "SCROLL_BOXES": {
+            "description": {
+              "old": "Upon pickup, lose all Gold and choose 1 of 2 packs of cards to add to your Deck.",
+              "new": "Upon pickup, choose 1 of 2 packs of cards to add to your Deck."
+            }
+          }
+        },
+        "added": [
+          "FISHING_ROD",
+          "KALEIDOSCOPE",
+          "SILKEN_TRESS"
+        ],
+        "removed": []
+      },
+      "potions": {
+        "modified": {},
+        "added": [],
+        "removed": []
+      },
+      "enchantments": {
+        "modified": {
+          "INKY": {
+            "description": {
+              "old": "This card deals 2 additional damage and applies 1 Weak.",
+              "new": "This card deals 1 additional damage and applies 1 Weak."
+            }
+          },
+          "TEZCATARAS_EMBER": {
+            "description": {
+              "old": "Costs 0 and gains Eternal.",
+              "new": "Costs 0, deals 3 additional damage, and gains Eternal."
+            }
+          }
+        },
+        "added": [],
+        "removed": []
+      }
+    }
+  },
+  {
+    "version": "0.103.2",
+    "previousVersion": "0.99.1",
+    "date": "2026-04-20",
+    "changes": {
+      "cards": {
+        "modified": {
+          "ACROBATICS": {
+            "rarity": {
+              "old": "Common",
+              "new": "Uncommon"
+            }
+          },
+          "ALIGNMENT": {
+            "star_cost": {
+              "old": 2,
+              "new": 3
+            }
+          },
+          "ANTICIPATE": {
+            "description": {
+              "old": "Gain 3 Dexterity this turn.",
+              "new": "Gain 2 Dexterity this turn."
+            },
+            "upgrade.dexterity": {
+              "old": 2,
+              "new": 1
+            }
+          },
+          "ARSENAL": {
+            "description": {
+              "old": "Whenever you play a Colorless card, gain 1 Strength.",
+              "new": "Whenever you create a card, gain 1 Strength."
+            },
+            "upgrade.add_keywords": {
+              "old": null,
+              "new": [
+                "Innate"
+              ]
+            }
+          },
+          "BANSHEES_CRY": {
+            "cost": {
+              "old": 6,
+              "new": 9
+            },
+            "upgrade.cost": {
+              "old": null,
+              "new": 7
+            },
+            "upgrade.damage": {
+              "old": 6,
+              "new": null
+            }
+          },
+          "BEGONE": {
+            "type": {
+              "old": "Attack",
+              "new": "Skill"
+            },
+            "description": {
+              "old": "Deal 4 damage.\nChoose a card in your Hand to Transform into Minion Dive Bomb.",
+              "new": "Choose a card in your Hand to Transform into Minion Strike."
+            },
+            "upgrade.damage": {
+              "old": 1,
+              "new": null
+            },
+            "upgrade.description": {
+              "old": "Deal 5 damage.\nChoose a card in your Hand to Transform into Minion Dive Bomb+.",
+              "new": "Choose a card in your Hand to Transform into Minion Strike+."
+            }
+          },
+          "BELIEVE_IN_YOU": {
+            "description": {
+              "old": "Another player gains [E][E][E].",
+              "new": "Another player gains [E][E]."
+            }
+          },
+          "BLADE_OF_INK": {
+            "description": {
+              "old": "This turn, whenever you play an Attack, gain 2 Strength this turn.",
+              "new": "Add 2 Inky Shivs into your Hand."
+            },
+            "upgrade.cards": {
+              "old": null,
+              "new": 1
+            },
+            "upgrade.description": {
+              "old": null,
+              "new": "Add 3 Inky Shivs into your Hand."
+            },
+            "upgrade.strength": {
+              "old": 1,
+              "new": null
+            }
+          },
+          "BOMBARDMENT": {
+            "description": {
+              "old": "Deal 18 damage.\nAt the start of your turn, plays from the Exhaust Pile.",
+              "new": "Deal 18 damage.\nAt the start of your turn, if this is in your Exhaust Pile, play it."
+            }
+          },
+          "BORROWED_TIME": {
+            "cost": {
+              "old": 0,
+              "new": 1
+            },
+            "description": {
+              "old": "Apply 3 Doom to yourself.\nGain [E].",
+              "new": "Gain [E][E][E][E].\nCards cost an additional [E] this turn."
+            },
+            "upgrade.energy": {
+              "old": 1,
+              "new": 2
+            }
+          },
+          "BREAK": {
+            "cost": {
+              "old": 2,
+              "new": 1
+            },
+            "upgrade.damage": {
+              "old": 5,
+              "new": 10
+            }
+          },
+          "BUNDLE_OF_JOY": {
+            "cost": {
+              "old": 2,
+              "new": 1
+            }
+          },
+          "CELESTIAL_MIGHT": {
+            "upgrade.damage": {
+              "old": 2,
+              "new": null
+            },
+            "upgrade.description": {
+              "old": "Deal 8 damage 3 times.",
+              "new": "Deal 6 damage 4 times."
+            },
+            "upgrade.repeat": {
+              "old": null,
+              "new": 1
+            }
+          },
+          "CHARGE": {
+            "description": {
+              "old": "Choose 2 cards in your Draw Pile to Transform into\nMinion Strike}.",
+              "new": "Choose 2 cards in your Draw Pile to Transform into\nMinion Dive Bomb}."
+            },
+            "upgrade.description": {
+              "old": "Choose 2 cards in your Draw Pile to Transform into\nMinion Strikes+.",
+              "new": "Choose 2 cards in your Draw Pile to Transform into\nMinion Dive Bombs+."
+            }
+          },
+          "CINDER": {
+            "description": {
+              "old": "Deal 17 damage.\nExhaust the top card of your Draw Pile.",
+              "new": "Deal 18 damage.\nExhaust 1 card at random."
+            },
+            "upgrade.damage": {
+              "old": 5,
+              "new": 6
+            }
+          },
+          "COLLISION_COURSE": {
+            "description": {
+              "old": "Deal 9 damage.\nAdd a Debris into your Hand.",
+              "new": "Deal 11 damage.\nAdd a Debris into your Hand."
+            },
+            "upgrade.damage": {
+              "old": 3,
+              "new": 4
+            }
+          },
+          "COLOSSUS": {
+            "rarity": {
+              "old": "Rare",
+              "new": "Uncommon"
+            }
+          },
+          "CORROSIVE_WAVE": {
+            "description": {
+              "old": "Whenever you draw a card this turn, apply 3 Poison to ALL enemies.",
+              "new": "Whenever you draw a card this turn, apply 2 Poison to ALL enemies."
+            }
+          },
+          "DANSE_MACABRE": {
+            "description": {
+              "old": "Whenever you play a card that costs [E][E] or more, gain 3 Block.",
+              "new": "Whenever you play a card that costs [E][E] or more, gain 4 Block."
+            }
+          },
+          "DEBILITATE": {
+            "description": {
+              "old": "Deal 7 damage.\nVulnerable and Weak are twice as effective against the enemy for the next 3 turns.",
+              "new": "Deal 10 damage.\nVulnerable and Weak are twice as effective against the enemy for the next 3 turns."
+            },
+            "upgrade.description": {
+              "old": "Deal 9 damage.\nVulnerable and Weak are twice as effective against the enemy for the next 4 turns.",
+              "new": "Deal 12 damage.\nVulnerable and Weak are twice as effective against the enemy for the next 4 turns."
+            }
+          },
+          "DEFY": {
+            "upgrade.block": {
+              "old": 1,
+              "new": 3
+            },
+            "upgrade.weak": {
+              "old": 1,
+              "new": null
+            }
+          },
+          "DIRGE": {
+            "keywords": {
+              "old": [],
+              "new": [
+                "Exhaust"
+              ]
+            }
+          },
+          "DISCOVERY": {
+            "description": {
+              "old": "Choose 1 of 3 random cards to add into your Hand. It costs 0 [E] this turn.",
+              "new": "Choose 1 of 3 random cards to add into your Hand. It's free to play this turn."
+            }
+          },
+          "DOMINATE": {
+            "description": {
+              "old": "Gain 1 Strength for each Vulnerable on the enemy.",
+              "new": "Apply 1 Vulnerable.\nGain 1 Strength for each Vulnerable on the enemy."
+            },
+            "upgrade.remove_keywords": {
+              "old": [
+                "Exhaust"
+              ],
+              "new": null
+            },
+            "upgrade.vulnerable": {
+              "old": null,
+              "new": 1
+            }
+          },
+          "ETERNAL_ARMOR": {
+            "description": {
+              "old": "Gain 7 Plating.",
+              "new": "Gain 9 Plating."
+            }
+          },
+          "EXPECT_A_FIGHT": {
+            "description": {
+              "old": "Gain [E] for each Attack in your Hand.",
+              "new": "Gain [E] for each Attack in your Hand.\nYou cannot gain\nadditional [E] this turn."
+            }
+          },
+          "FALLING_STAR": {
+            "description": {
+              "old": "Deal 7 damage.\nApply 1 Weak.\nApply 1 Vulnerable.",
+              "new": "Deal 8 damage.\nApply 1 Weak.\nApply 1 Vulnerable."
+            }
+          },
+          "FIGHT_ME": {
+            "description": {
+              "old": "Deal 5 damage twice.\nGain 2 Strength.\nThe enemy gains 1 Strength.",
+              "new": "Deal 5 damage twice.\nGain 3 Strength.\nThe enemy gains 1 Strength."
+            }
+          },
+          "FLANKING": {
+            "description": {
+              "old": "The enemy takes double damage from other players this turn.",
+              "new": "The enemy takes double attack damage from other players this turn."
+            }
+          },
+          "FLICK_FLACK": {
+            "description": {
+              "old": "Deal 7 damage to ALL enemies.",
+              "new": "Deal 6 damage to ALL enemies."
+            }
+          },
+          "FOLLOW_THROUGH": {
+            "rarity": {
+              "old": "Uncommon",
+              "new": "Common"
+            },
+            "description": {
+              "old": "Deal 6 damage to ALL enemies.\nIf the last card you played this turn was a Skill, apply 1 Weak to ALL enemies.",
+              "new": "Deal 7 damage.\nIf you have 5 or more other cards in your Hand, hits an additional time."
+            },
+            "upgrade.description": {
+              "old": null,
+              "new": "Deal 9 damage.\nIf you have 5 or more other cards in your Hand, hits an additional time."
+            },
+            "upgrade.weak": {
+              "old": 1,
+              "new": null
+            }
+          },
+          "FOLLY": {
+            "keywords": {
+              "old": [
+                "Eternal",
+                "Innate",
+                "Unplayable"
+              ],
+              "new": [
+                "Eternal",
+                "Ethereal",
+                "Innate",
+                "Unplayable"
+              ]
+            }
+          },
+          "FORGOTTEN_RITUAL": {
+            "keywords": {
+              "old": [],
+              "new": [
+                "Exhaust"
+              ]
+            }
+          },
+          "GATHER_LIGHT": {
+            "description": {
+              "old": "Gain 7 Block.\nGain [S].",
+              "new": "Gain 8 Block.\nGain [S]."
+            }
+          },
+          "GLITTERSTREAM": {
+            "description": {
+              "old": "Gain 11 Block.\nNext turn, gain 4 Block.",
+              "new": "Gain 11 Block.\nNext turn, gain 5 Block."
+            }
+          },
+          "GLOW": {
+            "description": {
+              "old": "Gain [S].\nDraw 2 cards.",
+              "new": "Gain [S].\nDraw 1 card.\nNext turn, draw 1 card."
+            }
+          },
+          "GRAND_FINALE": {
+            "description": {
+              "old": "Can only be played if there are no cards in your Draw Pile. Deal 50 damage to ALL enemies.",
+              "new": "Can only be played if there are no cards in your Draw Pile. Deal 60 damage to ALL enemies."
+            },
+            "upgrade.damage": {
+              "old": 10,
+              "new": 15
+            }
+          },
+          "GRAVE_WARDEN": {
+            "upgrade.block": {
+              "old": 2,
+              "new": 3
+            },
+            "upgrade.description": {
+              "old": "Gain 10 Block.\nAdd a Soul+ into your Draw Pile.",
+              "new": null
+            }
+          },
+          "GUIDING_STAR": {
+            "description": {
+              "old": "Deal 12 damage.\nNext turn, draw 2 cards.",
+              "new": "Deal 12 damage.\nDraw 2 cards."
+            },
+            "upgrade.description": {
+              "old": "Deal 13 damage.\nNext turn, draw 3 cards.",
+              "new": "Deal 13 damage.\nDraw 3 cards."
+            }
+          },
+          "HEIRLOOM_HAMMER": {
+            "description": {
+              "old": "Deal 17 damage.\nChoose a Colorless card in your Hand. Add a copy of that card into your Hand.",
+              "new": "Deal 20 damage.\nChoose a Colorless card in your Hand. Add a copy of that card into your Hand."
+            }
+          },
+          "HEMOKINESIS": {
+            "description": {
+              "old": "Lose 2 HP.\nDeal 14 damage.",
+              "new": "Lose 2 HP.\nDeal 15 damage."
+            }
+          },
+          "HIDDEN_GEM": {
+            "description": {
+              "old": "A random card in your Draw Pile gains Replay 2.",
+              "new": "A random card without Replay in your Draw Pile gains Replay 2."
+            }
+          },
+          "HOTFIX": {
+            "keywords": {
+              "old": [],
+              "new": [
+                "Exhaust"
+              ]
+            },
+            "upgrade.remove_keywords": {
+              "old": null,
+              "new": [
+                "Exhaust"
+              ]
+            }
+          },
+          "HOWL_FROM_BEYOND": {
+            "description": {
+              "old": "Deal 16 damage to ALL enemies.\nAt the start of your turn, plays from the Exhaust Pile.",
+              "new": "Deal 16 damage to ALL enemies.\nAt the start of your turn, if this is in your Exhaust Pile, play it."
+            }
+          },
+          "HUDDLE_UP": {
+            "keywords": {
+              "old": [],
+              "new": [
+                "Exhaust"
+              ]
+            },
+            "description": {
+              "old": "ALL allies draw 2 cards.",
+              "new": "ALL players draw 2 cards."
+            }
+          },
+          "ITERATION": {
+            "description": {
+              "old": "The first time you draw a Status card each turn, draw 2 cards.",
+              "new": "The first time you draw a Status each turn, draw 2 cards."
+            },
+            "upgrade.description": {
+              "old": "The first time you draw a Status card each turn, draw 3 cards.",
+              "new": "The first time you draw a Status each turn, draw 3 cards."
+            }
+          },
+          "I_AM_INVINCIBLE": {
+            "description": {
+              "old": "Gain 9 Block.\nAt the end of your turn, if this is on top of your Draw Pile, play it.",
+              "new": "Gain 10 Block.\nAt the end of your turn, if this is on top of your Draw Pile, play it."
+            }
+          },
+          "KINGLY_KICK": {
+            "description": {
+              "old": "Deal 24 damage.\nWhenever you draw this card, reduce its cost by 1.",
+              "new": "Deal 27 damage.\nWhenever you draw this card, reduce its cost by 1."
+            },
+            "upgrade.damage": {
+              "old": 6,
+              "new": 8
+            }
+          },
+          "KINGLY_PUNCH": {
+            "description": {
+              "old": "Deal 8 damage.\nWhenever you draw this card, increase its damage by 3 this combat.",
+              "new": "Deal 8 damage.\nWhenever you draw this card, increase its damage by 4 this combat."
+            },
+            "upgrade.damage": {
+              "old": null,
+              "new": 2
+            }
+          },
+          "LEADING_STRIKE": {
+            "description": {
+              "old": "Deal 7 damage.\nAdd 1 Shiv into your Hand.",
+              "new": "Deal 3 damage.\nAdd 2 Shivs into your Hand."
+            },
+            "upgrade.description": {
+              "old": null,
+              "new": "Deal 6 damage.\nAdd 2 Shivs into your Hand."
+            }
+          },
+          "MEMENTO_MORI": {
+            "description": {
+              "old": "Deal 8 damage.\nDeals 4 additional damage for each card discarded this turn.",
+              "new": "Deal 9 damage.\nDeals 4 additional damage for each card discarded this turn."
+            }
+          },
+          "MINION_DIVE_BOMB": {
+            "cost": {
+              "old": 1,
+              "new": 0
+            }
+          },
+          "MINION_STRIKE": {
+            "description": {
+              "old": "Deal 7 damage.\nDraw 1 card.",
+              "new": "Deal 6 damage.\nDraw 1 card."
+            },
+            "upgrade.description": {
+              "old": "Deal 10 damage.\nDraw 1 card.",
+              "new": "Deal 9 damage.\nDraw 1 card."
+            }
+          },
+          "NEOWS_FURY": {
+            "upgrade.cards": {
+              "old": null,
+              "new": 1
+            },
+            "upgrade.description": {
+              "old": "Deal 14 damage.\nPut 2 random cards from your Discard Pile into your Hand.",
+              "new": "Deal 14 damage.\nPut 3 random cards from your Discard Pile into your Hand."
+            }
+          },
+          "PARRY": {
+            "description": {
+              "old": "Whenever you play Sovereign Blade, gain 6 Block.",
+              "new": "Whenever you play Sovereign Blade, gain 10 Block."
+            }
+          },
+          "PATTER": {
+            "description": {
+              "old": "Gain 8 Block.\nGain 2 Vigor.",
+              "new": "Gain 9 Block.\nGain 2 Vigor."
+            }
+          },
+          "PINPOINT": {
+            "description": {
+              "old": "Deal 17 damage.\nCosts 1 less [E] for each Skill played this turn.",
+              "new": "Deal 15 damage.\nCosts 1 less [E] for each Skill played this turn."
+            },
+            "upgrade.damage": {
+              "old": 5,
+              "new": 4
+            }
+          },
+          "PRODUCTION": {
+            "upgrade.energy": {
+              "old": null,
+              "new": 1
+            },
+            "upgrade.remove_keywords": {
+              "old": [
+                "Exhaust"
+              ],
+              "new": null
+            }
+          },
+          "REFINE_BLADE": {
+            "description": {
+              "old": "Forge 6.\nNext turn, gain [E].",
+              "new": "Forge 9.\nNext turn, gain [E]."
+            }
+          },
+          "RIP_AND_TEAR": {
+            "rarity": {
+              "old": "Uncommon",
+              "new": "Event"
+            }
+          },
+          "ROCKET_PUNCH": {
+            "description": {
+              "old": "Deal 13 damage.\nDraw 1 card.\nWhen a Status card is created, reduce this card's cost to 0 [E] this turn.",
+              "new": "Deal 13 damage.\nDraw 1 card.\nWhenever you create a Status, reduce this card's cost to 0 [E] until played."
+            },
+            "upgrade.description": {
+              "old": "Deal 14 damage.\nDraw 2 cards.\nWhen a Status card is created, reduce this card's cost to 0 [E] this turn.",
+              "new": "Deal 14 damage.\nDraw 2 cards.\nWhenever you create a Status, reduce this card's cost to 0 [E] until played."
+            }
+          },
+          "SCULPTING_STRIKE": {
+            "description": {
+              "old": "Deal 8 damage.\nAdd Ethereal to a card in your Hand.",
+              "new": "Deal 9 damage.\nAdd Ethereal to a card in your Hand."
+            }
+          },
+          "SEANCE": {
+            "cost": {
+              "old": 0,
+              "new": 1
+            },
+            "upgrade.cost": {
+              "old": null,
+              "new": 0
+            },
+            "upgrade.description": {
+              "old": "Transform a card in your Draw Pile into Soul+.",
+              "new": null
+            }
+          },
+          "SEEKER_STRIKE": {
+            "description": {
+              "old": "Deal 6 damage.\nChoose 1 of 3 cards in your Draw Pile to add into your Hand.",
+              "new": "Deal 9 damage.\nChoose 1 of 3 cards in your Draw Pile to add into your Hand."
+            }
+          },
+          "SERPENT_FORM": {
+            "upgrade.serpent_form": {
+              "old": 1,
+              "new": 2
+            }
+          },
+          "SHIV": {
+            "upgrade.description": {
+              "old": "Deal 6 damage.",
+              "new": null
+            }
+          },
+          "SKEWER": {
+            "description": {
+              "old": "Deal 7 damage X times.",
+              "new": "Deal 8 damage X times."
+            }
+          },
+          "SOLAR_STRIKE": {
+            "description": {
+              "old": "Deal 8 damage.\nGain [S].",
+              "new": "Deal 9 damage.\nGain [S]."
+            }
+          },
+          "SPEEDSTER": {
+            "upgrade.add_keywords": {
+              "old": null,
+              "new": [
+                "Innate"
+              ]
+            }
+          },
+          "SPITE": {
+            "description": {
+              "old": "Deal 6 damage.\nIf you lost HP this turn, draw 1 card.",
+              "new": "Deal 5 damage.\nIf you lost HP this turn,\nhits 2 times."
+            },
+            "upgrade.damage": {
+              "old": 3,
+              "new": null
+            },
+            "upgrade.description": {
+              "old": "Deal 9 damage.\nIf you lost HP this turn, draw 1 card.",
+              "new": null
+            },
+            "upgrade.repeat": {
+              "old": null,
+              "new": 1
+            }
+          },
+          "SPOILS_OF_BATTLE": {
+            "description": {
+              "old": "Forge 10.",
+              "new": "Forge 5.\nDraw 2 cards."
+            },
+            "upgrade.description": {
+              "old": null,
+              "new": "Forge 8.\nDraw 2 cards."
+            },
+            "upgrade.forge": {
+              "old": 5,
+              "new": 3
+            }
+          },
+          "STOKE": {
+            "keywords": {
+              "old": [
+                "Exhaust"
+              ],
+              "new": []
+            },
+            "description": {
+              "old": "Exhaust your Hand.\nDraw a card for each card Exhausted.",
+              "new": "Exhaust your Hand.\nAdd 1 random card into your Hand for each card Exhausted."
+            },
+            "upgrade.cost": {
+              "old": 0,
+              "new": null
+            },
+            "upgrade.description": {
+              "old": null,
+              "new": "Exhaust your Hand.\nAdd 1 random Upgraded card into your Hand for each card Exhausted."
+            }
+          },
+          "SWORD_SAGE": {
+            "description": {
+              "old": "Increase the cost of Sovereign Blade by 1. Sovereign Blade now hits an additional time.",
+              "new": "Sovereign Blade now hits an additional time."
+            }
+          },
+          "TRASH_TO_TREASURE": {
+            "description": {
+              "old": "Whenever you create a Status card, Channel 1 random Orb.",
+              "new": "Whenever you create a Status, Channel 1 random Orb."
+            }
+          },
+          "TREMBLE": {
+            "keywords": {
+              "old": [],
+              "new": [
+                "Exhaust"
+              ]
+            },
+            "description": {
+              "old": "Apply 2 Vulnerable.",
+              "new": "Apply 3 Vulnerable."
+            }
+          },
+          "UNTOUCHABLE": {
+            "description": {
+              "old": "Gain 9 Block.",
+              "new": "Gain 6 Block."
+            },
+            "upgrade.block": {
+              "old": 3,
+              "new": 2
+            }
+          },
+          "VOID_FORM": {
+            "keywords": {
+              "old": [],
+              "new": [
+                "Ethereal"
+              ]
+            },
+            "upgrade.description": {
+              "old": "End your turn.\nThe first 3 cards you play each turn are free to play.",
+              "new": null
+            },
+            "upgrade.remove_keywords": {
+              "old": null,
+              "new": [
+                "Ethereal"
+              ]
+            }
+          },
+          "VOLTAIC": {
+            "cost": {
+              "old": 2,
+              "new": 3
+            }
+          },
+          "WROUGHT_IN_WAR": {
+            "description": {
+              "old": "Deal 7 damage.\nForge 5.",
+              "new": "Deal 7 damage.\nForge 7."
+            }
+          }
+        },
+        "added": [
+          "NOT_YET"
+        ],
+        "removed": [
+          "GRAPPLE"
+        ]
+      },
+      "relics": {
+        "modified": {
+          "AMETHYST_AUBERGINE": {
+            "description": {
+              "old": "Enemies drop 10 additional Gold.",
+              "new": "Enemies drop 15 additional Gold."
+            }
+          },
+          "ARCHAIC_TOOTH": {
+            "description": {
+              "old": "Upon pickup, Transform a starter card with an ancient version.",
+              "new": "Upon pickup, Transform a starter card into an ancient version."
+            }
+          },
+          "BAG_OF_MARBLES": {
+            "tier": {
+              "old": "Uncommon",
+              "new": "Common"
+            }
+          },
+          "BELLOWS": {
+            "tier": {
+              "old": "Uncommon",
+              "new": "Rare"
+            }
+          },
+          "BOOK_OF_FIVE_RINGS": {
+            "description": {
+              "old": "Every 5 cards you add to your Deck, heal 15 HP.",
+              "new": "Every 5 cards you add to your Deck, heal 20 HP."
+            }
+          },
+          "BOWLER_HAT": {
+            "description": {
+              "old": "Gain 20% additional Gold.",
+              "new": "Gain 25% additional Gold."
+            }
+          },
+          "CROSSBOW": {
+            "description": {
+              "old": "At the start of your turn, add a random Attack into your Hand. It costs 0[E] this turn.",
+              "new": "At the start of your turn, add a random Attack into your Hand. It's free to play this turn."
+            }
+          },
+          "FRAGRANT_MUSHROOM": {
+            "description": {
+              "old": "Upon pickup, lose 15 HP and Upgrade 3 random cards.",
+              "new": "Upon pickup, lose 15 HP and Upgrade 2 random cards."
+            }
+          },
+          "LASTING_CANDY": {
+            "tier": {
+              "old": "Rare",
+              "new": "Uncommon"
+            }
+          },
+          "LEAFY_POULTICE": {
+            "description": {
+              "old": "Upon pickup, Transform 1 of your Strikes and 1 of your Defends and lose 10 Max HP.",
+              "new": "Upon pickup, Transform 1 of your Strikes and 1 of your Defends and lose 12 Max HP."
+            }
+          },
+          "LIZARD_TAIL": {
+            "description": {
+              "old": "When you would die, heal to 50% of your Max HP instead (works once).",
+              "new": "When your HP would be reduced to 0, heal to 50% of your Max HP instead (works once)."
+            }
+          },
+          "PENDULUM": {
+            "description": {
+              "old": "Whenever you shuffle your Draw Pile, draw a card.",
+              "new": "Every 3 turns, draw 1 card."
+            }
+          },
+          "PERMAFROST": {
+            "description": {
+              "old": "The first time you play a Power each combat, gain 6 Block.",
+              "new": "The first time you play a Power each combat, gain 7 Block."
+            },
+            "tier": {
+              "old": "Common",
+              "new": "Uncommon"
+            }
+          },
+          "PLANISPHERE": {
+            "description": {
+              "old": "Whenever you enter a ? room, heal 4 HP.",
+              "new": "Whenever you enter a ? room, heal 5 HP."
+            }
+          },
+          "PRECARIOUS_SHEARS": {
+            "description": {
+              "old": "Upon pickup, remove 2 cards from your Deck and take 13 damage.",
+              "new": "Upon pickup, remove 2 cards from your Deck and lose 16 HP."
+            }
+          },
+          "PRESERVED_FOG": {
+            "description": {
+              "old": "Upon pickup, remove 5 cards from your Deck. Add Folly to your Deck.",
+              "new": "Upon pickup, remove 3 cards from your Deck. Add Folly to your Deck."
+            }
+          },
+          "RED_MASK": {
+            "tier": {
+              "old": "Uncommon",
+              "new": "Common"
+            }
+          },
+          "REGALITE": {
+            "description": {
+              "old": "Whenever you create a Colorless card, gain 2 Block.",
+              "new": "Whenever you create a card, gain 2 Block."
+            }
+          },
+          "STONE_CRACKER": {
+            "description": {
+              "old": "At the start of Boss combats, Upgrade 3 random cards in your Draw Pile for the rest of combat.",
+              "new": "At the start of each combat, Upgrade 2 random cards in your Draw Pile for the rest of combat."
+            }
+          },
+          "TINY_MAILBOX": {
+            "description": {
+              "old": "Whenever you Rest, procure a random potion.",
+              "new": "Whenever you Rest, procure 2 random potions."
+            },
+            "tier": {
+              "old": "Common",
+              "new": "Uncommon"
+            }
+          },
+          "VEXING_PUZZLEBOX": {
+            "description": {
+              "old": "At the start of each combat, add a random card into your Hand. It costs 0[E].",
+              "new": "At the start of each combat, add a random card into your Hand. It's free to play this turn."
+            }
+          }
+        },
+        "added": [
+          "HEFTY_TABLET",
+          "NEOWS_BONES",
+          "NEOWS_TALISMAN",
+          "PHIAL_HOLSTER",
+          "WINGED_BOOTS"
+        ],
+        "removed": []
+      },
+      "potions": {
+        "modified": {
+          "FAIRY_IN_A_BOTTLE": {
+            "description": {
+              "old": "When you would die, instead this potion is discarded and you heal to 30% of your Max HP.",
+              "new": "When your HP would be reduced to 0, instead this potion is discarded and you heal to 30% of your Max HP."
+            }
+          },
+          "FOUL_POTION": {
+            "description": {
+              "old": "Deal 12 damage to EVERYONE.\nCan be thrown at the Merchant for 100 Gold instead.",
+              "new": "Deal 12 damage to ALL players and enemies.\nCan be thrown at the Merchant for 100 Gold instead."
+            }
+          },
+          "LIQUID_MEMORIES": {
+            "description": {
+              "old": "Put a card from your Discard Pile into your Hand. It costs 0 [E] this turn.",
+              "new": "Put a card from your Discard Pile into your Hand. It's free to play this turn."
+            }
+          }
+        },
+        "added": [],
+        "removed": []
+      },
+      "enchantments": {
+        "modified": {
+          "INSTINCT": {
+            "description": {
+              "old": "Decrease the cost of this card by 1.",
+              "new": "This card's attack damage is doubled."
+            }
+          }
+        },
+        "added": [
+          "INKY"
+        ],
+        "removed": [
+          "FAVORED"
+        ]
+      }
+    }
+  }
+]

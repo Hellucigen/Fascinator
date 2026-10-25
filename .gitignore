@@ -19,3 +19,15 @@ data/runtime_graph.json
 
 # Minecraft 机器人（node_modules 不入库）
 minecraft/bot/node_modules/
+
+# 运行时模型资产与临时文件（不入库）
+models/
+*.tmp
+
+# 实验归档（历史研究产物，18MB 不入库；需要时可从本地留档恢复）
+FAS-Cognitive/experiments_archive/
+
+# legacy 大文件（旧仓历史数据，161MB 图谱快照等——需要时本地 docs/legacy_fascinator 仍在）
+docs/legacy_fascinator/Knowledge/
+docs/legacy_fascinator/experiments/
+docs/legacy_fascinator/deliverables/*.zip

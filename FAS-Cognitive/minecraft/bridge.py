@@ -21,24 +21,60 @@ logger = logging.getLogger(__name__)
 BASE = "http://127.0.0.1:5010"
 TIMEOUT = 3
 
+# 熔断器（2026-10-24 实锤：node 进程死后防火墙静默丢 SYN，每次调用干等
+# 满 3s 超时；场评估一拍内多次读桥 → 单拍被拖到分钟级，整条认知线程近乎
+# 冻结——她表现为"长期不发呆不说话"）。连续失败达阈值 → 熔断冷却期内
+# 读请求零开销跳过；冷却结束放行一次探测，成功即恢复。
+_FAIL_MAX = 3
+_FAIL_COOLDOWN_S = 300.0
+_fail = {"n": 0, "until": 0.0}
+
+
+def _breaker_open() -> bool:
+    import time as _t
+    return _t.time() < _fail["until"]
+
+
+def _record(ok: bool):
+    import time as _t
+    if ok:
+        _fail.update({"n": 0, "until": 0.0})
+        return
+    _fail["n"] += 1
+    if _fail["n"] >= _FAIL_MAX:
+        _fail["until"] = _t.time() + _FAIL_COOLDOWN_S
+        _fail["n"] = 0
+        logger.warning("[Minecraft] 桥连续失败 → 熔断 5 分钟"
+                       "（期间读取零开销跳过，冷却后半开探测）")
+
 
 def get_state() -> dict | None:
+    if _breaker_open():
+        return None
     try:
         with urllib.request.urlopen(BASE + "/state", timeout=TIMEOUT) as r:
-            return _json.loads(r.read().decode("utf-8"))
+            data = _json.loads(r.read().decode("utf-8"))
+        _record(True)
+        return data
     except Exception:
+        _record(False)
         return None
 
 
 def say(text: str) -> bool:
+    if _breaker_open():
+        return False
     try:
         req = urllib.request.Request(
             BASE + "/say", method="POST",
             data=_json.dumps({"text": str(text)[:240]}, ensure_ascii=False).encode("utf-8"),
             headers={"Content-Type": "application/json"})
         with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-            return r.status == 200
+            ok = r.status == 200
+        _record(ok)
+        return ok
     except Exception as e:
+        _record(False)
         logger.warning(f"[Minecraft] say 失败: {e}")
         return False
 

@@ -22,7 +22,7 @@ import os
 import subprocess
 import time
 
-from graph_model import Node, Edge, now_str
+from graph_model import Node, now_str
 
 logger = logging.getLogger(__name__)
 
@@ -71,9 +71,12 @@ class MinecraftSession:
                     graph_space="self",
                     extra_attrs={"type": "mc_session", "canon": "cognitive_state",
                                  "state": "disconnected", "bot_name": "Haru"}))
-                self.kg.add_edge(Edge(src="Self", dst="Minecraft会话",
-                                      relation="意图", weight=0.5,
-                                      relation_category="cognitive_relation"))
+                # 不再种 Self-[意图]->Minecraft会话（2026-10-19 审计）：
+                # 这条边语义是谎——"意图"该指向动作概念（进入Minecraft世界），
+                # 状态镜像经 进入世界-[实现于]->会话 已可达；直连枢纽把它
+                # 拖进 hub 一跳半径 → 吃背景激活地板 → 永远高激活挤进每个
+                # basis（Minecraft会话钉子户事故的第一因）。存量边由运维
+                # 清理，新装不再产生。
 
     def _set(self, state, **extra):
         self._ensure_node()

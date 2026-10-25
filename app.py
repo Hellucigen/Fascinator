@@ -40,17 +40,22 @@ from collections import deque
 # 认知↔陪伴的边界契约在 FAS-Cognitive/fas/（contracts/protocols），依赖方向
 # 单向：陪伴 → 认知。环境变量 FAS_COG_ROOT 可指到别处。
 import sys
-_FAS_COG = os.environ.get("FAS_COG_ROOT") or os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "FAS-Cognitive")
+# 2026-10-16 合并回仓：认知层已整体内嵌于本仓 FAS-Cognitive/ 子目录。
+# 引导顺序：环境变量 → 内嵌 → 同级（旧布局兼容）。
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_FAS_COG = os.environ.get("FAS_COG_ROOT") or next(
+    (d for d in (os.path.join(_HERE, "FAS-Cognitive"),
+                 os.path.join(os.path.dirname(_HERE), "FAS-Cognitive"))
+     if os.path.isdir(d)), "")
 if os.path.isdir(_FAS_COG):
     if _FAS_COG not in sys.path:
         sys.path.insert(0, _FAS_COG)
 else:
     raise ImportError(
-        "找不到 FAS-Cognitive 同级仓库：" + _FAS_COG +
+        "找不到 FAS-Cognitive（已试内嵌/同级/FAS_COG_ROOT）：" + _FAS_COG +
         "\n请把两个仓放在同一父目录，或设置环境变量 FAS_COG_ROOT。")
 
-from flask import Flask, jsonify, request, send_from_directory, g
+from flask import Flask, jsonify, request, g
 from flask_cors import CORS
 
 from graph_model import KnowledgeGraph, Node, Edge, is_cognitive_visible, now_str
@@ -127,6 +132,29 @@ CORS(app)
 
 config = dict(DEFAULT_CONFIG)
 
+# ── P0 配置持久化（2026-10-12）：overlay 文件 > DEFAULT_CONFIG 出厂值 ──────
+# data/config_overlay.json 只记录显式改过的键；重启后在此重放。环境变量硬
+# 开关（FAS_CHARON=0 / FAS_NO_SELF_SEARCH=1）仍在下一段生效，优先级最高。
+CONFIG_OVERLAY_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                   "data", "config_overlay.json")
+# 隐私敏感开关：可热开，但绝不跨重启持久化（重启回到出厂默认=关）。
+# 2026-10-14 22:4x 用户显式授权：屏幕观察转常态（本机、开关仍可随时关），
+# 移出 ephemeral 名单；麦克风维持重启回关（用户未授权常态监听）。
+PRIVACY_EPHEMERAL_KEYS = frozenset({"voice_listen_enabled"})
+from config_store import load_overlay as _load_overlay, merge_overlay as _merge_overlay, apply_updates as _apply_cfg_updates
+_overlay = _load_overlay(CONFIG_OVERLAY_PATH)
+if _overlay:
+    _merge_overlay(config, _overlay)
+    logger.info("[Config] 已重放运行时覆盖 %d 项（%s）",
+                len(_overlay), CONFIG_OVERLAY_PATH)
+
+# §5 用量账本：持有共享 config 引用（预算阈值/价格表热更新即时可见）
+import usage_ledger
+usage_ledger.configure(config)
+# 千问思考链开关：llm_provider 热读同一 config（qwen_enable_thinking）
+import llm_provider
+llm_provider.configure(config)
+
 # 统一运行日志装配（config 加载后立刻做；总开关 logging_enabled=false 即全旁路）
 if config.get("logging_enabled", True):
     fas_log.setup(log_dir=str(config.get("log_dir", "logs")),
@@ -134,6 +162,372 @@ if config.get("logging_enabled", True):
                   summary_interval_s=float(
                       config.get("log_summary_interval_s", 300)))
     fas_log.install_excepthooks()
+
+# ── Charon 陪伴外壳下行通道（2026-10-09 接线） ──────────────────────────
+# 话语（回复/主动消息）经 Charon 内嵌 token Bridge（127.0.0.1:17734，
+# fas/companion/charon_bridge.py）投给桌面前端；token/端口自动发现自
+# ~/.personal-terminal/config.json。部署约定：FAS-Companion 是陪伴主运行
+# 环境，本仓默认开启；Charon 未运行时投递失败仅告警、不反压主链路。
+# 关闭方式：环境变量 FAS_CHARON=0（最高优先级，覆盖文件也无效），
+# 或 PUT /api/config {"companion_charon_enabled": false}（现会持久化）。
+# 注意（P0 修复）：用户显式改过这两个键后，本段不再强行改写。
+if os.environ.get("FAS_CHARON", "1") != "0":
+    if "companion_charon_enabled" not in _overlay:
+        config["companion_charon_enabled"] = True
+    # Charon 确实在运行时才不弹系统浏览器（其 Fascinator 面板已内嵌本 UI）；
+    # 独立起服务照旧弹窗。探测 Bridge /health：任何 HTTP 应答都算壳在场。
+    if config.get("companion_charon_enabled", False):
+        try:
+            import json as _json
+            import urllib.request as _url
+            from urllib.error import HTTPError
+            _bp = 17734
+            _pt = os.path.expanduser("~/.personal-terminal/config.json")
+            if os.path.isfile(_pt):
+                with open(_pt, "r", encoding="utf-8") as _f:
+                    _bp = int(_json.load(_f).get("bridge_port", 17734))
+            _shell_present = False
+            try:
+                _url.urlopen(f"http://127.0.0.1:{_bp}/health", timeout=1.0).close()
+                _shell_present = True
+            except HTTPError:
+                _shell_present = True   # 非 2xx 也是应答：壳在场
+            if _shell_present and "auto_open_browser" not in _overlay:
+                config["auto_open_browser"] = False
+        except (OSError, ValueError):
+            pass   # 端口未监听/配置坏 → 照旧弹浏览器
+
+# 自发上网检索：本仓部署默认开（同 Charon 通道哲学：关了就零行为变化）。
+# FAS_NO_SELF_SEARCH=1（硬关，最高优先级）或 PUT /api/config
+# {"companion_self_search_enabled": false}（持久化热关）可关。
+if os.environ.get("FAS_NO_SELF_SEARCH", "0") == "0":
+    if "companion_self_search_enabled" not in _overlay:
+        config["companion_self_search_enabled"] = True
+
+# ExpressionChannel 列表（0 或 1 个）；build_charon_channel 不做网络 IO，
+# 构造成功仅代表配置可读，首次投递才校验 token/端口连通。
+charon_channels = []
+if config.get("companion_charon_enabled", False):
+    try:
+        from fas.companion.assembly import build_charon_channel
+        from fas.companion.charon_bridge import JournalingChannel
+        _ch = build_charon_channel(config)
+        if _ch is not None:
+            # JournalingChannel：主动/提问话语除弹泡外另记一条 Charon 便签
+            charon_channels = [JournalingChannel(_ch)]
+    except Exception as _e:                          # noqa: BLE001
+        logger.warning("[Charon] 下行通道构造失败：%r", _e)
+
+
+def _charon_inbox_digest(inbox: dict) -> str:
+    """把 /api/inbox 的工作区数据压成一句"他正在处理什么"的经历文本。"""
+    parts = []
+    # 过滤 tag=haru 的便签——那是她自己的话被留痕后又轮询回来，喂给她
+    # 就是自我回声（实测 21:02 她的"快照"里全是自己的上一句话）。
+    fl = [x for x in (inbox.get("fleeting") or [])
+          if "haru" not in (x.get("tags") or [])]
+    if fl:
+        parts.append("便签%d条：" % len(fl)
+                     + "；".join(str(x.get("body", ""))[:40] for x in fl[:5]))
+    td = inbox.get("todos_open") or []
+    if td:
+        parts.append("未完成待办%d项：" % len(td)
+                     + "；".join(str(x.get("title", ""))[:40] for x in td[:5]))
+    nt = inbox.get("notes_recent") or []
+    if nt:
+        parts.append("最近笔记："
+                     + "；".join(str(x.get("title", ""))[:40] for x in nt[:5]))
+    if parts:
+        # 证据边界（2026-10-11 诊断实验）：清单共现 ≠ 用户正在操作。
+        # 不加这句，模型会把标题清单虚构成"同时开着几摊/来回切换"
+        # （02:08 真实案例）；隔离对照证明边界措辞能消除该虚构。
+        parts.append("（以上只是清单快照，不代表用户正在打开或操作它们）")
+    return ("用户工作区快照 — " + "｜".join(parts)) if parts else ""
+
+
+def _charon_inbox_poller():
+    """每 5 分钟读一次 Charon /api/inbox；只有实质内容变化才算一次感知
+    事件——上次快照 hash 持久化在 data/charon_snapshot_state.json，
+    重启不再把旧清单重放成满格新鲜事件（2026-10-11 02:08 案例）。
+    失败静默（壳没开=没得看），绝不影响主链路。"""
+    import charon_snapshot_state as css
+    _data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+    while True:
+        time.sleep(300)
+        if not config.get("companion_charon_enabled", False) or not charon_channels:
+            continue
+        try:
+            inbox = charon_channels[0].read_inbox()
+        except Exception:                            # noqa: BLE001
+            continue
+        if not inbox:
+            continue
+        digest = _charon_inbox_digest(inbox)
+        if not digest:
+            continue
+        kind, _h = css.decide(css.load_prev_hash(_data_dir), digest)
+        if kind == "unchanged":
+            continue          # 背景资料未变化：不建节点、不刷新激活、不入经历
+        css.save_hash(_data_dir, _h)
+        try:
+            buffer.add_experience(raw_text=digest, nodes=[], edges=[])
+            logger.info("[Charon] 工作区快照入经历（%d 字）", len(digest))
+        except Exception as _e:                      # noqa: BLE001
+            logger.warning("[Charon] 快照入经历失败：%r", _e)
+        # 快照变化 = 一次感知事件：写成 episodic 节点并点亮（CuriosityAuto
+        # 给陌生术语建节点的同一纪律）。只在文字经历流里打转的事实不参与
+        # 焦点竞争，意图形成永远攒不出；落成节点后它就是合法的强焦点源——
+        # 用户记条新便签，她才有机会"注意到"并主动开口。
+        # first（无历史基线）≠ 用户刚执行了动作：按"背景资料"降档激活，
+        # 不点亮主语，不参与事件级焦点竞争（2026-10-11 诊断 §3）。
+        _is_event = (kind == "changed")
+        try:
+            try:
+                from temporal_awareness import link_event_to_now_bucket as _ltnb
+            except Exception:
+                _ltnb = None
+            _nid = f"用户近况_{int(time.time())}"
+            with kg._lock:
+                kg.add_node(Node(
+                    id=_nid, weight=0.6, label="declarative-episodic",
+                    graph_space="episodic",
+                    extra_attrs={"type": "perception",
+                                 "source": "charon_workspace",
+                                 "baseline": not _is_event,
+                                 "text": digest[:220]}))
+                # 边方向决定她会不会"想说"：意图投票里 user_relevance 读的是
+                # 用户→X 的出边（continuous_cognition.py:544 get_out_edges("用户")），
+                # 所以必须建 用户-[关注]->近况 而非近况-[关于]->用户，否则社交
+                # 信号恒为 0、念头永远被判成 action（2026-10-10 实测根因）。
+                if kg.get_node("用户"):
+                    kg.add_edge(Edge(src="用户", dst=_nid,
+                                     relation="关注", weight=0.9))
+                if kg.get_node("用户关系"):
+                    kg.add_edge(Edge(src=_nid, dst="用户关系",
+                                     relation="涉及", weight=0.6))
+            _nd = kg.get_node(_nid)
+            if _nd is not None:
+                if _is_event:
+                    # changed：满量程 + 主体点亮（单点事件信念只有 0.72，
+                    # 对话之所以能过线是它同时点亮 用户/用户关系 一簇——
+                    # "工作区有新动静"的主体本来就是用户，语义正确非降门槛）。
+                    _nd.activation = 5.0
+                    _nd.touch()
+                    _lit = [_nid]
+                    for _subj, _boost in (("用户", 1.5), ("用户关系", 1.0)):
+                        _sn = kg.get_node(_subj)
+                        if _sn is not None:
+                            _sn.activation = min(5.0,
+                                                 float(_sn.activation or 0) + _boost)
+                            _sn.touch()
+                            _lit.append(_subj)
+                    engine.mark_active(_lit)
+                else:
+                    # first：背景资料降档——可用作背景知识，不冒充新事件。
+                    _nd.activation = 1.2
+                    _nd.touch()
+            if _ltnb:
+                _ltnb(kg, _nid)            # 观察↔时段桥（cognitive-episodic）
+            logger.info("[Charon] 工作区感知入图（%s）: %s",
+                        "事件" if _is_event else "首次基线·背景", _nid)
+            if _is_event:
+                try:
+                    import activities as _A
+                    _A.notify_event("new_info")   # 状态驱动：提前重评估
+                except Exception:
+                    pass
+            # 落盘：感知节点此前只活在内存（重启即蒸发，2026-10-10 审计
+            # 实锤 runtime_graph.json 查无此节点）。复用 cc 的既有持久化
+            # 入口，不触碰图谱存储架构。
+            try:
+                if getattr(cc, "_save_fn", None):
+                    cc._save_fn()
+            except Exception:                        # noqa: BLE001
+                pass
+        except Exception as _pe:                     # noqa: BLE001
+            logger.warning("[Charon] 感知入图失败：%r", _pe)
+        if _is_event:   # 背景基线不激活动作话题（2026-10-11 诊断）
+                # 感知不止于文字：点亮快照里能匹配到的已有图节点（温和 +1.0，
+                # 只连已有节点不造新实体，同搜索记录纪律）。经历流对回合编译
+                # 可见，但 CI 形成/表达 basis 读的是图激活场——不点亮就是
+                # "可见但无感"（实测快照喂了 Movie List/AI学习计划，她仍无念头
+                # 可形成）。点亮后这些话题能参与意图积累，过阈值她才会"想起"。
+                try:
+                    _texts = " ".join(
+                        str(x.get("body", "")) + " " + str(x.get("title", ""))
+                        for x in (inbox.get("fleeting") or [])
+                        if "haru" not in (x.get("tags") or []))
+                    _texts += " " + " ".join(str(x.get("title", ""))
+                                             for x in (inbox.get("notes_recent") or []))
+                    _texts += " " + " ".join(str(x.get("title", ""))
+                                             for x in (inbox.get("todos_open") or []))
+                    _lit = []
+                    with kg._lock:
+                        for _nid, _n in kg.nodes.items():
+                            if (_nid and len(_nid) >= 2 and _nid not in ("用户", "Fascinator")
+                                    and _nid in _texts):
+                                _n.activation = min(3.0, float(_n.activation or 0) + 1.0)
+                                _n.touch()
+                                _lit.append(_nid)
+                                if len(_lit) >= 4:
+                                    break
+                    if _lit:
+                        engine.mark_active(_lit)
+                        logger.info("[Charon] 工作区话题点亮图谱: %s", _lit)
+                except Exception as _le:                     # noqa: BLE001
+                    logger.warning("[Charon] 快照点亮失败：%r", _le)
+
+
+def _self_search_once(_searched: set, remember=None) -> None:
+    """自发检索的一轮（提前 return 而非 continue——外层循环统一负责休眠，
+    任何路径都不能绕过它，否则空转烧 CPU）。
+    remember(key)：去重集跨重启持久化口（P0-4，由 explorer 线程注入）。"""
+    st = curiosity_engine.get_curiosity_state(kg)
+    if not st.get("active") or not st.get("question"):
+        return
+    question = str(st["question"])[:120]
+    key = (st.get("target"), question)
+    if key in _searched:
+        return
+    _searched.add(key)
+    if remember is not None:
+        remember(key)
+    # 疑问句清洗成搜索词（复用回合内那套 + 疑问尾词）
+    q = re.sub(r"[吗呢啊]$", "", question)
+    q = re.sub(r"(是什么|叫什么|有什么|什么意思|怎么|如何|为什么|哪些|哪个|哪类)$", "", q)
+    q = re.sub(r"[【】《》\u201c\u201d\u2018\u2019\"'？?。！!，,、\s]+", " ", q).strip()[:30]
+    if len(q) < 2:
+        return
+    from actions.web_search import do_web_search
+    results = do_web_search(q, top_n=5)
+    # 相关性闸：生造/极偏词会被搜索引擎拆成单字垃圾命中（实测
+    # "冯诺依曼代数熵"→"冯（汉语汉字）_百度百科"）。没有任何一条
+    # 结果包含查询词（或其 2 字前缀）→ 视为无有效结果，宁可不说话。
+    def _relevant(r):
+        blob = (r.get("title", "") + r.get("snippet", ""))
+        return q in blob or (len(q) >= 2 and q[:2] in blob)
+    results = [r for r in results if _relevant(r)]
+    if not results:
+        logger.info("[SelfSearch]「%s」无相关结果（静默）", q)
+        return
+    logger.info("[SelfSearch] 自发检索「%s」命中 %d 条（好奇：%s）",
+                q, len(results), question[:40])
+    # ① 搜索记录入图（同被动搜索形状）
+    try:
+        with kg._lock:
+            # 毫秒级 id：秒级 id 在同秒两次搜索时会互相覆盖（幂等小修）
+            _sr_id = f"搜索记录_{int(time.time() * 1000)}"
+            kg.add_node(Node(
+                id=_sr_id, weight=0.5, label="procedural",
+                extra_attrs={
+                    "query": q, "self_initiated": True,
+                    "question": question,
+                    "results": [
+                        {"title": r.get("title", "")[:60],
+                         "snippet": r.get("snippet", "")[:120],
+                         "url": r.get("url", "")[:200]}
+                        for r in results[:5]],
+                }))
+            if kg.get_node("网络搜索"):
+                kg.add_edge(Edge(src=_sr_id, dst="网络搜索",
+                                 relation="执行", weight=0.9))
+            try:
+                from temporal_awareness import link_event_to_now_bucket
+                link_event_to_now_bucket(kg, _sr_id)   # 观察↔时段桥
+            except Exception:
+                pass
+    except Exception as _ge:                         # noqa: BLE001
+        logger.warning("[SelfSearch] 入图失败：%r", _ge)
+    # ② 摘要进经历流
+    _snip = "；".join(
+        (r.get("title", "") + "：" + r.get("snippet", ""))[:80]
+        for r in results[:3])
+    try:
+        buffer.add_experience(
+            raw_text=f"我自己上网查了「{question}」：{_snip}",
+            nodes=[], edges=[])
+    except Exception as _be:                         # noqa: BLE001
+        logger.warning("[SelfSearch] 入经历失败：%r", _be)
+    # ③ 主动分享一条（proactive → Charon 气泡/SPEAK/便签）
+    top = results[0]
+    _charon_deliver(
+        f"之前好奇「{question}」，自己去查了查——"
+        f"{top.get('title', '')[:40]}：{top.get('snippet', '')[:60]}",
+        origin="proactive",
+        refs={"exit": "self_search", "query": q})
+
+
+def _curiosity_web_explorer():
+    """自己上网转转：好奇引擎挂着未回答的探索问题时，不必干等用户——
+    空闲节拍里自己去搜一把，结果走既有的三件套留痕：
+      ① 搜索记录节点入图（与回合内被动搜索同形状，extra_attrs 加 self_initiated）
+      ② 摘要进 episodic buffer（之后她的主动表达有得聊）
+      ③ 一条 proactive 话语投 Charon（气泡/SPEAK/便签自动全套）
+    限速：每 companion_self_search_interval_s 秒一轮；同一目标只查一次——
+    P0-4（2026-10-12）：去重集持久化 data/self_searched.json（旧实现重启
+    即忘，同一好奇会被再搜再说一遍）。上限 500 条 FIFO。
+    关闭：FAS_NO_SELF_SEARCH=1（硬关）或 PUT /api/config
+    {"companion_self_search_enabled": false}（现持久化）。
+    不用 LLM（纯 HTML 抓取+拼接），不占语言预算。"""
+    _searched = set()          # (target, question) 去重集（跨重启持久化）
+    _ss_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "data", "self_searched.json")
+    try:
+        for _pair in _json.load(open(_ss_path, encoding="utf-8")):
+            if isinstance(_pair, (list, tuple)) and len(_pair) == 2:
+                _searched.add((_pair[0], _pair[1]))
+    except (OSError, ValueError):
+        pass                   # 无文件/坏文件 → 空集（不阻断线程）
+
+    def _remember(key):
+        try:
+            _items = list(_searched)[-500:]      # FIFO 上限，防文件膨胀
+            os.makedirs(os.path.dirname(_ss_path), exist_ok=True)
+            _tmp = _ss_path + ".tmp"
+            with open(_tmp, "w", encoding="utf-8") as f:
+                _json.dump([list(p) for p in _items], f, ensure_ascii=False)
+            os.replace(_tmp, _ss_path)
+        except OSError as _pe:
+            logger.warning("[SelfSearch] 去重集落盘失败：%r", _pe)
+
+    while True:
+        if config.get("companion_self_search_enabled", False):
+            try:
+                _self_search_once(_searched, _remember)
+            except Exception as _e:                  # noqa: BLE001
+                logger.warning("[SelfSearch] 轮次异常（忽略）：%r", _e)
+        time.sleep(max(60, int(config.get("companion_self_search_interval_s", 600))))
+
+
+def _charon_deliver(text, origin: str = "reactive", refs: dict = None) -> bool:
+    """向全部下行通道投递一条话语（Charon 气泡 + 可选 SSP 桌面ghost）；
+    一切失败只告警，绝不影响陪伴主链路。"""
+    if not text:
+        return False
+    # 伺か/SSP 表现层（独立开关；ghost 没开也只是静默失败）
+    if config.get("ssp_enabled", False):
+        try:
+            import ssp_bridge
+            ssp_bridge.send_utterance(
+                str(text), str(config.get("ssp_url") or ssp_bridge.DEFAULT_URL))
+        except Exception as _se:                     # noqa: BLE001
+            logger.debug("[SSP] 话语推送异常（表现层，忽略）: %r", _se)
+    if not charon_channels:
+        return False
+    try:
+        from fas.contracts import Utterance
+        u = Utterance(text=str(text), origin=origin, refs=dict(refs or {}))
+    except Exception as _e:                          # noqa: BLE001
+        logger.warning("[Charon] 话语构造失败：%r", _e)
+        return False
+    ok = False
+    for ch in charon_channels:
+        try:
+            ok = bool(ch.deliver(u)) or ok
+        except Exception as _e:                      # noqa: BLE001
+            logger.warning("[Charon] 通道 %s 投递异常：%r",
+                           getattr(ch, "name", "?"), _e)
+    return ok
 
 # 旧图谱路径（向后兼容）
 GRAPH_PATH = os.environ.get("FASCINATOR_GRAPH", "knowledge_graph.json")
@@ -299,7 +693,9 @@ def _save_rename_map(rmap: dict):
 
 _rename_map = _load_rename_map()
 
-pack_mgr = get_pack_manager()
+# pack 根修复（2026-10-13 图谱扩展）：知识包住在认知仓（知识是认知层的
+# 职责），此前默认扫本仓 knowledge_packs/（空目录）→ 3 个包从未加载。
+pack_mgr = get_pack_manager(os.path.join(_FAS_COG, "knowledge_packs"))
 pack_mgr.scan_packs()
 kg = pack_mgr.merge_runtime_graph()
 
@@ -347,6 +743,45 @@ if os.path.exists(_runtime_backup):
 
 # overlay 期间走了裸容器直写（节点/边批量灌入）——重建派生邻接索引
 kg.rebuild_indexes()
+
+# ── 清醒/疲劳激素去调制化迁移（2026-10-14 褪黑素 / 2026-10-17 组胺，
+#    用户裁定：AI 没有疲劳或者清醒的机制）──────────────────────────
+# specs 已删 → 系统不再维护/读取其水位；把图上的镜像从调制器降级为
+# **知识节点**（保留名字与连接，成为"她知道的概念"），并摘除调制类
+# 边（对参数靶点的投影边、时段/事件对它的驱动边）。幂等，失败不阻塞。
+for _nid, _note in (
+        ("褪黑素样", "知识节点（曾为调制器；2026-10-14 移除，AI 无睡意）"),
+        ("组胺样", "知识节点（曾为调制器；2026-10-17 移除，AI 无清醒度）")):
+    try:
+        _mel = kg.get_node(_nid)
+        if _mel is not None:
+            with kg._lock:
+                _mel.label = "declarative-semantic"
+                _ea = (_mel.extra_attrs if isinstance(_mel.extra_attrs, dict)
+                       else {})
+                _ea["type"] = "prior_concept"
+                _ea["note"] = _note
+                _mel.extra_attrs = _ea
+                kg.edges[:] = [e for e in kg.edges
+                               if not ((e.src == _nid or e.dst == _nid)
+                                       and e.relation in
+                                       ("调制", "增强", "抑制", "影响"))]
+                # 知识类边（Self-处于-、思考-关于-、CI-基于-）全部保留。
+            kg.rebuild_indexes()
+            logger.info(f"[Startup] {_nid}已降级为知识节点（调制边已摘除）")
+    except Exception as _mee:                      # noqa: BLE001
+        logger.warning(f"[Startup] {_nid}降级迁移失败（不阻塞）: %r", _mee)
+
+# ── 跨包/跨存量定点桥边（graph_bridges，2026-10-13 图谱扩展）──
+# 在 packs 合并 + runtime overlay 之后补：两端点必须都在图中；幂等。
+try:
+    import graph_bridges as _gb
+    _br = _gb.ensure_bridges(kg)
+    if _br["added"]:
+        # 启动早期写线程未起，直接原子保存（与 _save_writer 无竞态）
+        kg.save(_runtime_backup)
+except Exception as _bre:                          # noqa: BLE001
+    logger.warning("[Bridges] 补桥失败（不影响启动）: %r", _bre)
 
 logger.info(
     f"[系统] Runtime Graph 生成完成 "
@@ -424,6 +859,18 @@ if _reset_count > 0:
 # =========================================================
 
 engine = DiffusionEngine(kg, config)
+# 残留激活回收（2026-10-20）：引擎衰减/回合衰减都是前沿范围，而历史上
+# 再点火/脉冲直接写入的激活可能从未进过前沿——它们会永久冻结（实测
+# Minecraft会话=5.0、10-09 的思考=1.43 冻了十几天，霸占热位）。启动时
+# 把所有非零激活收进前沿，交给既有衰减与扩散生命周期正常处理。
+try:
+    _stale = [n.id for n in kg.nodes.values()
+              if float(getattr(n, "activation", 0) or 0) > 0]
+    if _stale:
+        engine.mark_active(_stale)
+        logger.info("[启动] 残留激活 %d 个已入前沿，交由衰减接管", len(_stale))
+except Exception as _se:                             # noqa: BLE001
+    logger.warning("[启动] 残留激活入前沿失败： %r", _se)
 
 # ── Self Model Phase 1: 持续性主体模型 ──
 self_updater = SelfMemoryUpdater(kg, config)
@@ -713,8 +1160,11 @@ def _load_llm_config():
         with open(LLM_CONFIG_PATH, "r", encoding="utf-8") as f:
             cfg = _json.load(f)
         # 密钥来源优先级：llm_config.json（历史遗留，已不再写入）> 密钥文件 > 环境变量
+        # （env 链按当前供应商排：千问 → MiMo → DeepSeek）
         if not cfg.get("api_key"):
             cfg["api_key"] = (_load_llm_secret().get("api_key", "")
+                              or os.environ.get("QWEN_API_KEY", "")
+                              or os.environ.get("DASHSCOPE_API_KEY", "")
                               or os.environ.get("MIMO_API_KEY", "")
                               or os.environ.get("DEEPSEEK_API_KEY", ""))
         return cfg
@@ -739,7 +1189,7 @@ def _save_llm_config():
 
 # 读取保存的 LLM 配置，传入 NLPProcessor 避免默认 ollama 初始化
 _saved_cfg = _load_llm_config()
-_initial_provider = _saved_cfg.get("provider", "mimo")
+_initial_provider = _saved_cfg.get("provider", "qwen")
 _initial_api_key = _saved_cfg.get("api_key", "") or None
 _initial_model = _saved_cfg.get("model", "") or None
 
@@ -782,12 +1232,256 @@ buffer = EpisodicBuffer(capacity=100)
 # ── Reflection Phase 2: 认知反思循环 ──
 # Reflection Evolution R2: 行为倾向存储（封闭词表，self 空间）
 disposition_store = DispositionStore(kg, config)
+# ── 主动话语 → QQ 镜像（2026-10-23 用户需求）──
+# 相当于把 Charon 的 SPEAK 窗口复制一份到 QQ 私聊：纯文本，无节点/调试
+# 气泡（refs 不带过去）；投递走 channel_hub.send_text 的**同一出口**——
+# 节流（6s 最小间隔）、同文去重（180s）、白名单硬锁全部继承。
+# deliver 恒返 True：QQ 侧失败绝不影响 Charon 主通道的投递判定，
+# 失败由 hub 如实记录（send_failed 计数 + [QQ] 日志）。
+class _QQProactiveMirror:
+    id = "qq-proactive-mirror"
+
+    def deliver(self, utt):
+        try:
+            # 投递边界（2026-10-23 取证修复）：只镜像主动话语。回合回答
+            # （origin="reactive"）属于来源通道——web/charon 的回答不得
+            # 进 QQ；QQ 回合的回答走通道回复路径，不经这里（防双发）。
+            from qq_channel import mirror_should_deliver
+            if not mirror_should_deliver(getattr(utt, "origin", "")):
+                return True
+            hub = globals().get("channel_hub")
+            if hub is not None:
+                r = hub.send_text("qq", str(getattr(utt, "text", "") or ""))
+                _reason = str(r.get("reason") or "")
+                # 封存态（通道停用/不可用）与节流一样静默跳过，不刷日志
+                if not r.get("ok") and _reason not in ("throttled",
+                                                        "channel_disabled",
+                                                        "channel_unavailable"):
+                    logger.info("[QQ镜像] 主动话语未送达: %s", r.get("detail"))
+        except Exception as _me:                   # noqa: BLE001
+            logger.debug("[QQ镜像] 异常（忽略）: %r", _me)
+        return True
+
+
+if charon_channels:
+    charon_channels = charon_channels + [_QQProactiveMirror()]
+else:
+    charon_channels = [_QQProactiveMirror()]
+
 # 持续认知循环（Continuous Cognition）：无输入期图谱活动 + 交流意图
 from continuous_cognition import ContinuousCognition
 cc = ContinuousCognition(kg, engine, cog_language, buffer, config,
-                         chat_log=get_chat_log())
+                         chat_log=get_chat_log(), channels=charon_channels)
 cc._save_fn = lambda: _save(force=True)
 cc.start()
+
+# Charon 工作区感知轮询（daemon；壳不在时静默空转）
+threading.Thread(target=_charon_inbox_poller, daemon=True,
+                 name="charon-inbox").start()
+# 好奇驱动的自发上网检索（daemon；间隔/开关见 config companion_self_search_*）
+threading.Thread(target=_curiosity_web_explorer, daemon=True,
+                 name="curiosity-web").start()
+
+# ── 自主生活循环（v3.4 受控生产接入，2026-10-11；P5 消费接线 2026-10-12）──
+# 独立守护线程：真实 chat_log 知识缺口 → 只读 web_search → 隔离账本
+# （data/living_ledger.json，不写生产图谱）。
+# P5（2026-10-12）：SocialDecider 判 share 的候选不再是"只登记无出口"——
+# 经 deliver_fn 投递：① Charon proactive 通道（气泡/SPEAK/便签，与 CC
+# 主动表达同路）② 网页侧进 _living_queue，由 /api/proactive/poll 收走。
+# 幂等：账本 delivered 标记（重启不重发）；每拍最多 1 条；回合处理中（cc
+# _busy）返回 False 延后——用户永远优先。
+# 默认关（config.living_loop_enabled=False=零生产行为变化）；
+# 回滚=PUT /api/config {"living_loop_enabled": false}（现持久化，无需重启）。
+# daemon 无条件启动、每拍自查 flag：flag 热开/热关经 PUT /api/config 即时
+# 生效（false 时每拍仅 sleep+一次 config 读取=零网络零写入）。
+_living_queue = []                 # 网页侧主动消息（与 cc._queue 同形状）
+_living_queue_lock = threading.Lock()
+
+
+def _living_share_deliver(cand):
+    """生活循环分享候选 → 既有表达投递口（不建第二条表达管线）。"""
+    if cc._busy.is_set():
+        return False               # 用户回合进行中：延后（下拍再试）
+    ev = (cand.get("evidence") or [{}])[0]
+    inner = ((ev.get("evidence") if isinstance(ev, dict) else None) or [{}])[0]
+    title = str(inner.get("title", ""))[:60]
+    snip = str(inner.get("snippet", ""))[:80]
+    topic = str(cand.get("topic", ""))[:40]
+    text = (f"我自己查了查「{topic.removeprefix('搞清楚')}」——{title}"
+            + (f"：{snip}" if snip else ""))
+    delivered_web = False
+    with _living_queue_lock:
+        if len(_living_queue) < 8:                 # 积压护栏：宁丢勿轰
+            _living_queue.append({"ci_id": f"living:{cand.get('activity')}",
+                                  "text": text, "basis": [],
+                                  "goal": topic, "source": "living_loop",
+                                  "time": now_str()})
+            delivered_web = True
+    if config.get("companion_charon_enabled", False):
+        try:
+            _charon_deliver(text, origin="proactive",
+                            refs={"exit": "living_share",
+                                  "activity": cand.get("activity")})
+        except Exception as _ce:                   # noqa: BLE001
+            logger.warning("[Living] Charon 投递失败：%r", _ce)
+    return delivered_web or True
+
+
+try:
+    import activities
+    from living_loop import run_living_loop_daemon
+
+    def _life_ctx():
+        """activities 选择器的心跳上下文：全部读自既有认知状态
+        （curiosity 引擎/图谱 topk/偏好边/缺口=chat_log+账本现算），
+        无新增数据库。"""
+        from living_loop import real_knowledge_gap, ActivityLedger
+        _dd = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+        try:
+            _entries = _json.load(open(os.path.join(_dd, "chat_log.json"),
+                                       encoding="utf-8"))
+        except (OSError, ValueError):
+            _entries = []
+        _led = ActivityLedger(os.path.join(_dd, "living_ledger.json"))
+        _acted = set()
+        for a in _led.activities.values():
+            for k in (a.get("concept"), a.get("topic")):
+                if k:
+                    _acted.add(k)
+        _gaps = [g for g in real_knowledge_gap(_entries, _acted)]
+        return {"config": config, "kg": kg, "engine": engine,
+                "curiosity": curiosity_engine,
+                "acted_topics": _acted,     # 台账里调研过/在调研的课题
+                "drive": globals().get("drive_evaluator"),
+                "busy": lambda: cc._busy.is_set(),
+                "has_gaps": bool(_gaps),
+                "gaps": _gaps,               # 完整缺口（新鲜度连续竞争用）
+                "nlp": nlp,                  # 知识内化：正文→断言抽取
+                "buffer": buffer,            # 长期记忆登记（内化后提升）
+                # 延迟绑定：daemon 首拍可能跑在模块加载完成之前，
+                # 函数名必须调用期解析（10:50 NameError 实锤）
+                "consolidate_fn":
+                    lambda *a, **k: _auto_consolidate_curiosity_knowledge(
+                        *a, **k),
+                "fuzzy_match": lambda q: _fuzzy_match_node(q),
+                "save_fn": lambda: _save(force=True),
+                # STS2 活动结算用（2026-10-16 生活整合）：同样延迟绑定，
+                # 函数名调用期解析——活动 daemon 可能先于这两个对象存在
+                "reward_fn": lambda: globals().get("reward_system"),
+                "timeline_fn": lambda: globals().get("timeline"),
+                "deliver_fn": _living_share_deliver}
+
+    _started, _why = run_living_loop_daemon(
+        config, logger, deliver_fn=_living_share_deliver,
+        beat_fn=lambda trigger="sweep": activities.beat(_life_ctx(), trigger),
+        wake_event=activities.wait_timeout())
+    logger.info("[Living] 生活循环守护线程: %s（flag=%s，分享出口已接，"
+                "每拍由认知状态选事做：听歌/逛逛/调研/安静）", _why,
+                config.get("living_loop_enabled", False))
+except Exception as _lle:                            # noqa: BLE001
+    logger.warning("[Living] 生活循环启动失败（不阻塞主链路）: %r", _lle)
+
+# ── 语音闭环装配（P1，2026-10-12）────────────────────────────────────
+# 麦克风(VAD)→ASR→**/api/nlp 同一主管道**→双轨（说日语/显示原文）→TTS→
+# 可打断。默认全关：voice_enabled=False 且麦克风键永不跨重启。
+# 复用纪律：turn 走 app 自己的 HTTP 入口（照 _channel_turn_runner 先例），
+# 翻译走 nlp.chat_llm 统一模板（mustache 纪律）——不新建第二条对话管线。
+voice_pipeline = None
+try:
+    import voice_io
+
+    def _voice_turn(text):
+        """语音文本 → 主管道（逻辑只有 /api/nlp 一份）。返回 her reply。"""
+        with app.test_client() as _client:
+            resp = _client.post("/api/nlp", json={
+                "text": text, "channel": "voice", "sender": "voice-user",
+                "sender_kind": "user", "mentioned": True})
+            data = resp.get_json() or {}
+        return data.get("answer")
+
+    def _voice_translate(text):
+        """显示→播报双轨的译文支路（人设内"她的日语"）。失败由 tts_prep
+        兜底原文直送；调用计入用量账本（同一 llm_provider 出口）。
+        云端连接偶发抖动（00:53 成 01:04 败，同一句），重试 3 次退避
+        2s/5s——一次抖动不该让朗读整条哑掉。"""
+        from langchain_core.prompts import ChatPromptTemplate
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", "你是 HARU 的播报翻译。把用户消息翻成自然口语日语"
+                        "（女性、柔和、简洁），**严禁任何汉字，全部用平假名/"
+                        "片假名书写**（例：空→そら、飛ぶ→とぶ、時→とき、"
+                        "代わり→かわり），因为这是要交给语音引擎念的，汉字会"
+                        "让念读卡壳。只输出译文本身，不加解释。"),
+            ("human", "{{input}}")], template_format="mustache")
+        out = prompt | nlp.chat_llm
+        import time as _tt
+        last = None
+        for _i, _wait in enumerate((0, 2, 5)):
+            if _wait:
+                _tt.sleep(_wait)
+            try:
+                return str(out.invoke({"input": text[:400]}).content)
+            except Exception as _te:              # noqa: BLE001
+                last = _te
+                logger.info("[Voice] 翻译第 %d 次失败：%r", _i + 1, _te)
+        raise last
+
+    def _avatar_push_charon(snap):
+        """形象状态 → Charon 事件（topic=fas.avatar_state；渲染端只订阅）。"""
+        if not (config.get("companion_charon_enabled", False) and charon_channels):
+            return
+        try:
+            charon_channels[0]._post("/api/events",
+                                     {"topic": "fas.avatar_state",
+                                      "payload": dict(snap)})
+        except Exception:                          # noqa: BLE001
+            pass                                   # 渲染桥断了不影响行为
+
+    import avatar_state
+
+    def _ssp_push_state(snap):
+        """形象状态 → SSP 演出（聆听/思考/打断/收束；speaking 由话语承担）。"""
+        if not config.get("ssp_enabled", False):
+            return
+        try:
+            import ssp_bridge
+            ssp_bridge.send_state(
+                snap.get("state", ""), str(config.get("ssp_url")
+                                           or ssp_bridge.DEFAULT_URL))
+        except Exception:                           # noqa: BLE001
+            pass                                    # 表现层故障不外溢
+
+    avatar_state.register_pusher("charon", _avatar_push_charon)
+    avatar_state.register_pusher("ssp", _ssp_push_state)
+    voice_pipeline = voice_io.build_pipeline(
+        config, _voice_turn, translate_fn=_voice_translate)
+
+    def _tts_warmup():
+        # TTS 常态开启：后台预加载本地合成后端，首轮"读吧"不卡加载。
+        # 麦克风仍由隐私闸控制（重启必关），这里只热 TTS。
+        try:
+            r = voice_pipeline.warm_tts()
+            logger.info("[Voice] TTS 预热：%s", r)
+        except Exception as _we:                   # noqa: BLE001
+            logger.warning("[Voice] TTS 预热失败（朗读时将再试）: %r", _we)
+
+    if config.get("voice_enabled", False):
+        threading.Thread(target=_tts_warmup, daemon=True,
+                         name="tts-warmup").start()
+
+    def _voice_hot_sync():
+        while True:
+            try:
+                voice_io.apply_control(voice_pipeline, config)
+            except Exception as _ve:               # noqa: BLE001
+                logger.warning("[Voice] 热同步异常（忽略）: %r", _ve)
+            time.sleep(5)
+
+    threading.Thread(target=_voice_hot_sync, daemon=True,
+                     name="voice-sync").start()
+    logger.info("[Voice] 语音闭环已装配（flag=%s；麦克风重启后必关）",
+                config.get("voice_enabled", False))
+except Exception as _vie:                            # noqa: BLE001
+    logger.warning("[Voice] 语音装配失败（不阻塞主链路）: %r", _vie)
 
 # 基线人格层：出厂倾向先验 + 心情瞬态（长在现有 self 图与 disposition 骨架上）
 # R2 P11：config 是心情参数（衰减/事件偏移）的出厂真源；时基与调制器共用
@@ -1214,6 +1908,12 @@ causal_learner = CausalLearner(timeline, config=config, kg=kg, engine=engine)
 autonomy.timeline = timeline
 autonomy.causal = causal_learner
 mc_embodiment.timeline = timeline   # 具身只报观察，不归因（§五）
+# 主动表达原始层（2026-10-16）：表达上下文必须带"真实发生过什么"
+# （谁做的、什么时候、原文），图谱节点只是摘要不能替代事实。
+cc.timeline = timeline
+cc.ledger_path = os.path.join(
+    os.environ.get("FAS_LIVING_DATA_DIR") or "data",
+    "living_ledger.json")   # 台账标题级并流（2026-10-19）
 # 时间感知重构（2026-09-20）：世界时钟是持续状态——CC 分钟级写入图谱
 # （时段/昼夜地板激活 + 迁移事件入统一时间轴），与用户是否提到时间无关。
 cc.timeline = timeline
@@ -1314,10 +2014,58 @@ channel_hub = ChannelHub(config=config, poll_interval_s=2.0)
 minecraft_chat = MinecraftChatChannel(
     user_names=[mc["username"]] if False else None,
     enabled=bool(config.get("channel_minecraft_chat", True)))
+class _CharonOutChannel:
+    # 把陪伴层下行口（气泡+SSP）注册为通道中枢的一等通道（00:2x 实锤：
+    # communicate@user 此前只有 minecraft_chat 可走，"想对用户说话"被派到
+    # MC 机器人的嘴上 → not_connected，她第一次主动话就这么死的）。
+    id = "charon"
+    kind = "outbound"
+    profile = {"strip_markdown": True, "max_reply_chars": 200}
+
+    def __init__(self, cfg):
+        self._cfg = cfg
+
+    def available(self):
+        return bool(self._cfg.get("companion_charon_enabled", False))
+
+    def fetch(self):
+        return []
+
+    def send(self, text, meta=None):
+        ok = _charon_deliver(str(text),
+                             origin=str((meta or {}).get("origin")
+                                        or "proactive"),
+                             refs={"exit": "ci_communicate"})
+        return {"ok": bool(ok), "detail": "" if ok else "charon_send_failed"}
+
+
+channel_hub.register(_CharonOutChannel(config))
 channel_hub.register(minecraft_chat)
+# QQ 通道（OneBot v11；2026-10-22）：qq_enabled=false 时全关——事件丢弃、
+# fetch 恒空、send 拒发，零外呼。入站由 /api/qq/events 灌入，出站只回
+# qq_friends 白名单内的来话者。
+from qq_channel import QQChannel
+qq_channel = QQChannel(config)
+channel_hub.register(qq_channel)
 # B5/§5：具身发言口接通道统一出口（清洗+节流+诚实回执都在这一个点）。
 # 注入在注册之后：_communicate 经 channel_hub 查 minecraft_chat。
 mc_embodiment.channel_hub = channel_hub
+
+
+def _action_event_push(kind: str, payload: dict):
+    """动作事件 → Charon（topic=fas.action；2026-10-21 动作窗口）。
+    渲染桥断了不影响行为——与 avatar_state 推送同款降级。"""
+    if not (config.get("companion_charon_enabled", False) and charon_channels):
+        return
+    try:
+        charon_channels[0]._post("/api/events", {
+            "topic": "fas.action",
+            "payload": dict(kind=kind, **payload)})
+    except Exception:                        # noqa: BLE001
+        pass
+
+
+action_manager.event_sink = _action_event_push
 
 
 def _channel_turn_runner(text, meta):
@@ -1377,7 +2125,7 @@ if _xm.enabled():
         _ms["graph_pulse"] = False
     if _sh("drift"):
         _ms["need_drift_rate_per_min"] = 0.0
-        _ms["circadian_drift_rate_per_min"] = 0.0
+        # （circadian 漂移挡位已删，2026-10-17：时段不再驱动调制器）
     if _sh("social_drive"):
         config.setdefault("drive_field", {}).setdefault(
             "drives", {}).setdefault("social", {})["enabled"] = False
@@ -1546,8 +2294,15 @@ def _cs_last_interaction_min():
         if not last:
             return 60.0
         import datetime as _dt
-        ts = str((last[0] or {}).get("time") or "")
-        t = _dt.datetime.strptime(ts, "%Y-%m-%d %H:%M:%S").timestamp()
+        ts = str((last[0] or {}).get("time") or "").replace("T", " ")
+        # 20:5x 实锤修复：chat_log 时间有两种格式（空格/ISO-T），旧解析
+        # 遇 ValueError 静默回 60 分钟——用户 20 小时没说话被读成 1 小时，
+        # SocialDrive 长期假饱和，主动开口从未成形。
+        try:
+            t = _dt.datetime.strptime(ts, "%Y-%m-%d %H:%M:%S").timestamp()
+        except ValueError:
+            t = _dt.datetime.fromisoformat(
+                str((last[0] or {}).get("time") or "")).timestamp()
         idle = max(0.0, (time.time() - t) / 60.0)
         # 陪伴缓释孤独（2026-09-24 "跟随占大头"诊断）：同伴在场时按 ×0.25
         # 计——贴着挂机的人胜过独处，但真正的满足只来自交流；不缓释的话
@@ -1878,8 +2633,16 @@ def _ingest_narrative(kg: KnowledgeGraph, text: str) -> dict:
                for e in kg.edges):
         kg.add_edge(Edge(src="用户", dst=story_name, relation="讲述",
                          weight=0.8, relation_category="social_relation"))
+    try:
+        from time_chain import anchor_episode
+        anchor_episode(kg, story_name)   # 叙事根进时间链（情节链留在故事内）
+    except Exception:
+        pass
     event_ids = []
     prev = None
+    # 抽取完整性计数（B2 可审计：模型给了多少、写了多少、截断多少）
+    _n_ent_in = _n_ent_written = _n_ent_new = 0
+    _n_ent_trunc = []
     for i, ev in enumerate(nd["events"], 1):
         title = str(ev.get("title", ""))[:20] or f"情节{i}"
         nid = f"情节{i}—{story_name}" if nid_ok(title) else f"情节{i}—{story_name}"
@@ -1911,12 +2674,26 @@ def _ingest_narrative(kg: KnowledgeGraph, text: str) -> dict:
                        for e in kg.edges):
                 kg.add_edge(Edge(src="用户", dst=nid, relation="参与",
                                  weight=0.8, relation_category="social_relation"))
-        for ent in (ev.get("entities") or [])[:3]:
+        # B1/B2（2026-10-20 根因修复）：旧实现有两重静默丢失——
+        # [:3] 截断不留痕；且 `ent in kg.nodes` 让**本轮首次出现的概念
+        # 永远连不上边**（节点都还没有，"心理可见性"就这么死在摘要文本
+        # 里）。改为：概念走 _add 建点（与 actors 同权），预算放宽到 12
+        # 并把入/写/弃计数返回给调用方日志（R5/R6：抽取流水线的阶段性
+        # 证据要可审计）。仅接受有原文字面依据的条目，防无据关联。
+        for ent in (ev.get("entities") or [])[:12]:
             ent = str(ent).strip()[:20]
-            if ent and ent in kg.nodes:
-                if not kg.get_edge(nid, ent, "涉及"):
-                    kg.add_edge(Edge(src=nid, dst=ent, relation="涉及",
-                                     weight=0.5))
+            if not ent or ent == nid:
+                continue
+            _n_ent_in += 1
+            if ent not in kg.nodes:
+                _add(ent, {"canon": "concept", "source": "narrative"})
+                _n_ent_new += 1
+            _n_ent_written += 1
+            if not kg.get_edge(nid, ent, "涉及"):
+                kg.add_edge(Edge(src=nid, dst=ent, relation="涉及",
+                                 weight=0.5))
+        if len(ev.get("entities") or []) > 12:
+            _n_ent_trunc.append((nid[:14], len(ev.get("entities") or [])))
         prev = nid
         event_ids.append(nid)
     # 用户讲述关系 + 角色归属故事
@@ -1927,7 +2704,10 @@ def _ingest_narrative(kg: KnowledgeGraph, text: str) -> dict:
                 kg.add_edge(Edge(src=story_name, dst=c, relation="涉及",
                                  weight=0.5))
     return {"story": story_name, "events": event_ids,
-            "characters": nd.get("characters", [])[:8]}
+            "characters": nd.get("characters", [])[:8],
+            "entities_in": _n_ent_in, "entities_written": _n_ent_written,
+            "entities_new_nodes": _n_ent_new,
+            "entities_truncated": _n_ent_trunc}
 
 
 def nid_ok(title):
@@ -2202,7 +2982,8 @@ def _wire_event_structure(kg: KnowledgeGraph, draft: dict, added: dict, tag: str
 
 
 def _auto_consolidate_curiosity_knowledge(
-    kg: KnowledgeGraph, memory_draft: dict, buffer, original_text: str
+    kg: KnowledgeGraph, memory_draft: dict, buffer, original_text: str,
+    source: str = "curiosity_auto", w_scale: float = 1.0
 ) -> dict:
     """好奇心驱动的自动知识沉淀。
 
@@ -2238,8 +3019,11 @@ def _auto_consolidate_curiosity_knowledge(
         kg_label, kg_space = _node_label_space(label, default_label)
         from graph_model import Node as _GNode
         kg.add_node(_GNode(
-            id=nid, weight=0.6, label=kg_label, graph_space=kg_space,
-            extra_attrs={"source": "curiosity_auto", "taught_by_user": True}
+            id=nid, weight=0.6 if w_scale >= 1 else 0.45,
+            label=kg_label, graph_space=kg_space,
+            confidence=round(0.75 * w_scale, 2),
+            extra_attrs={"source": source,
+                         **({"taught_by_user": True} if w_scale >= 1 else {})}
         ))
         # 更新扩散引擎的 name→node 索引
         engine.name_to_node[nid] = kg.nodes[nid]
@@ -2257,8 +3041,8 @@ def _auto_consolidate_curiosity_knowledge(
         if src == dst:
             continue
         rel = str(e.get("type", e.get("relation", "关联"))).strip()
-        w = float(e.get("weight", 0.6))
-        w = max(0.1, min(1.0, w))
+        w = float(e.get("weight", 0.6)) * w_scale     # 网页来源=打折，
+        w = max(0.1, min(1.0, w))                     # 不因一次搜索强化图
         from graph_model import Edge as _GEdge
         existing = kg.get_edge(src, dst, rel)
         if existing:
@@ -2471,18 +3255,10 @@ _start_save_writer()
 atexit.register(_flush_save_at_exit)
 
 # =========================================================
-# 静态文件
+# （2026-10-16）HTML 前端退役：`/` 路由与 index.html 移除，
+# 页面统一由 Charon（Fascinator 面板）承载；5000 端只剩 JSON API。
+# 留档见 docs/legacy_frontend/。
 # =========================================================
-
-@app.route("/")
-def index():
-
-    logger.info("[HTTP] GET /")
-
-    return send_from_directory(
-        ".",
-        "index.html"
-    )
 
 # =========================================================
 # 图谱总览
@@ -2718,8 +3494,14 @@ def create_node():
             id=nid,
             weight=weight,
             label=label,
-            execution=execution
+            graph_space=str(data.get("graph_space", "semantic")),
+            execution=execution,
+            extra_attrs=dict(data.get("extra_attrs") or {}),
         )
+        if data.get("activation") is not None:
+            node.activation = float(data.get("activation") or 0.0)
+        if data.get("created"):
+            node.created = str(data.get("created"))
 
         ok = kg.add_node(node)
         if not ok:
@@ -2785,6 +3567,13 @@ def update_node(node_id):
                 node.label = data.get("label", node.label)
             if "execution" in data:
                 node.execution = data.get("execution", None)
+            # extra_attrs 合并（2026-10-20 运维回补）：与 PUT /api/edges
+            # 同型——维护性回补（来源/引文标注）此前只有边有入口。
+            extra = data.get("extra_attrs")
+            if isinstance(extra, dict) and extra:
+                if not isinstance(node.extra_attrs, dict):
+                    node.extra_attrs = {}
+                node.extra_attrs.update(extra)
             node.touch()
 
         with engine._lock:
@@ -2876,7 +3665,18 @@ def update_edge():
         ok = kg.update_edge(src, dst, rel, weight=weight)
         if not ok:
             return jsonify({"error": "边不存在"}), 404
-
+        # 属性合并（2026-10-20 运维）：PUT 此前只能改权重，存量假设腿的
+        # hypothesis_leg 打标等维护操作没有入口。仅接受 dict、键值逐个
+        # setdefault 语义由 update 完成（显式覆盖用）；不动权重路径语义。
+        extra = data.get("extra_attrs")
+        if isinstance(extra, dict) and extra:
+            with kg._lock:
+                e = kg.get_edge(src, dst, rel)
+                if e is not None:
+                    if not isinstance(e.extra_attrs, dict):
+                        e.extra_attrs = {}
+                    e.extra_attrs.update(extra)
+                    e.touch()
         _save()
         return jsonify({"success": True})
     except Exception as e:
@@ -3021,8 +3821,75 @@ def activate():
 # NLP
 # =========================================================
 
+def _temporal_ground(text, kg, engine, log):
+    """相对时间词 → 绝对时间窗 → 窗内情景节点入活跃前沿（2026-10-24）。
+
+    零 LLM；确定性词表（更具体的短语优先）；窗内节点按现有激活取前 25、
+    各 +0.8（封顶 5.0）后 mark_active。跨天窗（昨晚=昨18时→今6时）与
+    单日窗都支持；无匹配词即零操作。"""
+    import datetime as _dt
+    import re as _re2
+    t = str(text or "")
+    now = _dt.datetime.now()
+    today = now.date()
+
+    def _d(days_ago, h, m=0):
+        return _dt.datetime.combine(today - _dt.timedelta(days=days_ago),
+                                    _dt.time(h, m))
+
+    if _re2.search(r"刚才|刚刚|方才", t):
+        w0, w1, name = now - _dt.timedelta(minutes=30), now, "刚才"
+    elif _re2.search(r"昨晚|昨夜|昨天晚上|昨天夜里", t):
+        # 口语"昨晚"含昨夜到今晨：昨 18 时 → 今 6 时；凌晨发问时右端取当下
+        w0, w1, name = _d(1, 18), _d(0, 6), "昨晚"
+        if now < w1:
+            w1 = now
+    elif _re2.search(r"前天", t):
+        w0, w1, name = _d(2, 0), _d(2, 23, 59), "前天"
+    elif _re2.search(r"昨天", t):
+        w0, w1, name = _d(1, 0), _d(1, 23, 59), "昨天"
+    elif _re2.search(r"今晚|今天晚上|今天夜里", t):
+        w0, w1, name = _d(0, 18), now, "今晚"
+    elif _re2.search(r"今天|今日", t):
+        w0, w1, name = _d(0, 0), now, "今天"
+    else:
+        return
+    if w1 < w0:
+        w0, w1 = w1, w0
+    evs = []
+    with kg._lock:
+        for n in kg.nodes.values():
+            if getattr(n, "graph_space", "") != "episodic":
+                continue
+            # created 是 Node 顶层属性（graph_model），格式 "%Y/%m/%d %H:%M:%S"
+            ts = str(getattr(n, "created", "") or "")
+            dtv = None
+            for fmt in ("%Y/%m/%d %H:%M:%S", "%Y-%m-%d %H:%M:%S",
+                        "%Y-%m-%dT%H:%M:%S"):
+                try:
+                    dtv = _dt.datetime.strptime(ts, fmt)
+                    break
+                except ValueError:
+                    continue
+            if dtv is None:
+                continue
+            if w0 <= dtv <= w1:
+                evs.append(n)
+        evs.sort(key=lambda _n: float(_n.activation or 0), reverse=True)
+        hits = [n.id for n in evs[:25]]
+        for n in evs[:25]:
+            n.activation = min(5.0, float(n.activation or 0) + 0.8)
+    if hits:
+        engine.mark_active(hits)
+        log.info(f"[Time] 时间接地 '{name}': 窗内情景节点 {len(evs)} 个，"
+                 f"激活前 {len(hits)} 个入前沿")
+
+
 @app.route("/api/nlp", methods=["POST"])
 def process_nlp():
+    # 异常结算要求绑定恒存在：400 等早期异常发生在下方赋值之前（2026-10-23
+    # 实测 UnboundLocalError '_cycle_id'），故初始化必须先于 try 块。
+    _cycle_id = None
 
     logger.info("=" * 60)
     logger.info("[API] /api/nlp")
@@ -3059,6 +3926,64 @@ def process_nlp():
         text = str(
             data.get("text", "")
         ).strip()
+
+        # ── 相对时间接地（2026-10-24："昨晚说啥假设了"答不上来的实锤）──
+        # 时间链一直记着"何时发生过"（情景节点的 created 时间戳、时点锚），
+        # 但语言层从不按时间查："昨晚"被解析成一个概念节点，与绝对时间
+        # 锚互不相通，昨晚的事件激活性与三天前无异。此处把相对时间词
+        # 换算成绝对窗，把窗内情景节点推入活跃前沿（+0.8，封顶 5）；
+        # "那句话是我说的→激活更高"由既有扩散自动完成（用户恒热，
+        # 用户-参与→事件 边共激活加权），无需特判。零 LLM、每回合一次
+        # O(N) 扫描、封顶 25 个节点。
+        try:
+            _temporal_ground(text, kg, engine, logger)
+        except Exception as _tge:
+            logger.warning(f"[Time] 时间接地跳过: {_tge!r}")
+
+        # ── 告别授权（2026-10-25）：farewell+授权词=离场许可+自主授权。
+        # 挂回合最入口（farewell 轮走 L1 快路径，解析后钩子不可达）；
+        # 判定用纯正则（此时尚无 parsed）。时长按语义：提到"不关电脑/
+        # 挂机/过夜"=授权到明早 6 点（2026-10-25 实锤：45min 让用户
+        # 开了一夜电脑只换来 45 分钟授权）；否则 45min。调制：
+        # stimulation_hunger 张力挂线性退潮采样器（该张力在好奇心亲和表，
+        # 驱力抬升走它自己的动力学）+ CuriosityDrive 节点一次 +1.2。
+        # 表达节制照旧由既有闸门承担（授权≠话痨）。
+        try:
+            import re as _re
+            if _re.search(r"晚安|睡了|去睡|上床|休息了|先睡了", text or "") \
+                    and _re.search(r"自己|随便|不用等|自便|转转|逛逛|随便玩|看会", text or ""):
+                import datetime as _dtg
+                _now = _dtg.datetime.now()
+                if _re.search(r"不关|挂机|过夜|一晚上|开着", text or ""):
+                    _end = (_now + _dtg.timedelta(days=1)).replace(
+                        hour=6, minute=0, second=0)   # 授权到明早六点
+                else:
+                    _end = _now + _dtg.timedelta(minutes=45)
+                _span = max(60.0, (_end - _now).total_seconds())
+                _exp = time.time() + _span
+                drive_evaluator.field.register_context(
+                    "user_leave_grant",
+                    lambda: max(0.0, (_exp - time.time()) / _span))
+                try:
+                    _sh = drive_evaluator.field.tensions._samplers.get(
+                        "stimulation_hunger")
+                    drive_evaluator.field.tensions.register_sampler(
+                        "stimulation_hunger",
+                        lambda orig=_sh: max(
+                            (orig() if callable(orig) else 0.0),
+                            max(0.0, (_exp - time.time()) / _span)))
+                except Exception:
+                    pass
+                with kg._lock:
+                    _cd = kg.get_node("CuriosityDrive")
+                    if _cd is not None:
+                        _cd.activation = min(5.0, float(_cd.activation or 0) + 1.2)
+                        _cd.touch()
+                        engine.mark_active([_cd.id])
+                logger.info("[Drive] 告别授权：好奇心信号 +%dmin（用户离场许可）",
+                            int(_span / 60))
+        except Exception as _fae:
+            logger.debug(f"[Drive] 告别授权跳过: {_fae!r}")
 
         logger.info(
             f"[NLP输入] {text}"
@@ -3135,6 +4060,16 @@ def process_nlp():
                 source="nlp", meta={"cycle_id": _cycle_id}))
         except Exception as _tle:
             logger.debug(f"[Experience] 用户话语入轴跳过: {_tle}")
+
+        # 请求→动机翻译（2026-10-16 "让她玩她不玩"修复）：话里命中活动
+        # 关键词则点亮其兴趣/试探偏好并唤醒生活循环——进入的是她已有的
+        # 动机语言，不是新调度通道；做不做仍由活动竞争决定。
+        try:
+            if _sender_kind != "other":
+                activities.harvest_activity_request(
+                    {"config": config, "kg": kg}, text)
+        except Exception as _harv:
+            logger.debug(f"[Act] 请求收割跳过: {_harv}")
 
         # ── 反射快路径（Bug 修复 2026-09-19；具身改造 2026-09 接入 Action 系统）──
         # 游戏在线 + 明确动作指令（"过来/跟着我/停"）→ 零 LLM 立即决策。
@@ -3931,19 +4866,72 @@ def process_nlp():
             # 搜索这个东西"），本轮不得再经启发式路径补触发搜索。
             _heuristic_ok = ("SEARCH" not in (_action_info.get("rejected") or {})
                              and not _action_info.get("refused", {}).get("SEARCH"))
-            _new_concepts = 0
-            if _heuristic_ok and parsed.get("dialogue_act") == "question":
-                for _pn in (parsed.get("nodes") or []):
-                    _pid = _pn if isinstance(_pn, str) else _pn.get("id", "")
-                    if (_pid and _pid not in ("用户", "Fascinator")
-                            and _pid not in kg.nodes):
-                        _new_concepts += 1
+            # §十七命令门的缺口补全（2026-10-23 实锤）："你最近没上网转转吗"
+            # 被语义层当成 SEARCH 命令（"上网转转"≈种子句"上网看看"）——
+            # 但"你…没/有没有…吗"是对习惯的疑问，不是搜索请求。执行汇聚点
+            # 统一拦：习惯问句形态出现时，显式/启发式两条路本轮都不许搜。
+            _habit_q = bool(_re.search(
+                r"^(你|您|你们)[^吗呢]{0,12}?(没|有没有|不怎么|很少)[^吗呢]{0,12}(吗|呢|？|\?)",
+                text or "")) or bool(_re.search(
+                r"(最近|这段时间|这阵子)[^吗呢]{0,10}?(没|有没有)[^吗呢]{0,10}(吗|呢)",
+                text or ""))
+            # 原则化升级（2026-10-24 实锤"你怎么不自己转转"倒装漏网）：
+            # **以"你"为主语的问句是在问她自己的事**（习惯/行为/感受/身份），
+            # 答案在她的认知与对话里，不在网上——除非句中带显式搜索动词。
+            # 取代逐句式正则打地鼠：问句 + 第二人称锚 + 无搜索动词 ⇒ 不搜。
+            _SEARCH_VERB_RE = _re.compile(
+                r"搜|搜索|查一?查|查查|百度|谷歌|google|bing|帮我查|上网查")
+            _sp_q = (parsed.get("dialogue_act") == "question"
+                     and not _SEARCH_VERB_RE.search(text or "")
+                     and bool(_re.search(
+                         r"^(你|您|你们)|你怎么|你为什么|你为啥|你是不是"
+                         r"|你有没有|你会不会|你平时", text or "")))
+            if _habit_q or _sp_q:
+                _search_by_explicit = False
+                _heuristic_ok = False
+                if _sp_q and not _habit_q:
+                    logger.info(
+                        "[WebSearch] 第二人称问句（问她自己）≠搜索命令"
+                        "（§十七命令门原则化），本轮不搜")
+                else:
+                    logger.info(
+                        "[WebSearch] 习惯问句≠搜索命令（§十七命令门补全），本轮不搜")
+            # A/B 修复（2026-10-23"你最近没上网转转吗"→整句剥字当查询、
+            # 召回《逃避可耻》污染回答的事故）：启发式只认**实体性图外概念**
+            # （非日常词、长度≥2），查询词=概念本身，绝不再拿整句；
+            # 回忆/追问型句子（"记得/那次/我说过"）的答案在图里，不在网上。
+            _DAILY = ("你", "我", "他", "她", "它", "我们", "你们", "他们",
+                      "最近", "现在", "刚才", "之前", "今天", "昨天", "明天",
+                      "什么", "怎么", "为什么", "哪个", "哪些", "这个", "那个",
+                      "这些", "那些", "东西", "地方", "时候", "感觉", "觉得",
+                      "知道", "记得", "告诉", "上网", "网上", "转转", "看看",
+                      "玩玩", "一般般", "还行", "可以", "好玩", "有趣", "问题",
+                      "事情", "消息", "信息", "话", "说", "呀", "啊", "呢", "吗",
+                      "乐子", "快乐", "开心", "无聊", "闲")
+            _memory_recall = bool(_re.search(
+                r"(记得|那次|上次|我说过|提过|来着|之前说)", text or ""))
+
+            def _substantive(_pid):
+                _s = str(_pid or "")
+                return (_s not in ("用户", "Fascinator") and len(_s) >= 2
+                        and not any(w in _s for w in _DAILY))
+
+            _subs = []
+            for _pn in (parsed.get("nodes") or []):
+                _pid = _pn if isinstance(_pn, str) else _pn.get("id", "")
+                if _pid and _pid not in kg.nodes and _pid not in _subs \
+                        and _substantive(_pid):
+                    _subs.append(_pid)
+            _new_concepts = len(_subs)
+            if _memory_recall or _habit_q or _sp_q:
+                _new_concepts = 0   # 回忆题/习惯题/问她自己的题：答案在图里和对话里，不在网上
             # C 修复：情绪/陈述中含图外"技术名词"（字母数字型概念，如 C2/5G）也触发
             # 情绪表达常带事实内容（"害怕离合器"），社交路径无知识注入，
             # 没有外部信息就只剩模型裸猜
             _tech_unknown = False
             if (_heuristic_ok and parsed.get("dialogue_act")
-                    in ("emotion_expression", "information_statement", "opinion")):
+                    in ("emotion_expression", "information_statement", "opinion")
+                    and not _memory_recall):
                 for _pn in (parsed.get("nodes") or []):
                     _pid = _pn if isinstance(_pn, str) else _pn.get("id", "")
                     if (_pid and _pid not in ("用户", "Fascinator")
@@ -3951,28 +4939,29 @@ def process_nlp():
                             and _re.search(r"[A-Za-z0-9]", _pid)):
                         _tech_unknown = True
                         break
-            if _search_by_explicit or _new_concepts >= 2 or _tech_unknown:
+            if _search_by_explicit or _new_concepts >= 1 or _tech_unknown:
                 if _search_by_explicit:
                     # 参数绑定已在 resolver 完成（查询清洗/指示词归一）
                     _web_query = str(_si["parameters"].get("query") or "")[:30]
+                    if not _web_query.strip() and _subs:
+                        _web_query = " ".join(_subs[:2])[:30]
                 else:
-                    _web_query = _re.sub(
-                        r"上网|网上|帮我|一下|搜搜|搜索|搜|查查|查|【.*?】|[。？！?，,.!~\s]",
-                        "", text)
-                    # 指示词归一：搜索引擎对"这首歌"这类口语指代召回差
-                    _web_query = _re.sub(r"[这那一]首歌", "歌曲", _web_query)
-                    _web_query = _re.sub(r"[这那一]部电影", "电影", _web_query)[:30]
-                from actions.web_search import do_web_search
-                _web_results = do_web_search(_web_query, top_n=5)
-                with kg._lock:
-                    _ws_node = kg.get_node("网络搜索")
-                    if _ws_node:
-                        _ws_node.activation = min(5.0, _ws_node.activation + 3.0)
-                        _ws_node.touch()
-                        engine.mark_active([_ws_node.id])
-                logger.info(
-                    f"[WebSearch] 触发({'意图词' if _search_by_explicit else '图外概念'}) "
-                    f"query='{_web_query}' 命中 {len(_web_results)} 条")
+                    # B：查询=未知概念本身（至多两个），不再是整句剥字
+                    _web_query = " ".join(_subs[:2])[:30]
+                if len(_web_query.strip()) >= 2:
+                    from actions.web_search import do_web_search
+                    _web_results = do_web_search(_web_query, top_n=5)
+                    with kg._lock:
+                        _ws_node = kg.get_node("网络搜索")
+                        if _ws_node:
+                            _ws_node.activation = min(5.0, _ws_node.activation + 3.0)
+                            _ws_node.touch()
+                            engine.mark_active([_ws_node.id])
+                    logger.info(
+                        f"[WebSearch] 触发({'意图词' if _search_by_explicit else '图外概念'}) "
+                        f"query='{_web_query}' 命中 {len(_web_results)} 条")
+                else:
+                    logger.info("[WebSearch] 启发式无实体性未知概念，本轮不搜（闲聊/回忆不触发）")
         except Exception as _we:
             logger.warning(f"[WebSearch] 动作失败: {_we}")
 
@@ -3994,12 +4983,11 @@ def process_nlp():
                         _fa_node.activation = min(5.0, _fa_node.activation + 3.0)
                         _fa_node.touch()
                         engine.mark_active([_fa_node.id])
-                if _fi["action"] != "FILE_CREATE":
-                    _gap = "读取文件" if _fi["action"] == "FILE_READ" else "删除文件"
+                if _fi["action"] == "FILE_DELETE":
                     _file_result = {
                         "ok": False,
-                        "error": f"暂不支持{_gap}（当前文件能力只支持创建/写入），"
-                                 f"已理解你的请求",
+                        "error": "暂不支持删除文件（当前文件能力支持创建/写入/读取），"
+                                 "已理解你的请求",
                         "recognized": _fi["action"]}
                     logger.info(f"[FileAction] {describe_intent(_fi)} → 能力缺口如实拒绝")
                 else:
@@ -4017,8 +5005,182 @@ def process_nlp():
                             _spec["action"], _spec.get("name", ""),
                             _spec.get("content", ""), _spec.get("dir", "桌面"))
                         logger.info(f"[FileAction] 执行结果: {_file_result}")
+                # 阅读闭环（config.reader 默认关=整块跳过）：成功读取的
+                # 文本文件建立分段台账（目标/覆盖/证据绑定），不自动连读。
+                if (_file_result or {}).get("ok") and \
+                        _file_result.get("action") == "read_file" and \
+                        (config.get("reader") or {}).get("enabled"):
+                    try:
+                        import reading as _rd
+                        _rc = config.get("reader") or {}
+                        _lp = _rc.get("ledger_path",
+                                      "data/reading_ledger.json")
+                        _sid = "file:" + os.path.basename(
+                            str(_file_result.get("path") or ""))
+                        _src = _rd.ReadingLedger(
+                            {"source_id": _sid, "total_units": 0,
+                             "units": []},
+                            "__scratch__").begin_source_text(
+                            _file_result.get("content") or "", _sid,
+                            uri=str(_file_result.get("path")),
+                            unit_chars=int(_rc.get("unit_chars", 900)),
+                            max_units=int(_rc.get("max_units", 200)))
+                        _rd.open_ledger(_lp, _src)
+                        _lp_probe = _rd.open_ledger(_lp)
+                        # P4 断点修复（2026-10-12）：register_gap 生产零调用
+                        # → 开书后在 hub/张力账本注册"阅读"域缺口（CuriosityDrive
+                        # 消费方本就存在，缺的只是开启方）。书名=文件名词干。
+                        try:
+                            _book = os.path.splitext(os.path.basename(
+                                str(_file_result.get("path") or _sid)))[0]
+                            _gap_id = _lp_probe.register_gap(
+                                kg, engine, _book, _rc)
+                            logger.info(f"[Reader] 阅读缺口注册: {_book} → {_gap_id}")
+                        except Exception as _gae:      # noqa: BLE001
+                            logger.debug(f"[Reader] 缺口注册失败: {_gae}")
+                        _file_result["reader"] = {
+                            "source_id": _sid,
+                            "units": _src["total_units"],
+                            "report": _lp_probe.progress_report()}
+                        logger.info(f"[Reader] 台账建立 {_sid} "
+                                    f"{_src['total_units']} 单元")
+                    except Exception as _re2:
+                        logger.warning(f"[Reader] 台账失败: {_re2}")
         except Exception as _fe:
             logger.warning(f"[FileAction] 动作失败: {_fe}")
+
+        # -------------------------------------------------
+        # 2a-pre.4b. 阅读回合（config.reader 默认关）：进度询问 /
+        # "继续读"每拍最多推进一个抽取单元 / 证据包挂 file_evidence
+        # 通道。不后台调度、不自动连读——每拍上限 1 单元 LLM 抽取。
+        # -------------------------------------------------
+        try:
+            _rc = config.get("reader") or {}
+            if _rc.get("enabled"):
+                import reading as _rd
+                _lp = _rc.get("ledger_path", "data/reading_ledger.json")
+                _t = str(text or "").strip()
+                if _rd.any_active_reading(_lp) and re.search(
+                        r"读到哪|阅读进度|读完了吗", _t):
+                    _led = _rd.open_ledger(_lp)
+                    _file_result = _file_result or {
+                        "ok": True, "action": "reader",
+                        "summary": _led.progress_report(),
+                        "content": _led.progress_report()}
+                if re.search(r"^(继续|接着)(读|看)", _t) and                         _rd.any_active_reading(_lp):
+                    _led = _rd.open_ledger(_lp)
+                    _n = _led.next_unit()
+                    if _n is not None:
+                        def _call(p):
+                            return nlp.ask("reader_extract", p)
+                        _ex = _rd.make_llm_extractor(
+                            _call, max_retries=1,
+                            brief="Output compact JSON.")
+                        _r = _led.read_unit(_n, _ex, kg,
+                                            tl=globals().get("timeline"))
+                        _file_result = _file_result or {
+                            "ok": _r["status"] == "confirmed",
+                            "action": "reader",
+                            "summary": f"第 {_n} 单元 {_r['status']}"
+                                       f"（{_led.progress_report()}）"}
+                        logger.info(f"[Reader] 推进单元 {_n}: "
+                                    f"{_r['status']}")
+        except Exception as _rde:
+            logger.debug(f"[Reader] 回合块跳过: {_rde}")
+
+        # -------------------------------------------------
+        # 2a-pre.4c. 通用任务闭环（config.taskloop 默认关）：
+        # 自然语言目标→校验→命名空间路由→适配器→每拍一个可核验行动。
+        # 关时 handle 立即 None；新路径异常绝不回退旧执行器（防违约束）。
+        # -------------------------------------------------
+        try:
+            import taskloop_host as _tlh
+            _tlr = _tlh.handle(text, {"kg": kg, "engine": engine,
+                                      "nlp": nlp, "config": config,
+                                      "busy": lambda: cc._busy.is_set(),
+                                      # 语音回合绝不背负 30-70s 的 goal_parse
+                                      # （P0.8）：任务样句子排队，poller 下一拍
+                                      # 起步并回报进展。文本回合保持同步。
+                                      "queue_async": (_channel == "voice")})
+            if _tlr:
+                _file_result = _file_result or {
+                    "ok": _tlr.get("kind") in ("task", "progress", "queued"),
+                    "action": "taskloop:" + str(_tlr.get("kind")),
+                    "summary": str(_tlr.get("reply") or "")[:400],
+                    "content": str(_tlr.get("reply") or "")[:400],
+                    "task_id": _tlr.get("task_id")}
+                logger.info(f"[TaskLoop] {_tlr.get('kind')} "
+                            f"{str(_tlr.get('reply'))[:120]}")
+                # 回合路径到达终态同样要经验写回（统一处理，防"只有
+                # poller 会写回"的行为不一致——验收轮 c3 修复）
+                _tl_on_terminal(_tlr)
+        except Exception as _tle:
+            logger.warning(f"[TaskLoop] 闭环块异常（不回退旧路径）: {_tle}")
+
+        # -------------------------------------------------
+        # 2a-pre.44. 语音朗读动作（2026-10-21）：触发 → 回指上一条用户消息
+        #   → voice_pipeline 出声。执行事实回注，回答不得凭空承诺。
+        # -------------------------------------------------
+        _speak_result = None
+        try:
+            _spi = _action_intents.get("SPEAK_TEXT")
+            if _spi is not None:
+                with kg._lock:
+                    for _vn_id in ("语音朗读", "能力_语音朗读"):
+                        _vn = kg.get_node(_vn_id)
+                        if _vn is not None:
+                            _vn.activation = min(5.0, float(
+                                _vn.activation or 0.0) + 3.0)
+                            _vn.touch()
+                            engine.mark_active([_vn.id])
+                # 念什么：显式对象优先，否则回指上一条**真实**用户消息
+                # （排除她自己的主动话与系统占位）——"读吧"由此有确定对象。
+                _say_txt = str((_spi.get("parameters") or {}).get("text")
+                                or "").strip()
+                if not _say_txt:
+                    # 同句带对象（"念给我听：<文本>"/「…」）：剥命令前缀，
+                    # 取引体内容——零 LLM 抽取，纯分隔符判定。
+                    _utt = str(_spi.get("utterance") or text or "")
+                    for _sep in ("：", ":", "「", "\u201c"):
+                        if _sep in _utt:
+                            _cut = _utt.split(_sep, 1)[1].strip(
+                                "」\u201d\u201c\" 　").strip()
+                            if len(_cut) >= 4:
+                                _say_txt = _cut[:300]
+                                break
+                if not _say_txt:
+                    # 上一条**真实**用户消息做回指对象；排除本轮自身（回合
+                    # 开头已把这句写进 chat_log，23:32 实锤会把"念给我听"
+                    # 四个字当诗歌念出来）与她自己的主动条目。
+                    _prev_u = [e for e in (get_chat_log().recent(n=10) or [])
+                               if not e.get("proactive")
+                               and not str(e.get("user_input") or "").startswith(
+                                   ("(主动)", "(FAS"))
+                               and str(e.get("user_input") or "").strip()
+                               and str(e.get("user_input")).strip() != str(text).strip()]
+                    if _prev_u:
+                        _say_txt = str(_prev_u[-1].get("user_input"))[:300]
+                if not _say_txt:
+                    _speak_result = {"success": False, "action": "语音朗读",
+                                     "reason": "没找到要朗读的内容——最近没有可念的文字"}
+                    logger.info("[Speak] 回指失败：无可朗读文本")
+                elif voice_pipeline is None or not config.get(
+                        "voice_enabled", False):
+                    _speak_result = {"success": False, "action": "语音朗读",
+                                     "reason": "语音通道当前不可用（未装配或开关关闭）",
+                                     "describe": _say_txt[:40]}
+                    logger.info("[Speak] 语音不可用，如实告知（不假装念了）")
+                else:
+                    _rc2 = voice_pipeline.speak_async(_say_txt)
+                    _speak_result = {
+                        "success": _rc2 == "ok", "action": "语音朗读",
+                        "describe": _say_txt[:40],
+                        "reason": ("" if _rc2 == "ok" else
+                                   {"disabled": "语音开关未开",
+                                    "busy": "正在出声，请稍等"}.get(_rc2, _rc2))}
+                    logger.info(f"[Speak] 朗读提交 rc={_rc2} len={len(_say_txt)}")
+        except Exception as _spe:                    # noqa: BLE001
+            logger.warning(f"[Speak] 朗读动作异常: {_spe}")
 
         # -------------------------------------------------
         # 2a-pre.45. 屏幕感知动作：触发 → 截屏OCR → 注入图谱
@@ -4165,8 +5327,13 @@ def process_nlp():
                     llm_budget.register("reason", tokens=1200)
                     _narrative_result = _ingest_narrative(kg, text)
                     if _narrative_result:
-                        logger.info(f"[Narrative] 入图: 故事={_narrative_result['story']} "
-                                    f"情节={len(_narrative_result['events'])}个")
+                        logger.info(
+                            f"[Narrative] 入图: 故事={_narrative_result['story']} "
+                            f"情节={len(_narrative_result['events'])}个 "
+                            f"实体 入{ _narrative_result.get('entities_in', 0)}"
+                            f"/写{_narrative_result.get('entities_written', 0)}"
+                            f"(新建{_narrative_result.get('entities_new_nodes', 0)})"
+                            f" 截断{len(_narrative_result.get('entities_truncated', []))}")
                         # （2026-09-22 修复：此处原有局部 `import fas_log`，与
                         #  函数内更早的使用共同把 fas_log 变成本函数局部名 →
                         #  UnboundLocalError。fas_log 已在模块顶导入。）
@@ -4187,20 +5354,11 @@ def process_nlp():
 
         _da = parsed.get("dialogue_act", "")
         _skip_regular_extract = bool(_narrative_result)  # 叙事已分段入图
-        _non_teaching_das = {
-            "greeting", "farewell", "thanking", "apology", "emotion_expression",
-            "question", "request", "opinion", "agreement", "disagreement",
-            "comfort", "congratulation", "invitation", "backchannel", "suggestion",
-            "curiosity_expression", "answer",
-        }
-        if _da:
-            _should_extract_memory = (
-                not _skip_regular_extract
-                and (_da not in _non_teaching_das
-                     or parsed.get("memory_type") in ("episodic", "semantic"))
-            )
-        else:
-            _should_extract_memory = parsed.get("memory_type") in ("episodic", "semantic")
+        from nlp_processor import should_extract_memory
+        # （2026-10-19 语义边界修正：问句预设不是用户断言的知识，纯语义
+        #  疑问不再被 memory_type 的 OR 分支放行去做图抽取——决策逻辑
+        #  收进 nlp_processor.should_extract_memory，可隔离测试）
+        _should_extract_memory = should_extract_memory(parsed, _skip_regular_extract)
 
         logger.info(
             f"[Memory] da={_da}, extract={_should_extract_memory}, "
@@ -4365,6 +5523,17 @@ def process_nlp():
         except Exception as _e:
             logger.warning(f"[ExprFB] 回应观察失败（不影响本轮）: {_e}")
 
+        # 交流目标 Monitor（interaction_planner；config.interaction_planner
+        # 缺省=关，关时函数首行短路、行为逐位不变。审计见
+        # docs/audits/INTERACTION_GOALS_MIGRATION_AUDIT_2026-10-09.md）。
+        # 复用刚算出的 _fb（图谱后验结果），只落可观察量，不新判内心。
+        try:
+            import interaction_planner as _ip
+            _ip.observe_turn(kg, parsed=parsed,
+                             fb=locals().get("_fb"), config=config)
+        except Exception as _ipe:
+            logger.debug(f"[IntGoal] observe_turn 跳过: {_ipe}")
+
         # ── 交流决策层：回应欲望认知竞争（替代原单一沉默倾向判定）──
         try:
             _last_expr = buffer.last_unannotated_expression() or {}
@@ -4388,11 +5557,12 @@ def process_nlp():
                 curiosity_active=curiosity_engine.is_curiosity_active(kg),
                 last_outcome_negative=cc._last_outcome_negative,
                 last_expr_gap_s=_gap_s,
-                has_action_result=bool(_web_results or _file_result or _eye_result or _mc_action_result),
+                has_action_result=bool(_web_results or _file_result or _eye_result or _mc_action_result or (_speak_result or {}).get("success")),
                 exploration=_exploration,
                 hormone=(reward_system.modulation() if reward_system else None),
                 modulation=drive_evaluator.modulation(),
                 action_tendencies=drive_evaluator.field.action_tendencies(),
+                traits=internal_state.trait_deviations(),
                 action_space=action_space)
             if _dd.get("exploration", {}).get("selected"):
                 logger.info(
@@ -4423,6 +5593,19 @@ def process_nlp():
         _silence_chosen = (_dd["decision"] == "silence")
         if _silence_chosen:
             logger.info(f"[DialogueDecision] 沉默: desire={_dd['desire']} {_dd['factors']}")
+
+        # 交流目标 Strategy（interaction_planner.arbitrate；默认关=原样返回
+        # dd 恒等对象，零改动零日志。硬约束：沉默裁决不可被推翻——只在
+        # _silence_chosen 为假时调用；通过后经既有 constraints→发言提纲通道
+        # 影响语言姿态，不新增文本生成路径、不改变是否回应的裁决）。
+        if not _silence_chosen:
+            try:
+                import interaction_planner as _ip
+                _dd, _ip_tele = _ip.arbitrate(kg, _dd, parsed, config=config)
+                if _ip_tele.get("proposed"):
+                    logger.info(f"[IntGoal] 姿态注入 {_ip_tele['proposed']}")
+            except Exception as _ipa:
+                logger.debug(f"[IntGoal] arbitrate 跳过: {_ipa}")
 
         # ─────────────────────────────────────────────────────────
         # 1.5 Cognitive Context：回合级一次构建，L1/L2 各自编译（cognitive_context.py）
@@ -4564,7 +5747,23 @@ def process_nlp():
                 "outcome": _intent_outcome,
             } if _user_intent_specs else None)
             _turn_action_queue_len = max(0, len(_user_intent_specs) - 1)
+            # 认知状态切片（render_cognitive_state，主动表达与被动回复
+            # 共用）：把"心里正在想的事"的文字内容交给语言层，被问在想
+            # 什么时不再空转。said_recent 不传——回合里复述自己说过的话
+            # 是自然的，"别说第二遍"只属于主动表达通道。
+            try:
+                from continuous_cognition import render_cognitive_state
+                # life_events：真实行动记录（谁做的）。被动回合同样必须
+                # 带主体——"谁玩了尖塔2"答错就错在这里缺事实（2026-10-16
+                # 取证）。对话原文被动侧已有【近期对话】段，不重复注入。
+                _cog_state_slice = render_cognitive_state(
+                    kg, ci=None, istate=internal_state,
+                    said_recent=None, budget=1600,
+                    life_events=cc._life_events())
+            except Exception:                        # noqa: BLE001
+                _cog_state_slice = ""
             _cog_full = build_cognitive_context(
+                cognitive_state=_cog_state_slice,
                 text=text, channel=_channel, parsed=parsed,
                 perception_connected=_mc_online_now,
                 environment=({
@@ -4603,7 +5802,8 @@ def process_nlp():
                           "mc_session": _sess_ev,
                           "web_results": _web_results,
                           "file_result": _file_result,
-                          "eye_result": _eye_result},
+                          "eye_result": _eye_result,
+                          "voice_speak": _speak_result},
             )
         except Exception as _cce:
             logger.warning(f"[CognitiveContext] 回合构建失败（语言层降级为无上下文）: {_cce}")
@@ -4703,6 +5903,29 @@ def process_nlp():
                 logger.warning(f"[NLP] L1 短回应失败（转正常回答）: {_ase}")
                 llm_answer = None
 
+            # L1 复读检测（2026-10-24 实锤：同一问题四连问答同一句，prompt
+            # 反读规则对 flash 模型无效）→ 丢弃 L1 答案、落回 L2 重答——
+            # L2 有更全上下文（节点正文、事实账本）与更强生成档，且其
+            # 【近期对话】同样含旧答案与反读规则。只拦"整句归一后相同"
+            # 的复读；"在/嗯"这类自然短应答（<8 字）不受影响。
+            if llm_answer:
+                try:
+                    _lrec = get_chat_log().recent(n=2)
+                    _last_sr = ""
+                    for _r in reversed(_lrec):
+                        if _r.get("system_response"):
+                            _last_sr = str(_r["system_response"])
+                            break
+                    _norm = lambda s: "".join(
+                        ch for ch in str(s) if ch.isalnum())[:60]
+                    if _last_sr and len(_norm(llm_answer)) >= 8 \
+                            and _norm(llm_answer) == _norm(_last_sr):
+                        logger.info("[NLP] L1 复读检测：与上一轮回答相同 "
+                                    "→ 升级 L2 重答")
+                        llm_answer = None
+                except Exception:
+                    pass
+
         if llm_answer is None and _silence_chosen:
             # Reflection Evolution R4: 沉默是真实候选行为，本轮不生成回答
             pass
@@ -4728,17 +5951,42 @@ def process_nlp():
             # 反射快路径已用"行动+游戏内短回执"回答 → 跳过 LLM 答案（不重复说话）
             if llm_node and llm_node.activation >= theta_action and not _reflex_fast:
 
-                raw_topk, topk_edges = engine.get_topk(k=20)
+                raw_topk, topk_edges = engine.get_topk(k=30)
 
                 # 过滤掉基础设施节点，只保留真实语义/情景知识节点（V2: 基于 label 动态检测）
                 # raw_topk ≤ k 项，逐项判 label 即可——不做全图扫描集合
-                topk_nodes = [
+                _cands = [
                     n for n in raw_topk
                     if is_cognitive_visible(n)
                     and not n.id.startswith("坐标(")
                     # 非阻塞锁：对象照常参与扩散，但不进入回答区（认知输出）
                     and not regulation.locks.hides_node(n.id, "topk")
                 ]
+                # 动态定容 + 枢纽惩罚（2026-10-24："图谱作用不大"实锤）：
+                # 固定 k=20 时，从"用户"枢纽扩散出的泛化家族（用户关系/
+                # 企业用户/新用户…）与常热枢纽（网络搜索）占走大半回答区，
+                # 具体话题节点被淹。改为有效分=激活/(1+0.5·ln(1+度数))：
+                # 永远亮的枢纽（度数高）打折，排序后保留 ≥ 最高有效分 30%
+                # 的节点（动态个数，上限 20）——激活分布稀时自然少选，
+                # 浓时多选，泛化家族退位。
+                _cand_ids = {n.id for n in _cands}
+                _deg = {nid: 0 for nid in _cand_ids}
+                with kg._lock:
+                    for _e in kg.edges:
+                        if _e.src in _deg:
+                            _deg[_e.src] += 1
+                        if _e.dst in _deg:
+                            _deg[_e.dst] += 1
+                import math as _m
+
+                def _eff(_n):
+                    return (float(_n.activation or 0)
+                            / (1.0 + 0.5 * _m.log1p(_deg.get(_n.id, 0))))
+
+                _cands.sort(key=_eff, reverse=True)
+                _max_eff = _eff(_cands[0]) if _cands else 0.0
+                topk_nodes = ([n for n in _cands if _eff(n) >= 0.3 * _max_eff]
+                              [:20] if _cands else [])
                 if not topk_nodes:
                     topk_nodes = raw_topk[:5]
 
@@ -4872,6 +6120,12 @@ def process_nlp():
         # 不得进经历时间轴,也不得作为 Say-Do 正则的驱动力
         _llm_answer_failed = bool(llm_answer) and str(llm_answer).startswith(
             "[回答生成失败")
+        # 空 answer 也是故障（2026-10-22 吞消息修复）：L1/L2 偶发返回空串
+        # （模型吐空、连接异常下的 strip=""），旧闸只认"[回答生成失败"前缀，
+        # 空串会一路穿到 6013 被当成"她说过了"投递——用户侧就是"发消息没反应"。
+        # 现在空串与占位串同等对待，交给下方"走神"自然致歉兜底。
+        if llm_answer is not None and not str(llm_answer).strip():
+            _llm_answer_failed = True
 
         # 经验时间轴：她说的话是一条 ACTION（actor=self；沉默则无事件——如实）
         if llm_answer is not None and not _llm_answer_failed:
@@ -4963,8 +6217,11 @@ def process_nlp():
                     pass
                 fas_log.get_logger(fas_log.COGNITION).info(
                     "cycle_end", "回合周期结束",
-                    outcome="answered" if llm_answer else (_dd.get("decision") or "silent"),
-                    answered=bool(llm_answer), behavior=_dd.get("decision"),
+                    outcome=("answered" if (llm_answer and not _llm_answer_failed)
+                             else ("llm_failed" if _llm_answer_failed
+                                  else (_dd.get("decision") or "silent"))),
+                    answered=bool(llm_answer and not _llm_answer_failed),
+                    behavior=_dd.get("decision"),
                     llm_calls=fas_log.trace_count("llm_calls"),
                     duration_ms=round((time.time() - _turn_t0) * 1000),
                     action=bool(_user_action_result or _mc_action_result),
@@ -4991,6 +6248,13 @@ def process_nlp():
 
         # 持续认知循环接管无输入期的图谱活动；请求处理完毕解除 busy 暂停
         cc.set_busy(False)
+        # 状态驱动改造 2026-10-13：回合结束是一等事件——刚聊出的缺口/兴趣
+        # 不必等下一次安全网巡检（90s 冷却内自动合并，风暴安全）。
+        try:
+            import activities as _A
+            _A.notify_event("user_turn_end")
+        except Exception:
+            pass
 
         # 确保启动时自动扩散处于停止状态，避免前端刷新后后端线程继续运行
         engine.stop_auto()
@@ -5037,9 +6301,17 @@ def process_nlp():
         if faiss_hits:
             response_data["faiss_hits"] = faiss_hits
 
-        if llm_answer is not None:
+        if llm_answer is not None and not _llm_answer_failed:
             response_data["answer"] = llm_answer
             response_data["answer_generated"] = True
+        elif _llm_answer_failed:
+            # P0-3（2026-10-12）：LLM 故障原文（"[回答生成失败: …]"）绝不
+            # 冒充她说的话——降级为一句人设内的自然致歉，标记 llm_degraded，
+            # 不写 chat_log 话语（5599 处已有闸）、不投 Charon（answer 不再是
+            # 错误串但仍会投；见下方投递闸）。
+            response_data["answer"] = "唔……我刚走神了，没接上话，你再说一次？"
+            response_data["answer_generated"] = False
+            response_data["llm_degraded"] = True
 
         # ── 好奇/探索状态信息 ──
         if curiosity_question:
@@ -5126,6 +6398,13 @@ def process_nlp():
             curiosity_resolved=curiosity_resolved is not None and curiosity_resolved.get("resolved", False),
             curiosity_answer=curiosity_resolved.get("answer") if curiosity_resolved else None,
         )
+        # 双线合账（2026-10-18）：刚说过的回复占用主动表达的冷却与限额
+        # 窗口——堵住"回复完 4 秒主动又播一条同内容"的双声道怪相。
+        if llm_answer:
+            try:
+                cc.note_spoken()
+            except Exception:                        # noqa: BLE001
+                logger.debug("[note_spoken] 跳过", exc_info=True)
 
         # ── 表达事件入图（ExprFB）+ buffer 兼容视图 ──
         # FAS 每轮表达（含选择沉默）成为统一图谱中的事件节点：
@@ -5171,6 +6450,8 @@ def process_nlp():
             response_data["file_action"] = _file_result
         if _mc_action_result:
             response_data["mc_action"] = _mc_action_result
+        if _speak_result:
+            response_data["voice_speak"] = _speak_result
         if _mc_session_action:
             # 会话状态机回执（请求端口/连接结果）——前端 Auto 面板依赖此字段
             response_data["mc_session"] = _mc_session_action
@@ -5223,6 +6504,16 @@ def process_nlp():
                     )
             except Exception as _se:
                 logger.warning(f"[SelfModel] 更新跳过: {_se}")
+
+        # 交流目标生成（interaction_planner；默认关=首行短路）。
+        # 只对**用户亲口的显式请托**建目标（请托句式检测），不隐式升级
+        # 每条消息；隐式话题延续仍由 curiosity/exploration 既有通道覆盖。
+        try:
+            import interaction_planner as _ip
+            _ip.try_create_from_turn(kg, text=text, parsed=parsed,
+                                     config=config)
+        except Exception as _ipc:
+            logger.debug(f"[IntGoal] goal create 跳过: {_ipc}")
 
         # ── Reflection Phase 2: 反思触发检查 ──
         if not curiosity_question:  # 好奇问题活跃时不触发反思
@@ -5336,6 +6627,43 @@ def process_nlp():
 
         if click_data:
             response_data["click"] = click_data
+
+        # Charon 下行：本回合说出的话投给桌面外壳（origin=reactive，
+        # 聊天 UI 已显示；前端气泡按 origin 决定是否重复弹出）
+        if response_data.get("answer"):
+            # 调试（2026-10-19 用户需求）：随话下行附带"这次语言所用的图谱"
+            # =真实喂给语言层的 topk 节点/边，与主动通道同一 refs.graph 形态。
+            _rrefs = {"channel": _channel, "exit": "nlp_turn"}
+            try:
+                from continuous_cognition import _state_node_note
+                try:
+                    _tn, _te = topk_nodes, knowledge_edges   # L2 已算好
+                except NameError:
+                    # L1 短回应路径没走 L2 块——气泡的"所用图谱"不能因此
+                    # 空白（2026-10-22 实锤：L1 回复的 refs 整段缺失）。
+                    # 用与 L2 完全同源的计算方式现场取数。
+                    _raw, _ted = engine.get_topk(k=20)
+                    _tn = [n for n in _raw if is_cognitive_visible(n)
+                           and not str(n.id).startswith("坐标(")
+                           and not regulation.locks.hides_node(n.id, "topk")]
+                    _tn = _tn or _raw[:5]
+                    _ids = {n.id for n in _tn}
+                    _te = [e for e in _ted
+                           if e.src in _ids and e.dst in _ids]
+                _rrefs["graph"] = {
+                    "ci": None, "goal": None, "class": "reactive",
+                    "nodes": [{"id": str(n.id), "note": _state_node_note(n),
+                               "act": round(float(getattr(n, "activation", 0)
+                                                  or 0.0), 2)}
+                              for n in (_tn or [])[:12]],
+                    "edges": [[getattr(e, "src", ""), getattr(e, "relation", ""),
+                               getattr(e, "dst", ""),
+                               round(float(getattr(e, "weight", 0) or 0), 2)]
+                              for e in (_te or [])[:12]]}
+            except Exception:                        # noqa: BLE001
+                pass
+            _charon_deliver(response_data["answer"], origin="reactive",
+                            refs=_rrefs)
 
         return jsonify(response_data)
 
@@ -6043,13 +7371,15 @@ def execute_action():
 
 @app.route("/api/actions/log", methods=["GET"])
 def action_log():
-
-    logger.info(
-        "[API] action_log"
-    )
-
+    """动作结算历史（新→旧）。2026-10-21 改接 ActionManager 真实历史
+    （原返回 engine.execution_log——那是扩散引擎的执行痕，动作窗常空）。"""
+    try:
+        n = int(request.args.get("n", 60))
+    except (TypeError, ValueError):
+        n = 60
     return jsonify({
-        "log": engine.execution_log
+        "log": action_manager.history(n=max(1, min(n, 400))),
+        "source": "action_manager"
     })
 
 
@@ -6212,11 +7542,875 @@ def skills_catalog_ep():
 
 @app.route("/api/proactive/poll", methods=["GET"])
 def proactive_poll():
-    """前端轮询：取走 CC 决定表达的主动消息（最后一公里通道）。"""
+    """前端轮询：取走 CC 决定表达的主动消息（最后一公里通道）。
+
+    注意：Charon 桌面的主动弹泡不在此处投递——那由 _express 产出时即走
+    channels（生产侧投递，与是否有人轮询无关）。这里只服务网页 UI 的取走，
+    不重复投递，避免同一句弹两次。
+    """
     try:
-        return jsonify({"success": True, "messages": cc.poll()})
+        msgs = cc.poll()
+        # P5：生活循环分享候选（Charon 已投过的同源文本进此队列供网页收走）
+        with _living_queue_lock:
+            if _living_queue:
+                msgs = list(msgs) + _living_queue
+                _living_queue.clear()
+        return jsonify({"success": True, "messages": msgs})
     except Exception as e:
         logger.exception(f"[Proactive] {e}")
+        return jsonify({"error": str(e)}), 500
+
+
+# =========================================================
+# 生活循环控制 API（P5）：可见账本 + 插话/暂停/继续/放弃
+# =========================================================
+
+@app.route("/api/living", methods=["GET"])
+def living_status_ep():
+    """账本视图：活动+状态+尝试+发现+分享决定/投递+预算剩余。"""
+    try:
+        from living_loop import ActivityLedger
+        led = ActivityLedger(os.path.join(
+            os.path.dirname(os.path.abspath(__file__)), "data",
+            "living_ledger.json"))
+        acts = [{"id": a["id"], "topic": a.get("topic"),
+                 "concept": a.get("concept"), "state": a.get("state"),
+                 "end_reason": a.get("end_reason"),
+                 "tried": a.get("methods_tried", [])[:4],
+                 "findings": len(a.get("findings", [])),
+                 "share": a.get("share_verdict"),
+                 "share_reason": a.get("share_reason")}
+                for a in led.activities.values()]
+        return jsonify({"success": True, "enabled": bool(
+            config.get("living_loop_enabled")),
+            "budget_left": led.web_budget_left(int(config.get(
+                "living_loop_daily_web_budget", 40))),
+            "activities": acts,
+            "share_candidates": [
+                {"topic": c.get("topic"), "delivered": c.get("delivered", False)}
+                for c in led.share_candidates[-8:]]})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/living", methods=["POST"])
+def living_control_ep():
+    """{"action":"pause"|"resume"|"abandon","activity":id}。
+    用户主权：随时叫停后台活动；resume 仅未被放弃的。"""
+    try:
+        from living_loop import ActivityLedger, A_ACTIVE, A_PAUSED, A_ABANDONED
+        d = request.json or {}
+        act = d.get("action")
+        aid = str(d.get("activity", ""))
+        lp = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "data", "living_ledger.json")
+        led = ActivityLedger(lp)
+        a = led.activities.get(aid)
+        if a is None:
+            return jsonify({"success": False, "error": "unknown activity"}), 400
+        if act == "pause":
+            if a["state"] in (A_ACTIVE, "waiting"):
+                a["state"] = A_PAUSED
+                a["end_reason"] = "user_paused"
+            else:
+                return jsonify({"success": False,
+                                "error": f"state={a['state']} 不可暂停"}), 400
+        elif act == "resume":
+            if a["state"] == A_ABANDONED:
+                return jsonify({"success": False,
+                                "error": "已放弃的活动需重开（不复活僵尸）"}), 400
+            if a["state"] in (A_PAUSED, "waiting"):
+                a["state"] = A_ACTIVE
+                a["end_reason"] = None
+            else:
+                return jsonify({"success": False,
+                                "error": f"state={a['state']} 无需继续"}), 400
+        elif act == "abandon":
+            a["state"] = A_ABANDONED
+            a["end_reason"] = "user_abandoned"
+        else:
+            return jsonify({"success": False,
+                            "error": "action ∈ pause/resume/abandon"}), 400
+        led.save()
+        logger.info("[Living] 用户控制 %s → %s", aid, a["state"])
+        return jsonify({"success": True, "activity": aid,
+                        "state": a["state"]})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+# =========================================================
+# 语音闭环 API（P1）——全部"失败只报 reason，不抛不卡"
+# =========================================================
+
+@app.route("/api/voice/status", methods=["GET"])
+def voice_status_ep():
+    try:
+        if voice_pipeline is None:
+            return jsonify({"success": True, "state": "unassembled",
+                            "enabled": bool(config.get("voice_enabled")),
+                            "reason": "voice 装配失败或环境不支持"})
+        return jsonify({"success": True, **voice_pipeline.status()})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/voice", methods=["POST"])
+def voice_control_ep():
+    """开关语音。body: {"enabled": bool, "listen": bool}。
+    enabled 持久化；listen 隐私 ephemeral——改内存即刻生效、绝不落盘，
+    重启必回未监听（与屏幕观察同纪律）。"""
+    try:
+        data = request.json or {}
+        upd = {}
+        if "enabled" in data:
+            upd["voice_enabled"] = bool(data.get("enabled"))
+        if "listen" in data:
+            upd["voice_listen_enabled"] = bool(data.get("listen"))
+        if upd:
+            _apply_cfg_updates(config, upd, CONFIG_OVERLAY_PATH,
+                               no_persist=PRIVACY_EPHEMERAL_KEYS)
+            engine.config = config
+        try:
+            import voice_io
+            voice_io.apply_control(voice_pipeline, config)
+        except Exception as _ae:                   # noqa: BLE001
+            logger.warning("[Voice] 控制联动异常：%r", _ae)
+        return jsonify({"success": True,
+                        "persisted": [k for k in upd
+                                      if k not in PRIVACY_EPHEMERAL_KEYS],
+                        "ephemeral": [k for k in upd
+                                      if k in PRIVACY_EPHEMERAL_KEYS],
+                        "state": (voice_pipeline.status()
+                                  if voice_pipeline else "unassembled")})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/qq/events", methods=["POST"])
+def qq_events_ep():
+    """OneBot v11 事件推送入口（NapCat 等把 HTTP 报告指到这里）。
+    只解析私聊消息进 qq 通道收件箱；是否回应由认知管线决定。
+    通道关闭（qq_enabled=false）时一律丢弃并如实回执。"""
+    try:
+        body = request.get_json(silent=True) or {}
+        tok = str(config.get("qq_token") or "")
+        if tok and str(request.headers.get("X-Secret-Token") or "") != tok:
+            return jsonify({"ok": False, "error": "token 不符"}), 401
+        accepted = qq_channel.on_event(body)
+        return jsonify({"ok": True, "accepted": bool(accepted),
+                        "enabled": bool(config.get("qq_enabled"))})
+    except Exception as _qe:                       # noqa: BLE001
+        logger.warning(f"[QQ] 事件处理异常: {_qe}")
+        return jsonify({"ok": False, "error": str(_qe)[:120]}), 500
+
+
+@app.route("/api/qq/state", methods=["GET"])
+def qq_state_ep():
+    """通道自检（验收用）：开关/白名单/统计/最近错误。"""
+    try:
+        return jsonify(qq_channel.state())
+    except Exception as _qs:                       # noqa: BLE001
+        return jsonify({"error": str(_qs)[:120]}), 500
+
+
+@app.route("/api/qq/send", methods=["POST"])
+def qq_send_ep():
+    """手动经 QQ 通道发一句（验收/调试用）：与主动镜像完全同一条出口
+    ——channel_hub.send_text 的节流、同文去重、白名单硬锁全部生效。"""
+    try:
+        body = request.json or {}
+        text = str(body.get("text") or "").strip()
+        if not text:
+            return jsonify({"ok": False, "error": "text 为空"}), 400
+        r = channel_hub.send_text("qq", text)
+        return jsonify(r)
+    except Exception as _qs:                       # noqa: BLE001
+        return jsonify({"ok": False, "error": str(_qs)[:120]}), 500
+
+
+@app.route("/api/voice/speak", methods=["POST"])
+def voice_speak_ep():
+    """出声测试（不经过对话回合）；用于形象/语音链路联调。
+    立即返回 started，真实进度轮询 GET /api/voice/status 的 progress 字段
+    （kokoro 首次加载+合成 10-70s——同步等会被 Charon 代理 8s 超时误报失败）。"""
+    try:
+        text = str((request.json or {}).get("text", ""))[:400]
+        if not text or voice_pipeline is None:
+            return jsonify({"success": False,
+                            "reason": "empty_text" if not text
+                            else "voice_unassembled"}), 400
+        started = voice_pipeline.speak_async(text)
+        return jsonify({"success": started == "ok", "started": started == "ok",
+                        "reason": None if started == "ok" else started})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/voice/feed", methods=["POST"])
+def voice_feed_ep():
+    """开发/验收通道：喂 wav 文件路径 → 走与麦克风同一条 ASR→主管道链。
+    真机麦克风不可用时用它验证逻辑（等效输入，非实测录音设备）。"""
+    try:
+        path = str((request.json or {}).get("audio_path", ""))
+        if not path or not os.path.isfile(path) or voice_pipeline is None:
+            return jsonify({"success": False, "reason": "bad_path_or_unassembled"}), 400
+        import numpy as np
+        import soundfile as sf
+        data, sr = sf.read(path)
+        if getattr(data, "ndim", 1) > 1:
+            data = data.mean(axis=1)
+        data = np.asarray(data, dtype="float32")
+        if sr != 16000:
+            # 简易重采样（验收用途足够；生产走 16k 采集）
+            n = int(len(data) * 16000 / sr)
+            idx = np.linspace(0, len(data) - 1, n)
+            data = np.interp(idx, np.arange(len(data)), data).astype("float32")
+        voice_pipeline.feed_audio(data)
+        return jsonify({"success": True, "queued": True,
+                        "dur_s": round(len(data) / 16000, 2)})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+# =========================================================
+# 形象状态 API（P2 接口层——渲染端只读订阅）
+# =========================================================
+
+@app.route("/api/avatar/state", methods=["GET"])
+def avatar_state_ep():
+    try:
+        import avatar_state
+        return jsonify({"success": True, **avatar_state.snapshot(),
+                        "recent": avatar_state.recent(10)})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/ssp", methods=["GET", "POST"])
+def ssp_ep():
+    """伺か/SSP 表现层：GET 状态（enabled+可达探测）；POST {"enabled":bool}
+    开关（可持久化——纯表现层无采集）；{"test":"文本"} 直推一句。"""
+    try:
+        import ssp_bridge
+        url = str(config.get("ssp_url") or ssp_bridge.DEFAULT_URL)
+        if request.method == "POST":
+            d = request.json or {}
+            if "enabled" in d:
+                _apply_cfg_updates(config, {"ssp_enabled": bool(d["enabled"])},
+                                   CONFIG_OVERLAY_PATH)
+                engine.config = config
+            if d.get("test"):
+                return jsonify({"success": True,
+                                "delivered": ssp_bridge.send_utterance(
+                                    str(d["test"]), url)})
+        probe = ssp_bridge.send_state("idle", url) if config.get("ssp_enabled") \
+            else _ssp_alive(url)
+        return jsonify({"success": True,
+                        "enabled": bool(config.get("ssp_enabled")),
+                        "ghost_reachable": bool(probe), "url": url})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+def _ssp_alive(url: str) -> bool:
+    """轻量可达探测（不发可见内容：idle 收束命令）。"""
+    try:
+        import ssp_bridge
+        return ssp_bridge.send_state("idle", url)
+    except Exception:                              # noqa: BLE001
+        return False
+
+
+# =========================================================
+# 屏幕观察（P3，隐私 ephemeral）与 Steam 情境
+# =========================================================
+
+def _screen_visible_state(on: bool, extra: dict = None):
+    """采集状态必须持续可见：Charon 事件（渲染指示）+ toast（开关瞬间）。"""
+    payload = {"on": bool(on), "ts": now_str(), **(extra or {})}
+    if config.get("companion_charon_enabled", False) and charon_channels:
+        try:
+            charon_channels[0]._post("/api/events",
+                                     {"topic": "fas.screen_state",
+                                      "payload": payload})
+        except Exception:                         # noqa: BLE001
+            pass
+
+
+@app.route("/api/pc_autonomy", methods=["GET"])
+def pc_autonomy_get():
+    """电脑控制权级别现值 + 实时在场判定（Charon 身体面板消费）。"""
+    try:
+        import pc_autonomy as PA
+        cfg = dict(config.get("pc_autonomy") or {})
+        idle = PA.idle_seconds()
+        return jsonify({
+            "level": cfg.get("level", "off"),
+            "background": bool(cfg.get("background", False)),
+            "idle_s": None if idle is None else round(idle, 1),
+            "present": PA.user_present(cfg),
+            "present_idle_s": cfg.get("present_idle_s", 900),
+            "apps": sorted((cfg.get("apps") or {}).keys()),
+        })
+    except Exception as e:
+        logger.exception(f"[API异常] GET /api/pc_autonomy: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/pc_autonomy", methods=["POST"])
+def pc_autonomy_post():
+    """改级别/后台选项。深合并进现有段后整体 PUT——apps 白名单绝不
+    因前端局部更新而被覆盖（PUT /api/config 对嵌套 dict 是整键替换，
+    前端直发会丢 apps，所以必须走这个专用口）。"""
+    try:
+        data = request.json or {}
+        cur = dict(config.get("pc_autonomy") or {})
+        changed = {}
+        if "level" in data:
+            lv = str(data["level"])
+            if lv not in ("off", "attended", "unattended"):
+                return jsonify({"error": "level ∈ off|attended|unattended"}), 400
+            cur["level"] = lv
+            changed["level"] = lv
+        if "background" in data:
+            cur["background"] = bool(data["background"])
+            changed["background"] = cur["background"]
+        if not changed:
+            return jsonify({"error": "无 level/background 字段"}), 400
+        _apply_cfg_updates(config, {"pc_autonomy": cur}, CONFIG_OVERLAY_PATH)
+        logger.info("[PC权限] 级别调整：%s（持久化）", changed)
+        return jsonify({"success": True, "changed": changed})
+    except Exception as e:
+        logger.exception(f"[API异常] POST /api/pc_autonomy: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/screen", methods=["POST"])
+def screen_control_ep():
+    """{"enabled": bool}。开启=显式动作；重启必回关闭（不落盘）。"""
+    try:
+        want = bool((request.json or {}).get("enabled", False))
+        _apply_cfg_updates(config, {"screen_observe_enabled": want},
+                           CONFIG_OVERLAY_PATH,
+                           no_persist=PRIVACY_EPHEMERAL_KEYS)
+        engine.config = config
+        import screen_watch
+        screen_watch.apply_runtime_toggle(want)
+        _screen_visible_state(want, {"note": "观察开启" if want else "观察关闭"})
+        if want and config.get("charon_notify_toast", False):
+            try:
+                charon_channels[0]._post("/api/notify", {
+                    "title": "Haru 的眼睛", "body": "屏幕观察已开启（重启后自动关闭）"})
+            except Exception:                     # noqa: BLE001
+                pass
+        return jsonify({"success": True, "enabled": want,
+                        "persisted": False,
+                        "reason_persisted": "隐私 ephemeral：重启必回关闭"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/screen/observe", methods=["POST"])
+def screen_observe_once_ep():
+    """按需一次观察：门控（开关/限频/去重）→ 现有显著性+入图管线。
+
+    值不值得说是既有表达管线的事——这里只形成"观察事件"。
+    """
+    try:
+        import screen_watch
+        res = screen_watch.observe_once(config)
+        if not res.get("ok"):
+            code = 400 if "not_enabled" in str(res.get("reason")) else 500
+            return jsonify({"success": False, **res}), code
+        _screen_visible_state(True, {"digest": res.get("digest"),
+                                     "kind": "observation"})
+        injected = None
+        if not res.get("duplicate"):
+            from eye.screen_ocr import salient_texts, inject_observation
+            _er = dict(res.get("res") or {})
+            _er["salient"] = salient_texts(
+                _er, kg=kg, embedder=emb_mgr if emb_mgr.ready() else None)
+            injected = inject_observation(kg, _er, engine=engine)
+            if injected:
+                engine.mark_active(injected)
+                try:
+                    from temporal_awareness import link_event_to_now_bucket
+                    link_event_to_now_bucket(kg, injected)
+                except Exception:
+                    pass
+                _save()
+                if _er.get("salient"):
+                    # 看见新东西要出声告诉表达管线（2026-10-16 修"从不
+                    # 反应屏幕内容"：入图后缺通知环节）。说不说仍由既有
+                    # 管线裁决；风暴合并由 notify_event 冷却负责。
+                    try:
+                        import activities as _A
+                        _A.notify_event("new_info")
+                    except Exception:
+                        pass
+        return jsonify({"success": True, "digest": res["digest"],
+                        "duplicate": res["duplicate"],
+                        "n_texts": res["n_texts"],
+                        "graph_node": injected,
+                        "elapsed_ms": res["elapsed_ms"]})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/screen/status", methods=["GET"])
+def screen_status_ep():
+    try:
+        import screen_watch
+        return jsonify({"success": True, **screen_watch.status(config)})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/steam/status", methods=["GET"])
+def steam_status_ep():
+    try:
+        import steam_status as _ss
+        return jsonify({"success": True,
+                        "enabled": bool(config.get("steam_poll_enabled")),
+                        "has_key": bool(_ss._api_key()),
+                        "steam_id_set": bool(str(config.get("steam_id", "")).strip())})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/usage", methods=["GET"])
+def usage_ep():
+    """§5 本月云端用量/费用估算/预算状态（无密钥，纯统计）。"""
+    try:
+        import usage_ledger
+        s = usage_ledger.month_summary()
+        return jsonify({"success": True, "summary": s,
+                        "over_budget": usage_ledger.over_budget()})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/steam/tick", methods=["POST"])
+def steam_tick_ep():
+    """手动一次 Steam 轮询（开发/验收用；守护线程自动做同样的事）。"""
+    try:
+        import steam_status
+        ev = steam_status.tick_once(config, logger)
+        if ev.get("changed") and ev.get("event"):
+            _inject_steam_event(ev["event"])
+        return jsonify({"success": True, **ev})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+_STEAM_LAST_GAME = ""
+
+
+def _inject_steam_event(ev: dict):
+    """Steam 情境 → 情景记忆节点（带来源/时间/可信度标注）。
+
+    主动互动分档（2026-10-13）：开局/上线=medium（偶发一提自然，
+    连刷被去重限速挡）；退出=medium；例行波动=low（只进联想场，
+    不建用户边——她不会为每次时长跳出来问"还在玩吗"）。"""
+    try:
+        global _STEAM_LAST_GAME
+        _val = "medium" if ev["kind"] in (
+            "game_started", "came_online", "game_stopped", "game_playing") else "low"
+        # stop 上报时 Steam 的"当前游戏"字段是空的（23:35 实锤：用户刚玩完
+        # 三角洲行动，stopped 节点 game=""，她答"你刚玩了什么"只能说对旧事）
+        # ——游戏名从最近一次 started 兜底。
+        _g = str(ev.get("game") or "")
+        if ev["kind"] == "game_started" and _g:
+            _STEAM_LAST_GAME = _g
+        if ev["kind"] in ("game_stopped", "game_playing") and not _g:
+            _g = _STEAM_LAST_GAME
+        _txt = {"game_started": f"用户开始玩{_g}了",
+                "game_stopped": f"用户{_g and ('玩的' + _g + ' ') or ''}退出了游戏"
+                                "（大约玩了这么久：见 Steam 记录）",
+                "game_playing": f"用户正在玩{_g}",
+                "came_online": "用户 Steam 上线了",
+                "went_offline": "用户 Steam 离线了"}.get(ev["kind"], "")
+        with kg._lock:
+            nid = f"Steam_{ev['kind']}_{int(ev['ts'] * 1000)}"
+            kg.add_node(Node(
+                id=nid, weight=0.4, label="declarative-episodic",
+                graph_space="episodic",
+                extra_attrs={"type": "context_perception",
+                             "source": ev["source"], "trust": ev["trust"],
+                             "kind": ev["kind"], "game": _g,
+                             "text": _txt,
+                             "state": ev["state"], "value": _val}))
+            _nd = kg.nodes.get(nid)
+            if _nd is not None:          # 先写 activation 再进前沿（不变量）
+                _nd.activation = 1.3 if _val == "medium" else 0.6
+            if _val == "medium" and kg.get_node("用户"):
+                kg.add_edge(Edge(src="用户", dst=nid, relation="相关",
+                                 weight=0.5))
+        engine.mark_active(nid)
+        try:
+            from temporal_awareness import link_event_to_now_bucket
+            link_event_to_now_bucket(kg, nid)
+        except Exception:
+            pass
+        try:
+            from time_chain import anchor_episode
+            anchor_episode(kg, nid)   # 玩游戏的环境观察进时间链
+        except Exception:
+            pass
+        try:
+            import activities as _A
+            _A.notify_event("game_context")
+        except Exception:
+            pass
+        _save()
+    except Exception as _se:                      # noqa: BLE001
+        logger.warning("[Steam] 情境入图失败：%r", _se)
+
+
+try:
+    def _context_poller():
+        """情境守护线程（屏幕自动采样 + Steam 轮询；flag 每轮自查，热开关
+        即时生效，同生活循环纪律；关闭=零网络零截屏）。"""
+        import steam_status
+        import screen_watch
+        _last_steam = 0.0
+        _last_shot = 0.0
+        while True:
+            time.sleep(60)
+            try:
+                if config.get("screen_observe_enabled", False):
+                    iv = max(60, int(config.get("screen_observe_interval_s", 600)))
+                    if time.time() - _last_shot >= iv:
+                        _last_shot = time.time()
+                        res = screen_watch.observe_once(config)
+                        if res.get("ok") and not res.get("duplicate"):
+                            _screen_visible_state(True, {"digest": res["digest"],
+                                                         "kind": "auto_sample"})
+                            from eye.screen_ocr import salient_texts, inject_observation
+                            _er = dict(res.get("res") or {})
+                            _er["salient"] = salient_texts(
+                                _er, kg=kg,
+                                embedder=emb_mgr if emb_mgr.ready() else None)
+                            nid = inject_observation(kg, _er, engine=engine)
+                            if nid:
+                                engine.mark_active(nid)
+                                try:
+                                    from temporal_awareness import                                         link_event_to_now_bucket
+                                    link_event_to_now_bucket(kg, nid)
+                                except Exception:
+                                    pass
+                                _save()
+                                if _er.get("salient"):
+                                    # 与手动观察端点同修：屏幕新内容 →
+                                    # 通知表达管线评估（2026-10-16）
+                                    try:
+                                        import activities as _A
+                                        _A.notify_event("new_info")
+                                    except Exception:
+                                        pass
+            except Exception as _e:               # noqa: BLE001
+                logger.warning("[Screen] 自动采样异常（忽略）：%r", _e)
+            try:
+                if config.get("steam_poll_enabled", False):
+                    iv = max(60, int(config.get("steam_poll_interval_s", 120)))
+                    if time.time() - _last_steam >= iv:
+                        _last_steam = time.time()
+                        ev = steam_status.tick_once(config, logger)
+                        if ev.get("changed") and ev.get("event"):
+                            _inject_steam_event(ev["event"])
+            except Exception as _e:               # noqa: BLE001
+                logger.warning("[Steam] 轮询异常（忽略）：%r", _e)
+            try:
+                _tl_idle_tick()                   # 任务闭环：候选→批准流→idle 步进
+            except Exception as _te:              # noqa: BLE001
+                logger.warning("[TaskLoop] 节拍出错（忽略）：%r", _te)
+
+    threading.Thread(target=_context_poller, daemon=True,
+                     name="context-poller").start()
+    logger.info("[Context] 情境轮询线程已启动（屏幕默认关/Steam 默认关）")
+except Exception as _cpe:                            # noqa: BLE001
+    logger.warning("[Context] 情境线程启动失败（不阻塞主链路）: %r", _cpe)
+
+
+# ── 任务闭环的宿主节拍（P0 背景步进 / P1 自主候选，2026-10-13）────────
+# 分工：TaskLoop/解析/台账全在 FAS-Cognitive（taskloop*.py），这里只做
+# ①候选来源（外部提案文件队列 + 生活循环已完成调研）→ propose_goal
+# ②空闲步进 idle_step（autopilot 开关默认关；busy 让位）
+# ③终态经验写回图谱（带来源/时间/可信度）+ 一条主动分享（既有通道）。
+
+def _tl_ctx():
+    return {"kg": kg, "engine": engine, "nlp": nlp, "config": config,
+            "busy": lambda: cc._busy.is_set()}
+
+
+def _tl_proposals_tick():
+    """消费外部提案文件队列 data/taskloop_proposals.json（[{"text","source"}]）。
+    任何模块可投递候选目标；一律走 propose_goal 的校验+pending_approval，
+    处理完标记 done（幂等，重启不重弹）。"""
+    import json as _J
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                     "data", "taskloop_proposals.json")
+    if not os.path.isfile(p):
+        return
+    try:
+        items = _J.load(open(p, encoding="utf-8"))
+    except (OSError, ValueError):
+        return
+    changed = False
+    for it in items:
+        if it.get("done") or not str(it.get("text", "")).strip():
+            continue
+        try:
+            import taskloop_host as _tlh
+            res = _tlh.propose_goal(_tl_ctx(), str(it["text"]),
+                                     str(it.get("source") or "external"))
+            it["done"] = True
+            it["result"] = (res or {}).get("kind", "unavailable")
+            changed = True
+            if (res or {}).get("kind") == "proposed":
+                _proactive_share(str(res.get("reply") or ""),
+                                 refs={"exit": "task_propose",
+                                       "task_id": res.get("task_id")})
+        except Exception as _pe:                 # noqa: BLE001
+            logger.warning("[TaskLoop] 提案处理失败：%r", _pe)
+            return
+    if changed:
+        try:
+            tmp = p + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as f:
+                _J.dump(items, f, ensure_ascii=False, indent=1)
+            os.replace(tmp, p)
+        except OSError:
+            pass
+
+
+def _tl_propose_from_living():
+    """P1 真实自主源：生活循环完成的调研（done+有发现）→ 把研究材料写成
+    workspace/inbox 笔记 → 提出"归档这份笔记"的可核验整理任务。
+    每条 done 活动只提议一次（data/taskloop_living_proposed.json 去重）。"""
+    import json as _J
+    import hashlib
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "data")
+    mark_path = os.path.join(data_dir, "taskloop_living_proposed.json")
+    try:
+        proposed = set(_J.load(open(mark_path, encoding="utf-8")))
+    except (OSError, ValueError):
+        proposed = set()
+    try:
+        from living_loop import ActivityLedger
+        led = ActivityLedger(os.path.join(data_dir, "living_ledger.json"))
+    except Exception:                            # noqa: BLE001
+        return
+    tl_cfg = (config.get("taskloop") or {})
+    if not tl_cfg.get("enabled"):
+        return
+    workspace = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             tl_cfg.get("files_workspace",
+                                        "data/task_workspace"))
+    for a in led.activities.values():
+        if a.get("state") != "done" or not a.get("findings"):
+            continue
+        aid = str(a.get("id"))
+        if aid in proposed:
+            continue
+        concept = str(a.get("concept") or a.get("topic") or aid)[:24]
+        note = "research_%s.md" % hashlib.md5(aid.encode()).hexdigest()[:8]
+        try:
+            inbox = os.path.join(workspace, "inbox")
+            os.makedirs(inbox, exist_ok=True)
+            ev = (a["findings"][0].get("evidence") or [{}])[0]
+            with open(os.path.join(inbox, note), "w", encoding="utf-8") as f:
+                f.write("# %s\n\n（Haru 的调研笔记，来源：%s）\n\n%s\n"
+                        % (concept, str(a.get("source_product", ""))[:60],
+                           str(ev.get("title", "")) + " "
+                           + str(ev.get("snippet", ""))[:400]))
+        except OSError:
+            return
+        proposed.add(aid)
+        try:
+            tmp = mark_path + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as f:
+                _J.dump(sorted(proposed), f, ensure_ascii=False)
+            os.replace(tmp, mark_path)
+        except OSError:
+            pass
+        try:
+            import taskloop_host as _tlh
+            res = _tlh.propose_goal(
+                _tl_ctx(),
+                "把 %s 从 inbox 移到 archive" % note, source="living")
+            if (res or {}).get("kind") == "proposed":
+                _proactive_share(str(res.get("reply") or ""),
+                                 refs={"exit": "task_propose",
+                                       "activity": aid})
+            logger.info("[TaskLoop] 生活→候选: %s → %s", note,
+                        (res or {}).get("kind"))
+        except Exception as _ge:                 # noqa: BLE001
+            logger.warning("[TaskLoop] 生活候选提议失败：%r", _ge)
+        return                                   # 一拍至多一条，不轰炸
+
+
+def _proactive_share(text, refs=None):
+    """一条主动话语走既有双通道（Charon proactive 投递 + 网页队列）。"""
+    if not str(text or "").strip():
+        return
+    with _living_queue_lock:
+        if len(_living_queue) < 8:
+            _living_queue.append({"ci_id": "task:" + str((refs or {}).get(
+                                     "task_id", int(time.time()))),
+                                 "text": str(text)[:200], "basis": [],
+                                 "goal": str(text)[:40], "source": "taskloop",
+                                 "time": now_str()})
+    if config.get("companion_charon_enabled", False):
+        try:
+            _charon_deliver(str(text)[:200], origin="proactive",
+                            refs=dict(refs or {}))
+        except Exception:                        # noqa: BLE001
+            pass
+
+
+def _tl_on_terminal(ev):
+    """任务终态的统一落地（turn/队列消费/idle 三路径共用，验收轮 c3）：
+    ①观测结果写回图谱（数字全部来自台账，零 LLM 编造）
+    ②一条主动分享（只在终态，频率天然有界；忙则 living 队列自会延后）。"""
+    if not ev or not ev.get("terminal") or not ev.get("task_id"):
+        return
+    rep = ev.get("report") or {}
+    try:
+        with kg._lock:
+            nid = "Task_%s_%d" % (str(ev.get("status", "?")).lower(),
+                                  int(time.time() * 1000))
+            kg.add_node(Node(
+                id=nid, weight=0.5, label="declarative-episodic",
+                graph_space="episodic",
+                extra_attrs={"type": "task_outcome",
+                             "task_id": ev.get("task_id"),
+                             "status": ev.get("status") or ev.get("decision"),
+                             "goals_met": "%s/%s" % (
+                                 rep.get("met_by_observation"),
+                                 rep.get("goals")),
+                             "steps": rep.get("steps"),
+                             "replans": rep.get("replans"),
+                             "verify_misses": rep.get("verify_misses"),
+                             "unmet": (rep.get("unmet") or [])[:4],
+                             "source": "taskloop",
+                             "trust": "observed"}))
+            # mark_active 的不变量是"先直写 activation 再同步前沿"——
+            # 终态事件给中等显著性（低于实时感知的 5.0，高于休眠背景）。
+            _nd = kg.nodes.get(nid)
+            if _nd is not None:
+                _nd.activation = 0.8
+        engine.mark_active(nid)
+        _save()
+    except Exception as _ne:                     # noqa: BLE001
+        logger.warning("[TaskLoop] 终态入图失败：%r", _ne)
+    _proactive_share(str(ev.get("reply") or ""),
+                     refs={"exit": "task_terminal",
+                           "task_id": ev.get("task_id")})
+    try:
+        import activities as _A
+        _A.notify_event("task_change")
+    except Exception:
+        pass
+
+
+def _tl_idle_tick():
+    """任务闭环节拍（context poller 每 60s 调用）。"""
+    _tl_proposals_tick()
+    _tl_propose_from_living()
+    try:
+        import taskloop_host as _tlh
+        # ①消费排队目标（语音/回合异步通道起步；ask/reject 也要回话，
+        #    不让用户的话掉进队列没下文）
+        for qev in _tlh.drain_queue(_tl_ctx()):
+            logger.info("[TaskLoop] 队列起步: %s → %s", qev.get("kind"),
+                        str(qev.get("reply"))[:80])
+            if qev.get("kind") in ("ask", "reject", "blocked") \
+                    and not qev.get("terminal"):
+                _proactive_share(str(qev.get("reply") or ""),
+                                 refs={"exit": "task_clarify"})
+            _tl_on_terminal(qev)
+        # ②空闲推进活动任务
+        ev = _tlh.idle_step(_tl_ctx())
+    except Exception as _ie:                     # noqa: BLE001
+        logger.warning("[TaskLoop] idle 异常（忽略）：%r", _ie)
+        return
+    if not ev:
+        return
+    logger.info("[TaskLoop] idle: %s → %s", ev.get("task_id"),
+                ev.get("decision") or ev.get("kind"))
+    if ev.get("terminal"):
+        _tl_on_terminal(ev)
+
+
+
+# ── 认知适配器装配（P4）：陪伴层→认知层的最小稳定入口 ─────────────────
+# 组件引用全部来自本文件已构造的生产对象（cc/autonomy/kg/engine/nlp），
+# 适配器只是门面+白名单+错误隔离；构造失败不影响任何既有路径。
+cog_adapter = None
+try:
+    from cognitive_adapter import CognitiveAdapter
+    cog_adapter = CognitiveAdapter(
+        {"cc": cc, "autonomy": autonomy, "kg": kg, "engine": engine,
+         "nlp": nlp, "chat_log": get_chat_log(),
+         "action_manager": action_manager,
+         "timeline": globals().get("timeline"),
+         "internal_state": globals().get("internal_state")},
+        config, logger)
+    logger.info("[Adapter] 认知适配器已装配（能力清单 GET /api/cognition/capabilities）")
+except Exception as _aae:                            # noqa: BLE001
+    logger.warning("[Adapter] 认知适配器装配失败（主链路不受影响）: %r", _aae)
+
+
+@app.route("/api/cognition/capabilities", methods=["GET"])
+def cognition_capabilities_ep():
+    """认知能力诚实清单：present/mode/detail（在用/默认关/未接线分开标注）。"""
+    try:
+        if cog_adapter is None:
+            return jsonify({"success": False, "error": "adapter_unassembled"}), 503
+        return jsonify({"success": True, "capabilities": cog_adapter.availability(),
+                        "stats": cog_adapter.stats()})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/cognition/call", methods=["POST"])
+def cognition_call_ep():
+    """白名单调用：{cap, method, args:[...]}。错误隔离——能力故障返回
+    ok:false+原因，绝不 500 崩陪伴主链路。"""
+    try:
+        d = request.json or {}
+        if cog_adapter is None:
+            return jsonify({"success": False, "error": "adapter_unassembled"}), 503
+        res = cog_adapter.call(str(d.get("cap", "")), str(d.get("method", "")),
+                               *(d.get("args") or []))
+        return jsonify({"success": True, **res})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/goals", methods=["GET", "POST"])
+def goals_ep():
+    """GET：当前目标+状态视图。POST {item,count,desc}：经 goal_planner
+    attach_goal 挂目标（此前生产无入口=断点，P4 接通；planner.tick 仍由
+    planner.enabled 门控，默认关）。"""
+    try:
+        if cog_adapter is None:
+            return jsonify({"success": False, "error": "adapter_unassembled"}), 503
+        if request.method == "POST":
+            d = request.json or {}
+            item = str(d.get("item", "")).strip()
+            if not item:
+                return jsonify({"success": False, "error": "item 必填"
+                                "（库存物品节点 id）"}), 400
+            res = cog_adapter.call("goal_planner", "attach",
+                                   item, d.get("count", 1), d.get("desc"))
+            return jsonify({"success": res.get("ok"), **res})
+        res = cog_adapter.call("goal_planner", "state")
+        return jsonify({"success": res.get("ok"), **res})
+    except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 
@@ -6878,7 +9072,7 @@ def internal_set_modulator(name):
 
     注意键名与语义：`level` 是历史契约名，R2 之后 `set_value("modulator", …)` 写的是
     **浓度真值（tonic）**，不是响应视图；前端因此把滑杆绑 conc、并同时显示
-    "响应 / 浓度"两个数（index.html renderInternalModulators）。
+    "响应 / 浓度"两个数（原 index.html，现 Charon 面板；留档 docs/legacy_frontend/）。
     """
     try:
         data = request.json or {}
@@ -7720,30 +9914,33 @@ def update_config():
 
         data = request.json or {}
 
-        for k, v in data.items():
+        # P0（2026-10-12）：经 config_store 类型安全更新并落盘 overlay；
+        # 修复 bool 键 "false"→True 的强转 bug 与"重启即丢"。
+        # config 为共享引用：engine/cc/living loop 读同一对象，就地改即生效。
+        result = _apply_cfg_updates(config, data, CONFIG_OVERLAY_PATH,
+                                    no_persist=PRIVACY_EPHEMERAL_KEYS)
 
-            if k in config:
+        for k in result["rejected"]:
+            logger.warning("[Config] 拒绝更新 %s：%s", k, result["rejected"][k])
 
-                try:
-
-                    config[k] = type(
-                        config[k]
-                    )(v)
-
-                except Exception:
-
-                    logger.warning(
-                        f"[Config] "
-                        f"无法更新 {k}"
-                    )
+        if "screen_observe_enabled" in result["updated"]:
+            try:
+                import screen_watch
+                screen_watch.apply_runtime_toggle(
+                    bool(config.get("screen_observe_enabled")))
+            except Exception as _e:                # noqa: BLE001
+                logger.warning("[Config] 屏幕观察开关联动失败：%r", _e)
 
         engine.config = config
 
         logger.info(
-            "[Config] 更新完成"
+            "[Config] 更新完成 %s", sorted(result["updated"])
         )
 
-        return jsonify(config)
+        body = dict(config)
+        body["_persisted_keys"] = sorted(result["updated"])
+        body["_rejected_keys"] = result["rejected"]
+        return jsonify(body)
 
     except Exception as e:
 
@@ -8464,6 +10661,22 @@ try:
 except Exception as _xe:
     logger.warning(f"[Experiment] 目标注入失败: {_xe}")
 
+# ── 陪伴 UI（2026-10-24）：/ = 视觉小说式陪伴界面（精简/完整/认知三视图，
+#    数据全部来自既有 API：/api/nlp、/api/proactive/poll、/api/cognition/state、
+#    /api/graph、/api/living、/api/avatar/state）；/console = 旧图谱控制台
+#    （docs/legacy_frontend，功能原样保留，作为深度认知观察入口）。
+from flask import send_from_directory as _send_fd
+
+@app.route("/")
+def companion_ui():
+    return _send_fd(os.path.dirname(os.path.abspath(__file__)), "companion.html")
+
+@app.route("/console")
+def legacy_console_ui():
+    return _send_fd(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                 "docs", "legacy_frontend"), "index.html")
+
+
 if __name__ == "__main__":
 
     port = int(
@@ -8509,12 +10722,20 @@ if __name__ == "__main__":
     # ⚠️ 禁止 Flask debug reloader
     # 否则会启动两个扩散线程
 
-    # ── 构建 Embedding 索引 ──
-    # 索引是派生缓存，图谱是唯一真源：签名一致复用缓存，不一致全量重建。
-    try:
-        emb_mgr.refresh(kg)
-    except Exception as e:
-        logger.warning(f"[Embedding] 索引构建跳过 (可能缺少 sentence-transformers/faiss): {e}")
+    # ── 构建 Embedding 索引（派生缓存，图谱才是真源）──
+    # 2026-10-17 搬后台：这步在全新重建时要给上千节点过一遍嵌入模型，
+    # 放在 app.run 之前=每次重启 Charon 面板"连不上"4~10 分钟（端口
+    # 要等编码完才绑）。搜索消费点全部带 emb_mgr.ready() 降级守卫，
+    # 持续认知循环有增量编入兜底（cc._emb_mgr），refresh 自带签名
+    # 跳过重复重建——先绑端口、后台暖索引，功能只晚几分钟不缺失。
+    def _warm_embedding_index():
+        try:
+            emb_mgr.refresh(kg)
+        except Exception as e:
+            logger.warning(f"[Embedding] 索引构建跳过 "
+                           f"(可能缺少 sentence-transformers/faiss): {e}")
+    threading.Thread(target=_warm_embedding_index, name="emb-warm",
+                     daemon=True).start()
 
     # ── 前端地址：明确打印 + 可选自动打开浏览器 ──
     # Flask 自己的横幅只列监听地址（0.0.0.0:5000），不说"在浏览器里打开这个"，
@@ -8557,18 +10778,45 @@ if __name__ == "__main__":
         _BOOT_REJECTED = True   # 拒启实例禁止落盘（防旧副本覆盖在跑实例）
         raise SystemExit(2)
 
-    # 预检通过才挂浏览器定时器（否则拒启时会白开一个连不上的页面）
-    #   设 config 为 false，或起服务时带环境变量 FAS_NO_BROWSER=1。
-    if config.get("auto_open_browser", True) and not os.environ.get("FAS_NO_BROWSER"):
+    # 预检通过才挂浏览器定时器（否则拒启时会白开一个连不上的页面）。
+    # 2026-10-13 前端统一：用户入口迁到 Charon（Fascinator BODY 页 + 右上角
+    # 存在感徽标），Flask 网页降级为开发者控制台——默认**不再自动弹浏览器**。
+    # 需要的人：PUT /api/config {"auto_open_browser": true}，或起服务带
+    # 环境变量 FAS_OPEN_BROWSER=1；FAS_NO_BROWSER=1 恒关。
+    _want_browser = (
+        not os.environ.get("FAS_NO_BROWSER")
+        and (os.environ.get("FAS_OPEN_BROWSER") == "1"
+             or config.get("auto_open_browser", False)))
+    if _want_browser:
         def _open_browser():
             import webbrowser
             try:
                 webbrowser.open(_local_url)
             except Exception as _we:
                 logger.warning(f"[启动] 自动打开浏览器失败（请手动访问 {_local_url}）: {_we}")
-        # 等 Flask 真正开始监听再开，避免浏览器抢在前面拿到连接失败
         threading.Timer(1.5, _open_browser).start()
-        logger.info("[启动] 1.5 秒后自动打开浏览器（FAS_NO_BROWSER=1 可关闭）")
+        logger.info("[启动] 1.5 秒后自动打开浏览器（默认已关：用户入口在 Charon）")
+    else:
+        logger.info("[启动] 不弹浏览器（用户入口=Charon；开发者控制台可手动访问 %s）", _local_url)
+
+    # Charon 托管时 stdout 是管道，Flask 启动横幅的 click.echo 曾在 flush 上
+    # 抛 OSError[EINVAL] 直接杀死进程（2026-10-09 18:10 实例，app.run →
+    # show_server_banner）。横幅对宿主毫无信息价值（日志都走 fas_log/werkzeug
+    # logging），统一禁用；正常终端直起时只是少几行装饰。
+    try:
+        import flask.cli as _fcli
+        _fcli.show_server_banner = lambda *a, **k: None
+    except Exception:
+        pass
+
+    # ── 死因记录（2026-10-25：17:25 无日志静默死亡无法追因）──
+    # faulthandler：段错误/硬崩溃线程栈落 logs/crash.log；
+    # BaseException 捕获：app.run 致命异常先留痕再退出（此前直接蒸发）。
+    try:
+        import faulthandler as _fh
+        _fh.enable(file=os.path.join("logs", "crash.log"), all_threads=True)
+    except Exception:
+        pass
 
     try:
         app.run(
@@ -8580,6 +10828,9 @@ if __name__ == "__main__":
         )
     except KeyboardInterrupt:
         logger.info("[Shutdown] Ctrl-C：优雅停机（循环/通道/日志收口）")
+    except BaseException as _fe:                # noqa: BLE001
+        logger.exception("[Fatal] app.run 致命异常退出: %r", _fe)
+        raise
     finally:
         # ── 优雅停机（2026-09-22 收尾）──
         # 图谱落盘与 fas_log 收口已有 atexit；这里补停两条自持循环线程，

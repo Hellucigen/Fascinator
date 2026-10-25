@@ -1,0 +1,36 @@
+---
+import Layout from '../../../components/Layout.astro';
+import CharacterDetail from '../../../components/CharacterDetail.astro';
+import { getData } from '../../../lib/data';
+import { getLocale } from '../../../lib/i18n';
+import { getPageGame } from '../../../lib/page-game';
+
+const game = getPageGame(Astro.params);
+if (!game) return new Response('Not found', { status: 404 });
+
+const { id } = Astro.params;
+const { locale } = getLocale(Astro);
+const data = await getData(game, locale);
+const ch = data.characterById.get(String(id));
+if (!ch) return new Response('Not found', { status: 404 });
+
+const colorMap: Record<string, string> = { IRONCLAD: 'ironclad', THE_SILENT: 'silent', SILENT: 'silent', DEFECT: 'defect', WATCHER: 'watcher', NECROBINDER: 'necrobinder', REGENT: 'regent' };
+const color = colorMap[ch.id] ?? '';
+const description = ch.description ?? '';
+const chAny = ch as any;
+const startingDeckIds: string[] = chAny.starting_deck ?? [];
+const deckMap = new Map<string, { cardId: string; card: any; count: number }>();
+for (const cardId of startingDeckIds) {
+  const existing = deckMap.get(cardId);
+  if (existing) existing.count++;
+  else deckMap.set(cardId, { cardId, card: data.cardById.get(cardId) ?? { id: cardId, name: cardId }, count: 1 });
+}
+const startRelic = game === 'sts1'
+  ? (chAny.starting_relic ? data.relics.find((r) => r.name === chAny.starting_relic || r.id === chAny.starting_relic) ?? null : null)
+  : (chAny.starting_relic ? data.relicById?.get(chAny.starting_relic) ?? data.relics.find((r) => r.id === chAny.starting_relic) ?? null : null);
+const charCards = game === 'sts1' ? data.cards.filter((c) => c.color === color) : data.cards.filter((c) => (c as any).color?.toLowerCase() === color);
+const charRelics = game === 'sts1' ? data.relics.filter((r) => (r as any).color === color) : data.relics.filter((r) => (r as any).color?.toLowerCase() === color);
+---
+<Layout game={game} title={`${ch.name} — Spire Archive${game === 'sts2' ? ' — STS2' : ''}`} description={description}>
+  <CharacterDetail game={game} character={chAny} color={color} description={description} startingDeck={Array.from(deckMap.values())} startingRelic={startRelic} charCards={charCards} charRelics={charRelics} />
+</Layout>

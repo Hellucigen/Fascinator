@@ -63,6 +63,45 @@ RESO_DAMP_INHIBIT = 0.3
 
 EXPRESSIVE = {"respond", "ask", "acknowledge", "elaborate", "empathize",
               "share", "continue", "end"}
+
+# ── 性格慢变量消费点（2026-10-16 trait→行为闭环修复）──────────
+# trait_deviations()（±1 偏差）→ 候选分数乘子。方向表与
+# action_system._TRAIT_RULES 是同一闭环的两端（证据方向 ↔ 行为偏置），
+# 不是第二套规则系统：写侧按行动族记分，读侧按行为名取偏置。
+# 不在表中的行为 ×1.0（家族隔离）；总乘子钳 ±24%（|dev|=1 满格，
+# 两维同向叠加的上限）——有界、可逆、中性零影响，不覆盖先验/情境通道。
+TRAIT_GAIN = 0.12
+TRAIT_MULT_MIN, TRAIT_MULT_MAX = 1.0 - 2 * TRAIT_GAIN, 1.0 + 2 * TRAIT_GAIN
+_TRAIT_DIR = {
+    "ask":         [("social_openness", 1), ("exploration_bias", 1)],
+    "share":       [("social_openness", 1), ("novelty_preference", 1)],
+    "respond":     [("feedback_sensitivity", 1), ("social_openness", 0.5)],
+    "acknowledge": [("social_openness", 1)],
+    "empathize":   [("social_openness", 1), ("feedback_sensitivity", 0.5)],
+    "elaborate":   [("persistence", 1), ("social_openness", 0.5)],
+    "continue":    [("persistence", 1)],
+    "end":         [("persistence", -1), ("caution", 1)],
+    "silence":     [("caution", 1), ("persistence", -1)],
+    "explore":     [("exploration_bias", 1), ("novelty_preference", 1),
+                    ("risk_tolerance", 0.5)],
+    "gather":      [("resource_thrift", 1)],
+    "craft":       [("persistence", 1), ("resource_thrift", 0.5)],
+}
+
+
+def _trait_mult(traits, key: str) -> float:
+    """候选的性格乘子。缺位（None/{}/键缺失/坏值）= 1.0 恒等——
+    与 hormone 缺席同一约定：不带该参数时行为与旧版本逐字一致。"""
+    if not isinstance(traits, dict) or not traits:
+        return 1.0
+    m = 1.0
+    for tname, w in _TRAIT_DIR.get(key) or ():
+        try:
+            d = float(traits.get(tname, 0.0) or 0.0)
+        except (TypeError, ValueError):
+            continue
+        m *= 1.0 + TRAIT_GAIN * w * max(-1.0, min(1.0, d))
+    return max(TRAIT_MULT_MIN, min(TRAIT_MULT_MAX, m))
 # 各调制器作用的候选集合
 _DAMP_SHORT = {"respond", "share", "elaborate", "continue", "ask"}
 _DAMP_NEG = {"respond", "ask", "share", "elaborate", "continue"}
@@ -238,7 +277,7 @@ def dialogue_decide(parsed: dict, text: str, kg, engine,
                     hormone: dict = None,
                     modulation=None,
                     action_tendencies: dict = None,
-                    action_space=None) -> dict:
+                    action_space=None, traits: dict = None) -> dict:
     """行为竞争：收集图谱候选 → 调制 → 竞争 → 硬约束 → 胜者。
 
     返回 decision/desire(兼容)/factors/constraints/tendencies/exploration
@@ -291,6 +330,9 @@ def dialogue_decide(parsed: dict, text: str, kg, engine,
         live = float(tn.get("activation", 0.0)) / 5.0 if tn else _live_activation(kg, key)
         # 经验/实时分量受当前激素状态调制（§十：调增益，不做 if-dopamine-then）
         act = W_PRIOR * prior + W_LEARN * (learned + live) * (horm_n if key in EXPRESSIVE else 1.0)
+        # 性格慢变量：跨情境乘子（沉默底座是 C 类常数，不加乘——人格
+        # 不得侵蚀"沉默永远在候选席"的安全地板）
+        act = act * _trait_mult(traits, key)
         if key == "silence":
             act += BASE_SILENCE
         candidates[key] = {"activation": round(min(1.0, max(0.0, act)), 3),
@@ -346,6 +388,7 @@ def dialogue_decide(parsed: dict, text: str, kg, engine,
             act = (W_PRIOR * min(1.0, max(0.0, prior))
                    + W_LEARN * (learned + live)
                    * (horm_n if _is_expr else 1.0)) * life_w
+            act = act * _trait_mult(traits, key)
             if _is_expr:
                 extra_expressive.add(key)
             candidates[key] = {
@@ -461,7 +504,8 @@ def dialogue_decide(parsed: dict, text: str, kg, engine,
             break
         act = round(min(1.0, explore_rate * (
             EXPLORE_SCORE_W * float(c.get("score", 0.0))
-            + EXPLORE_LIVE_W * explore_live)), 3)
+            + EXPLORE_LIVE_W * explore_live)
+            * _trait_mult(traits, "explore")), 3)
         key = c.get("action", "explore_ask")
         candidates[key] = {"activation": act, "prior": 0.0,
                            "learned": round(float(c.get("score", 0.0)), 3),
@@ -528,8 +572,17 @@ def dialogue_decide(parsed: dict, text: str, kg, engine,
             "action": best_exp.get("action"), "score": best_exp.get("score"),
             "activation": round(min(1.0, explore_rate * (
                 EXPLORE_SCORE_W * float(best_exp.get("score", 0.0))
-                + EXPLORE_LIVE_W * explore_live)), 3),
+                + EXPLORE_LIVE_W * explore_live)
+                * _trait_mult(traits, "explore")), 3),
             "urge": round(urge, 3), "margin": round(explore_margin, 3)}
+    if traits:
+        _tmods = {}
+        for _k in candidates:
+            _m = _trait_mult(traits, _k)
+            if abs(_m - 1.0) > 1e-3:
+                _tmods[_k] = round(_m, 3)
+        if _tmods:
+            factors["性格偏置"] = _tmods
     factors["desire"] = desire
     factors["竞争胜者"] = {"behavior": winner_key,
                             "activation": winner["activation"],

@@ -49,6 +49,14 @@ class VisionGraphBridge:
         """
         attributes = attributes or {}
 
+        # 垃圾过滤（2026-10-13 图谱体检）：未命名的检测占位符
+        # （UnknownObject0001…）入图只会留下无连接、永不被回忆的孤岛碎片
+        # （实测 vision 岛屿 13 节点即此来源）。object_memory 内部照旧追踪；
+        # 用户一旦命名，以真名入图不受此限。
+        import re as _re
+        if not name and _re.fullmatch(r"UnknownObject\d+", str(object_id or "")):
+            return None
+
         node = self.kg.get_node(object_id)
         if node is None:
             # 创建新节点

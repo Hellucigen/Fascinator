@@ -1,0 +1,47 @@
+{
+  "schema": "fas-sts2-kb/1.0",
+  "version": "kb-0.1.0",
+  "game": "Slay the Spire 2",
+  "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+  "files": [
+    {
+      "name": "mechanics.json",
+      "depends_on": []
+    },
+    {
+      "name": "mechanic_relations.json",
+      "depends_on": [
+        "mechanics.json"
+      ]
+    },
+    {
+      "name": "inference_patterns.json",
+      "depends_on": [
+        "mechanics.json"
+      ]
+    },
+    {
+      "name": "state_variables.json",
+      "depends_on": [
+        "mechanics.json"
+      ]
+    },
+    {
+      "name": "examples.json",
+      "depends_on": [
+        "inference_patterns.json",
+        "mechanics.json"
+      ]
+    },
+    {
+      "name": "verification_report.md",
+      "depends_on": []
+    }
+  ],
+  "confidence_levels": [
+    "verified",
+    "inferred",
+    "unverified",
+    "version_dependent"
+  ]
+}

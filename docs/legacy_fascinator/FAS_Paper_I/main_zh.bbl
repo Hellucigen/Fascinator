@@ -1,0 +1,143 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anderson et~al.(2004)Anderson, Bothell, Byrne, Douglass, Lebiere, and
+  Qin]{anderson2004integrated}
+John~R. Anderson, Daniel Bothell, Michael~D. Byrne, Scott Douglass, Christian
+  Lebiere, and Yulin Qin.
+\newblock An integrated theory of the mind.
+\newblock \emph{Psychological Review}, 111\penalty0 (4):\penalty0 1036--1060,
+  2004.
+
+\bibitem[Baddeley(2000)]{baddeley2000episodic}
+Alan Baddeley.
+\newblock The episodic buffer: A new component of working memory?
+\newblock \emph{Trends in Cognitive Sciences}, 4\penalty0 (11):\penalty0
+  417--423, 2000.
+
+\bibitem[Collins and Loftus(1975)]{collins1975spreading}
+Allan~M. Collins and Elizabeth~F. Loftus.
+\newblock A spreading-activation theory of semantic processing.
+\newblock \emph{Psychological Review}, 82\penalty0 (6):\penalty0 407--428,
+  1975.
+
+\bibitem[Cowan(2001)]{cowan2001magical}
+Nelson Cowan.
+\newblock The magical number 4 in short-term memory: A reconsideration of
+  mental storage capacity.
+\newblock \emph{Behavioral and Brain Sciences}, 24\penalty0 (1):\penalty0
+  87--114, 2001.
+
+\bibitem[Edge et~al.(2024)Edge, Trinh, Cheng, Bradley, Chao, Mardis, Osinubi,
+  and Others]{edge2024graphrag}
+Darren Edge, Ha~Trinh, Nestor Cheng, Joshua Bradley, Alex Chao, Apurva Mardis,
+  Joshua Osinubi, and Others.
+\newblock From local to global: A graph rag approach to query-focused
+  summarization.
+\newblock \emph{arXiv preprint arXiv:2404.16130}, 2024.
+
+\bibitem[Guti{\'e}rrez et~al.(2024)Guti{\'e}rrez, Sharpentine, Tu, Khramtsova,
+  Zhu, Gweon, and Cohen]{gutierrez2024hipporag}
+Bernal~Jim{\'e}nez Guti{\'e}rrez, Yiheng Sharpentine, Yifan Tu, Ekaterina
+  Khramtsova, Xiang Zhu, HyeonJin Gweon, and William~W. Cohen.
+\newblock Hipporag: Neurobiologically inspired long-term memory for large
+  language models.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2024.
+
+\bibitem[Hart and Goertzel(2008)]{hart2008opencog}
+Joel Hart and Ben Goertzel.
+\newblock {OpenCog}: A software framework for integrative artificial general
+  intelligence.
+\newblock In \emph{Proceedings of the First AGI Conference (AGI-08)}, pages
+  468--472, 2008.
+
+\bibitem[Itti and Koch(2001)]{itti2001computational}
+Laurent Itti and Christof Koch.
+\newblock Computational modelling of visual attention.
+\newblock \emph{Nature Reviews Neuroscience}, 2\penalty0 (3):\penalty0
+  194--203, 2001.
+
+\bibitem[Laird(2012)]{laird2012soar}
+John~E. Laird.
+\newblock \emph{The Soar Cognitive Architecture}.
+\newblock MIT Press, Cambridge, MA, 2012.
+
+\bibitem[Lewis et~al.(2020)Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal,
+  K{\"u}ttler, Lewis, Yih, Rockt{\"a}schel, et~al.]{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim
+  Rockt{\"a}schel, et~al.
+\newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2020.
+
+\bibitem[Packer et~al.(2023)Packer, Fang, Patil, Lin, Wooders, and
+  Gonzalez]{packer2023memgpt}
+Charles Packer, Vivian Fang, Shishir~G. Patil, Kevin Lin, Sean Wooders, and
+  Joseph~E. Gonzalez.
+\newblock Memgpt: Towards llms as operating systems.
+\newblock \emph{arXiv preprint arXiv:2310.08560}, 2023.
+
+\bibitem[Park et~al.(2023)Park, O'Brien, Cai, Morris, Liang, and
+  Bernstein]{park2023generative}
+Joon~Sung Park, Joseph O'Brien, Carrie~Jun Cai, Meredith~Ringel Morris, Percy
+  Liang, and Michael~S. Bernstein.
+\newblock Generative agents: Interactive simulacra of human behavior.
+\newblock In \emph{Proceedings of the 36th Annual ACM Symposium on User
+  Interface Software and Technology (UIST)}, 2023.
+
+\bibitem[Posner(1980)]{posner1980orienting}
+Michael~I. Posner.
+\newblock Orienting of attention.
+\newblock \emph{Quarterly Journal of Experimental Psychology}, 32\penalty0
+  (1):\penalty0 3--25, 1980.
+
+\bibitem[Schacter et~al.(2007)Schacter, Addis, and
+  Buckner]{schacter2007remembering}
+Daniel~L. Schacter, Donna~Rose Addis, and Randy~L. Buckner.
+\newblock Remembering the past to imagine the future: The prospective brain.
+\newblock \emph{Nature Reviews Neuroscience}, 8\penalty0 (9):\penalty0
+  657--661, 2007.
+
+\bibitem[Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
+  Yao]{shinn2023reflexion}
+Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu
+  Yao.
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2023.
+
+\bibitem[Tulving(1983)]{tulving1983elements}
+Endel Tulving.
+\newblock \emph{Elements of Episodic Memory}.
+\newblock Oxford University Press, Oxford, 1983.
+
+\bibitem[Wang et~al.(2023)Wang, Xie, Jiang, Mandlekar, Xiao, Zhu, Fan, and
+  Anandkumar]{wang2023voyager}
+Guanzhi Wang, Yuqi Xie, Yifan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu,
+  Linxi Fan, and Anima Anandkumar.
+\newblock Voyager: An open-ended embodied agent with large language models.
+\newblock \emph{arXiv preprint arXiv:2305.16291}, 2023.
+
+\bibitem[Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
+  Cao]{yao2023react}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan,
+  and Yuan Cao.
+\newblock {ReAct}: Synergizing reasoning and acting in language models.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2023.
+
+\bibitem[Zacks et~al.(2007)Zacks, Speer, Swallow, Braver, and
+  Reynolds]{zacks2007event}
+Jeffrey~M. Zacks, Nicole~K. Speer, Khena~M. Swallow, Todd~S. Braver, and
+  Jeremy~R. Reynolds.
+\newblock Event perception: A mind-brain perspective.
+\newblock \emph{Psychological Bulletin}, 133\penalty0 (2):\penalty0 273--293,
+  2007.
+
+\end{thebibliography}

@@ -133,6 +133,14 @@ CONNECT_FAST_RE = re.compile(
     r"|(玩|来玩|陪我玩).{0,3}(minecraft|我的世界|mc)"
     r"|上游戏|进游戏", re.I)
 
+SPEAK_TEXT_FAST_RE = re.compile(
+    # 语音朗读：把一段文字用语音念出来。双条件（念读动词 + 听觉/出声对象）
+    # 避免抢 FILE_READ（要"文件/txt"）与 SCREEN（要"屏幕"）的对象。回指型
+    # 裸命令"读吧/念吧"只在整句极短（≤6 字）时高置信命中——否则交给语义层。
+    r"(朗读|念|读|播).{0,6}(给我听|给.{0,3}听|出声|语音|大声|出来|一遍)"
+    r"|(用语音|出声|大声)(念|读|说)|语音(播报|朗读)"
+    r"|^(念|读|念吧|读吧|念一下|读一下|念出来|读出来)吧?$", re.I)
+
 ACTION_CONCEPTS: dict[str, ActionConcept] = {}
 
 _CONCEPT_LIST = [
@@ -242,6 +250,20 @@ _CONCEPT_LIST = [
         seed_expressions=["把这个文件删了", "删除那个txt"],
         optional_params=["filename"], negation="refuse",
         dangerous=True, confirm_required=True),
+
+    # ── 语音域（2026-10-21 用户点破"她知道要读什么吗"）──
+    # inline 执行器：朗读在 app 语音闭环里执行（voice_pipeline），与
+    # SEARCH 的 inline:web_search 同形态。回指（"读吧"=念上一条用户消息）
+    # 在 app 执行块内解析，概念层只负责识别"用语音念出来"这一动作语义。
+    ActionConcept(
+        "SPEAK_TEXT", "语音朗读", "voice", "inline:voice_speak",
+        description="用语音把一段文字念出来、读给对方听、朗读、播报。"
+                    "动作概念 语音朗读 SPEAK_TEXT",
+        node_id="语音朗读",
+        fast_patterns=[SPEAK_TEXT_FAST_RE],
+        seed_expressions=["念给我听", "读给我听", "朗读一遍", "把这个读出来",
+                          "大声念一下", "用语音读", "播报一下", "读吧", "念吧"],
+        optional_params=["text"], negation="refuse"),
 
     # ── 屏幕感知域 ──
     ActionConcept(

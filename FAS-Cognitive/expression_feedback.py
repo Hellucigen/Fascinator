@@ -243,6 +243,19 @@ def observe_response(kg, engine, timeline=None, *, pre, user_text: str,
     responded = control or delta >= float(cfg["response_min_delta"])
     if not responded:
         # §七：没有观察到结果 ≠ neutral。不建关系、不派生、不奖励。
+        # 但"观察过且未成立回应"本身是发生过的事实（2026-10-19 事项B）：
+        # 这句用户话确实拿本表达对照过（共激活增量测了、会话控制指令查了，
+        # 都没成立）。旧实现把它随 return None 整个丢弃，"没回应"与"还没
+        # 观察过"永远不可区分。现在**只留痕**：轮次计数+时刻，写在这条表达
+        # 自己的 attrs 上——没有任何抑制/资格/激活消费它（未回应≠负反馈；
+        # 后续若成立回应，responded 路径照常写 feedback）。注视指针随时会
+        # 被她的下一次表达换走，计数只对"当前仍被注视的表达"有效，换走后
+        # 该值冻结——它是"观察到的未回应"，不是"确定没有回应"。
+        with kg._lock:
+            _ea = node.extra_attrs
+            _ea["no_response_turns"] = int(_ea.get("no_response_turns") or 0) + 1
+            _ea["last_no_response_at"] = now_str()
+            node.touch()
         return None
 
     text = str(user_text or "").strip()

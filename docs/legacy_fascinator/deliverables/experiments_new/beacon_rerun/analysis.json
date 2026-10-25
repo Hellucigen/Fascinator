@@ -1,0 +1,684 @@
+{
+ "n_compared": 20,
+ "n_match": 7,
+ "all_match": false,
+ "rows": [
+  {
+   "condition": "D-flat",
+   "seed": 0,
+   "match": true,
+   "diff_fields": [],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "D-noact",
+   "seed": 0,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "explore_north",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "wait",
+     "explore_north"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_east",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   }
+  },
+  {
+   "condition": "fas_full",
+   "seed": 0,
+   "match": true,
+   "diff_fields": [],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "llm_direct",
+   "seed": 0,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "wait",
+     "gather_oak_log",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "explore_north",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   }
+  },
+  {
+   "condition": "D-flat",
+   "seed": 1,
+   "match": true,
+   "diff_fields": [],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "D-noact",
+   "seed": 1,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "explore_north",
+     "explore_south",
+     "explore_south",
+     "wait",
+     "explore_north",
+     "explore_north"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "wait"
+    ]
+   }
+  },
+  {
+   "condition": "fas_full",
+   "seed": 1,
+   "match": false,
+   "diff_fields": [
+    "decisions",
+    "steps_to_craft",
+    "acts"
+   ],
+   "archived": {
+    "success": 1,
+    "decisions": 4,
+    "steps_to_craft": 4,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "wait",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "llm_direct",
+   "seed": 1,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "wait",
+     "explore_north",
+     "explore_north"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   }
+  },
+  {
+   "condition": "D-flat",
+   "seed": 2,
+   "match": true,
+   "diff_fields": [],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "D-noact",
+   "seed": 2,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "explore_east",
+     "wait",
+     "explore_east",
+     "explore_north",
+     "explore_north",
+     "wait"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "wait",
+     "explore_north",
+     "explore_east",
+     "explore_east",
+     "explore_north",
+     "explore_north"
+    ]
+   }
+  },
+  {
+   "condition": "fas_full",
+   "seed": 2,
+   "match": false,
+   "diff_fields": [
+    "decisions",
+    "steps_to_craft",
+    "acts"
+   ],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 3,
+    "steps_to_craft": 3,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "llm_direct",
+   "seed": 2,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   }
+  },
+  {
+   "condition": "D-flat",
+   "seed": 3,
+   "match": false,
+   "diff_fields": [
+    "decisions",
+    "steps_to_craft",
+    "first_action",
+    "acts"
+   ],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 3,
+    "steps_to_craft": 3,
+    "first_action": "wait",
+    "acts": [
+     "wait",
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "D-noact",
+   "seed": 3,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "explore_north",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "explore_north",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_east"
+    ]
+   }
+  },
+  {
+   "condition": "fas_full",
+   "seed": 3,
+   "match": true,
+   "diff_fields": [],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "llm_direct",
+   "seed": 3,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "wait",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   }
+  },
+  {
+   "condition": "D-flat",
+   "seed": 4,
+   "match": true,
+   "diff_fields": [],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "D-noact",
+   "seed": 4,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "gather_oak_log",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "wait"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   }
+  },
+  {
+   "condition": "fas_full",
+   "seed": 4,
+   "match": true,
+   "diff_fields": [],
+   "archived": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   },
+   "rerun": {
+    "success": 1,
+    "decisions": 2,
+    "steps_to_craft": 2,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "craft_oak_planks"
+    ]
+   }
+  },
+  {
+   "condition": "llm_direct",
+   "seed": 4,
+   "match": false,
+   "diff_fields": [
+    "acts"
+   ],
+   "archived": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "explore_north",
+     "wait",
+     "wait",
+     "explore_north",
+     "explore_east",
+     "explore_north",
+     "explore_north"
+    ]
+   },
+   "rerun": {
+    "success": 0,
+    "decisions": 8,
+    "steps_to_craft": null,
+    "first_action": "gather_oak_log",
+    "acts": [
+     "gather_oak_log",
+     "wait",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north",
+     "explore_north"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,1457 @@
+{
+  "schema": "fas-sts2-kb/1.0",
+  "version": "kb-0.1.0",
+  "game": "Slay the Spire 2",
+  "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+  "sources": {
+    "S1": {
+      "title": "STS2 Wiki (wiki.gg): Keywords",
+      "url": "https://slaythespire.wiki.gg/wiki/Slay_the_Spire_2:Keywords",
+      "type": "community_wiki"
+    },
+    "S2": {
+      "title": "STS2 Wiki (wiki.gg): Rest Sites",
+      "url": "https://slaythespire.wiki.gg/wiki/Slay_the_Spire_2:Rest_Sites",
+      "type": "community_wiki"
+    },
+    "S3": {
+      "title": "STS2 Wiki (wiki.gg): The Merchant",
+      "url": "https://slaythespire.wiki.gg/wiki/Slay_the_Spire_2:The_Merchant",
+      "type": "community_wiki"
+    },
+    "S4": {
+      "title": "STS2 Wiki (wiki.gg): Bosses",
+      "url": "https://slaythespire.wiki.gg/wiki/Slay_the_Spire_2:Bosses",
+      "type": "community_wiki"
+    },
+    "S5": {
+      "title": "STS2 Wiki (wiki.gg): Potions/Relics/Events/Cards lists",
+      "url": "https://slaythespire.wiki.gg/wiki/Slay_the_Spire_2:Relics_List",
+      "type": "community_wiki"
+    },
+    "S6": {
+      "title": "sts2front.com Mechanics/Status Effects",
+      "url": "https://sts2front.com/status-effects/",
+      "type": "fan_site"
+    },
+    "S7": {
+      "title": "sts2-wiki.org / sts2wiki.org status effects and mechanics",
+      "url": "http://sts2-wiki.org/status-effects",
+      "type": "fan_site"
+    },
+    "S8": {
+      "title": "KeenGamer STS vs STS2 differences / beginner guide / events",
+      "url": "https://www.keengamer.com/articles/guides/the-differences-between-slay-the-spire-and-slay-the-spire-2/",
+      "type": "media"
+    },
+    "S9": {
+      "title": "G2A / slaythespiretwo.com / egamersworld character guides",
+      "url": "https://www.g2a.com/news/features/slay-the-spire-2-characters-guide-every-hero-explained/",
+      "type": "media"
+    },
+    "S10": {
+      "title": "spireforge.app / metabot.gg keyword references",
+      "url": "https://spireforge.app/guides/keywords-and-mechanics",
+      "type": "fan_site"
+    },
+    "S11": {
+      "title": "egamersworld best builds (cites Beta Patch v0.100.0 Ironclad changes)",
+      "url": "https://egamersworld.com/blog/slay-the-spire-2-best-build-for-each-character-uTUq56hplJ",
+      "type": "media"
+    },
+    "S12": {
+      "title": "slaythespire2.website / slaythespire-2.com map and routing guides",
+      "url": "https://www.slaythespire2.website/basics/map-room-types-route-planning",
+      "type": "fan_site"
+    },
+    "S0": {
+      "title": "Original Slay the Spire knowledge (research lead only, never STS2 evidence)",
+      "url": null,
+      "type": "prior_game"
+    }
+  },
+  "mechanics": [
+    {
+      "id": "M.energy",
+      "name": "Energy",
+      "category": "core",
+      "description": "Per-turn resource spent to play cards; cards declare an energy cost. Exact starting amount and per-turn refill rule for STS2 not confirmed in gathered sources.",
+      "preconditions": [
+        "card.cost <= player.energy"
+      ],
+      "inputs": [
+        "player.energy",
+        "card.cost"
+      ],
+      "effects": [
+        "player.energy -= card.cost"
+      ],
+      "timing": "on card play; refill at start of player turn (assumed)",
+      "duration": "per turn (assumed)",
+      "stacking": "n/a",
+      "dependencies": [
+        "M.turn_structure"
+      ],
+      "interactions": [
+        "M.stars competes with energy for card affordability on Regent cards"
+      ],
+      "inference_patterns": [
+        "P.affordability_check",
+        "P.energy_sequencing"
+      ],
+      "counterexamples": [
+        "Regent cards may need both Energy and Stars",
+        "X-cost cards consume all remaining energy (STS1 behavior; STS2 not confirmed)"
+      ],
+      "source": [
+        "S9",
+        "S0"
+      ],
+      "confidence": "inferred",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "same_as_sts1_assumed"
+    },
+    {
+      "id": "M.turn_structure",
+      "name": "Turn structure",
+      "category": "core",
+      "description": "Player turn then enemy turn alternate; draw, play, discard-end-of-turn loop. Specific hand size, draw count and starting energy for STS2 are unverified.",
+      "preconditions": [
+        "combat active"
+      ],
+      "inputs": [
+        "player.hand",
+        "player.draw_pile",
+        "player.discard_pile",
+        "player.energy"
+      ],
+      "effects": [
+        "draw at start of turn",
+        "non-Retain cards discarded at end of turn"
+      ],
+      "timing": "start of player turn / end of player turn / enemy turn",
+      "duration": "repeats until combat ends",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.retain",
+        "M.energy"
+      ],
+      "interactions": [
+        "M.poison ticks at start of the poisoned creature's turn per S6",
+        "M.doom checks at end of enemy turn per S1/S7"
+      ],
+      "inference_patterns": [
+        "P.turn_horizon_planning"
+      ],
+      "counterexamples": [
+        "Do not hardcode 5 cards / 3 energy as STS2 facts"
+      ],
+      "source": [
+        "S1",
+        "S6",
+        "S0"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown",
+      "gap": "initial draw count, hand limit, base energy not source-confirmed"
+    },
+    {
+      "id": "M.combat_end",
+      "name": "Combat end conditions",
+      "category": "core",
+      "description": "Combat ends when all enemies are dead (player wins) or player HP reaches 0. Doom kills count as deaths at end of enemy turn.",
+      "preconditions": [
+        "combat active"
+      ],
+      "inputs": [
+        "enemies.hp",
+        "player.hp"
+      ],
+      "effects": [
+        "rewards generated on victory",
+        "run ends on player death"
+      ],
+      "timing": "checked after damage/death events",
+      "duration": "n/a",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.doom",
+        "M.attack_damage"
+      ],
+      "interactions": [],
+      "inference_patterns": [
+        "P.kill_check"
+      ],
+      "counterexamples": [
+        "Doom and Poison deaths occur at their own timings, not immediately on play"
+      ],
+      "source": [
+        "S1",
+        "S4"
+      ],
+      "confidence": "inferred",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.hand_limit",
+      "name": "Hand size limit",
+      "category": "core",
+      "description": "Whether STS2 caps hand size and what happens to overflow draws is not confirmed.",
+      "preconditions": [],
+      "inputs": [
+        "player.hand_size"
+      ],
+      "effects": [],
+      "timing": "on draw",
+      "duration": "n/a",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.turn_structure"
+      ],
+      "interactions": [],
+      "inference_patterns": [
+        "P.draw_value"
+      ],
+      "counterexamples": [
+        "Do not assume a 10-card cap"
+      ],
+      "source": [
+        "S0"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown",
+      "gap": "no STS2 source gathered"
+    },
+    {
+      "id": "M.exhaust",
+      "name": "Exhaust",
+      "category": "card_keyword",
+      "description": "An Exhausted card moves to the Exhaust pile until end of combat. Cards usually exhaust themselves when played; some effects exhaust other cards. Return from the Exhaust pile is limited, typically by playing directly from it.",
+      "preconditions": [
+        "card has Exhaust or effect exhausts it"
+      ],
+      "inputs": [
+        "card.location"
+      ],
+      "effects": [
+        "card -> exhaust_pile"
+      ],
+      "timing": "on play (self) or on triggering effect",
+      "duration": "until end of combat",
+      "stacking": "n/a",
+      "dependencies": [
+        "M.turn_structure"
+      ],
+      "interactions": [
+        "M.sly and discard loops do not recycle exhausted cards",
+        "synergy with exhaust-payoff cards (unspecified)"
+      ],
+      "inference_patterns": [
+        "P.one_shot_resource_card",
+        "P.deck_cycle_estimate"
+      ],
+      "counterexamples": [
+        "Exhausted cards return to deck next combat (deck is reset each combat)"
+      ],
+      "source": [
+        "S1",
+        "S10"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.retain",
+      "name": "Retain",
+      "category": "card_keyword",
+      "description": "Retained cards are not discarded at end of the player's turn and stay in hand until played, discarded or exhausted.",
+      "preconditions": [
+        "card has Retain"
+      ],
+      "inputs": [
+        "card.location"
+      ],
+      "effects": [
+        "card stays in hand at end of turn"
+      ],
+      "timing": "end of player turn",
+      "duration": "indefinite while in hand",
+      "stacking": "n/a",
+      "dependencies": [
+        "M.turn_structure"
+      ],
+      "interactions": [
+        "Sovereign Blade is a Retain colorless attack"
+      ],
+      "inference_patterns": [
+        "P.setup_turn_value"
+      ],
+      "counterexamples": [
+        "Hand-limit behavior with many retained cards unverified"
+      ],
+      "source": [
+        "S1",
+        "S6",
+        "S6"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.innate",
+      "name": "Innate",
+      "category": "card_keyword",
+      "description": "Keyword listed in STS2 keyword glossaries; semantics presumed to be 'starts in opening hand'.",
+      "preconditions": [],
+      "inputs": [
+        "card.keywords"
+      ],
+      "effects": [
+        "card in opening hand (presumed)"
+      ],
+      "timing": "start of combat",
+      "duration": "n/a",
+      "stacking": "unspecified",
+      "dependencies": [],
+      "interactions": [],
+      "inference_patterns": [],
+      "counterexamples": [
+        "Do not rely on exact multi-Innate overflow behavior"
+      ],
+      "source": [
+        "S7",
+        "S0"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.sly",
+      "name": "Sly",
+      "category": "card_keyword",
+      "description": "If a Sly card is discarded from hand during the player's turn, it plays for free. Silent's signature keyword.",
+      "preconditions": [
+        "card has Sly",
+        "card discarded from hand",
+        "during player's turn"
+      ],
+      "inputs": [
+        "card.keywords",
+        "discard event"
+      ],
+      "effects": [
+        "card is played for free (no energy)"
+      ],
+      "timing": "on discard event during player's turn",
+      "duration": "one-time per discard",
+      "stacking": "n/a",
+      "dependencies": [
+        "M.discard"
+      ],
+      "interactions": [
+        "triggers on any discard source (card effects)",
+        "not triggered by end-of-turn discard (wording: 'before the end of your turn')"
+      ],
+      "inference_patterns": [
+        "P.discard_chain_value"
+      ],
+      "counterexamples": [
+        "End-of-turn hand discard does not trigger Sly per wording (inferred)",
+        "Targeting of auto-played Sly attacks unverified"
+      ],
+      "source": [
+        "S1",
+        "S6",
+        "S10"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "sts2_only"
+    },
+    {
+      "id": "M.discard",
+      "name": "Discard (effect)",
+      "category": "card_action",
+      "description": "Moving a card from hand to discard pile by effect. Triggers Sly. Pile mechanics otherwise as per turn cycle.",
+      "preconditions": [
+        "card in hand"
+      ],
+      "inputs": [
+        "player.hand"
+      ],
+      "effects": [
+        "card -> discard_pile"
+      ],
+      "timing": "on effect resolution",
+      "duration": "n/a",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.turn_structure"
+      ],
+      "interactions": [
+        "M.sly triggers on it"
+      ],
+      "inference_patterns": [
+        "P.discard_chain_value"
+      ],
+      "counterexamples": [],
+      "source": [
+        "S1"
+      ],
+      "confidence": "inferred",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.upgrade",
+      "name": "Card upgrade",
+      "category": "deck_management",
+      "description": "Upgrading permanently improves a card for the run. Rest Site option is named Smith (wiki.gg) or Forge (a routing guide); Smith is likelier official naming. Forge is a separate Regent keyword.",
+      "preconditions": [
+        "card not already upgraded"
+      ],
+      "inputs": [
+        "card.upgraded"
+      ],
+      "effects": [
+        "card values/cost may improve"
+      ],
+      "timing": "at rest site / event / effect",
+      "duration": "permanent for run",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.rest_site"
+      ],
+      "interactions": [
+        "M.rest_site competes_for the same node with healing"
+      ],
+      "inference_patterns": [
+        "P.rest_decision"
+      ],
+      "counterexamples": [
+        "Do not confuse Smith with the Regent Forge keyword"
+      ],
+      "source": [
+        "S2",
+        "S12"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.attack_damage",
+      "name": "Attack damage resolution",
+      "category": "damage",
+      "description": "Attack deals damage to Block first, remainder to HP. Modifiers: Vulnerable (+50% taken), Weak (-25% dealt). Order of Strength, Weak, Vulnerable and rounding in STS2 is unverified; STS1 order was (base+Strength) then Weak then Vulnerable, rounded down.",
+      "preconditions": [
+        "attack card resolves",
+        "target alive"
+      ],
+      "inputs": [
+        "card.base_damage",
+        "attacker.strength",
+        "attacker.weak",
+        "target.vulnerable",
+        "target.block",
+        "target.hp"
+      ],
+      "effects": [
+        "target.block absorbs first",
+        "remaining reduces target.hp"
+      ],
+      "timing": "on each hit",
+      "duration": "instant",
+      "stacking": "n/a",
+      "dependencies": [
+        "M.block",
+        "M.vulnerable",
+        "M.weak",
+        "M.strength"
+      ],
+      "interactions": [
+        "each hit of a multi-hit attack resolves separately against block",
+        "Doom and Poison are not attacks and bypass block"
+      ],
+      "inference_patterns": [
+        "P.expected_damage",
+        "P.multi_hit_scaling",
+        "P.lethal_check"
+      ],
+      "counterexamples": [
+        "Poison/Doom do not go through this pipeline",
+        "Unblockable or armor-like mechanics unverified"
+      ],
+      "source": [
+        "S6",
+        "S10",
+        "S0"
+      ],
+      "confidence": "inferred",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown",
+      "formula_assumption": "hit=floor((base+strength)*(weak?0.75:1)*(vuln?1.5:1)); STS2 order/rounding NOT verified"
+    },
+    {
+      "id": "M.block",
+      "name": "Block",
+      "category": "defense",
+      "description": "Block absorbs incoming attack damage 1:1 and expires at the start of the owner's next turn unless a relic or power says otherwise. Does not stop Poison, Doom or other non-attack loss.",
+      "preconditions": [
+        "owner has block > 0"
+      ],
+      "inputs": [
+        "owner.block",
+        "incoming attack damage"
+      ],
+      "effects": [
+        "reduces incoming attack damage by amount",
+        "expires at owner's next turn start"
+      ],
+      "timing": "applies at damage resolution; expiry at start of owner's turn",
+      "duration": "one round",
+      "stacking": "additive from multiple sources",
+      "dependencies": [
+        "M.attack_damage"
+      ],
+      "interactions": [
+        "counters attacks, not Poison/Doom",
+        "Frail/Dexterity change gained amount"
+      ],
+      "inference_patterns": [
+        "P.block_sufficiency",
+        "P.overblock_waste"
+      ],
+      "counterexamples": [
+        "Osty HP is not Block and does not reset (S11)",
+        "Retention relics/powers exist (specific ones unverified)"
+      ],
+      "source": [
+        "S10",
+        "S1",
+        "S11"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.vulnerable",
+      "name": "Vulnerable",
+      "category": "debuff",
+      "description": "Target takes 50% more damage from attacks for X turns.",
+      "preconditions": [
+        "debuff applied"
+      ],
+      "inputs": [
+        "target.vulnerable_stacks"
+      ],
+      "effects": [
+        "attack damage taken x1.5"
+      ],
+      "timing": "when damaged by attack",
+      "duration": "X turns, duration decays per turn (decay timing unverified)",
+      "stacking": "stacks add duration (inferred); strength fixed at +50%",
+      "dependencies": [
+        "M.attack_damage"
+      ],
+      "interactions": [
+        "boosted by cards that make Vulnerable/Weak 'twice as effective' (S5 card list)",
+        "Vicious: draw on applying Vulnerable (S7)"
+      ],
+      "inference_patterns": [
+        "P.expected_damage",
+        "P.debuff_before_burst"
+      ],
+      "counterexamples": [
+        "Does not affect Poison or Doom",
+        "Magnitude can be altered by specific cards/relics"
+      ],
+      "source": [
+        "S6",
+        "S7",
+        "S5"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "same_as_sts1_assumed"
+    },
+    {
+      "id": "M.weak",
+      "name": "Weak",
+      "category": "debuff",
+      "description": "Affected creature's attacks deal 25% less damage for X turns.",
+      "preconditions": [
+        "debuff applied"
+      ],
+      "inputs": [
+        "creature.weak_stacks"
+      ],
+      "effects": [
+        "outgoing attack damage x0.75"
+      ],
+      "timing": "when creature attacks",
+      "duration": "X turns",
+      "stacking": "stacks add duration (inferred)",
+      "dependencies": [
+        "M.attack_damage"
+      ],
+      "interactions": [
+        "boostable like Vulnerable (S5)"
+      ],
+      "inference_patterns": [
+        "P.defensive_debuff_value"
+      ],
+      "counterexamples": [
+        "Does not reduce non-attack damage"
+      ],
+      "source": [
+        "S6",
+        "S7",
+        "S5"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.frail",
+      "name": "Frail",
+      "category": "debuff",
+      "description": "Glossary claims Frail reduces Block gained by ~25%. Single low-quality source.",
+      "preconditions": [
+        "Frail applied"
+      ],
+      "inputs": [
+        "player.frail"
+      ],
+      "effects": [
+        "block gained x0.75 (claimed)"
+      ],
+      "timing": "on block gain",
+      "duration": "unknown",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.block"
+      ],
+      "interactions": [],
+      "inference_patterns": [
+        "P.block_sufficiency"
+      ],
+      "counterexamples": [],
+      "source": [
+        "S10"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.strength",
+      "name": "Strength",
+      "category": "buff",
+      "description": "Adds damage to attacks; lasts the combat per glossaries. Exact numeric rule not sourced from STS2 wiki here.",
+      "preconditions": [
+        "strength > 0"
+      ],
+      "inputs": [
+        "attacker.strength"
+      ],
+      "effects": [
+        "+strength per hit"
+      ],
+      "timing": "on attack damage calc",
+      "duration": "rest of combat (glossary)",
+      "stacking": "additive",
+      "dependencies": [
+        "M.attack_damage"
+      ],
+      "interactions": [
+        "scales multi-hit attacks per hit"
+      ],
+      "inference_patterns": [
+        "P.multi_hit_scaling"
+      ],
+      "counterexamples": [],
+      "source": [
+        "S10",
+        "S0"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.dexterity",
+      "name": "Dexterity",
+      "category": "buff",
+      "description": "Adds Block to Block-granting cards; lasts the fight per glossary.",
+      "preconditions": [
+        "dexterity != 0"
+      ],
+      "inputs": [
+        "player.dexterity"
+      ],
+      "effects": [
+        "block gained += dex"
+      ],
+      "timing": "on block gain",
+      "duration": "combat",
+      "stacking": "additive",
+      "dependencies": [
+        "M.block"
+      ],
+      "interactions": [],
+      "inference_patterns": [
+        "P.block_sufficiency"
+      ],
+      "counterexamples": [],
+      "source": [
+        "S10"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.focus",
+      "name": "Focus (Defect)",
+      "category": "buff",
+      "description": "One source says Focus is now mostly temporary and per-turn rather than permanent. Treat as version_dependent.",
+      "preconditions": [],
+      "inputs": [
+        "player.focus"
+      ],
+      "effects": [
+        "modifies orb values"
+      ],
+      "timing": "unknown",
+      "duration": "per-turn mostly (claimed)",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.orbs"
+      ],
+      "interactions": [],
+      "inference_patterns": [],
+      "counterexamples": [
+        "Do not assume STS1 permanent Focus"
+      ],
+      "source": [
+        "S9"
+      ],
+      "confidence": "version_dependent",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "differs_claimed"
+    },
+    {
+      "id": "M.poison",
+      "name": "Poison",
+      "category": "damage_over_time",
+      "description": "Poisoned creature loses HP each turn and Poison decreases by 1 per tick. Ignores Block. Timing: one fan site says start of the poisoned creature's turn. Accelerant buff triggers Poison X additional times.",
+      "preconditions": [
+        "target.poison > 0"
+      ],
+      "inputs": [
+        "target.poison",
+        "target.hp"
+      ],
+      "effects": [
+        "target.hp -= poison (bypasses block)",
+        "target.poison -= 1"
+      ],
+      "timing": "start of poisoned creature's turn (S6; unconfirmed on wiki.gg)",
+      "duration": "self-decaying by 1 per tick",
+      "stacking": "additive stacks",
+      "dependencies": [
+        "M.turn_structure"
+      ],
+      "interactions": [
+        "ignores Block",
+        "Accelerant adds extra triggers",
+        "Potion applies Poison (6 in S5)",
+        "some cards conditionally apply more if target already poisoned"
+      ],
+      "inference_patterns": [
+        "P.dot_total_damage",
+        "P.dot_vs_block"
+      ],
+      "counterexamples": [
+        "Not an attack: Vulnerable/Strength do not apply",
+        "Total damage from N stacks = N(N+1)/2 if it ticks to 0 with no extra triggers (inferred)"
+      ],
+      "source": [
+        "S1",
+        "S6",
+        "S10",
+        "S7",
+        "S5"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown",
+      "gap": "exact timing vs STS1; behavior on enemy death/fight end"
+    },
+    {
+      "id": "M.doom",
+      "name": "Doom",
+      "category": "execute",
+      "description": "At end of the afflicted creature's turn (wiki.gg) / end of all enemies' turns (sts2wiki.org), if Doom >= current HP, it dies. Kills without modifying HP, so it ignores Block, Slippery and Intangible. Necrobinder signature.",
+      "preconditions": [
+        "target.doom >= target.hp at check"
+      ],
+      "inputs": [
+        "target.doom",
+        "target.hp"
+      ],
+      "effects": [
+        "target dies"
+      ],
+      "timing": "end of enemy turn (exact phrasing varies by source)",
+      "duration": "persists (decay unverified)",
+      "stacking": "additive (inferred)",
+      "dependencies": [
+        "M.combat_end"
+      ],
+      "interactions": [
+        "bypasses Block/Slippery/Intangible",
+        "Potion of Doom applies 33 (S5)",
+        "can pair with HP-reduction to bring HP under Doom"
+      ],
+      "inference_patterns": [
+        "P.doom_threshold"
+      ],
+      "counterexamples": [
+        "Boss low-HP triggers may be bypassed (one fan site claims); unverified",
+        "Enemy that heals after applying Doom raises threshold"
+      ],
+      "source": [
+        "S1",
+        "S6",
+        "S7",
+        "S5"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "sts2_only",
+      "conflict": "S1 says end of their turn; S7 says end of all enemies' turns"
+    },
+    {
+      "id": "M.slippery_intangible",
+      "name": "Slippery and Intangible",
+      "category": "defense",
+      "description": "Named on wiki.gg as defensive effects that Doom ignores. Their own rules are not gathered.",
+      "preconditions": [],
+      "inputs": [],
+      "effects": [],
+      "timing": "unknown",
+      "duration": "unknown",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.doom",
+        "M.attack_damage"
+      ],
+      "interactions": [],
+      "inference_patterns": [],
+      "counterexamples": [
+        "Do not assume STS1 Intangible (damage capped to 1) for STS2 values"
+      ],
+      "source": [
+        "S1"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.osty_summon",
+      "name": "Osty (Necrobinder companion) and Summon",
+      "category": "character_mechanic",
+      "description": "Necrobinder gets companion Osty at combat start (1 HP initially). Osty takes damage before the Necrobinder, gains HP via Summon effects, only one Osty can exist, and if destroyed returns next turn. Osty's HP is not Block and does not reset at end of turn.",
+      "preconditions": [
+        "character == Necrobinder"
+      ],
+      "inputs": [
+        "osty.hp",
+        "incoming damage"
+      ],
+      "effects": [
+        "absorbs attacks before player",
+        "Summon adds Osty HP"
+      ],
+      "timing": "summoned at combat start; revive start of next turn",
+      "duration": "persistent HP through combat",
+      "stacking": "Summon adds HP (cap unverified)",
+      "dependencies": [
+        "M.attack_damage"
+      ],
+      "interactions": [
+        "competes with Block as damage absorption",
+        "Osty attack cards deal damage via Osty (details unverified)"
+      ],
+      "inference_patterns": [
+        "P.damage_absorption_order"
+      ],
+      "counterexamples": [
+        "Overflow damage beyond Osty HP to player: unverified",
+        "Osty HP at combat start differs across sources (1 HP vs fixed)"
+      ],
+      "source": [
+        "S8",
+        "S9",
+        "S11"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "sts2_only",
+      "gap": "overflow behavior, Osty max HP, Osty damage scaling"
+    },
+    {
+      "id": "M.souls_graveyard",
+      "name": "Souls and Graveyard",
+      "category": "character_mechanic",
+      "description": "Necrobinder cards generate Souls and depend on Souls for damage/Block/Summon. One article calls it the most risk-reward mechanic. Rules unverified.",
+      "preconditions": [
+        "character == Necrobinder"
+      ],
+      "inputs": [
+        "souls"
+      ],
+      "effects": [],
+      "timing": "unknown",
+      "duration": "unknown",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.osty_summon"
+      ],
+      "interactions": [],
+      "inference_patterns": [],
+      "counterexamples": [
+        "No rule-level evidence"
+      ],
+      "source": [
+        "S8",
+        "S9"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "sts2_only"
+    },
+    {
+      "id": "M.stars",
+      "name": "Stars (Regent)",
+      "category": "character_mechanic",
+      "description": "Regent's persistent secondary resource: does not reset at turn end, reportedly uncapped, spent by cards, many Regent cards cost both Energy and Stars.",
+      "preconditions": [
+        "character == Regent"
+      ],
+      "inputs": [
+        "player.stars"
+      ],
+      "effects": [
+        "stars spent by cards"
+      ],
+      "timing": "gained by cards/relics; no end-of-turn reset",
+      "duration": "persistent through combat (S9/S6 claim)",
+      "stacking": "additive",
+      "dependencies": [
+        "M.energy"
+      ],
+      "interactions": [
+        "Star Potion exists",
+        "competes_for card affordability with energy"
+      ],
+      "inference_patterns": [
+        "P.dual_resource_affordability"
+      ],
+      "counterexamples": [
+        "Cross-combat persistence not stated",
+        "Cap claim from single fan site"
+      ],
+      "source": [
+        "S9",
+        "S6"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "sts2_only"
+    },
+    {
+      "id": "M.forge",
+      "name": "Forge and Sovereign Blade",
+      "category": "character_mechanic",
+      "description": "First Forge each combat creates a Retain colorless attack named Sovereign Blade; each Forge X adds X damage to all Sovereign Blades in every zone (hand, draw, discard, exhaust).",
+      "preconditions": [
+        "character == Regent",
+        "Forge effect resolved"
+      ],
+      "inputs": [
+        "blade.damage",
+        "forge.X"
+      ],
+      "effects": [
+        "create blade (first Forge)",
+        "blade.damage += X in all zones"
+      ],
+      "timing": "on Forge",
+      "duration": "persistent through combat",
+      "stacking": "additive",
+      "dependencies": [
+        "M.retain",
+        "M.attack_damage"
+      ],
+      "interactions": [
+        "Retain lets the blade accumulate in hand",
+        "Sovereign Blade scales with upgrades/synergy per one guide"
+      ],
+      "inference_patterns": [
+        "P.scaling_attack_projection"
+      ],
+      "counterexamples": [
+        "Distinct from Rest Site 'Smith/Forge' naming"
+      ],
+      "source": [
+        "S1",
+        "S6",
+        "S9"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "sts2_only"
+    },
+    {
+      "id": "M.orbs",
+      "name": "Orbs (Defect)",
+      "category": "character_mechanic",
+      "description": "Defect channels Orbs with passive and evoke effects; a Glass Orb is claimed as new. Slot count, evoke rules in STS2 not gathered.",
+      "preconditions": [
+        "character == Defect"
+      ],
+      "inputs": [
+        "orb_slots"
+      ],
+      "effects": [],
+      "timing": "unknown",
+      "duration": "unknown",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.focus"
+      ],
+      "interactions": [],
+      "inference_patterns": [],
+      "counterexamples": [
+        "Do not import STS1 orb values"
+      ],
+      "source": [
+        "S9",
+        "S0"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.enemy_intent",
+      "name": "Enemy intent",
+      "category": "enemy",
+      "description": "Enemies display intended actions (wiki.gg uses Defend/attack intent icons). Full intent taxonomy (attack count, buff, debuff, summon) not enumerated here.",
+      "preconditions": [
+        "enemy alive"
+      ],
+      "inputs": [
+        "enemy.intent"
+      ],
+      "effects": [
+        "telegraphs next action"
+      ],
+      "timing": "visible during player turn",
+      "duration": "one enemy turn",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.turn_structure"
+      ],
+      "interactions": [],
+      "inference_patterns": [
+        "P.threat_forecast"
+      ],
+      "counterexamples": [
+        "Hidden or '???' intents may exist",
+        "Intent damage shown may exclude later modifiers (unverified)"
+      ],
+      "source": [
+        "S1",
+        "S0"
+      ],
+      "confidence": "inferred",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.enemy_turn_order",
+      "name": "Enemy action order",
+      "category": "enemy",
+      "description": "Order of multiple enemies' actions and summon timing unverified.",
+      "preconditions": [],
+      "inputs": [
+        "enemy list order"
+      ],
+      "effects": [],
+      "timing": "enemy phase",
+      "duration": "n/a",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.enemy_intent"
+      ],
+      "interactions": [],
+      "inference_patterns": [],
+      "counterexamples": [],
+      "source": [
+        "S0"
+      ],
+      "confidence": "unverified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.map_rooms",
+      "name": "Map and room types",
+      "category": "run_structure",
+      "description": "Each act is a branching map with room types: Monster, Elite (extra relic), Rest, Merchant, Unknown (?: events, sometimes shops/fights), Treasure, Boss; each act opens with an Ancient (Neow in Act 1). Last room before each boss is a Rest Site. Act 3 can end with double boss at Ascension 10.",
+      "preconditions": [
+        "player at node with choices"
+      ],
+      "inputs": [
+        "map.nodes",
+        "player.hp",
+        "player.gold",
+        "deck state"
+      ],
+      "effects": [
+        "determines next room"
+      ],
+      "timing": "between rooms",
+      "duration": "per act",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.rest_site",
+        "M.merchant",
+        "M.events",
+        "M.ancients"
+      ],
+      "interactions": [
+        "path choice competes_for HP/gold/upgrades"
+      ],
+      "inference_patterns": [
+        "P.route_value"
+      ],
+      "counterexamples": [
+        "Winged Boots/Golden Compass change path rules",
+        "Alternate acts exist (Overgrowth/Hive named)"
+      ],
+      "source": [
+        "S4",
+        "S12",
+        "S2",
+        "S5"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "partly_new"
+    },
+    {
+      "id": "M.rest_site",
+      "name": "Rest Site",
+      "category": "run_structure",
+      "description": "Choose Rest (heal 30% of max HP rounded down per wiki.gg; some guides say 30% of missing HP — conflict) or Smith (upgrade a card). Rest available at full HP. Relics add options or effects (Regal Pillow +15 HP, Stone Humidifier +5 max HP when resting, Tiny Mailbox potion, Dream Catcher card reward). Unaffected by Ascension since v0.103.2.",
+      "preconditions": [
+        "at rest node"
+      ],
+      "inputs": [
+        "player.hp",
+        "player.max_hp",
+        "deck upgradable"
+      ],
+      "effects": [
+        "heal or upgrade"
+      ],
+      "timing": "on node",
+      "duration": "one-time",
+      "stacking": "n/a",
+      "dependencies": [
+        "M.upgrade"
+      ],
+      "interactions": [
+        "competes_for node choice: heal vs upgrade"
+      ],
+      "inference_patterns": [
+        "P.rest_decision"
+      ],
+      "counterexamples": [
+        "Relics can unlock multiple options"
+      ],
+      "source": [
+        "S2",
+        "S12"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "same_as_sts1_assumed",
+      "conflict": "heal basis: max HP (S2) vs missing HP (S12)"
+    },
+    {
+      "id": "M.merchant",
+      "name": "Merchant (shop)",
+      "category": "run_structure",
+      "description": "Buy cards, relics, potions and one card removal with Gold. Reported potion prices: Common 48-53, Uncommon 71-79, Rare 95-105. Card removal 75 gold in one guide (base price unverified; Ascension 6 'Inflation' makes removal costlier). Foul Potion thrown at Merchant gives 100 gold.",
+      "preconditions": [
+        "at shop",
+        "gold >= price"
+      ],
+      "inputs": [
+        "player.gold",
+        "potion_slots"
+      ],
+      "effects": [
+        "gold -> items"
+      ],
+      "timing": "on purchase",
+      "duration": "one visit",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.gold_economy",
+        "M.potion_slots"
+      ],
+      "interactions": [
+        "Maw Bank gives 12 gold per floor until gold is spent at shop",
+        "Lord's Parasol takes everything free"
+      ],
+      "inference_patterns": [
+        "P.shop_allocation"
+      ],
+      "counterexamples": [
+        "Purchases fail without potion slots",
+        "Removal price may rise over run (unverified)"
+      ],
+      "source": [
+        "S3",
+        "S12",
+        "S5"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.events",
+      "name": "Unknown-room events",
+      "category": "run_structure",
+      "description": "Events offer trade-offs (HP, gold, cards, relics, potions, curses). Examples with explicit effects: Sunken Treasury (small chest gold / large chest more gold plus permanent curse). Event pools vary by act/region.",
+      "preconditions": [
+        "Unknown room resolved as event"
+      ],
+      "inputs": [
+        "player.hp",
+        "gold",
+        "deck"
+      ],
+      "effects": [
+        "variable"
+      ],
+      "timing": "on room",
+      "duration": "one-time",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.gold_economy"
+      ],
+      "interactions": [],
+      "inference_patterns": [
+        "P.event_ev"
+      ],
+      "counterexamples": [
+        "Event content varies by act; parse option text at runtime"
+      ],
+      "source": [
+        "S5",
+        "S8"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.ancients",
+      "name": "Ancients and boons",
+      "category": "run_structure",
+      "description": "Each act begins with an Ancient. After Act 1/2 bosses Ancient heals 100% of missing HP (80% on Ascension 2+) and offers three Ancient relics. Boss rewards: 100 gold (75 at A3+), choice of three rare cards, sometimes a potion.",
+      "preconditions": [
+        "new act start"
+      ],
+      "inputs": [
+        "player.hp"
+      ],
+      "effects": [
+        "heal; relic choice"
+      ],
+      "timing": "act start",
+      "duration": "one-time",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.map_rooms"
+      ],
+      "interactions": [],
+      "inference_patterns": [
+        "P.boss_prep"
+      ],
+      "counterexamples": [],
+      "source": [
+        "S4",
+        "S12"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "partly_new"
+    },
+    {
+      "id": "M.gold_economy",
+      "name": "Gold economy",
+      "category": "resource",
+      "description": "Gold from combat victories, events, relics; spent at shops. Ectoplasm blocks gold gain; Seal of Gold converts 3 gold to energy per turn.",
+      "preconditions": [
+        "gold available"
+      ],
+      "inputs": [
+        "player.gold"
+      ],
+      "effects": [],
+      "timing": "various",
+      "duration": "persistent",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.merchant"
+      ],
+      "interactions": [
+        "competes_for removal vs relic vs potion"
+      ],
+      "inference_patterns": [
+        "P.shop_allocation"
+      ],
+      "counterexamples": [
+        "Some relics make gold unspendable or unobtainable"
+      ],
+      "source": [
+        "S5",
+        "S8"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.potion_slots",
+      "name": "Potions and slots",
+      "category": "resource",
+      "description": "Potions are single-use consumables held in limited slots; Potion Belt adds 2 slots. Examples: Block Potion 12, Vulnerable Potion 3, Weak Potion 3, Poison Potion 6, Potion of Doom 33. Base slot count not gathered.",
+      "preconditions": [
+        "slot free to acquire"
+      ],
+      "inputs": [
+        "player.potions",
+        "slot_count"
+      ],
+      "effects": [
+        "one-time effect on use"
+      ],
+      "timing": "player choice during combat",
+      "duration": "single use",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.vulnerable",
+        "M.weak",
+        "M.poison",
+        "M.doom"
+      ],
+      "interactions": [
+        "competes_for slot space with newly found potions"
+      ],
+      "inference_patterns": [
+        "P.potion_use_timing"
+      ],
+      "counterexamples": [
+        "Base slot count unverified"
+      ],
+      "source": [
+        "S5",
+        "S3"
+      ],
+      "confidence": "verified",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.ascension",
+      "name": "Ascension",
+      "category": "meta",
+      "description": "Difficulty modifiers that change numbers (e.g., boss gold, Ancient heal, shop removal cost). Changes between patches.",
+      "preconditions": [],
+      "inputs": [
+        "run.ascension"
+      ],
+      "effects": [],
+      "timing": "run config",
+      "duration": "run",
+      "stacking": "unspecified",
+      "dependencies": [],
+      "interactions": [],
+      "inference_patterns": [],
+      "counterexamples": [],
+      "source": [
+        "S4",
+        "S2"
+      ],
+      "confidence": "version_dependent",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    },
+    {
+      "id": "M.deck_building",
+      "name": "Deck building economy",
+      "category": "long_term_planning",
+      "description": "Add cards from rewards, remove at shop/events, upgrade at rest. Strategic content is guide-derived, not rules. Rules: boss reward offers rare choices; shop offers removal.",
+      "preconditions": [
+        "reward screen"
+      ],
+      "inputs": [
+        "deck composition",
+        "draw probability"
+      ],
+      "effects": [],
+      "timing": "after rewards",
+      "duration": "run",
+      "stacking": "unspecified",
+      "dependencies": [
+        "M.upgrade",
+        "M.merchant",
+        "M.exhaust"
+      ],
+      "interactions": [],
+      "inference_patterns": [
+        "P.card_add_value"
+      ],
+      "counterexamples": [
+        "Guide strategy claims are heuristics, not mechanics"
+      ],
+      "source": [
+        "S4",
+        "S12"
+      ],
+      "confidence": "inferred",
+      "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+      "sts1_relation": "shared_unknown"
+    }
+  ]
+}

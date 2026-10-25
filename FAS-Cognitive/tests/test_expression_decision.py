@@ -418,6 +418,45 @@ check("T11d 闭环：社交动机把陈述线压到 0.655 → 0.74 过线 expres
       and verdict_of(cc2, "CI_stmt").get("verdict") == "express",
       str(verdict_of(cc2, "CI_stmt")))
 
+# ═══ T10 概念念头资格放宽（2026-10-24：高激活 semantic basis 也算有内容）═══
+kg5, cc5 = mk_cc(v2=False)
+mk_node(kg5, "假设：用户与深夜", act=1.24)      # semantic 高激活概念
+seed_ci(kg5, "CI_concept", act=0.80,
+        basis=["假设：用户与深夜"], dl="information_statement")
+_best5, _val5 = cc5._evaluate_expression()
+check("T10a 高激活概念念头过资格门并直抵陈述线（成为表达候选）",
+      _best5 is kg5.nodes["CI_concept"] and _val5 >= 0.62,
+      f"best={_best5 and _best5.id} val={_val5}")
+kg5b, cc5b = mk_cc(v2=False)
+mk_node(kg5b, "路过概念", act=0.3)              # 线索超载：泛化低激活线索
+seed_ci(kg5b, "CI_weak", act=0.80, basis=["路过概念"])
+cc5b._evaluate_expression()
+check("T10b 低激活路过概念仍被资格门拦（过滤性保留）",
+      verdict_of(cc5b, "CI_weak").get("suppressed")
+      == "basis lacking concrete tension",
+      str(verdict_of(cc5b, "CI_weak")))
+
+# ═══ T12 暂缓→兴趣转化（deferred exploration 意图不空等衰减出局）═══
+kg6, cc6 = mk_cc(v2=False)
+mk_node(kg6, "探索目标X", act=1.5)
+seed_ci(kg6, "CI_exp", act=0.30, basis=["探索目标X"], kind="exploration")
+cc6._evaluate_expression()
+it = (kg6.nodes["探索目标X"].extra_attrs.get("interest") or {})
+check("T12a exploration 意图暂缓时兴趣水位上调（signal）",
+      float(it.get("level") or 0) > 0, str(it))
+check("T12c 暂缓概念播种扩散前沿（图谱内探索入口，Synapse 式 traversal）",
+      cc6.engine.marked == ["探索目标X"], str(cc6.engine.marked))
+cc6._evaluate_expression()                       # 第二拍：同意图不重复播种
+check("T12d 播种每意图仅一次（防重复遍历/无限循环）",
+      cc6.engine.marked == ["探索目标X"], str(cc6.engine.marked))
+kg6b, cc6b = mk_cc(v2=False)
+mk_node(kg6b, "普通概念Y", act=1.5)
+seed_ci(kg6b, "CI_comm", act=0.30, basis=["普通概念Y"],
+        kind="communication")
+cc6b._evaluate_expression()
+it2 = (kg6b.nodes["普通概念Y"].extra_attrs.get("interest") or {})
+check("T12b 沟通类暂缓不转兴趣（只给探索型念头）", not it2, str(it2))
+
 # ═══ 汇总 ═══
 print("=" * 60)
 if FAILURES:

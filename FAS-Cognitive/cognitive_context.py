@@ -158,7 +158,8 @@ def build_cognitive_context(*,
                             evidence: dict = None,
                             speech_act_landscape: dict = None,
                             demand_analysis: dict = None,
-                            extra_constraints: list = None):
+                            extra_constraints: list = None,
+                            cognitive_state: str = None):
     """把回合内各来源组装成七分区 Cognitive Context。
 
     evidence 入参是**已执行**的结果字典（键任意，如 mc_action/mc_session/
@@ -249,6 +250,12 @@ def build_cognitive_context(*,
             "mode": mode,
             "demand": demand,
             "attention": pv(attention_context or {}, "graph_diffusion"),
+            # 认知状态切片（render_cognitive_state 的文字实况：心里有什么
+            # 节点、正在想什么——2026-10-16 接入被动回复，此前只有主动
+            # 表达通道看得到自己的念头内容，被问"在想什么"只能编空话）
+            **({"cognitive_state": pv(cognitive_state,
+                                      "continuous_cognition_state_slice")}
+               if cognitive_state else {}),
             "mood": pv(mood or "", "persona"),
             "world_state": pv(world_state or {}, "graph_dynamic_nodes"),
             "cognitive_events": pv(cognitive_events or [], "regulation_monitors"),
@@ -326,6 +333,9 @@ def build_outline(decision: dict, evidence: dict, constraints: list,
     if not must:
         must.append("无强制交代事项——回应认知焦点即可")
     must_not.append("不虚构图谱/感知之外的既成事实")
+    # 承诺也是言语行为（2026-10-17）：说"我这就去做X/给你看我的新打法"
+    # 同样要有记录依据——没有的已完成别说做过，没有的打法别承诺。
+    must_not.append("不说没做过的已完成，不许诺没有依据的打法、能力或结果")
     return {
         "move": dec.get("response_mode"),
         "goal": (dec.get("dialogue_act") or {}).get("value") if isinstance(
@@ -379,6 +389,9 @@ def compile_for_language(ctx: dict, *, path: str = "L2") -> dict:
             "session_evidence": evidence.get("mc_session") or {},
             "constraints": constraints,
             "mood": _val(state.get("mood")),
+            # L1 短回应同样带认知状态切片（2026-10-16 补漏：被问"在想
+            # 什么"走 L1 时也必须有心里的内容，否则空转照旧）
+            "cognitive_state": _val(state.get("cognitive_state")) or "",
             "recent_dialogue": (_val(memory.get("recent_dialogue")) or [])[-2:],
             "outline": build_outline(
                 decision,
@@ -397,6 +410,9 @@ def compile_for_language(ctx: dict, *, path: str = "L2") -> dict:
         "mode": state.get("mode"),
         "demand": state.get("demand"),
         "attention_context": _val(state.get("attention")) or {},
+        # 认知状态切片直达语言层（L1 短回应不带：那是先行动后应答的
+        # 极简路径，不引入新段）
+        "cognitive_state": _val(state.get("cognitive_state")) or "",
         "illocutionary_act": decision.get("speech_act",
                                           {}).get("value", "assertive")
         if isinstance(decision.get("speech_act"), dict) else "assertive",
@@ -434,6 +450,7 @@ def compile_for_language(ctx: dict, *, path: str = "L2") -> dict:
         "search_evidence": evidence.get("web_results") or {},
         "file_evidence": evidence.get("file_result") or evidence.get("file_action") or {},
         "eye_evidence": evidence.get("eye_result") or {},
+        "voice_evidence": evidence.get("voice_speak") or {},
     }
     return compiled
 
@@ -473,6 +490,8 @@ def debug_view(ctx: dict) -> dict:
                            (_val((ctx.get("motivation") or {}).get("tendencies")) or [])],
             "hormone": (ctx.get("motivation") or {}).get("hormone"),
         },
+        # 认知状态切片是否进入本回合语言层（观测：只报长度不重复内容）
+        "cognitive_state_len": len(str(_val(state.get("cognitive_state")) or "")),
         "attention_top": [n.get("id") if isinstance(n, dict) else n
                           for n in (attention.get("active_core") or [])[:8]],
         "recalled": [n if isinstance(n, str) else n.get("id")

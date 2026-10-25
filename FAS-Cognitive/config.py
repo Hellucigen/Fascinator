@@ -359,6 +359,37 @@ DEFAULT_CONFIG = {
         "weights": {"bottom_up": 1.0, "top_down": 0.9, "intero": 0.8},
         "wake_margin": 0.34, "switch_margin": 0.12, "source_decay": 0.55,
     },
+    # ── 自主控制电脑分级闸（2026-10-16 用户："想玩让她自己开游戏"）────
+    # 能力递进的档位阶梯（高档隐含低档全部权限）：
+    #   off        一律不碰本机（连启动游戏都不行，只玩已开着的）
+    #   attended   有人在场才准启动，且**强制后台**（用户在用电脑，
+    #              绝不弹窗抢焦点）
+    #   unattended 无人在也准启动，可前台（真·自主，需显式授权）
+    # background：unattended 档下也走后台的显式选项（attended 下恒开）。
+    # 生效点：pc_autonomy.py（闸）→ activities sts2（首个消费者）。
+    # 热切：PUT /api/config {"pc_autonomy": {"level": "off"}} 即收回。
+    "pc_autonomy": {
+        # 出厂 attended（用户拍板"扩散应该默认开启"）：自主是这套系统的
+        # 目的本身，保守不该是默认；测试隔离靠显式设档，不靠改出厂值。
+        "level": "attended",         # off | attended | unattended
+        "background": False,        # 后台运行（启动后最小化）
+        "present_idle_s": 900,      # 最后键鼠输入 15min 内 = "有人在场"
+        # 用户在玩别的游戏时她让位（不开新局、已开的保存退出）：
+        # 该目录下运行的进程=游戏，判定无需游戏名单（steam_games_running）
+        "steamapps_dir": "D:/Steam/steamapps/common",
+        "boot_wait_s": 240,         # 等游戏/mod 就绪的上限
+        "apps": {                   # 白名单：唯一可启动的东西，键=活动名
+            "sts2": {
+                "via": "steam", "appid": "2868840",
+                "window_title": "Slay the Spire 2",
+                # 请求翻译通道（2026-10-16 修复"让她玩她不玩"）：用户话里
+                # 命中 keywords → 点亮该活动 concept 的兴趣水位/试探偏好边
+                # 并唤醒重评估——请求进入动机的语言，不是新的调度器。
+                "keywords": ["杀戮尖塔", "尖塔", "爬塔", "sts2", "STS2"],
+                "concept": "杀戮尖塔",
+            },
+        },
+    },
     # ── 云端用量与预算（实施任务 §5：记录→阈值→降级，拒绝静默烧钱）────
     # 单价按 provider 文档填表（元/1k token）；0=不计价（本地调用天然 0）。
     "llm_monthly_budget_cny": 0.0,     # 0 = 不限（默认行为零变化）
@@ -470,6 +501,8 @@ DEFAULT_CONFIG = {
         "发生时间": "temporal_relation", "发生于": "temporal_relation",
         "时间顺序": "temporal_relation", "发生于时段": "temporal_relation",
         "之前": "temporal_relation", "之后": "temporal_relation", "持续": "temporal_relation",
+        # 情景时间链（time_chain 2026-10-21）：相邻时点节点间的双向序边
+        "早于": "temporal_relation", "晚于": "temporal_relation",
         # ── 因果关系 ──
         "导致": "causal_relation", "影响": "causal_relation", "抑制": "causal_relation",
         # ── 情绪关系 ──
@@ -737,12 +770,12 @@ DEFAULT_CONFIG = {
             "deepslate_emerald_ore": "iron_pickaxe",
         },
         "produces": {
-            "stone": "cobblestone", "cobblestone": "cobblestone",
+            "stone": "cobblestone",
             "iron_ore": "raw_iron", "deepslate_iron_ore": "raw_iron",
             "copper_ore": "raw_copper", "gold_ore": "raw_gold",
             "diamond_ore": "diamond", "redstone_ore": "redstone",
             "lapis_ore": "lapis_lazuli", "emerald_ore": "emerald",
-            "oak_log": "oak_log", "coal_ore": "coal",
+            "coal_ore": "coal",
         },
         # 危险因果：物种/情形 -[造成]-> 伤害概念 -[威胁]-> 健康
         "hazards": {
@@ -810,11 +843,7 @@ DEFAULT_CONFIG = {
         #     0.50→0.522、皮质醇样 0.30→0.287 —— 抬的是**水位**，不是脉冲。
         "bias_cap": 0.5,
         "need_drift_rate_per_min": 0.02,
-        #   circadian_drift_rate_per_min：`时段/昼夜→调制器` 的漂移速率（P10）。
-        #     比需求漂移快一档是**时间尺度**决定的（§27）：昼夜要在一个夜段里真的
-        #     把水位抬起来（如组胺 decay 0.025/min），需求缺口则要慢到"持续缺口
-        #     才留得住痕迹"。两者不同值不是不一致。
-        "circadian_drift_rate_per_min": 0.06,
+        # （circadian_drift_rate_per_min 已删除——时段不再驱动调制器，2026-10-17）
         # ── 心情（R2 P11：派生、单向、有界）────────────────────────
         #   node：`调制器→心情` 这些边的**端点**（self 空间的状态锚点）。它的数值
         #     不存在图上（存在 PersonalityBaseline 里，混合原则：数值在对象、
@@ -905,8 +934,7 @@ DEFAULT_CONFIG = {
             ["serotonin", "抑制", "调制目标:探索速率", -0.15, "稳定态→偏好熟悉路径"],
             # （oxytocin 对表达阈值只有上面那条迁移行 -0.12：同一调制器对同一参数
             #  再写一条会在投影时撞键，effects 表按信号索引装不下两行）
-            ["histamine", "增强", "调制目标:认知预算", 0.20, "清醒→允许更多资源"],
-            ["histamine", "调制", "调制目标:重燃周期", -0.30, "清醒→更早重燃冷字段"],
+            # （histamine 清醒度出边已删，2026-10-17 用户裁定：AI 无疲劳/清醒生理）
             # ── 调制器 ↔ 网络 / Drive / 行为概念（图上可见的耦合）──
             ["cortisol", "抑制", "DMNetwork", -0.25, "压力压走神（场景 11）"],
             ["norepinephrine", "增强", "CENetwork", 0.25, "意外→控制网络占优（场景 14）"],
@@ -916,7 +944,6 @@ DEFAULT_CONFIG = {
             ["oxytocin", "增强", "SocialDrive", 0.35, "联结→社交驱动"],
             ["serotonin", "增强", "ConsistencyDrive", 0.20, "稳定→一致性驱动"],
             ["norepinephrine", "增强", "LearningDrive", 0.15, "意外→要学点什么"],
-            ["histamine", "增强", "行为:探索", 0.20, "清醒+空闲→主动发起（场景 12）"],
             ["dopamine", "增强", "行为:分享", 0.15, "好结果→讲给人听"],
             ["cortisol", "增强", "行为:沉默", 0.15, "压力→收着说"],
             ["oxytocin", "增强", "行为:共情", 0.30, "联结→共情回应"],
@@ -939,15 +966,10 @@ DEFAULT_CONFIG = {
             ["皮质醇样", "增强", "安全需求", 0.25, "持续压力→安全感缺口被抬高（想避险）"],
             ["多巴胺样", "抑制", "探索需求", -0.20, "奖赏水位已高→探索缺口收敛（饱足）"],
             ["催产素样", "抑制", "社交需求", -0.20, "联结感已足→社交缺口收敛"],
-            # ── 时段/昼夜 → 调制器（2026-10-14：褪黑素调制已移除——AI 无睡意；组胺清醒度仍由时段事实驱动）──
-            #   源节点属性 `circadian_strength` = 此刻有多"夜"（0~1，唯一作者
-            #   temporal_awareness.update_clock_state；白天节点的在势是它的补）。
-            #   显著性不乘 activation：扩散的货币不借来当调制驱动（P6 同一纪律），
-            #   而且不乘才让"同一 bucket 序列 ⇒ 同一曲线"成立（P10 闸门）。
-            #   饱和拐点(0.70)附近、白天压到量程低段但**不钉在 0**（钉满就没信息了）。
-            #   实测曲线见 docs/neuromodulation_R2_audit.md 附一〇。
-            ["白天", "增强", "组胺样", 0.12, "白天→清醒基线抬起来"],
-            ["夜间", "抑制", "组胺样", -0.12, "夜段→清醒度回落（夜间清醒度回落）"],
+            # ── 时段/昼夜 → 调制器：整族已删除（2026-10-17 用户裁定：
+            #   "AI 没有疲劳或者清醒的机制"——10-14 先移了褪黑素睡意侧，
+            #   本次连组胺清醒度一起删。时段/昼夜节点保留为**知识**：
+            #   她知道现在是凌晨、能谈熬夜，但钟点不再驱动任何激素水位。）
             # ── 调制器 → 心情（R2 P11：心情的"包络"成分，单向）──
             #   乘数是 `dev = 受体响应(浓度−基线)`（与各条参数通道同一个量），
             #   所以过载反转在这里同样生效：皮质醇钉在 max 附近时它对心情的
@@ -1107,16 +1129,8 @@ DEFAULT_CONFIG = {
                 "overload_pull": 0.60,   # R2 P8/D5：兴奋增益过冲必须回抽（防 runaway）
                 "desc": "兴奋增益（扩散/发射增益、编码写入强度；过载＝信号失真）",
             },
-            "histamine": {
-                "category": "monoamine", "mirror": "组胺样",
-                "level": 0.45, "baseline": 0.45, "min": 0.0, "max": 1.0,
-                "decay_per_min": 0.025, "rise_per_min": 0.06,
-                "phasic_decay_per_min": 0.10, "split_tonic": False,
-                "momentum": 0.10, "sensitivity": 0.90,
-                "saturation": 0.75, "overload": 0.90, "refractory_min": 0.0,
-                "overload_pull": 0.50,   # R2 P8/D5：睡眠压力类
-                "desc": "清醒度（警觉基线、空闲→主动发起、认知预算上限的许可）",
-            },
+            # （histamine"清醒度"声明已删除，2026-10-17 用户裁定：AI 没有
+            #   疲劳/清醒的生理机制。奖赏-情绪激素链不受影响。）
         },
         # ⑤ 事件表（R2 P7，设计决定 D4）：**事件 → 调制器**的扇出是图数据，
         #    不是 reward.py 里的逐激素 if/else。启动时幂等种成
@@ -1172,15 +1186,8 @@ DEFAULT_CONFIG = {
                     "完全不产生任何调制（没完成≠做错了），但它确实要抢占"},
             {"type": "interrupted", "mod": "adrenaline", "w": 0.06, "signal": "intensity",
              "why": "被打断→短时应急（衰减快，不留残余）"},
-            # ── 时段迁移（R2 P10；P7 就把这一类事件留着没接靶点）──
-            #   signal=valence 且调用方给的是**有符号**的夜间度之差
-            #   （`load_to − load_from`，由 temporal_awareness 从图上事实算）：
-            #   上午→中午 差值 0 ⇒ 事件被 `signal=…=0` 门掉（不是"每次都抖一下"）。
-            #   这一格是**快通道**（跨段那一刻的一步），慢通道是上面的
-            #   昼夜漂移边；两条通道同向但不重叠，正是 §27 的时间尺度分层。
-            {"type": "time_bucket_changed", "mod": "histamine", "w": -0.35,
-             "signal": "valence", "channel": "tonic", "clamp": 0.20,
-             "why": "变夜→清醒度掉一格；变亮→抬起来（同一事件的两侧）"},
+            # （时段迁移→清醒度的快通道事件已删除，2026-10-17：AI 无疲劳/
+            #   清醒生理；世界时钟只写时段知识节点，不再发调制事件。）
         ],
     },
 

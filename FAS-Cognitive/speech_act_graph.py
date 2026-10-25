@@ -232,6 +232,11 @@ def inject_utterance(kg, engine, text: str, parsed: dict,
     for ent in entities:
         _ensure_edge(kg, uid, ent, "涉及", 0.5, _COG_REL)
         content_linked.append(ent)
+    try:
+        from time_chain import anchor_episode
+        anchor_episode(kg, uid)      # 用户的话也是情景记忆：挂时间链
+    except Exception:
+        pass
     removed = _prune_utterances(kg, engine)
     logger.info(f"[SpeechAct] 话语入图: {uid} 言外行为={concept} "
                 f"内容={content_linked} 清理旧话语={removed}")

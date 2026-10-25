@@ -1,0 +1,462 @@
+{
+  "schema": "fas-sts2-kb/1.0",
+  "version": "kb-0.1.0",
+  "game": "Slay the Spire 2",
+  "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+  "patterns": [
+    {
+      "id": "P.expected_damage",
+      "name": "Expected attack damage",
+      "uses_mechanics": [
+        "M.attack_damage",
+        "M.vulnerable",
+        "M.weak",
+        "M.strength",
+        "M.block"
+      ],
+      "binding_steps": [
+        "bind card.damage parts to base/hit count",
+        "read attacker strength, weak, target vulnerable, block",
+        "apply modifiers per hit",
+        "subtract block then HP"
+      ],
+      "computation": "per_hit=f(base,strength,weak,vuln); total=hits*per_hit; hp_loss=max(0,total-block)",
+      "certainty_class": "direct_if_order_known",
+      "uncertainty_sources": "modifier order/rounding unverified"
+    },
+    {
+      "id": "P.multi_hit_scaling",
+      "name": "Per-hit flat modifier scaling",
+      "uses_mechanics": [
+        "M.strength",
+        "M.attack_damage"
+      ],
+      "binding_steps": [
+        "identify hits count",
+        "strength applied per hit (assumed)"
+      ],
+      "computation": "total=hits*(base+strength)*mods",
+      "certainty_class": "direct_with_assumption",
+      "uncertainty_sources": "STS2 order unverified"
+    },
+    {
+      "id": "P.lethal_check",
+      "name": "Lethal check",
+      "uses_mechanics": [
+        "M.attack_damage",
+        "M.poison",
+        "M.doom",
+        "M.combat_end"
+      ],
+      "binding_steps": [
+        "sum immediate damage",
+        "add scheduled tick damage by timing",
+        "compare doom to hp at check"
+      ],
+      "computation": "lethal_now=total>=hp+block; lethal_by_end_of_turn includes doom",
+      "certainty_class": "direct",
+      "uncertainty_sources": "timing differences between sources"
+    },
+    {
+      "id": "P.debuff_before_burst",
+      "name": "Order debuff before damage",
+      "uses_mechanics": [
+        "M.vulnerable",
+        "M.attack_damage",
+        "M.energy"
+      ],
+      "binding_steps": [
+        "find debuff-applying and damage-dealing plays",
+        "check energy",
+        "simulate both orders"
+      ],
+      "computation": "gain=damage_after_debuff-damage_before",
+      "certainty_class": "direct",
+      "uncertainty_sources": "hit-by-hit rules"
+    },
+    {
+      "id": "P.dot_total_damage",
+      "name": "Poison projection",
+      "uses_mechanics": [
+        "M.poison"
+      ],
+      "binding_steps": [
+        "read stacks N",
+        "read ticks until fight end"
+      ],
+      "computation": "sum of N, N-1,... capped by fight length and extra triggers",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "tick timing, Accelerant, fight length"
+    },
+    {
+      "id": "P.dot_vs_block",
+      "name": "Damage type routing",
+      "uses_mechanics": [
+        "M.poison",
+        "M.doom",
+        "M.block"
+      ],
+      "binding_steps": [
+        "classify damage source as attack or not",
+        "route around block when not attack"
+      ],
+      "computation": "effective_dot=dot (block not applied)",
+      "certainty_class": "direct",
+      "uncertainty_sources": "none identified"
+    },
+    {
+      "id": "P.doom_threshold",
+      "name": "Doom threshold",
+      "uses_mechanics": [
+        "M.doom",
+        "M.attack_damage"
+      ],
+      "binding_steps": [
+        "compare doom to enemy HP",
+        "compute HP gap",
+        "consider enemy healing and end-of-turn timing"
+      ],
+      "computation": "kill_at_end_of_enemy_turn if doom>=hp",
+      "certainty_class": "direct",
+      "uncertainty_sources": "timing wording conflict"
+    },
+    {
+      "id": "P.block_sufficiency",
+      "name": "Block sufficiency",
+      "uses_mechanics": [
+        "M.block",
+        "M.enemy_intent",
+        "M.weak",
+        "M.osty_summon"
+      ],
+      "binding_steps": [
+        "sum intended damage with modifiers",
+        "subtract osty absorption if present",
+        "compute needed block"
+      ],
+      "computation": "needed=max(0,incoming-block-osty_hp)",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "hidden intents, overflow rules"
+    },
+    {
+      "id": "P.overblock_waste",
+      "name": "Overblock waste",
+      "uses_mechanics": [
+        "M.block",
+        "M.enemy_intent"
+      ],
+      "binding_steps": [
+        "compare block to incoming"
+      ],
+      "computation": "waste=max(0,block-incoming)",
+      "certainty_class": "direct",
+      "uncertainty_sources": "block retention effects"
+    },
+    {
+      "id": "P.damage_absorption_order",
+      "name": "Absorption order with companion",
+      "uses_mechanics": [
+        "M.osty_summon",
+        "M.block"
+      ],
+      "binding_steps": [
+        "order: osty first per sources",
+        "then block/HP (assumption)"
+      ],
+      "computation": "unverified order",
+      "certainty_class": "unverified",
+      "uncertainty_sources": "overflow rule unknown"
+    },
+    {
+      "id": "P.affordability_check",
+      "name": "Playable card set",
+      "uses_mechanics": [
+        "M.energy",
+        "M.stars"
+      ],
+      "binding_steps": [
+        "list costs",
+        "filter by energy and stars"
+      ],
+      "computation": "subset knapsack",
+      "certainty_class": "direct",
+      "uncertainty_sources": "X costs"
+    },
+    {
+      "id": "P.energy_sequencing",
+      "name": "Sequencing for value",
+      "uses_mechanics": [
+        "M.energy",
+        "M.exhaust",
+        "M.retain"
+      ],
+      "binding_steps": [
+        "enumerate plays within energy",
+        "score by effects"
+      ],
+      "computation": "search over orderings",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "draw randomness"
+    },
+    {
+      "id": "P.discard_chain_value",
+      "name": "Discard-trigger value",
+      "uses_mechanics": [
+        "M.sly",
+        "M.discard"
+      ],
+      "binding_steps": [
+        "count sly cards in hand",
+        "count discard effects"
+      ],
+      "computation": "free_plays=min(sly_in_hand,discards)",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "target selection"
+    },
+    {
+      "id": "P.scaling_attack_projection",
+      "name": "Persistent scaling attack",
+      "uses_mechanics": [
+        "M.forge",
+        "M.retain"
+      ],
+      "binding_steps": [
+        "read current blade damage",
+        "sum planned forge gains"
+      ],
+      "computation": "damage=blade+sum(X)",
+      "certainty_class": "direct",
+      "uncertainty_sources": "blade location"
+    },
+    {
+      "id": "P.dual_resource_affordability",
+      "name": "Energy plus Stars",
+      "uses_mechanics": [
+        "M.energy",
+        "M.stars"
+      ],
+      "binding_steps": [
+        "each card needs energy and stars"
+      ],
+      "computation": "feasible iff both pools suffice",
+      "certainty_class": "direct",
+      "uncertainty_sources": "star gain timing"
+    },
+    {
+      "id": "P.turn_horizon_planning",
+      "name": "Multi-turn horizon",
+      "uses_mechanics": [
+        "M.turn_structure",
+        "M.poison",
+        "M.vulnerable"
+      ],
+      "binding_steps": [
+        "project durations",
+        "project block expiry"
+      ],
+      "computation": "state roll-forward",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "draws and intent"
+    },
+    {
+      "id": "P.rest_decision",
+      "name": "Rest vs Smith",
+      "uses_mechanics": [
+        "M.rest_site",
+        "M.upgrade",
+        "M.map_rooms"
+      ],
+      "binding_steps": [
+        "compute HP deficit and heal amount",
+        "estimate upgrade benefit",
+        "check next boss/elite"
+      ],
+      "computation": "heal_value vs upgrade_value",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "heal basis conflict"
+    },
+    {
+      "id": "P.shop_allocation",
+      "name": "Shop allocation",
+      "uses_mechanics": [
+        "M.merchant",
+        "M.gold_economy",
+        "M.potion_slots"
+      ],
+      "binding_steps": [
+        "list affordable items",
+        "check slot constraint",
+        "rank by marginal value"
+      ],
+      "computation": "budgeted selection",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "unknown inventory prices"
+    },
+    {
+      "id": "P.route_value",
+      "name": "Route value",
+      "uses_mechanics": [
+        "M.map_rooms",
+        "M.rest_site",
+        "M.merchant",
+        "M.events"
+      ],
+      "binding_steps": [
+        "enumerate paths",
+        "score nodes by expected resource delta"
+      ],
+      "computation": "sum over path",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "hidden unknown rooms"
+    },
+    {
+      "id": "P.event_ev",
+      "name": "Event EV",
+      "uses_mechanics": [
+        "M.events",
+        "M.gold_economy"
+      ],
+      "binding_steps": [
+        "parse option text into cost/benefit effects",
+        "assign values"
+      ],
+      "computation": "ev=sum(prob*value)",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "text parsing"
+    },
+    {
+      "id": "P.potion_use_timing",
+      "name": "Potion timing",
+      "uses_mechanics": [
+        "M.potion_slots"
+      ],
+      "binding_steps": [
+        "compare fight difficulty to potion value"
+      ],
+      "computation": "use if value now > slot value",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "future fights"
+    },
+    {
+      "id": "P.boss_prep",
+      "name": "Boss preparation",
+      "uses_mechanics": [
+        "M.ancients",
+        "M.rest_site"
+      ],
+      "binding_steps": [
+        "rest node before boss",
+        "ancient heal after boss"
+      ],
+      "computation": "hp buffer planning",
+      "certainty_class": "direct",
+      "uncertainty_sources": "version"
+    },
+    {
+      "id": "P.card_add_value",
+      "name": "Card add value",
+      "uses_mechanics": [
+        "M.deck_building"
+      ],
+      "binding_steps": [
+        "simulate deck draw odds"
+      ],
+      "computation": "delta of expected performance",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "long horizon"
+    },
+    {
+      "id": "P.one_shot_resource_card",
+      "name": "Exhaust cost",
+      "uses_mechanics": [
+        "M.exhaust"
+      ],
+      "binding_steps": [
+        "card is one-shot per combat"
+      ],
+      "computation": "value=single-use",
+      "certainty_class": "direct",
+      "uncertainty_sources": "exhaust returns"
+    },
+    {
+      "id": "P.deck_cycle_estimate",
+      "name": "Deck cycle",
+      "uses_mechanics": [
+        "M.exhaust",
+        "M.turn_structure"
+      ],
+      "binding_steps": [
+        "count cards remaining in draw"
+      ],
+      "computation": "turns until reshuffle",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "reshuffle rules"
+    },
+    {
+      "id": "P.kill_check",
+      "name": "Kill check",
+      "uses_mechanics": [
+        "M.combat_end"
+      ],
+      "binding_steps": [
+        "sum sources"
+      ],
+      "computation": "alive if hp>0",
+      "certainty_class": "direct",
+      "uncertainty_sources": "timing"
+    },
+    {
+      "id": "P.defensive_debuff_value",
+      "name": "Weak value",
+      "uses_mechanics": [
+        "M.weak",
+        "M.enemy_intent"
+      ],
+      "binding_steps": [
+        "scale incoming by 0.75"
+      ],
+      "computation": "saved=incoming*0.25",
+      "certainty_class": "direct",
+      "uncertainty_sources": "duration"
+    },
+    {
+      "id": "P.draw_value",
+      "name": "Draw value",
+      "uses_mechanics": [
+        "M.hand_limit"
+      ],
+      "binding_steps": [
+        "cap by hand limit if any"
+      ],
+      "computation": "unknown",
+      "certainty_class": "unverified",
+      "uncertainty_sources": "hand limit unknown"
+    },
+    {
+      "id": "P.setup_turn_value",
+      "name": "Retain setup",
+      "uses_mechanics": [
+        "M.retain"
+      ],
+      "binding_steps": [
+        "hold card across turns"
+      ],
+      "computation": "enable later burst",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "hand clog"
+    },
+    {
+      "id": "P.threat_forecast",
+      "name": "Threat forecast",
+      "uses_mechanics": [
+        "M.enemy_intent"
+      ],
+      "binding_steps": [
+        "parse intent to damage"
+      ],
+      "computation": "incoming total",
+      "certainty_class": "estimate",
+      "uncertainty_sources": "hidden intents"
+    }
+  ]
+}

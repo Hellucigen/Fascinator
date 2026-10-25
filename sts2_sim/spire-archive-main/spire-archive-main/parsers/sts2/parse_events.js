@@ -1,0 +1,1434 @@
+#!/usr/bin/env node
+
+import fs from 'fs';
+import path from 'path';
+import { PCK_DIR, DECOMPILED_DIR, OUTPUT_DIR } from './config.mjs';
+
+const ANCIENT_EVENT_DATA = {
+  NEOW: {
+    type: 'ancient',
+  },
+  PAEL: {
+    type: 'ancient',
+    description:
+      "Pael, the Melting Dragon, offers three relic choices drawn from twisting pools of flesh, wing, and eye. Each visit presents one relic from Pool 1, one from Pool 2, and one from Pool 3, with extra options appearing when your deck or companions meet Pael's peculiar conditions.",
+    relic_pools: [
+      { name: 'Pool 1', relics: ['PAELS_FLESH', 'PAELS_HORN', 'PAELS_TEARS'] },
+      { name: 'Pool 2', relics: ['PAELS_WING', 'PAELS_GROWTH', 'PAELS_CLAW', 'PAELS_TOOTH'] },
+      { name: 'Pool 3', relics: ['PAELS_EYE', 'PAELS_BLOOD', 'PAELS_LEGION'] },
+    ],
+  },
+  DARV: {
+    type: 'ancient',
+    description:
+      'Darv, the Hoarder, digs through a heap of powerful relics and presents a rotating stash. You are shown Dusty Tome plus three random relics drawn from the main pool and act-specific sets, with some options only appearing when their conditions are met.',
+    references: [
+      { type: 'relic', id: 'DUSTY_TOME', name: 'Dusty Tome' },
+      { type: 'relic', id: 'ASTROLABE', name: 'Astrolabe' },
+      { type: 'relic', id: 'BLACK_STAR', name: 'Black Star' },
+      { type: 'relic', id: 'CALLING_BELL', name: 'Calling Bell' },
+      { type: 'relic', id: 'EMPTY_CAGE', name: 'Empty Cage' },
+      { type: 'relic', id: 'PANDORAS_BOX', name: 'Pandoras Box' },
+      { type: 'relic', id: 'RUNIC_PYRAMID', name: 'Runic Pyramid' },
+      { type: 'relic', id: 'SNECKO_EYE', name: 'Snecko Eye' },
+      { type: 'relic', id: 'ECTOPLASM', name: 'Ectoplasm' },
+      { type: 'relic', id: 'SOZU', name: 'Sozu' },
+      { type: 'relic', id: 'PHILOSOPHERS_STONE', name: 'Philosophers Stone' },
+      { type: 'relic', id: 'VELVET_CHOKER', name: 'Velvet Choker' },
+    ],
+    relic_pools: [
+      {
+        name: 'Main Pool',
+        relics: ['ASTROLABE', 'BLACK_STAR', 'CALLING_BELL', 'EMPTY_CAGE', 'PANDORAS_BOX', 'RUNIC_PYRAMID', 'SNECKO_EYE'],
+      },
+      { name: 'Act 1 Set', relics: ['ECTOPLASM', 'SOZU'] },
+      { name: 'Act 2 Set', relics: ['PHILOSOPHERS_STONE', 'VELVET_CHOKER'] },
+      { name: 'Always Offered', relics: ['DUSTY_TOME'] },
+    ],
+  },
+  OROBAS: {
+    type: 'ancient',
+    description:
+      'Orobas, the Living Rainbow, spreads a spectrum of relics across three distinct pools. Each encounter offers one relic from each pool, with Prismatic Gem joining the selection for characters who can channel Orbs.',
+    references: [
+      { type: 'relic', id: 'SEA_GLASS', name: 'Sea Glass' },
+      { type: 'relic', id: 'TOUCH_OF_OROBAS', name: 'Touch Of Orobas' },
+      { type: 'relic', id: 'ARCHAIC_TOOTH', name: 'Archaic Tooth' },
+    ],
+    relic_pools: [
+      { name: 'Pool 1', relics: ['ELECTRIC_SHRYMP', 'GLASS_EYE', 'SAND_CASTLE'] },
+      { name: 'Pool 2', relics: ['ALCHEMICAL_COFFER', 'DRIFTWOOD', 'RADIANT_PEARL'] },
+      { name: 'Pool 3', relics: ['SEA_GLASS', 'TOUCH_OF_OROBAS', 'ARCHAIC_TOOTH', 'PRISMATIC_GEM'] },
+    ],
+  },
+  TANX: {
+    type: 'ancient',
+    description:
+      "Tanx, the Khimera King, arms you from a brutal cache of weapons. Each meeting offers three random relics from Tanx's arsenal, with Tri-Boomerang added when you already carry enough weapons to impress the king.",
+    relic_pools: [
+      {
+        name: 'Base Pool',
+        relics: ['CLAWS', 'CROSSBOW', 'IRON_CLUB', 'MEAT_CLEAVER', 'SAI', 'SPIKED_GAUNTLETS', 'TANXS_WHISTLE', 'THROWING_AXE', 'WAR_HAMMER', 'TRI_BOOMERANG'],
+      },
+    ],
+  },
+  TEZCATARA: {
+    type: 'ancient',
+    description:
+      'Tezcatara, It Which Feeds the Fire, sets out gifts in three carefully prepared pools. Each encounter offers one relic from each pool, ranging from comforting treats to strange keepsakes and treasured curios.',
+    relic_pools: [
+      { name: 'Pool 1', relics: ['NUTRITIOUS_SOUP', 'VERY_HOT_COCOA', 'YUMMY_COOKIE'] },
+      { name: 'Pool 2', relics: ['BIIIG_HUG', 'STORYBOOK', 'SEAL_OF_GOLD', 'TOASTY_MITTENS'] },
+      { name: 'Pool 3', relics: ['GOLDEN_COMPASS', 'PUMPKIN_CANDLE', 'TOY_BOX'] },
+    ],
+  },
+  NONUPEIPE: {
+    type: 'ancient',
+    description:
+      'Nonupeipe, Serendipity Incarnate, surrounds you with a glittering collection of lucky treasures. Each visit offers three random relics from the main pool, with Beautiful Bracelet appearing only when its special condition is met.',
+    relic_pools: [
+      {
+        name: 'Main Pool',
+        relics: ['BLESSED_ANTLER', 'BRILLIANT_SCARF', 'DELICATE_FROND', 'DIAMOND_DIADEM', 'FUR_COAT', 'GLITTER', 'JEWELRY_BOX', 'LOOMING_FRUIT', 'SIGNET_RING', 'BEAUTIFUL_BRACELET'],
+      },
+    ],
+  },
+  VAKUU: {
+    type: 'ancient',
+    description:
+      'Vakuu, the First Demon, tempts you with relics sorted into three ominous pools. Each encounter offers one relic from each pool, mixing bloody bargains, preserved trophies, and elegant demonic finery.',
+    relic_pools: [
+      { name: 'Pool 1', relics: ['BLOOD_SOAKED_ROSE', 'WHISPERING_EARRING', 'FIDDLE'] },
+      { name: 'Pool 2', relics: ['PRESERVED_FOG', 'SERE_TALON', 'DISTINGUISHED_CAPE'] },
+      { name: 'Pool 3', relics: ['CHOICES_PARADOX', 'MUSIC_BOX', 'LORDS_PARASOL', 'JEWELED_MASK'] },
+    ],
+  },
+  THE_ARCHITECT: {
+    type: 'ancient',
+    description:
+      'The Architect awaits at the end of each successful run. The encounter plays out as a dialogue with character-specific lines, culminating in a final confrontation.',
+  },
+};
+
+const COLORFUL_CHARACTER_LINKS = {
+  Blue: { id: 'DEFECT', name: 'Defect' },
+  Red: { id: 'IRONCLAD', name: 'Ironclad' },
+  Pink: { id: 'NECROBINDER', name: 'Necrobinder' },
+  Orange: { id: 'REGENT', name: 'Regent' },
+  Green: { id: 'SILENT', name: 'Silent' },
+  Equality: { type: 'relic', id: 'PRISMATIC_SHARD', name: 'Prismatic Shard' },
+};
+
+function parseCanonicalVars(csDir) {
+  const varMap = {};
+
+  // Load entity data for StringVar name resolution
+  let cardNames = {}, relicNames = {}, enchantmentNames = {}, potionNames = {};
+  try {
+    for (const c of JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, 'cards.json'), 'utf-8')))
+      cardNames[c.id] = c.name;
+    for (const r of JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, 'relics.json'), 'utf-8')))
+      relicNames[r.id] = r.name;
+    for (const e of JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, 'enchantments.json'), 'utf-8')))
+      enchantmentNames[e.id] = e.name;
+    for (const p of JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, 'potions.json'), 'utf-8')))
+      potionNames[p.id] = p.name;
+  } catch {}
+
+  try {
+    const files = fs.readdirSync(csDir).filter(f => f.endsWith('.cs'));
+
+    for (const file of files) {
+      const content = fs.readFileSync(path.join(csDir, file), 'utf-8');
+      const eventNameMatch = file.replace('.cs', '');
+      const vars = {};
+
+      // Numeric vars — multiple patterns
+      let match;
+
+      // Pattern 1: new TypeVar(numberM) or new TypeVar(number) — unnamed, type implies name
+      const typedVarPattern = /new\s+(\w+Var)\(([0-9.]+)m?[,)]/g;
+      while ((match = typedVarPattern.exec(content)) !== null) {
+        const varType = match[1];
+        // Skip if it looks like named var (handled below)
+        if (/^(DynamicVar|IntVar|DecimalVar|StringVar)$/.test(varType)) continue;
+        const value = parseFloat(match[2]);
+        let varName;
+        if (varType === 'MaxHpVar') varName = 'MaxHp';
+        else if (varType === 'DamageVar') varName = 'Damage';
+        else if (varType === 'HealVar') varName = 'Heal';
+        else if (varType === 'GoldVar') varName = 'Gold';
+        else if (varType === 'BlockVar') varName = 'Block';
+        else if (varType === 'StrengthVar') varName = 'Strength';
+        else varName = varType.replace('Var', '');
+        vars[varName] = value;
+      }
+
+      // Pattern 2: new TypeVar("name", numberM, ...) — named typed vars
+      const namedTypedVarPattern = /new\s+(?:DamageVar|HealVar|HpLossVar|GoldVar|BlockVar|IntVar|CardsVar|MaxHpVar|StrengthVar|DecimalVar|RepeatVar|SummonVar|StarsVar|EnergyVar|DynamicVar)\("(\w+)",\s*([0-9.]+)m?/g;
+      while ((match = namedTypedVarPattern.exec(content)) !== null) {
+        vars[match[1]] = parseFloat(match[2]);
+      }
+
+      // Pattern 3: new DynamicVar("name", number) — without m suffix
+      const dynamicVarPattern = /new\s+DynamicVar\("([^"]+)",\s*([0-9.]+)\b/g;
+      while ((match = dynamicVarPattern.exec(content)) !== null) {
+        if (!vars[match[1]]) vars[match[1]] = parseFloat(match[2]);
+      }
+
+      // Pattern 4: new PowerVar<TypeName>(value)
+      const powerVarPattern = /new\s+PowerVar<(\w+)>\(([0-9.]+)m?\)/g;
+      while ((match = powerVarPattern.exec(content)) !== null) {
+        vars[match[1]] = parseFloat(match[2]);
+      }
+
+      // StringVars with static entity references
+      const stringVarPattern = /new\s+StringVar\("(\w+)",\s*ModelDb\.(?:Card|Relic|Enchantment|Potion)<(\w+)>\(\)\.(?:Title|DynamicDescription)/g;
+      while ((match = stringVarPattern.exec(content)) !== null) {
+        const varName = match[1];
+        const className = match[2];
+        const entityId = classToId(className);
+        const name = cardNames[entityId] || relicNames[entityId] || enchantmentNames[entityId] || potionNames[entityId];
+        if (name) vars[varName] = name;
+      }
+
+      // StringVars with ModelDb.Enchantment<X>().Title.GetFormattedText()
+      const stringVarFmtPattern = /new\s+StringVar\("(\w+)",\s*ModelDb\.(?:Card|Relic|Enchantment|Potion)<(\w+)>\(\)\.Title\.GetFormattedText\(\)/g;
+      while ((match = stringVarFmtPattern.exec(content)) !== null) {
+        const varName = match[1];
+        const className = match[2];
+        const entityId = classToId(className);
+        const name = cardNames[entityId] || relicNames[entityId] || enchantmentNames[entityId] || potionNames[entityId];
+        if (name) vars[varName] = name;
+      }
+
+      if (Object.keys(vars).length > 0) {
+        varMap[eventNameMatch] = vars;
+        // Also index by event ID (SCREAMING_SNAKE) for reliable lookup
+        varMap[classToId(eventNameMatch)] = vars;
+      }
+    }
+  } catch (err) {
+    console.warn(`Warning: Could not read C# files from ${csDir}:`, err.message);
+  }
+
+  return varMap;
+}
+
+function stripBBCode(text) {
+  if (!text) return text;
+  return text.replace(/\[(?:gold|\/gold|green|\/green|red|\/red|blue|\/blue|sine|\/sine|jitter|\/jitter|b|\/b|orange|\/orange|purple|\/purple|aqua|\/aqua|\/rainbow|rainbow[^\]]*)\]/g, '');
+}
+
+function substituteVars(text, vars) {
+  if (!text || !vars) return text;
+  return text.replace(/\{([^}]+)\}/g, (match, expr) => {
+    // Handle {VarName:plural:singular|plural} syntax
+    const pluralMatch = expr.match(/^(\w+):plural:([^|]+)\|(.+)$/);
+    if (pluralMatch) {
+      const [, varName, singular, plural] = pluralMatch;
+      if (Object.prototype.hasOwnProperty.call(vars, varName)) {
+        const val = vars[varName];
+        return val === 1 ? singular : plural;
+      }
+      return match;
+    }
+    // Handle {VarName:diff()} — just use the value
+    const diffMatch = expr.match(/^(\w+):diff\(\)$/);
+    if (diffMatch) {
+      const varName = diffMatch[1];
+      if (Object.prototype.hasOwnProperty.call(vars, varName)) return String(vars[varName]);
+      return match;
+    }
+    // Simple {VarName}
+    if (Object.prototype.hasOwnProperty.call(vars, expr)) {
+      return String(vars[expr]);
+    }
+    return match;
+  });
+}
+
+function eventNameToCsFileName(eventName) {
+  return eventName
+    .split(/\s+/)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join('');
+}
+
+function classToId(name) {
+  return name
+    .replace(/([a-z])([A-Z])/g, '$1_$2')
+    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1_$2')
+    .toUpperCase();
+}
+
+/**
+ * Extract card/relic/enchantment/potion references from event C# files.
+ * Returns a map: eventId → { optionRefs: { optionKey → references[] }, eventRefs: references[] }
+ */
+function extractReferences(csDir, cardsData, relicsData, potionsData, enchantmentsData) {
+  const cardNames = new Map(); // ID → name
+  const relicNames = new Map();
+  const potionNames = new Map();
+  const enchantmentNames = new Map();
+  for (const c of cardsData) cardNames.set(c.id, c.name);
+  for (const r of relicsData) relicNames.set(r.id, r.name);
+  for (const p of potionsData) potionNames.set(p.id, p.name);
+  if (enchantmentsData) for (const e of enchantmentsData) enchantmentNames.set(e.id, e.name);
+
+  function makeRef(className) {
+    const refId = classToId(className);
+    if (cardNames.has(refId)) return { type: 'card', id: refId, name: cardNames.get(refId) };
+    if (relicNames.has(refId)) return { type: 'relic', id: refId, name: relicNames.get(refId) };
+    if (potionNames.has(refId)) return { type: 'potion', id: refId, name: potionNames.get(refId) };
+    if (enchantmentNames.has(refId)) return { type: 'enchantment', id: refId, name: enchantmentNames.get(refId) };
+    return { type: 'card', id: refId, name: className.replace(/([a-z])([A-Z])/g, '$1 $2') };
+  }
+
+  const refMap = {};
+  let files;
+  try {
+    files = fs.readdirSync(csDir).filter(f => f.endsWith('.cs'));
+  } catch { return refMap; }
+
+  for (const file of files) {
+    const content = fs.readFileSync(path.join(csDir, file), 'utf-8');
+    const eventClassName = file.replace('.cs', '');
+    const eventId = classToId(eventClassName);
+
+    const optionRefs = {}; // optionKey → references[]
+    const eventRefs = []; // event-level references
+
+    // Strategy 1: Inline EventOption with HoverTipFactory
+    const inlinePattern = /new\s+EventOption\([^,]+,\s*\w+,\s*(?:InitialOptionKey\("([^"]+)"\)|"[^"]*\.options\.([^"]+)")[^)]*HoverTipFactory\.(?:FromCardWithCardHoverTips|FromCard|FromRelic|FromRelicExcludingItself|FromEnchantment|FromPotion|FromPower)\s*(?:<(\w+)>(?:\(\))?|\(ModelDb\.(?:Card|Relic|Potion|Enchantment)<(\w+)>\(\)\))/g;
+    let m;
+    while ((m = inlinePattern.exec(content)) !== null) {
+      const optKey = m[1] || m[2];
+      const className = m[3] || m[4];
+      if (!className) continue;
+      const ref = makeRef(className);
+      if (optKey) {
+        if (!optionRefs[optKey]) optionRefs[optKey] = [];
+        optionRefs[optKey].push(ref);
+      }
+    }
+
+    // Strategy 2: List-based pattern — HoverTipFactory calls before array[N] = new EventOption
+    // Parse the entire method to associate refs with options
+    const generateMatch = content.match(/GenerateInitialOptions\(\)\s*\{([\s\S]*?)\n\t\}/);
+    if (generateMatch) {
+      const body = generateMatch[1];
+      const lines = body.split('\n');
+
+      let pendingRefs = [];
+      for (const line of lines) {
+        // Collect HoverTipFactory refs
+        const hoverMatches = [...line.matchAll(/HoverTipFactory\.(?:FromCardWithCardHoverTips|FromCard|FromRelic|FromRelicExcludingItself|FromEnchantment|FromPotion|FromPower)\s*(?:<(\w+)>(?:\(\))?|\(ModelDb\.(?:Card|Relic|Potion|Enchantment)<(\w+)>\(\)\))/g)];
+        for (const hm of hoverMatches) {
+          const cn = hm[1] || hm[2];
+          if (cn) pendingRefs.push(makeRef(cn));
+        }
+
+        // Check for EventOption assignment that consumes pending refs
+        const optAssign = line.match(/new\s+EventOption\([^,]+,\s*\w+,\s*(?:InitialOptionKey\("([^"]+)"\)|"[^"]*\.options\.([^"]+)")/);
+        if (optAssign && pendingRefs.length > 0) {
+          const optKey = optAssign[1] || optAssign[2];
+          if (optKey) {
+            if (!optionRefs[optKey]) optionRefs[optKey] = [];
+            // Merge, avoiding duplicates
+            for (const r of pendingRefs) {
+              if (!optionRefs[optKey].some(er => er.id === r.id)) optionRefs[optKey].push(r);
+            }
+          }
+          pendingRefs = [];
+        }
+      }
+    }
+
+    if (Object.keys(optionRefs).length > 0 || eventRefs.length > 0) {
+      refMap[eventId] = { optionRefs, eventRefs };
+    }
+  }
+
+  return refMap;
+}
+
+function dedupeReferences(refs = []) {
+  const seen = new Set();
+  return refs.filter(ref => {
+    const key = `${ref.type}:${ref.id}:${ref.name}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function mergeLockedChoices(choices = []) {
+  const merged = [];
+  for (const choice of choices) {
+    if (choice.name === 'Locked' && merged.length > 0) {
+      merged[merged.length - 1].locked = choice.description || choice.locked || '';
+      continue;
+    }
+    merged.push(choice);
+  }
+  return merged;
+}
+
+function collectFlavorOnlyPages(localization, eventId, vars) {
+  const pagePattern = new RegExp(`^${eventId}\\.pages\\.([^.]+)\\.description$`);
+  const pages = [];
+
+  for (const key in localization) {
+    const match = key.match(pagePattern);
+    if (!match) continue;
+
+    const pageName = match[1];
+    if (pageName === 'INITIAL' || pageName === 'DONE') continue;
+
+    const rawDescription = localization[key];
+    if (!rawDescription) continue;
+
+    const hasOwnOptions = Object.keys(localization).some(locKey => locKey.startsWith(`${eventId}.pages.${pageName}.options.`));
+    if (hasOwnOptions) continue;
+
+    pages.push({
+      pageName,
+      description: substituteVars(stripBBCode(rawDescription), vars),
+    });
+  }
+
+  return pages;
+}
+
+function attachChoiceOutcomes(choices, flavorPages) {
+  const matchedPages = new Set();
+
+  for (const choice of choices) {
+    if (!choice._optionKey) continue;
+    const page = flavorPages.find(p => p.pageName === choice._optionKey);
+    if (!page?.description) continue;
+    choice.outcome = page.description;
+    matchedPages.add(page.pageName);
+  }
+
+  for (const choice of choices) {
+    delete choice._optionKey;
+  }
+
+  return matchedPages;
+}
+
+function collectFlavorSequences(flavorPages, matchedPages) {
+  const groups = new Map();
+
+  for (const page of flavorPages) {
+    if (matchedPages.has(page.pageName)) continue;
+    const match = page.pageName.match(/^([A-Z_]+?)(\d+)$/);
+    if (!match || !page.description) continue;
+
+    const [, prefix, num] = match;
+    if (!groups.has(prefix)) groups.set(prefix, []);
+    groups.get(prefix).push({ index: Number(num), text: page.description });
+  }
+
+  const sequences = {};
+  for (const [prefix, entries] of groups) {
+    if (entries.length < 2) continue;
+    entries.sort((a, b) => a.index - b.index);
+    sequences[prefix] = entries.map(entry => entry.text);
+  }
+
+  return sequences;
+}
+
+function buildNeowChoices(relicsData) {
+  // Parse Neow.cs to extract blessing relic pools automatically
+  const neowPath = path.join(DECOMPILED_DIR, 'MegaCrit.Sts2.Core.Models.Events', 'Neow.cs');
+  if (!fs.existsSync(neowPath)) {
+    console.warn('  Neow.cs not found, skipping Neow choices');
+    return null;
+  }
+  const cs = fs.readFileSync(neowPath, 'utf-8');
+
+  const relicMap = {};
+  for (const r of relicsData) relicMap[r.id] = r;
+
+  // Extract relic class names from RelicOption<ClassName> calls
+  function extractRelicClasses(blockLabel) {
+    // Find the property block
+    const patterns = {
+      positive: /private IEnumerable<EventOption> PositiveOptions\s*=>\s*new[^{]*\{([\s\S]*?)\}\);/,
+      cursed: /private IEnumerable<EventOption> CurseOptions\s*=>\s*new[^{]*\{([\s\S]*?)\}\);/,
+    };
+    if (patterns[blockLabel]) {
+      const m = cs.match(patterns[blockLabel]);
+      if (m) return [...m[1].matchAll(/RelicOption<(\w+)>/g)].map(x => x[1]);
+    }
+    return [];
+  }
+
+  // Extract individual conditional options: private EventOption XxxOption => RelicOption<ClassName>(...)
+  function extractConditionalOptions() {
+    const opts = [];
+    for (const [, optName, className] of cs.matchAll(/private EventOption (\w+)Option\s*=>\s*RelicOption<(\w+)>/g)) {
+      // Determine pool from the done description override
+      const line = cs.match(new RegExp(`private EventOption ${optName}Option[^;]+;`));
+      const isCursed = line && line[0].includes('CURSED');
+      opts.push({ className, pool: isCursed ? 'cursed' : 'positive', conditional: true });
+    }
+    return opts;
+  }
+
+  const positiveClasses = extractRelicClasses('positive');
+  const cursedClasses = extractRelicClasses('cursed');
+  const conditionals = extractConditionalOptions();
+
+  function classToRelicId(className) {
+    return className.replace(/([a-z])([A-Z])/g, '$1_$2').replace(/([A-Z]+)([A-Z][a-z])/g, '$1_$2').toUpperCase();
+  }
+
+  function makeChoice(className, pool) {
+    const relicId = classToRelicId(className);
+    const relic = relicMap[relicId];
+    return {
+      name: relic ? relic.name : className,
+      description: relic ? relic.description : '',
+      relic_id: relicId,
+      pool,
+    };
+  }
+
+  const choices = [];
+  for (const cls of positiveClasses) choices.push(makeChoice(cls, 'positive'));
+  for (const cls of cursedClasses) choices.push(makeChoice(cls, 'cursed'));
+  for (const opt of conditionals) {
+    // Skip if already in positive/cursed arrays
+    const rid = classToRelicId(opt.className);
+    if (!choices.find(c => c.relic_id === rid)) {
+      choices.push(makeChoice(opt.className, opt.pool));
+    }
+  }
+
+  return choices;
+}
+
+function applyManualFixes(events, relicsData = []) {
+  const filtered = events.filter(event => !new Set(['DEPRECATED_EVENT', 'DEPRECATED_ANCIENT_EVENT']).has(event.id));
+
+  for (const event of filtered) {
+    event.choices = mergeLockedChoices(event.choices || []);
+    if (Array.isArray(event.pages)) {
+      event.pages = event.pages.map(page => ({
+        ...page,
+        choices: mergeLockedChoices(page.choices || []),
+      }));
+    }
+
+    if (event.id === 'DENSE_VEGETATION' && event.choices?.[0]) {
+      event.choices[0].description = 'Heal like resting at a Rest Site. Fight some enemies.';
+    }
+
+    // SPIRALING_WHIRLPOOL: Drink heals 33% of Max HP (CalculateVars overrides the 0 canonical var)
+    if (event.id === 'SPIRALING_WHIRLPOOL') {
+      const drink = event.choices?.find(c => c.name === 'Drink');
+      if (drink) drink.description = 'Heal 33% of Max HP.';
+    }
+
+    // LOST_WISP: The CLAIM_LOCKED localization key is dead code — not referenced
+    // in the event's GenerateInitialOptions(). Confirmed via fresh decompile.
+    // Remove the phantom lock so it doesn't confuse readers.
+    if (event.id === 'LOST_WISP') {
+      const claim = event.choices?.find(c => c.name === 'Capture the Wisp');
+      if (claim) delete claim.locked;
+    }
+
+    // THE_FUTURE_OF_POTIONS: dynamic choices based on held potions (up to 3).
+    // The game uses a single localization template instantiated per potion at runtime.
+    // We pre-fill the template for 3 rarity tiers using game loc strings.
+    if (event.id === 'THE_FUTURE_OF_POTIONS') {
+      // Read rarity/type names from gameplay_ui.json
+      const gameplayUiPath = path.join(PCK_DIR, 'localization', 'eng', 'gameplay_ui.json');
+      let rarities = { Common: 'Common', Uncommon: 'Uncommon', Rare: 'Rare' };
+      let types = { Attack: 'Attack', Skill: 'Skill', Power: 'Power' };
+      try {
+        const ui = JSON.parse(fs.readFileSync(gameplayUiPath, 'utf-8'));
+        rarities = { Common: ui['CARD_RARITY.COMMON'] || 'Common', Uncommon: ui['CARD_RARITY.UNCOMMON'] || 'Uncommon', Rare: ui['CARD_RARITY.RARE'] || 'Rare' };
+        types = { Attack: ui['CARD_TYPE.ATTACK'] || 'Attack', Skill: ui['CARD_TYPE.SKILL'] || 'Skill', Power: ui['CARD_TYPE.POWER'] || 'Power' };
+      } catch {}
+
+      // Read the event template from loc
+      const eventsLocPath = path.join(PCK_DIR, 'localization', 'eng', 'events.json');
+      let titleTemplate = 'Insert {Rarity} Potion';
+      let descTemplate = 'Lose your potion. Obtain an Upgraded {Rarity} {Type}.';
+      try {
+        const evLoc = JSON.parse(fs.readFileSync(eventsLocPath, 'utf-8'));
+        titleTemplate = stripBBCode(evLoc['THE_FUTURE_OF_POTIONS.pages.INITIAL.options.POTION.title'] || titleTemplate);
+        descTemplate = stripBBCode(evLoc['THE_FUTURE_OF_POTIONS.pages.INITIAL.options.POTION.description'] || descTemplate);
+      } catch {}
+
+      // Common only offers Attack or Skill; Uncommon/Rare offer all three
+      const typesByRarity = {
+        Common: `${types.Attack} or ${types.Skill}`,
+        Uncommon: `${types.Attack}, ${types.Skill}, or ${types.Power}`,
+        Rare: `${types.Attack}, ${types.Skill}, or ${types.Power}`,
+      };
+
+      event.choices = Object.entries(rarities).map(([key, rarity]) => ({
+        name: titleTemplate.replace('{Rarity}', rarity),
+        description: descTemplate.replace('{Potion}', 'your potion').replace('{Rarity}', rarity).replace('{Type}', typesByRarity[key]),
+      }));
+    }
+
+    // ABYSSAL_BATHS: repeating immerse/linger loop with escalating damage.
+    // Base: +2 Max HP, 3 damage. Each Linger: +2 Max HP, damage increases by 1.
+    // Up to 10 lingers (damage capped at iteration 10). Warns before lethal.
+    if (event.id === 'ABYSSAL_BATHS') {
+      event.choices = [];
+      event.pages = [
+        {
+          label: 'Initial',
+          choices: [
+            { name: 'Abstain', description: 'Heal 10 HP.' },
+            { name: 'Immerse', description: 'Gain 2 Max HP. Take 3 damage. Enter the baths.' },
+          ],
+        },
+        {
+          label: 'In the Baths',
+          description: 'You can keep lingering — each time you gain 2 Max HP but the damage increases by 1. If the next linger would kill you, the game warns you. Up to 10 times.',
+          choices: [
+            { name: 'Linger', description: 'Gain 2 Max HP. Take damage (starts at 4, increases by 1 each time).' },
+            { name: 'Exit Baths', description: 'Leave the baths.' },
+          ],
+        },
+      ];
+    }
+
+    // Multi-page event: COLOSSAL_FLOWER has 3 dig depths
+    if (event.id === 'COLOSSAL_FLOWER') {
+      event.pages = [
+        { label: 'Initial', choices: [
+          { name: 'Extract Nectar', description: 'Gain 35 Gold.' },
+          { name: 'Reach Deeper', description: 'Take 5 damage. Go deeper.' },
+        ]},
+        { label: 'Deeper', choices: [
+          { name: 'Extract Nectar', description: 'Gain 75 Gold.' },
+          { name: 'Reach Deeper', description: 'Take 6 damage. Go even deeper.' },
+        ]},
+        { label: 'Deepest', choices: [
+          { name: 'Extract Instead', description: 'Gain 135 Gold.' },
+          { name: 'Obtain Pollinous Core', description: 'Take 7 damage. Obtain the Pollinous Core relic.',
+            references: [{ type: 'relic', id: 'POLLINOUS_CORE', name: 'Pollinous Core' }] },
+        ]},
+      ];
+    }
+
+    if (event.id === 'COLORFUL_PHILOSOPHERS') {
+      event.choices = (event.choices || [])
+        .map(choice => {
+          const link = COLORFUL_CHARACTER_LINKS[choice.name];
+          if (link) {
+            const references = dedupeReferences([
+              ...(choice.references || []),
+              { type: link.type || 'character', id: link.id, name: link.name },
+            ]);
+            return { ...choice, references };
+          }
+          return choice;
+        });
+    }
+
+    // Event-level references for events with runtime-determined rewards
+    const MANUAL_EVENT_REFS = {
+      DOLL_ROOM: [
+        { type: 'relic', id: 'DAUGHTER_OF_THE_WIND', name: 'Daughter Of The Wind' },
+        { type: 'relic', id: 'MR_STRUGGLES', name: 'Mr Struggles' },
+        { type: 'relic', id: 'BING_BONG', name: 'Bing Bong' },
+      ],
+      ENDLESS_CONVEYOR: [{ type: 'card', id: 'FEEDING_FRENZY', name: 'Feeding Frenzy' }],
+      FAKE_MERCHANT: [
+        { type: 'relic', id: 'FAKE_ANCHOR', name: 'Fake Anchor' },
+        { type: 'relic', id: 'FAKE_BLOOD_VIAL', name: 'Fake Blood Vial' },
+        { type: 'relic', id: 'FAKE_HAPPY_FLOWER', name: 'Fake Happy Flower' },
+        { type: 'relic', id: 'FAKE_LEES_WAFFLE', name: "Fake Lee's Waffle" },
+        { type: 'relic', id: 'FAKE_MANGO', name: 'Fake Mango' },
+        { type: 'relic', id: 'FAKE_ORICHALCUM', name: 'Fake Orichalcum' },
+        { type: 'relic', id: 'FAKE_SNECKO_EYE', name: 'Fake Snecko Eye' },
+        { type: 'relic', id: 'FAKE_STRIKE_DUMMY', name: 'Fake Strike Dummy' },
+        { type: 'relic', id: 'FAKE_VENERABLE_TEA_SET', name: 'Fake Venerable Tea Set' },
+        { type: 'relic', id: 'FAKE_MERCHANTS_RUG', name: "Fake Merchant's Rug" },
+      ],
+      THE_LANTERN_KEY: [{ type: 'card', id: 'LANTERN_KEY', name: 'Lantern Key' }],
+      TINKER_TIME: [{ type: 'card', id: 'MAD_SCIENCE', name: 'Mad Science' }],
+      TRASH_HEAP: [
+        { type: 'card', id: 'CALTROPS', name: 'Caltrops' },
+        { type: 'card', id: 'CLASH', name: 'Clash' },
+        { type: 'card', id: 'DISTRACTION', name: 'Distraction' },
+        { type: 'card', id: 'DUAL_WIELD', name: 'Dual Wield' },
+        { type: 'card', id: 'ENTRENCH', name: 'Entrench' },
+        { type: 'card', id: 'HELLO_WORLD', name: 'Hello World' },
+        { type: 'card', id: 'OUTMANEUVER', name: 'Outmaneuver' },
+        { type: 'card', id: 'REBOUND', name: 'Rebound' },
+        { type: 'card', id: 'RIP_AND_TEAR', name: 'Rip And Tear' },
+        { type: 'card', id: 'STACK', name: 'Stack' },
+        { type: 'relic', id: 'DARKSTONE_PERIAPT', name: 'Darkstone Periapt' },
+        { type: 'relic', id: 'DREAM_CATCHER', name: 'Dream Catcher' },
+        { type: 'relic', id: 'HAND_DRILL', name: 'Hand Drill' },
+        { type: 'relic', id: 'MAW_BANK', name: 'Maw Bank' },
+        { type: 'relic', id: 'THE_BOOT', name: 'The Boot' },
+      ],
+      HUNGRY_FOR_MUSHROOMS: [
+        { type: 'relic', id: 'BIG_MUSHROOM', name: 'Big Mushroom' },
+        { type: 'relic', id: 'FRAGRANT_MUSHROOM', name: 'Fragrant Mushroom' },
+      ],
+      TRIAL: [
+        { type: 'card', id: 'REGRET', name: 'Regret' },
+        { type: 'card', id: 'SHAME', name: 'Shame' },
+        { type: 'card', id: 'DOUBT', name: 'Doubt' },
+      ],
+    };
+
+    if (MANUAL_EVENT_REFS[event.id]) {
+      event.references = dedupeReferences([...(event.references || []), ...MANUAL_EVENT_REFS[event.id]]);
+    }
+
+    // Manual choice description overrides (from C# RelicOption/CardOption patterns)
+    // CHOICE_DESC_OVERRIDES removed — keep event data game-accurate, no editorial text
+
+    // Resolve static event DynamicVars (values from C# source)
+    const STATIC_EVENT_VARS = {
+      '{Setting1Hp}': '75',   // BattleFriendV1.MinInitialHp
+      '{Setting2Hp}': '150',  // BattleFriendV2.MinInitialHp
+      '{Setting3Hp}': '300',  // BattleFriendV3.MinInitialHp
+    };
+    const resolveStaticVars = (text) => {
+      if (!text) return text;
+      for (const [key, val] of Object.entries(STATIC_EVENT_VARS)) {
+        text = text.replaceAll(key, val);
+      }
+      return text;
+    };
+    if (event.description) event.description = resolveStaticVars(event.description);
+    if (event.choices) {
+      for (const c of event.choices) {
+        if (c.description) c.description = resolveStaticVars(c.description);
+      }
+    }
+    if (event.pages) {
+      for (const p of event.pages) {
+        if (p.description) p.description = resolveStaticVars(p.description);
+        if (p.choices) {
+          for (const c of p.choices) {
+            if (c.description) c.description = resolveStaticVars(c.description);
+          }
+        }
+      }
+    }
+
+    // Replace runtime-only vars with descriptive text
+    const RUNTIME_REPLACEMENTS = {
+      '{Prize1}': 'X', '{Prize2}': 'X', '{Prize3}': 'X',
+      '{Heal}': 'X', '{Gold}': 'X', '{HpLoss}': 'X',
+      '{Potion}': 'Potion', '{Relic}': 'Relic',
+      '{RandomRelic}': 'a random Relic', '{RandomCard}': 'A random card',
+      '{DrinkRandomPotion}': 'a random Potion',
+      '{Rarity}': '?', '{Type}': '?', '{EntrantNumber}': '?',
+      '{BottomRelicOwned}': 'your Relic', '{BottomRelicNew}': 'a new Relic',
+      '{MiddleRelicOwned}': 'your Relic', '{MiddleRelicNew}': 'a new Relic',
+      '{TopRelicOwned}': 'your Relic', '{TopRelicNew}': 'a new Relic',
+      '{pronounObject}': 'them', '{pronounSubject}': 'they',
+      '{pronounPossessive}': 'theirs', '{character}': 'the character',
+    };
+    const resolveRuntime = (text) => {
+      if (!text) return text;
+      for (const [k, v] of Object.entries(RUNTIME_REPLACEMENTS)) {
+        if (text.includes(k)) text = text.replaceAll(k, v);
+      }
+      // Fix "they" + third-person singular verb agreement from pronoun substitution
+      text = text.replace(/\bthey (becomes|goes|has|does|is|was|gets|feels|seems)\b/gi,
+        (_, verb) => {
+          const fixes = { becomes: 'become', goes: 'go', has: 'have', does: 'do', is: 'are', was: 'were', gets: 'get', feels: 'feel', seems: 'seem' };
+          return `they ${fixes[verb.toLowerCase()] || verb}`;
+        });
+      return text;
+    };
+    if (event.description) event.description = resolveRuntime(event.description);
+    if (event.choices) {
+      for (const c of event.choices) {
+        if (c.name) c.name = resolveRuntime(c.name);
+        if (c.description) c.description = resolveRuntime(c.description);
+        if (c.outcome) c.outcome = resolveRuntime(c.outcome);
+      }
+    }
+    if (event.pages) {
+      for (const p of event.pages) {
+        if (p.description) p.description = resolveRuntime(p.description);
+        if (p.choices) {
+          for (const c of p.choices) {
+            if (c.name) c.name = resolveRuntime(c.name);
+            if (c.description) c.description = resolveRuntime(c.description);
+            if (c.outcome) c.outcome = resolveRuntime(c.outcome);
+          }
+        }
+      }
+    }
+    if (event.flavor_sequences) {
+      for (const [key, texts] of Object.entries(event.flavor_sequences)) {
+        event.flavor_sequences[key] = texts.map(t => resolveRuntime(t));
+      }
+    }
+
+    // TINKER_TIME: multi-step card builder event
+    if (event.id === 'TINKER_TIME') {
+      event.choices = [];
+      event.pages = [
+        {
+          label: 'Choose Card Type',
+          description: '2 of 3 types are offered randomly.',
+          choices: [
+            { name: 'Weapon', description: 'Create an Attack. (Deal 12 damage.)' },
+            { name: 'Protector', description: 'Create a Skill. (Gain 8 Block.)' },
+            { name: 'Gadget', description: 'Create a Power.' },
+          ],
+        },
+        {
+          label: 'Choose Rider Effect',
+          description: '2 of 3 effects are offered randomly, based on the card type chosen.',
+          choices: [
+            { name: 'Sapping', description: 'Apply 2 Weak. Apply 2 Vulnerable.', pool: 'Attack' },
+            { name: 'Violence', description: 'Hits 2 additional times.', pool: 'Attack' },
+            { name: 'Choking', description: 'Whenever you play a card this turn, the enemy loses 6 HP.', pool: 'Attack' },
+            { name: 'Energized', description: 'Gain [E][E].', pool: 'Skill' },
+            { name: 'Wisdom', description: 'Draw 3 cards.', pool: 'Skill' },
+            { name: 'Chaos', description: 'Add a random card into your Hand. It costs 0 [E] this turn.', pool: 'Skill' },
+            { name: 'Expertise', description: 'Gain 2 Strength. Gain 2 Dexterity.', pool: 'Power' },
+            { name: 'Curious', description: 'Powers cost 1 [E] less.', pool: 'Power' },
+            { name: 'Improvement', description: 'At the end of combat, Upgrade a random card.', pool: 'Power' },
+          ],
+        },
+      ];
+      event.references = [{ type: 'card', id: 'MAD_SCIENCE', name: 'Mad Science' }];
+    }
+
+    const ancient = ANCIENT_EVENT_DATA[event.id];
+    if (ancient) {
+      event.type = ancient.type;
+      if (ancient.description) event.description = ancient.description;
+      if (ancient.relic_pools) event.relic_pools = ancient.relic_pools;
+
+      // Auto-generate Neow choices from C# source
+      if (event.id === 'NEOW') {
+        const neowChoices = buildNeowChoices(relicsData);
+        if (neowChoices && neowChoices.length > 0) {
+          event.choices = neowChoices;
+          event.description = "Neow, the Mother of Resurrection, awaits at the start of each run. She offers three blessings \u2014 two positive and one cursed. The options are drawn randomly from the pools below.";
+        }
+      }
+      if (ancient.references) event.references = dedupeReferences([...(event.references || []), ...ancient.references]);
+    }
+  }
+
+  return filtered;
+}
+
+async function parseEvents() {
+  const eventsPath = path.join(OUTPUT_DIR, 'events.json');
+  const localizationPath = path.join(PCK_DIR, 'localization', 'eng', 'events.json');
+  const csDir = path.join(DECOMPILED_DIR, 'MegaCrit.Sts2.Core.Models.Events');
+
+  let events = [];
+  try {
+    events = JSON.parse(fs.readFileSync(eventsPath, 'utf-8'));
+  } catch (err) {
+    console.error(`Failed to read events.json: ${err.message}`);
+    process.exit(1);
+  }
+
+  let localization = {};
+  try {
+    localization = JSON.parse(fs.readFileSync(localizationPath, 'utf-8'));
+  } catch (err) {
+    console.warn(`Warning: Could not read localization: ${err.message}`);
+  }
+
+  const canonicalVars = parseCanonicalVars(csDir);
+
+  // Load cards + relics for reference resolution
+  let cardsData = [], relicsData = [], potionsData = [], enchantmentsData = [];
+  try { cardsData = JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, 'cards.json'), 'utf-8')); } catch {}
+  try { relicsData = JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, 'relics.json'), 'utf-8')); } catch {}
+  try { potionsData = JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, 'potions.json'), 'utf-8')); } catch {}
+  try { enchantmentsData = JSON.parse(fs.readFileSync(path.join(OUTPUT_DIR, 'enchantments.json'), 'utf-8')); } catch {}
+  const refMap = extractReferences(csDir, cardsData, relicsData, potionsData, enchantmentsData);
+
+  let enrichedCount = 0;
+  let updatedCount = 0;
+
+  for (const event of events) {
+    const initialDescKey = `${event.id}.pages.INITIAL.description`;
+    const initialDesc = localization[initialDescKey];
+
+    if (!initialDesc && !canonicalVars[event.id] && !canonicalVars[event.name]) {
+      continue;
+    }
+
+    if (initialDesc) {
+      event.description = stripBBCode(initialDesc);
+      updatedCount++;
+    }
+
+    const choices = [];
+    const optionsPattern = /^(.+)\.pages\.INITIAL\.options\.([^.]+)\.(title|description)$/;
+    const optionNames = new Set();
+
+    for (const key in localization) {
+      const match = key.match(optionsPattern);
+      if (match && match[1] === event.id) {
+        optionNames.add(match[2]);
+      }
+    }
+
+    const csFileName = eventNameToCsFileName(event.name);
+    const vars = canonicalVars[event.id] || canonicalVars[csFileName] || {};
+
+    for (const optionName of Array.from(optionNames).sort()) {
+      const title = localization[`${event.id}.pages.INITIAL.options.${optionName}.title`];
+      let description = localization[`${event.id}.pages.INITIAL.options.${optionName}.description`];
+
+      if (title) {
+        let cleanDesc = description ? stripBBCode(description) : '';
+        cleanDesc = substituteVars(cleanDesc, vars);
+        const choice = {
+          name: stripBBCode(title),
+          description: cleanDesc,
+          _optionKey: optionName,
+        };
+        // Attach references from C# HoverTipFactory
+        const eventRefs = refMap[event.id];
+        if (eventRefs?.optionRefs?.[optionName]) {
+          choice.references = dedupeReferences(eventRefs.optionRefs[optionName]);
+        }
+        choices.push(choice);
+      }
+    }
+
+    const flavorPages = collectFlavorOnlyPages(localization, event.id, vars);
+    const matchedFlavorPages = attachChoiceOutcomes(choices, flavorPages);
+    const flavorSequences = collectFlavorSequences(flavorPages, matchedFlavorPages);
+
+    if (choices.length > 0) {
+      event.choices = choices;
+      enrichedCount++;
+    }
+
+    if (Object.keys(flavorSequences).length > 0) {
+      event.flavor_sequences = flavorSequences;
+    }
+  }
+
+  events = applyManualFixes(events, relicsData);
+
+  fs.writeFileSync(eventsPath, JSON.stringify(events, null, 2) + '\n', 'utf-8');
+
+  console.log('✓ Parser complete');
+  console.log(`  Enriched: ${enrichedCount} events with choices`);
+  console.log(`  Updated descriptions: ${updatedCount} events`);
+  console.log(`  Total events: ${events.length}`);
+  console.log(`  Output: ${eventsPath}`);
+}
+
+// ─── Localization Support ───────────────────────────────────────────
+
+const LANG_MAP = {
+  deu: 'de', fra: 'fr', ita: 'it', esp: 'es', spa: 'es',
+  ptb: 'pt', pol: 'pl', rus: 'ru', tur: 'tr',
+  tha: 'th', jpn: 'ja', kor: 'ko', zhs: 'zh',
+};
+
+const LOCALIZED_RUNTIME_VARS = {
+  ja: { potion: 'ポーション', relic: 'レリック', randomRelic: 'ランダムなレリック', randomCard: 'ランダムなカード', randomPotion: 'ランダムなポーション', yourRelic: 'あなたのレリック', newRelic: '新しいレリック', them: 'them', they: 'they', theirs: 'theirs', character: 'キャラクター' },
+  ko: { potion: '물약', relic: '유물', randomRelic: '무작위 유물', randomCard: '무작위 카드', randomPotion: '무작위 물약', yourRelic: '보유 유물', newRelic: '새 유물', them: 'them', they: 'they', theirs: 'theirs', character: '캐릭터' },
+  zh: { potion: '药水', relic: '遗物', randomRelic: '随机遗物', randomCard: '随机卡牌', randomPotion: '随机药水', yourRelic: '你的遗物', newRelic: '新遗物', them: 'them', they: 'they', theirs: 'theirs', character: '角色' },
+  de: { potion: 'Trank', relic: 'Relikt', randomRelic: 'zufälliges Relikt', randomCard: 'zufällige Karte', randomPotion: 'zufälliger Trank', yourRelic: 'dein Relikt', newRelic: 'ein neues Relikt', them: 'ihn', they: 'er', theirs: 'sein', character: 'der Charakter' },
+  fr: { potion: 'Potion', relic: 'Relique', randomRelic: 'Relique aléatoire', randomCard: 'Carte aléatoire', randomPotion: 'Potion aléatoire', yourRelic: 'votre Relique', newRelic: 'une nouvelle Relique', them: 'lui', they: 'il', theirs: 'le sien', character: 'le personnage' },
+  es: { potion: 'Poción', relic: 'Reliquia', randomRelic: 'Reliquia aleatoria', randomCard: 'Carta aleatoria', randomPotion: 'Poción aleatoria', yourRelic: 'tu Reliquia', newRelic: 'una nueva Reliquia', them: 'él', they: 'él', theirs: 'suyo', character: 'el personaje' },
+  pt: { potion: 'Poção', relic: 'Relíquia', randomRelic: 'Relíquia aleatória', randomCard: 'Carta aleatória', randomPotion: 'Poção aleatória', yourRelic: 'sua Relíquia', newRelic: 'uma nova Relíquia', them: 'ele', they: 'ele', theirs: 'dele', character: 'o personagem' },
+  it: { potion: 'Pozione', relic: 'Reliquia', randomRelic: 'Reliquia casuale', randomCard: 'Carta casuale', randomPotion: 'Pozione casuale', yourRelic: 'la tua Reliquia', newRelic: 'una nuova Reliquia', them: 'lui', they: 'lui', theirs: 'il suo', character: 'il personaggio' },
+  pl: { potion: 'Mikstura', relic: 'Relikt', randomRelic: 'losowy Relikt', randomCard: 'losowa Karta', randomPotion: 'losowa Mikstura', yourRelic: 'twój Relikt', newRelic: 'nowy Relikt', them: 'go', they: 'on', theirs: 'jego', character: 'postać' },
+  ru: { potion: 'Зелье', relic: 'Реликвия', randomRelic: 'случайная Реликвия', randomCard: 'случайная Карта', randomPotion: 'случайное Зелье', yourRelic: 'ваша Реликвия', newRelic: 'новая Реликвия', them: 'его', they: 'он', theirs: 'его', character: 'персонаж' },
+  tr: { potion: 'İksir', relic: 'Kalıntı', randomRelic: 'rastgele Kalıntı', randomCard: 'rastgele Kart', randomPotion: 'rastgele İksir', yourRelic: 'Kalıntın', newRelic: 'yeni bir Kalıntı', them: 'onu', they: 'o', theirs: 'onun', character: 'karakter' },
+  th: { potion: 'ยา', relic: 'เรลิก', randomRelic: 'เรลิกสุ่ม', randomCard: 'การ์ดสุ่ม', randomPotion: 'ยาสุ่ม', yourRelic: 'เรลิกของคุณ', newRelic: 'เรลิกใหม่', them: 'เขา', they: 'เขา', theirs: 'ของเขา', character: 'ตัวละคร' },
+};
+
+const NEOW_DESCRIPTIONS = {
+  ja: 'ネオー（復活の母）は、各ランの開始時に待ち受けている。ポジティブな祝福2つと呪いの祝福1つの計3つの祝福を提供する。選択肢は以下のプールからランダムに選ばれる。',
+  ko: '니오우(부활의 어머니)는 각 게임 시작 시 기다리고 있습니다. 긍정적인 축복 2개와 저주받은 축복 1개, 총 3개의 축복을 제공합니다. 선택지는 아래 풀에서 무작위로 선택됩니다.',
+  zh: '涅奥（复活之母）在每次冒险开始时等待着你。她提供三个祝福——两个正面祝福和一个诅咒祝福。选项从以下池中随机抽取。',
+  de: 'Neow, die Mutter der Auferstehung, erwartet dich zu Beginn jedes Laufs. Sie bietet drei Segnungen – zwei positive und einen verfluchten. Die Optionen werden zufällig aus den unten stehenden Pools gezogen.',
+  fr: "Neow, la Mère de la Résurrection, attend au début de chaque partie. Elle offre trois bénédictions — deux positives et une maudite. Les options sont tirées au hasard parmi les groupes ci-dessous.",
+  es: 'Neow, la Madre de la Resurrección, espera al inicio de cada partida. Ofrece tres bendiciones: dos positivas y una maldita. Las opciones se eligen al azar de los grupos a continuación.',
+  pt: 'Neow, a Mãe da Ressurreição, aguarda no início de cada partida. Ela oferece três bênçãos — duas positivas e uma amaldiçoada. As opções são sorteadas dos grupos abaixo.',
+  it: "Neow, la Madre della Resurrezione, attende all'inizio di ogni partita. Offre tre benedizioni — due positive e una maledetta. Le opzioni vengono estratte casualmente dai gruppi sottostanti.",
+  pl: 'Neow, Matka Zmartwychwstania, czeka na początku każdej rozgrywki. Oferuje trzy błogosławieństwa — dwa pozytywne i jedno przeklęte. Opcje są losowane z poniższych pul.',
+  ru: 'Неоу, Мать Воскрешения, ждёт в начале каждого забега. Она предлагает три благословения — два положительных и одно проклятое. Варианты выбираются случайно из пулов ниже.',
+  tr: 'Diriliş Anası Neow, her koşunun başında bekler. Üç kutsama sunar — iki olumlu ve bir lanetli. Seçenekler aşağıdaki havuzlardan rastgele çekilir.',
+  th: 'นีโอว์ มารดาแห่งการฟื้นคืนชีพ รอคอยที่จุดเริ่มต้นของแต่ละรอบ เธอมอบพร 3 ประการ — 2 พรเชิงบวกและ 1 พรต้องสาป ตัวเลือกจะถูกสุ่มจากกลุ่มด้านล่าง',
+};
+
+function buildLocalizedRuntimeReplacements(iso) {
+  const l = LOCALIZED_RUNTIME_VARS[iso] || LOCALIZED_RUNTIME_VARS.ja;
+  return {
+    '{Prize1}': 'X', '{Prize2}': 'X', '{Prize3}': 'X',
+    '{Heal}': 'X', '{Gold}': 'X', '{HpLoss}': 'X',
+    '{Potion}': l.potion, '{Relic}': l.relic,
+    '{RandomRelic}': l.randomRelic, '{RandomCard}': l.randomCard,
+    '{DrinkRandomPotion}': l.randomPotion,
+    '{Rarity}': '?', '{Type}': '?', '{EntrantNumber}': '?',
+    '{BottomRelicOwned}': l.yourRelic, '{BottomRelicNew}': l.newRelic,
+    '{MiddleRelicOwned}': l.yourRelic, '{MiddleRelicNew}': l.newRelic,
+    '{TopRelicOwned}': l.yourRelic, '{TopRelicNew}': l.newRelic,
+    '{pronounObject}': l.them, '{pronounSubject}': l.they,
+    '{pronounPossessive}': l.theirs, '{character}': l.character,
+  };
+}
+
+function resolveRuntimeLocalized(text, replacements) {
+  if (!text) return text;
+  for (const [k, v] of Object.entries(replacements)) {
+    if (text.includes(k)) text = text.replaceAll(k, v);
+  }
+  return text;
+}
+
+/**
+ * Core event parsing from raw localization data. Shared between English and all languages.
+ * Returns an array of parsed event objects with: id, name, description, choices (with locked, outcome), pages.
+ */
+function parseEventsFromRawLoc(localization, canonicalVars) {
+  // Discover all event IDs from the raw loc keys
+  const eventIds = new Set();
+  for (const key in localization) {
+    const dot = key.indexOf('.');
+    if (dot > 0) eventIds.add(key.substring(0, dot));
+  }
+
+  const results = [];
+  for (const eventId of eventIds) {
+    const titleKey = `${eventId}.title`;
+    const name = localization[titleKey] ? stripBBCode(localization[titleKey]) : undefined;
+
+    const initialDescKey = `${eventId}.pages.INITIAL.description`;
+    const initialDesc = localization[initialDescKey];
+    const description = initialDesc ? stripBBCode(initialDesc) : undefined;
+
+    // Find C# vars for this event
+    const vars = canonicalVars[eventId] || {};
+
+    // Parse choices from INITIAL page options
+    const optionNames = new Set();
+    for (const key in localization) {
+      const match = key.match(/^(.+)\.pages\.INITIAL\.options\.([^.]+)\.(title|description)$/);
+      if (match && match[1] === eventId) optionNames.add(match[2]);
+    }
+
+    // Separate locked keys from regular keys and merge by suffix
+    const sortedOptions = Array.from(optionNames).sort();
+    const lockedKeys = new Set(sortedOptions.filter(k => k.endsWith('_LOCKED')));
+    const regularKeys = sortedOptions.filter(k => !k.endsWith('_LOCKED'));
+
+    const choices = [];
+    for (const optionName of regularKeys) {
+      const title = localization[`${eventId}.pages.INITIAL.options.${optionName}.title`];
+      const desc = localization[`${eventId}.pages.INITIAL.options.${optionName}.description`];
+      if (title || desc) {
+        let cleanDesc = desc ? stripBBCode(desc) : '';
+        cleanDesc = substituteVars(cleanDesc, vars);
+        const choice = {
+          name: title ? stripBBCode(title) : undefined,
+          description: cleanDesc,
+          _optionKey: optionName,
+        };
+        // Check for corresponding _LOCKED key
+        const lockedKey = `${optionName}_LOCKED`;
+        if (lockedKeys.has(lockedKey)) {
+          const lockedDesc = localization[`${eventId}.pages.INITIAL.options.${lockedKey}.description`];
+          if (lockedDesc) choice.locked = stripBBCode(substituteVars(lockedDesc, vars));
+        }
+        choices.push(choice);
+      }
+    }
+
+    const mergedChoices = choices;
+
+    // Collect flavor pages and attach outcomes
+    const flavorPages = collectFlavorOnlyPages(localization, eventId, vars);
+    attachChoiceOutcomes(mergedChoices, flavorPages);
+
+    // Clean up internal keys
+    for (const c of mergedChoices) delete c._optionKey;
+
+    // Parse multi-page events (non-INITIAL pages that have their own options)
+    const pages = [];
+    const pagePattern = new RegExp(`^${eventId}\\.pages\\.([^.]+)\\.`);
+    const pageIds = new Set();
+    for (const key in localization) {
+      const m = key.match(pagePattern);
+      if (m && m[1] !== 'INITIAL' && m[1] !== 'DONE') pageIds.add(m[1]);
+    }
+    for (const pageId of pageIds) {
+      const hasOptions = Object.keys(localization).some(k =>
+        k.startsWith(`${eventId}.pages.${pageId}.options.`)
+      );
+      if (!hasOptions) continue;
+
+      const pageDesc = localization[`${eventId}.pages.${pageId}.description`];
+      const pageOptionNames = new Set();
+      for (const key in localization) {
+        const m = key.match(new RegExp(`^${eventId}\\.pages\\.${pageId}\\.options\\.([^.]+)\\.(title|description)$`));
+        if (m) pageOptionNames.add(m[1]);
+      }
+      const sortedPageOpts = Array.from(pageOptionNames).sort();
+      const lockedPageKeys = new Set(sortedPageOpts.filter(k => k.endsWith('_LOCKED')));
+      const regularPageKeys = sortedPageOpts.filter(k => !k.endsWith('_LOCKED'));
+      const pageChoices = [];
+      for (const optName of regularPageKeys) {
+        const t = localization[`${eventId}.pages.${pageId}.options.${optName}.title`];
+        const d = localization[`${eventId}.pages.${pageId}.options.${optName}.description`];
+        if (t) {
+          let cd = d ? stripBBCode(d) : '';
+          cd = substituteVars(cd, vars);
+          const pc = { name: stripBBCode(t), description: cd };
+          const lk = `${optName}_LOCKED`;
+          if (lockedPageKeys.has(lk)) {
+            const ld = localization[`${eventId}.pages.${pageId}.options.${lk}.description`];
+            if (ld) pc.locked = stripBBCode(substituteVars(ld, vars));
+          }
+          pageChoices.push(pc);
+        }
+      }
+      const mergedPageChoices = pageChoices;
+      if (mergedPageChoices.length > 0) {
+        pages.push({
+          id: pageId,
+          description: pageDesc ? substituteVars(stripBBCode(pageDesc), vars) : undefined,
+          choices: mergedPageChoices,
+        });
+      }
+    }
+
+    results.push({
+      id: eventId,
+      name,
+      description: description ? substituteVars(stripBBCode(description), vars) : undefined,
+      choices: mergedChoices.length > 0 ? mergedChoices : undefined,
+      pages: pages.length > 0 ? pages : undefined,
+    });
+  }
+
+  return results;
+}
+
+async function parseEventsLocalized() {
+  const baseEventsPath = path.join(OUTPUT_DIR, 'events.json');
+  const locOutputDir = path.join(OUTPUT_DIR, 'localization');
+  const csDir = path.join(DECOMPILED_DIR, 'MegaCrit.Sts2.Core.Models.Events');
+
+  let baseEvents;
+  try {
+    baseEvents = JSON.parse(fs.readFileSync(baseEventsPath, 'utf-8'));
+  } catch (err) {
+    console.error(`Failed to read base events.json: ${err.message}`);
+    process.exit(1);
+  }
+
+  const canonicalVars = parseCanonicalVars(csDir);
+
+  // Get available language directories
+  let langDirs;
+  try {
+    langDirs = fs.readdirSync(path.join(PCK_DIR, 'localization'), { withFileTypes: true })
+      .filter(d => d.isDirectory())
+      .map(d => d.name);
+  } catch {
+    console.warn('Warning: Could not read PCK localization directory');
+    return;
+  }
+
+  // Resolve unique iso→gameLang mappings
+  const chosen = new Map();
+  for (const dir of langDirs) {
+    const iso = LANG_MAP[dir];
+    if (!iso || dir === 'eng') continue;
+    if (!chosen.has(iso) || dir === 'esp') chosen.set(iso, dir);
+  }
+
+  for (const [iso, gameLang] of chosen) {
+    const rawPath = path.join(PCK_DIR, 'localization', gameLang, 'events.json');
+    if (!fs.existsSync(rawPath)) continue;
+
+    let rawLoc;
+    try {
+      rawLoc = JSON.parse(fs.readFileSync(rawPath, 'utf-8'));
+    } catch { continue; }
+
+    // Parse events from this language's raw loc using the shared core logic
+    const parsedEvents = parseEventsFromRawLoc(rawLoc, canonicalVars);
+    const parsedMap = new Map(parsedEvents.map(e => [e.id, e]));
+
+    // Build runtime replacements for this locale
+    const runtimeReplacements = buildLocalizedRuntimeReplacements(iso);
+
+    // Read existing localization file
+    const outPath = path.join(locOutputDir, `${iso}.json`);
+    let existing = {};
+    try {
+      existing = JSON.parse(fs.readFileSync(outPath, 'utf-8'));
+    } catch {}
+
+    const nextEvents = { ...(existing.events || {}) };
+
+    // Load localized entity data for StringVar resolution
+    const locRelics = existing.relics || {};
+    const locCards = existing.cards || {};
+    const locPotions = existing.potions || {};
+    const locEnchantments = existing.enchantments || {};
+
+    // Build English→localized entity name replacement function
+    function localizeEntityNames(text, refs) {
+      if (!text || !refs?.length) return text;
+      for (const ref of refs) {
+        const locData = ref.type === 'card' ? locCards[ref.id] :
+                       ref.type === 'relic' ? locRelics[ref.id] :
+                       ref.type === 'potion' ? locPotions[ref.id] :
+                       ref.type === 'enchantment' ? locEnchantments[ref.id] : null;
+        const locName = locData?.name;
+        if (locName && locName !== ref.name && text.includes(ref.name)) {
+          text = text.replaceAll(ref.name, locName);
+        }
+      }
+      return text;
+    }
+
+    for (const baseEvent of baseEvents) {
+      const parsed = parsedMap.get(baseEvent.id);
+      if (!parsed) continue;
+
+      const localized = {};
+
+      // Collect all references for this event (event-level + per-choice)
+      const allRefs = [...(baseEvent.references || [])];
+      for (const c of baseEvent.choices || []) {
+        if (c.references) allRefs.push(...c.references);
+      }
+      for (const p of baseEvent.pages || []) {
+        for (const c of p.choices || []) {
+          if (c.references) allRefs.push(...c.references);
+        }
+      }
+
+      // Name
+      if (parsed.name) localized.name = parsed.name;
+
+      // Description
+      if (parsed.description) {
+        localized.description = localizeEntityNames(resolveRuntimeLocalized(parsed.description, runtimeReplacements), allRefs);
+      }
+
+      // Choices — map onto base event's choice structure, only include differing fields
+      if (baseEvent.choices && parsed.choices) {
+        const locChoices = [];
+        // Match parsed choices to base choices by position
+        // The parsed choices include merged locked choices, same as English
+        for (let i = 0; i < baseEvent.choices.length; i++) {
+          const pc = parsed.choices[i];
+          if (!pc) { locChoices.push({}); continue; }
+
+          const entry = {};
+          if (pc.name) entry.name = localizeEntityNames(resolveRuntimeLocalized(pc.name, runtimeReplacements), allRefs);
+          if (pc.description) entry.description = localizeEntityNames(resolveRuntimeLocalized(pc.description, runtimeReplacements), allRefs);
+          if (pc.locked) entry.locked = localizeEntityNames(resolveRuntimeLocalized(pc.locked, runtimeReplacements), allRefs);
+          if (pc.outcome) entry.outcome = localizeEntityNames(resolveRuntimeLocalized(pc.outcome, runtimeReplacements), allRefs);
+          locChoices.push(entry);
+        }
+        if (locChoices.some(c => Object.keys(c).length > 0)) {
+          localized.choices = locChoices;
+        }
+      }
+
+      // Pages
+      if (baseEvent.pages && parsed.pages) {
+        // Explicit page-to-raw-loc mappings for manually overridden multi-page events.
+        // These events have curated English page structures that don't match the raw loc page IDs,
+        // so we map base page index → raw loc page ID for correct localization.
+        // 'INITIAL' means use parsed.choices (the INITIAL page options), anything else maps to parsed.pages by id.
+        const MANUAL_PAGE_MAPPINGS = {
+          COLOSSAL_FLOWER: ['INITIAL', 'REACH_DEEPER_1', 'REACH_DEEPER_2'],
+          ABYSSAL_BATHS: ['INITIAL', 'ALL'],
+          TINKER_TIME: ['CHOOSE_CARD_TYPE', 'CHOOSE_RIDER'],
+        };
+
+        const manualMapping = MANUAL_PAGE_MAPPINGS[baseEvent.id];
+        const parsedPageMap = new Map(parsed.pages.map(p => [p.id, p]));
+
+        const locPages = [];
+        for (let i = 0; i < baseEvent.pages.length; i++) {
+          const basePage = baseEvent.pages[i];
+
+          let bestPage = null;
+          if (manualMapping && manualMapping[i]) {
+            if (manualMapping[i] === 'INITIAL') {
+              // Use parsed.choices as a synthetic page
+              bestPage = { id: 'INITIAL', choices: parsed.choices || [], description: parsed.description };
+            } else {
+              bestPage = parsedPageMap.get(manualMapping[i]) || null;
+            }
+          }
+
+          if (!bestPage) {
+            // Heuristic matching: find best parsed page by choice count similarity
+            let bestScore = -1;
+            for (const pp of parsed.pages) {
+              if (!pp.choices || !basePage.choices) continue;
+              let score = 0;
+              const minLen = Math.min(pp.choices.length, basePage.choices.length);
+              for (let j = 0; j < minLen; j++) score++;
+              if (pp.choices.length === basePage.choices.length) score += 5;
+              if (score > bestScore) { bestScore = score; bestPage = pp; }
+            }
+          }
+
+          if (!bestPage) { locPages.push({}); continue; }
+
+          const page = {};
+          if (bestPage.description) page.description = localizeEntityNames(resolveRuntimeLocalized(bestPage.description, runtimeReplacements), allRefs);
+          if (bestPage.choices && basePage.choices) {
+            page.choices = basePage.choices.map((_, j) => {
+              const pc = bestPage.choices[j];
+              if (!pc) return {};
+              const entry = {};
+              if (pc.name) entry.name = localizeEntityNames(resolveRuntimeLocalized(pc.name, runtimeReplacements), allRefs);
+              if (pc.description) entry.description = localizeEntityNames(resolveRuntimeLocalized(pc.description, runtimeReplacements), allRefs);
+              if (pc.locked) entry.locked = localizeEntityNames(resolveRuntimeLocalized(pc.locked, runtimeReplacements), allRefs);
+              if (pc.outcome) entry.outcome = localizeEntityNames(resolveRuntimeLocalized(pc.outcome, runtimeReplacements), allRefs);
+              return entry;
+            });
+            if (!page.choices.some(c => Object.keys(c).length > 0)) delete page.choices;
+          }
+          locPages.push(page);
+        }
+        if (locPages.some(p => Object.keys(p).length > 0)) {
+          localized.pages = locPages;
+        }
+      }
+
+      // Resolve C# StringVars (entity names) using localized entity data
+      const vars = canonicalVars[baseEvent.id] || {};
+      for (const [varName, val] of Object.entries(vars)) {
+        if (typeof val === 'string') {
+          // This is an English entity name from parseCanonicalVars; try to find localized version
+          // Look through localized relics, cards, etc.
+          // The var is already substituted in text, so we need to find it via entity lookup
+          // This is handled by substituteVars in parseEventsFromRawLoc already
+        }
+      }
+
+      if (Object.keys(localized).length > 0) {
+        nextEvents[baseEvent.id] = localized;
+      }
+    }
+
+    // Ancient event names and epithets from ancients.json
+    const ancientsPath = path.join(PCK_DIR, 'localization', gameLang, 'ancients.json');
+    if (fs.existsSync(ancientsPath)) {
+      try {
+        const ancients = JSON.parse(fs.readFileSync(ancientsPath, 'utf-8'));
+        for (const baseEvent of baseEvents) {
+          if (baseEvent.type !== 'ancient') continue;
+          const titleKey = `${baseEvent.id}.title`;
+          const epithetKey = `${baseEvent.id}.epithet`;
+          if (ancients[titleKey] || ancients[epithetKey]) {
+            if (!nextEvents[baseEvent.id]) nextEvents[baseEvent.id] = {};
+            if (ancients[titleKey]) nextEvents[baseEvent.id].name = stripBBCode(ancients[titleKey]);
+            if (ancients[epithetKey]) nextEvents[baseEvent.id].epithet = stripBBCode(ancients[epithetKey]);
+          }
+        }
+      } catch {}
+    }
+
+    // NEOW: translated description and localized choices from relic data
+    const neowBase = baseEvents.find(e => e.id === 'NEOW');
+    if (neowBase) {
+      if (!nextEvents['NEOW']) nextEvents['NEOW'] = {};
+      if (NEOW_DESCRIPTIONS[iso]) {
+        nextEvents['NEOW'].description = NEOW_DESCRIPTIONS[iso];
+      }
+      if (neowBase.choices && neowBase.choices.length > 0) {
+        nextEvents['NEOW'].choices = neowBase.choices.map(c => {
+          const locRelic = locRelics[c.relic_id];
+          return {
+            name: locRelic?.name || c.name,
+            description: locRelic?.description || c.description,
+            relic_id: c.relic_id,
+            pool: c.pool,
+          };
+        });
+      }
+    }
+
+    // THE_FUTURE_OF_POTIONS: generate localized 3-rarity choices from game template
+    {
+      const locEventsPath = path.join(PCK_DIR, 'localization', gameLang, 'events.json');
+      const locUiPath = path.join(PCK_DIR, 'localization', gameLang, 'gameplay_ui.json');
+      try {
+        const locEv = JSON.parse(fs.readFileSync(locEventsPath, 'utf-8'));
+        const locUi = JSON.parse(fs.readFileSync(locUiPath, 'utf-8'));
+        const titleTpl = stripBBCode(locEv['THE_FUTURE_OF_POTIONS.pages.INITIAL.options.POTION.title']);
+        const descTpl = stripBBCode(locEv['THE_FUTURE_OF_POTIONS.pages.INITIAL.options.POTION.description']);
+        if (titleTpl && descTpl) {
+          const r = { Common: locUi['CARD_RARITY.COMMON'], Uncommon: locUi['CARD_RARITY.UNCOMMON'], Rare: locUi['CARD_RARITY.RARE'] };
+          const t = { Attack: locUi['CARD_TYPE.ATTACK'], Skill: locUi['CARD_TYPE.SKILL'], Power: locUi['CARD_TYPE.POWER'] };
+          const potionWord = runtimeReplacements['{Potion}'] || 'potion';
+          const typesByRarity = {
+            Common: `${t.Attack} / ${t.Skill}`,
+            Uncommon: `${t.Attack} / ${t.Skill} / ${t.Power}`,
+            Rare: `${t.Attack} / ${t.Skill} / ${t.Power}`,
+          };
+          if (!nextEvents['THE_FUTURE_OF_POTIONS']) nextEvents['THE_FUTURE_OF_POTIONS'] = {};
+          nextEvents['THE_FUTURE_OF_POTIONS'].choices = ['Common', 'Uncommon', 'Rare'].map(key => ({
+            name: titleTpl.replace('{Rarity}', r[key]),
+            description: descTpl.replace('{Potion}', potionWord).replace('{Rarity}', r[key]).replace('{Type}', typesByRarity[key]),
+          }));
+        }
+      } catch {}
+    }
+
+    existing.events = nextEvents;
+
+    // Replace runtime-only {Amount} in enchantments with "X" (matches English convention)
+    if (existing.enchantments) {
+      for (const ench of Object.values(existing.enchantments)) {
+        if (ench.description) ench.description = ench.description.replaceAll('{Amount}', 'X');
+      }
+    }
+
+    fs.writeFileSync(outPath, JSON.stringify(existing, null, 2) + '\n', 'utf-8');
+    console.log(`  [${iso}] Updated events in ${iso}.json`);
+  }
+
+  console.log('✓ Event localization complete');
+}
+
+// ─── CLI Entry Point ────────────────────────────────────────────────
+
+const args = process.argv.slice(2);
+if (args.includes('--localize')) {
+  parseEventsLocalized().catch(err => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+} else {
+  parseEvents().catch(err => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}

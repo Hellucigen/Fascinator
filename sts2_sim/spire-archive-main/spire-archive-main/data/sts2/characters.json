@@ -1,0 +1,109 @@
+[
+  {
+    "id": "IRONCLAD",
+    "name": "Ironclad",
+    "hp": 80,
+    "starting_gold": 99,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_IRONCLAD",
+      "STRIKE_IRONCLAD",
+      "STRIKE_IRONCLAD",
+      "STRIKE_IRONCLAD",
+      "STRIKE_IRONCLAD",
+      "DEFEND_IRONCLAD",
+      "DEFEND_IRONCLAD",
+      "DEFEND_IRONCLAD",
+      "DEFEND_IRONCLAD",
+      "BASH"
+    ],
+    "starting_relic": "BURNING_BLOOD",
+    "description": "The last soldier of the Ironclads.\nCrushes foes with sword and flame against his will."
+  },
+  {
+    "id": "SILENT",
+    "name": "Silent",
+    "hp": 70,
+    "starting_gold": 99,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_SILENT",
+      "STRIKE_SILENT",
+      "STRIKE_SILENT",
+      "STRIKE_SILENT",
+      "STRIKE_SILENT",
+      "DEFEND_SILENT",
+      "DEFEND_SILENT",
+      "DEFEND_SILENT",
+      "DEFEND_SILENT",
+      "DEFEND_SILENT",
+      "NEUTRALIZE",
+      "SURVIVOR"
+    ],
+    "starting_relic": "RING_OF_THE_SNAKE",
+    "description": "A huntress from outside the Spire.\nReady to stab and poison anything in her way."
+  },
+  {
+    "id": "REGENT",
+    "name": "Regent",
+    "hp": 75,
+    "starting_gold": 99,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_REGENT",
+      "STRIKE_REGENT",
+      "STRIKE_REGENT",
+      "STRIKE_REGENT",
+      "DEFEND_REGENT",
+      "DEFEND_REGENT",
+      "DEFEND_REGENT",
+      "DEFEND_REGENT",
+      "FALLING_STAR",
+      "VENERATE"
+    ],
+    "starting_relic": "DIVINE_RIGHT",
+    "description": "Heir to the Throne of Stars.\nWields cosmic powers but his minions do the work."
+  },
+  {
+    "id": "NECROBINDER",
+    "name": "Necrobinder",
+    "hp": 66,
+    "starting_gold": 99,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_NECROBINDER",
+      "STRIKE_NECROBINDER",
+      "STRIKE_NECROBINDER",
+      "STRIKE_NECROBINDER",
+      "DEFEND_NECROBINDER",
+      "DEFEND_NECROBINDER",
+      "DEFEND_NECROBINDER",
+      "DEFEND_NECROBINDER",
+      "BODYGUARD",
+      "UNLEASH"
+    ],
+    "starting_relic": "BOUND_PHYLACTERY",
+    "description": "A Spireborn lich who seeks revenge.\nCalls upon her trusty left hand, Osty, in combat."
+  },
+  {
+    "id": "DEFECT",
+    "name": "Defect",
+    "hp": 75,
+    "starting_gold": 99,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_DEFECT",
+      "STRIKE_DEFECT",
+      "STRIKE_DEFECT",
+      "STRIKE_DEFECT",
+      "DEFEND_DEFECT",
+      "DEFEND_DEFECT",
+      "DEFEND_DEFECT",
+      "DEFEND_DEFECT",
+      "ZAP",
+      "DUALCAST"
+    ],
+    "starting_relic": "CRACKED_CORE",
+    "description": "An automaton eternally modifying itself to survive.\nDeploys Orb technology when it must fight."
+  }
+]

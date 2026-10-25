@@ -1,0 +1,101 @@
+%% wlpeerj.cls — interface-compatible stand-in for the official PeerJ
+%% writeLaTeX/Overleaf class, implemented from the official template
+%% skeleton (PeerJ/模板.txt): \documentclass[fleqn,10pt,lineno]{wlpeerj},
+%% \author[n]{}, \affil[n]{}, \corrauthor[n]{}{}, \keywords{}, abstract
+%% environment BEFORE \begin{document}, \maketitle + \thispagestyle{empty},
+%% US Letter, 1in margins, Times, author-year citations (natbib/plainnat).
+%%
+%% WHY a stand-in: the official wlpeerj.cls could not be downloaded in this
+%% environment (Overleaf/GitHub/CTAN unreachable; raw.githubusercontent 404).
+%% AT SUBMISSION TIME, paste this file's body into the official Overleaf
+%% PeerJ template and delete this shim (see TODO_FOR_AUTHOR #1).
+%% Scientific content is unaffected by the class choice.
+%%
+%% Deviation from the template example: sections are NUMBERED here (the
+%% template shows \section*{Introduction}); this manuscript cross-references
+%% section numbers throughout, so numbering is required for comprehension.
+%% PeerJ explicitly permits field-appropriate sections/numbering.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{wlpeerj}[2026-10-06 v1.0 interface-compatible PeerJ shim]
+
+\newif\if@linenumbers\@linenumbersfalse
+\DeclareOption{lineno}{\@linenumberstrue}
+\DeclareOption{fleqn}{\PassOptionsToClass{fleqn}{article}}
+\DeclareOption{10pt}{\PassOptionsToClass{10pt}{article}}
+\DeclareOption{11pt}{\PassOptionsToClass{11pt}{article}}
+\DeclareOption{12pt}{\PassOptionsToClass{12pt}{article}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ExecuteOptions{letterpaper,10pt}
+\ProcessOptions\relax
+
+\LoadClass{article}
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{mathptmx}% Times-compatible text + math
+\RequirePackage[numbers,sort&compress,authoryear]{natbib}
+\bibliographystyle{plainnat}
+\RequirePackage{lineno}
+
+% ---------------- author / affiliation / corresponding-author --------------
+\newcommand{\keywords}[1]{\def\@keywords{#1}}
+\def\@keywords{}
+\newcount\@wlaffilcount\@wlaffilcount=0
+\newtoks\@wlauthorstoks
+\def\@wlauthors{}
+\newtoks\@wlaffiltoks
+\def\@wlaffils{}
+\def\@wlcorrauthor{}
+
+\renewcommand{\author}[2][]{%
+  \edef\@tempa{\the\@wlauthorstoks}%
+  \ifx\@tempa\@empty\def\@nextsep{}\else\def\@nextsep{, }%
+  \fi
+  \if\relax\detokenize{#1}\relax
+    \@wlauthorstoks=\expandafter{\@tempa\@nextsep #2}%
+  \else
+    \@wlauthorstoks=\expandafter{\@tempa\@nextsep #2\textsuperscript{#1}}%
+  \fi}
+
+\newcommand{\affil}[2][]{%
+  \advance\@wlaffilcount by 1\relax
+  \edef\@tempa{\the\@wlaffiltoks}%
+  \if\relax\detokenize{#1}\relax
+    \@wlaffiltoks=\expandafter{\@tempa\par #2}%
+  \else
+    \@wlaffiltoks=\expandafter{\@tempa\par \textsuperscript{#1}~#2}%
+  \fi}
+
+\newcommand{\corrauthor}[3][]{%
+  \def\@wlcorrauthor{\textbf{Corresponding author:}\newline
+    \hspace*{1em}#2\if\relax\detokenize{#1}\relax\else\textsuperscript{#1}\fi
+    \newline\hspace*{1em}\texttt{#3}}}
+
+% ---------------- abstract stored before \begin{document} ------------------
+% lrbox does not survive the preamble; grab the body with `environ` and
+% store it in \@abstractcontent, which \maketitle prints.
+\RequirePackage{environ}
+\long\def\@abstractcontent{}
+\RenewEnviron{abstract}
+  {\expandafter\long\expandafter\gdef\expandafter\@abstractcontent
+     \expandafter{\BODY}}
+
+\renewcommand{\maketitle}{%
+  \begin{center}%
+    {\large\bfseries\@title\par}%
+    \vspace{1.5ex}%
+    {\the\@wlauthorstoks\par}%
+    \vspace{1ex}%
+    {\small\the\@wlaffiltoks\par}%
+    \ifx\@wlcorrauthor\@empty\else\vspace{1ex}\small\@wlcorrauthor\par\fi
+    \ifx\@keywords\@empty\else\vspace{1ex}\small\textbf{Keywords:}
+      \@keywords\par\fi
+  \end{center}%
+  \ifx\@abstractcontent\@empty\else
+    \vspace{2ex}%
+    {\small\begin{center}\textbf{ABSTRACT}\end{center}%
+     \noindent\@abstractcontent\par}%
+  \fi
+  \thispagestyle{empty}\global\@topnum\z@%
+  \if@linenumbers\linenumbers\fi
+  \vspace{2ex}}
+
+\AtBeginDocument{\flushbottom}

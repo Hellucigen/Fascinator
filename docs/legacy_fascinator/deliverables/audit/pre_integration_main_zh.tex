@@ -1,0 +1,424 @@
+\documentclass[10pt,a4paper]{ctexart}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+\usepackage{caption}
+\sloppy
+\setlength{\emergencystretch}{3em}
+\captionsetup{font=small,labelfont=bf}
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{2pt}
+
+\title{\bfseries 从具身经历到可复用的关系知识：\\
+可审计的统一图谱架构与基于激活访问的\\
+预注册边界分析}
+\author{颜凯临\\ \small 计算机科学系\\ \small \texttt{2024015943@st.cupk.edu.cn}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+具身智能体积累经历的速度远快于巩固经历的速度：行动史停留为日志，而未成为可复用的知识。本文提出认知架构原型 \textsc{Fascinator}（FAS）：语义、情景与程序性内容承载于同一张分型加权图谱，经历经单一的证据加权归因管线写回为关系结构。本文的贡献是一套可审计的记忆架构，加上一个预注册评估协议，用以界定传播激活——该架构的访问机制——何时比平坦检索（flat retrieval）更有价值。在信息不对称的信标任务中，持久图谱上下文取得 20/20 任务达成，而无上下文基线为 0/20（McNemar $p{=}2\times10^{-6}$）；无激活的嵌入检索对照完整复现该收益（20/20）。因此，持久关系复用得到支持，而激活的必要性未得支持。预注册机制战役（$4\times50$ 配对种子）拒绝了激活相对闭式平坦基线的增量价值（$\Delta$JCG${<}0$，Holm $p{=}1.5\times10^{-9}$，0/200 反超），并分离出唯一例外：多输入经共享枢纽汇聚（FAS 30/30 \emph{vs} flat 0/30）。84 格参数扫描刻画了该例外——FAS 严格占优 11 格（弱边权、浅路径），平坦检索严格占优 9 格（强边权、深路径），其余 64 格平手。全部否定结果、两次装配审计与完整协议均如实报告。
+\end{abstract}
+
+\section{引言}
+\label{sec:intro}
+
+具身智能体只要行动几分钟，就会产生一条经历流：动作、观测、成功、失败。这条流的去向区分出两类系统。一类系统中，经历以日志形式累积——可用于反思提示或检索增强，但从未被重组为能改变未来行为的结构。另一类系统中，经历被巩固：具体情节让位于一般性关系知识，后者持久存在、在相关情境中被再激活、并可测地参与后续决策。无论系统核心是否包含大语言模型（LLM），日志与巩固之间的鸿沟都是长生命周期智能体的核心工程问题。
+
+既有立场是熟悉的。ACT-R~\citep{anderson2004integrated} 与 Soar~\citep{laird2012soar} 等认知架构通过特定机制（组块、强化）巩固经历，但记忆存储在表征上相互分离。基于 LLM 的智能体~\citep{yao2023react,park2023generative,shinn2023reflexion}通常把经历存为文本或向量并经提示复用；巩固被委托给模型，且不可审计。图谱提供了一条中间路线：若情景、语义与程序性内容共享一张显式分型的图谱，巩固就成为一等公民式的、可审计的操作，而非提示的副作用。
+
+本文报告围绕该思想构建的 Python 原型 \textsc{Fascinator}（FAS）：一张\emph{统一认知图谱}，其上传播激活~\citep{collins1975spreading}驱动注意与候选生成；一条归因管线把经历写回为分型关系结构；账本与事件框架通道把存储知识路由进行为。我们全程刻意保持两个命题分离：
+
+\begin{itemize}
+\item[(a)] \textbf{持久关系复用具有行为价值。}在信息不对称之下——决策所需知识只存在于记忆而不在当前观测中——由经历构建的图谱上下文改变行为（信标任务：20/20 达成 vs 无上下文 0/20）。
+\item[(b)] \textbf{激活的必要性未获支持。}同一收益可被无激活检索完整复现（D-flat，20/20），且预注册机制战役在全部四个确认性条件下拒绝激活相对平坦检索的增量价值。
+\end{itemize}
+
+贡献如下：
+\begin{enumerate}
+\item \textbf{可审计的统一图谱记忆架构。}语义、情景与程序性内容共存于一张分型加权图谱；经历只经单一证据加权写回通道成为新关系结构。隔离实验验证了该通道（相同经历流下 0 vs 13 个习得节点）、跨情境再激活（4/12 vs 0/8 vs 0/0 标记节点），以及两个可测地翻转行动选择的消费者通道（第~\ref{sec:arch}--\ref{sec:res-persist} 节）。
+\item \textbf{带如实报告负结果的预注册评估协议。}检验传播激活是否优于平坦检索的战役在设计、种子与提交完成后才执行；其主假设被拒绝（全部四个预注册条件下 $\Delta$JCG${<}0$，Holm $p{=}1.5\times10^{-9}$，0/200 反超），我们将其作为主要结果报告（第~\ref{sec:res-boundary} 节）。
+\item \textbf{基于激活访问的边界分析。}唯一系统性例外——多输入经共享枢纽汇聚（30/30 vs 0/30）——由边权、输入数与路径深度的 84 格参数扫描界定，并辅以关系方向语义的结构性诊断（第~\ref{sec:res-boundary}、\ref{sec:discussion} 节）。
+\end{enumerate}
+
+本文全部数字均程序化提取自归档运行输出；证据标准、确定性沙盒协议与统计方法见第~\ref{sec:method} 节。内部代号、分族溯源与各实验完整数据见补充材料。
+
+\section{相关工作}
+\label{sec:related}
+
+\textbf{认知架构。}ACT-R~\citep{anderson2004integrated} 与 Soar~\citep{laird2012soar} 将巩固视为分离记忆存储上的机制专用学习；OpenCog~\citep{hart2008opencog} 与本文共享原子空间的动机，但面向通用智能而非具身经历的可审计巩固。情景记忆理论~\citep{tulving1983elements,baddeley2000episodic}与事件分割~\citep{zacks2007event,schacter2007remembering}构成本文事件框架通道与归因窗口的动机来源。传播激活作为访问机制可追溯至~\citet{collins1975spreading}；注意与工作集选择关联~\citet{itti2001computational,posner1980orienting,cowan2001magical}。
+
+\textbf{LLM 智能体记忆。}ReAct~\citep{yao2023react}、生成式智能体~\citep{park2023generative}、Reflexion~\citep{shinn2023reflexion} 与 RAG~\citep{lewis2020rag} 经提示或向量检索复用经历；巩固质量不可独立控制、不可审计。FAS 只把 LLM 用作预算化接口，从不作为记忆（第~\ref{sec:arch-llm} 节）；本文研究的知识通道在 LLM 被硬禁用的情况下运行。
+
+\textbf{与本文贡献的关系。}这些路线均未报告“激活式访问在同一结构上是否胜过平坦检索”的预注册检验。对该问题的否定结果，以及界定例外的参数扫描，是本文方法学核心。
+
+\section{Fascinator 架构}
+\label{sec:arch}
+
+我们按内容优先呈现系统：图谱、激活、写回、持久化与消费者，然后是 LLM 边界。
+
+\subsection{统一认知图谱}
+\label{sec:arch-graph}
+FAS 维护一张有向、分型、加权图谱 $G=(V,E,W)$。节点带标记记忆角色的标签 $\tau_v$（七类——物品、配方、动作经历、变化、事件、意图、缺口——共享单一命名空间）、基础权重 $w_v$、时间戳与运行时激活 $a_v\in\mathbb{R}$；每条边 $e=(u,v,\rho,w)$ 带关系类型 $\rho$（八类：produces、belongs-to、drops、needs、needs-tool、leads-to、involves、results）与静态权重 $w\in[-2,2]$；负权重表示抑制。\emph{不存在独立的情景、技能或意图存储}：目标、事件、动作模式与情感都是同一张图谱的节点，仅以标签与关系类型区分（图~\ref{fig:ontology}）。图谱旁只有两个辅助层——短期情景缓冲（容量 100，用于短程整合）与统计时间线（账本）——它们从不构建结构：唯一的结构写入通道是第~\ref{sec:arch-wb} 节的归因管线。空间拆分仅服务于生命周期管理，不隔离拓扑。
+
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  sp/.style={draw, rounded corners, align=center, inner sep=3.5pt, font=\scriptsize},
+  sem/.style={sp, fill=blue!8}, epi/.style={sp, fill=orange!12},
+  proc/.style={sp, fill=green!10}, selfst/.style={sp, fill=purple!8}, emo/.style={sp, fill=red!8},
+  edgeT/.style={font=\tiny, fill=white, inner sep=1pt},
+  typed/.style={-{Latex}, semithick, gray!70}, neg/.style={-{Latex}, thick, red!70, dashed},
+  cross/.style={-{Latex}, semithick, blue!60!black},
+  corridor/.style={-{Latex}, semithick, blue!60!black, rounded corners=8pt}]
+\node[sp, minimum width=4.8cm, minimum height=1.35cm, fill=gray!6, font=\footnotesize, draw=gray!60]
+  (G) at (0,0) {Unified cognitive graph $G{=}(V,E,W)$\\ \scriptsize single namespace; shared labels \& relation types\\ \scriptsize \emph{cross-space links are the core capability}};
+\node[sem] (rc) at (-4.3,3.4) {recipe\\ \texttt{oak\_planks}};
+\node[sem] (it) at (-4.4,2.3) {item\\ \texttt{oak\_log}, \texttt{stick}};
+\node[sem] (ch) at (-5.8,1.0) {change\\ \texttt{inventory:oak\_log:}\\ \texttt{count\_increased}};
+\node[epi] (ev) at (1.7,3.1) {event\\ \texttt{tree disappeared}};
+\node[epi] (ae) at (4.9,1.9) {action experience\\ \texttt{gather(oak\_log)}};
+\node[proc] (ac) at (3.0,-2.5) {action skill\\ \texttt{gather\_resource},\\ \texttt{craft\_item}};
+\node[selfst] (ci) at (-1.5,-3.0) {intention/gap\\ \texttt{CI\_*}, \texttt{gap:use}};
+\node[emo] (em) at (-3.9,-3.2) {affect\\ arousal, stress};
+\draw[typed] (it) -- node[edgeT, pos=0.30, right]{belongs} (rc);
+\draw[corridor] (rc.north) -- (-4.3,4.15) -- (3.25,4.15) -- (3.25,-1.55) -- (ac.north);
+\node[edgeT] at (0.2,4.32){needs};
+\draw[corridor] (ae.south) -- (4.9,-4.15) -- (-5.2,-4.15) -- (ch.south);
+\node[edgeT] at (-0.4,-4.45){leads-to $w{=}conf$};
+\draw[corridor] (it.west) -- (-7.35,2.3) -- (-7.35,-2.3) -- (ac.west);
+\node[edgeT] at (-4.0,-2.08){drops};
+\draw[cross] (ci) -- node[edgeT, pos=0.3, left]{points-to} (it);
+\draw[cross] (ev) -- node[edgeT, pos=0.55, above]{involves} (it);
+\draw[cross] (ae) -- node[edgeT, pos=0.72, below]{involves} (it);
+\draw[neg] (ev) to[bend left=15] (it);
+\node[edgeT, text=red!70] at (-1.3,3.42) {suppress $-w$};
+\draw[cross] (em.north) -- node[edgeT, pos=0.45, left]{modulates} (-1.9,-0.72);
+\draw[cross] (ac.north) -- node[edgeT, pos=0.5, right]{skill} (2.35,-0.72);
+\begin{scope}[on background layer]
+\node[draw=blue!30, rounded corners, fit=(it)(rc)(ch), inner sep=3pt] (fsem) {};
+\node[draw=orange!40, rounded corners, fit=(ev)(ae), inner sep=3pt] (fepi) {};
+\node[draw=green!50, rounded corners, fit=(ac), inner sep=3pt] (fproc) {};
+\node[draw=purple!40, rounded corners, fit=(ci), inner sep=3pt] (fself) {};
+\end{scope}
+\node[font=\scriptsize, blue!60!black, anchor=north east] at ([xshift=-2pt, yshift=-3pt]fsem.south east) {semantic};
+\node[font=\scriptsize, orange!70!black, anchor=north] at ([yshift=-3pt]fepi.south) {episodic space};
+\node[font=\scriptsize, green!50!black, anchor=north] at ([yshift=-3pt]fproc.south) {procedural space};
+\node[font=\scriptsize, purple!60!black, anchor=north] at ([yshift=-3pt]fself.south) {self/intention space};
+\end{tikzpicture}}%
+\caption{统一图谱本体（示意）。七个标签类与八个关系类型共享单一命名空间；不存在独立的情景、技能或意图存储。跨空间链接（蓝色、走廊绕行）是核心能力：从 \texttt{action experience} 指向 \texttt{change} 的 \texttt{leads-to} 边（权重 = 置信度）是写回管线的产物（第~\ref{sec:arch-wb} 节）；\texttt{gap} 指向实体以注入激活；\texttt{event} 携带负极性槽边（红色虚线）抑制实体（第~\ref{sec:arch-persist} 节）。}
+\label{fig:ontology}
+\end{figure}
+
+\subsection{认知状态与传播激活}
+\label{sec:arch-act}
+时刻 $t$ 的认知状态是激活场 $\mathbf{a}(t)$。输入（观测、意图、缺口注入）向对应节点存入初始能量；每一步，每个活跃节点 $u$ 向其邻居发射
+\begin{equation}
+\Delta a_{u\rightarrow v}(t) \;=\; a_u(t)\,\cdot\, \tilde w_{uv}\,\cdot\, \beta_{\mathrm{cat}}(\rho)\,\cdot\, g_{\mathrm{rel}}(\rho)\,\Big/\; \textstyle\sum_{v'} \max\big(\tilde w_{uv'},0\big),
+\label{eq:spread}
+\end{equation}
+随后衰减 $a_v(t{+}1) = (1-\lambda)\,a_v(t) + \sum_u \Delta a_{u\rightarrow v}(t)$，并受每空间上限约束（情景空间 $a_{\max}{=}3$，全局默认 $5$）。发射遵循“发射即转移”策略：每步发射量（默认 1.0）从自身扣除；源节点豁免。这是短记忆的工程选择，不是能量守恒定律。负权边贡献抑制流；仅当发射节点的正权总量大于零时才发出抑制。发射预算受调制增益缩放
+\begin{equation}
+g \;=\; \mathrm{clip}\big(1 + 0.3\,\mathrm{arousal} - 0.15\,\mathrm{stress},\; 0.7,\; 1.6\big),
+\label{eq:mod}
+\end{equation}
+其中 arousal 由情感节点激活导出，stress 来自慢变量基线。注意即场的 Top-$k$，构成行动选择的输入。图~\ref{fig:act-schematic} 将激活式访问\emph{与其平坦检索对照并排}示意；示意图只建立直觉——全部结论由第~\ref{sec:res-boundary} 节的实验承载。
+
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  nd/.style={circle, draw, minimum size=10mm, inner sep=0pt, align=center, font=\scriptsize},
+  hub/.style={nd, fill=purple!25}, hot/.style={nd, fill=red!50},
+  warm/.style={nd, fill=orange!40}, cool/.style={nd, fill=blue!12},
+  annot/.style={align=center, text=black!80, font=\scriptsize},
+  flow/.style={-{Latex}, semithick}, flat/.style={-{Latex}, thick, gray!50, dashed},
+  inib/.style={-{Latex}, thick, red!70, dashed}]
+\node[hot] (a) at (0,2.2) {gap A\\ demand 1}; \node[warm] (x) at (2.0,1.8) {entity a};
+\node[hot] (b) at (0,0.0) {gap B\\ demand 2}; \node[warm] (y) at (2.0,0.4) {entity b};
+\node[hub] (P) at (3.7,1.1) {shared\\ hub P};
+\node[cool] (T) at (5.9,2.0) {target\\ oak\_log};
+\node[cool] (rp) at (5.9,0.2) {recipe\\ planks};
+\node[cool, draw=gray!60, fill=gray!12] (ev) at (7.7,2.9) {event\\ failure};
+\draw[flow] (a) -- (x); \draw[flow] (x) -- (P);
+\draw[flow] (b) -- (y); \draw[flow] (y) -- (P);
+\draw[flow] (P) -- (rp); \draw[flow] (rp) -- (T);
+\draw[inib] (ev) -- (T);
+\draw[flat] (-1.35,1.75) -- (-1.35,-0.55) -- (2.5,-0.85) -- (5.35,-0.25);
+\node[annot, anchor=east] at (-1.55,1.85) {flat: nearest};
+\draw[flat] (0.62,-0.45) -- (2.62,-0.45) -- (4.35,-0.45) -- (5.35,1.60) node[annot, pos=0.20, above, sloped]{Top-1};
+\node[annot, align=left, anchor=west] at (0.15,-2.05) {
+  Diffusion paths: multi-source input converges via relational structure on hub $P$---downstream convergence (Section~5.3):\\[-0.5mm]
+  \quad $\bullet$ mechanism runs: JCG${>}0$ on 200/200 paired seeds; $\ge$2-input MRR@1${=}1.0$ (hypothesis group)\\[-0.5mm]
+  \quad $\bullet$ only systematic positive difference: shared-hub topology, FAS 30/30 \emph{vs} flat 0/30 (single weight $w{=}0.5$ design)\\[-0.5mm]
+  Flat path: nearest-neighbor retrieval reaches the target directly---sufficient for ordinary retrieval:\\[-0.5mm]
+  \quad $\bullet$ $\Delta$JCG${<}0$ under all 4 preregistered conditions (Holm $p{=}1.5\times10^{-9}$, 0/200 reversals)\\[-0.5mm]
+  \quad $\bullet$ wider spread dilutes targets ($\rho{=}{-}0.445$, ${-}0.656$); \emph{not drawn as diffusion-always-wins}.};
+\end{tikzpicture}}%
+\caption{传播激活与平坦检索并排示意。图中每一数字论断均来自第~5.3 节的归档实验；示意图只建立直觉。}
+\label{fig:act-schematic}
+\end{figure}
+
+\subsection{经历归因与写回}
+\label{sec:arch-wb}
+动作落定后，其回执与观测的归因窗口（环境时间 8--120\,s）构成候选动作--观测对。重复对聚合为携带支持数 $s$、反证数 $c$ 与 Laplace 置信度 $\mathrm{conf}=s/(s+c+2)$ 的假设。当 $s\ge 5$ 且 $\mathrm{conf}\ge 0.80$ 时，假设被\emph{晋升}为图谱上的分型关系：从动作节点 $\mathtt{action:}A(x)$ 指向变化节点 $\mathtt{change:}O$ 的 \texttt{leads-to} 边（权重 $w=\mathrm{conf}$），
+\begin{equation}
+\mathtt{action:}A(x) \;\longrightarrow\; \mathtt{change:}O \qquad (\texttt{leads-to},\; w{=}\mathrm{conf}),
+\label{eq:wb}
+\end{equation}
+且两端点被标记激活。这就是经历成为\emph{新关系结构}的方式：\texttt{action:}/\texttt{change:} 节点只作为该管线的产物存在。同一账本维护逐动作成功率记忆，作为先验加成（$\pm0.05$）被行动选择消费——这是经历到行为的第二条统计路径。第三条通道把离散事件编码为带极性槽边的事件框架节点（已实现、生产默认关闭；本文显式装配之，第~\ref{sec:res-persist} 节）。算法见算法~\ref{alg:wb}。
+
+\begin{algorithm}[t]
+\caption{归因--写回：经历到关系知识}\label{alg:wb}
+\begin{algorithmic}[1]
+\Require 窗口内动作--观测流 $(a_t,o_t)$；账本 $\mathcal{L}$；图谱 $G$
+\State 对每个动作 $A_t$，将窗口内观测 $O_k$ 与其落定关联为候选对 $(A_t,O_k)$
+\State 按动作签名聚合：$s\mathrel{+}=1$（正结果），$c\mathrel{+}=1$（反证）
+\State $\mathrm{conf}=s/(s+c+2)$（Laplace 平滑）
+\If{$s \ge 5$ 且 $\mathrm{conf} \ge 0.80$}
+  \State 若不存在则创建 \texttt{action:}A、\texttt{change:}O 节点
+  \State 写入边 \texttt{action} $\longrightarrow$ \texttt{change}，关系 \texttt{leads-to}，权重 $w{=}\mathrm{conf}$；两端标记激活
+\EndIf
+\State 账本并行维护逐动作成功先验 $\mathcal{L}.\mathrm{prior}(\mathrm{sig}(A))$ 供行动选择消费
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{持久化与消费者}
+\label{sec:arch-persist}
+知识按构造跨情节边界存续（图谱被继承而非重置）；持久化携带两种载荷：\emph{结构}与\emph{激活值}一同序列化到下一情节，因此“跨情境再激活”是可测事件。第~\ref{sec:res-persist} 节测得：再激活（$a\ge0.05$）差异恰好由连接共享实体的情景结构承载（4/12 vs 0/8 vs 0/0）。快照轮换与收缩保护（拒绝用空图覆盖运行中图谱）是数据完整性机制，不是认知内容。
+
+四类消费者使用写回产生的知识。\textbf{(a) 账本通道（生产）}：候选动作分数按账本成功先验重加权（成功 $+0.05$ / 失败 $-0.05$）。\textbf{(b) 情感/神经调制（生产，每 tick）}：arousal 与 stress 标量经式~\ref{eq:mod} 调制发射增益。\textbf{(c) 持续意图与回放门控（生产）}：持续认知循环每 2.5\,s 运行图动力学；意图生命周期与空闲门控的离线经历回放属于此层。\textbf{(d) 事件框架（实验装配，生产默认关闭）}：负性事件经极性槽边抑制实体激活；代码已生产化加固但默认禁用，生产中不会有任何内容落到图谱上；全部行为证据来自实验装配。\emph{实验层}（沙盒装配与第~\ref{sec:method-routing} 节的 LLM 决策头）从不进入生产默认路径；运行记录器只观测——从不修改认知行为。
+
+\subsection{作为预算化接口的 LLM}
+\label{sec:arch-llm}
+FAS 将 LLM 用于语言生成、非结构化输入解释与（低频）反思；从不把 LLM 用作记忆，也不作为本文所研究知识的来源。全部主体实验在导入期守卫下硬禁用 LLM（零 LLM 契约；任何调用即报错）——唯一例外是显式标注的决策头实验（第~\ref{sec:method-routing} 节）。
+
+\subsection{经历到知识的闭环}
+\label{sec:arch-loop}
+图~\ref{fig:loop} 给出完整概念闭环。经历被分割为时间有序的动作--观测片段（归因窗口），重复模式向候选关系积累证据，经支持数与置信度检查后写回为持久图谱结构。新输入经传播激活在图上展开，形成带 Top-$k$ 焦点的任务相关认知状态；消费者把该状态送入行动选择；行动改变环境，产生新经历。语言生成、解释与反思是闭环中仅有的 LLM 调用（第~\ref{sec:arch-llm} 节）：LLM 是消费者/决策组件，不是记忆。
+
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  loop/.style={draw, rounded corners, align=center, inner sep=4pt, font=\footnotesize},
+  scaff/.style={draw, rounded corners, align=center, inner sep=3pt, font=\scriptsize, fill=gray!12, dashed},
+  flow/.style={-{Latex}, semithick},
+  node distance=3.5mm and 6mm]
+\node[loop] (env) {embodied interaction\\ \scriptsize \strut actions, observations\strut};
+\node[loop, right=of env] (per) {perception intake\\ \scriptsize \strut ingestion, segmentation\strut};
+\node[loop, right=of per] (epi) {action--observation fragments\\ \scriptsize \strut attribution window 8--120 s\strut};
+\node[loop, right=of epi] (ev) {evidence accumulation\\ \scriptsize \strut support / contra / confidence\strut};
+\node[loop, right=of ev] (wb) {relational write-back\\ \scriptsize \strut promotion to graph + mark-active\strut};
+\node[loop, below=of wb] (graph) {unified cognitive graph $G{=}(V,E,W)$\\ \scriptsize \strut structure + activation values persist\strut};
+\node[loop, below=of graph] (act) {spreading activation\\ \scriptsize \strut decay, gain, suppression, Top-$k$\strut};
+\node[loop, below=of act] (cs) {task-relevant cognitive state\\ \scriptsize \strut working set of relevant knowledge\strut};
+\node[loop, below=of cs] (beh) {behavior / action selection\\ \scriptsize \strut consumers: ledger, events, affect\strut};
+\node[scaff, below left=6mm and 2mm of ev] (s1) {scaffolding: recipe/block tables};
+\node[scaff, left=of cs] (s2) {consumers: reward ledger, trial ledger,\\ event framework (production default off)};
+\draw[flow] (env) -- (per);
+\draw[flow] (per) -- (epi);
+\draw[flow] (epi) -- (ev);
+\draw[flow] (ev) -- (wb);
+\draw[flow] (wb) -- (graph);
+\draw[flow] (graph) -- (act);
+\draw[flow] (act) -- (cs);
+\draw[flow] (cs) -- (beh);
+\draw[flow] (beh) -| ([xshift=-6mm]env.south) -- (env.south);
+\draw[flow] (s1) -| (ev);
+\draw[flow] (s2) -- ([yshift=-2.5pt]cs.west);
+\end{tikzpicture}}%
+\caption{FAS 概念闭环：从具身交互到可复用关系知识，再经激活与消费者回到行为。虚线块为支架（机制表；零先验结果刻画其必要性，第~\ref{sec:res-system} 节）与消费通道。LLM 在闭环中的位置只有语言生成/解释/反思（第~\ref{sec:arch-llm} 节）。}
+\label{fig:loop}
+\end{figure}
+
+\section{评估协议}
+\label{sec:method}
+
+\subsection{环境、确定性，以及“配对种子”的含义}
+\label{sec:method-env}
+全部实验运行于确定性 \texttt{SandboxWorld}：一个离散 Minecraft 风格网格世界，带模拟时钟（16\,s/tick）、配方与方块表，以及替代真实 Minecraft LAN 桥的伪设备桥。智能体栈为生产栈——知识图谱、扩散引擎、持续认知组件、自主循环、动作管理器与真实技能层——LLM 由导入期守卫禁用。一个长链条件使用已记录的简化（沙盒冶炼直接落入库存）；依赖该简化的结果均予标注。
+
+每个条件以固定种子实例化；对零 LLM 主体实验，同一种子逐字节复现轨迹（经重跑验证）。LLM 决策头族见第~\ref{sec:res-rerun} 节的确定性重跑。\emph{配对种子}为同一条件实例化不同的随机实例并支持跨实例配对统计；由于世界是合成拓扑的确定性沙盒，配对种子\emph{不}采样真实世界方差。本文的统计检验因此量化的是差异方向跨实例的一致性，而非总体效应量。样本量：主体实验 $n{=}5$ 种子；机制战役每条件 $n{=}50$ 配对种子；信标与路由 $n{=}20$ 配对种子；关系方向诊断 $n{=}10$ 配对种子。每次运行由运行记录器归档（元数据、事件流、起止图谱快照、指标）到内容寻址目录；归档普查见补充材料（表 S2）。
+
+\subsection{预注册与证据记账}
+\label{sec:method-prereg}
+机制战役的假设、拓扑、种子库、指标与检验方案在执行前固定并提交；偏差（一次解盲前的装配修复）如实报告。证据在三个层级上报告——\emph{表征}（习得节点/边的存在与再激活）、\emph{机制}（激活轨迹、权重变化、账本计数）、\emph{行为}（完成 tick、动作数、首动作身份）——并归入四个协议层之一（生产默认；生产机制的装配验证；参考模型上的机制隔离层；实验层 harness）。表~\ref{tab:evidence} 合并了两种尺度。一般能力主张（“L4”）在任何地方均不作出。本文使用“因果”一词时，指由时间有序的动作--结果观测与证据权重推出的规则性规律——非介入式识别；全文未做任何 do 式检验。
+
+\begin{table}[t]
+\centering\small
+\caption{证据等级 $\times$ 协议层（合并尺度；用于归属本文每一条主张）。}
+\label{tab:evidence}
+\begin{tabular}{L{3.2cm}L{4.4cm}L{6.4cm}}
+\toprule
+ & \textbf{主张所处等级} & \textbf{证据来源层} \\
+\midrule
+L1 表征 & 习得结构存在并再激活 & 生产默认路径（零 LLM 主体行为） \\
+L2 机制 & 可测的激活/账本动力学 & 生产机制的实验装配验证；机制隔离层（由生产语义蒸馏的参考模型） \\
+L3 行为 & 存储知识改变行动选择 & 装配后的消费者通道；决策头 harness（实验层，从不接入生产） \\
+L4 一般能力 & --- & \emph{本文任何地方均不主张} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{机制战役协议（预注册）}
+\label{sec:method-civ}
+核心增量价值战役研究传播激活相对平坦检索的\emph{增量}价值。使用四个合成主体拓扑（3 输入/100 节点/25\% 密度；3 输入/300 节点/50\%；5 输入/300 节点/50\%；5 输入/1000 节点/75\%）。比较四个候选生成器：\textbf{B1} 直接注入（无图）；\textbf{B2} \emph{平坦路径乘积}——同一结构上检索的闭式近似（对每个输入--候选对取最优简单路径边权乘积，对输入求和；结构信息相同，无迭代传播；注意这是闭式替身，不是嵌入检索器——第~\ref{sec:res-reuse} 节信标任务的平坦对照是真正的句向量检索器）；\textbf{B3} 随机激活（等能量对照）；\textbf{B4} 先知（真值，仅用于生成器正确性预检；四个拓扑上 MRR${=}1.0$）。主指标 JCG（联合收敛增益）度量多输入向共享目标的汇聚。预注册确认性条件 C-1--C-4（各 $n{=}50$ 配对种子）使用单侧配对 Wilcoxon 加 Holm 校正检验 H3（\emph{扩散的 JCG 超过平坦}）。辅助族（全部实际运行并归档）：插入序置换、标签/ID 置换（隐藏先知）、无联合目标反事实、负边检验、权重扫描 $w\in\{0.1..0.9\}$、噪声/干扰扫描与组合拓扑探测器。条件级数字见补充材料（表 S6）；预注册随工件提交。
+
+\subsection{LLM 决策头协议（路由实验）}
+\label{sec:method-routing}
+一个实验族把真实 LLM 放在决策点（单模型、温度 0、每次决策一次调用）。菜单、环境状态、任务事实、经历流与逐决策预算跨条件全同；唯一差异是模型决策前看到的上下文：(A) 无；(B) 原始最近 8 条经历；(C) 嵌入相似度检索 top-5；(D) FAS 机制选择的上下文（渐进图入口、传播、Top-$k$ 焦点，加认知需求/缺口/路由标注）；(E) 随机记忆条目（反事实对照）。四个任务类在决策时刻均完全可观测。修复后的官方战役运行于生产建边路径，带九条快速失败的 harness 不变量（520/520 run 有效）。该战役定位为探索性：它度量上下文选择价值，且 FAS 闭环不控制执行。
+
+\subsection{可复现性}
+固定种子；单进程确定性执行；测量路径无墙钟依赖逻辑（上述一个已记录例外除外）；归档原始运行与内容摘要；写作时 104 项回归测试通过。LLM 决策头族的确定性重跑检验见第~\ref{sec:res-rerun} 节。
+
+\section{结果}
+\label{sec:results}
+
+\subsection{持久关系复用：信息不对称信标任务}
+\label{sec:res-reuse}
+
+\emph{任务。}信标任务将信息不对称操作化：解题所需知识\emph{只}存在于经历写下的记忆中，不在任何输入提示里。目标配方从全部任务事实中剥离（“闭卷”）；工艺菜单仅当物品 X 的上下文在场时列出 \texttt{craft\_X}（菜单门控）；目标实体被排除在激活种子之外。四个条件，各 $n{=}20$ 配对种子，温度 0，全部 80 个 run 有效：\textbf{fas\_full}（持久图谱 + 激活上下文）、\textbf{D-noact}（同一图谱上下文但禁用激活动力学）、\textbf{D-flat}（无激活聚合的平坦检索）、\textbf{llm\_direct}（无记忆上下文）。
+
+\begin{table}[t]
+\centering\small
+\caption{信标任务结果（每条件 $n{=}20$ 配对种子；共 80 run）。全部数字来自归档战役分析。}
+\label{tab:beacon}
+\begin{tabular}{L{2.6cm}L{2.2cm}L{3.4cm}L{3.4cm}L{2.6cm}}
+\toprule
+\textbf{条件} & \textbf{达成} & \textbf{决策数（均值，中位）} & \textbf{首动作 \texttt{gather\_oak\_log}} & \textbf{对比} \\
+\midrule
+fas\_full & 20/20 & 2.15, 2 & 20/20 & vs direct：McNemar $p{=}2\times10^{-6}$ \\
+D-flat（嵌入检索） & 20/20 & 2.1, 2 & 19/20 & vs fas：$p{=}1.0$；决策 Wilcoxon $p{=}0.72$ \\
+D-noact & 0/20 & 8.0, 8 & 20/20 & vs fas：McNemar $p{=}2\times10^{-6}$ \\
+llm\_direct & 0/20 & 8.0, 8 & 17/20 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{结果。}fas\_full 达成 20/20；llm\_direct 达成 0/20（McNemar 精确 $p{=}2\times10^{-6}$；每个决策窗口耗尽仍未解锁链条）。\textbf{D-noact}——结构在场、运行时访问缺席——即刻失败 0/20：仅有结构不是可用的访问。\textbf{D-flat}——无激活的平坦聚合——完整复现收益（20/20；决策均值 2.1 vs 2.15，无统计差异，Wilcoxon $p{=}0.72$）。首动作身份给出机制指纹：fas 与 D-noact 都以 20/20 选择 \texttt{gather\_oak\_log}，direct 仅 17/20——差异不在首动作选择，而在后续解锁。
+
+两个读法必须分开。\textbf{(a) 持久关系复用在高噪声、配方不透明、信息不对称的任务上产生行为收益。}0/20 基线按任务设计是\emph{存在性验证}：闭卷门控使无上下文条件按构造拿不到配方，因此 fas-vs-direct 对比证明的是管线经由记忆交付了所需知识，而不是任何总体意义上的“记忆上下文统计显著更优”。\textbf{(b) 激活的必要性未获支持}：D-flat 的完整复现与第~\ref{sec:res-boundary} 节的机制战役相连——在可达任务上平坦检索已经足够。
+
+\emph{D-flat 是哪种检索器？}D-flat 是真正的句向量检索器：它用公开、可本地运行的句向量模型（BAAI/bge-small-zh-v1.5）编码全部图谱节点标识符，按与任务文本的余弦相似度排序——无激活、无传播、无路径结构。补充材料 S6 中的零 LLM 可达性检验直接验证了使能条件：对信标目标文本，配方节点 \texttt{item:oak\_planks} 在全部 44 个图谱节点中排第 2，资源节点 \texttt{item:oak\_log} 排第 4，全部 20 个种子装配一致落在 Top-8 上下文窗口内。木料到木板的完整真实案例研究（练习经历、写回、持久图谱、信标行为）见补充材料图 S3。
+
+\subsection{写回隔离、持久化与消费}
+\label{sec:res-persist}
+
+\emph{写回隔离。}若写回结构只是注入知识的重排，关闭写回不应有任何影响。隔离实验用单一开关断开图谱写回：感知、动作与环境全同；两个谱系在同一世界练习同一条四步链八轮。写回关闭的最终图谱含 \textbf{0} 个习得 \texttt{action:}/\texttt{change:} 节点；写回开启含 \textbf{13} 个（补充材料图 S1a）。将写回开启谱系的 15 条晋升关系分类（补充材料表 S4）：11 条实质动作--效果关联（“挖矿产出物品并移除方块”）、4 条退化关系（动作指向自身成功事件——现行晋升规则不区分该类；我们如实报告而非隐藏）、2 条被归因窗口污染的实质对（下游 craft 效果被归到上游 gather）。初始配方表知道\emph{什么能合成什么}；\emph{执行产生了什么}只能靠做来建立。
+
+\emph{跨情境再激活。}情节 1 在某情境练习链条；情节 2 完全改变地表情境（干扰林、不同布局）且目标结构相似。三个条件从情节 1 继承：完整图谱（G0）、剥离情景空间节点的平坦记忆对照（G1）、干净图谱（G2）。5/5 种子：G0 再激活 \textbf{12 个标记节点中的 4 个}（$a\ge0.05$）；G1 \textbf{8 个中的 0 个}；G2 无（补充材料图 S2）。再激活差异恰好由连接共享实体的情景事件结构承载；行为指标跨条件全同——表征/访问层差异与行为层首次分离。
+
+\emph{账本消费。}三轮三步链练习 8 轮后（账本晋升 7 条关系），迁移到结构相关的四步任务，账本继承（Transfer）或全新（No-Transfer）。确定性，5/5 种子：Transfer 13 tick / 8 动作完成；No-Transfer 需 16 tick / 9 动作；首动作从好奇心绕路翻转为经验资源，且差异恰好落在两任务共享的三个候选动作上（先验 $(1.0,\ \text{obs}{=}8)$ \emph{vs} (None, 0)）。两条件任务成功均 5/5（补充材料图 S4）。
+
+\emph{事件框架消费。}一个负性事件（树在首次挖掘后消失）被编码为事件框架节点，其负极性槽边抑制实体激活。三个预热 tick 后，被抑制的好奇路径输掉首动作竞争：5/5 对照首动作为 tick 9 \emph{vs} 被抑制动作 tick 6（早 3 tick，省 1 个好奇动作）。使用\emph{真实}失败回执（仅在动作真失败时写入）时，对照重试一次注定失败的目标（n$=$4，首次完成尝试 @17），事件框架条件从不（n$=$3，@15）——且由于该失败模式是瞬态超时，统计通道对其完全沉默：图侧事件框架是失败的唯一痕迹，也是行为差异的唯一来源。范围声明：该通道在实验层装配，生产默认关闭。它是“图编码经历\emph{能}翻转行动选择”的证据，不是“生产今天就这样做”的证据。
+
+\subsection{基于激活访问的预注册边界分析}
+\label{sec:res-boundary}
+
+\emph{汇聚机制真实运行。}机制战役首先问多输入汇聚是否为真实现象：JCG${>}$0 于 \textbf{200/200} 配对种子（每个确认性条件 $n{=}50$；JCG 中位数 0.0977/0.0977/0.2158/0.2177）；假设组（$\ge$2 输入）达 MRR@1${=}1.0$。反事实对照行为符合要求：无联合目标时四法全 0.0（汇聚不是自我实现的预言）；标签/ID 置换（隐藏先知，30 种子）下目标排名 22.5 不变（目标无结构特权）；插入序（10 个置换）CV${=}0.0$；负边检验总分不变（0.0333${=}$0.0333；总分 17.41）。一个独立的 663-run 证伪战役先行确认了汇聚参考模型（JCG${>}0$ 率 0.970）。在访问层，结构扩散也可与噪声和查表区分：四条件访问任务上，完全扩散产生激活质量 61.5（点亮场 39 节点），扩散关闭 16.6（17），等能量随机对照 45.8（更大且无结构的场），目标链先知 17.2（18）（补充材料图 S5）。
+
+\emph{相对平坦检索的增量价值：被拒绝。}对照闭式平坦路径乘积（B2），全部四个预注册条件 $\Delta$JCG${<}0$（中位差 ${-}0.402$、${-}0.402$、${-}0.784$、${-}0.782$；每条件配对 $n{=}50$；单侧 Wilcoxon 加 Holm 校正，$p{=}1.5\times10^{-9}$；效应量 $r{=}0.615$；FAS 胜过平坦的种子：\textbf{0/200}）。MRR：FAS 低于 B2（两个较小拓扑 0.0435/0.0426 vs 0.5/0.5；两个较大拓扑 1.0 平手）。抗噪不支持：稳健性扫描斜率 0.0076（B2 0.0），AUC 0.0427 vs 0.04。\textbf{H3 被拒绝}：在这些拓扑与信息预算下，平坦检索不劣于扩散，且通常更好（表~\ref{tab:boundary}，图~\ref{fig:boundary}a）。
+
+\begin{table}[t]
+\centering\small
+\caption{预注册边界分析：关键机制级数字。全部数值程序化读取自归档统计文件；完整数据见补充材料 S7--S9。}
+\label{tab:boundary}
+\begin{tabular}{L{4.4cm}L{6.6cm}L{3.4cm}}
+\toprule
+\textbf{检验} & \textbf{数字} & \textbf{解读} \\
+\midrule
+JCG${>}0$（机制运行） & 200/200 配对种子；中位数 0.0977/0.0977/0.2158/0.2177 & 汇聚机制为真 \\
+$\Delta$JCG（C-1--C-4，预注册） & ${-}0.402$/${-}0.402$/${-}0.784$/${-}0.782$；Holm $p{=}1.5\times10^{-9}$，$r{=}0.615$，0/200 反超 & \textbf{H3 被拒绝} \\
+MRR（FAS vs B2，较小拓扑） & 0.0435/0.0426 vs 0.5/0.5 & 可达任务上平坦更好 \\
+抗噪 & 斜率 0.0076 vs 0.0；AUC 0.0427 vs 0.04 & 无扩散优势 \\
+共享枢纽拓扑（单权重 $w{=}0.5$） & FAS 30/30 vs B2 0/30、B1 0/30、B3 5/30 & 唯一系统性例外 \\
+权重扫描 & 两法同时于 $w{=}0.7$ 达 MRR${=}1.0$ & 结构阈值，非 FAS 优势 \\
+稀释 & $\rho(\mathrm{reach},\mathrm{act})$：$-0.445$（噪声）、$-0.656$（干扰） & 传播越广目标越平 \\
+共享枢纽参数扫描（84 格 $\times$ 30 种子） & FAS 严格占优 11 格（全部 $w{\le}0.5$、$d{\le}1$）；平坦占优 9 格（全部 $w{\ge}0.7$、$d{\ge}1$）；平手 64；O3 复现 30/30 vs 0/30 & 优势区：弱边权 $\times$ 浅汇聚路径 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{共享枢纽例外，参数化。}预注册战役中唯一系统性正差分出现在组合拓扑：多输入的相关路径经\emph{共享枢纽}汇聚（FAS 30/30；B2 0/30、B1 0/30、B3 5/30；单权重配置 $w{=}0.5$）。由于该例外承载了本文激活价值的唯一正证据，我们运行了预注册式参数扫描（设计先冻结后执行；补充材料 S8）：枢纽路径边权 $w\in\{0.3,\ldots,0.9\}$、汇聚输入数 $k\in\{2,3,4,6\}$、私有路径深度 $d\in\{0,1,2\}$ 的联合网格，每格 30 配对种子，FAS 对照同一闭式平坦基线，并以原单枢纽配置作为硬性预检（复现：FAS 30/30 vs B2 0/30）。结果是一张曲面而非一个点（图~\ref{fig:sweep}）：FAS 在 84 格中的 11 格严格更优——\emph{全部}为弱权重（$w{\le}0.5$）且浅汇聚路径（$d{\le}1$）；平坦在 9 格严格更优——\emph{全部}为强权重（$w{\ge}0.7$）且更深路径（$d{\ge}1$）；其余 64 格平手。在原配置轴（$k{=}2$、$d{=}0$）上，平坦恰在枢纽路径权重达到 0.6 时追平（$w{\ge}0.6$ 时两法均 30/30）。机制解读与稀释结果一致：当枢纽累积多输入能量的速度快于单路径饱和其目标时，汇聚有帮助；当强边权使平坦排序直接分辨目标，或长弱路径稀释扩散面时，汇聚有害。
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_sweep.pdf}
+\caption{共享枢纽参数扫描（84 格 $\times$ 30 配对种子，确定性、零 LLM）。格色：联合目标的配对成功差（FAS 减平坦）；绿 = FAS 严格更优，橙 = 平坦严格更优，灰 = 平手。FAS 优势区局限于弱边权与浅汇聚路径。全部数字程序化读取自归档扫描输出。}
+\label{fig:sweep}
+\end{figure}
+
+\emph{权重阈值，而非扩散优势。}战役权重扫描中，两法同时在 $w{=}0.7$ 跳到 MRR${=}1.0$（FAS 0.083@0.5${\rightarrow}$1.0@0.7；B2 0.077${\rightarrow}$1.0）——这是结构可分辨阈值，不是 FAS 特有优势（图~\ref{fig:boundary}b）。稀释权衡补全图景：扩散面越宽（可达节点越多），目标激活越低（$\rho{=}{-}0.445$ 噪声扫描、${-}0.656$ 干扰扫描；图~\ref{fig:boundary}c）。
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_diffusion_boundary.pdf}
+\caption{扩散适用边界。(a) 预注册确认族：四个 $\Delta$JCG 全负（Holm $p{=}1.5\times10^{-9}$）；唯一正点是共享枢纽拓扑（星标，单权重 $w{=}0.5$ 设计）。(b) 权重扫描：两法同时于 $w{=}0.7$ 达 MRR${=}1.0$。(c) 稀释权衡：传播面越宽目标激活越平（$\rho{=}{-}0.445$、${-}0.656$）。}
+\label{fig:boundary}
+\end{figure}
+
+\emph{关系方向语义（诊断）。}另一项机制诊断（10 配对种子；完整数据见补充材料 S9）表明：生产配方图是深度 1 的星形森林且全部关系目标为汇点，使前向两跳传播按结构不可能；加入通用反向边投影恢复多跳可达性，并使拓扑分数与激活的秩相关大致翻倍（$\rho$ 0.325${\rightarrow}$0.645），代价是单节点激活稀释（0.833${\rightarrow}$0.475）。全部 21 项配对检验 $p{=}0.001953$——$n{=}10$ 可得的单侧最小 $p$（全种子同向），它只证明方向一致，不证明更多。我们将其报告为设计层面诊断（修复属于本体设计决策，生产图谱未修改），而非行为证据。
+
+\subsection{决策头族的确定性重跑}
+\label{sec:res-rerun}
+由于信标与路由族使用真实 LLM 决策头（温度 0），我们在全新输出目录重跑信标战役的 5 种子 $\times$ 4 条件子集并与归档运行对比。结果是一个诚实的负结果：\textbf{任务结果}（各条件 success）20/20 重跑全部一致，但\textbf{完整动作序列}仅 7/20 逐字节一致——远程端点即便温度 0 也不位级确定。因此我们只对零 LLM 族主张轨迹级确定性（按构造位级相同并经重跑验证）；决策头族结果稳健但不可轨迹复现，本文任何主张均不依赖其确切轨迹（补充材料 S10）。
+
+\subsection{补充观察}
+\label{sec:res-system}
+另有五个实验族在此压缩；完整数据见补充材料 S11--S12。
+
+\emph{长链与先验。}14 步链在全配置下 5/5 种子于 315 tick 完成；移除图谱先验边\emph{与}冶炼任务先验后 0/5（智能体无法规划配方外转移）；仅恢复冶炼先验即恢复逐字节相同的 315 tick；$-$扩散更快（259 tick）。零先验下系统从不进入学习状态：0/25 情节，目标系统锁定不可达目标，归因账本完全未被触碰（0 次聚合）而图谱仍因感知增长（$+29$ 节点）——\emph{支架化的接地知识获取}：经历不会自动成为知识。
+
+\emph{Hebbian、情感、意图。}Hebbian 共激活强化在 30 情节中恰好改变 3 条白名单边（主导边 $+0.074$；总和漂移 $+0.079$），检索排名逐位不变——机制隔离成立而行为效应不成立。标量情感调制使激活质量随增益单调移动（增益 0.85/1.0/1.3 对应 49.8/52.5/57.4；禁用与中性逐位相同）但不动任何动作级指标。持续意图生命周期从真实经历形成、竞争并衰减（每次运行 3--4 个意图）；再触发门从未触发（场温 1.61--2.12 vs 冷场阈值 0.35），表达级从未达到（峰值 0.46 $<$ 阈值 0.78）——形成到衰减已验证，表达未验证。
+
+\emph{显式路由（探索性）。}在四个决策时刻完全可观测的决策头任务类上（520/520 run 有效），FAS 上下文呈一个方向性正差（竞争目标任务：19/20 vs 无上下文 15/20，未校正 $p{=}0.046$；经战役 280 项检验校正后 $p{\approx}1$）、一个效率赤字（重路由任务：4.15 vs 2.3/2.8 决策，$p{=}0.003$/$0.044$）与结构性 token 开销（2.1--3.7$\times$）。更早的路由战役被我们自己的装配审计拒绝（harness 从未建边并吞掉 521/521 异常），已归档为无效。按本文标准，路由归入否定结果。
+
+\emph{实况观察。}两段 25 分钟实况 Minecraft 会话（动作路径零 LLM）仅为观察性：第一段以发现形式增长图谱 $+100$ 节点/$+365$ 边；第二段仅 $+35$/$+95$ 且行为转向已习得目标；实况因果账本（89 聚合 / 78 假设 / 29 晋升）完全来自真实行为。写回到行为改进的因果桥梁\emph{未}在实况窗口中建立——一个诚实的负观察。
+
+\emph{闭包掩蔽。}跨多数实验族，完成层指标对内部差异系统性不敏感（写回谱系、再激活条件与调制条件全部同样完成）。在闭包保证可达的任务上，规划器单独即足够，激活级知识落在决策包络之外；只报告闭包保证完成率的评估将系统性探测不到记忆现象。
+
+\section{讨论}
+\label{sec:discussion}
+
+\subsection{FAS 到底证明了什么}
+\textbf{已证明（在本协议的精确范围内）：}(i) 在机制级支架下，具身经历转化为初始图谱与全部注入源中均不存在的关系结构（0 vs 13 节点；15 条晋升）；(ii) 该结构跨情境持久并再激活（4/12 vs 0/8 vs 0/0）；(iii) 两个具名消费者（账本、事件框架）可测地改变行为（13 vs 16 tick；5/5 首动作翻转）；(iv) 信息不对称下持久关系复用产生大的行为差异（20/20 vs 0/20），且可被无激活嵌入检索完整复现；(v) 汇聚机制运行（200/200），但其相对平坦检索的增量价值被预注册拒绝（0/200 反超），共享枢纽例外由 84 格扫描界定。\textbf{未证明：}通用智能、从零开放学习、对 LLM 记忆系统的普遍优势、因果理解、扩散普遍收益、稳健路由价值、行为级 Hebbian 收益。每一项都附有其证据或其缺席。
+
+\subsection{平坦检索为何通常足够——何时不然}
+否定结果组织为可检验的条件命题而非口号。当任务只要求“取出相关之物”，平坦检索以更低复杂度做同样的工作（信标：D-flat 20/20；战役：$\Delta$JCG${<}0$）。机制层面的原因是稀释：扩散面越宽目标激活越低（$\rho{=}{-}0.445$、${-}0.656$），这也解释了长链上 $-$扩散更快（259 vs 315 tick）。扫描把例外锐化为一个区域：\emph{当任务要求多关系汇聚且相关边弱到直接排序无法分辨目标时，激活式访问才有收益}（11 个 FAS 优势格全部 $w{\le}0.5$、$d{\le}1$）；边权强时平坦排序分辨一切；弱路径深时扩散比闭式乘积稀释得更快（9 个平坦优势格全部如此）。谨慎的假设是：\emph{当决策相关信息缺席于当前观测且任务结构要求多关系汇聚时，激活式访问相对平坦检索有正价值；当信息可观测或任务为最近邻时，该价值为零或为负。}四条证据线汇于该假设——信标（信息不对称）、共享枢纽格（汇聚）、被拒战役（最近邻）、路由任务（信息可观测）——没有一条单独盖印。
+
+\subsection{支架的角色}
+零先验结果（0/25 且账本未动）表明支架不是便利而是前提：在任何可归属的经历存在之前，目标系统已锁定不可达目标，学习通道饿死。因此 FAS 是\emph{支架化接地}而非\emph{从零学习}：架构必须提供使经历可读可写的机制（归因窗口、阈值、机制表）。这对任何必须先行动后学习的系统都成立，且既是必要转换也是能力边界。
+
+\subsection{统一图为何重要}
+三条功能证据链（再激活由情景结构承载、账本迁移精确落在共享候选上、极性槽边经抑制翻转）之所以存在，是因为经历、语义与动作候选\emph{共享同一可寻址结构}：在分离存储中每种耦合都需要定制桥接；在这里它们是图遍历与图上激活的自然后果。统一图的价值形式是\emph{可观测后果}，而否定结果（闭包掩蔽、亚阈 Hebbian 漂移）界定了它做不到的事：表征变化不会自动成为行为变化。
+
+\subsection{设计启示：方向语义}
+关系方向诊断（第~\ref{sec:res-boundary} 节；完整数据见补充材料 S9）可推广为本体设计规则：\emph{把逐关系类的方向语义烘焙进本体，而不是假设传播自己会找到路}——配方类关系前向，观测共现类关系双向。在测得的生产配方图（44 节点/53 边）上，前向两跳可达性按结构为零，因为每个关系目标都是汇点；加反向投影后的改善是设计层面验证，不是涌现属性。
+
+\section{局限性}
+\label{sec:limits}
+(1) 全部实验运行于合成拓扑的确定性沙盒；配对种子实例化不同随机实例而非真实世界方差，全部显著性陈述量化方向一致性而非总体效应。(2) 信标的 0/20 基线是任务设计内置的存在性验证（闭卷门控），不是独立统计发现。(3) 单一环境族、单一 Minecraft 风格领域；无第三方基准；未做外部环境验证（例如 Crafter 风格等价任务）。(4) 主体实验用五个确定性种子——仅描述统计；配对实验（$n{=}10$、$n{=}20$、$n{=}50$）承载方向性主张并附声明校正。(5) 语义写回结构不被规划器消费；习得知识只经账本、事件框架与再激活通道影响行为。(6) 零先验条件检验锁定而非学习能力。(7) 未实现：前瞻记忆、完整感知管线、符号推理、RL 策略节点；若干已实现机制本文未做实验验证。(8) 事件框架行为结果来自生产默认关闭机制的实验装配。(9) 支架依赖未量化。(10) 实验图规模小（44--1000 节点）；规模限制全部机制结论。(11) 路由任务决策时刻完全可观测，否定结果以此为条件；token 开销与方向性差异为探索性。(12) 机制战役与关系方向诊断为无生产行为检验的机制级证据；共享枢纽扫描虽为预注册式且先冻结后执行，但仍局限于合成枢纽拓扑与闭式平坦替身，非嵌入检索器。(13) 信标为单一任务族（合成领域、闭卷）；信息不对称收益的跨任务普遍性未测。(14) 决策头族依赖温度 0 的远程 LLM 端点；位级确定性仅经重跑验证（第~\ref{sec:res-rerun} 节）。
+
+\section{结论}
+在统一认知图谱上，在机制级支架下，具身经历成为新的、分型的、证据加权的关系知识：它持久、跨情境再激活、并经具名消费者通道以可测、确定的方式抵达行为。在信息不对称信标任务上，持久关系复用产生 20/20 vs 0/20 的行为差异，且可无激活完整复现。传播激活是真实、可测的访问机制，其相对平坦检索的增量价值被预注册拒绝——除一个现已参数化的共享枢纽区域：弱边权、浅汇聚路径。边界同样清晰：零支架学习状态从不进入；闭包保证任务掩蔽内部差异；扩散的足迹在知识访问而非行动选择。我们提供架构与协议——确定性、零 LLM、完全归档、含两次已报告装配审计与一次预注册拒绝——作为研究“经历何时成为改变行为的知识”的基底，并把全部否定结果作为地图的一部分移交。
+
+\paragraph{数据与代码可用性。}全部实验确定性且完全归档（原始运行输出、图谱快照、统计文件）；一键复现脚本、预注册记录与主张--证据映射随工件提交（补充材料 S14）。
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

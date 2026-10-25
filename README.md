@@ -14,7 +14,11 @@ OCR、ASR 等），全部经适配器接入，可按
 ```
 app.py                    Flask 服务与回合主管道（/api/nlp；迁移目标形态见
                           FAS-Cognitive/fas/companion/pipeline.py）
-index.html                单文件 UI（图谱观测 + 聊天）
+index.html → docs/legacy_frontend/  旧版图谱观测控制台（现挂 /console）
+companion.html            陪伴 UI（精简/陪伴/认知观察三视图，浏览器版；
+                          桌面主入口=Charon 的 Haru 模块）
+qq_channel（FAS-Cognitive）QQ 通道（OneBot v11；默认封存 qq_enabled=false，
+                          出站白名单硬锁，养号后可重开）
 nlp_processor.py          LLM 编排（解析/生成/抽取三类后端）
 llm_provider.py           语言网关：所有云端调用物理收口于 _create() 一处
 ollama_backend.py         可选本地后端（默认关）
@@ -40,9 +44,10 @@ pytest tests/ -q
 
 可选外部壳：**Charon / PersonalTerminal**（Go+Wails 桌面控制台）可托管本进程、
 代理全部 `/api/*`，并经 Bridge(127.0.0.1:17734) 接收 FAS 推送
-（utterance 事件/toast/日记）；FAS 侧通道实现已就位：
-`FAS-Cognitive/fas/companion/charon_bridge.py`，
-开启 `config.companion_charon_enabled` 即接入。
+（utterance 事件/toast/日记）。下行通道已接线（2026-10-09）：
+`FAS-Cognitive/fas/companion/charon_bridge.py` 由 app.py 装配，本仓部署默认开启
+（`config.companion_charon_enabled=True`；Charon 未运行时投递仅告警不反压，
+`FAS_CHARON=0` 或 PUT /api/config 可关）。主动/提问话语会在 Charon 前端弹气泡。
 
 ## 缺件登记（临时占位，待补充选型）
 
@@ -50,7 +55,7 @@ pytest tests/ -q
 |---|---|
 | TTS 语音输出 | 未接入（候选：Charon 前端 Web Speech API / 本地 TTS） |
 | STT 实时麦克风流 | ear/ 目前只支持手动喂音频文件 |
-| 正式搜索 API | actions/web_search.py 为 HTML 抓取临时方案 |
+| 正式搜索 API | actions/web_search.py 为 HTML 抓取临时方案（已支撑回合内被动搜索 + 好奇驱动自发检索 `_curiosity_web_explorer`，带相关性闸与限速；`FAS_NO_SELF_SEARCH=1` 可关） |
 
 ## 隐私红线
 

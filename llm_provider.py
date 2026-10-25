@@ -10,6 +10,14 @@ from abc import ABC, abstractmethod
 
 logger = logging.getLogger(__name__)
 
+# 运行时 config 共享引用（app.py 启动注入）：思考开关等参数热切即生效。
+_RUNTIME_CONFIG: dict = {}
+
+
+def configure(config: dict):
+    global _RUNTIME_CONFIG
+    _RUNTIME_CONFIG = config if isinstance(config, dict) else {}
+
 
 class LLMBackend(ABC):
     """Abstract LLM backend interface."""
@@ -61,7 +69,13 @@ class OpenAICompatBackend(LLMBackend):
         # Use raw openai client (avoids langchain_openai version issues)
         self._llm = None
         import openai
-        self._raw_client = openai.OpenAI(api_key=self._key, base_url=self._url)
+        # P0-3（2026-10-12）：显式应用级超时（SDK 默认 600s 会拖死同步回合）
+        # 与 max_retries=0——SDK 静默重试 2 次×最坏 10 分钟是"整轮无响应"的
+        # 根源之一；瞬时故障改由 _create 的显式 failover 处理（可见、可记）。
+        self._timeout_s = float(os.environ.get("FAS_LLM_TIMEOUT_S", "120"))
+        self._raw_client = openai.OpenAI(api_key=self._key, base_url=self._url,
+                                         timeout=self._timeout_s,
+                                         max_retries=0)
 
     def _create(self, msgs: list):
         """统一发起 chat.completions.create，处理参数名与 json 降级。
@@ -84,7 +98,22 @@ class OpenAICompatBackend(LLMBackend):
             kwargs["max_tokens"] = self._max_tokens
         if self._json_mode and self._json_ok:
             kwargs["response_format"] = {"type": "json_object"}
+        # 千问思考链开关（2026-10-13 用户要求强关；config 可热切）：
+        # enable_thinking=false 实测平台生效（0.55s、无 reasoning）。
+        if self._LABEL == "Qwen":
+            kwargs["extra_body"] = {"enable_thinking": bool(
+                (_RUNTIME_CONFIG or {}).get("qwen_enable_thinking", True))}
         _t0 = _time.perf_counter()
+
+        # §5 预算闸：本月云端费用估算超阈值 → 快速失败（不重试不烧钱，
+        # 上层走降级路径）。阈值 0/未配置=不限（默认零行为变化）。
+        try:
+            import usage_ledger as _ul
+            _ul.guard()
+        except Exception as _be:
+            if type(_be).__name__ == "BudgetExhausted":
+                raise
+            # 账本模块自身故障不阻断语言主路（fail-open：陪伴可用性优先）
 
         def _evt(event, level, **extra):
             try:
@@ -100,8 +129,8 @@ class OpenAICompatBackend(LLMBackend):
                 pass
 
         def _done(resp, retried=False):
+            u = getattr(resp, "usage", None)
             try:
-                u = getattr(resp, "usage", None)
                 fin = (resp.choices[0].finish_reason
                        if getattr(resp, "choices", None) else None)
                 clen = (len(resp.choices[0].message.content or "")
@@ -115,7 +144,28 @@ class OpenAICompatBackend(LLMBackend):
                      finish_reason=fin, resp_chars=clen, retried=retried)
             except Exception:
                 pass
+            # §5 用量账本（旁路记录，坏账不拖垮主路；本地调用记 transport=local）
+            try:
+                import usage_ledger as _ul
+                _ul.record(provider=self._LABEL, model=self._model,
+                           purpose=_fl.current_purpose() or "unlabeled",
+                           latency_ms=round((_time.perf_counter() - _t0) * 1000),
+                           prompt_tokens=getattr(u, "prompt_tokens", None),
+                           completion_tokens=getattr(u, "completion_tokens", None),
+                           ok=True)
+            except Exception:
+                pass
             return resp
+
+        def _rec_fail(err):
+            try:
+                import usage_ledger as _ul
+                _ul.record(provider=self._LABEL, model=self._model,
+                           purpose=_fl.current_purpose() or "unlabeled",
+                           latency_ms=round((_time.perf_counter() - _t0) * 1000),
+                           ok=False, error=str(err)[:160])
+            except Exception:
+                pass
 
         try:
             return _done(self._raw_client.chat.completions.create(**kwargs))
@@ -131,12 +181,77 @@ class OpenAICompatBackend(LLMBackend):
                     return _done(self._raw_client.chat.completions.create(**kwargs),
                                  retried=True)
                 except Exception as e2:
+                    if self._failoverable(e2):
+                        fb = self._failover(msgs, e2, _evt)
+                        if fb is not None:
+                            return _done(fb, retried=True)
                     _evt("llm_call_failed", "ERROR", error=str(e2)[:300],
                          retried=True, _with_exc=False)
+                    _rec_fail(e2)
                     raise
+            if self._failoverable(e):
+                fb = self._failover(msgs, e, _evt)
+                if fb is not None:
+                    return _done(fb)
             _evt("llm_call_failed", "ERROR", error=str(e)[:300],
                  json_mode=("response_format" in kwargs), _with_exc=False)
+            _rec_fail(e)
             raise
+
+    # ── P0-3 failover（2026-10-12）：瞬时故障自动换供应商 ──────────────
+    @staticmethod
+    def _failoverable(err):
+        """只对"换供应商可能有用"的故障 failover：连接/超时/429/5xx。
+        请求本身的问题（400/401/404 与代码错误）原样上抛，绝不掩盖。"""
+        import openai as _oai
+        if isinstance(err, (_oai.APIConnectionError, _oai.APITimeoutError,
+                            _oai.RateLimitError, _oai.InternalServerError)):
+            return True
+        status = getattr(err, "status_code", None)
+        return status in (429, 500, 502, 503, 504)
+
+    def _failover(self, msgs, original_err, _evt):
+        """按环境变量现存的其它供应商依次尝试一次；全失败返回 None。
+
+        已知供应商注册表在模块尾部（MiMo/DeepSeek——与 llm_provider 现有
+        凭证来源一致：data/llm_secret > 环境变量）。为最大兼容，failover
+        请求不带 response_format（模板本就强制 JSON 文本）。
+        """
+        import openai
+        for cls in _KNOWN_BACKEND_CLASSES:
+            if cls is type(self):
+                continue
+            key = os.environ.get(cls._ENV_KEY, "")
+            if not key:
+                continue
+            url = os.environ.get(cls._ENV_URL) or cls._DEFAULT_BASE_URL
+            try:
+                cli = openai.OpenAI(api_key=key, base_url=url,
+                                    timeout=self._timeout_s, max_retries=0)
+                fb_kwargs = dict(
+                    model=cls._DEFAULT_MODEL, messages=msgs,
+                    temperature=self._temperature, top_p=self._top_p)
+                if cls._USE_MAX_COMPLETION_TOKENS:
+                    fb_kwargs["max_completion_tokens"] = self._max_tokens
+                else:
+                    fb_kwargs["max_tokens"] = self._max_tokens
+                if cls._LABEL == "Qwen":
+                    fb_kwargs["extra_body"] = {"enable_thinking": bool(
+                        (_RUNTIME_CONFIG or {}).get("qwen_enable_thinking",
+                                                    True))}
+                resp = cli.chat.completions.create(**fb_kwargs)
+                logger.warning("[%s] 主链路故障(%s)，failover → %s %s",
+                               self._LABEL, str(original_err)[:120],
+                               cls._LABEL, cls._DEFAULT_MODEL)
+                _evt("llm_failover_succeeded", "WARNING",
+                     from_provider=self._LABEL, to_provider=cls._LABEL,
+                     to_model=cls._DEFAULT_MODEL,
+                     error=str(original_err)[:200])
+                return resp
+            except Exception as fe:               # noqa: BLE001
+                _evt("llm_failover_attempt_failed", "WARNING",
+                     to_provider=cls._LABEL, error=str(fe)[:200])
+        return None
 
     @property
     def _lc_model(self):
@@ -268,6 +383,22 @@ class MiMoBackend(OpenAICompatBackend):
         return self._model
 
 
+# P0-3 failover 注册表（顺序=优先级；仅环境变量里真有凭证的供应商参与，
+# 当前实例自身会被跳过）。新增供应商=加一个类+一行。
+class QwenBackend(OpenAICompatBackend):
+    """千问 AI 平台 backend（OpenAI 兼容协议，maas.qianwenaiapi.com）。
+    2026-10-12 起为 FAS 语言栈默认供应商；密钥/地址可用环境变量覆盖。"""
+    _DEFAULT_MODEL = "qwen3.8-flash"
+    _DEFAULT_BASE_URL = "https://maas.qianwenaiapi.com/compatible-mode/v1"
+    _ENV_KEY = "QWEN_API_KEY"
+    _ENV_URL = "QWEN_BASE_URL"
+    _LABEL = "Qwen"
+    _USE_MAX_COMPLETION_TOKENS = False
+
+
+_KNOWN_BACKEND_CLASSES = [QwenBackend, MiMoBackend, DeepSeekBackend]
+
+
 class _DeepSeekLCChat:
     """Minimal LangChain-compatible chat model wrapper around raw OpenAI client.
     Implements invoke() so it can be used in Runnable chains."""
@@ -343,7 +474,7 @@ def ollama_enabled() -> bool:
         return False
 
 
-def create_backend(provider: str = "mimo", **kwargs) -> LLMBackend:
+def create_backend(provider: str = "qwen", **kwargs) -> LLMBackend:
     """Factory to create an LLM backend.
 
     Args:
@@ -357,6 +488,8 @@ def create_backend(provider: str = "mimo", **kwargs) -> LLMBackend:
         return DeepSeekBackend(**kwargs)
     elif provider in ("mimo", "xiaomi"):
         return MiMoBackend(**kwargs)
+    elif provider in ("qwen", "qianwen", "tongyi"):
+        return QwenBackend(**kwargs)
     elif provider == "ollama":
         if not ollama_enabled():
             raise ValueError("Ollama 未启用（config.py enable_ollama=false）")

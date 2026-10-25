@@ -103,7 +103,7 @@ check("A2 边表全部可落地（零跳过）", boot["edges_skipped"] == 0,
       str(boot.get("skipped")))
 check("A3 建边数 == 边表行数", boot["edges"] == len(blk["edges"]),
       f"{boot['edges']} vs {len(blk['edges'])}")
-check("A4 锚定边 == 12（每调制器一条 Self-[处于]->）", boot["anchors"] == 12,
+check("A4 锚定边 == 10（每调制器一条 Self-[处于]->；组胺已删 2026-10-17）", boot["anchors"] == 10,
       str(boot["anchors"]))
 check("A5 无符号约定矛盾", not boot["sign_mismatch"], str(boot["sign_mismatch"]))
 tgt = kg.get_node("调制目标:扩散增益")
@@ -428,7 +428,7 @@ check("F3 调制目标:* 节点存在且被指到",
           if (n.extra_attrs or {}).get("type") == "modulator_target") == 14)
 exp = MS.explain_subgraph(kg7, st7, cfg7)
 check("F4 explain 观测面可用（人读拓扑，P12 实验模式靠它）",
-      len(exp) == 12 and all("edges" in v for v in exp.values()))
+      len(exp) == 10 and all("edges" in v for v in exp.values()))
 
 print()
 if FAILURES:

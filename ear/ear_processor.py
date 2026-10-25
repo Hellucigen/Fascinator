@@ -59,13 +59,13 @@ class EarProcessor:
 
         # 模型路径配置
         self._yamnet_model_dir = os.environ.get(
-            "YAMNET_MODEL_DIR", "E:/Models/yamnet_model"
+            "YAMNET_MODEL_DIR", "E:/Models/audio/yamnet_model"
         )
         self._asr_model_dir = os.environ.get(
-            "ASR_MODEL_DIR", "E:/Models/Paraformer"
+            "ASR_MODEL_DIR", "E:/Models/nlp/Paraformer"
         )
         self._emo_model_dir = os.environ.get(
-            "EMO_MODEL_DIR", "E:/Models/emotion2vec_plus_large"
+            "EMO_MODEL_DIR", "E:/Models/nlp/emotion2vec_plus_large"
         )
         self._speaker_model_dir = os.environ.get(
             "SPEAKER_MODEL_DIR", None

@@ -1,0 +1,4884 @@
+{
+  "cards": {
+    "GRAND_FINALE": {
+      "name": "Clou du spectacle",
+      "description": "Jouable si la pioche est vide.\nInfligez 50 dégâts à TOUS les ennemis.",
+      "upgradeDescription": "Ma pioche\ndoit être Vide."
+    },
+    "IMMOLATE": {
+      "name": "Immolation",
+      "description": "Infligez 21 dégâts à TOUS les ennemis.\nAjoutez une Brûlure à votre pioche."
+    },
+    "REGRET": {
+      "name": "Regret",
+      "description": "Injouable.\nÀ la fin du tour, perdez autant de PV que vous avez de cartes en main."
+    },
+    "CRIPPLING_POISON": {
+      "name": "Nuage paralysant",
+      "description": "Appliquez 4 de Poison et 2 de Faiblesse à TOUS les ennemis.\nÉpuisement."
+    },
+    "A_THOUSAND_CUTS": {
+      "name": "Mille coupures",
+      "description": "Quand vous jouez une carte, infligez 1 dégâts à TOUS les ennemis."
+    },
+    "SPOT_WEAKNESS": {
+      "name": "Prescience",
+      "description": "Si un ennemi compte attaquer, gagnez 3 de Force."
+    },
+    "WOUND": {
+      "name": "Plaie",
+      "description": "Injouable."
+    },
+    "WRITHE": {
+      "name": "Souffrance",
+      "description": "Injouable.\nInné."
+    },
+    "DARK_SHACKLES": {
+      "name": "Sombres chaînes",
+      "description": "L'ennemi perd 9 de Force pour le reste du tour.\nÉpuisement."
+    },
+    "GLASS_KNIFE": {
+      "name": "Couteau de verre",
+      "description": "Infligez 8 dégâts 2 fois. Couteau de verre inflige 2 dégâts de moins pour ce combat."
+    },
+    "CLOAK_AND_DAGGER": {
+      "name": "Cape et épée",
+      "description": "Gagnez 6 d'Armure.\nAjoutez 1 Surin à votre main.",
+      "upgradeDescription": "Gagnez 6 d'Armure.\nAjoutez +1 Surins à votre main."
+    },
+    "UNDERHANDED_STRIKE": {
+      "name": "Frappe sournoise",
+      "description": "Infligez 12 dégâts.\nSi vous avez défaussé une carte ce tour, gagnez [G] [G]."
+    },
+    "ANGER": {
+      "name": "Colère",
+      "description": "Infligez 6 dégâts.\nAjoutez une copie de cette carte à votre défausse."
+    },
+    "STORM_OF_STEEL": {
+      "name": "Tempête d'acier",
+      "description": "Défaussez votre main.\nAjoutez 1 Surin à votre main par carte défaussée.",
+      "upgradeDescription": "Défaussez votre main.\nAjoutez 1 Surin+ à votre main par carte défaussée."
+    },
+    "CLEAVE": {
+      "name": "Enchaînement",
+      "description": "Infligez 8 dégâts à TOUS les ennemis."
+    },
+    "INFLAME": {
+      "name": "Enflammer",
+      "description": "Gagnez 2 de Force."
+    },
+    "SADISTIC_NATURE": {
+      "name": "Sadisme",
+      "description": "Quand vous appliquez un débuff à un ennemi, il subit 5 dégâts."
+    },
+    "J_A_X": {
+      "name": "D.O.P.E.",
+      "description": "Perdez 3 PV.\nGagnez 2 de Force."
+    },
+    "OFFERING": {
+      "name": "Offrande",
+      "description": "Perdez 6 PV.\nGagnez [R] [R] .\nPiochez 3 cartes.\nÉpuisement.",
+      "upgradeDescription": "Perdez 6 PV.\nGagnez [R] [R] .\nPiochez +2 cartes.\nÉpuisement."
+    },
+    "EXHUME": {
+      "name": "Exhumation",
+      "description": "Choisissez une carte Épuisée et ajoutez-la à votre main.\nÉpuisement."
+    },
+    "POWER_THROUGH": {
+      "name": "Ténacité",
+      "description": "Ajoutez 2 cartes Plaie à votre main.\nGagnez 15 d'Armure."
+    },
+    "DUAL_WIELD": {
+      "name": "Ambidextrie",
+      "description": "Copiez une carte Attaque ou Pouvoir dans votre main.",
+      "upgradeDescription": "Copiez une carte Attaque ou Pouvoir dans votre main 2 fois."
+    },
+    "DEADLY_POISON": {
+      "name": "Poison mortel",
+      "description": "Appliquez 5 de Poison."
+    },
+    "LEG_SWEEP": {
+      "name": "Balayette",
+      "description": "Appliquez 2 de Faiblesse.\nGagnez 11 d'Armure."
+    },
+    "FLEX": {
+      "name": "Vantardise",
+      "description": "Gagnez 2 de Force.\nÀ la fin du tour, perdez 2 de Force."
+    },
+    "DAGGER_SPRAY": {
+      "name": "Pluie de dagues",
+      "description": "Infligez 4 dégâts à TOUS les ennemis 2 fois."
+    },
+    "BULLET_TIME": {
+      "name": "Bullet time",
+      "description": "Impossible de piocher ce tour. Les cartes dans votre main coûtent 0 ce tour."
+    },
+    "CATALYST": {
+      "name": "Catalyse",
+      "description": "Doublez le Poison d'un ennemi.\nÉpuisement.",
+      "upgradeDescription": "Triplez le Poison d'un ennemi.\nÉpuisement."
+    },
+    "REAPER": {
+      "name": "Faucheuse",
+      "description": "Infligez 4 dégâts à TOUS les ennemis. Soignez du total des dégâts non bloqués.\nÉpuisement."
+    },
+    "SHIV": {
+      "name": "Surin",
+      "description": "Infligez !D! dégâts.\nÉpuisement."
+    },
+    "TACTICIAN": {
+      "name": "Stratège",
+      "description": "Injouable.\nQuand cette carte est défaussée, gagnez [G] .",
+      "upgradeDescription": "Injouable.\nQuand cette carte est défaussée,\ngagnez [G] [G] ."
+    },
+    "BANE": {
+      "name": "Fléau",
+      "description": "Infligez 7 dégâts.\nSi l'ennemi est Empoisonné, infligez 7 dégâts à nouveau."
+    },
+    "INFERNAL_BLADE": {
+      "name": "Lame infernale",
+      "description": "Ajoutez une carte Attaque aléatoire à votre main.\nElle coûte 0 ce tour.\nÉpuisement."
+    },
+    "AFTER_IMAGE": {
+      "name": "Image rémanente",
+      "description": "Quand vous jouez une carte, gagnez 1 d'Armure.",
+      "upgradeDescription": "Inné.\nQuand vous jouez une carte, gagnez 1 d'Armure."
+    },
+    "UNLOAD": {
+      "name": "Déchargement",
+      "description": "Infligez 14 dégâts.\nDéfaussez TOUTES les cartes (sauf Attaque)."
+    },
+    "BLADE_DANCE": {
+      "name": "Danse des lames",
+      "description": "Ajoutez 3 Surins à votre main."
+    },
+    "DEFLECT": {
+      "name": "Parade",
+      "description": "Gagnez 4 d'Armure."
+    },
+    "TRIP": {
+      "name": "Croche-pied",
+      "description": "Appliquez 2 de Vulnérabilité.",
+      "upgradeDescription": "Appliquez 2 de Vulnérabilité à TOUS les ennemis."
+    },
+    "DAGGER_THROW": {
+      "name": "Lancer de dagues",
+      "description": "Infligez 9 dégâts.\nPiochez 1 carte.\nDéfaussez 1 carte."
+    },
+    "BRUTALITY": {
+      "name": "Brutalité",
+      "description": "Au début du tour, perdez 1 PV et piochez 1 carte.",
+      "upgradeDescription": "Inné. Au début du tour, perdez 1 PV et piochez 1 carte."
+    },
+    "IRON_WAVE": {
+      "name": "Vague de fer",
+      "description": "Gagnez 5 d'Armure.\nInfligez 5 dégâts."
+    },
+    "RECKLESS_CHARGE": {
+      "name": "Charge imprudente",
+      "description": "Infligez 7 dégâts.\nAjoutez un Hébétement à votre pioche."
+    },
+    "DECAY": {
+      "name": "Déclin",
+      "description": "Injouable.\nÀ la fin du tour, subissez 2 dégâts."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Savoir-faire",
+      "description": "Au début du tour, piochez 1 carte et défaussez 1 carte."
+    },
+    "DRAMATIC_ENTRANCE": {
+      "name": "Entrée fracassante",
+      "description": "Inné.\nInflige 8 dégâts à TOUS les ennemis.\nÉpuisement."
+    },
+    "HEMOKINESIS": {
+      "name": "Hémokinésie",
+      "description": "Perdez 2 PV.\nInfligez 15 dégâts."
+    },
+    "INTIMIDATE": {
+      "name": "Intimidation",
+      "description": "Appliquez 1 Faiblesse à TOUS les ennemis.\nÉpuisement."
+    },
+    "NECRONOMICURSE": {
+      "name": "Malédiction fatale",
+      "description": "Injouable.\nPersonne n'échappe à cette Malédiction."
+    },
+    "CHOKE": {
+      "name": "Étranglement",
+      "description": "Infligez 12 dégâts.\nChaque fois que vous jouez une carte ce tour, infligez 3 dégâts à la cible."
+    },
+    "JUGGERNAUT": {
+      "name": "Mastodonte",
+      "description": "Quand vous gagnez de l'Armure, infligez 5 dégâts à un ennemi aléatoire."
+    },
+    "CALTROPS": {
+      "name": "Chausse-trapes",
+      "description": "À chaque fois qu'un ennemi vous attaque, il reçoit 3 dégâts."
+    },
+    "POISONED_STAB": {
+      "name": "Poignard empoisonné",
+      "description": "Infligez 6 dégâts.\nAppliquez 3 de Poison."
+    },
+    "BLUR": {
+      "name": "Flou",
+      "description": "Gagnez 5 d'Armure.\nL'Armure n'est pas retirée au début du prochain tour."
+    },
+    "BODY_SLAM": {
+      "name": "Plaquage",
+      "description": "Infligez un total de dégâts égal à votre Armure actuelle.",
+      "upgradeDescription": "(Infligez 0 dégâts.)"
+    },
+    "TRUE_GRIT": {
+      "name": "Virilité",
+      "description": "Gagnez 7 d'Armure.\nÉpuisez une carte aléatoire de votre main.",
+      "upgradeDescription": "Gagnez +2 d'Armure.\nÉpuisez une carte de votre main."
+    },
+    "SETUP": {
+      "name": "Mise en place",
+      "description": "Placez une carte de votre main sur le haut de la pioche.\nCoûte 0 avant d'être jouée."
+    },
+    "BLOOD_FOR_BLOOD": {
+      "name": "Sang pour sang",
+      "description": "Coûte 1 [R] en moins\npour chaque perte de PV durant ce combat.\nInfligez 18 dégâts."
+    },
+    "IMPERVIOUS": {
+      "name": "Invincible",
+      "description": "Gagnez 30 d'Armure.\nÉpuisement."
+    },
+    "SHRUG_IT_OFF": {
+      "name": "Même pas mal",
+      "description": "Gagnez 8 d'Armure.\nPiochez 1 carte."
+    },
+    "CLASH": {
+      "name": "Conflit",
+      "description": "Jouable si vous n'avez que des Attaques en main.\nInfligez 14 dégâts."
+    },
+    "THUNDERCLAP": {
+      "name": "Coup de tonnerre",
+      "description": "Infligez 4 dégâts et 1 de Vulnérabilité à TOUS les ennemis."
+    },
+    "FLAME_BARRIER": {
+      "name": "Barrière de flammes",
+      "description": "Gagnez 12 d'Armure.\nQuand on vous attaque ce tour, infligez 4 dégâts."
+    },
+    "ENDLESS_AGONY": {
+      "name": "Agonie éternelle",
+      "description": "Infligez 4 dégâts.\nAjoutez une copie de cette carte à votre main quand vous la piochez.\nÉpuisement."
+    },
+    "BERSERK": {
+      "name": "Folie furieuse",
+      "description": "Gagnez 2 de Vulnerabilité.\nGagnez [R] au début de chaque tour."
+    },
+    "PUMMEL": {
+      "name": "Volée de coups",
+      "description": "Infligez 2 dégâts 4 fois.\nÉpuisement.",
+      "upgradeDescription": "Infligez 2 dégâts +1 fois.\nÉpuisement."
+    },
+    "RIDDLE_WITH_HOLES": {
+      "name": "Criblé de trous",
+      "description": "Infligez 3 dégâts 5 fois."
+    },
+    "BURNING_PACT": {
+      "name": "Pacte brûlant",
+      "description": "Épuisez 1 carte.\nPiochez 2 cartes."
+    },
+    "METALLICIZE": {
+      "name": "Métallisation",
+      "description": "À la fin du tour, gagnez 3 d'Armure."
+    },
+    "POMMEL_STRIKE": {
+      "name": "Frappe du pommeau",
+      "description": "Infligez 9 dégâts.\nPiochez 1 carte.",
+      "upgradeDescription": "Infligez +1 dégâts.\nPiochez +1 cartes."
+    },
+    "PAIN": {
+      "name": "Douleur",
+      "description": "Injouable.\nSi vous l'avez en main,\nperdez 1 PV par carte jouée."
+    },
+    "BURST": {
+      "name": "Déflagration",
+      "description": "Pendant ce tour, votre prochaine carte Compétence sera jouée 2 fois.",
+      "upgradeDescription": "Pendant ce tour, vos +1 prochaines cartes Compétence seront jouées 2 fois."
+    },
+    "ACROBATICS": {
+      "name": "Acrobaties",
+      "description": "Piochez 3 cartes.\nDéfaussez 1 carte."
+    },
+    "BLIND": {
+      "name": "Aveuglement",
+      "description": "Appliquez 2 de Faiblesse.",
+      "upgradeDescription": "Appliquez 2 Faiblesse à TOUS les ennemis."
+    },
+    "DOPPELGANGER": {
+      "name": "Clonage",
+      "description": "Au prochain tour, piochez X cartes et gagnez X [G] .\nÉpuisement.",
+      "upgradeDescription": "Au prochain tour, piochez X+1 cartes et gagnez X+1 [G] .\nÉpuisement."
+    },
+    "SKEWER": {
+      "name": "Brochette",
+      "description": "Infligez 7 dégâts X fois."
+    },
+    "ENVENOM": {
+      "name": "Envenimement",
+      "description": "Dès qu'une carte Attaque inflige des dégâts non-bloqués, appliquez 1 de Poison."
+    },
+    "ADRENALINE": {
+      "name": "Adrénaline",
+      "description": "Gagnez [G] .\nPiochez 2 cartes.\nÉpuisement.",
+      "upgradeDescription": "Gagnez [G] [G] .\nPiochez 2 cartes.\nÉpuisement."
+    },
+    "QUICK_SLASH": {
+      "name": "Lacération rapide",
+      "description": "Infligez 8 dégâts.\nPiochez 1 carte."
+    },
+    "TWIN_STRIKE": {
+      "name": "Frappe double",
+      "description": "Infligez 5 dégâts 2 fois."
+    },
+    "PARASITE": {
+      "name": "Parasite",
+      "description": "Injouable.\nSi la carte est transformée ou retirée de votre deck, perdez 3 PV max."
+    },
+    "BASH": {
+      "name": "Heurt",
+      "description": "Infligez 8 dégâts.\nAppliquez 2 de Vulnérabilité."
+    },
+    "CLOTHESLINE": {
+      "name": "Manchette",
+      "description": "Infligez 12 dégâts.\nAppliquez 2 de Faiblesse."
+    },
+    "SHOCKWAVE": {
+      "name": "Onde de choc",
+      "description": "Appliquez 3 de Faiblesse et de Vulnérabilité sur TOUS les ennemis.\nÉpuisement."
+    },
+    "RAMPAGE": {
+      "name": "Saccage",
+      "description": "Infligez 8 dégâts.\nQuand vous la jouez, ses dégâts sont augmentés de 5 pour ce combat."
+    },
+    "BANDAGE_UP": {
+      "name": "Bandages",
+      "description": "Récupérez 4 PV.\nÉpuisement."
+    },
+    "THE_BOMB": {
+      "name": "La Bombe",
+      "description": "Dans 3 tours, infligez 40 dégats à TOUS les ennemis."
+    },
+    "SEVER_SOUL": {
+      "name": "Scission d'âme",
+      "description": "Épuisez toutes les cartes de votre main (sauf Attaques).\nInfligez 16 dégâts."
+    },
+    "WHIRLWIND": {
+      "name": "Tourbillon",
+      "description": "Infligez 5 dégâts à TOUS les ennemis X fois."
+    },
+    "WARCRY": {
+      "name": "Cri de guerre",
+      "description": "Piochez 1 carte.\nPlacez une carte de votre main sur le haut de la pioche.\nÉpuisement.",
+      "upgradeDescription": "Piochez +1 cartes.\nPlacez une carte de votre main sur le haut de la pioche.\nÉpuisement."
+    },
+    "PIERCINGWAIL": {
+      "name": "Hurlement perçant",
+      "description": "TOUS les ennemis perdent 6 de Force pendant 1 tour.\nÉpuisement."
+    },
+    "BITE": {
+      "name": "Morsure",
+      "description": "Infligez 7 dégâts.\nRécupérez 2 PV."
+    },
+    "SECRET_TECHNIQUE": {
+      "name": "Technique secrète",
+      "description": "Choisissez une carte Compétence dans votre pioche et placez-la dans votre main.\nÉpuisement.",
+      "upgradeDescription": "Choisissez une carte Compétence dans votre pioche et placez-la dans votre main."
+    },
+    "CALCULATED_GAMBLE": {
+      "name": "Coup de poker",
+      "description": "Défaussez votre main\net piochez le même nombre de cartes. Épuisement.",
+      "upgradeDescription": "Défaussez votre main\net piochez le même nombre de cartes."
+    },
+    "COMBUST": {
+      "name": "Combustion",
+      "description": "À la fin du tour, perdez 1 PV et infligez 5 dégâts à TOUS les ennemis."
+    },
+    "DEEP_BREATH": {
+      "name": "Inspiration",
+      "description": "Mélangez les cartes de votre défausse à votre pioche.\nPiochez 1 carte.",
+      "upgradeDescription": "Mélangez votre défausse avec votre pioche.\nPiochez +1 cartes."
+    },
+    "DOUBT": {
+      "name": "Doute",
+      "description": "Injouable.\nÀ la fin du tour, gagnez 1 de Faiblesse."
+    },
+    "ESCAPE_PLAN": {
+      "name": "Plan d'évasion",
+      "description": "Piochez 1 carte.\nS'il s'agit d'une carte Compétence, gagnez 3 d'Armure."
+    },
+    "FINISHER": {
+      "name": "Coup de grâce",
+      "description": "Infligez 6 dégâts par carte Attaque jouée ce tour."
+    },
+    "DARK_EMBRACE": {
+      "name": "Sombre étreinte",
+      "description": "Quand une carte est Épuisée,\npiochez 1 carte."
+    },
+    "DIE_DIE_DIE": {
+      "name": "Mise à mort",
+      "description": "Infligez 13 dégâts à TOUS les ennemis.\nÉpuisement."
+    },
+    "WELL_LAID_PLANS": {
+      "name": "Planification",
+      "description": "À la fin du tour, Retenez jusqu'à 1 carte.",
+      "upgradeDescription": "À la fin du tour, Retenez jusqu'à +1 cartes."
+    },
+    "DEFEND_R": {
+      "name": "Défense",
+      "description": "Gagnez 5 d'Armure."
+    },
+    "DEFEND_G": {
+      "name": "Défense",
+      "description": "Gagnez 5 d'Armure."
+    },
+    "DEFEND_B": {
+      "name": "Défense",
+      "description": "Gagnez 5 d'Armure."
+    },
+    "SEEING_RED": {
+      "name": "Voir rouge",
+      "description": "Gagnez [R] [R] .\nÉpuisement."
+    },
+    "DISARM": {
+      "name": "Désarmement",
+      "description": "L'ennemi perd 2 de Force.\nÉpuisement."
+    },
+    "PANACHE": {
+      "name": "Panache",
+      "description": "Chaque fois que vous jouez 5 cartes en un tour, infligez 10 dégâts à TOUS les ennemis."
+    },
+    "FIEND_FIRE": {
+      "name": "Feu démoniaque",
+      "description": "Épuisez votre main.\nInfligez 7 dégâts par carte Épuisée.\nÉpuisement."
+    },
+    "TERROR": {
+      "name": "Terreur",
+      "description": "Appliquez 99 de Vulnérabilité.\nÉpuisement."
+    },
+    "DAZED": {
+      "name": "Hébétement",
+      "description": "Injouable.\nÉthérée."
+    },
+    "BARRICADE": {
+      "name": "Barricade",
+      "description": "L'Armure n'expire plus au début de votre tour."
+    },
+    "ARMAMENTS": {
+      "name": "Armement",
+      "description": "Gagnez 5 d'Armure.\nAméliorez une carte de votre main pour le reste du combat.",
+      "upgradeDescription": "Gagnez 5 d'Armure.\nAméliorez TOUTES les cartes de votre main pour le reste du combat."
+    },
+    "HAVOC": {
+      "name": "Ravages",
+      "description": "Jouez la prochaine carte de la pioche, puis elle s'Épuise."
+    },
+    "SECRET_WEAPON": {
+      "name": "Arme secrète",
+      "description": "Choisissez une carte Attaque dans votre pioche et placez-la dans votre main.\nÉpuisement.",
+      "upgradeDescription": "Choisissez une carte Attaque dans votre pioche et placez-la dans votre main."
+    },
+    "APOTHEOSIS": {
+      "name": "Apothéose",
+      "description": "Améliorez TOUTES vos cartes pour le reste du combat.\nÉpuisement."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Ignore la douleur",
+      "description": "Quand une carte est Épuisée,\ngagnez 3 d'Armure."
+    },
+    "HIDE": {
+      "name": "Cache-cache",
+      "description": "Ne perdez pas de PV jusqu'au début de votre prochain tour.\nÉpuisement."
+    },
+    "CORRUPTION": {
+      "name": "Corruption",
+      "description": "Les cartes Compétence coûtent 0. Quand vous en jouez une, elle s'Épuise."
+    },
+    "HEEL_HOOK": {
+      "name": "Croc-en-jambe",
+      "description": "Infligez 5 dégâts.\nSi l'ennemi est Affaibli,\ngagnez [G] et\npiochez 1 carte."
+    },
+    "INJURY": {
+      "name": "Blessure",
+      "description": "Injouable."
+    },
+    "RAGE": {
+      "name": "Rage",
+      "description": "Quand vous jouez une carte Attaque ce tour, gagnez 3 d'Armure."
+    },
+    "HEADBUTT": {
+      "name": "Coup de boule",
+      "description": "Infligez 9 dégâts.\nPlacez une carte de votre défausse sur le haut de la pioche."
+    },
+    "LIMIT_BREAK": {
+      "name": "Dépasser les limites",
+      "description": "Doublez votre Force.\nÉpuisement.",
+      "upgradeDescription": "Doublez votre Force."
+    },
+    "ENTRENCH": {
+      "name": "Fortification",
+      "description": "Doublez votre Armure.",
+      "upgradeDescription": "Doublez votre Armure."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Fumées toxiques",
+      "description": "Au début du tour, appliquez 2 de Poison à TOUS les ennemis."
+    },
+    "INFINITE_BLADES": {
+      "name": "Lames infinies",
+      "description": "Au début du tour, ajoutez un Surin à votre main.",
+      "upgradeDescription": "Inné.\nAu début du tour, ajoutez un Surin à votre main."
+    },
+    "PHANTASMAL_KILLER": {
+      "name": "Tueur illusoire",
+      "description": "Au prochain tour, vos dégâts d'Attaque sont doublés."
+    },
+    "MALAISE": {
+      "name": "Malaise",
+      "description": "L'ennemi perd X de Force. Appliquez X de Faiblesse.\nÉpuisement.",
+      "upgradeDescription": "L'ennemi perd X+1 de Force. Applique X+1 de Faiblesse.\nÉpuisement."
+    },
+    "REFLEX": {
+      "name": "Réflexe",
+      "description": "Injouable.\nQuand cette carte est défaussée, piochez 2 cartes.",
+      "upgradeDescription": "Injouable.\nQuand cette carte est défaussée, piochez +1 cartes."
+    },
+    "SENTINEL": {
+      "name": "Sentinelle",
+      "description": "Gagnez 5 d'Armure.\nSi cette carte est Épuisée,\ngagnez [R] [R] .",
+      "upgradeDescription": "Gagnez +3 d'Armure.\nSi cette carte est Épuisée,\ngagnez [R] [R] [R] ."
+    },
+    "SURVIVOR": {
+      "name": "Survivant",
+      "description": "Gagnez 8 d'Armure.\nDéfaussez une carte."
+    },
+    "WILD_STRIKE": {
+      "name": "Frappe sauvage",
+      "description": "Infligez 12 dégâts.\nInsèrez une Plaie dans votre pioche."
+    },
+    "EVISCERATE": {
+      "name": "Éviscération",
+      "description": "Coûte 1 [G] en moins\npar carte défaussée ce tour.\nInfligez 7 dégâts 3 fois."
+    },
+    "FLASH_OF_STEEL": {
+      "name": "Éclair d'acier",
+      "description": "Infligez 3 dégâts.\nPiochez 1 carte."
+    },
+    "BATTLE_TRANCE": {
+      "name": "Intensité",
+      "description": "Piochez 3 cartes.\nImpossible de piocher plus de cartes pendant ce tour."
+    },
+    "HEAVY_BLADE": {
+      "name": "Lame lourde",
+      "description": "Infligez 14 dégâts.\nLa Force ajoutée à Lame lourde est multipliée par 3.",
+      "upgradeDescription": "Infligez 14 dégâts.\nLa Force ajoutée à Lame lourde est multipliée par +2."
+    },
+    "CLUMSY": {
+      "name": "Maladresse",
+      "description": "Injouable.\nÉthérée."
+    },
+    "SEARING_BLOW": {
+      "name": "Coup brûlant",
+      "description": "Infligez 12 dégâts.\nPeut être Améliorée à l'infini."
+    },
+    "CORPSE_EXPLOSION": {
+      "name": "Explosion morbide",
+      "description": "Appliquez 6 Poison.\nQuand cet ennemi meurt, infligez autant de dégâts que ses PV max à TOUS les ennemis.",
+      "upgradeDescription": "deprecated"
+    },
+    "SECOND_WIND": {
+      "name": "Second souffle",
+      "description": "Épuisez toutes les cartes de votre main (sauf Attaques). Gagnez 5 d'Armure par carte Épuisée."
+    },
+    "ENLIGHTENMENT": {
+      "name": "Illumination",
+      "description": "Réduit à 1 le coût des cartes dans votre main pendant ce tour.",
+      "upgradeDescription": "Réduit à 1 le coût des cartes dans votre main pendant ce combat."
+    },
+    "PURITY": {
+      "name": "Pureté",
+      "description": "Épuisez jusqu'à 3 cartes de votre main.\nÉpuisement."
+    },
+    "PANACEA": {
+      "name": "Panacée",
+      "description": "Gagnez 1 d'Artefact.\nÉpuisement."
+    },
+    "DASH": {
+      "name": "Esquive",
+      "description": "Gagnez 10 d'Armure.\nInflige 10 dégâts."
+    },
+    "TRANSMUTATION": {
+      "name": "Transmutation",
+      "description": "Ajoutez X cartes incolores à votre main. Elles coûtent 0 ce tour.\nÉpuisement.",
+      "upgradeDescription": "Ajoutez X cartes incolores Améliorées à votre main. Elles coûtent 0 ce tour.\nÉpuisement."
+    },
+    "BACKSTAB": {
+      "name": "Coup de poignard",
+      "description": "Infligez 11 dégâts.\nInné.\nÉpuisement."
+    },
+    "FEED": {
+      "name": "Appétit",
+      "description": "Infligez 10 dégâts.\nSi l'ennemi succombe, gagnez 3 PV max permanents. Épuisement."
+    },
+    "RUPTURE": {
+      "name": "Rupture",
+      "description": "Quand une carte vous fait perdre des PV,\ngagnez 1 de Force."
+    },
+    "VENOMOLOGY": {
+      "name": "Alchimie",
+      "description": "Obtenez une potion.\nÉpuisement."
+    },
+    "BOUNCING_FLASK": {
+      "name": "Flasque rebondissante",
+      "description": "Appliquez 3 de Poison à un ennemi aléatoire 3 fois."
+    },
+    "BLUDGEON": {
+      "name": "Gourdin",
+      "description": "Infligez 32 dégâts."
+    },
+    "FINESSE": {
+      "name": "Subtilité",
+      "description": "Gagnez 2 d'Armure.\nPiochez 1 carte."
+    },
+    "SLICE": {
+      "name": "Tranche",
+      "description": "Infligez 6 dégâts."
+    },
+    "BACKFLIP": {
+      "name": "Salto",
+      "description": "Gagnez 5 d'Armure.\nPiochez 2 cartes."
+    },
+    "OUTMANEUVER": {
+      "name": "Tacticien",
+      "description": "Au prochain tour,\ngagnez [G] [G] .",
+      "upgradeDescription": "Au prochain tour,\ngagnez [G] [G] [G] ."
+    },
+    "NIGHT_TERROR": {
+      "name": "Cauchemar",
+      "description": "Choisissez une carte.\nAu prochain tour, gagnez 3 copies de cette carte dans votre main.\nÉpuisement."
+    },
+    "BLOODLETTING": {
+      "name": "Saignée",
+      "description": "Gagnez [R] [R] .\nPerdez 3 PV.",
+      "upgradeDescription": "Gagnez [R] [R] [R] .\nPerdez 3 PV."
+    },
+    "CONCENTRATE": {
+      "name": "Concentration",
+      "description": "Défaussez 3 cartes.\nGagnez [G] [G] ."
+    },
+    "MASTER_OF_STRATEGY": {
+      "name": "Maître stratège",
+      "description": "Piochez 3 cartes.\nÉpuisement."
+    },
+    "FLECHETTES": {
+      "name": "Fléchettes",
+      "description": "Infligez 4 dégâts par Compétence en main."
+    },
+    "PERFECTED_STRIKE": {
+      "name": "Frappe parfaite",
+      "description": "Infligez 6 dégâts.\nInfligez 2 dégâts supplémentaires par carte de \"Frappe\".",
+      "upgradeDescription": "Infligez 6 dégâts.\nInfligez 3 dégâts supplémentaires par carte de \"Frappe\"."
+    },
+    "CARNAGE": {
+      "name": "Carnage",
+      "description": "Éthérée.\nInfligez 20 dégâts."
+    },
+    "MASTERFUL_STAB": {
+      "name": "Poignard expert",
+      "description": "Infligez 12 dégâts. Quand vous prenez des dégâts, le coût de cette carte augmente de 1."
+    },
+    "GOOD_INSTINCTS": {
+      "name": "Instincts de survie",
+      "description": "Gagnez 6 d'Armure."
+    },
+    "PREPARED": {
+      "name": "Préparatifs",
+      "description": "Piochez 1 carte.\nDéfaussez 1 carte.",
+      "upgradeDescription": "Piochez +1 cartes.\nDéfaussez +1 cartes."
+    },
+    "DROPKICK": {
+      "name": "Coup de pied sauté",
+      "description": "Infligez 5 dégâts.\nSi l'ennemi est Vulnérable,\ngagnez [R] et\npiochez 1 carte."
+    },
+    "SWIFT_STRIKE": {
+      "name": "Frappe rapide",
+      "description": "Infligez 7 dégâts."
+    },
+    "NORMALITY": {
+      "name": "Normalité",
+      "description": "Injouable.\nImpossible de jouer plus de 3 cartes par tour."
+    },
+    "ACCURACY": {
+      "name": "Précision",
+      "description": "Les Surins infligent 4 dégâts supplémentaires."
+    },
+    "SWORD_BOOMERANG": {
+      "name": "Épée boomerang",
+      "description": "Infligez 3 dégâts à un ennemi aléatoire 3 fois."
+    },
+    "JACK_OF_ALL_TRADES": {
+      "name": "Polyvalence",
+      "description": "Ajoutez 1 carte incolore aléatoire à votre main.\nÉpuisement.",
+      "upgradeDescription": "Ajoutez +1 cartes incolores aléatoires à votre main.\nÉpuisement."
+    },
+    "DEMON_FORM": {
+      "name": "Forme démoniaque",
+      "description": "Au début de chaque tour, gagnez 2 de Force."
+    },
+    "FIRE_BREATHING": {
+      "name": "Souffle de feu",
+      "description": "Lorsque vous piochez une carte Statut ou Malédiction, infligez 6 dégât à TOUS les ennemis."
+    },
+    "GHOSTLY_ARMOR": {
+      "name": "Armure spectrale",
+      "description": "Éthérée.\nGagnez 10 d'Armure."
+    },
+    "UPPERCUT": {
+      "name": "Uppercut",
+      "description": "Infligez 13 dégâts.\nAppliquez 1 de Faiblesse.\nAppliquez 1 de Vulnérabilité."
+    },
+    "MIND_BLAST": {
+      "name": "Détonation mentale",
+      "description": "Inné.\nInfligez autant de dégâts qu'il y a de cartes dans votre pioche."
+    },
+    "NEUTRALIZE": {
+      "name": "Neutralisation",
+      "description": "Infligez 3 dégâts.\nAppliquez 1 de Faiblesse."
+    },
+    "STRIKE_R": {
+      "name": "Frappe",
+      "description": "Infligez 6 dégâts."
+    },
+    "STRIKE_G": {
+      "name": "Frappe",
+      "description": "Infligez 6 dégâts."
+    },
+    "STRIKE_B": {
+      "name": "Frappe",
+      "description": "Infligez 6 dégâts."
+    },
+    "EVOLVE": {
+      "name": "Évolution",
+      "description": "Quand vous piochez une carte Statut, piochez 1 cartes.",
+      "upgradeDescription": "Quand vous piochez une carte Statut, piochez +1 cartes."
+    },
+    "BURN": {
+      "name": "Brûlure",
+      "description": "Injouable.\nÀ la fin du tour, subissez 2 dégâts.",
+      "upgradeDescription": "Injouable.\nÀ la fin du tour, subissez 4 dégâts."
+    },
+    "SUCKER_PUNCH": {
+      "name": "Coup bas",
+      "description": "Infligez 7 dégâts.\nAppliquez 1 de Faiblesse."
+    },
+    "DOUBLE_TAP": {
+      "name": "Attaque double",
+      "description": "Pendant ce tour, votre prochaine carte Attaque sera jouée 2 fois.",
+      "upgradeDescription": "Pendant ce tour, vos +1 prochaines cartes Attaque seront jouées 2 fois."
+    },
+    "FOOTWORK": {
+      "name": "Jeu de jambes",
+      "description": "Gagnez 2 de Dextérité."
+    },
+    "THINKING_AHEAD": {
+      "name": "Coup d'avance",
+      "description": "Piochez 2 cartes, puis placez une carte de votre main sur le haut de la pioche.\nÉpuisement.",
+      "upgradeDescription": "Piochez 2 cartes, puis placez une carte de votre main sur le haut de la pioche."
+    },
+    "DISTRACTION": {
+      "name": "Distraction",
+      "description": "Ajoutez une Compétence aléatoire à votre main.\nElle coûte 0 ce tour.\nÉpuisement."
+    },
+    "DODGE_AND_ROLL": {
+      "name": "Dérobade",
+      "description": "Gagnez 4 d'Armure.\nAu prochain tour, gagnez 4 d'Armure."
+    },
+    "ALL_OUT_ATTACK": {
+      "name": "Attaque suprême",
+      "description": "Infligez 10 dégâts à TOUS les ennemis.\nDéfaussez une carte aléatoire de votre main."
+    },
+    "FLYING_KNEE": {
+      "name": "Coup de genou",
+      "description": "Infligez 8 dégâts.\nAu prochain tour, gagnez [G] ."
+    },
+    "PREDATOR": {
+      "name": "Prédateur",
+      "description": "Infligez 15 dégâts.\nPiochez 2 cartes supplémentaires au prochain tour."
+    },
+    "MADNESS": {
+      "name": "Folie",
+      "description": "Une carte aléatoire de votre main coûte 0 pour le reste du combat.\nÉpuisement."
+    },
+    "EXPERTISE": {
+      "name": "Expertise",
+      "description": "Piochez des cartes jusqu'à en avoir 6 dans votre main."
+    },
+    "GHOSTLY": {
+      "name": "Apparition",
+      "description": "Gagnez 1 Intangible.\nÉpuisement.\nÉthérée.",
+      "upgradeDescription": "Gagnez 1 Intangible.\nÉpuisement."
+    },
+    "SLIMED": {
+      "name": "Englué",
+      "description": "Épuisement."
+    },
+    "VOID": {
+      "name": "Néant",
+      "description": "Injouable.\nLorsque vous piochez cette carte, perdez 1 Énergie.\nÉthérée."
+    },
+    "ASCENDERSBANE": {
+      "name": "Fléau du grimpeur",
+      "description": "Injouable.\nÉthérée.\nNe peut pas être retirée du deck."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Forme spectrale",
+      "description": "Gagnez 2 Intangible.\nÀ la fin de chaque tour, perdez 1 de Dextérité."
+    },
+    "GENETIC_ALGORITHM": {
+      "name": "Algorithme génétique",
+      "description": "Gagnez !B! d'Armure. Après avoir été jouée, l'Armure de cette carte augmente de 2 définitivement.\nÉpuisement."
+    },
+    "DARKNESS": {
+      "name": "Ténèbres",
+      "description": "Canalisez 1 Orbe Obscur.",
+      "upgradeDescription": "Canalisez 1 Orbe Obscur.\nUtilisez la capacité passive de tous vos Orbes Obscurs."
+    },
+    "RECYCLE": {
+      "name": "Recyclage",
+      "description": "Épuisez une carte.\nGagnez autant de [B] que son coût."
+    },
+    "STATIC_DISCHARGE": {
+      "name": "Décharge statique",
+      "description": "Quand vous subissez des dégâts d'attaque non bloqués, Canalisez 1 Orbe Kéraunique.",
+      "upgradeDescription": "Quand vous subissez des dégâts d'attaque non bloqués, Canalisez +1 Orbes Kérauniques."
+    },
+    "BIASED_COGNITION": {
+      "name": "Biais cognitif",
+      "description": "Gagnez 4 de Concentration.\nAu début de chaque tour, perdez 1 de Concentration."
+    },
+    "ALLOCATE": {
+      "name": "Allocation",
+      "description": "Gagnez !M! de Concentration.\nPerdez 1 de Force.\nPerdez 1 de Dextérité."
+    },
+    "HOLOGRAM": {
+      "name": "Hologramme",
+      "description": "Gagnez 3 d'Armure.\nAjoutez une carte de votre défausse à votre main.\nÉpuisement.",
+      "upgradeDescription": "Gagnez +2 d'Armure.\nAjoutez une carte de votre défausse à votre main."
+    },
+    "CONSERVE_BATTERY": {
+      "name": "Recharger les batteries",
+      "description": "Gagnez 7 d'Armure.\nAu prochain tour, gagnez [B]."
+    },
+    "FTL": {
+      "name": "FTL",
+      "description": "Infligez 5 dégâts. Si vous avez joué moins de 3 cartes ce tour, piochez 1 carte."
+    },
+    "SEEK": {
+      "name": "Recherche",
+      "description": "Choisissez 1 carte de votre pioche et ajoutez-la à votre main.\nÉpuisement.",
+      "upgradeDescription": "Choisissez +1 cartes de votre pioche et ajoutez-les à votre main.\nÉpuisement."
+    },
+    "CHAOS": {
+      "name": "Chaos",
+      "description": "Canalisez 1 Orbe aléatoire.",
+      "upgradeDescription": "Canalisez +1 Orbes aléatoires."
+    },
+    "THUNDER_STRIKE": {
+      "name": "Frappe kéraunique",
+      "description": "Infligez 7 dégâts à un ennemi aléatoire pour chaque Orbe Kéraunique Canalisé ce combat."
+    },
+    "UNDO": {
+      "name": "Equilibrium",
+      "description": "Gagnez 13 d'Armure.\nConservez toute votre main ce tour."
+    },
+    "BEAM_CELL": {
+      "name": "Rayon cellulaire",
+      "description": "Infligez 3 dégâts et appliquez 1 de Vulnérabilité."
+    },
+    "MULTI_CAST": {
+      "name": "Activation multiple",
+      "description": "Activez votre prochain Orbe X fois.",
+      "upgradeDescription": "Activez votre prochain Orbe X+1 fois."
+    },
+    "SUNDER": {
+      "name": "Désassemblage",
+      "description": "Infligez 24 dégâts.\nSi l'ennemi succombe, gagnez [B] [B] [B]."
+    },
+    "GO_FOR_THE_EYES": {
+      "name": "Vise les yeux",
+      "description": "Infligez 3 dégâts. Si l'ennemi compte attaquer, appliquez 1 de Faiblesse."
+    },
+    "STEAM_POWER": {
+      "name": "Overclock",
+      "description": "Piochez 2 cartes.\nAjoutez une Brûlure à votre défausse."
+    },
+    "CREATIVE_AI": {
+      "name": "IA créative",
+      "description": "Au début de chaque tour, ajoutez un Pouvoir aléatoire à votre main."
+    },
+    "STACK": {
+      "name": "Pile",
+      "description": "Gagnez autant d'Armure qu'il y a de cartes dans votre défausse.",
+      "upgradeDescription": "Gagnez autant d'Armure qu'il y a de cartes dans votre défausse + 3."
+    },
+    "HELLO_WORLD": {
+      "name": "Hello World",
+      "description": "Au début de chaque tour, ajoutez une carte Commune aléatoire à votre main.",
+      "upgradeDescription": "Inné.\nAu début de chaque tour, ajoutez une carte Commune aléatoire à votre main."
+    },
+    "REBOOT": {
+      "name": "Redémarrage",
+      "description": "Mélangez toutes vos cartes dans votre pioche.\nPiochez 4 cartes.\nÉpuisement."
+    },
+    "REDO": {
+      "name": "Récursivité",
+      "description": "Activez votre prochain Orbe.\nCanalisez l'Orbe que vous venez d'Activer."
+    },
+    "SELF_REPAIR": {
+      "name": "Autoréparation",
+      "description": "À la fin du combat, récupérez 7 PV."
+    },
+    "LOOP": {
+      "name": "Boucle",
+      "description": "Au début de chaque tour, utilisez la capacité passive de votre prochain Orbe.",
+      "upgradeDescription": "Au début de chaque tour, utilisez la capacité passive de votre prochain Orbe +1 fois."
+    },
+    "GLACIER": {
+      "name": "Glacier",
+      "description": "Gagnez 7 d'Armure.\nCanalisez 2 Orbes Glaciaires.",
+      "upgradeDescription": "Gagnez +3 d'Armure.\nCanalisez 2 Orbes Glaciaires."
+    },
+    "SKIM": {
+      "name": "Parcourir",
+      "description": "Piochez 3 cartes."
+    },
+    "HYPERBEAM": {
+      "name": "Ultralaser",
+      "description": "Infligez 26 dégâts à TOUS les ennemis.\nPerdez 3 de Concentration."
+    },
+    "TURBO": {
+      "name": "TURBO",
+      "description": "Gagnez [B] [B].\nAjoutez un Néant dans votre défausse.",
+      "upgradeDescription": "Gagnez [B] [B] [B].\nAjoutez un Néant dans votre défausse."
+    },
+    "ALL_FOR_ONE": {
+      "name": "Tous pour un",
+      "description": "Infligez 10 dégâts. Placez toutes les cartes coûtant 0 de votre défausse dans votre main."
+    },
+    "BLASTER": {
+      "name": "Pistolet laser",
+      "description": "déprécié"
+    },
+    "FISSION": {
+      "name": "Fission",
+      "description": "Perdez TOUS vos Orbes. Gagnez [B] et piochez 1 carte pour chaque Orbe perdu.\nÉpuisement.",
+      "upgradeDescription": "Activez TOUS vos Orbes. Gagnez [B] et piochez 1 carte pour chaque Orbe activé.\nÉpuisement."
+    },
+    "BARRAGE": {
+      "name": "Déluge",
+      "description": "Infligez 4 dégâts pour chaque Orbe Canalisé."
+    },
+    "REPROGRAM": {
+      "name": "Reprogrammation",
+      "description": "Perdez 1 de Concentration.\nGagnez 1 de Force.\nGagnez 1 de Dextérité."
+    },
+    "RIP_AND_TEAR": {
+      "name": "Lacération",
+      "description": "Infligez 7 dégâts à un ennemi aléatoire 2 fois."
+    },
+    "BALL_LIGHTNING": {
+      "name": "Foudre en boule",
+      "description": "Infligez 7 dégâts. Canalisez 1 Orbe Kéraunique."
+    },
+    "METEOR_STRIKE": {
+      "name": "Frappe météore",
+      "description": "Infligez 24 dégâts.\nCanalisez 3 Orbes Plasmiques."
+    },
+    "AUTO_SHIELDS": {
+      "name": "Boucliers automatiques",
+      "description": "Si vous n'avez pas d'Armure, gagnez 11 d'Armure."
+    },
+    "GASH": {
+      "name": "Griffe",
+      "description": "Infligez 3 dégâts.\nToutes les cartes Griffe font 2 dégâts supplémentaires ce combat."
+    },
+    "MELTER": {
+      "name": "Fondeur",
+      "description": "Enlevez toute l'Armure de l'ennemi.\nInfligez 10 dégâts."
+    },
+    "CHILL": {
+      "name": "Frisson",
+      "description": "Canalisez 1 Orbe Glaciaire pour chaque ennemi dans ce combat.\nÉpuisement.",
+      "upgradeDescription": "Inné. Canalisez 1 Orbe Glaciaire pour chaque ennemi dans ce combat.\nÉpuisement."
+    },
+    "REINFORCED_BODY": {
+      "name": "Renforcement",
+      "description": "Gagnez 7 d'Armure X fois."
+    },
+    "COLD_SNAP": {
+      "name": "Vague de froid",
+      "description": "Infligez 6 dégâts. Canalisez 1 Orbe Glaciaire."
+    },
+    "BUFFER": {
+      "name": "Tampon",
+      "description": "Empêche votre prochaine perte de PV",
+      "upgradeDescription": "Empêche vos +1 prochaines pertes de PV."
+    },
+    "HEATSINKS": {
+      "name": "Dissipateur de chaleur",
+      "description": "Quand vous jouez un Pouvoir, piochez 1 carte.",
+      "upgradeDescription": "Quand vous jouez un Pouvoir, piochez +1 cartes."
+    },
+    "STREAMLINE": {
+      "name": "Fuselage",
+      "description": "Infligez 15 dégâts.\nQuand vous jouez cette carte, son coût est réduit de 1 pour le combat."
+    },
+    "COOLHEADED": {
+      "name": "Sang-froid",
+      "description": "Canalisez 1 Orbe Glaciaire.\nPiochez 1 carte.",
+      "upgradeDescription": "Canalisez 1 Orbe Glaciaire.\nPiochez +1 cartes."
+    },
+    "SWEEPING_BEAM": {
+      "name": "Faisceau balayant",
+      "description": "Infligez 6 dégâts à TOUS les ennemis.\nPiochez 1 carte."
+    },
+    "STORM": {
+      "name": "Orage",
+      "description": "Quand vous jouez un Pouvoir, Canalisez 1 Orbe Kéraunique.",
+      "upgradeDescription": "Inné.\nQuand vous jouez un Pouvoir, Canalisez 1 Orbe Kéraunique."
+    },
+    "DUALCAST": {
+      "name": "Activation double",
+      "description": "Activez votre prochain Orbe 2 fois."
+    },
+    "DEFRAGMENT": {
+      "name": "Défragmentation",
+      "description": "Gagnez 1 de Concentration."
+    },
+    "LEAP": {
+      "name": "Saut",
+      "description": "Gagnez 9 d'Armure."
+    },
+    "FORCE_FIELD": {
+      "name": "Champ de force",
+      "description": "Coûte 1 [B] de moins pour chaque Pouvoir joué ce combat.\nGagnez 12 d'Armure."
+    },
+    "BLIZZARD": {
+      "name": "Blizzard",
+      "description": "Infligez 2 dégâts par Orbe Glaciaire Canalisé ce combat à TOUS les ennemis."
+    },
+    "FLUX_CAPACITOR": {
+      "name": "Convecteur temporel",
+      "description": "Remplacez tous vos Orbes Canalisés par des Orbes Plasmiques.\nÉpuisement."
+    },
+    "WHITE_NOISE": {
+      "name": "Bruit blanc",
+      "description": "Ajoutez un Pouvoir aléatoire à votre main.\nIl coûte 0 ce tour.\nÉpuisement."
+    },
+    "FUSION": {
+      "name": "Fusion",
+      "description": "Canalisez 1 Orbe Plasmique."
+    },
+    "DOOM_AND_GLOOM": {
+      "name": "Sinistrose",
+      "description": "Infligez 10 dégâts à TOUS les ennemis.\nCanalisez 1 Orbe Obscur."
+    },
+    "REBOUND": {
+      "name": "Rebond",
+      "description": "Infligez 9 dégâts.\nPlacez la prochaine carte que vous jouez ce tour au sommet de votre pioche."
+    },
+    "AMPLIFY": {
+      "name": "Amplification",
+      "description": "Ce tour, votre prochain Pouvoir est joué deux fois.",
+      "upgradeDescription": "Ce tour, vos +1 prochains Pouvoirs sont joués deux fois."
+    },
+    "AGGREGATE": {
+      "name": "Agglomération",
+      "description": "Gagnez [B] pour chaque tranche de 4 cartes dans votre pioche."
+    },
+    "ZAP": {
+      "name": "Électrisation",
+      "description": "Canalisez 1 Orbe Kéraunique."
+    },
+    "ENERGY_PULSE": {
+      "name": "Impulsion d'énergie",
+      "description": "Gagnez autant d'Armure que vous avez d'Énergie.",
+      "upgradeDescription": "Gagnez autant d'Armure que le double de votre Énergie."
+    },
+    "TEMPEST": {
+      "name": "Tempête",
+      "description": "Canalisez X Orbe(s) Kéraunique(s).\nÉpuisement.",
+      "upgradeDescription": "Canalisez X+1 Orbe(s) Kéraunique(s).\nÉpuisement."
+    },
+    "RAINBOW": {
+      "name": "Arc-en-ciel",
+      "description": "Canalisez\n1 Orbe Kéraunique,\n1 Orbe Glaciaire et\n1 Orbe Obscur.\nÉpuisement.",
+      "upgradeDescription": "Canalisez\n1 Orbe Kéraunique,\n1 Orbe Glaciaire et\n1 Orbe Obscur."
+    },
+    "CAPACITOR": {
+      "name": "Condensateur",
+      "description": "Gagnez 2 emplacement d'Orbe.",
+      "upgradeDescription": "Gagnez +1 emplacements d'Orbe."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Machine Learning",
+      "description": "Piochez 1 carte supplémentaire au début de chaque tour.",
+      "upgradeDescription": "Inné.\nPiochez 1 carte supplémentaire au début de chaque tour."
+    },
+    "MAGNETISM": {
+      "name": "Magnétisme",
+      "description": "Au début de chaque tour, ajoutez une carte incolore aléatoire à votre main."
+    },
+    "DOUBLE_ENERGY": {
+      "name": "Énergie double",
+      "description": "Doublez votre Énergie.\nÉpuisement.",
+      "upgradeDescription": "Doublez votre Énergie."
+    },
+    "ECHO_FORM": {
+      "name": "Forme résonnante",
+      "description": "La première carte que vous jouez chaque tour est jouée deux fois. Éthérée",
+      "upgradeDescription": "La première carte que vous jouez chaque tour est jouée deux fois."
+    },
+    "AXE_KICK": {
+      "name": "Coup de pied en marteau",
+      "description": "Infligez !D! dégâts.\nActivez votre prochain Orbe."
+    },
+    "SCRAPE": {
+      "name": "Éraflure",
+      "description": "Infligez 7 dégâts.\nPiochez 4 cartes.\nDéfaussez directement celles qui ne coûtent pas 0."
+    },
+    "CONSUME": {
+      "name": "Consummer",
+      "description": "Gagnez 2 de Concentration.\nPerdez 1 emplacement d'Orbe."
+    },
+    "LOCKON": {
+      "name": "Cible",
+      "description": "Infligez 8 dégâts.\nAppliquez 2 de Ciblage."
+    },
+    "BOOTSEQUENCE": {
+      "name": "Démarrage",
+      "description": "Gagnez 10 d'Armure.\nInné.\nÉpuisement."
+    },
+    "STEAM": {
+      "name": "Barrière de vapeur",
+      "description": "Gagnez 6 d'Armure.\nL'Armure de cette carte est diminuée de 1 pour le combat."
+    },
+    "ELECTRODYNAMICS": {
+      "name": "Électrodynamique",
+      "description": "Les Orbes Kérauniques frappent TOUS les ennemis. Canalisez 2 Orbes Kérauniques."
+    },
+    "COMPILE_DRIVER": {
+      "name": "Compilateur de pilote",
+      "description": "Infligez 7 dégâts.\nPiochez 1 cartes pour chaque Orbe différent que vous avez."
+    },
+    "CORE_SURGE": {
+      "name": "Surtension nucléique",
+      "description": "Infligez 11 dégâts.\nGagnez 1 d'Artefact.\nÉpuisement."
+    },
+    "RITUALDAGGER": {
+      "name": "Dague rituelle",
+      "description": "Infligez !D! dégâts. Si cette carte tue un ennemi, ses dégâts augmentent de 3.\nÉpuisement."
+    },
+    "PRIDE": {
+      "name": "Orgueil",
+      "description": "Inné. Épuisement.\nAu début de votre tour, placez une copie de cette carte au dessus de votre pioche."
+    },
+    "CHRYSALIS": {
+      "name": "Chrysalide",
+      "description": "Ajoutez 3 Compétences aléatoires à votre pioche. Elles coûtent 0 ce combat.\nÉpuisement."
+    },
+    "MAYHEM": {
+      "name": "Grabuge",
+      "description": "Au début de votre tour, jouez la première carte de votre pioche."
+    },
+    "METAMORPHOSIS": {
+      "name": "Métamorphose",
+      "description": "Ajoutez 3 Attaques aléatoires à votre pioche. Elles coûtent 0 ce combat.\nÉpuisement."
+    },
+    "PANICBUTTON": {
+      "name": "Bouton de secours",
+      "description": "Gagnez 30 d'Armure. Vous ne pouvez plus gagner d'Armure avec des cartes pendant les 2 prochains tours. Épuisement."
+    },
+    "HANDOFGREED": {
+      "name": "Main de la cupidité",
+      "description": "Infligez 20 dégâts. Si l'ennemi succombe, gagnez 20 d'Or."
+    },
+    "SHAME": {
+      "name": "Honte",
+      "description": "Injouable.\nÀ la fin de votre tour, gagnez 1 de Fragilité."
+    },
+    "IMPATIENCE": {
+      "name": "Impatience",
+      "description": "Si vous n'avez pas de carte Attaque dans votre main, piochez 2 cartes."
+    },
+    "VIOLENCE": {
+      "name": "Violence",
+      "description": "Placez 3 Attaques aléatoires de votre pioche dans votre main.\nÉpuisement."
+    },
+    "DISCOVERY": {
+      "name": "Découverte",
+      "description": "Choisissez 1 carte à ajouter à votre main parmi 3 cartes aléatoires. Elle coûte 0 ce tour.\nÉpuisement.",
+      "upgradeDescription": "Choisissez 1 carte à ajouter à votre main parmi 3 cartes aléatoires. Elle coûte 0 ce tour."
+    },
+    "FORETHOUGHT": {
+      "name": "Prévoyance",
+      "description": "Placez une carte de votre main sous votre pioche.\nElle coûte 0 jusqu'à ce qu'elle soit jouée.",
+      "upgradeDescription": "Placez n'importe quel nombre de cartes de votre main sous votre pioche.\nElles coûtent 0 jusqu'à ce qu'elles soient jouées."
+    },
+    "SPIRITSHIELD": {
+      "name": "Bouclier spirituel",
+      "description": "Gagnez 3 d'Armure pour chaque carte dans votre main."
+    },
+    "BRILLIANCEAURA": {
+      "name": "DEPRECATED Aura de brillance",
+      "description": "Retenue.\nAu début de votre tour, piochez 1 carte.\nÉpuisement."
+    },
+    "WRATH": {
+      "name": "Colère",
+      "description": "Infligez et subissez le double de dégâts."
+    },
+    "POLYMATH": {
+      "name": "DEPRECATED Polymath",
+      "description": "Entrez en Calme ou en Colère.\nÉpuisement."
+    },
+    "TANTRUM": {
+      "name": "Crise de colère",
+      "description": "Infligez 3 dégâts\n3 fois.\nEntrez en Colère.\nMélangez cette carte dans votre pioche."
+    },
+    "ADAPTATION": {
+      "name": "Précipitation",
+      "description": "Lorsque vous entrez en Colère, piochez 2 cartes."
+    },
+    "CAUSALITY": {
+      "name": "Causalité",
+      "description": "Piochez des cartes jusqu'à ce que votre main soit pleine.\nÉpuisement.",
+      "upgradeDescription": "Retenue.\nPiochez des cartes jusqu'à ce que votre main soit pleine.\nÉpuisement."
+    },
+    "DEVOTION": {
+      "name": "Dévotion",
+      "description": "Au début de votre tour, gagnez 2 de Mantra."
+    },
+    "EMPTYFIST": {
+      "name": "Poing vide",
+      "description": "Infligez 9 dégâts.\nQuittez votre Position."
+    },
+    "WISDOM": {
+      "name": "Sagesse",
+      "description": "Retenue.\nPiochez !M! cartes.\nÉpuisement."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Rétribution",
+      "description": "Lorsque vous perdez des PV, gagnez !M! de Vigueur."
+    },
+    "FLOWSTATE": {
+      "name": "DEPRECATED Transe",
+      "description": "Colère: Entrez en Calme.\nCalme: Entrez en Colère.\nÉpuisement.",
+      "upgradeDescription": "Colère: Entrez en Calme.\nCalme: Entrez en Colère."
+    },
+    "SWIVEL": {
+      "name": "Pivot",
+      "description": "Gagnez 8 d'Armure.\nLa prochaine Attaque que vous jouez coûte 0."
+    },
+    "WISH": {
+      "name": "Vœu",
+      "description": "Choisissez :\nGagnez 6 d'Armure plaquée, 3 de Force ou 25 d'Or.\nÉpuisement."
+    },
+    "FURYAURA": {
+      "name": "DEPRECATED Aura furieuse",
+      "description": "Retenue.\nGagnez !M! de Force temporaire.\nAu début de votre tour, gagnez 1 de Force temporaire."
+    },
+    "DEUSEXMACHINA": {
+      "name": "Deus Ex Machina",
+      "description": "Injouable.\nLorsque vous piochez cette carte, ajoutez 2 Miracle dans votre main et Épuisez cette carte."
+    },
+    "THROUGHVIOLENCE": {
+      "name": "Par la violence",
+      "description": "Retenue. Infligez !D! dégâts.\nÉpuisement."
+    },
+    "METAPHYSICS": {
+      "name": "DEPRECATED Métaphysique",
+      "description": "Ajoutez une carte Causalité dans votre pioche.\nÉpuisement.",
+      "upgradeDescription": "Ajoutez une carte Causalité+ dans votre pioche.\nÉpuisement."
+    },
+    "CLARITY": {
+      "name": "Clarté",
+      "description": "Regardez les !M! premières cartes de votre pioche. Ajoutez-en une à votre main.\nÉpuisez les autres.",
+      "upgradeDescription": "Regardez les !M! premières cartes de votre pioche. Ajoutez-en une à votre main.\nÉpuisez les autres."
+    },
+    "WREATHOFFLAME": {
+      "name": "Couronne de flammes",
+      "description": "Votre prochaine Attaque inflige 5 dégâts supplémentaires."
+    },
+    "FLICKER": {
+      "name": "DEPRECATED Scintillement",
+      "description": "Inflige !D! dégâts. Si l'ennemi est tué, récupérez la carte dans votre main."
+    },
+    "ALPHA": {
+      "name": "Alpha",
+      "description": "Ajoutez une carte Bêta dans votre pioche.\nÉpuisement.",
+      "upgradeDescription": "Inné.\nAjoutez une carte Bêta dans votre pioche.\nÉpuisement."
+    },
+    "FOLLOWUP": {
+      "name": "Poursuite",
+      "description": "Infligez 7 dégâts.\nSi la dernière carte jouée ce combat était une Attaque, gagnez [W]."
+    },
+    "VAULT": {
+      "name": "Saut",
+      "description": "Jouez un tour supplémentaire après celui-ci.\nTerminez votre tour.\nÉpuisement."
+    },
+    "WINDUP": {
+      "name": "DEPRECATED Remontée",
+      "description": "Infligez !D! dégâts.\nGagnez !M! de Vigueur."
+    },
+    "WALLOP": {
+      "name": "Fracas",
+      "description": "Infligez 9 dégâts.\nGagnez de l'Armure équivalente aux dégâts infligés non bloqués."
+    },
+    "CONSECRATE": {
+      "name": "Consécration",
+      "description": "Infligez 5 dégâts à TOUS les ennemis."
+    },
+    "CONCLUDE": {
+      "name": "Conclusion",
+      "description": "Infligez 12 dégâts à TOUS les ennemis.\nTerminez votre tour."
+    },
+    "MASTERREALITY": {
+      "name": "Maîtrise-réalité",
+      "description": "Lorsqu'une carte est créée pendant un combat, Améliorez-la."
+    },
+    "CLEANSEEVIL": {
+      "name": "Purification du mal",
+      "description": "Ajoutez X Gifles à votre main.",
+      "upgradeDescription": "Ajoutez X Gifles+ à votre main."
+    },
+    "WINDMILLSTRIKE": {
+      "name": "Frappe du moulin",
+      "description": "Retenue.\nInfligez 7 dégâts.\nLorsque cette carte est Retenue, augmente ses dégâts de 4 pour ce combat."
+    },
+    "SHIELD": {
+      "name": "DEPRECATED Bouclier",
+      "description": "Retenue.\nGagnez !B! d'Armure.\nÉpuisement."
+    },
+    "LESSONLEARNED": {
+      "name": "Leçon apprise",
+      "description": "Infligez 10 dégâts.\nSi l'ennemi succombe, Améliorez une carte aléatoire de votre deck. Épuisement."
+    },
+    "CALM": {
+      "name": "Calme",
+      "description": "Lorsque vous quittez le Calme, gagnez [W] [W]."
+    },
+    "THIRDEYE": {
+      "name": "Troisième œil",
+      "description": "Gagnez 7 d'Armure.\nScrutez 3 cartes."
+    },
+    "SURVEY": {
+      "name": "DEPRECATED Enquête",
+      "description": "Gagnez !B! d'Armure.\nGagnez !M! de Vigueur."
+    },
+    "FLYINGSLEEVES": {
+      "name": "Manches flottantes",
+      "description": "Retenue.\nInfligez 4 dégâts deux fois."
+    },
+    "WIREHEADING": {
+      "name": "Prévoyance",
+      "description": "Au début de votre tour, Scrutez 3 cartes."
+    },
+    "SANCTITY": {
+      "name": "Sainteté",
+      "description": "Gagnez 6 d'Armure.\nSi la dernière carte jouée était une Compétence, piochez 2 cartes."
+    },
+    "WARDAURA": {
+      "name": "DEPRECATED Aura tutélaire",
+      "description": "Retenue.\nGagnez !B! d'Armure.\nAu début de votre tour, gagnez !M! d'Armure."
+    },
+    "MASTERY": {
+      "name": "Maîtrise",
+      "description": "Lorsque vous tentez de changer de Position pour votre Position actuelle, gagnez [B]."
+    },
+    "BETA": {
+      "name": "Bêta",
+      "description": "Mélangez un Oméga dans votre pioche.\nÉpuisement."
+    },
+    "FEARNOEVIL": {
+      "name": "Sans crainte",
+      "description": "Infligez 8 dégâts.\nSi l'ennemi compte attaquer, entrez en Calme."
+    },
+    "PERSEVERANCE": {
+      "name": "Persévérance",
+      "description": "Retenue.\nGagnez 5 d'Armure.\nLorsque cette carte est retenue, augmente son gain d'Armure de 2 pour ce combat."
+    },
+    "RAGNAROK": {
+      "name": "Ragnarok",
+      "description": "Infligez 5 dégâts à un ennemi aléatoire 5 fois."
+    },
+    "AWAKENEDSTRIKE": {
+      "name": "DEPRECATED Frappe éveillée",
+      "description": "Infligez !D! dégâts."
+    },
+    "BLESSED": {
+      "name": "DEPRECATED Béni",
+      "description": "Ajoutez !M! Miracles à votre pioche.\nÉpuisement.",
+      "upgradeDescription": "Ajoutez !M! Miracles Améliorés à votre pioche.\nÉpuisement."
+    },
+    "ERUPTION": {
+      "name": "Éruption",
+      "description": "Infligez 9 dégâts.\nEntrez en Colère."
+    },
+    "LETFATEDECIDE": {
+      "name": "DEPRECATED Alea Jacta Est",
+      "description": "Jouez les X premières cartes de votre pioche. Si X est égal à 3 ou plus, Retenez X cartes."
+    },
+    "CUTTHROUGHFATE": {
+      "name": "Changez le destin",
+      "description": "Infligez 7 dégâts.\nScrutez 2 cartes.\nPiochez 1 carte."
+    },
+    "WAVEOFTHEHAND": {
+      "name": "Revers de la main",
+      "description": "Lorsque vous gagnez de l'Armure ce tour, appliquez 1 de Faiblesse à TOUS les ennemis."
+    },
+    "VIGILANCE": {
+      "name": "Vigilance",
+      "description": "Gagnez 8 d'Armure. Entrez en Calme.",
+      "upgradeDescription": "Deprecated."
+    },
+    "PATHTOVICTORY": {
+      "name": "Points vitaux",
+      "description": "Appliquez 8 de Marque.\nTOUS les ennemis perdent des PV équivalents à leur Marque."
+    },
+    "EVALUATE": {
+      "name": "Évaluation",
+      "description": "Gagnez 6 d'Armure.\nAjoutez une Perspicacité dans votre pioche.",
+      "upgradeDescription": "Gagnez +4 d'Armure.\nAjoutez une Perspicacité+ dans votre pioche."
+    },
+    "ESTABLISHMENT": {
+      "name": "Fondation",
+      "description": "Lorsqu'une carte est Retenue, réduisez son coût de 1 pour ce combat.",
+      "upgradeDescription": "Inné.\nLorsqu'une carte est Retenue, réduisez son coût de 1 pour ce combat."
+    },
+    "COLLECT": {
+      "name": "Collecte",
+      "description": "Ajoutez un Miracle+ à votre main au début de vos X prochains tours.\nÉpuisement.",
+      "upgradeDescription": "Ajoutez un Miracle+ à votre main au début de vos X+1 prochains tours.\nÉpuisement."
+    },
+    "EXPERIENCED": {
+      "name": "DEPRECATED Expérimenté",
+      "description": "Gagnez !B! d'Armure pour chaque carte Améliorée dans votre main."
+    },
+    "PERFECTEDFORM": {
+      "name": "DEPRECATED Forme parfaite",
+      "description": "Si vous êtes entrés dans toutes les Positions basiques durant ce tour, entrez en Divinité.\nÉpuisement.",
+      "upgradeDescription": "Si vous êtes entrés dans toutes les Positions basiques durant ce tour, entrez en Divinité.\nÉpuisement."
+    },
+    "JUSTLUCKY": {
+      "name": "Chanceux",
+      "description": "Scrutez 1 cartes.\nGagnez 2 d'Armure.\nInfligez 3 dégâts."
+    },
+    "TORRENT": {
+      "name": "DEPRECATED Torrent",
+      "description": "Infligez !D! dégâts à TOUS les ennemis !M! fois.\nÉpuisement."
+    },
+    "PEACE": {
+      "name": "Paix",
+      "description": "Retenue.\nTOUS les ennemis perdent !M! de Force ce tour.\nÉpuisement."
+    },
+    "PALMTHATRESTRAINS": {
+      "name": "DEPRECATED Paume contraignante",
+      "description": "Infligez !D! dégâts.\nAppliquez !M! de Faiblesse."
+    },
+    "PROTECT": {
+      "name": "Protection",
+      "description": "Retenue.\nGagnez 12 d'Armure."
+    },
+    "WORSHIP": {
+      "name": "Vénération",
+      "description": "Gagnez 5 de Mantra.",
+      "upgradeDescription": "Retenue.\nGagnez 5 de Mantra."
+    },
+    "EMPTYMIND": {
+      "name": "Esprit clair",
+      "description": "Piochez 2 cartes.\nQuittez votre Position.",
+      "upgradeDescription": "Piochez +1 cartes.\nQuittez votre Position."
+    },
+    "MIRACLE": {
+      "name": "Miracle",
+      "description": "Retenue.\nGagnez [W].\nÉpuisement.",
+      "upgradeDescription": "Retenue.\nGagnez [W] [W].\nÉpuisement."
+    },
+    "DEVAFORM": {
+      "name": "Forme Deva",
+      "description": "Éthérée.\nAu début de votre tour, gagnez [W]\net augmentez ce gain de 1.",
+      "upgradeDescription": "Au début de votre tour, gagnez [W]\net augmentez ce gain de 1."
+    },
+    "TALKTOTHEHAND": {
+      "name": "Parle à ma main",
+      "description": "Infligez 5 dégâts.\nLorsque vous attaquez cet ennemi, gagnez 2 d'Armure.\nÉpuisement."
+    },
+    "STRIKE_P": {
+      "name": "Frappe",
+      "description": "Infligez 6 dégâts."
+    },
+    "MEDITATE": {
+      "name": "Méditation",
+      "description": "Ajoutez une carte de votre défausse à votre main et Retenez-la.\nEntrez en Calme. Terminez votre tour.",
+      "upgradeDescription": "Ajoutez deux cartes de votre défausse à votre main et Retenez-les.\nEntrez en Calme. Terminez votre tour."
+    },
+    "NIRVANA": {
+      "name": "Nirvana",
+      "description": "Lorsque vous Scrutez, gagnez 3 d'Armure."
+    },
+    "DECEIVEREALITY": {
+      "name": "Trompe-réalité",
+      "description": "Gagnez 4 d'Armure.\nAjoutez une Sécurité à votre main."
+    },
+    "RETREATINGHAND": {
+      "name": "DEPRECATED Main de retraite",
+      "description": "Ethérée.\nGagnez !B! d'Armure. Si la dernière carte jouée était une Attaque, reprenez cette carte dans votre main.",
+      "upgradeDescription": "Gagnez !B! d'Armure. Si la dernière carte jouée était une Attaque, reprenez cette carte dans votre main."
+    },
+    "HALT": {
+      "name": "Halte",
+      "description": "Gagnez 3 d'Armure.\nSi vous êtes en Colère, gagnez 9 d'Armure supplémentaire."
+    },
+    "CURSEOFTHEBELL": {
+      "name": "Malédiction de la cloche",
+      "description": "Injouable.\nNe peut être retirée de votre deck."
+    },
+    "BRILLIANCE": {
+      "name": "Brillance",
+      "description": "Infligez 12 dégâts.\nInflige autant de dégâts supplémentaires que vous avez gagné de Mantra ce combat."
+    },
+    "CLEARTHEMIND": {
+      "name": "Tranquillité",
+      "description": "Retenue. Entrez en Calme.\nÉpuisement."
+    },
+    "SAFETY": {
+      "name": "Sécurité",
+      "description": "Retenue.\nGagnez !B! d'Armure.\nÉpuisement."
+    },
+    "SCRAWL": {
+      "name": "Griffonage",
+      "description": "Piochez des cartes jusqu'à remplir votre main.\nÉpuisement."
+    },
+    "PROSTRATE": {
+      "name": "Prosternation",
+      "description": "Gagnez 2 de Mantra.\nGagnez 4 d'Armure.",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "PRAY": {
+      "name": "Prière",
+      "description": "Gagnez 3 de Mantra.\nAjoutez une Perspicacité dans votre pioche."
+    },
+    "BIGBRAIN": {
+      "name": "DEPRECATED Grosse tête",
+      "description": "Retenue.\nPiochez 1 carte.\nÉpuisement.",
+      "upgradeDescription": "Retenue.\nPiochez 1 carte."
+    },
+    "FOREIGNINFLUENCE": {
+      "name": "Influence extérieure",
+      "description": "Choisissez 1 Attaque de n'importe quelle couleur parmi 3 à ajouter à votre main.\nÉpuisement.",
+      "upgradeDescription": "Choisissez 1 Attaque de n'importe quelle couleur parmi 3 à ajouter à votre main.\nElle coûte 0 ce tour.\nÉpuisement."
+    },
+    "SIGNATUREMOVE": {
+      "name": "Attaque signature",
+      "description": "Peut être jouée uniquement si c'est la seule Attaque dans votre main.\nInflige 30 dégâts."
+    },
+    "SUBLIMESLICE": {
+      "name": "DEPRECATED Tranche parfaite",
+      "description": "Infligez !D! dégâts.\nEntrez dans une Position aléatoire."
+    },
+    "REACHHEAVEN": {
+      "name": "Atteinte du paradis",
+      "description": "Infligez 10 dégâts.\nAjoutez 1 carte\nPar la violence dans votre pioche."
+    },
+    "INSIGHT": {
+      "name": "Perspicacité",
+      "description": "Retenue.\nPiochez !M! cartes.\nÉpuisement.",
+      "upgradeDescription": "Retenue.\nPiochez !M! cartes.\nÉpuisement."
+    },
+    "BATTLEHYMN": {
+      "name": "Hymne de bataille",
+      "description": "Au début de chaque tour, ajoutez une Gifle à votre main.",
+      "upgradeDescription": "Inné.\nAu début de chaque tour, ajoutez une Gifle à votre main."
+    },
+    "SOOTHINGAURA": {
+      "name": "DEPRECATED Aura apaisante",
+      "description": "Retenue.\nAjoutez !M! de Faiblesse.\nAu début de votre tour, ajoutez 1 de Faiblesse à un ennemi aléatoire."
+    },
+    "BOWLINGBASH": {
+      "name": "Jeu de quille",
+      "description": "Infligez 7 dégâts pour chaque ennemi en combat."
+    },
+    "TRUTH": {
+      "name": "Vérité",
+      "description": "Retenue.\nInfligez !D! dégâts.\nPiochez !M! carte.\nÉpuisement.",
+      "upgradeDescription": "Retenue.\nInfligez !D! dégâts.\nPiochez !M! cartes.\nÉpuisement."
+    },
+    "PUNISHMENT": {
+      "name": "DEPRECATED Châtiment",
+      "description": "Entrez en position de Châtiment."
+    },
+    "SMITE": {
+      "name": "Gifle",
+      "description": "Retenue.\nInfligez !D! dégâts.\nÉpuisement."
+    },
+    "OMNISCIENCE": {
+      "name": "Omniscience",
+      "description": "Choisissez une carte dans votre pioche.\nJouez la carte choisie deux fois et Épuisez-la.\nÉpuisement."
+    },
+    "OMEGA": {
+      "name": "Oméga",
+      "description": "À la fin de votre tour, infligez !M! dégâts à TOUS les ennemis."
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Sérénité",
+      "description": "Lorsque vous êtes en position de Calme, la perte de PV est réduite de !M!."
+    },
+    "JUDGEMENT": {
+      "name": "Jugement",
+      "description": "Si l'ennemi a 30 PV ou moins, descendez ses PV à 0."
+    },
+    "MENTALFORTRESS": {
+      "name": "Forteresse mentale",
+      "description": "Lorsque vous changez de Position, gagnez 4 d'Armure."
+    },
+    "EMPTYBODY": {
+      "name": "Corps vide",
+      "description": "Gagnez 7 d'Armure.\nQuittez votre Position."
+    },
+    "CRESCENDO": {
+      "name": "Crescendo",
+      "description": "Retenue.\nEntrez en Colère.\nÉpuisement."
+    },
+    "SANDSOFTIME": {
+      "name": "Sables du temps",
+      "description": "Retenue.\nInfligez 20 dégâts.\nLorsque cette carte est Retenue, diminuez son coût de 1 pour ce combat."
+    },
+    "BLASPHEMY": {
+      "name": "Blasphème",
+      "description": "Entrez en Divinité.\nMourrez au prochain tour.\nÉpuisement.",
+      "upgradeDescription": "Retenue.\nEntrez en Divinité.\nMourrez au prochain tour.\nÉpuisement."
+    },
+    "TRANSCENDENCE": {
+      "name": "Transcendance",
+      "description": "Améliorez toutes les cartes qui sont Retenues dans votre main."
+    },
+    "FLARE": {
+      "name": "DEPRECATED Embrasement",
+      "description": "Infligez !D! dégâts à TOUS les ennemis.\nColère: Gagnez [W] [W] ."
+    },
+    "UNRAVELING": {
+      "name": "Dénouement",
+      "description": "Jouez toutes vos cartes de gauche à droite. Les cibles sont choisies aléatoirement.\nÉpuisement."
+    },
+    "WEAVE": {
+      "name": "Tissage",
+      "description": "Infligez 4 dégâts.\nLorsque vous Scrutez, reprenez cette carte de votre défausse et ajoutez-la à votre main."
+    },
+    "CRUSHJOINTS": {
+      "name": "Brise-articulation",
+      "description": "Infligez 8 dégâts.\nSi la dernière carte jouée était une Compétence, appliquez 1 de vulnérabilité."
+    },
+    "VENGEANCE": {
+      "name": "Rage bouillonnante",
+      "description": "Au début de votre prochain tour, entrez en Colère et piochez 2 cartes."
+    },
+    "CARVEREALITY": {
+      "name": "Sculpte-réalité",
+      "description": "Infligez 6 dégâts. Ajoutez une Gifle à votre main."
+    },
+    "DEFEND_P": {
+      "name": "Défense",
+      "description": "Gagnez 5 d'Armure."
+    },
+    "CRESCENTKICK": {
+      "name": "DEPRECATED Coup de pied ascendant",
+      "description": "Infligez !D! dégâts.\nSi vous avez de la Vigueur,\ngagnez [W] et\npiochez 1 carte."
+    },
+    "THWACK": {
+      "name": "DEPRECATED Claque",
+      "description": "Infligez !D! dégâts."
+    },
+    "FASTING": {
+      "name": "Jeûne",
+      "description": "Gagnez !M! d'Artefact."
+    },
+    "SWIPE": {
+      "name": "DEPRECATED Baffe",
+      "description": "Infligez !D! dégâts. Infligez la moitié de ces dégâts à tous les autres ennemis."
+    },
+    "INNERPEACE": {
+      "name": "Paix intérieure",
+      "description": "Si vous êtes en Calme, piochez 3 cartes. Sinon, entrez en Calme."
+    },
+    "STEPANDSTRIKE": {
+      "name": "DEPRECATED Marche et frappe",
+      "description": "Coûte 1 de moins par changement de Position ce tour.\nGagnez !B! d'Armure.\nInfligez !D! dégâts."
+    },
+    "PREDICTION": {
+      "name": "DEPRECATED Prédiction",
+      "description": "Gagnez !B! d'Armure au début de votre prochain tour."
+    },
+    "FLOW": {
+      "name": "DEPRECATED Écoulement",
+      "description": "Lorsque vous jouez une attaque, gagnez 1 de Dextérité temporaire. Lorsque vous jouez une compétence, gagnez 1 de Force temporaire."
+    },
+    "FLAMEMASTERY": {
+      "name": "DEPRECATED Maîtrise du feu",
+      "description": "Gagnez !M! de Force."
+    },
+    "FLURRYOFBLOWS": {
+      "name": "Rafale de coups",
+      "description": "Infligez 4 dégâts.\nSort de votre défausse pour venir dans votre main lorsque vous changez de position."
+    },
+    "SASHWHIP": {
+      "name": "Fouet",
+      "description": "Infligez 8 dégâts.\nSi la dernière carte jouée était une Attaque, appliquez 1 de Faiblesse."
+    },
+    "WHEELKICK": {
+      "name": "Coup de pied tournoyant",
+      "description": "Infligez 15 dégâts.\nPiochez 2 cartes."
+    },
+    "INDIGNATION": {
+      "name": "Indignation",
+      "description": "Si vous êtes en Colère, appliquez 3 de Vulnérabilité à TOUS les ennemis. Sinon, entrez en Colère."
+    },
+    "LIKEWATER": {
+      "name": "Fluidité",
+      "description": "À la fin de votre tour, si vous êtes en Calme, gagnez 5 d'Armure."
+    },
+    "FASTING2": {
+      "name": "Jeûne",
+      "description": "Gagnez 3 de Force.\nGagnez 3 de Dextérité.\nGagnez 1 [W] de moins au début de chaque tour."
+    },
+    "BECOMEALMIGHTY": {
+      "name": "Surpuissance",
+      "description": "Gagnez !M! de Force."
+    },
+    "WAVEOFTHEHAND2": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "STUDY": {
+      "name": "Étude",
+      "description": "À la fin de votre tour, mélangez une Perspicacité dans votre pioche."
+    },
+    "FAMEANDFORTUNE": {
+      "name": "Gloire et fortune",
+      "description": "Gagnez !M! d'Or."
+    },
+    "LIVEFOREVER": {
+      "name": "Immortalité",
+      "description": "À la fin de votre tour, gagnez !M! d'Armure Plaquée."
+    },
+    "EXPUNGER": {
+      "name": "Expurgation",
+      "description": "Infligez !D! dégâts X fois.",
+      "upgradeDescription": "Infligez !D! dégâts X+1 fois."
+    },
+    "FLICK": {
+      "name": "DEPRECATED Pichenette",
+      "description": "Infligez !D! dégâts.\nSi un ennemi a reçu 3 Pichenette 3 times, il reçoit !M! dégâts."
+    },
+    "DISCIPLINE": {
+      "name": "DEPRECATED Discipline",
+      "description": "Si vous terminez votre tour avec des [W] non utilisées, piochez autant de cartes supplémentaires au tour suivant."
+    },
+    "CONJUREBLADE": {
+      "name": "Conjuration de lame",
+      "description": "Mélangez une carte Expurgation dans votre pioche.\nÉpuisement.",
+      "upgradeDescription": "Mélangez une carte Expurgation avec X+1 dans votre pile.\nÉpuisement."
+    }
+  },
+  "relics": {
+    "ANCHOR": {
+      "name": "Ancre",
+      "description": "Commencez chaque combat avec 10 d'Armure.",
+      "flavor": "Grâce à ce petit bibelot, vous vous sentez plus stable."
+    },
+    "ART_OF_WAR": {
+      "name": "L'Art de la guerre",
+      "description": "Si vous ne jouez aucune Attaque pendant votre tour, gagnez [E] supplémentaire au prochain tour.",
+      "flavor": "Ce manuscrit antique contient la sagesse d'un temps révolu."
+    },
+    "ASTROLABE": {
+      "name": "Astrolabe",
+      "description": "Lorsque vous le ramassez, Transformez 3 cartes, puis Améliorez-les.Choisissez 3 cartes pour",
+      "flavor": "Cet outil permet d'acquérir l'inestimable savoir des étoiles."
+    },
+    "BAG_OF_MARBLES": {
+      "name": "Sac de billes",
+      "description": "Au début de chaque combat, appliquez 1 de Vulnérabilité sur TOUS les ennemis.",
+      "flavor": "Un jeu autrefois populaire dans la ville. Les billes sont très utiles pour faire tomber les ennemis."
+    },
+    "BAG_OF_PREPARATION": {
+      "name": "Sac de préparation",
+      "description": "Au début de chaque combat, piochez 2 cartes supplémentaires.",
+      "flavor": "Un sac d'aventurier surdimensionné. Il présente de nombreuses poches et sangles."
+    },
+    "BIRD_FACED_URN": {
+      "name": "Urne à tête d'oiseau",
+      "description": "Lorsque vous jouez une carte Pouvoir, récupérez 2 PV.",
+      "flavor": "Sur cette urne est représenté le dieu corbeau Mazaleth à l'air farceur."
+    },
+    "BLACK_BLOOD": {
+      "name": "Sang noir",
+      "description": "Remplace Sang ardent. À la fin du combat, récupérez 12 PV.",
+      "flavor": "La rage s'assombrit."
+    },
+    "BLACK_STAR": {
+      "name": "Étoile noire",
+      "description": "Obtenez une relique supplémentaire quand vous battez des Élites.",
+      "flavor": "À l'origine, elle a été découverte dans la ville du serpent, à côté d'une unique bougie."
+    },
+    "BLOOD_VIAL": {
+      "name": "Fiole de sang",
+      "description": "Au début de chaque combat, récupérez 2 PV.",
+      "flavor": "Une fiole contenant le sang d'un très vieux vampire pur."
+    },
+    "BLOODY_IDOL": {
+      "name": "Idole sanglante",
+      "description": "Lorsque vous gagnez de l'or, récupérez 5 PV.",
+      "flavor": "Un flot continu de sang s'écoule maintenant de l'idole."
+    },
+    "BLUE_CANDLE": {
+      "name": "Bougie bleue",
+      "description": "Les cartes Malédiction Injouables peuvent désormais être jouées.\n\n Quand vous jouez une Malédiction, perdez 1 PV et Épuisez-la.",
+      "flavor": "Sa flamme s'allume lorsque les ténèbres l'enveloppent."
+    },
+    "BOTTLED_FLAME": {
+      "name": "Flamme embouteillée",
+      "description": "Lorsque vous la ramassez, choisissez une carte Attaque. Commencez chaque combat avec cette carte dans votre main.Choisissez une carte pour Commencez chaque combat avec  dans votre main.",
+      "flavor": "Dans cette bouteille brûle une flamme éternelle."
+    },
+    "BOTTLED_LIGHTNING": {
+      "name": "Foudre embouteillée",
+      "description": "Lorsque vous la ramassez, choisissez une carte Compétence. Commencez chaque combat avec cette carte dans votre main.Choisissez une carte pour Commencez chaque combat avec  dans votre main.",
+      "flavor": "En observant ce maelström tourbillonnant, vous apercevez une partie de vous-même qui vous fixe."
+    },
+    "BRONZE_SCALES": {
+      "name": "Écailles en bronze",
+      "description": "Commencez chaque combat avec 3 d'Épines",
+      "flavor": "Les écailles tranchantes du Gardien. Elles s'assemblent de sorte à protéger leur utilisateur. "
+    },
+    "BURNING_BLOOD": {
+      "name": "Sang ardent",
+      "description": "À la fin du combat, récupérez 6 PV.",
+      "flavor": "Une rage éternelle brûle dans votre sang."
+    },
+    "CALIPERS": {
+      "name": "Compas",
+      "description": "Au début de votre tour, ne perdez que 15 d'Armure au lieu de perdre toute votre Armure.",
+      "flavor": "\"C'est de la précision mécanique que provient la grandeur.\" - L'architecte"
+    },
+    "CALLING_BELL": {
+      "name": "Cloche d'appel",
+      "description": "Quand vous la ramassez, obtenez une Malédiction unique et 3 reliques.La cloche sonne...Passer les récompensesFermer",
+      "flavor": "Cette sombre cloche en fer a sonné 3 fois lorsque vous l'avez trouvée, mais elle est silencieuse depuis."
+    },
+    "CAULDRON": {
+      "name": "Chaudron",
+      "description": "Lorsque vous l'obtenez, il prépare 5 potions aléatoires.Glou glou glou... !",
+      "flavor": "Le Marchand est passé maître dans la préparation de potions. 1 offerte pour 4 achetées."
+    },
+    "CENTENNIAL_PUZZLE": {
+      "name": "Énigme centenaire",
+      "description": "La première fois que vous perdez des PV lors de chaque combat, piochez 3 cartes.",
+      "flavor": "Lorsque vous résolvez cette énigme, une puissante bouffée de chaleur envahit votre poitrine."
+    },
+    "CHAMELEON_RING": {
+      "name": "Anneau de caméléon",
+      "description": "Vous pouvez désormais Préparer des potions aux feux de camp.",
+      "flavor": "Sans valeur"
+    },
+    "CHAMPION_BELT": {
+      "name": "Ceinture de champion",
+      "description": "Lorsque vous appliquez Vulnérabilité, appliquez 1 de Faiblesse.",
+      "flavor": "Cette ceinture ne saurait être portée que par les meilleurs."
+    },
+    "CHARON_S_ASHES": {
+      "name": "Cendres de charon",
+      "description": "Lorsque vous Épuisez une carte, infligez 3 dégâts à TOUS les ennemis.",
+      "flavor": "Charon était considéré comme le dieu de la résurrection, car il mourait et renaissait éternellement dans une explosion de flammes."
+    },
+    "CHEMICAL_X": {
+      "name": "Agent chimique X",
+      "description": "Les effets des cartes coûtant X sont augmentés de 2",
+      "flavor": "AVERTISSEMENT : ne pas mélanger avec du sucre, des épices ou tout ce qui est bon."
+    },
+    "CIRCLET": {
+      "name": "Bandeau",
+      "description": "Collectionnez-les toutes !",
+      "flavor": "Vous avez trouvé toutes les reliques. Impressionnant !"
+    },
+    "THE_COURIER": {
+      "name": "Le coursier",
+      "description": "Le Marchand n'est plus jamais à court de cartes, reliques ou potions et ses prix sont réduits de 20%.",
+      "flavor": "L'animal de compagnie du Marchand !"
+    },
+    "CURSED_KEY": {
+      "name": "Clé maudite",
+      "description": "au début de chaque tour. Lorsque vous ouvrez un coffre (sauf coffre de boss), recevez une Malédiction.Gagnez [E]",
+      "flavor": "Vous ressentez l'énergie malveillante qui émane de cette clé. Tout pouvoir a un prix."
+    },
+    "DEAD_BRANCH": {
+      "name": "Branche morte",
+      "description": "Lorsque vous Épuisez une carte, ajoutez une carte aléatoire à votre main.",
+      "flavor": "Une branche d'arbre issue d'une ère oubliée."
+    },
+    "DISCERNING_MONOCLE": {
+      "name": "Monocle clairvoyant",
+      "description": "Les prix du Marchand sont réduits de 20 %.",
+      "flavor": "Un monocle fort élégant."
+    },
+    "DODECAHEDRON": {
+      "name": "Dodécaèdre runique",
+      "description": "Si vous avez tous vos PV, gagnez [E] au début de chaque tour.",
+      "flavor": "Les runes sont indéchiffrables."
+    },
+    "DREAM_CATCHER": {
+      "name": "Attrape-rêves",
+      "description": "Lorsque vous vous Reposez, vous pouvez ajouter une carte à votre deck.",
+      "flavor": "Les tribus du nord utilisaient souvent des attrape-rêves la nuit pour leur développement personnel."
+    },
+    "DU_VU_DOLL": {
+      "name": "Poupée dou-vau",
+      "description": "Pour chaque Malédiction dans votre deck, commencez chaque combat avec 1 de Force. Vous n'avez aucune Malédiction. Vous avez  Malédiction(s).",
+      "flavor": "Une poupée qui puise sa force dans les énergies malveillantes."
+    },
+    "ECTOPLASM": {
+      "name": "Ectoplasme",
+      "description": "Vous ne pouvez plus gagner d'or.Gagnez [E] au début de chaque tour.",
+      "flavor": "Cette masse visqueuse et informe montre des signes de vie."
+    },
+    "FROZEN_EGG_2": {
+      "name": "Œuf gelé",
+      "description": "Quand vous obtenez une carte Pouvoir, Améliorez-la.",
+      "flavor": "L'œuf est inerte et gelé, il n'éclora jamais."
+    },
+    "MOLTEN_EGG_2": {
+      "name": "Œuf en fusion",
+      "description": "Quand vous obtenez une carte Attaque, Améliorez-la.",
+      "flavor": "L'œuf d'un Phénix. Il brille d'un rouge vif avec de la lave bouillante."
+    },
+    "TOXIC_EGG_2": {
+      "name": "Œuf toxique",
+      "description": "Quand vous obtenez une carte Compétence, Améliorez-la.",
+      "flavor": "\"Quelle merveilleuse découverte ! On dirait l'œuf inerte d'une créature magique. Qui ou qu'est-ce qui a créé ceci ?\" - Ranwid"
+    },
+    "ENCHIRIDION": {
+      "name": "Enchiridion",
+      "description": "Commencez chaque combat avec une carte Pouvoir aléatoire dans votre main. Elle coûte 0 ce tour.",
+      "flavor": "Le journal légendaire d'une liche antique."
+    },
+    "ETERNAL_FEATHER": {
+      "name": "Plume éternelle",
+      "description": "Pour chaque lot de ? cartes dans votre deck, récupérez 3 PV lorsque vous accédez à un feu de camp.",
+      "flavor": "Cette plume semble être indestructible. De quel oiseau pourrait-elle bien provenir ?"
+    },
+    "FROZEN_EYE": {
+      "name": "Œil gelé",
+      "description": "Vous pouvez voir votre Pioche dans l'ordre.",
+      "flavor": "En regardant dans l'œil, vous voyez un aperçu de votre avenir."
+    },
+    "GAMBLING_CHIP": {
+      "name": "Jeton",
+      "description": "Au début de chaque combat, défaussez autant de cartes que vous le souhaitez, puis piochez-en le même nombre.",
+      "flavor": "Vous remarquez une petite inscription sur l'une des faces. Il y est écrit : \"Jeton porte-bonheur de Balourd !\""
+    },
+    "GINGER": {
+      "name": "Gingembre",
+      "description": "Vous ne pouvez plus être Affaibli.",
+      "flavor": "Un ingrédient puissant utilisé dans de nombreuses boissons tonifiantes."
+    },
+    "GIRYA": {
+      "name": "Girya",
+      "description": "Vous pouvez désormais gagner de la Force aux feux de camp. (3 fois max.)",
+      "flavor": "Cette girya est extraordinairement lourde. Vous pourriez vous entraîner avec pour développer vos muscles."
+    },
+    "GOLDEN_IDOL": {
+      "name": "Idole dorée",
+      "description": "Obtenez 25 % d'or supplémentaire en éliminant vos ennemis.",
+      "flavor": "Vous vous sentez plus riche rien qu'en touchant cette idole en or massif."
+    },
+    "GREMLIN_HORN": {
+      "name": "Corne de diablotin",
+      "description": "Lorsqu'un ennemi meurt, gagnez [E] et piochez 1 carte.",
+      "flavor": "\"Les diablotins peuvent grandir jusqu'à leur mort. C'est remarquable.\" - Ranwid"
+    },
+    "HAPPY_FLOWER": {
+      "name": "Fleur joyeuse",
+      "description": "Tous les  tours, gagnez [E] .",
+      "flavor": "Cette plante dont le bonheur ne tarit jamais est le nouvel objet favori des nobles."
+    },
+    "ICE_CREAM": {
+      "name": "Crème glacée",
+      "description": "Votre énergie est desormais conservée entre chaque tour.",
+      "flavor": "\"Délicieux !\""
+    },
+    "JUZU_BRACELET": {
+      "name": "Bracelet juzu",
+      "description": "Les salles ? ne contiennent plus d'ennemis normaux.",
+      "flavor": "Il permet de repousser les inconnus."
+    },
+    "KUNAI": {
+      "name": "Kunaï",
+      "description": "Chaque fois que vous jouez ? Attaques en un tour, gagnez 1 de Dextérité.",
+      "flavor": "Sa létalité à distance en fait la lame favorite des assassins."
+    },
+    "LANTERN": {
+      "name": "Lanterne",
+      "description": "Commencez chaque combat avec [E] supplémentaire.",
+      "flavor": "Une étrange lanterne qui ne luit que pour son porteur."
+    },
+    "LETTER_OPENER": {
+      "name": "Coupe-papier",
+      "description": "Chaque fois que vous jouez 3 cartes Compétence en un tour, infligez 5 dégâts à TOUS les ennemis.",
+      "flavor": "Anormalement tranchant."
+    },
+    "LIVING_BLADE": {
+      "name": "Lame vivace",
+      "description": "Vous pouvez obtenir n'importe quel nombre d'exemplaires de n'importe quelle carte.",
+      "flavor": "SANS VALEUR"
+    },
+    "LIZARD_TAIL": {
+      "name": "Queue de lézard",
+      "description": "Quand vous êtes sur le point de mourir, récupérez des PV pour atteindre 50 % de vos PV max à la place (une seule fois).",
+      "flavor": "Une fausse queue permettant de leurrer les ennemis pendant le combat."
+    },
+    "MAGIC_FLOWER": {
+      "name": "Fleur magique",
+      "description": "Les soins sont 50 % plus efficaces pendant le combat.",
+      "flavor": "Une fleur que beaucoup pensaient disparue, conservée en parfait état."
+    },
+    "MANGO": {
+      "name": "Mangue",
+      "description": "Quand vous l'obtenez, augmentez vos PV max de",
+      "flavor": "Le plus convoité des fruits oubliés. Parfaitement conservé sans aucun signe de tourouille."
+    },
+    "MARK_OF_PAIN": {
+      "name": "Marque de douleur",
+      "description": "Gagnez [R] au début de chaque tour. Au début de chaque combat, mélangez 2 Plaies dans votre pioche.",
+      "flavor": "Ce fer était utilisé par les tribus du nord pour marquer les guerriers ayant réussi à maîtriser la douleur en combat."
+    },
+    "MATRYOSHKA": {
+      "name": "Matriochkas",
+      "description": "Les 2 prochains coffres non-Boss que vous ouvrez contiennent 2 Reliques.Le prochain coffre non-Boss que vous ouvrez contient 2 Reliques.Cette relique ne peut plus être utilisée.",
+      "flavor": "Une série de poupées décorées superposables. Le dessin représente un oiseau inconnu aux yeux blancs et aux plumes bleues."
+    },
+    "MEAT_ON_THE_BONE": {
+      "name": "Os à viande",
+      "description": "Si vos PV sont inférieurs ou égaux à 50 % à la fin du combat, récupérez 12 PV.",
+      "flavor": "La viande ne cesse de se reformer."
+    },
+    "MEDICAL_KIT": {
+      "name": "Trousse de secours",
+      "description": "Les cartes Statut Injouables peuvent désormais être jouées. Quand vous jouez une carte Statut, Épuisez-la.",
+      "flavor": "\"Elle a tout ce qu'il vous faut ! Anti-démangeaison, anti-brûlure, anti-venin et plus encore !\""
+    },
+    "MEMBERSHIP_CARD": {
+      "name": "Carte d'adhérent",
+      "description": "Remise de 50 % sur tous les produits !",
+      "flavor": "\"Un abonnement bonus dédié à mes plus fidèles clients !\""
+    },
+    "MERCURY_HOURGLASS": {
+      "name": "Sablier de mercure",
+      "description": "Au début de chaque tour, infligez 3 dégâts à TOUS les ennemis.",
+      "flavor": "Un sablier enchanté qui s'écoule sans fin."
+    },
+    "MUMMIFIED_HAND": {
+      "name": "Main momifiée",
+      "description": "Lorsque vous jouez une carte Pouvoir, le coût d'une carte aléatoire de votre main passe à 0 pour le tour.",
+      "flavor": "Elle tressaute régulièrement, surtout lorsque votre pouls est élevé."
+    },
+    "NECRONOMICON": {
+      "name": "Necronomicon",
+      "description": "À chaque tour, la première Attaque coûtant au moins 2 est jouée deux fois. Quand vous le ramassez, recevez une Malédiction spéciale. est jouée deux fois.",
+      "flavor": "Seul un fou oserait s'emparer de ce pouvoir maléfique. La nuit, des images du livre dévorant votre esprit vous hantent."
+    },
+    "NILRY_S_CODEX": {
+      "name": "Codex de Nilry",
+      "description": "À la fin de chaque tour, vous pouvez choisir 1 carte parmi 3 aléatoires et la placer dans votre pioche.",
+      "flavor": "Fabriqué par l'infâme maître de jeu. Il aurait la faculté de développer l'esprit."
+    },
+    "NINJA_SCROLL": {
+      "name": "Parchemin de ninja",
+      "description": "Au début de chaque combat, ajoutez 3 Surins à votre main.",
+      "flavor": "Contient des secrets d'assassin."
+    },
+    "NLOTH_S_GIFT": {
+      "name": "Cadeau de Nloth",
+      "description": "Triple vos chances de trouver des cartes Rares comme butin de combat.",
+      "flavor": "Un étrange cadeau de Nloth. Lorsque vous l'ouvrez, vous découvrez une autre boîte emballée de la même taille."
+    },
+    "NULLSTONE_PERIAPT": {
+      "name": "Amulette d'annulation",
+      "description": "Annule le prochain #débuff infligé par un ennemi.\nSe recharge en 10 tours.",
+      "flavor": "SANS VALEUR"
+    },
+    "ODDLY_SMOOTH_STONE": {
+      "name": "Pierre étrangement lisse",
+      "description": "Commencez chaque combat avec 1 de Dextérité.",
+      "flavor": "Vous n'avez jamais rien vu d'aussi lisse et immaculé. Ce doit être l'œuvre des Anciens."
+    },
+    "ODD_MUSHROOM": {
+      "name": "Champignon étrange",
+      "description": "Sous Vulnérabilité, vous ne subissez plus que 25 % de dégâts supplémentaires au lieu de 50 %.",
+      "flavor": "\"Après avoir consommé ce trichellum parastius, je me suis senti plus imposant et moins... susceptible.\" - Ranwid "
+    },
+    "OLD_COIN": {
+      "name": "Vieille pièce",
+      "description": "Quand vous l'obtenez, gagnez 300 d'or.",
+      "flavor": "Les pièces uniques sont très prisées par les Marchands en raison de leur valeur historique et de leur composition rare."
+    },
+    "OMAMORI": {
+      "name": "Omamori",
+      "description": "Annule les 2 prochaines Malédictions que vous recevez.Annule la prochaine Malédiction que vous recevez.Cette relique a été épuisée.",
+      "flavor": "Une amulette servant à repousser les mauvais esprits. Celle-ci semble avoir une étincelle d'énergie divine."
+    },
+    "ORICHALCUM": {
+      "name": "Orichalque",
+      "description": "Si vous mettez fin à votre tour sans Armure, gagnez 6 d'Armure.",
+      "flavor": "Un métal teinté de vert dont l'origine est inconnue. Apparemment indestructible."
+    },
+    "ORNAMENTAL_FAN": {
+      "name": "Éventail décoratif",
+      "description": "Chaque fois que vous jouez 3 Attaques en un tour, gagnez 4 d'Armure.",
+      "flavor": "Cet éventail s'ouvre et se durcit à mesure que le sang coule."
+    },
+    "ORRERY": {
+      "name": "Planétaire",
+      "description": "Quand vous le ramassez, choisissez et ajoutez 5 cartes à votre deck.Eurêka !",
+      "flavor": "\"Une fois que vous connaîtrez l'univers...\" - Zoroth"
+    },
+    "PANDORA_S_BOX": {
+      "name": "Boîte de Pandore",
+      "description": "Quand vous la ramassez, Transformez toutes vos cartes Frappe et Défense.La boîte de Pandore a été ouverte...",
+      "flavor": "Vous n'avez pas très envie de l'ouvrir."
+    },
+    "PANTOGRAPH": {
+      "name": "Pantographe",
+      "description": "Au début de chaque combat de Boss, récupérez 25 PV.",
+      "flavor": "\"Les bases solides ne sont jamais dues au hasard. Les outils de préparation sont indispensables.\" - L'architecte"
+    },
+    "PAPER_CRANE": {
+      "name": "Grû en papier",
+      "description": "Les dégâts infligés par les ennemis sous Faiblesse sont réduits de 40 % au lieu de 25 %.",
+      "flavor": "L'origami d'une créature oubliée."
+    },
+    "PAPER_FROG": {
+      "name": "Grenouye en papier",
+      "description": "Les dégâts subis par les ennemis sous Vulnérabilité augmentent de 75 % au lieu de 50 %.",
+      "flavor": "Le papier se plie et se déplie continuellement pour prendre la forme d'une petite créature."
+    },
+    "PEACE_PIPE": {
+      "name": "Calumet de la paix",
+      "description": "Vous pouvez désormais retirer des cartes de votre deck aux feux de camp.",
+      "flavor": "Il désencombre l'esprit et purifie l'âme."
+    },
+    "PEAR": {
+      "name": "Poire",
+      "description": "Quand vous l'obtenez, augmentez vos PV max de",
+      "flavor": "Un fruit ordinaire avant les ravages de la tourouille."
+    },
+    "PEN_NIB": {
+      "name": "Pointe de stylo",
+      "description": "Chaque 10ème Attaque inflige le double de dégâts.",
+      "flavor": "À travers la pointe, vous apercevez toutes les personnes tuées par son ancien propriétaire. Quelle violence..."
+    },
+    "PHILOSOPHER_S_STONE": {
+      "name": "Pierre philosophale",
+      "description": "Gagnez [E] au début de chaque tour. TOUS les ennemis commencent avec 1 de Force.",
+      "flavor": "Une énergie pure émane de la pierre et amplifie la puissance de tous ceux qui s'en approchent."
+    },
+    "PRAYER_WHEEL": {
+      "name": "Moulin à prières",
+      "description": "Les ennemis normaux donnent une carte supplémentaire.",
+      "flavor": "Son cylindre ne s'arrête jamais de tourner."
+    },
+    "QUESTION_CARD": {
+      "name": "Carte d'interrogation",
+      "description": "Les prochains butins de cartes contiennent 1 choix supplémentaire.",
+      "flavor": "\"Ceux dont les choix sont plus nombreux font souvent fi des inconvénients du chaos.\" - Kubilai Khan"
+    },
+    "RED_CIRCLET": {
+      "name": "Bandeau rouge",
+      "description": "C'est vraiment joli.",
+      "flavor": "Il n'y a plus de relique. Impressionnant !"
+    },
+    "RED_MASK": {
+      "name": "Masque rouge",
+      "description": "Au début de chaque combat, appliquez 1 de Faiblesse à TOUS les ennemis.",
+      "flavor": "Ce masque très élégant appartient au chef des bandits aux masques rouges. Cela fait-il de vous leur chef ?"
+    },
+    "RED_SKULL": {
+      "name": "Crâne rouge",
+      "description": "Quand vos PV sont inférieurs ou égaux à 50 %, vous avez 3 de Force supplémentaire.",
+      "flavor": "Un petit crâne recouvert de peintures décoratives."
+    },
+    "REGAL_PILLOW": {
+      "name": "Oreiller royal",
+      "description": "Quand vous vous reposez, récupérez 15 PV supplémentaires.",
+      "flavor": "Vous pouvez enfin vous reposer confortablement."
+    },
+    "RING_OF_THE_SERPENT": {
+      "name": "Anneau du cobra",
+      "description": "Remplace l'Anneau du serpent. ?Au début de chaque tour, piochez 1 carte supplémentaire.",
+      "flavor": "Votre anneau s'est métamorphosé et a changé de forme."
+    },
+    "RUNIC_CUBE": {
+      "name": "Cube runique",
+      "description": "Quand vous perdez des PV, piochez 1 carte.",
+      "flavor": "Les runes sont indéchiffrables."
+    },
+    "RUNIC_DOME": {
+      "name": "Dôme runique",
+      "description": "au début de chaque tour. Vous ne pouvez plus voir les Intentions des ennemis.Gagnez [E]",
+      "flavor": "Les runes sont indéchiffrables."
+    },
+    "RUNIC_PYRAMID": {
+      "name": "Pyramide runique",
+      "description": "À la fin de chaque tour, votre main n'est plus défaussée.",
+      "flavor": "Les runes sont indéchiffrables."
+    },
+    "SELF_FORMING_CLAY": {
+      "name": "Argile autoformante",
+      "description": "Quand vous perdez des PV en combat, gagnez 3 d'Armure au prochain tour.",
+      "flavor": "\"Que c'est curieux ! Elle prend forme toute seule, selon mes pensées ! De la télépoterie ?\" - Ranwid"
+    },
+    "SHOVEL": {
+      "name": "Pelle",
+      "description": "Vous pouvez désormais Creuser à la recherche de reliques aux feux de camp.",
+      "flavor": "La Tour abrite tout un tas de Reliques issues de civilisations perdues et de braves aventuriers oubliés. Il est temps d'aller creuser !"
+    },
+    "SHURIKEN": {
+      "name": "Shuriken",
+      "description": "Chaque fois que vous jouez ? Attaques en un tour, gagnez 1 de Force.",
+      "flavor": "Des armes de jet aussi légères qu'une plume. Il est conseillé de viser les yeux."
+    },
+    "SINGING_BOWL": {
+      "name": "Bol chantant",
+      "description": "Lorsque vous passez une carte comme récompense, vous pouvez augmenter vos PV max de 2.",
+      "flavor": "Au contact d'un maillet, cet artefact peut faire résonner une belle mélodie."
+    },
+    "SMILING_MASK": {
+      "name": "Masque souriant",
+      "description": "Le coût du service de retrait de carte du Marchand passe à 50 d'or.",
+      "flavor": "Masque porté par le Marchand. Il doit en avoir d'autres..."
+    },
+    "RING_OF_THE_SNAKE": {
+      "name": "Anneau du serpent",
+      "description": "Au début de chaque combat, piochez 2 cartes supplémentaires.",
+      "flavor": "Fait à partir d'un fossile de serpent. Il représente le talent de la chasseresse."
+    },
+    "SNECKO_EYE": {
+      "name": "Œil de geckobra",
+      "description": "Au début de chaque tour, piochez 2 cartes supplémentaires. Commencez chaque combat avec Confusion.",
+      "flavor": "L'œil d'un geckobra déchu. Il est bien plus gros qu'on ne pourrait l'imaginer."
+    },
+    "SNAKE_SKULL": {
+      "name": "Crâne de geckobra",
+      "description": "Lorsque vous appliquez Poison, appliquez 1 de Poison supplémentaire.",
+      "flavor": "Un crâne de geckobra en parfait état. Il est étrangement propre et lisse, au point que la poussière et la saleté en tombent mystérieusement."
+    },
+    "SOZU": {
+      "name": "Sozu",
+      "description": "au début de chaque tour. Vous ne pouvez plus obtenir de potions. Gagnez [E]",
+      "flavor": "Vous remarquez que les liquides magiques semblent perdre leurs propriétés à proximité de cette relique."
+    },
+    "SPIRIT_POOP": {
+      "name": "Caca d'esprit",
+      "description": "Désagréable.",
+      "flavor": "Les restes carbonisés de votre offrande aux esprits."
+    },
+    "STRANGE_SPOON": {
+      "name": "Étrange cuillère",
+      "description": "Les cartes à Épuiser ont 50 % de chance d'être défaussées à la place.",
+      "flavor": "Quand vous fixez la cuillère, elle semble se tordre et s'entortiller sous vos yeux."
+    },
+    "STRAWBERRY": {
+      "name": "Fraise",
+      "description": "Quand vous l'obtenez, augmentez vos PV max de",
+      "flavor": "\"Délicieuse ! Je n'en avais pas vue depuis l'épidémie de rouille.\" - Ranwid"
+    },
+    "SUNDIAL": {
+      "name": "Cadran solaire",
+      "description": "Tous les  mélanges de pioche, gagnez : [E] [E] .",
+      "flavor": "\"La folle obsession des premiers hommes pour le temps les a poussés à voir le ciel comme un guide, espérant de lui quelque chose d'éternel.\" - Zoroth"
+    },
+    "ANCIENT_TEA_SET": {
+      "name": "Service à thé antique",
+      "description": "Après avoir atteint un site de repos, commencez le prochain combat avec : [E] [E] .",
+      "flavor": "Il vous garantit une excellente nuit de repos."
+    },
+    "THE_SPECIMEN": {
+      "name": "Le spécimen",
+      "description": "Lorsqu'un ennemi meurt, son Poison est transféré à un ennemi aléatoire.",
+      "flavor": "\"Fascinant ! J'ai trouvé une créature mutante présentant d'impressionnantes propriétés toxiques. J'en garde un échantillon pour l'examiner plus tard.\" - Ranwid"
+    },
+    "THREAD_AND_NEEDLE": {
+      "name": "Fil et aiguille",
+      "description": "Commencez chaque combat avec 4 d'Armure plaquée.",
+      "flavor": "Vous enveloppez le fil magique autour de votre corps et ce dernier se durcit."
+    },
+    "TINGSHA": {
+      "name": "Tingsha",
+      "description": "Lorsque vous défaussez des cartes pendant votre tour, infligez 3 dégâts à un ennemi aléatoire.",
+      "flavor": "Le son provenant de cet instrument peut résonner à un volume douloureux pour l'oreille."
+    },
+    "TINY_CHEST": {
+      "name": "Coffret",
+      "description": "1 étage ? sur 4 contient un Trésor",
+      "flavor": "\"Un beau prototype.\" - L'architecte"
+    },
+    "TINY_HOUSE": {
+      "name": "Maisonnette",
+      "description": "Quand vous l'obtenez, obtenez 1 potion.\nGagnez ? d'or.\nAugmentez vos PV max de 5.\nObtenez 1 carte.\nAméliorez 1 carte aléatoire.Une maisonnette !",
+      "flavor": "\"Une démonstration quasi parfaite de miniaturisation. Mon plus bel ouvrage jusqu'à présent, mais toujours insuffisant.\" - L'architecte"
+    },
+    "TOOLBOX": {
+      "name": "Boîte à outils",
+      "description": "Au début de chaque combat, choisissez une carte Incolore parmi 3 aléatoire et ajoutez-la votre main.",
+      "flavor": "À chaque travail son outil."
+    },
+    "TORII": {
+      "name": "Torii",
+      "description": "Lorsque vous êtes sur le point de subir 5 dégâts ou moins suite à des attaques non bloquées, réduisez-les à 1.",
+      "flavor": "Avec ce petit torii, vous sentez la quiétude et la sérénité envahir votre esprit."
+    },
+    "TOUGH_BANDAGES": {
+      "name": "Bandages rugueux",
+      "description": "Lorsque vous défaussez une carte pendant votre tour, gagnez 3 d'Armure.",
+      "flavor": "La perte renforce."
+    },
+    "TOY_ORNITHOPTER": {
+      "name": "Petit ornithoptère",
+      "description": "Lorsque vous utilisez une potion, récupérez 5 PV.",
+      "flavor": "\"Ce petit jouet est le compagnon idéal de tout aventurier solitaire !\""
+    },
+    "UNCEASING_TOP": {
+      "name": "Toupie perpétuelle",
+      "description": "Lorsque vous n'avez plus de carte en main, piochez une carte.",
+      "flavor": "La toupie continue à tourner sans jamais s'arrêter, comme dans un rêve."
+    },
+    "VAJRA": {
+      "name": "Vajra",
+      "description": "Commencez chaque combat avec 1 de Force.",
+      "flavor": "Une relique décorative offerte aux guerriers qui se couvrent de gloire au combat."
+    },
+    "VELVET_CHOKER": {
+      "name": "Ras-de-cou en velours",
+      "description": "au début de chaque tour. Vous ne pouvez pas jouer plus de  cartes par tour.Gagnez [E] Je ne peux jouer que",
+      "flavor": "\"Un pouvoir immense, mais bien trop limité.\" - Le grand Kublai"
+    },
+    "LEE_S_WAFFLE": {
+      "name": "Gaufre de Lee",
+      "description": "Quand vous l'obtenez, augmentez vos PV max de 7 et récupérez tous vos PV.",
+      "flavor": "\"La meilleure gourmandise de toute la Tour ! Tout juste sortie du four, rien que pour vous.\""
+    },
+    "WHETSTONE": {
+      "name": "Pierre à aiguiser",
+      "description": "Lorsque vous la ramassez, Améliorez 2 Attaques aléatoires.",
+      "flavor": "\"La chair ne bat jamais le fer.\" - Le grand Kublai"
+    },
+    "DERP_ROCK": {
+      "name": "Rochard",
+      "description": "Au début de chaque tour, gagnez  de Charge.\n(Impossible à retirer ou Transformer.)",
+      "flavor": "Placeholder"
+    },
+    "WHITE_BEAST_STATUE": {
+      "name": "Statue blanche bestiale",
+      "description": "Des potions apparaissent toujours dans les récompenses après un combat.",
+      "flavor": "La petite statue blanche d'une créature que vous n'avez jamais vue."
+    },
+    "NEOWSBLESSING": {
+      "name": "Lamentation de Neow",
+      "description": "Les ennemis des 3 prochains combats commencent avec 1 PV.Cette relique a été épuisée.",
+      "flavor": "Bénédiction de la lamentation conférée par Neow."
+    },
+    "BOTTLED_TORNADO": {
+      "name": "Tornade embouteillée",
+      "description": "Lorsque vous la ramassez, choisissez une carte Pouvoir. Commencez chaque combat avec cette carte dans votre main..Choisissez une carte pour Commencez chaque combat avec  dans votre main.",
+      "flavor": "La bouteille bourdonne et siffle doucement."
+    },
+    "WAR_PAINT": {
+      "name": "Peinture de guerre",
+      "description": "Lorsque vous la ramassez, Améliorez 2 Compétences aléatoires.",
+      "flavor": "Jadis, les Soldats de fer utilisaient de la peinture de guerre enchantée pour se protéger avant de charger au combat."
+    },
+    "DARKSTONE_PERIAPT": {
+      "name": "Amulette de pierre noire",
+      "description": "Lorsque vous recevez une Malédiction, augmentez vos PV max de",
+      "flavor": "Cette amulette absorbe le pouvoir d'énergies démoniaques et le convertit en vitalité pour son porteur."
+    },
+    "CRACKED_CORE": {
+      "name": "Noyau fissuré",
+      "description": "Au début de chaque combat, Canalisez 1 Orbe Kéraunique.",
+      "flavor": "La mystérieuse forme vitale qui alimente le robot de combat dans la Tour. Il paraît fissuré."
+    },
+    "INSERTER": {
+      "name": "Bras robotisé",
+      "description": "Tous les 2 tours, gagnez 1 emplacement d'Orbe.",
+      "flavor": "Avancer. Prendre. Empiler. Répéter."
+    },
+    "EMOTION_CHIP": {
+      "name": "Puce émotionnelle",
+      "description": "Si vous avez perdu des PV pendant le tour précédent, déclenchez la capacité passive de TOUS vos Orbes au début de votre tour.",
+      "flavor": "...<3...?"
+    },
+    "RUNIC_CAPACITOR": {
+      "name": "Condensateur runique",
+      "description": "Débutez chaque combat avec 3 emplacements d'Orbe supplémentaires.",
+      "flavor": "Plus on fait, mieux c'est."
+    },
+    "TURNIP": {
+      "name": "Navet",
+      "description": "Vous ne pouvez plus être Fragilisé.",
+      "flavor": "Meilleur avec du gimgembre."
+    },
+    "NUCLEAR_BATTERY": {
+      "name": "Batterie nucléaire",
+      "description": "Au début de chaque combat, Canalisez 1 Orbe Plasmique.",
+      "flavor": "Ooooh..."
+    },
+    "SYMBIOTIC_VIRUS": {
+      "name": "Virus symbiotique",
+      "description": "Au début de chaque combat, Canalisez 1 Orbe Obscur.",
+      "flavor": "Un peu de douleur peut faire beaucoup de bien..."
+    },
+    "CABLES": {
+      "name": "Cable plaqué-or",
+      "description": "Votre Orbe le plus à droite déclenche sa capacité passive une fois supplémentaire.",
+      "flavor": "\"Intéressant! Même les robots de combat sont affecté par l'effet placebo.\" - Ranwid"
+    },
+    "DATADISK": {
+      "name": "Disque dur",
+      "description": "Commencez chaque combat avec 1 de Concentration.",
+      "flavor": "Ce disque dur contient de précieuses informations sur les oiseaux et les serpents."
+    },
+    "POTION_BELT": {
+      "name": "Ceinture de potions",
+      "description": "Quand vous l'obtenez, gagnez 2 emplacements de potion.",
+      "flavor": "Je peux porter plus de potions à l'aide de cette ceinture !"
+    },
+    "BOOT": {
+      "name": "La botte",
+      "description": "Quand vous infligez 4 ou moins dégâts d'attaque non bloqués, augmentez les à 5.",
+      "flavor": "Quand elle est remontée, la botte s'agrandit."
+    },
+    "MARK_OF_THE_BLOOM": {
+      "name": "Marque de l'Éveillé",
+      "description": "Vous ne pouvez plus vous soigner.",
+      "flavor": "Dans l'Au-delà, l'imaginaire et le réel ne font qu'un."
+    },
+    "BUSTED_CROWN": {
+      "name": "Couronne cassée",
+      "description": "au début de chaque tour. Lorsque vous choisissez une carte comme récompense, vous avez 2 choix en moins.Gagnez [E]",
+      "flavor": "La couronne du Champion... ou une vulgaire contrefaçon ?"
+    },
+    "EMPTY_CAGE": {
+      "name": "Cage vide",
+      "description": "Lorsque vous le ramassez, retirez 2 cartes de votre deck.Choisissez 2 cartes à retirer.",
+      "flavor": "\"Il est inhabituel de mettre en cage ce que vous vénérez.\" - Ranwid"
+    },
+    "COFFEE_DRIPPER": {
+      "name": "Filtre à café",
+      "description": "au début de chaque tour. Vous ne pouvez plus vous Reposer aux sites de repos.Gagnez [E]",
+      "flavor": "\"Oui, une autre tasse s'il-vous-plaît. Au travail. Au travail !\" - L'Architecte"
+    },
+    "FUSION_HAMMER": {
+      "name": "Marteau de fusion",
+      "description": "au début de chaque tour. Vous ne pouvez plus Améliorer aux sites de repos.Gagnez [E]",
+      "flavor": "Une fois pris en main, son propriétaire ne peut plus le lâcher."
+    },
+    "INCENSE_BURNER": {
+      "name": "Brûleur d'encens",
+      "description": "Tous les 6 tours, gagnez 1 Intangible.",
+      "flavor": "La fumée imprègne son propriétaire de l'esprit du brûlé."
+    },
+    "NLOTHSMASK": {
+      "name": "Masque de N'Loth",
+      "description": "Le prochain coffre non-Boss que vous ouvrez sera vide.",
+      "flavor": "Vous avez faim."
+    },
+    "FACEOFCLERIC": {
+      "name": "Tête de Clerc",
+      "description": "À la fin de chaque combat, augmentez vos PV max de 1.",
+      "flavor": "Tout le monde aime Clerc."
+    },
+    "SSSERPENTHEAD": {
+      "name": "Tête de ssserpent",
+      "description": "Quand vous entrez dans une pièce ?, gagnez 50 d'or.",
+      "flavor": "La plus belle des vies est celle dans laquelle vous pouvez tout acheter !"
+    },
+    "DOLLYSMIRROR": {
+      "name": "Miroir de Dolly",
+      "description": "Quand vous le ramassez, obtenez une copie supplémentaire d'une carte de votre deck.Choisissez 1 carte à Copier.",
+      "flavor": "\"Ce miroir me donne l'air bizarre.\""
+    },
+    "CLOCKWORKSOUVENIR": {
+      "name": "Souvenir d'horlogerie",
+      "description": "Commencez chaque combat avec 1 d'Artefact.",
+      "flavor": "\"Tellement de rouages complexes.\""
+    },
+    "GREMLINMASK": {
+      "name": "Visage de goblin",
+      "description": "Commencez chaque combat avec 1 de Faiblesse.",
+      "flavor": "Il est temps de courir."
+    },
+    "CULTISTMASK": {
+      "name": "Casque d'Adepte",
+      "description": "Vous vous sentez plus loquace.CAW!\nCAAAW",
+      "flavor": "Je fais partie du troupeau !"
+    },
+    "TWISTEDFUNNEL": {
+      "name": "Entonnoir torsadé",
+      "description": "Au début de chaque combat, appliquez 4 de Poison à TOUS les ennemis.",
+      "flavor": "\"Je ne l'utiliserais pas pour boire.\""
+    },
+    "THEABACUS": {
+      "name": "L'Abaque",
+      "description": "Quand vous mélangez votre pioche, gagnez 6 d'Armure.",
+      "flavor": "\"Un...Deux...Trois...\""
+    },
+    "MEALTICKET": {
+      "name": "Ticket Restaurant",
+      "description": "Quand vous entrez dans une boutique, récupérez 15 PV.",
+      "flavor": "\"Boulettes de viande gratuites à chaque visite !\""
+    },
+    "HOVERINGKITE": {
+      "name": "Cerf-volant",
+      "description": "Chaque tour, gagnez [E] la première fois que vous défaussez une carte.",
+      "flavor": "Ce cerf-volant flotte autour de vous en combat, poussé par une force mystérieuse."
+    },
+    "FROZENCORE": {
+      "name": "Noyau gelé",
+      "description": "Remplace Cœur fissuré. Si vous terminez un tour avec un emplacement d'Orbe vide, Canalisez 1 Orbe Glaciaire.",
+      "flavor": "La fissure qui traverse votre cœur a été remplie avec une énergie froide palpitante."
+    },
+    "SLING": {
+      "name": "Fronde du courage",
+      "description": "Commencez chaque combat d'Élite avec 2 de Force.",
+      "flavor": "\"Un outil pratique pour venir à bout des adversaires particulièrement coriaces.\""
+    },
+    "ORANGEPELLETS": {
+      "name": "Pastilles oranges",
+      "description": "Quand vous jouez un Pouvoir, une Attaque et une Compétence dans le même tour, perdez tous vos débuffs.",
+      "flavor": "\"Fabriquées à partir de divers champignons trouvés dans tout la Tour, elles préviendront toute maladie.\""
+    },
+    "HANDDRILL": {
+      "name": "Perceuse",
+      "description": "Quand vous cassez l'Armure d'un ennemi, appliquez 2 de Vulnérabilité.",
+      "flavor": "\"Les spirales sont dangereuses.\""
+    },
+    "STONECALENDAR": {
+      "name": "Calendrier de pierre",
+      "description": "À la fin du tour ?, infligez 52 dégâts à TOUS les ennemis.",
+      "flavor": "Le passage du temps est imperceptible dans la Tour."
+    },
+    "WRISTBLADE": {
+      "name": "Poignard",
+      "description": "Les Attaques qui coûtent 0 infligent 4 dégâts supplémentaires.",
+      "flavor": "Pratique pour les assassinats."
+    },
+    "NUNCHAKU": {
+      "name": "Nunchaku",
+      "description": "Toutes les  Attaques jouées, gagnez [E] .",
+      "flavor": "Un bon outil d'entraînement. Améliore la posture et l'agilité du porteur."
+    },
+    "MAWBANK": {
+      "name": "Tirelire Gueule",
+      "description": "Quand vous montez d'un étage, gagnez 12 d'Or. Ne fonctionne plus quand vous dépensez de l'Or dans une boutique.Cette relique a été épuisée.",
+      "flavor": "Étonnamment populaire, malgré que les attaques de Gueules soient fréquentes."
+    },
+    "MUTAGENICSTRENGTH": {
+      "name": "Force mutagène",
+      "description": "Commencez chaque combat avec ? de Force. À la fin de votre premier tour, perdez 3 de Force.",
+      "flavor": "\"Les effets semblent passagers, ne se déclenchant seulement que lorsque le sujet est en danger.\" - Inconnu"
+    },
+    "WINGEDGREAVES": {
+      "name": "Bottes ailées",
+      "description": "Vous pouvez ignorer les lignes au moment de choisir l'étage suivant 3 fois.",
+      "flavor": "Stylées."
+    },
+    "POCKETWATCH": {
+      "name": "Montre gousset",
+      "description": "Quand vous jouez 3 cartes ou moins pendant votre tour, piochez 3 cartes supplémentaires au début du tour suivant.",
+      "flavor": "Les aiguilles semblent arrêtées à 3 heures pile."
+    },
+    "PRISMATICSHARD": {
+      "name": "Éclat prismatique",
+      "description": "Les récompenses de combat contiennent désormais des cartes Incolores et d'autres couleurs.",
+      "flavor": "En regardant à travers l'éclat, vous avez une toute nouvelle perspective."
+    },
+    "BRIMSTONE": {
+      "name": "Soufre",
+      "description": "Au début de votre tour, gagnez ? de Force et TOUS les ennemis gagnent 1 de Force.",
+      "flavor": "Il dégage une chaleur infernale."
+    },
+    "PRESERVEDINSECT": {
+      "name": "Insecte préservé",
+      "description": "Les ennemis des combats d'Élite ont 25% de PV en moins.",
+      "flavor": "L'insecte semble créer une aura qui cible les ennemis particulièrement grands."
+    },
+    "WARPEDTONGS": {
+      "name": "Pinces déformées",
+      "description": "Au début de chaque tour, Améliorez une carte aléatoire de votre main pour le reste du combat.",
+      "flavor": "Les pinces maudites manifestent un désir profond de revenir là d'où elles ont été volées."
+    },
+    "FOSSILIZEDHELIX": {
+      "name": "Hélice fossilisée",
+      "description": "Empêche la première perte de PV chaque combat.",
+      "flavor": "D'apparence indestructibe, vous vous demandez à quelle créature elle a bien pu appartenir."
+    },
+    "CERAMICFISH": {
+      "name": "Poisson en céramique",
+      "description": "Lorsque vous ajoutez une carte à votre deck, gagnez 9 d'Or.",
+      "flavor": "Peints méticuleusement, ces poissons étaient vénérés pour apporter de la chance."
+    },
+    "STRIKEDUMMY": {
+      "name": "Poupée de frappe",
+      "description": "Les cartes contenant \"Frappe\" infligent 3 dégâts supplémentaires.",
+      "flavor": "Elle est battue."
+    },
+    "VIOLETLOTUS": {
+      "name": "Lotus violet",
+      "description": "Lorsque vous sortez du Calme, gagnez un [E] additionnel.",
+      "flavor": "Les textes anciens décrivent que la surface des \"bassins de mana\" étaient jonchés de ces fleurs."
+    },
+    "SACREDBARK": {
+      "name": "Écorce sacrée",
+      "description": "Double l'efficacité des potions.",
+      "flavor": "Une écorce originaire de l'arbre Monde selon les rumeurs."
+    },
+    "TEARDROPLOCKET": {
+      "name": "Médaillon larme",
+      "description": "Commencez chaque combat Calme.",
+      "flavor": "Son possesseur aveugle, son contenu invisible."
+    },
+    "SLAVERSCOLLAR": {
+      "name": "Collier d'esclavagiste",
+      "description": "Durant les combats de Boss et d'Élite, gagnez [E] au début de votre tour.",
+      "flavor": "De misérables chaînes rouillées."
+    },
+    "AKABEKO": {
+      "name": "Akabeko",
+      "description": "Votre première attaque chaque combat inflige 8 dégâts supplémentaires.",
+      "flavor": "\"Muuu~\""
+    },
+    "YANG": {
+      "name": "Dualité",
+      "description": "Lorsque vous jouez une Attaque, gagnez 1 de Dextérité temporaire.",
+      "flavor": "\"Et  le soleil fut éteint pour toujours, comme si un rideau était tiré devant lui.\" - Zoroth"
+    },
+    "CLOAKCLASP": {
+      "name": "Attache de Cape",
+      "description": "À la fin de votre tour, gagnez 1 d'Armure pour chaque carte dans votre main.",
+      "flavor": "Une conception simple mais robuste."
+    },
+    "MELANGE": {
+      "name": "Mélange",
+      "description": "Quand vous mélangez votre pioche, Scrutez 3 cartes.",
+      "flavor": "Des sables mystérieux d'une origine inconnue. Sent la cannelle."
+    },
+    "PUREWATER": {
+      "name": "Eau pure",
+      "description": "Au début de chaque combat, ajoutez un Miracle dans votre main.",
+      "flavor": "Filtrée dans un sable fin et sans aucune impureté."
+    },
+    "HOLYWATER": {
+      "name": "Eau bénite",
+      "description": "Remplace l'Eau pure. Au début de chaque combat, ajoutez 3 Miracles dans votre main.",
+      "flavor": "Collectée à une époque antérieure à la Tour."
+    },
+    "YIN": {
+      "name": "DEPRECATED Yin",
+      "description": "Lorsque vous jouez une Compétence, gagnez 1 de Force temporaire.",
+      "flavor": "Vous ne pouvez avoir de lumière sans obscurité. Quoique... ?"
+    },
+    "INKBOTTLE": {
+      "name": "Flacon d'encre",
+      "description": "Lorsque vous jouez 10 cartes, piochez 1 carte.",
+      "flavor": "Une fois vide, il semble se remplir à nouveau avec une couleur différente."
+    },
+    "TUNGSTENROD": {
+      "name": "Barre de tungstène",
+      "description": "Lorsque vous perdez des PV, perdez-en 1 de moins.",
+      "flavor": "C'est très très lourd."
+    },
+    "HORNCLEAT": {
+      "name": "Taquet de corne",
+      "description": "Au début de votre deuxième tour, gagnez 14 d'Armure.",
+      "flavor": "Plaisant à tenir en main. À quoi pouvait-il bien servir ?"
+    },
+    "CAPTAINSWHEEL": {
+      "name": "La barre du capitaine",
+      "description": "Au début de votre troisième tour, gagnez 18 d'Armure.",
+      "flavor": "Objet en bois gravé avec une délicate précision. Un nom est gravé dessus dans une langue étrangère."
+    },
+    "GOLDENEYE": {
+      "name": "Œil doré",
+      "description": "Lorsque vous Scrutez, Scrutez 2 cartes supplémentaires.",
+      "flavor": "TODO"
+    },
+    "DAMARU": {
+      "name": "Damaru",
+      "description": "Au début de votre tour, gagnez 1 Mantra.",
+      "flavor": "Le son du petit tambour garde votre esprit conscient, vous indiquant le chemin à suivre."
+    }
+  },
+  "powers": {
+    "ACCURACY": {
+      "name": "Précision",
+      "description": "Les Surins infligent X dégâts supplémentaires."
+    },
+    "AFTER_IMAGE": {
+      "name": "Image rémanente",
+      "description": "Lorsque vous jouez une carte, gagnez X d'Armure."
+    },
+    "ANGER": {
+      "name": "Enrager",
+      "description": "Lorsque vous jouez une carte Compétence, gagne X de Force."
+    },
+    "ANGRY": {
+      "name": "Colère",
+      "description": "XLorsqu'il subit des dégâts d'Attaque, gagne X de Force."
+    },
+    "ARTIFACT": {
+      "name": "Artefact",
+      "description": "Annule X débuff.X débuffs."
+    },
+    "ATTACK_BURN": {
+      "name": "Attaque brûlante",
+      "description": "Pendant X tour, lorsque vous jouez une carte Attaque, celle-ci est Épuisée.XPendant les  prochainsX tours, lorsque vous jouez une carte Attaque, celle-ci est Épuisée."
+    },
+    "BARRICADE": {
+      "name": "Barricade",
+      "description": "L'Armure n'est pas retirée au début de chaque tour.XL'Armure n'est pas retirée au début de son tour."
+    },
+    "BLUR": {
+      "name": "Flou",
+      "description": "L'Armure n'est pas retirée au début du prochain tour.XL'Armure n'est pas retirée au début des prochains X tours."
+    },
+    "BRUTALITY": {
+      "name": "Brutalité",
+      "description": "Au début de chaque tour, vous perdez X PV et piochez X carte.XAu début de chaque tour, vous perdez X PV et piochez X cartes."
+    },
+    "BURST": {
+      "name": "Déflagration",
+      "description": "Votre prochaine carte Compétence est jouée deux fois ce tour.XVos X prochaines cartes Compétence sont jouées deux fois ce tour."
+    },
+    "CHOKED": {
+      "name": "Étouffement",
+      "description": "Chaque fois que vous jouez une carte ce tour, perd X PV."
+    },
+    "COMBUST": {
+      "name": "Combustion",
+      "description": "À la fin de chaque tour, perdez X PV et infligez X dégâts à TOUS les ennemis."
+    },
+    "CONFUSION": {
+      "name": "Confusion",
+      "description": "Le coût des cartes que vous piochez est aléatoire."
+    },
+    "CONSTRICTED": {
+      "name": "Constriction",
+      "description": "À la fin de chaque tour, subissez X dégâts."
+    },
+    "CORRUPTION": {
+      "name": "Corruption",
+      "description": "Les Compétence coûtent 0. Lorsque vous jouez une Compétence, celle-ci est Épuisée.XLorsque vous jouez une carte Compétence, celle-ci est Épuisée."
+    },
+    "CURIOSITY": {
+      "name": "Curiosité",
+      "description": "Lorsque vous jouez une carte Pouvoir, gagne X de Force."
+    },
+    "CURL_UP": {
+      "name": "Recroquevillement",
+      "description": "Après avoir encaissé des dégâts d'Attaque, se roule en boule et gagne des points X d'Armure. (une fois par combat)"
+    },
+    "DANCE_PUPPET": {
+      "name": "Marionnette dansante",
+      "description": "Lorsque vous jouez une carte autre que Compétence, vous subissez X dégâts. (Le type de carte change à chaque tour).XLorsque vous jouez une carte autre qu'Attaque, obtenez XMarionnette dansante +1"
+    },
+    "DARK_EMBRACE": {
+      "name": "Sombre étreinte",
+      "description": "Lorsqu'une carte est Épuisée, vous piochez 1 carte.XLorsqu'une carte est Épuisée, vous piochez X cartes."
+    },
+    "DEMON_FORM": {
+      "name": "Forme démoniaque",
+      "description": "Au début de chaque tour, gagnez X de Force."
+    },
+    "DEXTERITY": {
+      "name": "Dextérité",
+      "description": "Augmente l'Armure obtenu par les cartes de .XRéduit l'Armure obtenu par les cartes de .X."
+    },
+    "DOUBLE_DAMAGE": {
+      "name": "Dégâts doubles",
+      "description": "Les cartes Attaque infligent le double des dégâts pendant X tour.X tours."
+    },
+    "DOUBLE_TAP": {
+      "name": "Attaque double",
+      "description": "Votre prochaine carte Attaque est jouée deux fois ce tour.XVos X prochaines cartes Attaque sont jouées deux fois ce tour."
+    },
+    "DRAW_CARD": {
+      "name": "Bonne pioche",
+      "description": "Piochez X cartes supplémentaires au prochain tour.X carte supplémentaire au prochain tour."
+    },
+    "DRAW": {
+      "name": "Pioche",
+      "description": "Au début de chaque tour, piochez X carte supplémentaire.X carte en moins.X cartes supplémentaires.X cartes en moins."
+    },
+    "DRAW_DOWN": {
+      "name": "Mauvaise pioche",
+      "description": "Vous piochez X carte en moins au prochain tour.X cartes en moins au prochain tour."
+    },
+    "DRAW_REDUCTION": {
+      "name": "Réduction de pioche",
+      "description": "Vous piochez 1 carte en moins au prochain tour.XVous piochez 1 carte en moins pendant X tours."
+    },
+    "ENERGIZED": {
+      "name": "Énergétique",
+      "description": "Gagnez X [G] supplémentaire au prochain tour.X [G] supplémentaires au prochain tour.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENTANGLED": {
+      "name": "Enchevêtré",
+      "description": "Vous ne pouvez pas jouer de cartes Attaque ce tour."
+    },
+    "ENVENOM": {
+      "name": "Envenimement",
+      "description": "Quand vous infligez des dégâts d'attaque, vous appliquez X de  Poison."
+    },
+    "EVOLVE": {
+      "name": "Évolution",
+      "description": "Lorsque vous piochez une carte Statut, piochez 1 carte.XLorsque vous piochez une carte Statut, piochez X cartes."
+    },
+    "EXPLOSIVE": {
+      "name": "Kamikaze",
+      "description": "Explose dans X tours, infligeant X dégâts.XExplose ce tour et inflige"
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Ignore la douleur",
+      "description": "Lorsqu'une carte est Épuisée, gagnez X d'Armure."
+    },
+    "FIRE_BREATHING": {
+      "name": "Souffle de feu",
+      "description": "Lorsque vous piochez une carte Statut ou Malédiction, infligez X dégâts à TOUS les ennemis."
+    },
+    "FLAME_BARRIER": {
+      "name": "Barrière enflammée",
+      "description": "Lorsque vous subissez des dégâts d'attaque, inflige X dégâts en retour."
+    },
+    "FLIGHT": {
+      "name": "Envolée",
+      "description": "Reçoit 50 % de dégâts en moins. Annulation si des dégâts d'attaque sont infligés à X reprises en un tour."
+    },
+    "NULLIFY_ATTACK": {
+      "name": "Attaque annulée",
+      "description": "Bloque entièrement une Attaque à chaque tour."
+    },
+    "FRAIL": {
+      "name": "Fragilité",
+      "description": "Les cartes vous octroient 25 % moins d'Armure pendant X tour.X tours."
+    },
+    "SHACKLED": {
+      "name": "Enchaîné",
+      "description": "À la fin de son tour, regagne X de Force."
+    },
+    "GAMBIT": {
+      "name": "Manœuvre",
+      "description": "Après X tour, gagnez X tours, gagnez X [B] ."
+    },
+    "HEX": {
+      "name": "Maléfice",
+      "description": "Lorsque vous jouez une carte autre qu'Attaque, insèrez X carte Hébétement dans votre deck."
+    },
+    "HIDE": {
+      "name": "Cache-cache",
+      "description": "Vous ne subissez aucun dégât jusqu'au début de votre prochain tour.XVous ne subissez aucun dégât pendant X tours."
+    },
+    "INFINITE_BLADES": {
+      "name": "Lames infinies",
+      "description": "Au début de chaque tour, ajoutez X Surins à votre main.X Surin à votre main."
+    },
+    "BULLET_TIME": {
+      "name": "Balles arrêtées",
+      "description": "Le coût en Énergie de toutes les cartes vertes est de 0."
+    },
+    "INTANGIBLE": {
+      "name": "Intangible",
+      "description": "Réduit TOUS les dégâts subis et la perte de PV à 1. Intangible est réappliqué un tour sur deux."
+    },
+    "INVERTED": {
+      "name": "Inversion",
+      "description": "Immunité aux dégâts. Lorsque vous gagnez de l'Armure, perdez autant de PV."
+    },
+    "JUGGERNAUT": {
+      "name": "Mastodonte",
+      "description": "Lorsque vous gagnez de l'Armure, infligez X dégâts à un ennemi aléatoire."
+    },
+    "KNOWLEDGE": {
+      "name": "Connaissance",
+      "description": "Lorsque vous jouez une carte Pouvoir, piochez X cartes."
+    },
+    "FLEX": {
+      "name": "Perte de Force",
+      "description": "À la fin de ce tour, perdez X de Force."
+    },
+    "MALLEABLE": {
+      "name": "Malléable",
+      "description": "Après avoir encaissé des dégâts d'Attaque, gagne X d'Armure. L'Armure gagnée augmente X avec les activations. Réinitialisation à X au début de votre tour."
+    },
+    "METALLICIZE": {
+      "name": "Métallisation",
+      "description": "Gagnez X d'Armure à la fin de votre tour.XGagne X d'Armure à la fin de son tour."
+    },
+    "MODE_SHIFT": {
+      "name": "Changement de mode",
+      "description": "Après avoir reçu X dégâts, passe en mode défensif."
+    },
+    "NEXT_TURN_BLOCK": {
+      "name": "Armure au prochain tour",
+      "description": "Gagnez X d'Armure au prochain tour."
+    },
+    "NO_DRAW": {
+      "name": "Pas de pioche",
+      "description": "Vous ne pouvez pas piocher de cartes ce tour."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Fumées toxiques",
+      "description": "Au début de chaque tour, appliquez X de Poison à TOUS les ennemis."
+    },
+    "PANACHE": {
+      "name": "Panache",
+      "description": "Si vous jouez X carte de plus pendant ce tour, infligez X dégâts à TOUS les ennemis.X cartes de plus pendant ce tour, infligez"
+    },
+    "PEN_NIB": {
+      "name": "Pointe de stylo",
+      "description": "Votre prochaine carte Attaque inflige le double de dégâts."
+    },
+    "PHANTASMAL": {
+      "name": "Illusion",
+      "description": "Infligez le double des dégâts au prochain tour.XInfligez le double des dégâts aux X prochains tours."
+    },
+    "PLATED_ARMOR": {
+      "name": "Armure plaquée",
+      "description": "À la fin de chaque tour, gagnez X d'Armure. Recevoir des dégâts d'attaque non bloqués réduit l'Armure Plaquée de 1.XÀ la fin de chaque tour, gagne X d'Armure. Recevoir des dégâts d'attaque non bloqués réduit l'Armure Plaquée de 1."
+    },
+    "POISON": {
+      "name": "Poison",
+      "description": "Au début de chaque tour, vous perdez X PV, puis réduit le Poison de 1.XAu début de son tour, perd"
+    },
+    "RAGE": {
+      "name": "Rage",
+      "description": "Lorsque vous jouez une carte Attaque, gagne X d'Armure."
+    },
+    "REDUCE_DAMAGE": {
+      "name": "Réduction de dégâts",
+      "description": "Réduit les dégâts subis de"
+    },
+    "REGENERATE": {
+      "name": "Régénération",
+      "description": "À la fin de son tour, récupère X PV."
+    },
+    "REGENERATION": {
+      "name": "Régénération",
+      "description": "À la fin du tour, récupérez X PV et perdez 1 de Régénération.X"
+    },
+    "LIFE_LINK": {
+      "name": "Lien vital",
+      "description": "Si d'autres ennemis sont encore vivants, résurrection dans 2 tours à 50 % de PV."
+    },
+    "REPULSE": {
+      "name": "Répulsion",
+      "description": "Lorsque X des dégâts d'attaque sont encaissés, insère une carte Blessure dans votre main."
+    },
+    "RETAIN_CARDS": {
+      "name": "Retenue de cartes",
+      "description": "À la fin de chaque tour, vous retenez X carte.X cartes."
+    },
+    "RETAIN_HAND": {
+      "name": "Conserver votre main",
+      "description": "Pour les X prochains tours, ne défaussez pas votre main.XNe défaussez pas votre main à la fin de ce tour."
+    },
+    "RIPOSTE": {
+      "name": "Riposte",
+      "description": "Une fois par tour, inflige X dégâts en retour lorsque vous jouez une carte Attaque."
+    },
+    "RITUAL": {
+      "name": "Rituel",
+      "description": "À la fin de son tour, gagne X de Force.XAt the end of your turn, gain"
+    },
+    "RUPTURE": {
+      "name": "Rupture",
+      "description": "Quand vous perdez des PV à cause d'une carte, gagnez X de Force."
+    },
+    "SADISTIC": {
+      "name": "Sadique",
+      "description": "Lorsque vous appliquez un débuff à un ennemi, infligez X dégâts."
+    },
+    "SERPENTINE": {
+      "name": "Serpentin",
+      "description": "Immunisé aux potions."
+    },
+    "SHARP_HIDE": {
+      "name": "Peau dure",
+      "description": "Lorsque vous jouez une carte Attaque, vous subissez X dégâts."
+    },
+    "SHRIEK_FROM_BEYOND": {
+      "name": "Hurlement de l'au-delà",
+      "description": "Lorsque vous jouez une carte Attaque, défaussez une carte aléatoire."
+    },
+    "SKILL_BURN": {
+      "name": "Brûlure de compétences",
+      "description": "Pendant X tour, lorsque vous jouez une carte Compétence, celle-ci est Épuisée.XPendant les  prochainsX tours, lorsque vous jouez une carte Compétence, celle-ci est Épuisée."
+    },
+    "SLOW": {
+      "name": "Ralenti",
+      "description": "Chaque fois que vous jouez une carte, X subit 10 % de dégâts en plus des cartes Attaque ce tour.X (subit X % plus de dégâts)"
+    },
+    "SPLIT": {
+      "name": "Séparation",
+      "description": "Lorsque ses PV descendent en dessous de 50 %, il se sépare en 2 slimes plus petits avec les PV restants de X."
+    },
+    "SPORE_CLOUD": {
+      "name": "Nuage de spores",
+      "description": "À sa mort, vous applique Vulnérabilité pendant X tours."
+    },
+    "STASIS": {
+      "name": "Stase",
+      "description": "À sa mort, X revient dans votre main."
+    },
+    "EXTRA_CARDS": {
+      "name": "Plus de cartes",
+      "description": "Piochez 1 carte supplémentaire au prochain tour.XPiochez X cartes supplémentaires au prochain tour."
+    },
+    "STRENGTH": {
+      "name": "Force",
+      "description": "Augmente les dégâts d'Attaque de XRéduit les dégâts d'Attaque de X."
+    },
+    "THIEVERY": {
+      "name": "Larcin",
+      "description": "vole X d'or lors de l'attaque."
+    },
+    "THORNS": {
+      "name": "Épines",
+      "description": "Quand vous subissez des dégâts d'Attaque, inflige X dégâts en retour."
+    },
+    "THOUSAND_CUTS": {
+      "name": "Mille coupures",
+      "description": "Lorsque vous jouez une carte, infligez X dégâts à TOUS les ennemis."
+    },
+    "BERSERK": {
+      "name": "Folie furieuse",
+      "description": "Au début de chaque tour, gagnez X"
+    },
+    "TIME_WARP": {
+      "name": "Distorsion temporelle",
+      "description": "Lorsque vous jouez X cartes, il interrompt votre tour et gagne X de Force."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Savoir-faire",
+      "description": "Au début de chaque tour, vous piochez X carte et défaussez X carte.X cartes et défaussez X cartes."
+    },
+    "UNAWAKENED": {
+      "name": "Endormi",
+      "description": "Cet ennemi n'a pas encore été éveillé..."
+    },
+    "UNSTABLE": {
+      "name": "Instable",
+      "description": "Infligez assez de dégâts pour lui faire perdre l'équilibre."
+    },
+    "VENOMOLOGY": {
+      "name": "Toxicologie",
+      "description": "Le poison est renforcé de X plutôt que de baisser à chaque tour."
+    },
+    "VULNERABLE": {
+      "name": "Vulnérabilité",
+      "description": "Subissez X% de dégâts en plus des Attaques pendant X tour.X tours."
+    },
+    "WEAKENED": {
+      "name": "Affaibli",
+      "description": "Les Attaques infligent X% de dégâts en moins pendant X tour.X tours."
+    },
+    "NIGHT_TERROR": {
+      "name": "Cauchemar",
+      "description": "Ajoutez X cartes à votre main au prochain tour."
+    },
+    "PAINFUL_STABS": {
+      "name": "Blessures douloureuses",
+      "description": "À chaque fois que cet ennemi vous inflige des dégâts, ajoutez une Plaie à votre défausse."
+    },
+    "MINION": {
+      "name": "Sbire",
+      "description": "Les sbires abandonnent le combat en l'absence de leur leader."
+    },
+    "GROWTHPOWER": {
+      "name": "Croissance",
+      "description": "À la fin du tour, gagne X de Force."
+    },
+    "INTANGIBLEPLAYER": {
+      "name": "Intangible",
+      "description": "Réduit TOUS les dégâts subis et la perte de PV à 1."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Forme spectrale",
+      "description": "À la fin de chaque tour, perdez X de Dextérité."
+    },
+    "FOCUS": {
+      "name": "Concentration",
+      "description": "Accroît la puissance des Orbes de XDécroît la puissance des Orbes de X."
+    },
+    "BIAS": {
+      "name": "Biais",
+      "description": "Au début de chaque tour, perdez X de Concentration."
+    },
+    "CREATIVE_AI": {
+      "name": "IA créative",
+      "description": "Au début de chaque tour, ajoutez X cartes Pouvoir aléatoire à votre main.X cartes Pouvoir aléatoires à votre main."
+    },
+    "PRIME": {
+      "name": "Préparation",
+      "description": "Quand vous Canalisez un Orbe, piochez X carte.X cartes."
+    },
+    "LOOP": {
+      "name": "Boucle",
+      "description": "Au début de chaque tour, déclenchez la capacité passive de votre prochain Orbe.XAu début de chaque tour, déclenchez la capacité passive de vos X prochains Orbes."
+    },
+    "HEATSINK": {
+      "name": "Dissipation de chaleur",
+      "description": "Quand vous jouez une carte Pouvoir, piochez X carte.X cartes."
+    },
+    "REPAIR": {
+      "name": "Réparation",
+      "description": "À la fin du combat, récupérez X PV."
+    },
+    "HELLO": {
+      "name": "Hello",
+      "description": "Au début de chaque tour, ajoutez X cartes Communes aléatoire à votre main.X carte Commune aléatoire à votre main."
+    },
+    "BUFFER": {
+      "name": "Tampon",
+      "description": "Empêche votre prochaine perte de PV.XEmpêche vos X prochaines pertes de PV."
+    },
+    "NO_ATTACK": {
+      "name": "Passif",
+      "description": "Vous ne pouvez pas jouer d'Attaques ce tour."
+    },
+    "STATICDISCHARGE": {
+      "name": "Décharge statique",
+      "description": "Quand vous subissez des dégâts d'attaque, Canalisez X Orbe(s) Kéraunique(s)."
+    },
+    "STORM": {
+      "name": "Orage",
+      "description": "Quand vous jouez une carte Pouvoir, Canalisez X Orbe(s) Kéraunique(s)."
+    },
+    "PRIMITIVE": {
+      "name": "Primitif",
+      "description": "Quand vous jouez une carte Commune, piochez X carte.X cartes."
+    },
+    "REBOUND": {
+      "name": "Rebond",
+      "description": "La prochaine carte que vous jouez ce tour est placée au sommet de votre pioche.XLes X prochaines cartes que vous jouez ce tour sont placées au sommet de votre pioche."
+    },
+    "AMPLIFY": {
+      "name": "Amplification",
+      "description": "Votre prochaine carte Pouvoir est joué deux fois ce tour.XVos X prochaines cartes Pouvoir sont joués deux fois ce tour."
+    },
+    "CONSERVE": {
+      "name": "Économie",
+      "description": "L' Énergie est conservée pour le prochain tour.XL' Énergie est conservée pour les X prochains tours."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Machine Learning",
+      "description": "Au début de chaque tour, piochez X carte supplémentaire.X cartes supplémentaires."
+    },
+    "MAGNETISM": {
+      "name": "Magnétisme",
+      "description": "Au début de chaque tour, ajoutez %s carte Incolore aléatoire à votre main.XAu début de chaque tour, ajoutez %s cartes Incolores aléatoires à votre main."
+    },
+    "ECHO_FORM": {
+      "name": "Forme résonnante",
+      "description": "La première carte que vous jouez chaque tour est jouée deux fois.XLes X premières cartes que vous jouez chaque tour sont jouées deux fois."
+    },
+    "LOCKON": {
+      "name": "Ciblage",
+      "description": "Reçoit X % de dégâts supplémentaires des Orbes pendant X tour.X tours."
+    },
+    "DEXLOSS": {
+      "name": "Perte de Dextérité",
+      "description": "A la fin de chaque tour, perdez X de Dextérité."
+    },
+    "ELECTRO": {
+      "name": "Électro",
+      "description": "Les Orbes Kérauniques frappent TOUS les ennemis.XX"
+    },
+    "EQUILIBRIUM": {
+      "name": "Equilibrium",
+      "description": "Conservez votre main ce tour.XConservez votre main pendant X tours."
+    },
+    "SHIFTING": {
+      "name": "Instable",
+      "description": "XQuand il perd des PV, il perd autant de Force jusqu'à la fin de son tour."
+    },
+    "FADING": {
+      "name": "Éphémère",
+      "description": "Meurt dans X tours.XMeurt ce tour."
+    },
+    "ENERGIZEDBLUE": {
+      "name": "Énergétique",
+      "description": "Gagnez X [B] supplémentaire au prochain tour.X [B] supplémentaires au prochain tour.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "TIMEMAZEPOWER": {
+      "name": "Labyrinthe temporel",
+      "description": "Quand vous jouez X cartes, votre tour se termine."
+    },
+    "NOBLOCKPOWER": {
+      "name": "À découvert",
+      "description": "Vous ne pouvez plus gagner d'Armure avec des cartes."
+    },
+    "CORPSEEXPLOSIONPOWER": {
+      "name": "Explosion morbide",
+      "description": "À la mort de cet ennemi, infligez autant de dégâts que ses PV max à TOUS les ennemis.XÀ la mort de cet ennemi, infligez autant de dégâts que X fois ses PV max à TOUS les ennemis."
+    },
+    "THEBOMB": {
+      "name": "La Bombe",
+      "description": "Dans %1$s tours, infligez %2$s dégât(s) à TOUS les ennemis.XÀ la fin de ce tour, infligez %1$s dégât(s) à TOUS les ennemis"
+    },
+    "MAYHEM": {
+      "name": "Grabuge",
+      "description": "Au début de chaque tour, jouez la première carte de votre pioche.XAu début de chaque tour, jouez les X premières cartes de votre pioche."
+    },
+    "COMPULSIVE": {
+      "name": "Réactif",
+      "description": "Change son intention quand il reçoit des dégâts d'attaque."
+    },
+    "SURROUNDED": {
+      "name": "Entouré",
+      "description": "Recevez 50% de dégâts supplémentaires quand vous êtes attaqué par derrière. Utilisez des cartes ou des potions pour changer votre orientation."
+    },
+    "INVINCIBLE": {
+      "name": "Invincible",
+      "description": "Ne peut perdre que X PV de plus ce tour.XNe peut plus perdre de PV ce tour."
+    },
+    "BEATOFDEATH": {
+      "name": "Pulsation de la mort",
+      "description": "Chaque fois que vous jouez une carte, recevez X dégât(s)."
+    },
+    "BACKATTACK": {
+      "name": "Attaque par derrière",
+      "description": "Inflige 50% de dégâts supplémentaires quand il vous attaque par derrière."
+    },
+    "FREEATTACKPOWER": {
+      "name": "Puissance d'attaque gratuite",
+      "description": "Ignorez le coût en énergie de la prochaine Attaque que vous jouez.XIgnorez le coût en énergie des X prochaines Attaques que vous jouez."
+    },
+    "DUPLICATIONPOWER": {
+      "name": "Duplication",
+      "description": "Votre prochaine carte est jouée deux fois ce tour.XVos X prochaines cartes sont jouées deux fois ce tour."
+    },
+    "NOSKILLS": {
+      "name": "Incompétence",
+      "description": "Vous ne pouvez pas jouer de Compétences ce tour."
+    },
+    "MASTERY": {
+      "name": "DEPRECATED Maîtrise",
+      "description": "À chaque fois que vous tentez de changer de Position pour votre Position actuelle, gagnez X [B]."
+    },
+    "MASTERREALITYPOWER": {
+      "name": "Maîtrise-réalité",
+      "description": "Lorsque vous jouez une carte avec Retenue, infligez X dégâts à un ennemi aléatoire.XX"
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Rétribution",
+      "description": "À chaque fois que vous perdez des PV, gagnez X de Vigueur."
+    },
+    "ESTABLISHMENTPOWER": {
+      "name": "Fondation",
+      "description": "Lorsqu'une carte est Retenue, réduit son coût de X."
+    },
+    "CONTROLLED": {
+      "name": "Forteresse mentale",
+      "description": "Lorsque vous changez de Position, gagnez X d'Armure."
+    },
+    "FLOWPOWER": {
+      "name": "DEPRECATED Puissance du Courant",
+      "description": "Lorsque vous jouez une Attaque, gagnez X de Force temporaire. Lorsque vous jouez une Compétence, gagnez ,X de Dexterité temporaire."
+    },
+    "OMEGAPOWER": {
+      "name": "Oméga",
+      "description": "Au début de votre tour, infligez X dégâts à TOUS les ennemis."
+    },
+    "NIRVANA": {
+      "name": "Nirvana",
+      "description": "Lorsque vous Scrutez, gagnez X d'Armure."
+    },
+    "WIREHEADINGPOWER": {
+      "name": "Prévoyance",
+      "description": "Au début de votre tour, Scrutez X cartes."
+    },
+    "BATTLEHYMN": {
+      "name": "Hymne de bataille",
+      "description": "Au début de votre tour, ajoutez X Gifles à votre main.X Gifle à votre main."
+    },
+    "GROUNDED": {
+      "name": "Ancré",
+      "description": "Lorsque vous jouez une Compétence, entrez en Calme."
+    },
+    "MANTRA": {
+      "name": "Mantra",
+      "description": "Lorsque vous obtenez X de Mantra, entrez en Divinité."
+    },
+    "STRIKEUP": {
+      "name": "Frappe Améliorée",
+      "description": "Les cartes contenant Frappe infligent X dégâts supplémentaires."
+    },
+    "FREETOPLAYPOWER": {
+      "name": "DEPRECATED Joie",
+      "description": "Ignore le coût de la prochaine carte que vous jouez durant ce tour.XIgnore le coût des X prochaines cartes que vous jouez durant ce tour."
+    },
+    "ADAPTATION": {
+      "name": "Précipitation",
+      "description": "Lorsque vous entrez en Colère, piochez X carte.X cartes."
+    },
+    "CANNOTCHANGESTANCEPOWER": {
+      "name": "Reste en position",
+      "description": "Vous ne pouvez pas changer de position ce tour."
+    },
+    "VAULT": {
+      "name": "Saut",
+      "description": "Reçoit X dégâts au début de votre prochain tour."
+    },
+    "BLOCKRETURNPOWER": {
+      "name": "Retour d'armure",
+      "description": "Lorsqu'il est attaqué, gagnez X d'Armure."
+    },
+    "HOTHOT": {
+      "name": "DEPRECATED Chaud Chaud",
+      "description": "Lorsque vous êtes en Colère, inflige X dégâts en retour lorsque vous recevez des dégâts d'attaque."
+    },
+    "ANGELFORM": {
+      "name": "Deva",
+      "description": "À la fin de votre tour, gagnezX d'Armure Plaquée."
+    },
+    "EMOTIONALTURMOILPOWER": {
+      "name": "DEPRECATED Tourmente Émotionnelle",
+      "description": "Au début de votre tour, entrez dans une nouvelle position basique aléatoire."
+    },
+    "ALWAYSMAD": {
+      "name": "DEPRECATED Courroux Constant",
+      "description": "Vous ne recevez plus de dégâts doubles lorsque vous êtes en Colère."
+    },
+    "COLLECT": {
+      "name": "Collecte",
+      "description": "Au début de votre prochain tour, ajoutez un Miracle+ à votre main.XAu début de vos X prochains tours, ajoutez un Miracle+ à votre main."
+    },
+    "CONDENSE": {
+      "name": "Condense",
+      "description": "Vous ne pouvez pas recevoir plus de X dégâts par attaque."
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Sérénité",
+      "description": "Lorsque vous êtes en position de Calme, la perte de PV est réduite de"
+    },
+    "ENDTURNDEATH": {
+      "name": "Blasphémateur",
+      "description": "Au début de votre tour, mourrez."
+    },
+    "VIGOR": {
+      "name": "Vigueur",
+      "description": "Votre prochaine attaque inflige X dégâts supplémentaires."
+    },
+    "DEVOTIONPOWER": {
+      "name": "Dévotion",
+      "description": "Au début de votre tour, gagnez X de Mantra."
+    },
+    "WRATHNEXTTURNPOWER": {
+      "name": "Simmering Rage",
+      "description": "Au début de votre prochain tour, entrez en Colère."
+    },
+    "OMNISCIENCEPOWER": {
+      "name": "Omniscience",
+      "description": "Lorsque vous Scrutez, Scrutez X cartes supplémentaires."
+    },
+    "DEVAFORM": {
+      "name": "Deva",
+      "description": "Au début de votre tour, gagnez [W] XAu début de votre tour, gagnez [W] X fois Xet augmentez ce gain de X.XTRANSLATE NOTE: At the start of your turn, gain [W] 2 times and increase this by 1."
+    },
+    "DISCIPLINEPOWER": {
+      "name": "DEPRECATED Discipline",
+      "description": "If you end your turn with unused [W] , draw that many additional cards next turn."
+    },
+    "WAVEOFTHEHANDPOWER": {
+      "name": "Revers de la main",
+      "description": "Lorsque vous gagnez de l'Armure, appliquez X de Faiblesse à TOUS les ennemis."
+    },
+    "PATHTOVICTORYPOWER": {
+      "name": "Marque",
+      "description": "Lorsque vous jouez Points vitaux, perd X PV."
+    },
+    "FLICKPOWER": {
+      "name": "DEPRECATED Flick",
+      "description": "When this enemy gets Flick X2 more times, it receives X1 more time, it receives X damage."
+    },
+    "WAVEOFTHEHANDPOWER2": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATEDXDEPRECATED"
+    },
+    "ENERGYDOWNPOWER": {
+      "name": "Jeûne",
+      "description": "Au début de votre tour, perdez X"
+    },
+    "LIKEWATERPOWER": {
+      "name": "Fluidité",
+      "description": "À la fin de votre tour, si vous êtes en Calme, gagnez X d'Armure."
+    },
+    "STUDY": {
+      "name": "Étude",
+      "description": "À la fin de votre tour, mélangez X Persicacité dans votre pioche.X Perspicacités dans votre pioche."
+    }
+  },
+  "potions": {
+    "ANCIENT_POTION": {
+      "name": "Potion ancienne",
+      "description": "Gagnez 1 Artefact."
+    },
+    "BLOCK_POTION": {
+      "name": "Potion d'armure",
+      "description": "Gagnez 12 d'Armure."
+    },
+    "DEXTERITY_POTION": {
+      "name": "Potion de dextérité",
+      "description": "Gagnez 2 de Dextérité."
+    },
+    "ELIXIR": {
+      "name": "Élixir",
+      "description": "Épuise toutes les cartes Statut dans votre main.Aucun effet..."
+    },
+    "ENERGY_POTION": {
+      "name": "Potion d'énergie",
+      "description": "Gagnez 2 d'Énergie."
+    },
+    "EXPLOSIVE_POTION": {
+      "name": "Potion explosive",
+      "description": "Inflige 10 dégâts à TOUS les ennemis."
+    },
+    "FIRE_POTION": {
+      "name": "Potion incendiaire",
+      "description": "Inflige 20 dégâts."
+    },
+    "HEALTH_POTION": {
+      "name": "Potion de santé",
+      "description": "Récupérez  PV."
+    },
+    "POISON_POTION": {
+      "name": "Potion de poison",
+      "description": "Applique 6 de Poison."
+    },
+    "POTION_SLOT": {
+      "name": "Emplacement de potion",
+      "description": "Utilisez des potions pendant un combat pour gagner des bonus ou gêner vos ennemis.0Emplacement de potion"
+    },
+    "REGEN_POTION": {
+      "name": "Potion de régénération",
+      "description": "Gagnez 5 de Régénération"
+    },
+    "STRENGTH_POTION": {
+      "name": "Potion de force",
+      "description": "Gagnez 2 de Force."
+    },
+    "SWIFT_POTION": {
+      "name": "Potion de célérité",
+      "description": "3Piochez  cartes."
+    },
+    "WEAK_POTION": {
+      "name": "Potion de faiblesse",
+      "description": "Applique 3 de Faiblesse."
+    },
+    "STEROIDPOTION": {
+      "name": "Potion de vantardise",
+      "description": "Gagnez 5 de Force. À la fin de votre tour, perdez  de Force."
+    },
+    "SPEEDPOTION": {
+      "name": "Potion de vitesse",
+      "description": "Gagnez 5 de Dextérité. À la fin de votre tour, perdez  de Dextérité."
+    },
+    "GAMBLERSBREW": {
+      "name": "Décoction du joueur",
+      "description": "Défaussez autant de cartes que vous voulez et piochez-en autant."
+    },
+    "ATTACKPOTION": {
+      "name": "Potion d'attaque",
+      "description": "Choisissez 1 Attaque parmi 3 aléatoires à ajouter à votre main. Elle coûte 0 ce tour.1Choisissez 1 Attaque parmi 3 aléatoires, et ajoutez-en 2 copies à votre main. Elles coûtent 0 ce tour."
+    },
+    "FOCUSPOTION": {
+      "name": "Potion de concentration",
+      "description": "Gagnez 2 de Concentration."
+    },
+    "SMOKEBOMB": {
+      "name": "Fumigène",
+      "description": "Échappez-vous de n'importe quel combat qui n'est pas de boss. Ne recevez aucune récompense.0Je suis entouré !"
+    },
+    "SNECKOOIL": {
+      "name": "Huile de geckobra",
+      "description": "Piochez 5 cartes. Rendez le coût des cartes de votre main aléatoire."
+    },
+    "SKILLPOTION": {
+      "name": "Potion de compétence",
+      "description": "Choisissez 1 Compétence parmi 3 aléatoires à ajouter à votre main. Elle coûte 0 ce tour.1Choisissez 1 Compétence parmi 3 aléatoires, et ajoutez-en 2 copies à votre main. Elles coûtent 0 ce tour."
+    },
+    "GHOSTINAJAR": {
+      "name": "Fantôme dans un bocal",
+      "description": "Gagnez 1 d'Intangible."
+    },
+    "LIQUIDBRONZE": {
+      "name": "Bronze liquide",
+      "description": "Gagnez 3 d'Épines."
+    },
+    "BLOODPOTION": {
+      "name": "Potion de sang",
+      "description": "Gagnez 20% de vos PV max."
+    },
+    "FRUIT_JUICE": {
+      "name": "Jus de fruits",
+      "description": "Gagnez 5 PV max."
+    },
+    "FAIRYPOTION": {
+      "name": "Potion féerique",
+      "description": "Quand vous mourez, survivez avec 30% de vos PV max à la place et défaussez cette potion."
+    },
+    "FEARPOTION": {
+      "name": "Potion de peur",
+      "description": "Applique 3 de Vulnérabilité."
+    },
+    "POWERPOTION": {
+      "name": "Potion de pouvoir",
+      "description": "Choisissez 1 Pouvoir parmi 3 aléatoires à ajouter à votre main. Il coûte 0 ce tour.1Choisissez 1 Pouvoir parmi 3 aléatoires, et ajoutez-en 2 copies à votre main. Elles coûtent 0 ce tour."
+    },
+    "ESSENCEOFSTEEL": {
+      "name": "Essence d'acier",
+      "description": "Gagnez 4 d'Armure Plaquée."
+    },
+    "ENTROPICBREW": {
+      "name": "Décoction d'entropie",
+      "description": "Remplissez tous vos emplacements de potion libres avec des potions aléatoires."
+    },
+    "DUPLICATIONPOTION": {
+      "name": "Potion de duplication",
+      "description": "Votre prochaine carte est jouée deux fois ce tour.1Vos 2 prochaines cartes sont jouées deux fois ce tour."
+    },
+    "STANCEPOTION": {
+      "name": "Potion de position",
+      "description": "Prenez la position Calme ou Colère."
+    },
+    "POTIONOFCAPACITY": {
+      "name": "Potion de capacité",
+      "description": "Gagnez 2 emplacements d'Orbe."
+    },
+    "ESSENCEOFDARKNESS": {
+      "name": "Essence de ténèbres",
+      "description": "Canalisez 1 Orbes Obscurs pour chaque emplacement d'Orbe."
+    },
+    "CUNNINGPOTION": {
+      "name": "Potion de ruse",
+      "description": "Ajoutez 3 Surins+ à votre main."
+    },
+    "ELIXIRPOTION": {
+      "name": "Élixir",
+      "description": "Épuisez n'importe quel nombre de cartes de votre main."
+    },
+    "BOTTLEDMIRACLE": {
+      "name": "Miracle embouteillé",
+      "description": "Ajoutez 2 Miracles à votre main."
+    },
+    "AMBROSIA": {
+      "name": "Ambroisie",
+      "description": "Entrez en Divinité."
+    },
+    "HEARTOFIRON": {
+      "name": "Cœur de fer",
+      "description": "Gagnez 6 de Métallisation."
+    },
+    "DISTILLEDCHAOS": {
+      "name": "Chaos distillé",
+      "description": "Jouez les 3 cartes du dessus de votre pioche."
+    },
+    "CULTISTPOTION": {
+      "name": "Potion d'adepte",
+      "description": "Gagnez 1 de Rituel."
+    },
+    "LIQUIDMEMORIES": {
+      "name": "Mémoires liquides",
+      "description": "Choisissez une carte de votre défausse et mettez la dans votre main. Elle coûte 0 ce tour.1Choisissez  cartes dans votre défausse et remettez les dans votre main. Elles coûtent 0 ce tour."
+    },
+    "BLESSINGOFTHEFORGE": {
+      "name": "Bénédiction de la Forge",
+      "description": "Améliorez toutes les cartes dans votre main pour la durée du combat."
+    },
+    "COLORLESSPOTION": {
+      "name": "Potion incolore",
+      "description": "Choisissez 1 carte Incolore parmi 3 aléatoires à ajouter dans votre main. Elle coûte 0 ce tour.1Choisissez 1 carte Incolore parmi 3 aléatoires, et ajoutez-en 2 copies dans votre main. Elles coûtent 0 ce tour."
+    }
+  },
+  "events": {
+    "UPGRADE_SHRINE": {
+      "name": "Autel d'amélioration",
+      "description": "Devant vous se trouve un autel élaboré consacré à un esprit oublié.",
+      "choices": [
+        "[Prier] Améliorez une carte.",
+        "[Partir] Choisissez la carte à Améliorer."
+      ]
+    },
+    "GOLDEN_SHRINE": {
+      "name": "Autel doré",
+      "description": "Devant vous se trouve un autel élaboré consacré à un esprit antique.",
+      "choices": [
+        "[Prier] Gagnez d'or.",
+        "[Profaner] Gagnez 275 d'or. Recevez : Malédiction - Regret.",
+        "[Partir]"
+      ]
+    },
+    "FORGOTTEN_ALTAR": {
+      "name": "Autel oublié",
+      "description": "Devant vous s'élève un autel consacré à une divinité oubliée. \n Sur l'autel, trône la statue décorée d'une femme aux bras grands ouverts. \n Elle vous appelle, réclamant un sacrifice.",
+      "choices": []
+    },
+    "DEAD_ADVENTURER": {
+      "name": "Aventurier mort",
+      "description": "Tandis que vous fouillez le cadavre de l'aventurier, vous baissez votre garde !",
+      "choices": [
+        "[Fouiller] Trouvez du butin.",
+        "[Partir]"
+      ]
+    },
+    "MASKED_BANDITS": {
+      "name": "Bandits masqués",
+      "description": "Héhéhé... Merci pour l'or ! \n Oh, j'adore l'or. C'est tellement génial. \n Ça brille, oh comme ça brille !",
+      "choices": [
+        "[Payer] Perdez TOUT votre or.",
+        "[Combattre]",
+        "[Continuer]",
+        "[Partir]"
+      ]
+    },
+    "BIG_FISH": {
+      "name": "Belle prise",
+      "description": "En parcourant un long couloir, vous découvrez une banane, un beignet et une boîte qui flottent dans les airs. Non... Après inspection, ils sont attachés à des cordes qui pendent de trous dans le plafond. Tandis que vous vous approchez des objets, vous entendez des gloussements en provenance du plafond. \n Que faites-vous ?",
+      "choices": [
+        "[Banane] Récupérez PV.",
+        "[Beignet] PV max + .",
+        "[Boîte] Obtenez une Relique. Recevez : Malédiction - Regret.",
+        "[Partir]"
+      ]
+    },
+    "MUSHROOMS": {
+      "name": "Champignons",
+      "description": "Vous cédez au désir irrépressible de manger. Tandis que vous dévorez champignon après champignon, vous sentez l'hébétement vous gagner avant de vous évanouir. Lorsque vous vous réveillez, vous vous sentez étrange. \n Vous récupérez 25 % de vos PV, mais contractez une infection.",
+      "choices": [
+        "[Piétiner] Mettez les champignons en colère.",
+        "[Manger] Récupérez PV. Recevez : Malédiction - Parasite.",
+        "[Combattre]",
+        "[Partir]"
+      ]
+    },
+    "FALLING": {
+      "name": "Chute",
+      "description": "Vous sautez d'une forme flottante à l'autre, toujours plus haut, mais finissez par glisser. \n \n Vous commencez à tomber.",
+      "choices": [
+        "[Continuer] [Atterrir] Perdez",
+        "[Verrouillé] Nécessite : carte Compétence [Canaliser] Perdez",
+        "[Verrouillé] Nécessite : carte Pouvoir [Frapper] Perdez"
+      ]
+    },
+    "THE_CLERIC": {
+      "name": "Clerc",
+      "description": "Un étrange humanoïde bleu portant un heaume doré (?) s'approche de vous en vous adressant un large sourire. \n \"Bonjour ! Je m'appelle Clerc ! Puis-je faire quelque chose pour vous ?\", crie bruyamment la créature.",
+      "choices": [
+        "[Soin] 35 d'or : récupérez PV.",
+        "[Purification] d'or : retirez une carte de votre deck.",
+        "[Partir]"
+      ]
+    },
+    "GHOSTS": {
+      "name": "Conseil des fantômes",
+      "description": "Alors que vous continuez votre ascension, une épaisse fumée noire commence à émaner du sol et des murs autour de vous, se regroupant en trois formes masquées qui commencent à parler. \n \n \"Encore un pantin de Neow je pense.\" \n \"EN EFFET! ELLE CHOISIT TOUJOURS LES MEILLEURS JOUETS!\" \n \n Vous remarquez un sourire surdimensionné alors que le troisième s'adresse à vous. \n \"Ne fais pas attention à eux... Voudrais-tu goûter à notre pouvoir?\"",
+      "choices": [
+        "[Accepter] Recevez 5 Apparitions. Perdez PV max.",
+        "[Refuser]"
+      ]
+    },
+    "WINDING_HALLS": {
+      "name": "Couloirs labyrinthiques",
+      "description": "Vous progressez lentement au fil des couloirs en zigzag. Vous vous perdez sans arrêt, les murs et le sol ne cessant de bouger pour une raison inexplicable. Les voix qui chuchotent constamment dans votre tête ne facilitent pas les choses.",
+      "choices": [
+        "[Revenir sur vos pas] Perdez PV max.",
+        "[Céder à la folie] Recevez : 2 Folies. Perdez PV.",
+        "[Vous concentrer] Recevez : Malédiction - Souffrance. Récupérez PV."
+      ]
+    },
+    "KNOWING_SKULL": {
+      "name": "Crâne savant",
+      "description": "Vous arrivez dans une antique chambre décorée. Au centre de la salle, un grand crâne repose sur un piédestal orné. À votre approche, le crâne s'enflamme et se tourne pour vous faire face.",
+      "choices": [
+        "[Continuer]",
+        "[Informations ?] Révélez le boss. Perdez",
+        "[Réussite ?] Obtenez une carte sans couleur. Perdez PV.",
+        "[Remontant ?] Obtenez une potion. Perdez PV.",
+        "[Richesses ?] Gagnez d'or. Perdez PV.",
+        "[Comment sortir d'ici ?] Perdez PV.",
+        "[Partir]"
+      ]
+    },
+    "DRUG_DEALER": {
+      "name": "Dealer",
+      "description": "Un homme avec un cache-œil et un sourire démoniaque s'avance vers vous. \n \"Bonjour, par ici. Ça vous intéresse, de la D.O.P.E. ? Question force, l'entraînement et les bénédictions ne peuvent pas rivaliser. Vous en aurez bien besoin si vous faites partie de ces héros suicidaires. \n Alors, qu'en dites-vous ?",
+      "choices": [
+        "[Tester la D.O.P.E.] Obtenez de la D.O.P.E.",
+        "[Devenir un sujet de test] Transformez 2 cartes.",
+        "[Ingérer les mutagènes] Obtenez une Relique spéciale.",
+        "[Partir]"
+      ]
+    },
+    "DUPLICATOR": {
+      "name": "Duplicateur",
+      "description": "Devant vous trône un autel décoré et consacré à une divinité antique.",
+      "choices": [
+        "[Prier] Dupliquez une carte de votre deck.",
+        "[Partir] Choisissez la carte à dupliquer."
+      ]
+    },
+    "BONFIRE_ELEMENTALS": {
+      "name": "Esprits du feu de camp",
+      "description": "Vous tombez sur ce qui ressemble à un groupe d'esprits du feu violets qui dansent autour d'un grand feu de camp.",
+      "choices": [
+        "[Continuer]",
+        "[Partir]",
+        "[Faire une offrande] Recevez une récompense en fonction de votre offrande. Choisissez la carte à offrir."
+      ]
+    },
+    "ACCURSED_BLACKSMITH": {
+      "name": "Forge sinistre",
+      "description": "Vous baissez la tête pour pénétrer dans une modeste cabane. À l'intérieur, vous découvrez ce qui semble être une forge. Les outils sont couverts de poussière, mais un feu crépite dans le fourneau. Votre nervosité s'intensifie...",
+      "choices": [
+        "[Utiliser la forge] Améliorez une carte de votre deck.",
+        "[Fouiller] Obtenez une Relique spéciale. Recevez : Malédiction - Douleur.",
+        "[Partir] Choisissez une carte à Améliorer."
+      ]
+    },
+    "GOLDEN_IDOL": {
+      "name": "Idole dorée",
+      "description": "Vous croisez un piédestal des plus anodins sur lequel trône paisiblement une idole dorée étincelante. Elle vous semble extrêmement précieuse. \n \n Vous ne remarquez aucun piège alentour.",
+      "choices": []
+    },
+    "THE_LIBRARY": {
+      "name": "La bibliothèque",
+      "description": "Vous découvrez un bâtiment ouvragé qui semble abandonné. \n Une plaque arrachée au mur gît au sol. Il y est écrit : LA BIBLIOTHÈQUE. \n À l'intérieur, vous découvrez d'innombrables rangées de parchemins, de manuscrits et de livres. \n Vous en choisissez un et vous installez confortablement sur une chaise pour profiter d'un moment de détente.",
+      "choices": [
+        "[Lire] Choisissez 1 carte parmi les 20 à disposition.",
+        "[Dormir] Récupérez PV."
+      ]
+    },
+    "THE_WOMAN_IN_BLUE": {
+      "name": "La femme en bleu",
+      "description": "Un bras émerge de l'obscurité et vous entraîne dans une petite boutique. Une fois votre vision ajustée, vous distinguez une femme au teint pâle et élégamment vêtue qui vous indique un mur de potions. \n \"Achetez une potion. Maintenant !\", dit-elle.",
+      "choices": [
+        "[Acheter 1potion]",
+        "[Acheter 2potions]",
+        "[Acheter 3potions] d'or.",
+        "[Partir]"
+      ]
+    },
+    "FOUNTAIN_OF_CLEANSING": {
+      "name": "La fontaine divine",
+      "description": "Vous apercevez de l'eau étincelante qui jaillit perpétuellement d'une fontaine située sur un mur à proximité.",
+      "choices": [
+        "[Boire] Retirez toutes les Malédictions de votre deck.",
+        "[Partir]"
+      ]
+    },
+    "THE_JOUST": {
+      "name": "La joute",
+      "description": "En traversant les grands bâtiments, vous découvrez un pont long et étroit et repérez des chevaliers qui se font face de part et d'autre. Vous vous approchez... \n \"Halte !\" \n \n L'un d'eux vous fait signe de vous arrêter avec sa lance gigantesque.",
+      "choices": [
+        "[Continuer]",
+        "[Propriétaire] Pariez d'or - 30 % : gagnez d'or.",
+        "[Observer]"
+      ]
+    },
+    "THE_MOAI_HEAD": {
+      "name": "La tête moaï",
+      "description": "Vous découvrez quelque chose qui ne semble *absolument pas* à sa place. Devant vous, une énorme tête en pierre dépasse d'une grande portion de mur qui ne bouge pas et ne change pas, contrairement au reste de la zone. \n La bouche de la tête est grande ouverte et révèle d'immenses dents intimidantes et tachées de sang. La surface de la statue est couverte de pictogrammes énigmatiques qui semblent représenter des personnes se jetant dans la bouche géante et s'y faisant dévorer. Pourquoi agir de la sorte ?",
+      "choices": [
+        "[Sauter dedans] Récupérez tous vos PV. Vos PV max sont réduits de .",
+        "[Offrir : idole dorée] Gagnez 333 d'or. Perdez l'idole dorée."
+      ]
+    },
+    "LAB": {
+      "name": "Labo",
+      "description": "Vous arrivez dans une salle remplie de supports de tubes à essai, béchers, fioles, pinces, agitateurs, pincettes, lunettes de protection, entonnoirs, pipettes, bonbonnes, condensateurs et même d'un étrange tube en verre en forme de spirale. \n \n Mais comment connaissez-vous le nom de tout ce matériel ? Qu'importe, vous observez votre environnement.",
+      "choices": [
+        "[Examiner] Vous trouvez des potions !"
+      ]
+    },
+    "COLOSSEUM": {
+      "name": "Le Colisée",
+      "description": "Paf !!! \n .. \n ...... \n ... \n Vous avez été assommé...",
+      "choices": [
+        "[Continuer]",
+        "[Combattre]",
+        "[COUARDISE] Vous vous échappez.",
+        "[VICTOIRE] Un combat musclé avec de nombreuses récompenses."
+      ]
+    },
+    "NEST": {
+      "name": "Le Nid",
+      "description": "Vous rencontrez une longue ligne de silhouettes encapuchonnées entrer dans une \n modeste cathédrale.",
+      "choices": [
+        "[Rester dans le rang] Obtenez Dague rituelle. Perdez PV.",
+        "[Voler la boîte] Gagnez"
+      ]
+    },
+    "SPIRE_HEART": {
+      "name": "Le cœur de la Tour",
+      "description": "boum-boum ... boum-boum ... boum-boum ... \n Une pulsation profonde et effroyable parcourt la salle tout entière... \n Serait-ce le cœur de la Tour ? La source de tout ce mal ?",
+      "choices": [
+        "[Continuer]"
+      ]
+    },
+    "DESIGNER": {
+      "name": "Le designer",
+      "description": "Vous découvrez un magasin coloré avec l'enseigne \"IN-SPIRE\" et entrez pour voir ce qu'il y a à l'intérieur. \n \"Non, pas moyen. Non, j'peux pas vous laisser rentrer!\" \n \n Un homme à l'apparence ridicule apparaît à l'entrée pour vous bloquer l'accès.",
+      "choices": [
+        "[Ajustements] Perdez d'Or. Améliorez une carte.",
+        "[Nettoyage] Perdez d'Or. Retirez une carte.",
+        "[Service complet] Perdez d'Or. Retirez une carte et améliorez une carte aléatoire.",
+        "[Le frapper] Perdez PV."
+      ]
+    },
+    "THE_MAUSOLEUM": {
+      "name": "Le mausolée",
+      "description": "Vous parcourez une série de tombes et arrivez face à un imposant sarcophage serti de gemmes situé au centre de la salle circulaire. \n Vous ne parvenez pas à déchiffrer ce qui est écrit sur le cercueil. Cependant, vous remarquez qu'un brouillard noir s'échappe de ses flancs.",
+      "choices": [
+        "[Ouvrir le cercueil] Obtenez une Relique. % : recevez : Malédiction - Souffrance.",
+        "[Partir]"
+      ]
+    },
+    "LIARS_GAME": {
+      "name": "Le ssserpent",
+      "description": "Vous pénétrez dans une salle et remarquez un grand trou dans le sol. Tandis que vous vous approchez du trou, une énorme créature serpentine en émerge. \n \n \"Oh oooh ! Bonjour, bonjour ! Qu'avons-nous là ? Bonjour, je vais vous poser une simple question. \n Il n'est pas de vie plus satisfaisante que celle où l'on peut tout s'offrir ! \n Êtes-vous d'accord ?\"",
+      "choices": [
+        "[D'accord] Gagnez d'or. Recevez : Malédiction - Doute.",
+        "[Pas d'accord]"
+      ]
+    },
+    "CURSED_TOME": {
+      "name": "Livre maudit",
+      "description": "Dans un temple abandonné, vous dénichez un livre géant parsemé d'inscriptions cryptiques. \n \n Vous tentez d'interpréter ces écritures élaborées, mais celles-ci se mettent à bouger et à se transformer en une écriture que vous reconnaissez.",
+      "choices": [
+        "[Lire]",
+        "[Continuer] Perdez 1 PV.",
+        "[Continuer] Perdez 2 PV.",
+        "[Continuer] Perdez 3 PV.",
+        "[Arrêter] Perdez 3 PV.",
+        "[Prendre] Obtenez le livre. Perdez PV.",
+        "[Partir]"
+      ]
+    },
+    "SHINING_LIGHT": {
+      "name": "Lumière brillante",
+      "description": "Vous découvrez une masse de lumière chatoyante qui englobe le centre de la salle. \n \n Sa lumière chaleureuse et les motifs enchanteurs qu'elle dessine vous invitent à y pénétrer.",
+      "choices": [
+        "[Entrer] Améliorez 2 cartes aléatoires. Perdez PV.",
+        "[Partir]"
+      ]
+    },
+    "WORLD_OF_GOOP": {
+      "name": "Monde visqueux",
+      "description": "Vous tombez dans une flaque. \n ELLE EST COMPOSÉE D'UNE SUBSTANCE VISQUEUSE ! \n Vous vous débattez frénétiquement pendant de longues minutes, car vous sentez que la substance commence à vous brûler. \n Vous en avez dans les oreilles, dans le nez, partout. \n \n Vous vous hissez hors de la flaque et vous rendez compte qu'il vous manque une partie de votre or. Vous scrutez la flaque et repérez les pièces manquantes, agglomérées à l'or d'autres malheureux aventuriers.",
+      "choices": [
+        "[Récupérer l'or] Gagnez d'or. Perdez PV.",
+        "[Abandonner l'or] Perdez d'or."
+      ]
+    },
+    "LIVING_WALL": {
+      "name": "Mur vivant",
+      "description": "Vous atteignez un cul-de-sac et commencez à faire demi-tour, mais des murs descendent du plafond et se referment sur vous, vous prenant au piège ! \n \n Trois visages se matérialisent sur les murs et prennent la parole. \n \"Oubliez ce que vous savez, et je vous laisserai partir.\" \n \"J'ai besoin de changement pour voir un nouvel espace émerger.\" \n \"Si vous voulez passer, vous devez progresser.\"",
+      "choices": [
+        "[Oublier] Retirez une carte de votre deck.",
+        "[Changer] Transformez une carte de votre deck.",
+        "[Progresser] Améliorez une carte de votre deck. Choisissez la carte à retirer. Choisissez la carte à Transformer. Choisissez la carte à Améliorer.",
+        "[Partir]"
+      ]
+    },
+    "N_LOTH": {
+      "name": "N'loth",
+      "description": "Devant vous, une étrange créature présentant un dos bossu d'où sortent plusieurs tentacules farfouille dans une pile de déchets et de débris. À votre approche, elle s'avance vers vous d'un pas traînant, n'affichant aucune hostilité. \n \"N'loth a faim. Donnez à manger à N'loth.\"",
+      "choices": [
+        "[Offrir : ] Perdez cette Relique. Obtenez une Relique spéciale.",
+        "[Partir]"
+      ]
+    },
+    "WEMEETAGAIN": {
+      "name": "Nous nous rencontrons à nouveau !",
+      "description": "\"Nous nous rencontrons à nouveau !\" \n Un bonhomme gaillard échevelé vous approche joyeusement. Vous ne connaissez pas cet homme. \n \"C'est moi, Ranwid! Comment allez-vous aujourd'hui ? La routine ? Un gars comme moi ne peut pas s'en sortir seul, vous savez ?\" \n Vous le regardez avec méfiance et considérez ses propositions...",
+      "choices": [
+        "[Donner une Potion] Perdez . Obtenez une Relique.",
+        "[Donner de l'Or] Perdez d'Or . Obtenez une Relique.",
+        "[Donner une carte] Perdez . Obtenez une Relique.",
+        "[Attaquer]"
+      ]
+    },
+    "SENSORYSTONE": {
+      "name": "Pierre sensorielle",
+      "description": "En naviguant à travers l'Au-delà, vous découvrez un tesseract brillant qui tourne et se déplace doucement dans les airs.",
+      "choices": [
+        "[Se souvenir] Ajoutez 1 carte incolore à votre deck.",
+        "[Se souvenir] Ajoutez 2 cartes incolores à votre deck. Perdez PV.",
+        "[Se souvenir] Ajoutez 3 cartes incolores à votre deck. Perdez PV."
+      ]
+    },
+    "SECRETPORTAL": {
+      "name": "Portail secret",
+      "description": "Devant vous se dresse quelque chose qui retient votre attention dans le paysage extraterrestre. Étrangement placée dans l'un des murs vivants de l'Au-delà se trouve une arche de pierre remplie par un portail magique tourbillonant. \n \n Vous n'êtes pas sûr d'où il mène, mais peut-être peut-il accélérer votre voyage dans la Tour.",
+      "choices": [
+        "[Entrer dans le portail] Téléportez-vous IMMÉDIATEMENT jusqu'au boss.",
+        "[Partir]"
+      ]
+    },
+    "PURIFIER": {
+      "name": "Purificateur",
+      "description": "Devant vous se trouve un autel élaboré consacré à un esprit oublié.",
+      "choices": [
+        "[Prier] Retirez une carte de votre deck.",
+        "[Partir] Choisissez la carte à retirer."
+      ]
+    },
+    "WHEEL_OF_CHANGE": {
+      "name": "Roue du changement",
+      "description": "Vous rencontrez un diablotin joyeux et élégamment vêtu. \n \"L'heure est venue de lancer la roue ! Ça vous T E N T E ? Sans nul doute !\"",
+      "choices": [
+        "[Jouer]"
+      ]
+    },
+    "MYSTERIOUS_SPHERE": {
+      "name": "Sphère mystérieuse",
+      "description": "En plein milieu du terrain chaotique qui s'étend tout autour de vous, une sphère osseuse entoure un mystérieux objet qui luit à l'intérieur. \n Vous éprouvez de la curiosité quant à son contenu, mais vous remarquez que des sentinelles la surveillent.",
+      "choices": [
+        "[Ouvrir la sphère] Combattez. Récompense : Relique Rare",
+        "[Partir]",
+        "[Combattre]"
+      ]
+    },
+    "GOLDEN_WING": {
+      "name": "Statue en forme d'aile",
+      "description": "Au milieu des pierres et rochers, vous repérez une complexe statue bleue. De grande taille, elle a l'apparence d'une aile. \n Vous remarquez que de l'or s'écoule de ses fissures. Peut-être y en a-t-il davantage à l'intérieur...?",
+      "choices": [
+        "[Prier] Retirez une carte de votre deck. Perdez PV.",
+        "[Détruire] Gagnez entre et d'or.",
+        "[Partir]"
+      ]
+    },
+    "SCRAP_OOZE": {
+      "name": "Tas de ferraille",
+      "description": "En entrant dans la salle, vous entendez un gargouillis et un grincement métallique. Devant vous se tient une créature visqueuse qui a mangé bien trop de ferraille pour son bien. Au centre de la créature, vous captez l'éclat d'étranges lueurs. Peut-être quelque chose de magique ? On dirait qu'il vous suffirait de tendre le bras par son... ouverture pour saisir un trésor. Cela dit, l'acide et les objets tranchants risquent de vous blesser.",
+      "choices": [
+        "[Tendre le bras] Perdez PV. % : Trouvez une Relique.",
+        "[Partir]"
+      ]
+    },
+    "TOMB_OF_LORD_RED_MASK": {
+      "name": "Tombe du seigneur au masque rouge",
+      "description": "De l'autre côté d'un chemin flottant, vous pouvez apercevoir une tombe richement décorée. Lorsque vous atteignez la tombe, vous remarquez un emplacement à pièces d'or recouvert d'une inscription effacée.",
+      "choices": [
+        "[Mettre le masque] Gagnez 222 d'or.",
+        "[Offrir : d'or] Perdez tout votre or. Obtenez une Relique.",
+        "[Partir]"
+      ]
+    },
+    "TRANSMORGRIFIER": {
+      "name": "Transmogrifeur",
+      "description": "Devant vous se trouve un autel élaboré consacré à un esprit oublié.",
+      "choices": [
+        "[Prier] Transformez une carte.",
+        "[Partir] Choisissez la carte à Transformer."
+      ]
+    },
+    "MATCH_AND_KEEP": {
+      "name": "Trouvez les paires !",
+      "description": "\" Douze cartes ! Trouvez les paires pour les conserver ! Cinq tentatives, pas une de plus. \n Tout est prêt ? C'est parti !\"",
+      "choices": [
+        "[Continuer]",
+        "[Partir]",
+        "[Jouer] Tentatives restantes :"
+      ]
+    },
+    "NOTEFORYOURSELF": {
+      "name": "Une note pour vous-même",
+      "description": "Vous repérez une brique lâche d'un pilier qui attire votre attention.",
+      "choices": [
+        "[Continuer]",
+        "[Prendre et donner] Recevez et Stockez une Carte.",
+        "[Ignorer]",
+        "[Partir]"
+      ]
+    },
+    "ADDICT": {
+      "name": "Vagabond implorant",
+      "description": "Alors que vous passez à côté d'un groupe de silhouettes encapuchonnées, l'une d'elles s'approche de vous. \n \"Dites, z'auriez quelque chose pour moi, mon ami ? Allez... Ou quelques pièces peut-être ?\" \n \"J'ai juste besoin d'un endroit où dormir, j'ai des trésors que je peux échanger...\" Il semble délirant, mais inoffensif.",
+      "choices": [
+        "[Offrir de l'or] d'or : Obtenez une Relique.",
+        "[Voler] Obtenez une Relique. Recevez : Malédiction - Honte.",
+        "[Partir]"
+      ]
+    },
+    "VAMPIRES": {
+      "name": "Vampires (?)",
+      "description": "En passant par une rue non éclairée, vous rencontrez plusieurs silhouettes encapuchonnées au beau milieu d'un rituel maléfique. Tandis que vous vous approchez, elles se tournent vers vous à l'unisson. Inquiétant. La plus grande possède des dents acérées et tend une main aux longs doigts pâles vers vous. \n \"Joignez-vous à nous, mon frère, et venez ressentir la chaleur de la Tour.\"",
+      "choices": [
+        "[Accepter] Retirez toutes vos Frappes. Recevez 5 Morsures. Perdez PV max.",
+        "[Refuser]",
+        "[Partir]"
+      ]
+    },
+    "BEGGAR": {
+      "name": "Vieux mendiant",
+      "description": "Un vieux mendiant enveloppé dans une cape en fourrure tend la main vers vous lorsque vous passez près de lui. \"Auriez-vous une petite pièce, mon enfant ?\"",
+      "choices": [
+        "[Offrir de l'or] d'or : Retirez une carte de votre deck.",
+        "[Continuer]",
+        "[Partir]"
+      ]
+    },
+    "FACETRADER": {
+      "name": "Échangeur de visage",
+      "description": "Vous passez à côté d'une sinistre statue portant plusieurs masques... \n Quelque chose derrière vous murmure doucement : \n \"Stop.\"",
+      "choices": [
+        "[Toucher] Perdez d'Or.",
+        "[Échanger] 50%: Bon visage. 50%: Mauvais visage.",
+        "[Partir]",
+        "[Continuer] PV, Gagnez"
+      ]
+    },
+    "MINDBLOOM": {
+      "name": "Éclosion de l'Esprit",
+      "description": "En parcourant le chaos de la Tour, vous sentez soudainement vos pensées devenir très... réelles... \n \n Vos projections de monstres et de richesses commencent à se révéler dans la Réalité. \n Cette sensation fugace vous transperse. Que faites-vous ?",
+      "choices": [
+        "[La Guerre] Combattez un Boss du premier Acte. Obtenez une Relique Rare.",
+        "[La Richesse] Gagnez 999 d'or. Malédiction - 2 Normalité.",
+        "[La Santé] Récupérez tous vos PV. Malédiction - Doute.",
+        "[L'Éveil] Améliorez toutes vos Cartes. Vous ne pouvez plus vous soigner.",
+        "[Partir]"
+      ]
+    },
+    "BACK_TO_BASICS": {
+      "name": "Écritures antiques",
+      "description": "En escaladant les murs de la ville, vous remarquez que l'un d'entre eux est couvert d'écritures laissées par les Anciens. Tandis que vous vous cassez la tête à essayer de déchiffrer ces étonnants symboles et glyphes, les écritures se mettent à luire. \n Tout à coup, le message devient clair...",
+      "choices": [
+        "[Élégance] Retirez une carte de votre deck.",
+        "[Simplicité] Améliorez toutes vos Frappes et vos Défenses. Choisissez la carte à retirer.",
+        "[Partir]"
+      ]
+    }
+  },
+  "keywords": {
+    "ARTIFACT": {
+      "names": [
+        "artefact",
+        "d'artefact"
+      ],
+      "description": "Annule le prochain malus."
+    },
+    "BLOCK": {
+      "names": [
+        "armure",
+        "l'armure",
+        "d'armure",
+        "bloque"
+      ],
+      "description": "Bloque les dégâts jusqu'au prochain tour."
+    },
+    "CURSE": {
+      "names": [
+        "malédiction",
+        "malédictions"
+      ],
+      "description": "Les cartes malédiction sont des cartes négatives qui restent dans votre deck."
+    },
+    "DEXTERITY": {
+      "names": [
+        "dextérité"
+      ],
+      "description": "La dextérité augmente l'armure apportée par les cartes."
+    },
+    "ETHEREAL": {
+      "names": [
+        "éthérée"
+      ],
+      "description": "Si cette carte est dans votre main à la fin de votre tour, elle est épuisée. Les cartes épuisées sont enlevées de votre deck jusqu'à la fin du combat."
+    },
+    "EXHAUST": {
+      "names": [
+        "épuisement",
+        "épuisé",
+        "épuisée",
+        "épuisez",
+        "s'épuise",
+        "s'épuisent"
+      ],
+      "description": "Écarté jusqu'à la fin du combat."
+    },
+    "INNATE": {
+      "names": [
+        "inné"
+      ],
+      "description": "Commencez chaque combat avec cette carte dans votre main."
+    },
+    "LOCKED": {
+      "names": [
+        "verrouillé"
+      ],
+      "description": "Cette carte doit encore être déverrouillée."
+    },
+    "POISON": {
+      "names": [
+        "poison",
+        "empoisonné"
+      ],
+      "description": "Les créatures empoisonnées perdent des PV au début de leur tour. Chaque tour, le Poison diminue de 1."
+    },
+    "RETAIN": {
+      "names": [
+        "retenue",
+        "retenues",
+        "retenir",
+        "retenez",
+        "retenez-la",
+        "retenez-les"
+      ],
+      "description": "Les cartes retenues ne sont pas défaussées à la fin du tour."
+    },
+    "SHIV": {
+      "names": [
+        "surin",
+        "surins"
+      ],
+      "description": "Les Surins sont des cartes d'attaque qui coûtent 0 et s'épuisent."
+    },
+    "STATUS": {
+      "names": [
+        "statut"
+      ],
+      "description": "Les cartes Statut sont enlevées à la fin du combat."
+    },
+    "STRENGTH": {
+      "names": [
+        "force"
+      ],
+      "description": "La force ajoute des dégâts supplémentaires aux attaques."
+    },
+    "TRANSFORM": {
+      "names": [
+        "transformer",
+        "transforme",
+        "transformez"
+      ],
+      "description": "Les cartes transformées sont changées en de nouvelles cartes aléatoires de n'importe quelle rareté."
+    },
+    "UNKNOWN": {
+      "names": [
+        "inconnu"
+      ],
+      "description": "Cette carte n'a pas encore été découverte."
+    },
+    "UNPLAYABLE": {
+      "names": [
+        "injouable"
+      ],
+      "description": "Les cartes non jouables ne peuvent pas être jouées depuis votre main."
+    },
+    "UPGRADE": {
+      "names": [
+        "amélioration",
+        "améliorez",
+        "améliorée",
+        "améliorées",
+        "améliorer",
+        "d'améliorer",
+        "améliorable",
+        "améliorez-les",
+        "améliorés"
+      ],
+      "description": "Améliorer une carte la rend plus puissante. Une carte ne peut être améliorée qu'une fois."
+    },
+    "VULNERABLE": {
+      "names": [
+        "vulnérabilité",
+        "vulnérable"
+      ],
+      "description": "Les créatures vulnérables subissent 50 % de dégâts supplémentaires."
+    },
+    "WEAK": {
+      "names": [
+        "faiblesse",
+        "affaiblir",
+        "affaibli",
+        "affaiblit"
+      ],
+      "description": "Les attaques d'une créature affaiblie inflige 25 % de dégâts en moins."
+    },
+    "WOUND": {
+      "names": [
+        "plaie",
+        "plaies"
+      ],
+      "description": "Les plaies sont des cartes Statut injouables."
+    },
+    "FRAIL": {
+      "names": [
+        "fragilité",
+        "fragilisé"
+      ],
+      "description": "Les créatures fragilisées reçoivent 25 % d'armure en moins."
+    },
+    "STRIKE": {
+      "names": [
+        "frappe"
+      ],
+      "description": "Toute carte dont le nom contient le mot \"frappe\"."
+    },
+    "CONFUSED": {
+      "names": [
+        "confus"
+      ],
+      "description": "Quand vous piochez une carte, son coût est rendu aléatoire."
+    },
+    "TODO": {
+      "names": [
+        "todo",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE"
+      ],
+      "description": "This card is NOT IMPLEMENTED. Someone should really fix that..."
+    },
+    "INTANGIBLE": {
+      "names": [
+        "intangible"
+      ],
+      "description": "Réduit TOUS les dégâts subis et la perte de PV à 1."
+    },
+    "DAZED": {
+      "names": [
+        "hébétement"
+      ],
+      "description": "Les hébétements sont des cartes Statut non jouables."
+    },
+    "BURN": {
+      "names": [
+        "brûlure",
+        "brûlures"
+      ],
+      "description": "Les brûlures sont des cartes Statut qui vous infligent des dégâts."
+    },
+    "FROST": {
+      "names": [
+        "glaciaire",
+        "glaciaires"
+      ],
+      "description": "Orbe: Procure de l'Armure."
+    },
+    "EVOKE": {
+      "names": [
+        "activation",
+        "activé",
+        "activés",
+        "activez"
+      ],
+      "description": "Utilisez la capacité d'Activation de votre Orbe le plus à droite puis détruisez-le."
+    },
+    "LIGHTNING": {
+      "names": [
+        "kéraunique",
+        "kérauniques",
+        "kéraunique(s)"
+      ],
+      "description": "Orbe: Inflige des dégâts à un ennemi aléatoire."
+    },
+    "DARK": {
+      "names": [
+        "obscur",
+        "obscurs"
+      ],
+      "description": "Orbe: Augmente les dégâts chaque tour. Quand il est activé, inflige des dégâts à l'ennemi qui a le moins de PV."
+    },
+    "CHANNEL": {
+      "names": [
+        "canaliser",
+        "canalisez",
+        "canalisé",
+        "canalisés"
+      ],
+      "description": "Canaliser un Orbe le place dans votre premier emplacement vide. Si vous n'avez pas d'emplacement vide, votre premier Orbe est automatiquement Activé pour faire de la place."
+    },
+    "VOID": {
+      "names": [
+        "néant",
+        "néants"
+      ],
+      "description": "Les néants sont des cartes Statut injouables qui consomment de l'énergie quand elles sont piochées."
+    },
+    "OPENER": {
+      "names": [
+        "ouverture"
+      ],
+      "description": "Les cartes avec ouverture doivent être la première carte jouée du tour."
+    },
+    "PLASMA": {
+      "names": [
+        "plasmique",
+        "plasmiques"
+      ],
+      "description": "Orbe: Procure de l'Énergie."
+    },
+    "FOCUS": {
+      "names": [
+        "concentration"
+      ],
+      "description": "La Concentration accroît la puissance des Orbes Canalisés."
+    },
+    "THORNS": {
+      "names": [
+        "épines",
+        "d'épines"
+      ],
+      "description": "Quand vous recevez des dégâts d'Attaque, infligez des dégâts en retour."
+    },
+    "LOCK_ON": {
+      "names": [
+        "ciblage"
+      ],
+      "description": "Les ennemis Verrouillés recoivent 50 % de dégâts supplémentaires des Orbes."
+    },
+    "STANCE": {
+      "names": [
+        "position",
+        "positions"
+      ],
+      "description": "Vous ne pouvez adopter qu'une seule position à la fois."
+    },
+    "WRATH": {
+      "names": [
+        "colère"
+      ],
+      "description": "Dans cette Position, vous infligez et recevez deux fois plus de dégâts."
+    },
+    "CALM": {
+      "names": [
+        "calme"
+      ],
+      "description": "Quand vous quittez cette Position, gagnez [W] [W] ."
+    },
+    "DIVINITY": {
+      "names": [
+        "divinité"
+      ],
+      "description": "Quand vous entrez dans cette Position, gagnez [W] [W] [W] . Vos attaques infligent trois fois plus de dégâts. Quittez cette Position au début de votre prochain tour."
+    },
+    "PRAYER": {
+      "names": [
+        "mantra",
+        "par la violence"
+      ],
+      "description": "Quand vous obtenez 10 de Mantra, entrez en Divinité."
+    },
+    "SCRY": {
+      "names": [
+        "scruter",
+        "scrutez"
+      ],
+      "description": "Regardez les X premières cartes de votre pioche. Vous pouvez défausser n'importe lesquelles."
+    },
+    "REGEN": {
+      "names": [
+        "régénération"
+      ],
+      "description": "La Régénération vous soigne à la fin de votre tour. Chaque tour, la Régénération est diminuée de 1."
+    },
+    "VIGOR": {
+      "names": [
+        "vigueur"
+      ],
+      "description": "Votre prochaine attaque inflige des dégâts supplémentaires."
+    },
+    "RITUAL": {
+      "names": [
+        "rituel"
+      ],
+      "description": "Gagnez de la Force à la fin de votre tour."
+    },
+    "FATAL": {
+      "names": [
+        "fatal"
+      ],
+      "description": "Se déclenche lorsque la carte tue un ennemi qui n'est pas un sbire."
+    }
+  },
+  "monsters": {
+    "APOLOGY_SLIME": {
+      "name": "Slime désolé"
+    },
+    "CORRUPTHEART": {
+      "name": "Cœur corrompu",
+      "move_names": [
+        ""
+      ]
+    },
+    "NEMESIS": {
+      "name": "Némésis",
+      "move_names": [
+        ""
+      ]
+    },
+    "CHOSEN": {
+      "name": "Élu",
+      "move_names": [
+        ""
+      ]
+    },
+    "BYRD": {
+      "name": "Oizo",
+      "move_names": [
+        ""
+      ]
+    },
+    "SNECKO": {
+      "name": "Geckobra",
+      "move_names": [
+        "Regard déroutant",
+        "Fouet caudal",
+        "Morsure"
+      ]
+    },
+    "GREMLINWIZARD": {
+      "name": "Diablotin sorcier",
+      "move_names": [
+        "En chargement",
+        "Détonation ultime"
+      ]
+    },
+    "BANDITCHILD": {
+      "name": "Pointu",
+      "move_names": [
+        ""
+      ]
+    },
+    "ORB_WALKER": {
+      "name": "L'Orbiste",
+      "move_names": [
+        "Renforcement"
+      ]
+    },
+    "THEGUARDIAN": {
+      "name": "Le Gardien",
+      "move_names": [
+        "Mode défensif",
+        "Heurt furieux",
+        "Roulade",
+        "Écrasement double",
+        "Tourbillon",
+        "Chargement",
+        "Canon à vapeur"
+      ]
+    },
+    "GREMLINWARRIOR": {
+      "name": "Diablotin fou",
+      "move_names": [
+        "Griffe"
+      ]
+    },
+    "GREMLINTHIEF": {
+      "name": "Diablotin sournois",
+      "move_names": [
+        ""
+      ]
+    },
+    "CULTIST": {
+      "name": "Adepte",
+      "move_names": [
+        "Sombre frappe",
+        "Bénédiction tordue",
+        "Incantation"
+      ]
+    },
+    "FLAMEBRUISER": {
+      "name": "Malabar enflammé",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINLEADER": {
+      "name": "Diablotin en chef",
+      "move_names": [
+        "Au combat !"
+      ]
+    },
+    "CENTURION": {
+      "name": "Centurion",
+      "move_names": [
+        ""
+      ]
+    },
+    "GIANTHEAD": {
+      "name": "Tête géante",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITBEAR": {
+      "name": "Balourd",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITLEADER": {
+      "name": "Roméo",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIKESLIME_M": {
+      "name": "Slime épineux (M)",
+      "move_names": [
+        "Léchouille"
+      ]
+    },
+    "SPIKESLIME_S": {
+      "name": "Slime épineux (P)"
+    },
+    "MUGGER": {
+      "name": "Pickpocket",
+      "move_names": [
+        "Avancée",
+        "Vol à la tire"
+      ]
+    },
+    "TIMEEATER": {
+      "name": "Dévor'Heures",
+      "move_names": [
+        ""
+      ]
+    },
+    "THECOLLECTOR": {
+      "name": "Le Collectionneur",
+      "move_names": [
+        ""
+      ]
+    },
+    "TORCHHEAD": {
+      "name": "Tête de torche",
+      "move_names": [
+        ""
+      ]
+    },
+    "ACIDSLIME_M": {
+      "name": "Slime acide (M)",
+      "move_names": [
+        "Crachat acide",
+        "Léchouille"
+      ]
+    },
+    "ACIDSLIME_S": {
+      "name": "Slime acide (P)"
+    },
+    "SNAKEPLANT": {
+      "name": "Serplante",
+      "move_names": [
+        "Spores affaiblissantes"
+      ]
+    },
+    "CHAMP": {
+      "name": "Le Champion",
+      "move_names": [
+        "Position défensive",
+        "Exécution",
+        "Gifle"
+      ]
+    },
+    "EXPLODER": {
+      "name": "Explosif",
+      "move_names": [
+        ""
+      ]
+    },
+    "FUNGIBEAST": {
+      "name": "Champi-bête",
+      "move_names": [
+        "Croissance"
+      ]
+    },
+    "SPIKER": {
+      "name": "Épineux",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERBOSS": {
+      "name": "Tyran",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPULSOR": {
+      "name": "Répugnant",
+      "move_names": [
+        ""
+      ]
+    },
+    "LOOTER": {
+      "name": "Brigand",
+      "move_names": [
+        "Avancée",
+        "Vol à la tire"
+      ]
+    },
+    "SENTRY": {
+      "name": "Sentinelle",
+      "move_names": [
+        "Désintégration"
+      ]
+    },
+    "FUZZYLOUSEDEFENSIVE": {
+      "name": "Pou",
+      "move_names": [
+        "Toile de crachat"
+      ]
+    },
+    "FUZZYLOUSENORMAL": {
+      "name": "Pou",
+      "move_names": [
+        "Croissance"
+      ]
+    },
+    "PUPPETEER": {
+      "name": "Marionnettiste",
+      "move_names": [
+        ""
+      ]
+    },
+    "SHELLED_PARASITE": {
+      "name": "Parasite en carapace",
+      "move_names": [
+        ""
+      ]
+    },
+    "BRONZEORB": {
+      "name": "Orbe",
+      "move_names": [
+        ""
+      ]
+    },
+    "HEXAGHOST": {
+      "name": "Hexaplasme",
+      "move_names": [
+        "Enflammer",
+        "Incinération",
+        "Brasier"
+      ]
+    },
+    "SLAVERRED": {
+      "name": "Esclavagiste",
+      "move_names": [
+        "Éraflure",
+        "Enchevêtrement"
+      ]
+    },
+    "SLAVERBLUE": {
+      "name": "Esclavagiste",
+      "move_names": [
+        "Griffure"
+      ]
+    },
+    "SLIMEBOSS": {
+      "name": "Parrain Slime",
+      "move_names": [
+        "Écrasement",
+        "Préparation",
+        "Séparation",
+        "Bombe visqueuse"
+      ]
+    },
+    "ACIDSLIME_L": {
+      "name": "Slime acide (G)",
+      "move_names": [
+        "Crachat acide",
+        "Séparation",
+        "Léchouille"
+      ]
+    },
+    "GREMLINTSUNDERE": {
+      "name": "Diablotin à bouclier",
+      "move_names": [
+        "Protection",
+        "Heurt de bouclier"
+      ]
+    },
+    "LAGAVULIN": {
+      "name": "Lagavulin",
+      "move_names": [
+        "Âme siphonneuse"
+      ]
+    },
+    "JAWWORM": {
+      "name": "Mâchouilleur",
+      "move_names": [
+        "Beuglement",
+        "Rossée"
+      ]
+    },
+    "DONU": {
+      "name": "Donu",
+      "move_names": [
+        "Cercle de pouvoir"
+      ]
+    },
+    "SERPENT": {
+      "name": "Excroissance de la Tour",
+      "move_names": [
+        ""
+      ]
+    },
+    "BRONZEAUTOMATON": {
+      "name": "Automate de bronze",
+      "move_names": [
+        "ULTRALASER"
+      ]
+    },
+    "HEALER": {
+      "name": "Soigneur",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINFAT": {
+      "name": "Gros diablotin",
+      "move_names": [
+        "Détruire"
+      ]
+    },
+    "DECA": {
+      "name": "Déca",
+      "move_names": [
+        ""
+      ]
+    },
+    "BOOKOFSTABBING": {
+      "name": "Manuel d'assassinat",
+      "move_names": [
+        ""
+      ]
+    },
+    "AWAKENEDONE": {
+      "name": "L'Éveillé",
+      "move_names": [
+        "Frappe d'âme",
+        "Sombre écho",
+        "Purification",
+        "Vase"
+      ]
+    },
+    "SPIKESLIME_L": {
+      "name": "Slime épineux (G)",
+      "move_names": [
+        "Léchouille",
+        "Séparation"
+      ]
+    },
+    "FIREORB": {
+      "name": "Orbe de feu",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPHERICGUARDIAN": {
+      "name": "Gardien sphérique",
+      "move_names": [
+        ""
+      ]
+    },
+    "DARKLING": {
+      "name": "Être sombre",
+      "move_names": [
+        "Croque ! Croque !"
+      ]
+    },
+    "MAW": {
+      "name": "La gueule",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINNOB": {
+      "name": "Diablotin Nob",
+      "move_names": [
+        "Heurt de crâne",
+        "Ruée de taureau"
+      ]
+    },
+    "TRANSIENT": {
+      "name": "L'Éphémère",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPTOMANCER": {
+      "name": "Reptomancien",
+      "move_names": [
+        ""
+      ]
+    },
+    "DAGGER": {
+      "name": "Assassin",
+      "move_names": [
+        ""
+      ]
+    },
+    "WRITHINGMASS": {
+      "name": "Masse agonisante",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESHIELD": {
+      "name": "Bouclier de la Tour",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESPEAR": {
+      "name": "Lance de la Tour",
+      "move_names": [
+        ""
+      ]
+    }
+  },
+  "characters": {
+    "IRONCLAD": {
+      "name": "Le Soldat de fer",
+      "description": "Le seul survivant des Soldats de fer.\nIl a vendu son âme pour maîtriser des énergies démoniaques."
+    },
+    "THE_SILENT": {
+      "name": "La Silencieuse",
+      "description": "Une funeste chasseresse des terres brumeuses.\nElle annihile ses ennemis à l'aide de dagues et de poisons."
+    },
+    "DEFECT": {
+      "name": "Le Défectueux",
+      "description": "Un ancien robot de combat qui a développé une conscience propre.\nUne technologie antique lui permet de manipuler les Orbes."
+    },
+    "WATCHER": {
+      "name": "La gardienne",
+      "description": "Une ascétique aveugle qui est venue pour \"Évaluer\" la Tour.\nMaître des Positions divines."
+    }
+  }
+}

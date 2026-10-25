@@ -1,0 +1,4905 @@
+{
+  "cards": {
+    "A_THOUSAND_CUTS": {
+      "name": "Mille Tagli",
+      "description": "Quando giochi una carta infliggi 1 danni a TUTTI i nemici."
+    },
+    "ACCURACY": {
+      "name": "Precisione",
+      "description": "I Pugnali infliggono 4 danni in più."
+    },
+    "ACROBATICS": {
+      "name": "Acrobazie",
+      "description": "Peschi 3 carte.\nscarti 1 carta."
+    },
+    "ADRENALINE": {
+      "name": "Adrenalina",
+      "description": "Ottieni [G].\nPeschi 2 carte.\nEsaurisci.",
+      "upgradeDescription": "Ottieni [G] [G].\nPeschi 2 carte.\nEsaurisci."
+    },
+    "AFTER_IMAGE": {
+      "name": "Immagine Residua",
+      "description": "Quando giochi una carta Blocchi 1.",
+      "upgradeDescription": "Innata.\nQuando giochi una carta Blocchi 1."
+    },
+    "AGGREGATE": {
+      "name": "Accumulo",
+      "description": "Ottieni [B] per ogni 4 carte nella pila."
+    },
+    "ALL_FOR_ONE": {
+      "name": "Tutti per Uno",
+      "description": "Infliggi 10 danni. Metti in Mano tutte le carte a costo 0 negli scarti."
+    },
+    "ALL_OUT_ATTACK": {
+      "name": "Attacco Sfrenato",
+      "description": "Infliggi 10 danni a TUTTI i nemici.\nscarti 1 carta casuale."
+    },
+    "ALLOCATE": {
+      "name": "Allocazione",
+      "description": "Ottieni !M! Focus.\nPerdi 1 di Forza .\nPerdi 1 di Destrezza"
+    },
+    "AMPLIFY": {
+      "name": "Amplifica",
+      "description": "Questo turno il prossimo Potere giocato viene giocato due volte.",
+      "upgradeDescription": "Questo turno i prossimo +1 Poteri giocato viene giocato due volte."
+    },
+    "ANGER": {
+      "name": "Rabbia",
+      "description": "Infliggi 6 danni.\nAggiungi un'altra Rabbia agli scarti."
+    },
+    "APOTHEOSIS": {
+      "name": "Apoteosi",
+      "description": "Potenzi TUTTO il mazzo per questo combattimento.\nEsaurisci."
+    },
+    "ARMAMENTS": {
+      "name": "Armamenti",
+      "description": "Blocchi 5.\nPotenzi una carta dalla Mano per questo combattimento.",
+      "upgradeDescription": "Blocchi 5.\nPotenzi TUTTE le carte della Mano per questo combattimento."
+    },
+    "ASCENDERSBANE": {
+      "name": "Cruccio dell'Asceso",
+      "description": "Ingiocabile.\nEterea.\nNon può essere rimossa dal mazzo."
+    },
+    "AUTO_SHIELDS": {
+      "name": "Scudi Automatizzati",
+      "description": "Se non hai Blocco Blocchi 11."
+    },
+    "AXE_KICK": {
+      "name": "Calcio ad Ascia",
+      "description": "Infliggi !D! danni.\nEvochi il primo Globo."
+    },
+    "BACKFLIP": {
+      "name": "Salto Mortale",
+      "description": "Blocchi 5.\nPeschi 2 carte."
+    },
+    "BACKSTAB": {
+      "name": "Pugnalata alle Spalle",
+      "description": "Innata.\nInfliggi 11 danni.\nEsaurisci."
+    },
+    "BALL_LIGHTNING": {
+      "name": "Fulmine Globulare",
+      "description": "Infliggi 7 danni. Crei 1 Fulmine."
+    },
+    "BANDAGE_UP": {
+      "name": "Bende",
+      "description": "Ti curi di 4 PV.\nEsaurisci."
+    },
+    "BANE": {
+      "name": "Tormento",
+      "description": "Infliggi 7 danni.\nSe il nemico è Avvelenato infliggi altri 7 danni."
+    },
+    "BARRAGE": {
+      "name": "Fuoco di Sbarramento",
+      "description": "Infliggi 4 danni per Globo che possiedi."
+    },
+    "BARRICADE": {
+      "name": "Barricata",
+      "description": "Il tuo Blocco non svanisce ad inizio turno."
+    },
+    "BASH": {
+      "name": "Mazzata",
+      "description": "Infliggi 8 danni.\nApplichi 2 Vulnerabile."
+    },
+    "BATTLE_TRANCE": {
+      "name": "Trance Omicida",
+      "description": "Peschi 3 carte.\nNon puoi pescare altre carte questo turno."
+    },
+    "BEAM_CELL": {
+      "name": "Raggio Laser",
+      "description": "Infliggi 3 danni ed applichi 1 Vulnerabile."
+    },
+    "BERSERK": {
+      "name": "Berserk",
+      "description": "Ricevi 2 Vulnerabile.\nOttieni [R] all'inizio di ogni turno."
+    },
+    "BIASED_COGNITION": {
+      "name": "Bias Cognitivo",
+      "description": "Ottieni 4 Focus.\nAd inizio turno perdi 1 Focus."
+    },
+    "BITE": {
+      "name": "Morso",
+      "description": "Infliggi 7 danni.\nTi curi di 2 PV."
+    },
+    "BLADE_DANCE": {
+      "name": "Lame Danzanti",
+      "description": "Metti in Mano 3 Pugnali."
+    },
+    "BLASTER": {
+      "name": "Pistola Laser",
+      "description": "Infliggi !D! danni a TUTTI i nemici.\nOttieni [B] per Globo che possiedi.\nEsaurisci."
+    },
+    "BLIND": {
+      "name": "Accecante",
+      "description": "Applichi 2 Debole.",
+      "upgradeDescription": "Applichi 2 Debole a TUTTI i nemici."
+    },
+    "BLIZZARD": {
+      "name": "Tormenta",
+      "description": "Infliggi a TUTTI i nemici danno pari a 2 volte il Ghiaccio Creato in combattimento."
+    },
+    "BLOOD_FOR_BLOOD": {
+      "name": "Occhio per Occhio",
+      "description": "Costa [R] in meno per ogni perdita di PV in combattimento.\nInfliggi 18 danni."
+    },
+    "BLOODLETTING": {
+      "name": "Salasso",
+      "description": "Perdi 3 PV.\nOttieni [R] [R].",
+      "upgradeDescription": "Perdi 3 PV.\nOttieni [R] [R] [R]."
+    },
+    "BLUDGEON": {
+      "name": "Randellata",
+      "description": "Infliggi 32 danni."
+    },
+    "BLUR": {
+      "name": "Fuori Fuoco",
+      "description": "Blocchi 5.\nIl tuo Blocco persiste fino al prossimo turno."
+    },
+    "BODY_SLAM": {
+      "name": "Spanciata",
+      "description": "Infliggi danno pari al Blocco accumulato.",
+      "upgradeDescription": "(Infligge 0 danni.)"
+    },
+    "BOOTSEQUENCE": {
+      "name": "Sequenza D'Avvio",
+      "description": "Innata.\nBlocchi 10.\nEsaurisci."
+    },
+    "BOUNCING_FLASK": {
+      "name": "Veleno a Rimbalzo",
+      "description": "Applichi 3 Veleno ad un nemico casuale 3 volte."
+    },
+    "BRUTALITY": {
+      "name": "Brutale",
+      "description": "Ad inizio turno perdi 1 PV e peschi 1 carta.",
+      "upgradeDescription": "Innata.\nAd inizio turno perdi 1 PV e peschi 1 carta."
+    },
+    "BUFFER": {
+      "name": "Buffer",
+      "description": "Previene la prossima perdita di PV.",
+      "upgradeDescription": "Previene le prossime\n+1 perdite di PV."
+    },
+    "BULLET_TIME": {
+      "name": "Tempo Dilatato",
+      "description": "Per questo turno le carte in Mano costano 0 e non puoi pescare."
+    },
+    "BURN": {
+      "name": "Ustione",
+      "description": "Ingiocabile.\nA fine turno ricevi 2 danni.",
+      "upgradeDescription": "Ingiocabile.\nA fine turno ricevi 4 danni."
+    },
+    "BURNING_PACT": {
+      "name": "Patto di Fuoco",
+      "description": "Esaurisci 1 carta.\nPeschi 2 carte."
+    },
+    "BURST": {
+      "name": "Guizzo",
+      "description": "Questo turno la prossima Abilità verrà giocata due volte.",
+      "upgradeDescription": "Questo turno le prossime +1 Abilità verranno giocate due volte."
+    },
+    "CALCULATED_GAMBLE": {
+      "name": "Rischio Calcolato",
+      "description": "Scarti la Mano\ne Peschi altrettante carte.\nEsaurisci.",
+      "upgradeDescription": "Scarti la Mano\ne Peschi altrettante carte."
+    },
+    "CALTROPS": {
+      "name": "Triboli",
+      "description": "Quando vieni attaccato infliggi 3 danni all'attaccante."
+    },
+    "CAPACITOR": {
+      "name": "Condensatore",
+      "description": "Ottieni 2 Spazi Globi.",
+      "upgradeDescription": "Ottieni +1 Spazi Globi."
+    },
+    "CARNAGE": {
+      "name": "Carneficina",
+      "description": "Eterea.\nInfliggi 20 danni."
+    },
+    "CATALYST": {
+      "name": "Catalizzatore",
+      "description": "Raddoppi il Veleno accumulato su un nemico.\nEsaurisci.",
+      "upgradeDescription": "Triplichi il Veleno accumulato su un nemico.\nEsaurisci."
+    },
+    "CHAOS": {
+      "name": "Caos",
+      "description": "Crei 1 Globo casuale.",
+      "upgradeDescription": "Crei +1 Globi casuali."
+    },
+    "CHILL": {
+      "name": "Brivido",
+      "description": "Crei 1 Ghiaccio per nemico.\nEsaurisci",
+      "upgradeDescription": "Innata.\nCrei 1 Ghiaccio per nemico.\nEsaurisci"
+    },
+    "CHOKE": {
+      "name": "Soffocamento",
+      "description": "Infliggi 12 danni.\nOgni carta giocata questo turno fa perdere 3 PV al nemico."
+    },
+    "CHRYSALIS": {
+      "name": "Crisalide",
+      "description": "Metti 3 Abilità nella pila. Costano 0 questo combattimento. Esaurisci."
+    },
+    "CLASH": {
+      "name": "Conflitto",
+      "description": "Giocabile se hai solo Attacchi in Mano.\nInfliggi 14 danni."
+    },
+    "CLEAVE": {
+      "name": "Fendente",
+      "description": "Infliggi 8 danni a TUTTI i nemici."
+    },
+    "CLOAK_AND_DAGGER": {
+      "name": "Cappa e Spada",
+      "description": "Blocchi 6.\nMetti in Mano 1 Pugnale.",
+      "upgradeDescription": "Blocchi 6.\nMetti in Mano +1 Pugnali."
+    },
+    "CLOTHESLINE": {
+      "name": "Braccio Teso",
+      "description": "Infliggi 12 danni.\nApplichi 2 Debole."
+    },
+    "CLUMSY": {
+      "name": "Impacciato",
+      "description": "Ingiocabile.\nEterea."
+    },
+    "COLD_SNAP": {
+      "name": "Onda Gelida",
+      "description": "Infliggi 6 danni.\nCrei 1 Ghiaccio."
+    },
+    "COMBUST": {
+      "name": "Combustione",
+      "description": "A fine turno perdi 1 PV e infliggi 5 danni a TUTTI i nemici."
+    },
+    "CONCENTRATE": {
+      "name": "Concentrazione",
+      "description": "Scarti 3 carte.\nOttieni [G] [G]."
+    },
+    "CONSERVE_BATTERY": {
+      "name": "Batteria Carica",
+      "description": "Blocchi 7.\nil prossimo turno ottieni [B]."
+    },
+    "CONSUME": {
+      "name": "Assimilazione",
+      "description": "Ottieni 2 Focus.\nPerdi 1 Spazio Globi."
+    },
+    "COOLHEADED": {
+      "name": "Mente Fredda",
+      "description": "Crei 1 Ghiaccio.\nPeschi 1 carta.",
+      "upgradeDescription": "Crei 1 Ghiaccio.\nPeschi +1 carte."
+    },
+    "CORPSE_EXPLOSION": {
+      "name": "Cadavere Bomba",
+      "description": "Applica 6 veleno ad un nemico.\nQuando muore infliggi i suoi PV massimi a TUTTI i nemici.",
+      "upgradeDescription": "DEPRECATED."
+    },
+    "CORRUPTION": {
+      "name": "Corruzione",
+      "description": "Le Abilità costano 0.\nQuando giochi un'Abilità la Esaurisci."
+    },
+    "CREATIVE_AI": {
+      "name": "IA Creativa",
+      "description": "Ad inizio turno metti in Mano un Potere casuale."
+    },
+    "CRIPPLING_POISON": {
+      "name": "Nube Paralizzante",
+      "description": "Applichi 4 Veleno\ne 2 Debole a TUTTI i nemici.\nEsaurisci."
+    },
+    "DAGGER_SPRAY": {
+      "name": "Pioggia d'Acciaio",
+      "description": "Infliggi 4 danni a TUTTI i nemici due volte."
+    },
+    "DAGGER_THROW": {
+      "name": "Coltello da Lancio",
+      "description": "Infliggi 9 danni.\nPeschi 1 carta.\nscarti 1 carta."
+    },
+    "DARK_EMBRACE": {
+      "name": "Abbraccio Oscuro",
+      "description": "Quando esaurisci una carta\npeschi 1 carta."
+    },
+    "DARK_SHACKLES": {
+      "name": "Catene Oscure",
+      "description": "Il nemico perde 9 Forza per questo turno.\nEsaurisci."
+    },
+    "DARKNESS": {
+      "name": "Oscurità",
+      "description": "Crei 1 Oscurità.",
+      "upgradeDescription": "Crei 1 Oscurità.\nAttivi l'abilità passiva di tutte le Oscurità."
+    },
+    "DASH": {
+      "name": "Scatto",
+      "description": "Blocchi 10.\nInfliggi 10 danni."
+    },
+    "DAZED": {
+      "name": "Disorientato",
+      "description": "Ingiocabile.\nEterea."
+    },
+    "DEADLY_POISON": {
+      "name": "Veleno Letale",
+      "description": "Applichi 5 Veleno."
+    },
+    "DECAY": {
+      "name": "Rovina",
+      "description": "Ingiocabile.\nFinito il turno ricevi 2 danni."
+    },
+    "DEEP_BREATH": {
+      "name": "Respiro Profondo",
+      "description": "Mescola gli scarti nella pila.\nPeschi 1 carta.",
+      "upgradeDescription": "Mescola gli scarti nella pila.\nPeschi +1 carte."
+    },
+    "DEFEND_B": {
+      "name": "Difendi",
+      "description": "Blocchi 5."
+    },
+    "DEFEND_G": {
+      "name": "Difendi",
+      "description": "Blocchi 5."
+    },
+    "DEFEND_R": {
+      "name": "Difendi",
+      "description": "Blocchi 5."
+    },
+    "DEFLECT": {
+      "name": "Parata",
+      "description": "Blocchi 4."
+    },
+    "DEFRAGMENT": {
+      "name": "Deframmentazione",
+      "description": "Ottieni 1 Focus."
+    },
+    "DEMON_FORM": {
+      "name": "Forma Demoniaca",
+      "description": "Ad inizio turno ottieni 2 Forza."
+    },
+    "DIE_DIE_DIE": {
+      "name": "Muori Muori Muori",
+      "description": "Infliggi 13 danni a TUTTI i nemici.\nEsaurisci."
+    },
+    "DISARM": {
+      "name": "Disarma",
+      "description": "Il nemico perde 2 Forza.\nEsaurisci."
+    },
+    "DISTRACTION": {
+      "name": "Distrazione",
+      "description": "Metti in Mano un'Abilità casuale.\nCosta 0 questo turno.\nEsaurisci."
+    },
+    "DODGE_AND_ROLL": {
+      "name": "Schivata Rapida",
+      "description": "Blocchi 4.\nIl prossimo turno Blocchi 4."
+    },
+    "DOOM_AND_GLOOM": {
+      "name": "Malinconia",
+      "description": "Infliggi 10 danni a TUTTI i nemici.\nCrei 1 Oscurità."
+    },
+    "DOPPELGANGER": {
+      "name": "Sosia",
+      "description": "Il prossimo turno peschi X carte e ottieni X [G].\nEsaurisci.",
+      "upgradeDescription": "Il prossimo turno peschi X+1 carte e ottieni X+1 [G].\nEsaurisci."
+    },
+    "DOUBLE_ENERGY": {
+      "name": "Energia Doppia",
+      "description": "Raddoppi l'Energia.\nEsaurisci.",
+      "upgradeDescription": "Raddoppi l'Energia."
+    },
+    "DOUBLE_TAP": {
+      "name": "Doppio Attacco",
+      "description": "Questo turno il prossimo Attacco viene giocato due volte.",
+      "upgradeDescription": "Questo turno i prossimi +1 Attacchi sono giocati due volte."
+    },
+    "DOUBT": {
+      "name": "Dubbio",
+      "description": "Ingiocabile.\nA fine turno ottieni 1 Debole."
+    },
+    "DRAMATIC_ENTRANCE": {
+      "name": "Entrata ad Effetto",
+      "description": "Innata.\nInfliggi 8 danni a TUTTI i nemici.\nEsaurisci."
+    },
+    "DROPKICK": {
+      "name": "Calcio Volante",
+      "description": "Infliggi 5 danni.\nSe il nemico è Vulnerabile\nOttieni [R]\ne Peschi 1 carta."
+    },
+    "DUAL_WIELD": {
+      "name": "A Due Mani",
+      "description": "Duplica un Attacco o Potere in Mano.",
+      "upgradeDescription": "Triplica un Attacco o Potere in Mano."
+    },
+    "DUALCAST": {
+      "name": "Lancio Doppio",
+      "description": "Evochi il primo Globo 2 volte."
+    },
+    "ECHO_FORM": {
+      "name": "Forma Ricorsiva",
+      "description": "La prima carta che giochi ogni turno è giocata due volte.\nEterea.",
+      "upgradeDescription": "La prima carta che giochi ogni turno è giocata due volte."
+    },
+    "ELECTRODYNAMICS": {
+      "name": "Elettrodinamica",
+      "description": "I Fulmini colpiscono TUTTI i nemici.\nCrei 2 Fulmini"
+    },
+    "ENDLESS_AGONY": {
+      "name": "Eterna Agonia",
+      "description": "Infliggi 4 danni.\nQuando peschi questa carta si duplica in Mano.\nEsaurisci."
+    },
+    "ENERGY_PULSE": {
+      "name": "Impulso Energetico",
+      "description": "Blocchi pari all'Energia.",
+      "upgradeDescription": "Blocchi pari al doppio dell'Energia."
+    },
+    "ENLIGHTENMENT": {
+      "name": "Illuminazione",
+      "description": "Riduci il costo delle carte in Mano a 1 per questo turno.",
+      "upgradeDescription": "Riduci il costo delle carte in Mano a 1 questo combattimento."
+    },
+    "ENTRENCH": {
+      "name": "In Trincea!",
+      "description": "Raddoppi il Blocco.",
+      "upgradeDescription": "Raddoppi il Blocco."
+    },
+    "ENVENOM": {
+      "name": "Velenoso",
+      "description": "Quando infliggi danno da Attacco ad un nemico gli applichi 1 Veleno."
+    },
+    "ESCAPE_PLAN": {
+      "name": "Piano di Fuga",
+      "description": "Peschi 1 carta.\nSe è un'Abilità\nBlocchi 3."
+    },
+    "EVISCERATE": {
+      "name": "Sventra",
+      "description": "Costa [G] in meno\nper carta scartata questo turno.\nInfliggi 7 danni tre volte."
+    },
+    "EVOLVE": {
+      "name": "Evoluzione",
+      "description": "Quando peschi uno Stato Peschi 1 carta.",
+      "upgradeDescription": "Quando peschi uno Stato Peschi altre +1 carte."
+    },
+    "EXHUME": {
+      "name": "Riesuma",
+      "description": "Scegli una carta esaurita e mettila in Mano.\nEsaurisci."
+    },
+    "EXPERTISE": {
+      "name": "Competenza",
+      "description": "Peschi fino ad avere 6 carte in Mano."
+    },
+    "FTL": {
+      "name": "FTL",
+      "description": "Infliggi 5 danni. Se hai giocato meno di 3 carte questo turno\n peschi 1 carta."
+    },
+    "FEED": {
+      "name": "Banchetto",
+      "description": "Infliggi 10 danni.\nSe è Letale ottieni 3 PV Massimi. Esaurisci."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Nessun Dolore",
+      "description": "Quando Esaurisci una carta\nBlocchi 3."
+    },
+    "FIEND_FIRE": {
+      "name": "Fuoco Demoniaco",
+      "description": "Esaurisci la Mano.\nInfliggi 7 danni per carta esaurita.\nEsaurisci."
+    },
+    "FINESSE": {
+      "name": "Finezza",
+      "description": "Blocchi 2.\nPeschi 1 carta."
+    },
+    "FINISHER": {
+      "name": "Attacco Finale",
+      "description": "Infliggi 6 danni per Attacco giocato questo turno."
+    },
+    "FIRE_BREATHING": {
+      "name": "Sputafuoco",
+      "description": "Quando peschi uno Stato o una Maledizione infliggi 6 danni a TUTTI i nemici."
+    },
+    "FISSION": {
+      "name": "Fissione",
+      "description": "Rimuovi tutti i Globi, ottieni [B] e Peschi 1 carta per Globo rimosso.\nEsaurisci.",
+      "upgradeDescription": "Evochi tutti i Globi, ottieni [B] e Peschi 1 carta per Globo evocato.\nEsaurisci."
+    },
+    "FLAME_BARRIER": {
+      "name": "Muro di Fiamme",
+      "description": "Blocchi 12.\nChi ti attacca questo turno riceve 4 danni."
+    },
+    "FLASH_OF_STEEL": {
+      "name": "Lampo d'Acciaio",
+      "description": "Infliggi 3 danni.\nPeschi 1 carta."
+    },
+    "FLECHETTES": {
+      "name": "Dardi",
+      "description": "Infliggi 4 danni per Abilità in Mano."
+    },
+    "FLEX": {
+      "name": "Flessione",
+      "description": "Ottieni 2 Forza.\nA fine turno perdi 2 Forza."
+    },
+    "FLUX_CAPACITOR": {
+      "name": "Condensatore di Flusso",
+      "description": "Ogni Globo Creato diventa Plasma.\nEsaurisci."
+    },
+    "FLYING_KNEE": {
+      "name": "Ginocchiata Volante",
+      "description": "Infliggi 8 danni.\nIl prossimo turno ottieni [G]."
+    },
+    "FOOTWORK": {
+      "name": "Gioco di Gambe",
+      "description": "Ottieni 2 Destrezza."
+    },
+    "FORCE_FIELD": {
+      "name": "Campo di Forza",
+      "description": "Costa [B] in meno per Potere giocato in combattimento. Blocchi 12."
+    },
+    "FUSION": {
+      "name": "Fusione",
+      "description": "Crei 1 Plasma."
+    },
+    "GASH": {
+      "name": "Artiglio",
+      "description": "Infliggi 3 danni.\nTUTTI gli Artiglio infliggono 2 danni in più questo combattimento."
+    },
+    "GENETIC_ALGORITHM": {
+      "name": "Algoritmo Genetico",
+      "description": "Blocchi !B!.\nBlocca 2 in più questa partita.\nEsaurisci"
+    },
+    "GHOSTLY": {
+      "name": "Spettro",
+      "description": "Ottieni 1 Intangibile.\nEsaurisci.\nEterea.",
+      "upgradeDescription": "Ottieni 1 Intangibile.\nEsaurisci."
+    },
+    "GHOSTLY_ARMOR": {
+      "name": "Armatura Spettrale",
+      "description": "Eterea.\nBlocchi 10."
+    },
+    "GLACIER": {
+      "name": "Ghiacciaio",
+      "description": "Blocchi 7.\nCrei 2 Ghiaccio.",
+      "upgradeDescription": "Blocchi +3.\nCrei 2 Ghiaccio."
+    },
+    "GLASS_KNIFE": {
+      "name": "Coltello di Vetro",
+      "description": "Infliggi 8 danni due volte. Questo valore si riduce di 2 questo combattimento."
+    },
+    "GO_FOR_THE_EYES": {
+      "name": "Agli Occhi!",
+      "description": "Infliggi 3 danni. Se il nemico intende attaccare applichi 1 Debole."
+    },
+    "GOOD_INSTINCTS": {
+      "name": "Buon Istinto",
+      "description": "Blocchi 6."
+    },
+    "GRAND_FINALE": {
+      "name": "Gran Finale",
+      "description": "Giocabile se la pila è vuota.\nInfliggi 50 danni a TUTTI i nemici.",
+      "upgradeDescription": "La pila\ndeve essere Vuota."
+    },
+    "HAVOC": {
+      "name": "Baraonda",
+      "description": "Giochi la carta in cima alla pila e la Esaurisci."
+    },
+    "HEADBUTT": {
+      "name": "Testata",
+      "description": "Infliggi 9 danni.\nMetti una carta dagli scarti in cima alla pila."
+    },
+    "HEATSINKS": {
+      "name": "Dissipatore",
+      "description": "Dopo aver giocato un Potere peschi 1 Carta.",
+      "upgradeDescription": "Dopo aver giocato un Potere peschi +1 Carte."
+    },
+    "HEAVY_BLADE": {
+      "name": "Lama Pesante",
+      "description": "Infliggi 14 danni.\nLa Forza influisce sulla Lama Pesante 3 volte.",
+      "upgradeDescription": "Infliggi 14 danni.\nLa Forza influisce sulla Lama Pesante +2 volte."
+    },
+    "HEEL_HOOK": {
+      "name": "Sottomissione",
+      "description": "Infliggi 5 danni.\nSe il nemico è Debole\nOttieni [G] e\nPeschi 1 carta."
+    },
+    "HELLO_WORLD": {
+      "name": "Buongiorno Mondo",
+      "description": "Ad inizio turno metti in Mano una carta Comune casuale.",
+      "upgradeDescription": "Innata.\nAd inizio turno metti in Mano una carta Comune casuale."
+    },
+    "HEMOKINESIS": {
+      "name": "Emocinesi",
+      "description": "Perdi 2 PV.\nInfliggi 15 danni."
+    },
+    "HIDE": {
+      "name": "Nascosto",
+      "description": "Non puoi perdere PV fino al prossimo turno.\nEsaurisci."
+    },
+    "HOLOGRAM": {
+      "name": "Ologramma",
+      "description": "Blocchi 3.\nMetti in Mano una carta dagli scarti.\nEsaurisci.",
+      "upgradeDescription": "Blocchi +2.\nMetti in Mano una carta dagli scarti."
+    },
+    "HYPERBEAM": {
+      "name": "Iper-Raggio",
+      "description": "Infliggi 26 danni a TUTTI i nemici.\nPerdi 3 Focus."
+    },
+    "IMMOLATE": {
+      "name": "Immolazione",
+      "description": "Infliggi 21 danni a TUTTI i nemici.\nMescola una Ustione nella pila."
+    },
+    "IMPERVIOUS": {
+      "name": "Impenetrabile",
+      "description": "Blocchi 30.\nEsaurisci."
+    },
+    "INFERNAL_BLADE": {
+      "name": "Lama Infernale",
+      "description": "Metti in Mano un Attacco casuale.\nCosta 0 questo turno.\nEsaurisci."
+    },
+    "INFINITE_BLADES": {
+      "name": "Lame Infinite",
+      "description": "Ad inizio turno Metti in Mano un Pugnale.",
+      "upgradeDescription": "Innata.\nAd inizio turno Metti in Mano un Pugnale."
+    },
+    "INFLAME": {
+      "name": "Animo Ardente",
+      "description": "Ottieni 2 Forza."
+    },
+    "INJURY": {
+      "name": "Lesione",
+      "description": "Ingiocabile."
+    },
+    "INTIMIDATE": {
+      "name": "Minaccia",
+      "description": "Applichi 1 Debole a TUTTI i nemici.\nEsaurisci."
+    },
+    "IRON_WAVE": {
+      "name": "Onda di Ferro",
+      "description": "Blocchi 5.\nInfliggi 5 danni."
+    },
+    "J_A_X": {
+      "name": "J.A.X.",
+      "description": "Perdi 3 PV.\nOttieni 2 Forza."
+    },
+    "JACK_OF_ALL_TRADES": {
+      "name": "Jack Tuttofare",
+      "description": "Metti in Mano 1 carta incolore casuale.\nEsaurisci.",
+      "upgradeDescription": "Metti in Mano +1 carte incolori casuali.\nEsaurisci."
+    },
+    "JUGGERNAUT": {
+      "name": "Colosso",
+      "description": "Quando Blocchi infliggi 5 danni ad un nemico casuale."
+    },
+    "LEAP": {
+      "name": "Balzo",
+      "description": "Blocchi 9."
+    },
+    "LEG_SWEEP": {
+      "name": "Sgambetto",
+      "description": "Applichi 2 Debole.\nBlocchi 11."
+    },
+    "LIMIT_BREAK": {
+      "name": "Oltre il Limite",
+      "description": "Raddoppi la tua Forza.\nEsaurisci.",
+      "upgradeDescription": "Raddoppi la tua Forza."
+    },
+    "LOCKON": {
+      "name": "Centro Perfetto",
+      "description": "Infliggi 8 danni.\nApplichi 2 Mirino al nemico."
+    },
+    "LOOP": {
+      "name": "Ciclo",
+      "description": "Ad inizio turno attivi l'abilità passiva del primo Globo.",
+      "upgradeDescription": "Ad inizio turno attivi l'abilità passiva del primo Globo +1 volte."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Auto-Apprendimento",
+      "description": "Peschi 1 carta in più ogni turno.",
+      "upgradeDescription": "Innata.\nPeschi 1 carta in più ogni turno."
+    },
+    "MADNESS": {
+      "name": "Follia",
+      "description": "Una carta casuale in Mano costa 0 questo combattimento.\nEsaurisci."
+    },
+    "MAGNETISM": {
+      "name": "Magnetismo",
+      "description": "Ad inizio turno metti in Mano una carta incolore casuale."
+    },
+    "MALAISE": {
+      "name": "Malessere",
+      "description": "Il nemico perde X Forza. Applichi X Debole.\nEsaurisci.",
+      "upgradeDescription": "Il nemico perde X+1 Forza. Applichi X+1 Debole.\nEsaurisci."
+    },
+    "MASTER_OF_STRATEGY": {
+      "name": "Maestro di Strategia",
+      "description": "Peschi 3 carte.\nEsaurisci."
+    },
+    "MASTERFUL_STAB": {
+      "name": "Affondo da Maestro",
+      "description": "Infliggi 12 danni.\nQuando subisci danno costa 1 in più questo combattimento."
+    },
+    "MAYHEM": {
+      "name": "Tumulto",
+      "description": "Ad inizio turno giochi la prima carta della pila."
+    },
+    "MELTER": {
+      "name": "Scioglimento",
+      "description": "Rimuovi tutto il Blocco di un nemico.\nInfliggi 10 danni."
+    },
+    "METALLICIZE": {
+      "name": "Metallizzato",
+      "description": "A fine turno Blocchi 3."
+    },
+    "METAMORPHOSIS": {
+      "name": "Metamorfosi",
+      "description": "Metti nella pila 3 Attacchi casuali. Costano 0 questo combattimento.\nEsaurisci."
+    },
+    "METEOR_STRIKE": {
+      "name": "Colpo a Meteora",
+      "description": "Infliggi 24 danni.\nCrei 3 Plasma."
+    },
+    "MIND_BLAST": {
+      "name": "Scoppio Mentale",
+      "description": "Innata.\nInfliggi danni pari al numero di carte nella pila."
+    },
+    "MULTI_CAST": {
+      "name": "Lancio Multiplo",
+      "description": "Evochi il primo Globo X volte.",
+      "upgradeDescription": "Evochi il primo Globo X+1 volte."
+    },
+    "NECRONOMICURSE": {
+      "name": "Necromaledizione",
+      "description": "Ingiocabile.\nÈ implacabile."
+    },
+    "NEUTRALIZE": {
+      "name": "Neutralizza",
+      "description": "Infliggi 3 danni.\nApplichi 1 Debole."
+    },
+    "NIGHT_TERROR": {
+      "name": "Incubo",
+      "description": "Scegli una carta.\nIl prossimo turno metti in Mano 3 copie di quella carta. Esaurisci."
+    },
+    "NORMALITY": {
+      "name": "Normalità",
+      "description": "Ingiocabile.\nNon puoi giocare più di 3 carte questo turno."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Miasma",
+      "description": "Ad inizio turno applichi 2 Veleno a TUTTI i nemici."
+    },
+    "OFFERING": {
+      "name": "Sacrificio",
+      "description": "Perdi 6 PV.\nOttieni [R] [R].\nPeschi 3 carte.\nEsaurisci.",
+      "upgradeDescription": "Perdi 6 PV.\nOttieni [R] [R].\nPeschi +2 carte.\nEsaurisci."
+    },
+    "OUTMANEUVER": {
+      "name": "Manovra Evasiva",
+      "description": "Il prossimo turno\nottieni [G] [G].",
+      "upgradeDescription": "Il prossimo turno\nottieni [G] [G] [G]."
+    },
+    "PAIN": {
+      "name": "Dolore",
+      "description": "Ingiocabile.\nSe è in mano\nperdi 1 PV quando giochi una carta."
+    },
+    "PANACEA": {
+      "name": "Panacea",
+      "description": "Ottieni 1 Artefatto.\nEsaurisci."
+    },
+    "PANACHE": {
+      "name": "Portamento",
+      "description": "Quando giochi 5 carte in un solo turno\ninfliggi 10 danni a TUTTI i nemici."
+    },
+    "PARASITE": {
+      "name": "Parassita",
+      "description": "Ingiocabile.\nSe la trasformi o la rimuovi dal mazzo perdi 3 PV Massimi."
+    },
+    "PERFECTED_STRIKE": {
+      "name": "Colpo Perfetto",
+      "description": "Infliggi 6 danni, 2 in più per OGNI altra carta del mazzo con \"Colpo\" nel nome.",
+      "upgradeDescription": "Infliggi 6 danni, 3 in più per OGNI altra carta del mazzo con \"Colpo\" nel nome."
+    },
+    "PHANTASMAL_KILLER": {
+      "name": "Sicario Etereo",
+      "description": "Il prossimo turno il tuo danno da Attacco è raddoppiato."
+    },
+    "PIERCINGWAIL": {
+      "name": "Lamento Straziante",
+      "description": "TUTTI i nemici perdono 6 Forza per 1 turno.\nEsaurisci."
+    },
+    "POISONED_STAB": {
+      "name": "Lama Avvelenata",
+      "description": "Infliggi 6 danni.\nApplichi 3 Veleno."
+    },
+    "POMMEL_STRIKE": {
+      "name": "Colpo d'Elsa",
+      "description": "Infliggi 9 danni.\nPeschi 1 carta.",
+      "upgradeDescription": "Infliggi +1 danni.\nPeschi +1 carte."
+    },
+    "POWER_THROUGH": {
+      "name": "Ad Ogni Costo",
+      "description": "Metti in Mano 2 Ferite.\nBlocchi 15."
+    },
+    "PREDATOR": {
+      "name": "Predatore",
+      "description": "Infliggi 15 danni.\nPeschi 2 carte in più il prossimo turno."
+    },
+    "PREPARED": {
+      "name": "Preparativi",
+      "description": "Peschi 1 carta.\nscarti 1 carta.",
+      "upgradeDescription": "Peschi +1 carte.\nscarti +1 carte."
+    },
+    "PUMMEL": {
+      "name": "Pioggia di Pugni",
+      "description": "Infliggi 2 danni 4 volte.\nEsaurisci.",
+      "upgradeDescription": "Infliggi 2 danni +1 volte.\nEsaurisci."
+    },
+    "PURITY": {
+      "name": "Purezza",
+      "description": "Esaurisci fino a 3 carte in Mano.\nEsaurisci."
+    },
+    "QUICK_SLASH": {
+      "name": "Fendente Rapido",
+      "description": "Infliggi 8 danni.\nPeschi 1 carta."
+    },
+    "RAGE": {
+      "name": "Collera",
+      "description": "Quando giochi un Attacco questo turno Blocchi 3."
+    },
+    "RAINBOW": {
+      "name": "Arcobaleno",
+      "description": "Crei 1 Fulmine, 1 Ghiaccio ed 1 Oscurità.\nEsaurisci.",
+      "upgradeDescription": "Crei 1 Fulmine, 1 Ghiaccio ed 1 Oscurità."
+    },
+    "RAMPAGE": {
+      "name": "Massacro",
+      "description": "Infliggi 8 danni, infligge 5 in più questo combattimento."
+    },
+    "REAPER": {
+      "name": "Mietitore",
+      "description": "Infliggi 4 danni a TUTTI i nemici. Ti curi per PV pari al danno non Bloccato.\nEsaurisci."
+    },
+    "REBOOT": {
+      "name": "Riavvio",
+      "description": "Mescoli gli scarti e la Mano nella pila. Peschi 4 carte.\nEsaurisci."
+    },
+    "REBOUND": {
+      "name": "Recupero",
+      "description": "Infliggi 9 danni.\nMetti la prossima carta che giochi questo turno in cima alla pila."
+    },
+    "RECKLESS_CHARGE": {
+      "name": "Carica Selvaggia",
+      "description": "Infliggi 7 danni. \nMescola un Disorientato nella pila."
+    },
+    "RECYCLE": {
+      "name": "Riciclo",
+      "description": "Esaurisci una carta.\nOttieni [B] pari al suo costo."
+    },
+    "REDO": {
+      "name": "Ripeti",
+      "description": "Evochi il primo Globo.\nCrei il Globo appena Evocato."
+    },
+    "REFLEX": {
+      "name": "Riflessi",
+      "description": "Ingiocabile.\nSe scarti questa carta peschi 2 carte.",
+      "upgradeDescription": "Ingiocabile.\nSe scarti questa carta peschi +1 carte."
+    },
+    "REGRET": {
+      "name": "Rimorso",
+      "description": "Ingiocabile.\nA fine turno perdi PV pari al numero di carte in Mano."
+    },
+    "REINFORCED_BODY": {
+      "name": "Corpo Rinforzato",
+      "description": "Blocchi 7 X volte."
+    },
+    "REPROGRAM": {
+      "name": "Riprogramma",
+      "description": "Perdi 1 focus. Ottieni 1 forza. Ottieni 1 destrezza."
+    },
+    "RIDDLE_WITH_HOLES": {
+      "name": "Crivella di Colpi",
+      "description": "Infliggi 3 danni 5 volte."
+    },
+    "RIP_AND_TEAR": {
+      "name": "Doppio Strappo",
+      "description": "Infliggi 7 danni\nad un nemico casuale 2 volte."
+    },
+    "RUPTURE": {
+      "name": "Squarcio",
+      "description": "Quando una carta ti fa perdere PV\nottieni 1 Forza."
+    },
+    "SADISTIC_NATURE": {
+      "name": "Sadico per Natura",
+      "description": "Quando applichi Debuff infliggi anche 5 danni."
+    },
+    "SCRAPE": {
+      "name": "Graffio",
+      "description": "Infliggi 7 Danni.\nPeschi 4 carte.\nscarti ogni carta con costo diverso da 0 pescata così."
+    },
+    "SEARING_BLOW": {
+      "name": "Stoccata Ustionante",
+      "description": "Infliggi 12 danni.\nPuò essere Potenziata un qualsiasi numero di volte."
+    },
+    "SECOND_WIND": {
+      "name": "Ripresa",
+      "description": "Esaurisci tutte le carte non Attacco in Mano e Blocchi 5 per ciascuna."
+    },
+    "SECRET_TECHNIQUE": {
+      "name": "Tecnica Segreta",
+      "description": "Scegli un'Abilità dalla pila e mettila in Mano.\nEsaurisci.",
+      "upgradeDescription": "Scegli un'Abilità dalla pila e mettila in Mano."
+    },
+    "SECRET_WEAPON": {
+      "name": "Arma Segreta",
+      "description": "Scegli un Attacco dalla pila e mettilo in Mano.\nEsaurisci.",
+      "upgradeDescription": "Scegli un Attacco dalla pila e mettilo in Mano."
+    },
+    "SEEING_RED": {
+      "name": "Visioni di Sangue",
+      "description": "Ottieni [R] [R].\nEsaurisci."
+    },
+    "SEEK": {
+      "name": "Ricerca",
+      "description": "Scegli 1 carta dalla pila e mettila in Mano.\nEsaurisci.",
+      "upgradeDescription": "Scegli +1 carte dalla pila e mettile in Mano.\nEsaurisci."
+    },
+    "SELF_REPAIR": {
+      "name": "Auto-Riparante",
+      "description": "A fine combattimento ti curi di 7 PV."
+    },
+    "SENTINEL": {
+      "name": "Sentinella",
+      "description": "Blocchi 5.\nSe esaurisci questa carta\nottieni [R] [R].",
+      "upgradeDescription": "Blocchi +3.\nSe esaurisci questa carta \nottieni [R] [R] [R]."
+    },
+    "SETUP": {
+      "name": "Trappola",
+      "description": "Metti una carta dalla Mano in cima alla pila.\nFinché non la giochi costa 0."
+    },
+    "SEVER_SOUL": {
+      "name": "Sradica Anima",
+      "description": "Esaurisci tutte le carte non Attacco in Mano.\nInfliggi 16 danni."
+    },
+    "SHAME": {
+      "name": "Vergogna",
+      "description": "Ingiocabile.\nA fine turno ottieni 1 Fragile."
+    },
+    "SHIV": {
+      "name": "Pugnale",
+      "description": "Infliggi !D! danni.\nEsaurisci."
+    },
+    "SHOCKWAVE": {
+      "name": "Onda d'Urto",
+      "description": "Applichi 3 Debole e 3 Vulnerabile a TUTTI i nemici.\nEsaurisci."
+    },
+    "SHRUG_IT_OFF": {
+      "name": "Spallucce",
+      "description": "Blocchi 8.\nPeschi 1 carta."
+    },
+    "SKEWER": {
+      "name": "Stoccata",
+      "description": "Infliggi 7 danni X volte."
+    },
+    "SKIM": {
+      "name": "Scorrimento",
+      "description": "Peschi 3 carte."
+    },
+    "SLICE": {
+      "name": "Taglio",
+      "description": "Infliggi 6 danni."
+    },
+    "SLIMED": {
+      "name": "Inzaccherato",
+      "description": "Esaurisci."
+    },
+    "SPOT_WEAKNESS": {
+      "name": "Punto Debole",
+      "description": "Se il nemico scelto intende attaccare\nottieni 3 Forza."
+    },
+    "STACK": {
+      "name": "Stack",
+      "description": "Blocchi pari al numero di carte negli scarti.",
+      "upgradeDescription": "Blocchi pari al numero di carte negli scarti +3."
+    },
+    "STATIC_DISCHARGE": {
+      "name": "Elettrostatica",
+      "description": "Quando ricevi danno da attacco \nCrei 1 Fulmine.",
+      "upgradeDescription": "Quando ricevi danno da attacco\nCrei +1 Fulmini."
+    },
+    "STEAM": {
+      "name": "Barriera di Vapore",
+      "description": "Blocchi 6, poi questa carta blocca 1 in meno questo combattimento."
+    },
+    "STEAM_POWER": {
+      "name": "Overclock",
+      "description": "Peschi 2 carte.\nMetti negli scarti una Ustione."
+    },
+    "STORM": {
+      "name": "Tempesta",
+      "description": "Quando giochi un Potere Crei 1 Fulmine.",
+      "upgradeDescription": "Innata.\nQuando giochi un Potere Crei 1 Fulmine."
+    },
+    "STORM_OF_STEEL": {
+      "name": "Tempesta d'Acciaio",
+      "description": "Scarti la Mano.\nMetti in Mano 1 Pugnale per carta scartata.",
+      "upgradeDescription": "Scarti la Mano.\nMetti in Mano  1 Pugnale+ per carta scartata."
+    },
+    "STREAMLINE": {
+      "name": "Addestramento",
+      "description": "Infliggi 15 danni.\nCosta 1 in meno questo combattimento."
+    },
+    "STRIKE_B": {
+      "name": "Colpo",
+      "description": "Infliggi 6 danni."
+    },
+    "STRIKE_G": {
+      "name": "Colpo",
+      "description": "Infliggi 6 danni."
+    },
+    "STRIKE_R": {
+      "name": "Colpo",
+      "description": "Infliggi 6 danni."
+    },
+    "SUCKER_PUNCH": {
+      "name": "Pugno a Tradimento",
+      "description": "Infliggi 7 danni.\nApplichi 1 Debole."
+    },
+    "SUNDER": {
+      "name": "In Pezzi",
+      "description": "Infliggi 24 danni.\nSe è letale\nottieni [B] [B] [B]."
+    },
+    "SURVIVOR": {
+      "name": "Sopravvissuto",
+      "description": "Blocchi 8.\nscarti una carta."
+    },
+    "SWEEPING_BEAM": {
+      "name": "Laser ad Arco",
+      "description": "Infliggi 6 danni a TUTTI i nemici.\nPeschi 1 carta."
+    },
+    "SWIFT_STRIKE": {
+      "name": "Colpo Rapido",
+      "description": "Infliggi 7 danni."
+    },
+    "SWORD_BOOMERANG": {
+      "name": "Spada Boomerang",
+      "description": "Infliggi 3 danni ad un nemico casuale 3 volte."
+    },
+    "TACTICIAN": {
+      "name": "Stratega",
+      "description": "Ingiocabile.\nSe scarti questa carta ottieni [G].",
+      "upgradeDescription": "Ingiocabile.\nSe scarti questa carta ottieni [G] [G]."
+    },
+    "TEMPEST": {
+      "name": "Temporale",
+      "description": "Crei X Fulmini.\nEsaurisci.",
+      "upgradeDescription": "Crei X+1 Fulmini.\nEsaurisci."
+    },
+    "TERROR": {
+      "name": "Terrore",
+      "description": "Applichi 99 Vulnerabile.\nEsaurisci."
+    },
+    "THE_BOMB": {
+      "name": "La Bomba",
+      "description": "Fra 3 turni infliggi 40 danni a TUTTI i nemici."
+    },
+    "THINKING_AHEAD": {
+      "name": "Lungimiranza",
+      "description": "Peschi 2 carte.\nMetti una carta dalla Mano in cima alla pila.\nEsaurisci.",
+      "upgradeDescription": "Peschi 2 carte.\nMetti una carta dalla Mano in cima alla pila."
+    },
+    "THUNDER_STRIKE": {
+      "name": "Colpo di Tuono",
+      "description": "Infliggi 7 danni a un nemico casuale per Fulmine Creato in combattimento."
+    },
+    "THUNDERCLAP": {
+      "name": "Tuono",
+      "description": "Infliggi 4 danni e applichi 1 Vulnerabile a TUTTI i nemici."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Ferri del Mestiere",
+      "description": "Ad inizio turno peschi 1 carta e scarti 1 carta."
+    },
+    "TRANSMUTATION": {
+      "name": "Trasmutazione",
+      "description": "Metti in Mano\nX carte incolore casuali. Costano 0 questo turno.\nEsaurisci.",
+      "upgradeDescription": "Metti in Mano\nX carte incolore Potenziate casuali. Costano 0 questo turno.\nEsaurisci."
+    },
+    "TRIP": {
+      "name": "Scivolone",
+      "description": "Applichi 2 Vulnerabile.",
+      "upgradeDescription": "Applichi 2 Vulnerabile a TUTTI i nemici."
+    },
+    "TRUE_GRIT": {
+      "name": "Osso Duro",
+      "description": "Blocchi 7.\nEsaurisci una carta casuale.",
+      "upgradeDescription": "Blocchi +2.\nEsaurisci una carta."
+    },
+    "TURBO": {
+      "name": "Turbo",
+      "description": "Ottieni [B] [B]. Metti un Vuoto negli scarti.",
+      "upgradeDescription": "Ottieni [B] [B] [B]. Metti un Vuoto negli scarti."
+    },
+    "TWIN_STRIKE": {
+      "name": "Colpo Gemello",
+      "description": "Infliggi 5 danni due volte."
+    },
+    "UNDERHANDED_STRIKE": {
+      "name": "Colpo a Sorpresa",
+      "description": "Infliggi 12 danni.\nSe hai scartato questo turno\nottieni [G] [G]."
+    },
+    "UNDO": {
+      "name": "Equilibrio",
+      "description": "Blocchi 13.\nConservi la Mano per il prossimo turno."
+    },
+    "UNLOAD": {
+      "name": "Raffica",
+      "description": "Infliggi 14 danni.\nscarti TUTTE le carte non Attacco."
+    },
+    "UPPERCUT": {
+      "name": "Montante",
+      "description": "Infliggi 13 danni.\nApplichi 1 Debole.\nApplichi 1 Vulnerabile."
+    },
+    "VENOMOLOGY": {
+      "name": "Alchimia",
+      "description": "Ottieni una pozione casuale.\nEsaurisci."
+    },
+    "VOID": {
+      "name": "Vuoto",
+      "description": "Ingiocabile.\nQuando peschi questa carta perdi 1 Energia.\nEterea."
+    },
+    "WARCRY": {
+      "name": "Grido di Battaglia",
+      "description": "Peschi 1 carta.\nMetti una carta dalla Mano in cima alla pila.\nEsaurisci.",
+      "upgradeDescription": "Peschi +1 carte.\nMetti una carta dalla Mano in cima alla pila.\nEsaurisci."
+    },
+    "WELL_LAID_PLANS": {
+      "name": "Piani Perfetti",
+      "description": "A fine turno Conservi fino a 1 carta.",
+      "upgradeDescription": "A fine turno Conservi fino a +1 carte."
+    },
+    "WHIRLWIND": {
+      "name": "Turbine",
+      "description": "Infliggi 5 danni a TUTTI i nemici X volte."
+    },
+    "WHITE_NOISE": {
+      "name": "Rumore Bianco",
+      "description": "Metti in Mano un Potere casuale.\nCosta 0 questo turno.\nEsaurisci."
+    },
+    "WILD_STRIKE": {
+      "name": "Colpo Selvaggio",
+      "description": "Infliggi 12 danni.\nMescola una Ferita nella pila."
+    },
+    "WOUND": {
+      "name": "Ferita",
+      "description": "Ingiocabile."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Forma Spettrale",
+      "description": "Ottieni 2 Intangibile.\nA fine turno perdi 1 Destrezza."
+    },
+    "WRITHE": {
+      "name": "Convulsioni",
+      "description": "Innata.\nIngiocabile."
+    },
+    "ZAP": {
+      "name": "Scossa",
+      "description": "Crei 1 Fulmine."
+    },
+    "CORE_SURGE": {
+      "name": "Sovraccarico",
+      "description": "Infliggi 11 danni.\nOttieni 1 Artefatto.\nEsaurisci."
+    },
+    "COMPILE_DRIVER": {
+      "name": "Nuovi Driver",
+      "description": "Infliggi 7 danni.\nPeschi 1 carta per tipo di Globo che possiedi."
+    },
+    "RITUALDAGGER": {
+      "name": "Lama Rituale",
+      "description": "Infliggi !D! danni.\nSe è letale il danno di questa carta aumenta di 3.\nEsaurisci."
+    },
+    "PRIDE": {
+      "name": "Orgoglio",
+      "description": "Innata. Esaurisci.\nA fine turno metti in cima alla pila una copia di questa carta."
+    },
+    "PANICBUTTON": {
+      "name": "Pulsante Antipanico",
+      "description": "Blocchi 30.\nLe tue carte non Bloccano per i prossimi 2 turni.\nEsaurisci."
+    },
+    "HANDOFGREED": {
+      "name": "Mano della Cupidigia",
+      "description": "Infliggi 20 danni.\nSe è letale guadagni 20 Oro."
+    },
+    "VIOLENCE": {
+      "name": "Violenza",
+      "description": "Metti in Mano 3 Attacchi casuali dalla pila.\nEsaurisci."
+    },
+    "IMPATIENCE": {
+      "name": "Impazienza",
+      "description": "Se non hai Attacchi in Mano Peschi 2 carte."
+    },
+    "FORETHOUGHT": {
+      "name": "Previdenza",
+      "description": "Metti una carta\nin fondo alla pila.\nCosta 0 finché non la giochi.",
+      "upgradeDescription": "Metti un qualsiasi numero di carte\nin fondo alla pila.\nCostano 0 finché non le giochi."
+    },
+    "DISCOVERY": {
+      "name": "Scoperta",
+      "description": "Scegli 1 carta fra 3 casuali e mettila in Mano. Costa 0 questo turno.\nEsaurisci.",
+      "upgradeDescription": "Scegli 1 carta fra 3 casuali e mettila in Mano. Costa 0 questo turno."
+    },
+    "SPIRITSHIELD": {
+      "name": "Scudo Spirituale",
+      "description": "Blocchi 3 per carta in Mano."
+    },
+    "BRILLIANCEAURA": {
+      "name": "DEPRECATED Brilliance Aura",
+      "description": "Exhaust.\nAt the start of your turn, draw 1 card.\nRetains."
+    },
+    "WRATH": {
+      "name": "Furia",
+      "description": "Ricevi ed infliggi danno doppio da Attacchi."
+    },
+    "POLYMATH": {
+      "name": "DEPRECATED Polymath",
+      "description": "Enter Calm or Wrath.\nEsaurisci."
+    },
+    "TANTRUM": {
+      "name": "Delirio",
+      "description": "Infliggi 3 danni 3 volte.\nEntri in Furia.\nMescola questa carta nella pila."
+    },
+    "ADAPTATION": {
+      "name": "Alla Carica",
+      "description": "Quando entri in Furia peschi 2 carte."
+    },
+    "CAUSALITY": {
+      "name": "Fatalità",
+      "description": "Peschi fino a riempire la Mano.\nEsaurisci.",
+      "upgradeDescription": "Peschi fino a riempire la Mano.\nConservi la Mano.\nEsaurisci."
+    },
+    "DEVOTION": {
+      "name": "Devozione",
+      "description": "Ad inizio turno ottieni 2 Mantra."
+    },
+    "EMPTYFIST": {
+      "name": "Mano Vuota",
+      "description": "Infliggi 9 danni.\nAbbandona ogni Aspetto."
+    },
+    "WISDOM": {
+      "name": "Saggezza",
+      "description": "Permanente.\nPeschi !M! carte.\nEsaurisci."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Retribution",
+      "description": "Whenever you lose HP, gain !M! Vigor."
+    },
+    "FLOWSTATE": {
+      "name": "DEPRECATED Aspetto Fluido",
+      "description": "Furia: Entri in Quiete.\nQuiete: Entri in Furia.\nEsaurisci.",
+      "upgradeDescription": "Furia: Entri in Quiete.\nQuiete: Entri in Furia."
+    },
+    "SWIVEL": {
+      "name": "Saetta",
+      "description": "Blocchi 8.\nIl prossimo Attacco che giochi costa 0."
+    },
+    "WISH": {
+      "name": "Desiderio",
+      "description": "Scegli di ottenere:\n6 Armatura a Piastre, 3 Forza o 25 Oro.\nEsaurisci."
+    },
+    "FURYAURA": {
+      "name": "DEPRECATED Aura di Furia",
+      "description": "Permanente.\nOttieni !M! Forza temporanea.\nAll'inizio del turno ottieni 1 di Forza."
+    },
+    "DEUSEXMACHINA": {
+      "name": "Deus Ex Machina",
+      "description": "Ingiocabile.\nQuando peschi questa carta Metti in Mano 2 Miracoli e Esaurisci."
+    },
+    "THROUGHVIOLENCE": {
+      "name": "Con La Violenza",
+      "description": "Permanente. Infliggi !D! danni.\nEsaurisci."
+    },
+    "METAPHYSICS": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "CLARITY": {
+      "name": "Cognizione",
+      "description": "Guarda le prime !M! carte della pila.\nMettine una in Mano.\nEsaurisci l'altra.",
+      "upgradeDescription": "Guarda le prime !M! carte della pila.\nMettine una in Mano.\nEsaurisci le altre."
+    },
+    "WREATHOFFLAME": {
+      "name": "Corona di Fiamme",
+      "description": "Il prossimo Attacco infligge 5 danni addizionali."
+    },
+    "FLICKER": {
+      "name": "DEPRECATED Flicker",
+      "description": "Deal !D! damage. If this kills the enemy, return this card to your hand."
+    },
+    "ALPHA": {
+      "name": "Alfa",
+      "description": "Mescola una Beta nella pila.\nEsaurisci.",
+      "upgradeDescription": "Innata.\nMescola una Beta nella pila.\nEsaurisci."
+    },
+    "FOLLOWUP": {
+      "name": "Seguito",
+      "description": "Infliggi 7 danni.\nSe giocata dopo un Attacco ottieni [W]."
+    },
+    "VAULT": {
+      "name": "Valico",
+      "description": "Ottieni un turno Extra dopo questo.\nFinisci il turno.\nEsaurisci."
+    },
+    "WINDUP": {
+      "name": "DEPRECATED Windup",
+      "description": "Deal !D! damage.\nGain !M! Vigor."
+    },
+    "WALLOP": {
+      "name": "Zuffa",
+      "description": "Infliggi 9 danni.\nBlocchi pari al danno inflitto."
+    },
+    "CONSECRATE": {
+      "name": "Consacrazione",
+      "description": "Infliggi 5 danni a TUTTI i nemici."
+    },
+    "CONCLUDE": {
+      "name": "Epilogo",
+      "description": "Infliggi 12 danni a TUTTI i nemici.\nFinisci il turno."
+    },
+    "MASTERREALITY": {
+      "name": "Supremazia",
+      "description": "Le carte generate in combattimento vengono Potenziate."
+    },
+    "CLEANSEEVIL": {
+      "name": "Purificazione",
+      "description": "Metti in Mano X Punizioni.",
+      "upgradeDescription": "Metti in Mano X Punizioni+."
+    },
+    "WINDMILLSTRIKE": {
+      "name": "Colpo Rotante",
+      "description": "Permanente.\nInfliggi 7 danni, che aumentano di 4 per questo combattimento se la Conservi."
+    },
+    "SHIELD": {
+      "name": "DEPRECATED Shield",
+      "description": "Gain !B! Block.\nRetains.\nEsaurisci."
+    },
+    "LESSONLEARNED": {
+      "name": "Lezioni di Vita",
+      "description": "Infliggi 10 danni.\nSe è letale Potenzi una carta nel mazzo. Esaurisci."
+    },
+    "CALM": {
+      "name": "Quiete",
+      "description": "Se esci dalla Quiete ottieni [W] [W]."
+    },
+    "THIRDEYE": {
+      "name": "Premonizione",
+      "description": "Blocchi 7.\nProfetizzi 3."
+    },
+    "SURVEY": {
+      "name": "DEPRECATED Survey",
+      "description": "Gain !B! Block.\nGain !M! Vigor."
+    },
+    "FLYINGSLEEVES": {
+      "name": "Manrovescio",
+      "description": "Permanente.\nInfliggi 4 danni due volte."
+    },
+    "WIREHEADING": {
+      "name": "Chiaroveggenza",
+      "description": "Ad inizio turno Profetizzi 3."
+    },
+    "SANCTITY": {
+      "name": "Santità",
+      "description": "Blocchi 6.\nSe giocata dopo un'Abilità peschi 2 carte."
+    },
+    "SASHWHIP": {
+      "name": "Schiocco di Frusta",
+      "description": "Infliggi 8 danni.\nSe giocata dopo un Attacco applichi 1 Debole."
+    },
+    "WARDAURA": {
+      "name": "DEPRECATED Ward Aura",
+      "description": "Gain !B! Block.\nAt the start of your turn, gain !M! Block.\nRetains."
+    },
+    "MASTERY": {
+      "name": "Padronia",
+      "description": "Quando cambi Aspetto per tornare in quello corrente ottieni [B]."
+    },
+    "BETA": {
+      "name": "Beta",
+      "description": "Mescola un Omega nella pila.\nEsaurisci."
+    },
+    "FEARNOEVIL": {
+      "name": "Non Temere",
+      "description": "Infliggi 8 danni.\nSe il nemico intende attaccare\nentri in Quiete."
+    },
+    "PERSEVERANCE": {
+      "name": "Perseveranza",
+      "description": "Permanente.\nBlocchi 5.\nSe la conservi Blocca 2 in più questo combattimento."
+    },
+    "RAGNAROK": {
+      "name": "Apocalisse",
+      "description": "Infliggi 5 danni a un nemico casuale 5 volte."
+    },
+    "AWAKENEDSTRIKE": {
+      "name": "DEPRECATED Awakened Strike",
+      "description": "Deal !D! damage."
+    },
+    "BLESSED": {
+      "name": "DEPRECATED Blessed",
+      "description": "Shuffle !M! Miracles into your draw pile.\nEsaurisci.",
+      "upgradeDescription": "Shuffle !M! Upgraded Miracles into your draw pile.\nEsaurisci."
+    },
+    "ERUPTION": {
+      "name": "Eruzione",
+      "description": "Infliggi 9 danni. Entri in Furia."
+    },
+    "LETFATEDECIDE": {
+      "name": "DEPRECATED Let Fate Decide",
+      "description": "Play the top X cards of your draw pile. If X is 3 or more, Retain X cards."
+    },
+    "CUTTHROUGHFATE": {
+      "name": "Fendente della Fede",
+      "description": "Infliggi 7 danni.\nProfetizzi 2.\nPeschi 1 carta."
+    },
+    "WAVEOFTHEHAND": {
+      "name": "Prestigio",
+      "description": "Quando Blocchi questo turno\napplichi 1 Debole a TUTTI i nemici."
+    },
+    "VIGILANCE": {
+      "name": "Vigilanza",
+      "description": "Blocchi 8. Entri in Quiete."
+    },
+    "PATHTOVICTORY": {
+      "name": "Punto di Pressione",
+      "description": "Applica 8 Marchio.\nOgni nemico perde PV pari al proprio Marchio."
+    },
+    "EVALUATE": {
+      "name": "Valutazione",
+      "description": "Blocchi 6.\nMescola una Visione nella pila.",
+      "upgradeDescription": "Blocchi +4.\nMescola una Visione+ nella pila."
+    },
+    "ESTABLISHMENT": {
+      "name": "Prestabilito",
+      "description": "Ogni carta che conservi costa 1 in meno questo combattimento.",
+      "upgradeDescription": "Innata.\nOgni carta che conservi costa 1 in meno questo combattimento."
+    },
+    "COLLECT": {
+      "name": "Raccoglimento",
+      "description": "Metti in Mano un Miracolo+ all'inizio dei prossimi X turni.\nEsaurisci.",
+      "upgradeDescription": "Metti in Mano un Miracolo+ all'inizio dei prossimi X+1 turni.\nEsaurisci."
+    },
+    "EXPERIENCED": {
+      "name": "DEPRECATED Experienced",
+      "description": "Gain !B! Block for each Upgraded card in your hand."
+    },
+    "PERFECTEDFORM": {
+      "name": "DEPRECATED Perfected Form",
+      "description": "If you have entered all basic Stances this turn, enter Divinity.\nEsaurisci.",
+      "upgradeDescription": "If you have entered all basic Stances this turn, enter Divinity."
+    },
+    "JUSTLUCKY": {
+      "name": "Solo Fortuna",
+      "description": "Profetizzi 1.\nBlocchi 2.\nInfliggi 3 Danni"
+    },
+    "TORRENT": {
+      "name": "DEPRECATED Torrent",
+      "description": "Deal !D! damage to ALL enemies !M! times.\nEsaurisci."
+    },
+    "PEACE": {
+      "name": "Pace",
+      "description": "Permanente.\nTUTTI i nemici perdono !M! di forza questo turno.\nEsaurisci."
+    },
+    "PALMTHATRESTRAINS": {
+      "name": "DEPRECATED Restraining Palm",
+      "description": "Deal !D! damage.\nApply !M! Weak."
+    },
+    "PROTECT": {
+      "name": "Protezione",
+      "description": "Permanente.\nBlocchi 12."
+    },
+    "WORSHIP": {
+      "name": "Adorazione",
+      "description": "Ottieni 5 Mantra.",
+      "upgradeDescription": "Permanente.\nOttieni 5 Mantra."
+    },
+    "EMPTYMIND": {
+      "name": "Mente Vuota",
+      "description": "Peschi 2 carte. Abbandona ogni Aspetto.",
+      "upgradeDescription": "Peschi +1 carte. Abbandona ogni Aspetto."
+    },
+    "MIRACLE": {
+      "name": "Miracolo",
+      "description": "Permanente.\nOttieni [W].\nEsaurisci.",
+      "upgradeDescription": "Permanente.\nOttieni [W] [W].\nEsaurisci."
+    },
+    "DEVAFORM": {
+      "name": "Forma del Deva",
+      "description": "Eterea.\nAd inizio turno ottieni [W].\nL'energia ottenuta così aumenta di [W] ogni turno.",
+      "upgradeDescription": "Ad inizio turno ottieni [W].\nL'energia ottenuta così aumenta di [W] ogni turno."
+    },
+    "TALKTOTHEHAND": {
+      "name": "Diniego",
+      "description": "Infliggi 5 danni.\nPer questo combattimento se attacchi il nemico scelto Blocchi 2.\nEsaurisci."
+    },
+    "STRIKE_P": {
+      "name": "Colpo",
+      "description": "Infliggi 6 danni."
+    },
+    "MEDITATE": {
+      "name": "Meditazione",
+      "description": "Metti in Mano una carta dagli scarti e la Conservi.\nEntri in Quiete.\nFinisci il turno.",
+      "upgradeDescription": "Metti in Mano due carte dagli scarti e le Conservi.\nEntri in Quiete.\nFinisci il turno."
+    },
+    "NIRVANA": {
+      "name": "Nirvana",
+      "description": "Quando Profetizzi Blocchi 3."
+    },
+    "DECEIVEREALITY": {
+      "name": "Illusione",
+      "description": "Blocchi 4.\nMetti in Mano una Salvezza.",
+      "upgradeDescription": "Blocchi +3. Metti in Mano una Salvezza+."
+    },
+    "RETREATINGHAND": {
+      "name": "DEPRECATED Retreating Hand",
+      "description": "Ethereal.\nGain !B! Block. If the previous card played was an Attack, return this card to your hand.",
+      "upgradeDescription": "Gain !B! Block. If the previous card played was an Attack, return this card to your hand."
+    },
+    "HALT": {
+      "name": "Ferma",
+      "description": "Blocchi 3.\nIn Furia: Blocchi 9 aggiuntivo."
+    },
+    "WHEELKICK": {
+      "name": "Calcio Circolare",
+      "description": "Infliggi 15 danni.\nPeschi 2 carte."
+    },
+    "CURSEOFTHEBELL": {
+      "name": "Campanella Maledetta",
+      "description": "Ingiocabile.\nNon può essere rimossa dal mazzo."
+    },
+    "BRILLIANCE": {
+      "name": "Genio",
+      "description": "Infliggi 12 danni,\n1 in più per Mantra ottenuto nel combattimento."
+    },
+    "CLEARTHEMIND": {
+      "name": "Catarsi",
+      "description": "Permanente. Entri in Quiete.\nEsaurisci."
+    },
+    "SAFETY": {
+      "name": "Salvezza",
+      "description": "Permanente.\nBlocchi !B!.\nEsaurisci"
+    },
+    "SCRAWL": {
+      "name": "Ghirigoro",
+      "description": "Peschi fino a riempire la Mano.\nEsaurisci."
+    },
+    "PROSTRATE": {
+      "name": "Prostrazione",
+      "description": "Ottieni 2 Mantra.\nBlocchi 4."
+    },
+    "PRAY": {
+      "name": "Preghiera",
+      "description": "Ottieni 3 Mantra.\nMescola una Visione nella pila.",
+      "upgradeDescription": "Ottieni +1 Mantra.\nMescola un Visione+ nella pila."
+    },
+    "BIGBRAIN": {
+      "name": "DEPRECATED Big Brain",
+      "description": "Draw 1 card.\nRetains.\nEsaurisci.",
+      "upgradeDescription": "Draw 1 card.\nRetains."
+    },
+    "FOREIGNINFLUENCE": {
+      "name": "Manipolazione",
+      "description": "Scegli 1 fra 3 Attacchi di qualunque colore e mettilo in Mano.\nEsaurisci.",
+      "upgradeDescription": "Scegli 1 fra 3 Attacchi di qualunque colore e mettilo in Mano.\nCosta 0 questo turno.\nEsaurisci."
+    },
+    "SIGNATUREMOVE": {
+      "name": "Mossa Finale",
+      "description": "Giocabile se è l'unico Attacco in Mano.\nInfliggi 30 danni."
+    },
+    "SUBLIMESLICE": {
+      "name": "DEPRECATED Sublime Slice",
+      "description": "Deal !D! damage.\nEnter a random Stance."
+    },
+    "REACHHEAVEN": {
+      "name": "Ascesa al Cielo",
+      "description": "Infliggi 10 danni.\nMescola un Con la Violenza nella pila.",
+      "upgradeDescription": "Infliggi +5 danni.\nMescola un Con la Violenza+ nella pila."
+    },
+    "INSIGHT": {
+      "name": "Visione",
+      "description": "Permanente.\nPeschi !M! carte.\nEsaurisci.",
+      "upgradeDescription": "Permanente.\nPeschi !M! carte.\nEsaurisci."
+    },
+    "BATTLEHYMN": {
+      "name": "Inno di Battaglia",
+      "description": "Ad inizio turno metti in Mano una Punizione.",
+      "upgradeDescription": "Innata. Ad inizio turno metti in Mano una Punizione."
+    },
+    "SOOTHINGAURA": {
+      "name": "DEPRECATED Soothing Aura",
+      "description": "Apply !M! Weak.\nAt the start of your turn, apply 1 Weak to a random enemy.\nRetains."
+    },
+    "BOWLINGBASH": {
+      "name": "Effetto Bowling",
+      "description": "Infliggi 7 danni per ciascun nemico in combattimento."
+    },
+    "TRUTH": {
+      "name": "Verità",
+      "description": "Permanente.\nInfliggi !D! danni.\nPeschi !M! carta.\nEsaurisci.",
+      "upgradeDescription": "Permanente.\nInfliggi !D! danni.\nPeschi !M! carte.\nEsaurisci."
+    },
+    "PUNISHMENT": {
+      "name": "DEPRECATED Punishment",
+      "description": "Enter Punishment Stance."
+    },
+    "SMITE": {
+      "name": "Punizione",
+      "description": "Permanente.\nInfliggi !D! danni.\nEsaurisci."
+    },
+    "OMNISCIENCE": {
+      "name": "Onniscienza",
+      "description": "Scegli una carta nella pila, la giochi due volte e la Esaurisci."
+    },
+    "OMEGA": {
+      "name": "Omega",
+      "description": "A fine turno infliggi !M! danni a TUTTI i nemici."
+    },
+    "SERENITY": {
+      "name": "Serenità",
+      "description": "Quando sei in Quiete la riduzione di PV è ridotta di !M!."
+    },
+    "JUDGEMENT": {
+      "name": "Giudizio",
+      "description": "Se il nemico ha 30\no meno PV riduci i suoi PV a 0."
+    },
+    "MENTALFORTRESS": {
+      "name": "Mente d'Acciaio",
+      "description": "Quando cambi Aspetto Blocchi 4."
+    },
+    "EMPTYBODY": {
+      "name": "Corpo vuoto",
+      "description": "Blocchi 7.\nAbbandona ogni Aspetto."
+    },
+    "CRESCENDO": {
+      "name": "Crescendo",
+      "description": "Permanente.\nEntri in Furia.\nEsaurisci."
+    },
+    "SANDSOFTIME": {
+      "name": "Sabbie del Tempo",
+      "description": "Permanente.\nInfliggi 20 danni.\nSe la Conservi costa 1 in meno questo combattimento."
+    },
+    "BLASPHEMY": {
+      "name": "Blasfemia",
+      "description": "Diventa Divino.\nIl prossimo turno muori.\nEsaurisci.",
+      "upgradeDescription": "Permanente.\nDiventa Divino.\nIl prossimo turno muori.\nEsaurisci."
+    },
+    "TRANSCENDENCE": {
+      "name": "Trascendenza",
+      "description": "Se Conservi una carta la Potenzi."
+    },
+    "FLARE": {
+      "name": "DEPRECATED Flare",
+      "description": "Deal !D! damage to ALL enemies.\nWrath: Gain [W] [W] ."
+    },
+    "UNRAVELING": {
+      "name": "Rivelazione",
+      "description": "Giochi tutte le carte in Mano da sinistra a destra. I bersagli sono scelti casualmente.\nEsaurisci."
+    },
+    "WEAVE": {
+      "name": "Trama",
+      "description": "Infliggi 4 danni.\nQuando Profetizzi torna in Mano dagli scarti."
+    },
+    "CRUSHJOINTS": {
+      "name": "Spezza Gomiti",
+      "description": "Infliggi 8 danni.\nSe giocata dopo un'abilità applichi 1 Vulnerabile."
+    },
+    "VENGEANCE": {
+      "name": "Vendetta",
+      "description": "All'inizio del prossimo turno entri in Furia e peschi 2 carte."
+    },
+    "CARVEREALITY": {
+      "name": "Svuota Realtà",
+      "description": "Infliggi 6 danni.\nMetti in Mano una Punizione.",
+      "upgradeDescription": "Infliggi +4 danni.\nMetti in Mano una Punizione+."
+    },
+    "DEFEND_P": {
+      "name": "Difendi",
+      "description": "Blocchi 5."
+    },
+    "CRESCENTKICK": {
+      "name": "DEPRECATED Crescent Kick",
+      "description": "Deal !D! damage.\nIf you have Vigor,\ngain [W] and\ndraw 1 card."
+    },
+    "THWACK": {
+      "name": "DEPRECATED Thwack",
+      "description": "Deal !D! damage."
+    },
+    "FASTING": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "FASTING2": {
+      "name": "Digiuno",
+      "description": "Ottieni 3 Forza e 3 Destrezza.\nOttieni [W] in meno ad inizio turno."
+    },
+    "SWIPE": {
+      "name": "DEPRECATED Swipe",
+      "description": "Deal !D! damage. Deal half this damage to all other enemies."
+    },
+    "INNERPEACE": {
+      "name": "Pace Interiore",
+      "description": "In Quiete: Peschi 3 carte. Entri in Quiete."
+    },
+    "STEPANDSTRIKE": {
+      "name": "Passo e Colpo",
+      "description": "Costa 1 in meno per ogni cambio di Aspetto nel turno.\nBlocchi !B!.\nInfliggi !D! danni."
+    },
+    "PREDICTION": {
+      "name": "DEPRECATED Prediction",
+      "description": "Gain !B! Block at the start of your next turn."
+    },
+    "FLOW": {
+      "name": "DEPRECATED Flow",
+      "description": "When you play an Attack, gain 1 temporary Dexterity. When you play a Skill, gain 1 temporary Strength."
+    },
+    "FLAMEMASTERY": {
+      "name": "DEPRECATED Flame Mastery",
+      "description": "Gain !M! Strength."
+    },
+    "FLURRYOFBLOWS": {
+      "name": "Pugni Infiniti",
+      "description": "Infliggi 4 danni. Ritorna in Mano dagli scarti quando cambi Aspetto."
+    },
+    "INDIGNATION": {
+      "name": "Indignazione",
+      "description": "In Furia: applichi 3 vulnerabile a TUTTI i nemici.\nEntri in Furia."
+    },
+    "BECOMEALMIGHTY": {
+      "name": "Onnipotenza",
+      "description": "Ottieni !M! Forza."
+    },
+    "FAMEANDFORTUNE": {
+      "name": "Lode e Gloria",
+      "description": "Ottieni !M! Oro."
+    },
+    "LIVEFOREVER": {
+      "name": "Vita Eterna",
+      "description": "A fine turno ottieni !M! Armatura a Piastre."
+    },
+    "CONJUREBLADE": {
+      "name": "Invoca Spada",
+      "description": "Metti una\nLama Purificatrice nella pila.\nInfligge 9 danni X volte.\nEsaurisci.",
+      "upgradeDescription": "Metti una\nLama Purificatrice nella pila.\nInfligge 9 danni X+1 volte.\nEsaurisci."
+    },
+    "EXPUNGER": {
+      "name": "Lama Purificatrice",
+      "description": "Infliggi !D! danni X volte."
+    },
+    "WAVEOFTHEHAND2": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "DISCIPLINE": {
+      "name": "DEPRECATED Autocontrollo",
+      "description": "Se a fine turno hai ancora [W] inutilizzato, peschi altrettante carte in più il prossimo turno."
+    },
+    "FLICK": {
+      "name": "Flick",
+      "description": "Deal !D! damage.\nIf an enemy is Flicked 3 times, they take !M! damage."
+    },
+    "LIKEWATER": {
+      "name": "Forma Fluida",
+      "description": "A fine turno Blocchi 5 se sei in Quiete."
+    },
+    "STUDY": {
+      "name": "Studio",
+      "description": "A fine turno mescola una Visione nella pila."
+    }
+  },
+  "relics": {
+    "ANCHOR": {
+      "name": "Ancora",
+      "description": "Ad inizio combattimento Blocchi 10 .",
+      "flavor": "Tenendo tra le mani questo ciondolo ti senti più stabile e fermo."
+    },
+    "ANCIENT_TEA_SET": {
+      "name": "Antico Set da Tè",
+      "description": "Ogni volta che arrivi ad un falò, inizi il prossimo combattimento con [E] [E] .",
+      "flavor": "La chiave per una notte di sonno rinvigorente."
+    },
+    "ART_OF_WAR": {
+      "name": "L'Arte della Guerra",
+      "description": "Se non giochi Attacchi nel tuo turno ottieni un [E] extra il prossimo turno.",
+      "flavor": "Questo antico manoscritto contiene la saggezza di un'altra epoca."
+    },
+    "ASTROLABE": {
+      "name": "Astrolabio",
+      "description": "Quando ottieni questa reliquia, scegli e Trasformi 3 carte, poi le Potenzi.Scegli 3 carte per",
+      "flavor": "Uno strumento che rivela conoscenze inestimabili, sfruttando la posizione delle stelle."
+    },
+    "BAG_OF_MARBLES": {
+      "name": "Sacchetto di Biglie",
+      "description": "Ad inizio combattimento applichi\n1 Vulnerabile a TUTTI i nemici.",
+      "flavor": "Un gioco una volta molto popolare nella Città. Utile per far scivolare i nemici."
+    },
+    "BAG_OF_PREPARATION": {
+      "name": "Sacca da Viaggio",
+      "description": "Ad inizio combattimento peschi 2 carte in più.",
+      "flavor": "Gigantesca sacca per avventurieri. Ha tante cinghie e tasche."
+    },
+    "BIRD_FACED_URN": {
+      "name": "Urna del Dio-Corvo",
+      "description": "Quando giochi un Potere ti curi di 2 PV.",
+      "flavor": "Quest'urna rappresenta il dio-corvo Mazaleth, in atteggiamento malizioso."
+    },
+    "BLACK_BLOOD": {
+      "name": "Sangue Nero",
+      "description": "Sostituisce Sangue Ardente. A fine combattimento ti curi di 12 PV.",
+      "flavor": "Quando la furia è nera."
+    },
+    "BLACK_STAR": {
+      "name": "Stella Nera",
+      "description": "Dopo aver sconfitto un Elite ottieni 1 Reliquia in più.",
+      "flavor": "Scoperta nella città del serpente, il primo esemplare era accanto ad una candela solitaria."
+    },
+    "BLOOD_VIAL": {
+      "name": "Fiala di Sangue",
+      "description": "Ad inizio combattimento ti curi di 2 PV.",
+      "flavor": "Una fiala contenente puro sangue di un antico vampiro."
+    },
+    "BLOODY_IDOL": {
+      "name": "Idolo Insanguinato",
+      "description": "Ogni volta che guadagni Oro ti curi di 5 PV.",
+      "flavor": "L'idolo riversa incessanti lacrime di sangue."
+    },
+    "BLUE_CANDLE": {
+      "name": "Candela Blu",
+      "description": "Puoi giocare le Maledizioni ingiocabili. Quando lo fai, le Esaurisci e perdi 1 PV.",
+      "flavor": "L'oscurità ne accende la fiamma."
+    },
+    "BOTTLED_FLAME": {
+      "name": "Fiamma in Bottiglia",
+      "description": "Quando la raccogli scegli un Attacco. Ad inizio combattimento lo peschi.Scegli una carta per Ad inizio combattimento peschi  .",
+      "flavor": "Una fiamma che brucia eternamente, racchiusa in questa piccola bottiglia."
+    },
+    "BOTTLED_LIGHTNING": {
+      "name": "Fulmine in Bottiglia",
+      "description": "Quando la raccogli scegli una Abilità. Ad inizio combattimento la peschi.Scegli una carta per Ad inizio combattimento peschi  .",
+      "flavor": "Dall'altro lato del vetro, in mezzo della tempesta, una parte di te risponde al tuo stesso sguardo."
+    },
+    "BOTTLED_TORNADO": {
+      "name": "Tornado in Bottiglia",
+      "description": "Quando la raccogli scegli un Potere. Ad inizio combattimento lo peschi.Scegli una carta per Ad inizio combattimento peschi  .",
+      "flavor": "La bottiglia vibra, emettendo un lieve ronzio."
+    },
+    "BRONZE_SCALES": {
+      "name": "Squame di Bronzo",
+      "description": "Ad inizio combattimento guadagni 3 Spine.",
+      "flavor": "Le taglienti squame del Guardiano. Si ridispongono a protezione di chi le usa. "
+    },
+    "BURNING_BLOOD": {
+      "name": "Sangue Ardente",
+      "description": "A fine combattimento ti curi di 6 PV.",
+      "flavor": "Una rabbia inestinguibile fa ribollire il tuo sangue."
+    },
+    "CABLES": {
+      "name": "Cavi Placcati in Oro",
+      "description": "Il tuo primo Globo attiva la propria abilità passiva una volta in più.",
+      "flavor": "\"Interessante! Anche gli automi subiscono l'effetto placebo.\" —Ranwid"
+    },
+    "CALIPERS": {
+      "name": "Calibro",
+      "description": "Ad inizio turno, perdi 15 Blocco invece che tutto il Blocco.",
+      "flavor": "\"È la precisione degli strumenti che porta alla grandezza\" —L'Architetto"
+    },
+    "CALLING_BELL": {
+      "name": "Campanella",
+      "description": "Quando la ottieni, ricevi 1 Maledizione speciale e ottieni altre 3 Reliquie.La Campana Rintocca...Ignora la RicompensaChiudi",
+      "flavor": "La campana in metallo brunito ha rintoccato tre volte quando l'hai raccolta. Ora resta in silenzio."
+    },
+    "CAULDRON": {
+      "name": "Calderone",
+      "description": "Quando la raccogli, genera 5 pozioni casuali.Blup blip bloop...!",
+      "flavor": "Il Mercante è un esperto di pozioni. Comprane quattro, una è gratis!"
+    },
+    "CENTENNIAL_PUZZLE": {
+      "name": "Rompicapo Centenario",
+      "description": "La prima volta che perdi PV in combattimento peschi 3 carte.",
+      "flavor": "Una volta risolto il rompicapo, un forte calore si accende nel tuo petto."
+    },
+    "CHAMELEON_RING": {
+      "name": "Chameleon Ring",
+      "description": "Puoi Ottenere Pozioni al falò.",
+      "flavor": "Deprecated"
+    },
+    "CHAMPION_BELT": {
+      "name": "Cintura del Campione",
+      "description": "Ogni volta che applichi Vulnerabile, applichi anche 1 Debole.",
+      "flavor": "Solo il migliore può indossare questa cintura."
+    },
+    "CHARON_S_ASHES": {
+      "name": "Ceneri di Charon",
+      "description": "Quando Esaurisci una carta, infliggi 3 danni a TUTTI i nemici.",
+      "flavor": "Charon era il dio della rinascita: moriva e resuscitava eternamente, in un esplosione di fuoco."
+    },
+    "CHEMICAL_X": {
+      "name": "Chemical X",
+      "description": "Gli effetti delle tue carte a costo X aumentano di 2.",
+      "flavor": "ATTENZIONE: Non aggiungere zucchero, cannella ed ogni cosa bella."
+    },
+    "CIRCLET": {
+      "name": "Cerchietto",
+      "description": "Collezionane più che puoi.",
+      "flavor": "Non ci sono altre reliquie da raccogliere. Impressionante!"
+    },
+    "CRACKED_CORE": {
+      "name": "Nucleo Incrinato",
+      "description": "Ad inizio combattimento Crei 1 Fulmine.",
+      "flavor": "La misteriosa forza vitale che anima gli Automi dentro la Guglia. Sembra danneggiato."
+    },
+    "FROZENCORE": {
+      "name": "Nucleo Ghiacciato",
+      "description": "Sostituisce il Nucleo Incrinato. Se a fine turno hai uno spazio Globi disponibile, Crei 1 Ghiaccio.",
+      "flavor": "Il tuo nucleo è stato riparato. Dove una volte c'era una crepa, ora pulsa gelida una nuova energia."
+    },
+    "CURSED_KEY": {
+      "name": "Chiave Maledetta",
+      "description": "Ogni volta che apri uno scrigno, vieni Maledetto.Ottieni [E] ad inizio turno.",
+      "flavor": "Tenendola in mano percepisci che emana un'energia oscura. Il potere ha un prezzo."
+    },
+    "DARKSTONE_PERIAPT": {
+      "name": "Amuleto Pietrascura",
+      "description": "Ogni volta che vieni Maledetto, i tuoi PV massimi aumentano di",
+      "flavor": "La pietra assorbe l'energia oscura, trasformandola in forza vitale per chi la indossa."
+    },
+    "DATADISK": {
+      "name": "Disco Rigido",
+      "description": "Ad inizio combattimento, ottieni 1 Focus.",
+      "flavor": "Questo disco contiene preziose informazioni su serpenti ed uccelli."
+    },
+    "DEAD_BRANCH": {
+      "name": "Ramo Secco",
+      "description": "Quando Esaurisci una carta, aggiungi una carta casuale alla Mano.",
+      "flavor": "Il ramo di un albero appartenente ad un'epoca dimenticata"
+    },
+    "DERP_ROCK": {
+      "name": "Roccia Sciocca",
+      "description": "Ad inizio turno, ottieni  Cariche.\n(Non può essere ceduta o trasformata.)",
+      "flavor": "Placeholder"
+    },
+    "DISCERNING_MONOCLE": {
+      "name": "Monocolo da Lettura",
+      "description": "I prezzi del Mercante sono ridotti del 20%",
+      "flavor": "Un monocolo veramente elegante."
+    },
+    "DODECAHEDRON": {
+      "name": "DEPRECATED Dodecaedro runico",
+      "description": "Se i tuoi PV sono al massimo, ottieni [E] ad inizio turno.",
+      "flavor": "Le antiche rune sono indecifrabili."
+    },
+    "DREAM_CATCHER": {
+      "name": "Acchiappasogni",
+      "description": "Dopo che Riposi ad un falò, puoi aggiungere una carta al mazzo.",
+      "flavor": "Molto usati dalle tribù del nord, che credevano potessero accrescere il potere spirituale."
+    },
+    "DU_VU_DOLL": {
+      "name": "Bambola Du-Vu",
+      "description": "Per ogni Maledizione nel mazzo, inizi ogni combattimento con 1 di Forza in più.\n Non hai  Maledizioni. Hai  Maledizioni.",
+      "flavor": "Una bambola creata per incanalare le energie negative, donando potere a chi la usa."
+    },
+    "ECTOPLASM": {
+      "name": "Ectoplasma",
+      "description": "Non puoi più ottenere Oro.Ottieni [E] ad inizio turno.",
+      "flavor": "Una massa di melma ed energia: pulsa e ribolle come se fosse viva."
+    },
+    "EMOTION_CHIP": {
+      "name": "Chip Emotivo",
+      "description": "Se hai subito danni lo scorso turno, attivi l'abilità passiva di tutti i tuoi Globi ad inizio turno.",
+      "flavor": "...<3...?"
+    },
+    "ENCHIRIDION": {
+      "name": "Enchiridion",
+      "description": "Inizia ogni combattimento con una carta Potere casuale in Mano. Il suo costo è ridotto a 0 per quel turno.",
+      "flavor": "Il leggendario manuale di un antico lich."
+    },
+    "ETERNAL_FEATHER": {
+      "name": "Piuma Eterna",
+      "description": "Per ogni ? carte nel mazzo ti curi di 3 PV ogni volta che raggiungi un falò.",
+      "flavor": "Sembra essere completamente indistruttibile... Che genere di uccello potrebbe averla persa?"
+    },
+    "FROZEN_EGG_2": {
+      "name": "Uovo Ghiacciato",
+      "description": "Tutte le carte Potere che ricevi sono già Potenziate.",
+      "flavor": "L'uovo è completamente congelato e privo di vita. Non potrà mai schiudersi."
+    },
+    "FROZEN_EYE": {
+      "name": "Occhio Ghiacciato",
+      "description": "Quando visualizzi la pila, le carte sono in ordine.",
+      "flavor": "Fissando l'occhio, riesci ad intravedere il tuo futuro."
+    },
+    "GAMBLING_CHIP": {
+      "name": "Gettone da Gioco",
+      "description": "Ad inizio combattimento scarta un qualsiasi numero di carte poi ne peschi altrettante.",
+      "flavor": "Riesci a leggere una piccola iscrizione su un lato: NL \"Gettone fortunato di Bear!\""
+    },
+    "GINGER": {
+      "name": "Zenzero",
+      "description": "Non puoi più essere reso Debole.",
+      "flavor": "Un potente ingrediente in svariati tonici."
+    },
+    "GIRYA": {
+      "name": "Ghiria",
+      "description": "Puoi ottenere Forza permanente al falò. (3 volte massimo)",
+      "flavor": "Questa ghiria ha una massa fuori dall'ordinario. Pare che tu possa usarla per allenarti, diventando molto più forte."
+    },
+    "GOLDEN_IDOL": {
+      "name": "Idolo D'Oro",
+      "description": "Ottieni il 25% d'Oro in più sconfiggendo i Nemici.",
+      "flavor": "È fatto di puro oro. Mentre lo tieni in mano ti senti già più ricco."
+    },
+    "GREMLIN_HORN": {
+      "name": "Corno di Gremlin",
+      "description": "Ogni volta che un nemico muore, ottieni [E] e peschi 1 carta.",
+      "flavor": "\"Le Corna di un Gremlin continuano a crescere per tutta la sua vita. Notevole.\" —Ranwid"
+    },
+    "HAPPY_FLOWER": {
+      "name": "Fiore Felice",
+      "description": "Ogni  turni ottieni [E] .",
+      "flavor": "Questa pianta dall'allegria contagiosa è un oggetto di tendenza tra i nobili."
+    },
+    "ICE_CREAM": {
+      "name": "Gelato",
+      "description": "Mantieni l'energia non spesa fra i turni.",
+      "flavor": "\"Buonissimo!\""
+    },
+    "INSERTER": {
+      "name": "Insertore",
+      "description": "Ogni 2 turni, ottieni 1 spazio per Globi.",
+      "flavor": "Spingi. Tira. Impila. Ripeti."
+    },
+    "JUZU_BRACELET": {
+      "name": "Braccialetto Juzu",
+      "description": "Le Stanze ? non contengono più combattimenti.",
+      "flavor": "A protezione dall'ignoto."
+    },
+    "KUNAI": {
+      "name": "Kunai",
+      "description": "Ogni volta che giochi ? Attacchi in un singolo turno, ottieni 1 Destrezza.",
+      "flavor": "La lunga portata ne faceva l'arma preferita degli assassini."
+    },
+    "LANTERN": {
+      "name": "Lanterna",
+      "description": "Ad inizio combattimento ottieni [E]",
+      "flavor": "Una strana lanterna che fa luce soltanto per colui che la usa."
+    },
+    "LEE_S_WAFFLE": {
+      "name": "Waffle di Lee",
+      "description": "Quando lo raccogli, i tuoi PV massimi aumentano di 7 e ti curi del tutto.",
+      "flavor": "\"Il dolce più goloso che potrai mai trovare in tutta la Guglia! Appena sfornato, proprio per te!\""
+    },
+    "LETTER_OPENER": {
+      "name": "Tagliacarte",
+      "description": "Ogni volta che giochi 3 Abilità in un singolo turno, infliggi 5 danno a TUTTI i nemici.",
+      "flavor": "Il filo di questa lama è straordinariamente affilato."
+    },
+    "LIVING_BLADE": {
+      "name": "Lama Vivente",
+      "description": "Puoi prendere un qualsiasi numero di carte.",
+      "flavor": "Deprecated"
+    },
+    "LIZARD_TAIL": {
+      "name": "Coda di Lucertola",
+      "description": "Invece di morire ti curi del 50% dei PV massimi (funziona solo una volta).",
+      "flavor": "Una coda finta, con cui ingannare i nemici in combattimento."
+    },
+    "MAGIC_FLOWER": {
+      "name": "Fiore Magico",
+      "description": "Le cure in combattimento sono più efficaci del 50%.",
+      "flavor": "Si pensava fosse estinto da tempo, ma in qualche modo questo esemplare è ancora in perfette condizioni."
+    },
+    "MANGO": {
+      "name": "Mango",
+      "description": "Quando lo raccogli, i tuoi PV massimi aumentano di",
+      "flavor": "Il frutto perduto più desiderato. Conservato impeccabilmente senza alcun segno di Spireblight, la corruzione della Guglia."
+    },
+    "MARK_OF_PAIN": {
+      "name": "Marchio del Dolore",
+      "description": "Ottieni [R] ad inizio turno. Inizia il combattimento con 2 Ferite nella pila.",
+      "flavor": "Nelle tribù del nord questo marchio era imposto ai guerrieri capaci di vincere il dolore in battaglia."
+    },
+    "MATRYOSHKA": {
+      "name": "Matrioska",
+      "description": "I prossimi 2 scrigni che apri contengono 2 Reliquie. (Scrigni dei boss esclusi)Il prossimo scrigno che apri contiene 2 Reliquie. (Scrigni dei boss esclusi)Questa reliquia non ha più effetto",
+      "flavor": "Bambole di legno dipinte, racchiuse l'una dentro l'altra. L'immagine rappresenta uno strano uccello con occhi bianchi e piume blu."
+    },
+    "MEAT_ON_THE_BONE": {
+      "name": "Ossobuco",
+      "description": "Se i tuoi PV sono al 50% o meno a fine combattimento ti curi di 12 PV.",
+      "flavor": "La carne attorno all'osso non finisce mai."
+    },
+    "MEDICAL_KIT": {
+      "name": "Kit Medico",
+      "description": "Puoi giocare le carte Stato ingiocabili. Quando lo fai, le Esaurisci.",
+      "flavor": "\"Ha tutto ciò di cui hai bisogno! Anti-prurito, anti-ustione, anti-veleno e tanto altro ancora!\""
+    },
+    "MEMBERSHIP_CARD": {
+      "name": "Tessera Soci",
+      "description": "50% di sconto su tutti i prodotti!",
+      "flavor": "\"Un'offerta speciale di abbonamento per i miei clienti migliori!\""
+    },
+    "MERCURY_HOURGLASS": {
+      "name": "Clessidra al Mercurio",
+      "description": "Ad inizio turno infliggi 3 danni a TUTTI i nemici.",
+      "flavor": "Una clessidra incantata, nella quale il liquido gocciola continuamente."
+    },
+    "MOLTEN_EGG_2": {
+      "name": "Uovo di Magma",
+      "description": "Tutte le carte Attacco che ricevi sono già Potenziate.",
+      "flavor": "È l'uovo di una Fenice. La sua superficie di lava bollente brilla di un rosso acceso."
+    },
+    "MUMMIFIED_HAND": {
+      "name": "Mano Mummificata",
+      "description": "Quando giochi un Potere, riduci il costo di una carta casuale in Mano a 0 per questo turno.",
+      "flavor": "Trema spesso, in particolare se il tuo cuore batte molto in fretta."
+    },
+    "NECRONOMICON": {
+      "name": "Necronomicon",
+      "description": "Ogni turno, il primo Attacco a costo 2 o più che giochi viene giocato due volte. Quando la raccogli, vieni Maledetto. o più che giochi viene giocato due volte.",
+      "flavor": "Solo un folle attingerebbe al suo oscuro potere. Le immagini del libro ti appaiono in sogno ogni notte, divorandoti la mente."
+    },
+    "NEOWSBLESSING": {
+      "name": "Lamento di Neow",
+      "description": "I nemici nei tuoi primi 3 combattimenti avranno 1 PV.Questa reliquia non ha più effetto.",
+      "flavor": "La Benedizione del Lamento, ricevuta da Neow."
+    },
+    "NILRY_S_CODEX": {
+      "name": "Codice di Nilry",
+      "description": "A fine turno, puoi scegliere 1 fra 3 carte casuali e aggiungerla alla pila.",
+      "flavor": "Stilato dal famigerato game master stesso. Si dice che possa espandere la mente."
+    },
+    "NINJA_SCROLL": {
+      "name": "Pergamena del Ninja",
+      "description": "Inizi il combattimento con 3 Pugnali in Mano.",
+      "flavor": "Contiene tutti i segreti dell'arte dell'assassinio."
+    },
+    "NLOTH_S_GIFT": {
+      "name": "Dono di N'loth",
+      "description": "Triplica la possibilità di ricervere carte rare come ricompensa dai mostri.",
+      "flavor": "Lo strano dono di N'loth. Tutte le volte che lo scarti, al suo interno c'è un altra scatola di ugual foggia e dimensione."
+    },
+    "NUCLEAR_BATTERY": {
+      "name": "Batteria Nucleare",
+      "description": "Ad inizio combattimento Crei 1 Plasma.",
+      "flavor": "Ooooh..."
+    },
+    "NULLSTONE_PERIAPT": {
+      "name": "Nullstone Periapt",
+      "description": "Negate the next Debuff you receive from an enemy.\nRecharges in 10 turns.",
+      "flavor": "DEPRECATED."
+    },
+    "ODD_MUSHROOM": {
+      "name": "Strano Fungo",
+      "description": "Quando sei Vulnerabile, ricevi il 25% di danno in più invece che il 50%.",
+      "flavor": "\"Dopo aver consumato un esemplare di Trichella Parastius mi sono sentito più grande e meno... vulnerabile.\" —Ranwid "
+    },
+    "ODDLY_SMOOTH_STONE": {
+      "name": "Pietra Levigata",
+      "description": "Ad inizio combattimento, ottieni 1 Destrezza.",
+      "flavor": "Non hai mai visto un oggetto con una superficie così liscia e perfetta. Deve essere opera degli Antichi."
+    },
+    "OLD_COIN": {
+      "name": "Antica Moneta",
+      "description": "Quando la raccogli, ottieni 300 Oro.",
+      "flavor": "I Mercanti attribuiscono un alto valore a queste monete, uniche per importanza storica e per la rarità dei metalli che le compongono."
+    },
+    "OMAMORI": {
+      "name": "Omamori",
+      "description": "Nega le prossime 2 Maledizioni che otterresti.Nega la prossima Maledizione che otterresti.Questa reliquia non ha più effetto",
+      "flavor": "Un amuleto classico, che respinge gli spiriti maligni. Sembra possedere una scintilla divina."
+    },
+    "ORICHALCUM": {
+      "name": "Oricalco",
+      "description": "Se non hai Blocco a fine turno, Blocchi 6 .",
+      "flavor": "Un metallo verdastro di origine sconosciuta. Sembra indistruttibile."
+    },
+    "ORNAMENTAL_FAN": {
+      "name": "Ventaglio Ornamentale",
+      "description": "Ogni volta che giochi 3 Attacchi in un singolo turno, Blocchi 4 .",
+      "flavor": "Uno strano ventaglio. Sembra aumentare di dimensione e diventare più coriaceo quando viene versato del sangue."
+    },
+    "ORRERY": {
+      "name": "Planetario",
+      "description": "Scegli ed aggiungi 5 carte al mazzo.Conoscenza!",
+      "flavor": "\"Una volta capito l'universo...\" —Zoroth"
+    },
+    "PANDORA_S_BOX": {
+      "name": "Vaso di Pandora",
+      "description": "Trasforma tutti i Colpi ed i Difendi.Il Vaso di Pandora è ora aperto...",
+      "flavor": "Aprirlo non ti sembra un'ottima idea."
+    },
+    "PANTOGRAPH": {
+      "name": "Pantografo",
+      "description": "Ad inizio del combattimento contro un boss, ti curi di 25 PV.",
+      "flavor": "\"Non è il caso che costruisce fondamenta solide. Solo i giusti strumenti permettono una perfetta pianificazione.\" —L'Architetto"
+    },
+    "PAPER_CRANE": {
+      "name": "Kru di Carta",
+      "description": "I nemici Deboli infliggono il 40% danni in meno invece che il 25%.",
+      "flavor": "L'origami di una creatura appartenente ad un'epoca passata."
+    },
+    "PAPER_FROG": {
+      "name": "Drana di Carta",
+      "description": "I nemici Vulnerabili ricevono il 75% più danno invece che il 50%.",
+      "flavor": "La carta si piega e dispiega continuamente, nella forma di una piccola creatura."
+    },
+    "PEACE_PIPE": {
+      "name": "Pipa della Pace",
+      "description": "Puoi rimuovere carte dal mazzo al falò.",
+      "flavor": "Libera la mente e purifica l'anima."
+    },
+    "PEAR": {
+      "name": "Pera",
+      "description": "Quando la raccogli, i tuoi PV massimi aumentano di",
+      "flavor": "Era un frutto comune, prima che la corruzione della Guglia si spargesse."
+    },
+    "PEN_NIB": {
+      "name": "Pennino",
+      "description": "Ogni decimo Attacco che giochi infligge danno doppio.",
+      "flavor": "Mentre lo tieni in mano, ricordi ogni omicidio compiuto dai precedenti proprietari. Vicende estremamente violente."
+    },
+    "PHILOSOPHER_S_STONE": {
+      "name": "Pietra Filosofale",
+      "description": "Ottieni [E] ad inizio turno. TUTTI i nemici iniziano il combattimento con 1 Forza in più.",
+      "flavor": "La pietra emana una energia grezza, che conferisce potere a chiunque si trovi nelle sue vicinanze"
+    },
+    "POTION_BELT": {
+      "name": "Cinta Porta-Pozioni",
+      "description": "Quando la raccogli, ottieni 2 spazi per Pozioni in più.",
+      "flavor": "Posso trasportare più pozioni grazie a questa cintura!"
+    },
+    "PRAYER_WHEEL": {
+      "name": "Ruota della Preghiera",
+      "description": "Sconfiggere i Nemici Base ti permette di aggiungere una carta al mazzo.",
+      "flavor": "La ruota continua a girare, senza mai fermarsi."
+    },
+    "QUESTION_CARD": {
+      "name": "Carta Misteriosa",
+      "description": "Quando ottieni nuove Carte hai 1 scelta in più.",
+      "flavor": "\"Chi ha più opzioni può permettersi di temere meno il caos.\" —Kublai il Grande"
+    },
+    "RED_CIRCLET": {
+      "name": "Cerchietto Rosso",
+      "description": "Davvero carino!",
+      "flavor": "Non hai più reliquie. Impressionante!"
+    },
+    "RED_MASK": {
+      "name": "Maschera Rossa",
+      "description": "Ad inizio combattimento applichi 1 Debole a TUTTI i nemici.",
+      "flavor": "Molto elegante, appartiene al comandante dei Banditi Maschera Rossa. Sei dunque tu il loro comandante ora?"
+    },
+    "RED_SKULL": {
+      "name": "Teschio Rosso",
+      "description": "Quando i tuoi PV sono al 50% o sotto, ottieni 3 Forza in più.",
+      "flavor": "Un piccolo teschio coperto di vernice ornamentale."
+    },
+    "REGAL_PILLOW": {
+      "name": "Cuscino Regale",
+      "description": "Ti curi di 15 PV in più quando Riposi.",
+      "flavor": "Ora puoi finalmente riposare comodo la notte."
+    },
+    "RING_OF_THE_SERPENT": {
+      "name": "Anello del Serpente",
+      "description": "Sostituisce l'Anello della Serpe. ?Ad inizio turno peschi 1 carta in più.",
+      "flavor": "Il tuo anello si è trasformato, cambiando forma."
+    },
+    "RING_OF_THE_SNAKE": {
+      "name": "Anello della Serpe",
+      "description": "Ad inizio combattimento peschi 2 carte in più.",
+      "flavor": "Creato a partire da un fossile di serpente. È l'emblema di un'abile cacciatrice."
+    },
+    "RUNIC_CAPACITOR": {
+      "name": "Condensatore Runico",
+      "description": "Inizi il combattimento con 3 Spazi per Globi in più.",
+      "flavor": "Meglio abbondare."
+    },
+    "RUNIC_CUBE": {
+      "name": "Cubo Runico",
+      "description": "Ogni volta che perdi PV, peschi 1 carta.",
+      "flavor": "Le antiche rune sono indecifrabili."
+    },
+    "RUNIC_DOME": {
+      "name": "Cupola Runica",
+      "description": "ad inizio turno. Non puoi più vedere l'Intento dei nemici.Ottieni [E]",
+      "flavor": "Le antiche rune sono indecifrabili."
+    },
+    "RUNIC_PYRAMID": {
+      "name": "Piramide Runica",
+      "description": "A fine turno non scarti più la Mano.",
+      "flavor": "Le antiche rune sono indecifrabili."
+    },
+    "SELF_FORMING_CLAY": {
+      "name": "Argilla Vivente",
+      "description": "Ogni volta che perdi PV in combattimento, Blocchi 3 il prossimo turno.",
+      "flavor": "\"Estremamente curioso! Sembra imitare vagamente ogni forma a cui penso! Argilla Telepatica?\" –Ranwid"
+    },
+    "SHOVEL": {
+      "name": "Pala",
+      "description": "Ora puoi Scavare per cercare reliquie al falò.",
+      "flavor": "La guglia custodisce molte reliquie di antiche civiltà e potenti avventurieri. È tempo di dissotterrarle!"
+    },
+    "SHURIKEN": {
+      "name": "Shuriken",
+      "description": "Ogni volta che giochi ? Attacchi in un singolo turno, ottieni 1 Forza.",
+      "flavor": "Armi da lancio leggere. Si consiglia di mirare agli occhi."
+    },
+    "SINGING_BOWL": {
+      "name": "Campana Tibetana",
+      "description": "Invece di aggiungere una carta al mazzo come ricompensa puoi scegliere di guadagnare 2 PV Massimi.",
+      "flavor": "Se usato correttamente questo artefatto risuona, emettendo una melodia belissima."
+    },
+    "SMILING_MASK": {
+      "name": "Maschera Sorridente",
+      "description": "Il servizio di rimozione carte del Mercante costa sempre 50 Oro.",
+      "flavor": "La maschera indossata dal Mercante. Deve averne altre di scorta..."
+    },
+    "SNAKE_SKULL": {
+      "name": "Teschio di Snecko",
+      "description": "Ogni volta che applichi Veleno applichi un 1 Veleno in più.",
+      "flavor": "È in perfette condizioni: la sua liscia superficie respinge inspiegabilmente ogni tipo di sporcizia."
+    },
+    "SNECKO_EYE": {
+      "name": "Occhio di Snecko",
+      "description": "Peschi 2 carte in più ogni turno. Inizi ogni combattimento Confuso.",
+      "flavor": "L'occhio di uno snecko morto. Molto più grande di quanto si potrebbe immaginare."
+    },
+    "SOZU": {
+      "name": "Sozu",
+      "description": "Non puoi più ottenere pozioni. Ottieni [E] ad inizio turno.",
+      "flavor": "Noti che questa reliquia rende inerti i liquidi magici nelle vicinanze."
+    },
+    "SPIRIT_POOP": {
+      "name": "Cacca Spirituale",
+      "description": "È spiacevole.",
+      "flavor": "I resti carbonizzati della tua offerta agli spiriti."
+    },
+    "STRANGE_SPOON": {
+      "name": "Strano Cucchiaio",
+      "description": "Le carte che si Esauriscono quando vengono giocate vengono invece scartate il 50% delle volte.",
+      "flavor": "Quando lo fissi sembra piegarsi e attorcigliarsi davanti ai tuoi occhi."
+    },
+    "STRAWBERRY": {
+      "name": "Fragola",
+      "description": "Quando la raccogli, i tuoi PV massimi aumentano di",
+      "flavor": "\"Davvero deliziosa! Non ne vedevo una da prima della corruzione.\" —Ranwid"
+    },
+    "SUNDIAL": {
+      "name": "Meridiana",
+      "description": "Ogni  volte che mescoli la pila,\nottieni [E] [E] .",
+      "flavor": "\"La folle ossessione col tempo dell'uomo primitivo lo spingeva a guardare in cielo, cercando qualcosa di eterno.\" —Zoroth"
+    },
+    "SYMBIOTIC_VIRUS": {
+      "name": "Virus Simbiotico",
+      "description": "Ad inizio combattimento Crei 1 Oscurità.",
+      "flavor": "Giusto un pizzico di male può fare molto bene..."
+    },
+    "TEST_1": {
+      "name": "Test 1",
+      "description": "",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_2": {
+      "name": "Test 2",
+      "description": "When viewing your Draw Pile, the cards are now shown in order.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_3": {
+      "name": "Test 3",
+      "description": "When obtained, Upgrade all of your Defend cards.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_4": {
+      "name": "Test 4",
+      "description": "At the start of combat, the cost of all Strike cards are set to 0.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_5": {
+      "name": "Test 5",
+      "description": "Upon pick up, Upgrade 2 random Skills.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_6": {
+      "name": "Test 6",
+      "description": "At the end of each turn, gain ? Block for every 100 Gold you have.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_7": {
+      "name": "Test 7",
+      "description": "Elites now drop 2 Relics when defeated.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_8": {
+      "name": "Test 8",
+      "description": "Draw 2 additional cards each turn. Start each combat Confused.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "THE_COURIER": {
+      "name": "Il Corriere",
+      "description": "Il Mercante non finisce più carte, reliquie o pozioni e ti garantisce uno sconto del 20% su ogni articolo.",
+      "flavor": "L'animaletto del Mercante!"
+    },
+    "THE_SPECIMEN": {
+      "name": "L'Esemplare",
+      "description": "Ogni volta che un nemico muore, applichi lo stesso Veleno che aveva ad un altro nemico casuale.",
+      "flavor": "\"Affascinante! Un mutante dotato di sorprendenti proprietà tossiche. Devo raccoglierne un campione...\" —Ranwid"
+    },
+    "THREAD_AND_NEEDLE": {
+      "name": "Ago e Filo",
+      "description": "Ad inizio combattimento ottieni 4 Armatura a Piastre.",
+      "flavor": "Quando ti avvolgi il filo magico attorno al corpo ti sembra che la tua pelle si inspessisca."
+    },
+    "TINGSHA": {
+      "name": "Tingsha",
+      "description": "Nel tuo turno, infliggi 3 danni ad un nemico casuale per ogni carta che scarti.",
+      "flavor": "Il volume del suono generato da questo strumento può raggiungere livelli dolorosi."
+    },
+    "TINY_CHEST": {
+      "name": "Piccolo Scrigno",
+      "description": "Dopo aver attraversato 4 stanze ? la prossima è una stanza del Tesoro.",
+      "flavor": "\"Un buon prototipo.\" —L'Architetto"
+    },
+    "TINY_HOUSE": {
+      "name": "Piccola Casa",
+      "description": "Quando la raccogli, ottieni 1 pozione ed ottieni ? Oro. I tuoi PV massimi aumentano di 5. Ottieni 1 carta. Potenzia 1 carta casuale.Piccola Casa!",
+      "flavor": "\"Una miniaturizzazione quasi perfetta. Anche se ad oggi è la mia opera migliore, non è ancora adeguata.\" —L'Architetto"
+    },
+    "TOOLBOX": {
+      "name": "Cassetta degli Attrezzi",
+      "description": "Ad inizio combattimento scegli 1 fra 3 carte incolori casuali da aggiungere alla Mano.",
+      "flavor": "Il giusto attrezzo per ogni mansione."
+    },
+    "TORII": {
+      "name": "Torii",
+      "description": "Ogni volta che riceveresti 5 o meno danni da Attacco non bloccati, invece ne ricevi 1.",
+      "flavor": "Mentre tieni in mano il piccolo Torii, un senso di calma e sicurezza pervade la tua mente."
+    },
+    "TOUGH_BANDAGES": {
+      "name": "Bende Resistenti",
+      "description": "Quando scarti una carta nel tuo turno, Blocchi 3 .",
+      "flavor": "Il dolore ti dà forza."
+    },
+    "TOXIC_EGG_2": {
+      "name": "Uovo Tossico",
+      "description": "Tutte le carte Abilità che ricevi sono Potenziate.",
+      "flavor": "\"Che scoperta! Sembra l'uovo infertile di una creatura magica. Mi domando cosa l'abbia deposto...\" —Ranwid"
+    },
+    "TOY_ORNITHOPTER": {
+      "name": "Ornitottero Giocattolo",
+      "description": "Ogni volta che usi una pozione ti curi di 5 PV.",
+      "flavor": "\"Questo piccolo giocattolo è il perfetto compagno per un avventuriero solitario!\""
+    },
+    "TURNIP": {
+      "name": "Rapa",
+      "description": "Non puoi più essere reso Fragile.",
+      "flavor": "Ottima con lo Zenzero."
+    },
+    "UNCEASING_TOP": {
+      "name": "Trottola Perpetua",
+      "description": "Quando non hai carte in Mano nel tuo turno peschi una carta.",
+      "flavor": "La trottola continua a girare senza frizione, come in un sogno."
+    },
+    "VAJRA": {
+      "name": "Vajra",
+      "description": "Ad inizio combattimento ottieni 1 Forza.",
+      "flavor": "Un ornamento conferito a colui che aveva ottenuto la gloria in una battaglia."
+    },
+    "VELVET_CHOKER": {
+      "name": "Choker di Velluto",
+      "description": "Non puoi giocare più di  carte per turno.Ottieni [E] ad inizio turno. Posso giocare solo fino a",
+      "flavor": "\"Un potere immenso, ma con troppe limitazioni.\" —Kublai il Grande"
+    },
+    "WAR_PAINT": {
+      "name": "Pittura di Guerra",
+      "description": "Quando la raccogli, Potenzi 2 Abilità casuali.",
+      "flavor": "In passato, gli Ironclad la usavano per incantare gli amuleti protettivi che indossavano prima di lanciarsi in battaglia."
+    },
+    "WHETSTONE": {
+      "name": "Cote",
+      "description": "Quando la raccogli, Potenzi 2 Attacchi casuali.",
+      "flavor": "\"La carne non potrà mai sconfiggere l'acciaio.\" —Kublai il Grande"
+    },
+    "WHITE_BEAST_STATUE": {
+      "name": "Statua della Bestia Bianca",
+      "description": "Dopo ogni combattimento trovi una pozione.",
+      "flavor": "Una piccola statuetta bianca. Rappresenta una creatura che non hai mai visto prima."
+    },
+    "BOOT": {
+      "name": "Lo Stivale",
+      "description": "Ogni volta che un tuo Attacco infliggerebbe 4 o meno danni non bloccati, ne infligge invece 5.",
+      "flavor": "Mentre giri la chiave, lo stivale si carica ed aumenta in dimensioni."
+    },
+    "MARK_OF_THE_BLOOM": {
+      "name": "Marchio del Bocciolo",
+      "description": "Non puoi più curarti.",
+      "flavor": "Nell'Aldilà, pensieri e realtà sono una cosa sola."
+    },
+    "BUSTED_CROWN": {
+      "name": "Corona Infranta",
+      "description": "Quando ottieni nuove Carte hai 2 scelte in meno.Ottieni [E] ad inizio turno.",
+      "flavor": "La corona del Campione... o è solo una replica?"
+    },
+    "INCENSE_BURNER": {
+      "name": "Incensiere",
+      "description": "Ogni 6 turni, ottieni 1 Intangibile.",
+      "flavor": "Il fumo permea il proprietario con lo spirito di ciò che ha bruciato."
+    },
+    "EMPTY_CAGE": {
+      "name": "Gabbia Vuota",
+      "description": "Quando la raccogli rimuovi 2 carte dal mazzo.Scegli 2 Carte da Rimuovere.",
+      "flavor": "\"È assurdo ingabbiare ciò che si venera.\" —Ranwid"
+    },
+    "FUSION_HAMMER": {
+      "name": "Martello a Fusione",
+      "description": "ad inizio turno. Non puoi più Potenziare carte ai falò.Ottieni [E]",
+      "flavor": "Una volta brandito, non lo si può più lasciare andare."
+    },
+    "COFFEE_DRIPPER": {
+      "name": "Filtro da Caffè",
+      "description": "ad inizio turno. Non puoi più Riposare ai falò.Ottieni [E]",
+      "flavor": "\"Sì, me ne porti un'altra tazza grazie. Torniamo a lavorare. Torniamo a lavorare!\" —L'Architetto"
+    },
+    "SSSERPENTHEAD": {
+      "name": "Testa del Ssserpente",
+      "description": "Ogni volta che attraversi una stanza ? ottieni 50 Oro.",
+      "flavor": "Non c'è vita più piena di quella di chi può permettersi tutto!"
+    },
+    "MUTAGENICSTRENGTH": {
+      "name": "Forza Mutagenica",
+      "description": "Cominci i combattimenti con ? Forza. Alla fine del tuo primo turno perdi 3 Forza.",
+      "flavor": "\"I risultati sembrano transitori, attivati solo quando il soggetto è in pericolo.\" - Sconosciuto"
+    },
+    "FACEOFCLERIC": {
+      "name": "Viso del Chierico",
+      "description": "I tuoi PV Massimi aumentano di 1 dopo ogni combattimento.",
+      "flavor": "Tutti amano il Chierico."
+    },
+    "NLOTHSMASK": {
+      "name": "Viso Famelico di N'loth",
+      "description": "Il prossimo Scrigno che apri non contiene nulla. (Scrigni dei boss esclusi)",
+      "flavor": "Ti senti affamato."
+    },
+    "GREMLINMASK": {
+      "name": "Guisa del Gremlin",
+      "description": "Inizi il combattimento con 1 Debole.",
+      "flavor": "È il momento di scappare."
+    },
+    "CULTISTMASK": {
+      "name": "Diadema del Cultista",
+      "description": "Ti senti più loquace.CRA!\nCRAAA",
+      "flavor": "Uniti nello stormo!"
+    },
+    "THEABACUS": {
+      "name": "L'Abaco",
+      "description": "Ogni volta\nche mescoli gli scarti nella pila Blocchi 6 .",
+      "flavor": "\"Uno... Due... Tre...\""
+    },
+    "DOLLYSMIRROR": {
+      "name": "Specchio di Dolly",
+      "description": "Quando la raccogli, duplichi una carta nel mazzo.Scegli una carta da copiare.",
+      "flavor": "\"Ho un aspetto... diverso... in questo riflesso.\""
+    },
+    "CLOCKWORKSOUVENIR": {
+      "name": "Souvenir ad Orologeria",
+      "description": "Ad inizio combattimento ottieni 1 Artefatto.",
+      "flavor": "\"Così tanti ingranaggi...\""
+    },
+    "MEALTICKET": {
+      "name": "Buono Pasto",
+      "description": "Quando entri in un negozio, ti curi di 15 PV.",
+      "flavor": "\"Con questo, le polpette sono in omaggio!\""
+    },
+    "TWISTEDFUNNEL": {
+      "name": "Imbuto Contorto",
+      "description": "Ad inizio combattimento, applichi 4 Veleno a TUTTI i nemici.",
+      "flavor": "\"Io, da lì, non berrei.\""
+    },
+    "HANDDRILL": {
+      "name": "Trapano",
+      "description": "Ogni volta che rompi il Blocco di un nemico, gli applichi 2 Vulnerabile.",
+      "flavor": "\"La sua punta a spirale è particolarmente pericolosa.\""
+    },
+    "HOVERINGKITE": {
+      "name": "Aquilone Leggiadro",
+      "description": "Quando scarti la prima carta in un turno, ottieni [E] .",
+      "flavor": "L'Aquilone ti volteggia intorno durante la battaglia, mosso da una forza misteriosa."
+    },
+    "SLING": {
+      "name": "Fionda del Coraggio",
+      "description": "Inizi i combattimenti contro Elite con 2 Forza.",
+      "flavor": "\"Uno strumento utile per affrontare avversari particolarmente tenaci.\""
+    },
+    "ORANGEPELLETS": {
+      "name": "Pastiglie Arancioni",
+      "description": "Quando giochi un Potere, un Attacco e una Abilità nello stesso turno, rimuovi tutti i tuoi Debuff.",
+      "flavor": "\"Costituite da un agglomerato di vari funghi della Guglia, respingono ogni tipo di malanno.\""
+    },
+    "WRISTBLADE": {
+      "name": "Lama da Polso",
+      "description": "Gli Attacchi che costano 0 infliggono 4 danni in più.",
+      "flavor": "Per un pratico omicidio."
+    },
+    "STONECALENDAR": {
+      "name": "Calendario Maya",
+      "description": "Finito il turno numero ?, infliggi 52 danni a TUTTI i nemici.",
+      "flavor": "Il tempo non sembra scorrerre nella Guglia."
+    },
+    "NUNCHAKU": {
+      "name": "Nunchaku",
+      "description": "Ogni volta che giochi  Attacchi ottieni [E] .",
+      "flavor": "Una buona arma da addestramento, nell'usarla si allenano postura e agilità."
+    },
+    "BRIMSTONE": {
+      "name": "Zolfo",
+      "description": "Ad inizio turno, ottieni ? Forza e TUTTI i nemici ottengono 1 Forza.",
+      "flavor": "Emana un calore infernale."
+    },
+    "PRESERVEDINSECT": {
+      "name": "Insetto in Formaldeide",
+      "description": "I nemici nei combattimenti con Elite hanno 25% PV in meno.",
+      "flavor": "L'insetto sembra creare un'aura speciale che ridimensiona i nemici più grossi."
+    },
+    "POCKETWATCH": {
+      "name": "Orologio da Taschino",
+      "description": "Quando giochi 3 o meno carte in un turno, peschi 3 carte in più all'inizio del tuo prossimo turno.",
+      "flavor": "Le lancette sembrano ferme ed indicano le 3 in punto."
+    },
+    "FOSSILIZEDHELIX": {
+      "name": "Fossile a Spirale",
+      "description": "Previene la prima perdita di PV in combattimento.",
+      "flavor": "Apparentemente indistruttibile, ti chiedi a che tipo di creatura appartenesse."
+    },
+    "WARPEDTONGS": {
+      "name": "Tenaglie Deformate",
+      "description": "Ad inizio turno, potenzi una carta casuale nella Mano per il resto del combattimento.",
+      "flavor": "Queste tenaglie maledette trasmettono un forte desiderio di riportarle nel luogo dove sono state trafugate."
+    },
+    "WINGEDGREAVES": {
+      "name": "Stivali Alati",
+      "description": "Puoi ignorare il percorso quando scegli la prossima stanza dove trasportarti, fino a 3 volte.",
+      "flavor": "Che stile."
+    },
+    "PRISMATICSHARD": {
+      "name": "Frammento di Prisma",
+      "description": "Le Ricompense dopo i combattimente offrono anche carte incolori e di altre classi.",
+      "flavor": "Guardando attraverso la reliquia riesci a visualizzare prospettive inaspettate."
+    },
+    "MAWBANK": {
+      "name": "Fauce Salvadanaio",
+      "description": "Quando superi un piano, ottieni  12 Oro. Smette di funzionare se spendi Oro al negozio.Questa reliquia non ha più effetto",
+      "flavor": "Sorprendentemente popolare, considerato l'alto numero di vittime da Fauce."
+    },
+    "CERAMICFISH": {
+      "name": "Pesce di Ceramica",
+      "description": "Quando aggiungi una carta al mazzo, ottieni 9 Oro.",
+      "flavor": "Meticolosamente decorato, si credeva questi pesci portassero grande fortuna."
+    },
+    "STRIKEDUMMY": {
+      "name": "Uomo di Legno",
+      "description": "Le carte che contengono \"Colpo\" nel nome infliggono 3 danni in più.",
+      "flavor": "È esausto..."
+    },
+    "VIOLETLOTUS": {
+      "name": "Loto Viola",
+      "description": "Quando esci dalla Quete, ottieni [E] .",
+      "flavor": "Gli antichi scritti descrivono come le \"pozze di mana\" fossero ricoperte da questi fiori."
+    },
+    "SACREDBARK": {
+      "name": "Sacra Corteccia",
+      "description": "Le pozioni diventano due volte più efficaci.",
+      "flavor": "Si dice che questa corteccia venga dall'Albero del Mondo."
+    },
+    "TEARDROPLOCKET": {
+      "name": "Ciondolo a Lacrima",
+      "description": "Inizi i combattimenti in Quiete.",
+      "flavor": "Il suo possessore è cieco, il suo contenuto è ignoto."
+    },
+    "SLAVERSCOLLAR": {
+      "name": "Collare dello Schiavista",
+      "description": "Nei combattimenti contro Boss ed Elite ottieni [E] ad inizio turno.",
+      "flavor": "Catene arrugginite e terribili."
+    },
+    "AKABEKO": {
+      "name": "Mucca Rossa",
+      "description": "Il tuo primo Attacco in ogni combattimento infligge 8 danni aggiuntivi.",
+      "flavor": "\"Muuu~\""
+    },
+    "YANG": {
+      "name": "Dualità",
+      "description": "Quando giochi un Attacco, ottieni 1 di Destrezza temporanea.",
+      "flavor": "\"E il sole fu spento per sempre, sparito, come dietro ad un sipario appena calato.\" - Zoroth"
+    },
+    "CLOAKCLASP": {
+      "name": "Fibbia da Mantello",
+      "description": "A fine turno, Blocchi  1 per ogni carta nella Mano.",
+      "flavor": "Un design semplice, ma resistente."
+    },
+    "MELANGE": {
+      "name": "Mélange",
+      "description": "Quando mescoli la pila, Profetizzi 3.",
+      "flavor": "Misteriosa sabbia di origini ignote. Odora di cannella."
+    },
+    "YIN": {
+      "name": "DEPRECATED Yin",
+      "description": "Quando giochi un'Abilità, ricevi 1 di Forza temporanea.",
+      "flavor": "Non può esserci luce senza l'oscurità. Giusto?"
+    },
+    "INKBOTTLE": {
+      "name": "Boccetta d'Inchiostro",
+      "description": "Quando giochi 10 carte, pesca 1 carta.",
+      "flavor": "Sembra che quando finisce l'inchiostro si ricarichi da sola, con un colore diverso."
+    },
+    "TUNGSTENROD": {
+      "name": "Barra di Tungsteno",
+      "description": "Quando perderesti PV ne perdi 1 in meno.",
+      "flavor": "È veramente molto pesante."
+    },
+    "HOLYWATER": {
+      "name": "Acqua Santa",
+      "description": "Ad inizio combattimento, aggiungi 3 Miracoli alla Mano.",
+      "flavor": "Raccolta prima della creazione della Guglia."
+    },
+    "PUREWATER": {
+      "name": "Fonte Limpida",
+      "description": "Ad inizio combattimento, aggiungi un Miracolo alla tua mano.",
+      "flavor": "Filtrata attraversio sabbia sottile, priva di impurità."
+    },
+    "HORNCLEAT": {
+      "name": "Bitta",
+      "description": "All'inizio del secondo turno, Blocchi 14 .",
+      "flavor": "Piacevole da maneggiare. A cosa serviva?"
+    },
+    "CAPTAINSWHEEL": {
+      "name": "Timone",
+      "description": "All'inizio del terzo turno, Blocchi 18 .",
+      "flavor": "In legno e delicatamente ornato. Vi è inciso un nome, ma la lingua non ti è nota."
+    },
+    "GOLDENEYE": {
+      "name": "Occhio d'Oro",
+      "description": "Quando Profetizzi, Profetizzi 2 carte in più.",
+      "flavor": "Scruta nella mente di chi ti è vicino, prevedendo le loro prossime mosse."
+    },
+    "DAMARU": {
+      "name": "Damaru",
+      "description": "A inizio turno, ottieni 1 Mantra.",
+      "flavor": "Il suono del tamburo mantiene sveglia la tua mente, rivelando la via."
+    }
+  },
+  "powers": {
+    "ACCURACY": {
+      "name": "Precisione",
+      "description": "I Pugnali infliggono X danni in più."
+    },
+    "AFTER_IMAGE": {
+      "name": "Immagine Residua",
+      "description": "Ogni volta che giochi una carta, Blocchi X ."
+    },
+    "AMPLIFY": {
+      "name": "Amplifica",
+      "description": "Durante questo turno, gioca il tuo prossimo Potere due volte.XDurante questo turno, gioca i tuoi prossimi X Poteri due volte."
+    },
+    "ANGER": {
+      "name": "Furente",
+      "description": "Ogni volta che giochi una Abilità, ottiene X Forza."
+    },
+    "ANGRY": {
+      "name": "Arrabbiato",
+      "description": "XQuando riceve danno da Attacco, ottiene X Forza."
+    },
+    "ARTIFACT": {
+      "name": "Artefatto",
+      "description": "Nega X debuff.X debuff."
+    },
+    "ATTACK_BURN": {
+      "name": "Brucia Attacchi",
+      "description": "Per X turno, quando giochi un Attacco lo Esaurisci.XPer i prossimi X turni, quando giochi un Attacco lo Esaurisci."
+    },
+    "BARRICADE": {
+      "name": "Barricata",
+      "description": "Il Blocco non viene rimosso ad inizio turno.XIl Blocco non viene rimosso ad inizio turno."
+    },
+    "BERSERK": {
+      "name": "Berserk",
+      "description": "Ottieni Xad inizio turno."
+    },
+    "BIAS": {
+      "name": "Bias",
+      "description": "Ad inizio turno perdi X Focus."
+    },
+    "BLUR": {
+      "name": "Sfocato",
+      "description": "Il Blocco non viene rimosso all'inizio del tuo prossimo turno.XIl Blocco non viene rimosso all'inizio dei tuoi prossimi X turni."
+    },
+    "BRUTALITY": {
+      "name": "Brutale",
+      "description": "Ad inizio turno perdi X PV e peschi X carta.XAd inizio turno perdi X PV e peschi X carte."
+    },
+    "BUFFER": {
+      "name": "Buffer",
+      "description": "Previeni la prossima perdita di PV.XPrevieni le prossime X perdite di PV."
+    },
+    "BULLET_TIME": {
+      "name": "Tempo Dilatato",
+      "description": "Il costo d'energia delle carte nella Mano è 0."
+    },
+    "BURST": {
+      "name": "Guizzo",
+      "description": "Per questo turno, gioca la prossima Abilità due volte.XPer questo turno, gioca le prossime X Abilità due volte."
+    },
+    "CHOKED": {
+      "name": "Soffocato",
+      "description": "Perde X PV ogni volta che giochi una carta questo turno."
+    },
+    "COMBUST": {
+      "name": "Combustione",
+      "description": "A fine del tuo turno perdi X PV ed infliggi X danni a TUTTI i nemici."
+    },
+    "CONFUSION": {
+      "name": "Confuso",
+      "description": "Ogni volta che peschi una carta, il suo costo cambia in maniera casuale."
+    },
+    "CONSERVE": {
+      "name": "Riserva",
+      "description": "L'Energia viene conservata per il prossimo turno.XL'Energia viene conservata per i prossimi X turni."
+    },
+    "CONSTRICTED": {
+      "name": "Costretto",
+      "description": "A fine turno ricevi X danni."
+    },
+    "CORRUPTION": {
+      "name": "Corruzione",
+      "description": "Le Abilità costano 0. Ogni volta che giochi una Abilità, Esauriscila.XOgni volta che giochi una Abilità, Esauriscila."
+    },
+    "CREATIVE_AI": {
+      "name": "IA Creativa",
+      "description": "Ad inizio turno aggiungi X carta Potere casuale alla Mano.X carte Potere casuale alla Mano."
+    },
+    "CURIOSITY": {
+      "name": "Curiosità",
+      "description": "Ogni volta che giochi un Potere guadagna X Forza."
+    },
+    "CURL_UP": {
+      "name": "A Riccio",
+      "description": "Quando il primo Attacco lo danneggia, si appallottola e Blocca X . (Una volta per combattimento)"
+    },
+    "DANCE_PUPPET": {
+      "name": "Dance Puppet",
+      "description": "Whenever you play a non-Skill card, take X damage. (Card type changes each turn)XWhenever you play a non-Attack card, take X+1 Dance Puppet"
+    },
+    "DARK_EMBRACE": {
+      "name": "Abbraccio Oscuro",
+      "description": "Ogni volta che una carta viene Esaurita, peschi 1 cartaXOgni volta che una carta viene Esaurita, peschi X carte."
+    },
+    "DEMON_FORM": {
+      "name": "Forma Demoniaca",
+      "description": "Ad inizio turno ottieni X Forza."
+    },
+    "DEXLOSS": {
+      "name": "Destrezza in Calo",
+      "description": "A fine turno perdi X Destrezza."
+    },
+    "DEXTERITY": {
+      "name": "Destrezza",
+      "description": "Aumenta il Blocco ottenuto dalle carte di XRiduce il Blocco ottenuto dalle carte di X."
+    },
+    "DOUBLE_DAMAGE": {
+      "name": "Danno Doppio",
+      "description": "Gli Attacchi lanciati infliggeranno danno doppio per X turno.X turni."
+    },
+    "DOUBLE_TAP": {
+      "name": "Doppio Attacco",
+      "description": "Giocherai il tuo prossimo Attacco due volte in questo turno.XQuesto turno, gioca i tuoi prossimi X Attacchi due volte."
+    },
+    "DRAW": {
+      "name": "Peschi",
+      "description": "Peschi X carta in più ad inizio turno.X carta in meno ad inizio turno.X carte in più ad inizio turno.X carte in meno ad inizio turno."
+    },
+    "DRAW_CARD": {
+      "name": "Più Carte",
+      "description": "Peschi X carte il prossimo turno.X carta il prossimo turno."
+    },
+    "DRAW_DOWN": {
+      "name": "Meno Carte",
+      "description": "Pesca X carta in meno il prossimo turno.X carte in meno il prossimo turno."
+    },
+    "DRAW_REDUCTION": {
+      "name": "Pesca Ridotta",
+      "description": "Peschi 1 carta in meno il prossimo turno.XPeschi 1 carta in meno per X turni."
+    },
+    "ECHO_FORM": {
+      "name": "Forma Ricorsiva",
+      "description": "La prima carta che peschi ogni turno viene giocata due volte.XLe prime X carte che peschi ogni turno vengono giocate due volte."
+    },
+    "ELECTRO": {
+      "name": "Elettro",
+      "description": "I Fulmini colpiscono TUTTI i nemici.XX"
+    },
+    "ENERGIZED": {
+      "name": "Supercarica",
+      "description": "Ottieni X [G] in più il prossimo turno.X [G] in più il prossimo turno.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENERGIZEDBLUE": {
+      "name": "Supercarica",
+      "description": "Ottieni X [B] in più il prossimo turno.X [B] in più il prossimo turno.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENTANGLED": {
+      "name": "Intrappolato",
+      "description": "Non puoi giocare Attacchi per un turno."
+    },
+    "ENVENOM": {
+      "name": "Velenoso",
+      "description": "Quando infliggi danno da Attacco non bloccato applichi X Veleno."
+    },
+    "EVOLVE": {
+      "name": "Evoluzione",
+      "description": "Ogni volta che peschi uno Stato, peschi una carta.XOgni volta che peschi uno Stato, peschi X carte."
+    },
+    "EXPLOSIVE": {
+      "name": "Esplosivo",
+      "description": "In X turni, esplode infliggendo X danni.XNel suo turno, esplode infliggendo"
+    },
+    "EXTRA_CARDS": {
+      "name": "Carte Extra",
+      "description": "Peschi 1 carta in più il prossimo turno.XPeschi X carte in più il prossimo turno."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Nessun Dolore",
+      "description": "Ogni volta che una carta viene Esaurita,  Blocchi X ."
+    },
+    "FIRE_BREATHING": {
+      "name": "Sputafuoco",
+      "description": "Quando peschi uno Stato o Maledizione infliggi X danni a TUTTI i nemici."
+    },
+    "FLAME_BARRIER": {
+      "name": "Barriera di Fuoco",
+      "description": "Quando ricevi danni da Attacco, infliggi X danni all'attaccante."
+    },
+    "FLEX": {
+      "name": "Flessione",
+      "description": "A fine turno perdi X Forza."
+    },
+    "FLIGHT": {
+      "name": "In Volo",
+      "description": "Riduce il danno ricevuto da Attacchi del 50%. Si annulla se riceve danno da Attacco X volte."
+    },
+    "FOCUS": {
+      "name": "Focus",
+      "description": "Aumenta l'efficacia dei Globi di XDiminusci l'efficacia dei Globi di X."
+    },
+    "FRAIL": {
+      "name": "Fragile",
+      "description": "Blocchi il 25% in meno tramite carte per X turno.X turni."
+    },
+    "GAMBIT": {
+      "name": "Gambit",
+      "description": "After X turn, gain X turns, gain X [B] ."
+    },
+    "GROWTHPOWER": {
+      "name": "Crescita",
+      "description": "Dopo aver agito guadagna X Forza."
+    },
+    "HEATSINK": {
+      "name": "Dissipatore",
+      "description": "Ogni volta che giochi un Potere, pesca X carta.X carte."
+    },
+    "HELLO": {
+      "name": "Buongiorno!",
+      "description": "Ad inizio turno aggiungi X carte Comuni casuali alla Mano.X carta Comune casuale alla Mano."
+    },
+    "HEX": {
+      "name": "Maleficio",
+      "description": "Quando giochi una carta non-Attacco, mescola X Disorientato nella pila."
+    },
+    "HIDE": {
+      "name": "Nascosto",
+      "description": "Non puoi ricevere danno fino al tuo prossimo turno.XNon puoi ricevere danno per X turni."
+    },
+    "INFINITE_BLADES": {
+      "name": "Lame Infinite",
+      "description": "Ad inizio turno aggiungi X Pugnali alla Mano.X Pugnale alla Mano."
+    },
+    "INTANGIBLE": {
+      "name": "Intangibile",
+      "description": "TUTTO il danno e i PV persi vengono ridotti a 1 per questo turno. Intangibile viene riapplicato ogni altro turno."
+    },
+    "INVINCIBLE": {
+      "name": "Invincibile",
+      "description": "Non può perdere più di X PV questo turno.XInvulnerabile per questo turno."
+    },
+    "BEATOFDEATH": {
+      "name": "Palpito Mortale",
+      "description": "Quando giochi una carta, ricevi X danni."
+    },
+    "INTANGIBLEPLAYER": {
+      "name": "Intangibile",
+      "description": "TUTTO il danno da attacco e la perdita di PV vengono ridotti a 1."
+    },
+    "INVERTED": {
+      "name": "Invertito",
+      "description": "Immune al danno. Quando Blocchi, perde lo stesso numero di PV."
+    },
+    "JUGGERNAUT": {
+      "name": "Colosso",
+      "description": "Ogni volta che Blocchi, infliggi X danni ad un nemico casuale."
+    },
+    "KNOWLEDGE": {
+      "name": "Conoscenza",
+      "description": "Ogni volta che giochi un Potere, peschi X carte."
+    },
+    "LIFE_LINK": {
+      "name": "Legame Vitale",
+      "description": "Se altri nemici sono ancora vivi, rinasce in 2 turni con il 50% di PV."
+    },
+    "LOCKON": {
+      "name": "Nel Mirino",
+      "description": "Prende X% danni aggiuntivi dai Globi per X turno.X turni."
+    },
+    "LOOP": {
+      "name": "Ciclo",
+      "description": "Ad inizio turno usi l'abilità passiva del tuo primo Globo.XAd inizio turno usi l'abilità passiva del tuo primo Globo X volte."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Auto-Apprendimento",
+      "description": "Pesca X carta in più ad inizio turno.X carte in più ad inizio turno."
+    },
+    "MAGNETISM": {
+      "name": "Magnetismo",
+      "description": "Ad inizio turno aggiungi %s carta incolore casuale alla Mano.XAd inizio turno aggiungi %s carte incolori casuali alla Mano."
+    },
+    "MALLEABLE": {
+      "name": "Malleabile",
+      "description": "Blocca X quando riceve danno da Attacchi e X si attiva, aumentando il Blocco ottenuto. Questo valore torna X ad inizio turno."
+    },
+    "MAYHEM": {
+      "name": "Caos",
+      "description": "Ad inizio turno, giochi la prima carta della pila.XAd inizio turno, giochi le prime X carte della tua pila."
+    },
+    "METALLICIZE": {
+      "name": "Metallizzato",
+      "description": "A fine turno Blocca X .XA fine turno Blocca X ."
+    },
+    "MINION": {
+      "name": "Seguace",
+      "description": "I Seguaci abbandonano il combattimento se il loro leader muore."
+    },
+    "MODE_SHIFT": {
+      "name": "Cambio di Modalità",
+      "description": "Dopo aver ricevuto X danni, passa in modalità difensiva."
+    },
+    "NEXT_TURN_BLOCK": {
+      "name": "Blocco Futuro",
+      "description": "Blocca X all'inizio del tuo prossimo turno."
+    },
+    "NIGHT_TERROR": {
+      "name": "Incubo",
+      "description": "Ad inizio turno aggiungi X alla Mano."
+    },
+    "NO_ATTACK": {
+      "name": "Nessun Attacco",
+      "description": "Non puoi giocare Attacchi questo turno."
+    },
+    "NO_DRAW": {
+      "name": "Non Peschi",
+      "description": "Non puoi pescare fino al prossimo turno."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Miasma",
+      "description": "Ad inizio turno applichi X Veleno a TUTTI i nemici."
+    },
+    "NULLIFY_ATTACK": {
+      "name": "Annulla Attacco",
+      "description": "Blocca completamente un #Attacco ogni turno."
+    },
+    "PAINFUL_STABS": {
+      "name": "Coltellate Dolorose",
+      "description": "Ogni volta che ricevi danno da questo nemico, aggiungi una Ferita nella pila degli scarti."
+    },
+    "PANACHE": {
+      "name": "Portamento",
+      "description": "Se giochi X carta in più questo turno, infliggi X danni a TUTTI i nemici.X carte in più questo turno, infliggi"
+    },
+    "PEN_NIB": {
+      "name": "Pennino",
+      "description": "Il tuo prossimo Attacco infligge danno doppio."
+    },
+    "PHANTASMAL": {
+      "name": "Etereo",
+      "description": "Infliggi Doppio Danno il prossimo turno.XInfliggi Doppio Danno per i prossimi X turni."
+    },
+    "PLATED_ARMOR": {
+      "name": "Armatura a Piastre",
+      "description": "Blocca X a fine turno. Ogni attacco che ti fa perdere PV riduce Armatura a Piastre di 1.XBlocca X a fine turno. Gli attacchi che gli fanno perdere PV riducono Armatura a Piastre di 1."
+    },
+    "POISON": {
+      "name": "Veleno",
+      "description": "Ad inizio turno perdi X PV, ed il Veleno viene ridotto di 1.XPrima di agire perde"
+    },
+    "PRIME": {
+      "name": "Innesca",
+      "description": "Ogni volta che Crei un Globo, peschi X carta.X carte."
+    },
+    "PRIMITIVE": {
+      "name": "Primitivo",
+      "description": "Ogni volta che giochi una carta Comune, peschi X carta.X carte."
+    },
+    "RAGE": {
+      "name": "Collera",
+      "description": "Ogni volta che giochi un Attacco questo turno, Blocchi X ."
+    },
+    "REBOUND": {
+      "name": "Recupero",
+      "description": "La prossima carta che giochi questo turno viene messa in cima alla pila.XLe prossime X carte che giochi questo turno vengono messe in cima alla pila."
+    },
+    "REDUCE_DAMAGE": {
+      "name": "Riduzione Danni",
+      "description": "Riduce i danni ricevuti di"
+    },
+    "REGENERATE": {
+      "name": "Rigenera",
+      "description": "Si cura di X PV dopo aver agito."
+    },
+    "REGENERATION": {
+      "name": "Rigenerazione",
+      "description": "A fine turno ti Curi di X PV, poi questo valore si riduce di 1.X"
+    },
+    "REPAIR": {
+      "name": "Ripara",
+      "description": "Alla fine del combattimento ti curi di X PV."
+    },
+    "REPULSE": {
+      "name": "Dissuasore",
+      "description": "Ogni volta che X riceve danno da attacchi, mette una Ferita nella Mano."
+    },
+    "RETAIN_CARDS": {
+      "name": "Conserva Carte",
+      "description": "A fine turno puoi conservare X carta.X carte."
+    },
+    "RETAIN_HAND": {
+      "name": "Conserva Mano",
+      "description": "A fine turno non scarterai la Mano per X turni.XA fine turno non scartare la Mano."
+    },
+    "RIPOSTE": {
+      "name": "Risposta",
+      "description": "Una volta per turno ti infligge X danni quando giochi un Attacco."
+    },
+    "RITUAL": {
+      "name": "Rituale",
+      "description": "Dopo aver agito ottiene X Forza.XA fine turno, ottieni"
+    },
+    "RUPTURE": {
+      "name": "Squarcio",
+      "description": "Quando una carta ti fa perdere PV, ottieni X Forza."
+    },
+    "SADISTIC": {
+      "name": "Sadico",
+      "description": "Ogni volta che applichi un Debuff ad un nemico, infliggi X danni."
+    },
+    "SERPENTINE": {
+      "name": "Serpentino",
+      "description": "Immune alle Pozioni."
+    },
+    "SHACKLED": {
+      "name": "Incatenato",
+      "description": "Riacquista X Forza dopo aver agito."
+    },
+    "SHARP_HIDE": {
+      "name": "Punte",
+      "description": "Quando viene colpito da un Attacco, fa X danni all'attacante."
+    },
+    "SHRIEK_FROM_BEYOND": {
+      "name": "Shriek From Beyond",
+      "description": "Whenever you play an Attack, discard a random card."
+    },
+    "SKILL_BURN": {
+      "name": "Brucia Abilità",
+      "description": "Per X turno, ogni volta che giochi una Abilità, Esauriscila.XPer i prossimi X turni, ogni volta che giochi una Abilità, Esauriscila."
+    },
+    "SLOW": {
+      "name": "Lento",
+      "description": "Per ogni carta giocata questo turno, X riceve il 10% di danni in più dagli Attacchi.X (Riceve il X% danni in più)"
+    },
+    "SPLIT": {
+      "name": "Scissione",
+      "description": "Quando i suoi PV sono al 50% o meno, si divide in 2 melme più piccole con PV pari a quelli di X."
+    },
+    "SPORE_CLOUD": {
+      "name": "Nube di Spore",
+      "description": "Quando muore ti applica Vulnerabile per X turni."
+    },
+    "STASIS": {
+      "name": "Stasi",
+      "description": "Quando muore, X viene restituita alla Mano."
+    },
+    "STATICDISCHARGE": {
+      "name": "Elettrostatica",
+      "description": "Quando ricevi danno da un Attacco, Crei X Fulmine."
+    },
+    "STORM": {
+      "name": "Tempesta",
+      "description": "Ogni volta che giochi un Potere, Crei  X Fulmine."
+    },
+    "STRENGTH": {
+      "name": "Forza",
+      "description": "Aumenta il danno degli attacchi di XRiduce il danno degli attacchi di X."
+    },
+    "THEBOMB": {
+      "name": "La Bomba",
+      "description": "Fra %1$s turni, infliggi %2$s danno a TUTTI i nemici.XA fine turno, infliggi %1$s danno a TUTTI i nemici."
+    },
+    "THIEVERY": {
+      "name": "Furto",
+      "description": "ruba X Oro ogni volta che attacca."
+    },
+    "THORNS": {
+      "name": "Spine",
+      "description": "Quando riceve danno da Attacchi, infligge X danni indietro."
+    },
+    "THOUSAND_CUTS": {
+      "name": "Mille Tagli",
+      "description": "Ogni volta che giochi una carta, infliggi X danni a TUTTI i nemici."
+    },
+    "TIME_WARP": {
+      "name": "Distorsione Temporale",
+      "description": "Ogni volta che giochi X carte, il tuo turno finisce e Mangiatempo ottiene X Forza."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Ferri del Mestiere",
+      "description": "Ad inizio turno, peschi X carta e scarta X carta.X carte e scarta X carte."
+    },
+    "UNAWAKENED": {
+      "name": "Addormentato",
+      "description": "Questo nemico non si è ancora svegliato..."
+    },
+    "UNSTABLE": {
+      "name": "Instabile",
+      "description": "Infiggli abbastanza danni per sbilanciarlo."
+    },
+    "VENOMOLOGY": {
+      "name": "Venomology",
+      "description": "Poison grows stronger by X instead of lowering each turn."
+    },
+    "VULNERABLE": {
+      "name": "Vulnerabile",
+      "description": "Gli Attacchi ricevuti fanno il X% di danni in più per X turno.X turni."
+    },
+    "WEAKENED": {
+      "name": "Debole",
+      "description": "Gli Attacchi infliggono il X% di danno in meno per X turno.X turni."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Forma Spettrale",
+      "description": "A fine turno perdi  X Destrezza."
+    },
+    "EQUILIBRIUM": {
+      "name": "Equilibrio",
+      "description": "Conservi la Mano per il prossimo turno.XConservi la Mano per i prossimi X turni."
+    },
+    "FADING": {
+      "name": "Flebile",
+      "description": "Muore in X turni.XMuore questo turno."
+    },
+    "SHIFTING": {
+      "name": "Instabile",
+      "description": "X Ogni volta che riceve danno, perde pari Forza fino a fine turno."
+    },
+    "TIMEMAZEPOWER": {
+      "name": "Labirinto Temporale",
+      "description": "Dopo che giochi X carte, il tuo turno termina."
+    },
+    "NOBLOCKPOWER": {
+      "name": "Niente Blocco",
+      "description": "Non ottieni Blocco da carte."
+    },
+    "CORPSEEXPLOSIONPOWER": {
+      "name": "Cadavere Bomba",
+      "description": "Quando questo nemico muore, infliggi danno pari ai suoi PV massimi a TUTTI i nemici.XQuando questo nemico muore, infliggi danno pari a Xvolte i suoi PV massimi."
+    },
+    "SURROUNDED": {
+      "name": "Circondato",
+      "description": "Riceve il 50% di danno in più se viene colpito alle spalle. Puoi bersagliare un nemico con carte e pozioni per girarti verso di lui."
+    },
+    "COMPULSIVE": {
+      "name": "Reattivo",
+      "description": "Dopo aver ricevuto danni da attacco cambia il proprio Intento."
+    },
+    "BACKATTACK": {
+      "name": "Furtivo",
+      "description": "Infligge il 50% di danni in più se ti colpisce alle spalle."
+    },
+    "FREEATTACKPOWER": {
+      "name": "Attacco Gratuito",
+      "description": "Il prossimo Attacco che giochi non usa EnergiaXI prossimi X Attacchi che giochi non usano Energia."
+    },
+    "DUPLICATIONPOWER": {
+      "name": "Duplicazione",
+      "description": "La prossima carta che giochi questo turno si attiva due volte.XLe prossime X carte che giochi questo turno si attivano due volta."
+    },
+    "NOSKILLS": {
+      "name": "Senza Abilità",
+      "description": "Non puoi giocare Abilità questo turno."
+    },
+    "MASTERY": {
+      "name": "DEPRECATED Mastery",
+      "description": "Whenever you attempt to switch Stances to your current Stance, gain X [B]."
+    },
+    "MASTERREALITYPOWER": {
+      "name": "Supremazia",
+      "description": "Le carte generate in combattimento sono Potenziate.XdeprecatedXdeprecatedXdeprecated"
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Retribution",
+      "description": "Whenever you lose HP, gain X Vigor."
+    },
+    "ESTABLISHMENTPOWER": {
+      "name": "Prestabilito",
+      "description": "Quando Conservi una carta, il suo costo si riduce di X."
+    },
+    "CONTROLLED": {
+      "name": "Mente d'Acciaio",
+      "description": "Quando cambi Aspetto Blocchi X ."
+    },
+    "FLOWPOWER": {
+      "name": "DEPRECATED FlowPower",
+      "description": "When you play an Attack, gain X temporary Strength. When you play a Skill, gain ,X temporary Dexterity."
+    },
+    "OMEGAPOWER": {
+      "name": "Omega",
+      "description": "A fine Turno, infliggi X danno a TUTTI i nemici."
+    },
+    "NIRVANA": {
+      "name": "Nirvana",
+      "description": "Quando profetizzi, Blocchi X ."
+    },
+    "WIREHEADINGPOWER": {
+      "name": "Chiaroveggenza",
+      "description": "A inizio turno, Profetizza X."
+    },
+    "BATTLEHYMN": {
+      "name": "Inno di Battaglia",
+      "description": "A inizio turno, aggiungi X Punizioni alla Mano.X Punizione alla Mano."
+    },
+    "GROUNDED": {
+      "name": "DEPRECATED Grounded",
+      "description": "Whenever you play a Skill, enter Calm."
+    },
+    "MANTRA": {
+      "name": "Mantra",
+      "description": "Quando ottieni X Mantra, diventa Divino."
+    },
+    "STRIKEUP": {
+      "name": "Colpo Potente",
+      "description": "Le carte contenenti Colpo infliggono X danni aggiuntivi."
+    },
+    "FREETOPLAYPOWER": {
+      "name": "DEPRECATED Joy",
+      "description": "Ignore energy costs on the next card you play this turn.XIgnore energy costs on the next X cards you play this turn."
+    },
+    "ADAPTATION": {
+      "name": "Alla Carica",
+      "description": "Quando entri in Furia, peschi X carta.X carte."
+    },
+    "CANNOTCHANGESTANCEPOWER": {
+      "name": "Aspetto Bloccato",
+      "description": "Non puoi cambiare Aspetto questo turno."
+    },
+    "VAULT": {
+      "name": "Valico",
+      "description": "Riceve X danni all'inizio del tuo prossimo turno."
+    },
+    "BLOCKRETURNPOWER": {
+      "name": "Blocco Ricorrente",
+      "description": "Quando lo attacchi, Blocchi X ."
+    },
+    "HOTHOT": {
+      "name": "DEPRECATED Hot hot",
+      "description": "While you are in Wrath, deal X damage back whenever you receive attack damage."
+    },
+    "ANGELFORM": {
+      "name": "Desiderio",
+      "description": "A fine turno ottieni X Armatura a Piastre."
+    },
+    "EMOTIONALTURMOILPOWER": {
+      "name": "DEPRECATED Emotional Turmoil",
+      "description": "At the start of your turn, enter a new random basic stance."
+    },
+    "ALWAYSMAD": {
+      "name": "DEPRECATED Always Mad",
+      "description": "No longer receive double damage while in Wrath."
+    },
+    "COLLECT": {
+      "name": "Raccoglimento",
+      "description": "All'inizio del prossimo turno, aggiungi un Miracolo+ alla Mano.XAll'inizio dei prossimi X turni, aggiungi un Miracolo+ alla Mano."
+    },
+    "CONDENSE": {
+      "name": "DEPRECATED Condense",
+      "description": "You cannot take more than X from any attack."
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Serenity",
+      "description": "While you are in Calm, HP loss is reduced by"
+    },
+    "ENDTURNDEATH": {
+      "name": "Blasfemia",
+      "description": "Ad inizio turno, muori."
+    },
+    "VIGOR": {
+      "name": "Vigore",
+      "description": "Il tuo prossimo Attacco infligge X danni aggiuntivi."
+    },
+    "DEVOTIONPOWER": {
+      "name": "Devozione",
+      "description": "Ad inizio turno, ottieni X Mantra."
+    },
+    "DEVAFORM": {
+      "name": "Deva",
+      "description": "Ad inizio turno, ottieni [W] XAd inizio turno, ottieni [W] X volte. XAumenta di X.XTRANSLATE NOTE: Ad inizio turno, ottieni [W] 2 volte. Aumenta di 1."
+    },
+    "WRATHNEXTTURNPOWER": {
+      "name": "Simmering Rage",
+      "description": "Enter Wrath at the start of your turn."
+    },
+    "OMNISCIENCEPOWER": {
+      "name": "Onniscienza",
+      "description": "DEPRECATEDXDEPRECATED"
+    },
+    "WAVEOFTHEHANDPOWER": {
+      "name": "Prestigio",
+      "description": "Quando Blocchi, applichi X Debole a TUTTI i nemici."
+    },
+    "WAVEOFTHEHANDPOWER2": {
+      "name": "Prestigio2",
+      "description": "Quando cambi Aspetto, applichi X Debole e Vulnerabile a TUTTI i nemici."
+    },
+    "ENERGYDOWNPOWER": {
+      "name": "digiuno",
+      "description": "A inizio turno, perdi X"
+    },
+    "DISCIPLINEPOWER": {
+      "name": "Autocontrollo",
+      "description": "Se a fine turno hai [W] non spesa, peschi altrettante carte in più il turno seguente."
+    },
+    "FLICKPOWER": {
+      "name": "DEPRECATED Flick",
+      "description": "When this enemy gets Flick X2 more times, it receives X1 more time, it receives X damage."
+    },
+    "PATHTOVICTORYPOWER": {
+      "name": "Marchio",
+      "description": "Quando giochi Punto di Pressione, perde X PV."
+    },
+    "LIKEWATERPOWER": {
+      "name": "Forma Fluida",
+      "description": "Se a Fine turno sei in Quiete, ottieni X Blocco."
+    },
+    "STUDY": {
+      "name": "Studio",
+      "description": "A fine turno, mischia X Visione nella pila.X Visioni nella pila."
+    }
+  },
+  "potions": {
+    "ANCIENT_POTION": {
+      "name": "Pozione Antica",
+      "description": "Ottieni 1 Artefatto."
+    },
+    "ATTACKPOTION": {
+      "name": "Pozione d'Attacco",
+      "description": "Scegli 1 fra 3 Attacchi casuali da aggiungere alla Mano. Costa 0 per questo turno1Scegli 1 fra 3 Attacchi casuali e aggiungine 2 alla Mano. Costano 0 per questo turno"
+    },
+    "BLOCK_POTION": {
+      "name": "Blocco Istantaneo",
+      "description": "Blocca 12 ."
+    },
+    "BLOODPOTION": {
+      "name": "Essenza di Sangue",
+      "description": "Ti curi del 20% dei tuoi PV massimi."
+    },
+    "DEXTERITY_POTION": {
+      "name": "Destrezza Liquida",
+      "description": "Ottieni 2 Destrezza."
+    },
+    "ELIXIR": {
+      "name": "Elisir",
+      "description": "Esaurisci le carte Stato e Maledizione dalla Mano.Non ha avuto alcun effetto..."
+    },
+    "ENERGY_POTION": {
+      "name": "Pozione Energetica",
+      "description": "Ottieni 2 Energia."
+    },
+    "ENTROPICBREW": {
+      "name": "Bevanda Entropica",
+      "description": "Riempi tutti i tuoi spazi per Pozioni con Pozioni casuali."
+    },
+    "ESSENCEOFSTEEL": {
+      "name": "Essenza d'Acciaio",
+      "description": "Guadagni 4 Armatura a Piastre."
+    },
+    "EXPLOSIVE_POTION": {
+      "name": "Pozione Esplosiva",
+      "description": "Infliggi 10 danni a TUTTI i nemici."
+    },
+    "FAIRYPOTION": {
+      "name": "Fata Imbottigliata",
+      "description": "Quando moriresti, invece scarti questa pozione e ti curi del .30% dei tuoi PV massimi."
+    },
+    "FEARPOTION": {
+      "name": "Paura Liquida",
+      "description": "Applichi 3 Vulnerabile."
+    },
+    "FIRE_POTION": {
+      "name": "Pozione Incendiaria",
+      "description": "Infliggi 20 danni."
+    },
+    "FOCUSPOTION": {
+      "name": "Concentrato di Focus",
+      "description": "Ottieni 2 Focus."
+    },
+    "FRUIT_JUICE": {
+      "name": "Succo di Frutta",
+      "description": "Guadagni 5 PV massimi."
+    },
+    "GAMBLERSBREW": {
+      "name": "Pozione d'Azzardo",
+      "description": "Scarti un numero qualsiasi di carte poi ne peschi altrettante."
+    },
+    "GHOSTINAJAR": {
+      "name": "Spettro in Barattolo",
+      "description": "Ottieni 1 Intangibile."
+    },
+    "HEALTH_POTION": {
+      "name": "Pozione Curativa",
+      "description": "DEPRECATEDDEPRECATED"
+    },
+    "LIQUIDBRONZE": {
+      "name": "Bronzo Liquido",
+      "description": "Guadagni 3 Spine."
+    },
+    "POISON_POTION": {
+      "name": "Pozione Velenosa",
+      "description": "Applichi 6 Veleno."
+    },
+    "POTION_SLOT": {
+      "name": "Pozioni",
+      "description": "Usa pozioni in combattimento per ottenere bonus od ostacolare nemici.0Pozioni"
+    },
+    "POWERPOTION": {
+      "name": "Pozione Potente",
+      "description": "Scegli 1 fra 3 Poteri casuali e aggiungilo alla Mano. Costa 0 per questo turno1Scegli 1 fra 3 Poteri casuali e aggiungine 2 alla Mano. Costano 0 per questo turno"
+    },
+    "REGEN_POTION": {
+      "name": "Pozione Rigenerante",
+      "description": "Ottieni 5 Rigenerazione."
+    },
+    "SKILLPOTION": {
+      "name": "Pozione Abile",
+      "description": "Scegli 1 fra 3 Abilità casuali e aggiungila alla Mano. Costa 0 per questo turno1Scegli 1 fra 3 Abilità casuali e aggiungine 2 alla Mano. Costano 0 per questo turno"
+    },
+    "SMOKEBOMB": {
+      "name": "Fumogeno",
+      "description": "Fuggi da un combattimento senza ricompense. Attenzione: non permette di scappare dai boss.0Sono circondato!"
+    },
+    "SNECKOOIL": {
+      "name": "Olio di Snecko",
+      "description": "Pesca 5 carte, il costo delle carte nella Mano diventa casuale.carta."
+    },
+    "SPEEDPOTION": {
+      "name": "Pozione Veloce",
+      "description": "Ottieni 5 Destrezza. A fine turno perdi  Destrezza."
+    },
+    "STEROIDPOTION": {
+      "name": "Steroidi Magici",
+      "description": "Ottieni 5 Forza. A fine turno perdi  Forza."
+    },
+    "STRENGTH_POTION": {
+      "name": "Forza Liquida",
+      "description": "Ottieni 2 Forza."
+    },
+    "SWIFT_POTION": {
+      "name": "Pozione Rapida",
+      "description": "3Peschi  carte."
+    },
+    "WEAK_POTION": {
+      "name": "Pozione Debilitante",
+      "description": "Applichi 3 Debole."
+    },
+    "DUPLICATIONPOTION": {
+      "name": "Pozione del Raddoppio",
+      "description": "Questo turno, la prossima carta viene giocata due volte.1Questo turno, le prossime due carte vengono giocate due volte."
+    },
+    "STANCEPOTION": {
+      "name": "Decotto dell'Aspetto",
+      "description": "Cambia Aspetto da Quiete a Furia o viceversa."
+    },
+    "ELIXIRPOTION": {
+      "name": "Elisir",
+      "description": "Esaurisci un numero qualunque di carte nella Mano."
+    },
+    "HEARTOFIRON": {
+      "name": "Cuore d'Acciaio",
+      "description": "Ottieni 6 Metallizzato."
+    },
+    "CUNNINGPOTION": {
+      "name": "Pozione Scaltra",
+      "description": "Aggiungi 3 Pugnali+ alla Mano."
+    },
+    "POTIONOFCAPACITY": {
+      "name": "Pozione Conduttiva",
+      "description": "Ottieni 2 spazio Globi."
+    },
+    "ESSENCEOFDARKNESS": {
+      "name": "Essenza Oscura",
+      "description": "Crea 1 Oscurità per ogni Spazio Globi."
+    },
+    "BOTTLEDMIRACLE": {
+      "name": "Miracoli in Bottiglia",
+      "description": "Aggiungi 2 Miracoli alla Mano."
+    },
+    "AMBROSIA": {
+      "name": "Ambrosia",
+      "description": "Entra in Aspetto Divino."
+    },
+    "CULTISTPOTION": {
+      "name": "Pozione del Cultista",
+      "description": "Ottieni 1 Rituale."
+    },
+    "DISTILLEDCHAOS": {
+      "name": "Caos Distillato",
+      "description": "Gioca le prime 3 carte della pila."
+    },
+    "LIQUIDMEMORIES": {
+      "name": "Memorie Liquide",
+      "description": "Scegli una carta fra gli scarti e aggiungila alla Mano. Costa 0 questo turno.1Scegli   carte fra gli scarti e aggiungile alla Mano. Costano 0 questo turno."
+    },
+    "COLORLESSPOTION": {
+      "name": "Pozione Incolore",
+      "description": "Scegli 1 fra 3 carte Incolori casuali da aggiungere alla Mano. Costa 0 questo turno.1Scegli 1 fra 3 carte Incolori casuali e aggiungine due copie alla Mano. Costano 0 questo turno."
+    },
+    "BLESSINGOFTHEFORGE": {
+      "name": "Benedizione della Forgia",
+      "description": "Potenzia tutte le carte in Mano per un combattimento."
+    }
+  },
+  "events": {
+    "MATCH_AND_KEEP": {
+      "name": "Abbina e Vinci!",
+      "description": "\" Dodici carte! Forma le coppie per riceverle! Cinque tentativi, nessuno bonus. \n Sei pronto? E andiamo!\"",
+      "choices": [
+        "[Continua]",
+        "[Prosegui]",
+        "[Gioca] Tentativi disponibili:"
+      ]
+    },
+    "FORGOTTEN_ALTAR": {
+      "name": "Altare Dimenticato",
+      "description": "Ti trovi di fronte all'altare di una divinità dimenticata. \n Sopra l'altare una statua femminile ornata riccamente tende le braccia. \n Ti chiama a lei, chiedendo sacricifio.",
+      "choices": []
+    },
+    "UPGRADE_SHRINE": {
+      "name": "Altare del Potere",
+      "description": "Davanti a te c'è un elaborato altare, dedicato ad un antico spirito.",
+      "choices": [
+        "[Prega] Potenzia una carta.",
+        "[Prosegui] Scegli una Carta da Potenziare."
+      ]
+    },
+    "BACK_TO_BASICS": {
+      "name": "Antiche Scritture",
+      "description": "Scalando la città, noti una parete coperta di rune degli Antichi. Mentre tenti di capire cosa gli strani simboli e glifi possano significare, questi iniziano a risplendere. \n Tutto d'un tratto, il messaggio diventa chiaro...",
+      "choices": [
+        "[Eleganza] Rimuovi una carta dal Mazzo.",
+        "[Semplicità] Potenzia tutti i Colpi ed i Difendi. Scegli una Carta da Rimuovere.",
+        "[Esci]"
+      ]
+    },
+    "MASKED_BANDITS": {
+      "name": "Banditi Mascherati",
+      "description": "Hehehe.. Grazie per l' Oro! \n Oh, amo l'Oro. È così bello. \n Brillano, brillano le monetine!",
+      "choices": [
+        "[Paga] Perdi TUTTO il tuo Oro.",
+        "[Combatti!]",
+        "[Continua]",
+        "[Esci]"
+      ]
+    },
+    "FALLING": {
+      "name": "Caduta",
+      "description": "Saltando fra un masso sospeso e l'altro, scivoli. \n \n Cadi.",
+      "choices": [
+        "[Continua] [Atterra] Perdi",
+        "[Bloccata] Richiede: Carta Abilità [Incanala] Perdi",
+        "[Bloccata] Richiede: Carta Potere [Colpisci] Perdi"
+      ]
+    },
+    "GHOSTS": {
+      "name": "Consiglio dei Fantasmi",
+      "description": "Mentre scali la Guglia, dai muri e dal terreno trasudano dense nubi di fumo nero. Lentamente, cominciano a condensarsi in tre figure mascherate, che ti parlano. \n \n \"Un altro fantoccio di Neow a quanto pare.\" \n \"CERTAMENTE! LE SUE BAMBOLE SONO SEMPRE ESILARANTI!\" \n \n Il terzo ti rivolge un gigantesco sorriso e si rivolge a te. \n \"Non ti curare di loro... vuoi accedere al nostro potere?\"",
+      "choices": [
+        "[Accetta] Ricevi 5 Spettro. Perdi PV massimi.",
+        "[Rifiuta]"
+      ]
+    },
+    "DESIGNER": {
+      "name": "Designer In-Spirato",
+      "description": "Sei di fronte a un negozio colorato con l'insegna \"I-SPIRAZIONE\" e ti avvicini per vedere cosa c'è dentro. \n \"No, non si può. Assolutamente. Non puoi entrare così!\" Un uomo vestito in maniera ridicola appare all'entrata per bloccarti.",
+      "choices": [
+        "[Modifiche] Perdi Oro. Potenzi una carta.",
+        "[Ripulisciti] Perdi Oro. Rimuovi una carta.",
+        "[Servizio Completo] Perdi Oro. Rimuovi una carta e ne potenzi una a caso.",
+        "[Pugno] Perdi PV."
+      ]
+    },
+    "DUPLICATOR": {
+      "name": "Duplicatore",
+      "description": "Ti trovi in presenza di un ornato altare, dedicato ad antichi dei.",
+      "choices": [
+        "[Prega] Duplica una carta nel Mazzo.",
+        "[Prosegui] Scegli una Carta da Duplicare."
+      ]
+    },
+    "FOUNTAIN_OF_CLEANSING": {
+      "name": "Fontana Divina",
+      "description": "Dalla fontana a muro l'acqua sgorga incessante e luminosa.",
+      "choices": [
+        "[Bevi] Rimuovi tutte le Maledizioni dal Mazzo.",
+        "[Prosegui]"
+      ]
+    },
+    "ACCURSED_BLACKSMITH": {
+      "name": "Forgia del Malaugurio",
+      "description": "Ti chini, mentre attraversi l'entrata di un capanno che contiene una specie di forgia. Gli attrezzi sono impolverati, ma nella fornace il fuoco ruggisce. Ti senti teso...",
+      "choices": [
+        "[Forgia] Potenzia una Carta nel Mazzo.",
+        "[Cerca] Ottieni una Reliquia. Vieni Maledetto - Dolore.",
+        "[Prosegui] Scegli una Carta da Potenziare"
+      ]
+    },
+    "MUSHROOMS": {
+      "name": "Funghi?",
+      "description": "Cedi al peculiare desiderio di nutrirti. Mentre divori un fungo dopo l'altro, inizi a sentirti inebriato e perdi i sensi. Quando ti svegli, ti senti molto strano. \n Vieni Curato del 25% dei tuoi PV, ma ora sei infetto.",
+      "choices": [
+        "[Calpesta] Irrita i Funghi.",
+        "[Mangia] ti Curi di PV. Vieni Maledetto - Parassita.",
+        "[Combatti]",
+        "[Esci]"
+      ]
+    },
+    "MINDBLOOM": {
+      "name": "Idee in Fiore",
+      "description": "Nel caos della Guglia i tuoi pensieri sembrano quasi farsi... Reali... \n \n Realtà e fantasia si confondono e le tue idee si manifestano, trasformandosi in mostri e ricchezza, assumendo fisicità. \n Hai la sensazione che tutto tornerà alla normalità in fretta. Che fare?",
+      "choices": [
+        "[Guerra!] Affronti un Boss del primo Atto. Ottieni una Reliquia Rara.",
+        "[Ricchezza!] Guadagni 999 Oro. Vieni maledetto - 2 Normalità.",
+        "[Potere!] Ti curi completamente. Vieni maledetto - Dubbio.",
+        "[Risveglio!] Potenzi tutte le tue Carte. Non puoi più curarti.",
+        "[Prosegui]"
+      ]
+    },
+    "GOLDEN_IDOL": {
+      "name": "Idolo Dorato",
+      "description": "Ti trovi di fronte un piccolo piedistallo sul quale risplende l'idolo dorato, osservandoti beffardo. Parrebbe valere molto oro. \n \n No, sicuramente non è una trappola!",
+      "choices": []
+    },
+    "DEAD_ADVENTURER": {
+      "name": "Il Cadavere",
+      "description": "Mentre perquisisci l'avventuriero vieni colto di sorpresa!",
+      "choices": [
+        "[Cerca] Cerca Bottino.",
+        "[Ignora]"
+      ]
+    },
+    "THE_CLERIC": {
+      "name": "Il Chierico",
+      "description": "Uno stravagante uomo blu dall'elmo dorato ti si avvicina con un ampio sorriso. \n \"Salve amico! Io Chierico! Serve aiuto?!\" urla la creatura.",
+      "choices": [
+        "[Cura] 35 Oro: ti Curi di PV.",
+        "[Purifica] Oro: Rimuovi una carta dal Mazzo",
+        "[Prosegui]"
+      ]
+    },
+    "COLOSSEUM": {
+      "name": "Il Colosseo",
+      "description": "Thwack!!! \n ... \n ... \n ... \n Sei svenuto...",
+      "choices": [
+        "[Prosegui]",
+        "[Combatti]",
+        "[CODARDIA] Fuggi.",
+        "[VITTORIA] Una grossa battaglia con ottime ricompense."
+      ]
+    },
+    "THE_MAUSOLEUM": {
+      "name": "Il Mausoleo",
+      "description": "Ti trovi a percorrere interminabili file di tombe, quando raggiungi un grande sarcofago tempestato di gemme, posto al centro di una stanza circolare. \n Non riesci a decifrare le incisioni che lo ricoprono, ma noti che una coltre di fumo nero trapela da sotto al coperchio.",
+      "choices": [
+        "[Scoperchia] Trova una Reliquia. %: Vieni Maledetto: Convulsioni.",
+        "[Prosegui]"
+      ]
+    },
+    "THE_MOAI_HEAD": {
+      "name": "Il Moai",
+      "description": "Incappi in qualcosa che sembra *davvero* fuori posto. Di fronte a te, una gigantesca testa di pietra sbuca fuori da un segmento di muro che non muta forma come il resto del paesaggio. \n La bocca spalancata della statua rivela grossi denti macchiati di sangue e i pittogrammi che ne ricoprono la superficie sembrano indicare come alcuni si gettassero nelle fauci della statua, venendone divorati. Chi parteciberebbe ad un simile rituale?",
+      "choices": [
+        "[Salta all'Interno] Curati del tutto. Perdi PV Massimi",
+        "[Offri: Idolo Dorato] Guadagni 333 Oro. Perdi l'Idolo Dorato."
+      ]
+    },
+    "NEST": {
+      "name": "Il Nido",
+      "description": "Una lunga fila di figure incappucciate entra in una cattedrale che sembra completamante ordinaria.",
+      "choices": [
+        "[Unisciti al Culto] Ricevi la Lama Rituale. Perdi PV.",
+        "[Distruggi e Arraffa] Guadagni"
+      ]
+    },
+    "LIARS_GAME": {
+      "name": "Il Ssssserpente",
+      "description": "In questa stanza c'è un enorme buco nel pavimento. Mentre ci passi vicino, un serpente gigantesco sbuca dall'apertura. \n \n \"Ho hooo! Ssalve, salve! E cosa abbiamo mai qui? Salve avventuriero, ora, ti farò una semplice domanda. \n Niente di meglio nella vita che potersi permettere tutto ciò che si desidera, \n Vero?\"",
+      "choices": [
+        "[Concorda] Guadagni Oro. Vieni Maledetto - Dubbio.",
+        "[Dissenti]"
+      ]
+    },
+    "SPIRE_HEART": {
+      "name": "Il cuore della Guglia",
+      "description": "Tu-tum... Tum-tum... Tu-tum... \n Una pulsante sensazione di profondo terrore riempe la stanza... \n Quindi è questo il cuore della Guglia? La fonte della Corruzione?",
+      "choices": [
+        "[Continua]"
+      ]
+    },
+    "SHINING_LIGHT": {
+      "name": "Intensa Luce",
+      "description": "Al centro di una stanza brilla una massa di luce. \n \n Il suo bagliore caldo e gli incantevoli arabeschi che proietta sui muri sono estremamente invitanti.",
+      "choices": [
+        "[Entra] Potenzia 2 carte casuali. Perdi PV.",
+        "[Prosegui]"
+      ]
+    },
+    "GOLDEN_SHRINE": {
+      "name": "L'Altare d'Oro",
+      "description": "Davanti a te c'è un altare intarsiato, dedicato ad un antico spirito.",
+      "choices": [
+        "[Prega] Guadagna Oro.",
+        "[Dissacra] Guadagna 275 Oro. Vieni Maledetto - Rimorso.",
+        "[Prosegui]"
+      ]
+    },
+    "BIG_FISH": {
+      "name": "L'Esca",
+      "description": "Nel bel mezzo di un lungo corridoio, una banana, una ciambella, ed una scatola galleggiano a mezz'aria. No... Osservando meglio noti che sono legati al soffitto. Ti sembra di sentire una risatina sommessa provenire dall'alto mentre ti avvicini. \n Che fare?",
+      "choices": [
+        "[Banana] ti Curi di PV.",
+        "[Ciambella] PV massimi + .",
+        "[Scatola] Ottieni una Reliquia. Vieni Maledetto - Rimorso.",
+        "[Esci]"
+      ]
+    },
+    "THE_LIBRARY": {
+      "name": "La Biblioteca",
+      "description": "Ti trovi davanti a quello che sembra un edificio abbandonato. \n Noti che per terra c'è una placca rimossa da un muro, che recita \n \"BIBLIOTECA\". \n All'interno dell'edificio trovi una quantità infinita di pergamene, \n libri e manoscritti. \n Prendi in mano un volume e ti siedi su una poltrona, concedendoti una pausa.",
+      "choices": [
+        "[Leggi] Scegli 1 carta fra 20 da aggiungere al Mazzo.",
+        "[Dormi] Ti Curi di PV."
+      ]
+    },
+    "THE_WOMAN_IN_BLUE": {
+      "name": "La Donna in Blu",
+      "description": "Dalle tenebre un braccio ti strattona dentro un piccolo negozio. Mentre i tuoi occhi si adattano al cambio di luce, intravedi una donna pallida con un abilito di colore acceso che ti indica un muro pieno di pozioni. \n \"Compra una pozione. Ora!\" intima.",
+      "choices": [
+        "[Compra 1 Pozione]",
+        "[Compra 2 Pozioni]",
+        "[Compra 3 Pozioni] Oro.",
+        "[Prosegui]"
+      ]
+    },
+    "THE_JOUST": {
+      "name": "La Giostra",
+      "description": "Procedendo fra gli immensi palazzi vieni bloccato sul tuo cammino dallo scontro fra due cavalieri che si fronteggiano, ai lati opposti di uno stretto ponte. Ti avvicini... \n \"Alt!\" \n \n Uno dei combattenti ti intima di fermarti, puntandoti contro la sua lancia oblunga.",
+      "choices": [
+        "[Continua]",
+        "[Padrone] Scommetti Oro - 30%: vinci Oro.",
+        "[Osserva]"
+      ]
+    },
+    "LAB": {
+      "name": "Lab",
+      "description": "La stanza dove ti trovi è piena di provette, becher, beute, forcipi, matracci, bacchette in vetro, pinze, occhialoni, imbuti, pipette, cilindri e condensatori. C'è anche un raro refrigerante. \n \n C'è da chiedersi come tu faccia a conoscere i nomi di questi strumenti... Non importa. Ti guardi intorno.",
+      "choices": [
+        "[Cerca] Raccogli alcune Pozioni!"
+      ]
+    },
+    "DRUG_DEALER": {
+      "name": "Losco Esperimento",
+      "description": "Un uomo con una benda su un occhio e un ghigno diabolico ti si avvicina con nonchalance. \n \"Ehi straniero, ti interesserebbe prendere parte ad un esperimento? Ti renderà più forte, più di qualsiasi allenamento o benedizione. Ne avrai bisogno se sei uno di quegli eroi che vogliono morire.\" \n \n \"Che ne dici?\"",
+      "choices": [
+        "[J.A.X.] Ricevi JAX.",
+        "[Diventa una Cavia] Trasforma 2 carte.",
+        "[Assumi Mutagene] Ottieni una reliquia speciale.",
+        "[Prosegui]"
+      ]
+    },
+    "SCRAP_OOZE": {
+      "name": "Melma e Metallo",
+      "description": "Senti un gorgoglio, accompagnato da uno stridio metallico. Al centro della stanza c'è una melma, che sembra aver ingerito decisamente troppi rottami. Al suo interno balugina una strana luce. È forse qualcosa di magico? Ti sembra che se solo allungassi la mano, potresti afferrare un tesoro... da dentro la creatura. Purtroppo la creatura e gli oggetti taglienti sono pericolosi.",
+      "choices": [
+        "[Cerca] Perdi PV. %: Raccogli una Reliquia.",
+        "[Prosegui]"
+      ]
+    },
+    "ADDICT": {
+      "name": "Mendicante Perduto",
+      "description": "Mentre provi a sgattaiolare oltre un gruppo di figure incappucciate, una ti si accosta. \n \"Hai qualcosa per me, amico? Per favore... magari qualche Moneta?\" \n \"Ho solo bisogno di un posto dove stare, ho oggetti di valore da offrire in cambio...\" \n Sembra delirante, ma innocuo.",
+      "choices": [
+        "[Offri Oro] Oro: Ottieni una Reliquia.",
+        "[Deruba] Ottieni una Reliquia. Vieni Maledetto - Vergogna.",
+        "[Prosegui]"
+      ]
+    },
+    "FACETRADER": {
+      "name": "Mercante di Volti",
+      "description": "Hai appena superato una statua inquietante, con strane maschere fra le mani... \n Dietro di te un flebile sussurro ti chiama: \n \"Fermati.\"",
+      "choices": [
+        "[Tocca] Perdi Oro.",
+        "[Scambia] 50%: Viso Migliore. 50%: Viso Peggiore.",
+        "[Ignora]",
+        "[Prosegui] PV, Guadagni"
+      ]
+    },
+    "WORLD_OF_GOOP": {
+      "name": "Mondo Appiccicoso",
+      "description": "Cadi in una pozzanghera. \n TUTTO DIVENTA UN MARE DI MELMA!! \n Dopo aver combattuto freneticamente con la melma corrosiva riesci a liberarti. \n Sei inzaccherato dalla testa ai piedi! \n \n Sei finalmente fuori, ma noti che hai perso qualcosa. Eh già, il liquido appiciccoso ora contiene anche i tuoi soldi, oltre all'oro di qualche altro sfortunato avventuriero.",
+      "choices": [
+        "[Raccogli l'Oro] Guadagni Oro. Perdi PV.",
+        "[Ignora] Perdi Oro."
+      ]
+    },
+    "LIVING_WALL": {
+      "name": "Muro Vivente",
+      "description": "Un vicolo cieco. Quando ti giri, una parete cala dal'alto repentina: sei in trappola! \n \n Nel muro appaiono tre volti che ti parlano. \n \"Dimentica ciò che sai e ti lascerò andare.\" \n \"Devi cambiare se vuoi che ti lasci avanzare.\" \n \"Se mi vuoi oltrepassare dovrai crescere.\"",
+      "choices": [
+        "[Dimentica] Rimuovi una carta dal Mazzo.",
+        "[Cambia] Trasforma una carta nel Mazzo.",
+        "[Cresci] Potenzia una carta nel Mazzo. Scegli una Carta da Rimuovere. Scegli una Carta da Trasformare. Scegli una Carta da Potenziare.",
+        "[Esci]"
+      ]
+    },
+    "N_LOTH": {
+      "name": "N'loth",
+      "description": "Uno strana creatura ingobbita da cui spuntano alcuni tentacoli è intenta a rovistare in una pila di detriti e spazzatura. Mentre ti avvicini, si trascina verso di te docilmente. \n \"N'loth fame... Sfama N'loth.\"",
+      "choices": [
+        "[Offri: ] La Perdi, Ottieni un Dono.",
+        "[Prosegui]"
+      ]
+    },
+    "SENSORYSTONE": {
+      "name": "Pietra Sensoriale",
+      "description": "Attraversando l'Aldilà trovi un ipercubo quadrimensionale incandescente. \n L'entità rotea e trasmuta placidamente a mezz'aria.",
+      "choices": [
+        "[Ricorda] Ottieni 1 Carta Incolore",
+        "[Ricorda] Ottieni 2 Carte Incolori. Perdi PV.",
+        "[Ricorda] Ottieni 3 Carte Incolori. Perdi PV."
+      ]
+    },
+    "SECRETPORTAL": {
+      "name": "Portale Segreto",
+      "description": "Hai davanti qualcosa che sembra fuori posto nel paesaggio alieno che ti circonda. Stranamente, fra le pareti viventi dell'Aldilà è incastonato un portale di pietra, la cui soglia è ostruita da un turbine magico. \n Non vedi dove questo portale conduca, ma credi possa velocizzare la tua scalata attraverso la Guglia.",
+      "choices": [
+        "[Nel Portale] Raggiungi SUBITO il boss.",
+        "[Prosegui]"
+      ]
+    },
+    "NOTEFORYOURSELF": {
+      "name": "Promemoria per Me",
+      "description": "Noti che in uno specifico pilastro un mattone può essere rimosso.",
+      "choices": [
+        "[Prosegui]",
+        "[Prendi e Nascondi] Ricevi e Nascondi una Carta.",
+        "[Ignora]",
+        "[Prosegui]"
+      ]
+    },
+    "PURIFIER": {
+      "name": "Purificatore",
+      "description": "Di fronte a te c'è un altare arabescato, dedicato ad un antico spirito.",
+      "choices": [
+        "[Prega] Rimuovi una carta dal Mazzo.",
+        "[Prosegui] Scegli una Carta da Rimuovere."
+      ]
+    },
+    "WHEEL_OF_CHANGE": {
+      "name": "Ruota del Cambiamento",
+      "description": "Incontri un goblin allegro e molto elegante. \n \"È tempo di girare la ruota! Sei P R O N T O ? Certo che sì!\"",
+      "choices": [
+        "[Gioca]"
+      ]
+    },
+    "WEMEETAGAIN": {
+      "name": "Seconda Impressione",
+      "description": "\"Ehi! Ci incontriamo di nuovo!\" \n Un individuo esuberante e un po' trasandato ti si avvicina allegramente. Non lo conosci. \n \n \"Sono io, Ranwid! Hai qualcosa per me oggi? Il solito? Uno come me da solo non ce la può fare sai?\" \n Lo osservi con sospetto e consideri il da farsi...",
+      "choices": [
+        "[Offri Pozione] Perdi . Ottieni una Reliquia",
+        "[Offri Oro] Perdi Oro . Ottieni una Reliquia",
+        "[Offri Carta] Perdi . Ottieni una Reliquia",
+        "[Attacca]"
+      ]
+    },
+    "MYSTERIOUS_SPHERE": {
+      "name": "Sfera Mistica",
+      "description": "Dal terreno dissestato che ti circonda sbuca una sfera che si direbbe fatta d'osso, in cui è incastonato un oggetto luminoso. \n Nonostante la curiosità, noti alcune sentinelle di guardia.",
+      "choices": [
+        "[Apri la Sfera] Combatti. Ricompensa: Reliquia Rara.",
+        "[Ignora]",
+        "[Combatti]"
+      ]
+    },
+    "BONFIRE_ELEMENTALS": {
+      "name": "Spiriti del Falò",
+      "description": "Vedi un gruppo di spiritelli del fuoco viola che danzano intorno a un grande falò.",
+      "choices": [
+        "[Continua]",
+        "[Prosegui]",
+        "[Fai un Offerta] Riceverai egual ricompensa. Scegli una carta da offrire."
+      ]
+    },
+    "GOLDEN_WING": {
+      "name": "Statua Alata",
+      "description": "Tra massi e rocce noti un'elaborata statua blu arabescata, dalla forma simile ad un ala. \n Dell'oro fuoriusce dalle crepe nella scultura. Forse ce n'è dell'altro...",
+      "choices": [
+        "[Prega] Rimuovi una carta dal Mazzo. Perdi PV.",
+        "[Distruggi] Ottieni - Oro.",
+        "[Prosegui]"
+      ]
+    },
+    "KNOWING_SKULL": {
+      "name": "Teschio Astuto",
+      "description": "Ti ritrovi in una antica camera decorata. Al centro della stanza, si trova un grosso teschio posato al disopra di un piedistallo ornato. Mentre ti avvicini, il teschio prende fuoco e si volta verso di te.",
+      "choices": [
+        "[Continua]",
+        "[Informazione?] Svela il Boss. Perdi",
+        "[Successo?] Ricevi una Carta Incolore Perdi PV.",
+        "[Un Aiuto?] Ottieni una Pozione. Perdi PV.",
+        "[Ricchezza?] Guadagni Oro. Perdi PV.",
+        "[L'uscita?] Perdi PV.",
+        "[Esci]"
+      ]
+    },
+    "TOMB_OF_LORD_RED_MASK": {
+      "name": "Tomba della Maschera Rossa",
+      "description": "Percorrendo un sentiero levitante, scorgi una tomba regale. La raggiungi e noti una fessura per introdurre oro con un'iscrizione intagliata sopra.",
+      "choices": [
+        "[Indossa la Maschera Rossa] Guadagni 222 Oro.",
+        "[Offri: Oro] Perdi tutto l'Oro. Ottieni una Reliquia.",
+        "[Prosegui]"
+      ]
+    },
+    "CURSED_TOME": {
+      "name": "Tomo Maledetto",
+      "description": "In un tempio diroccato trovi un grandissimo libro, aperto e pieno zeppo di criptiche scritture. \n \n Mentre tenti di decifrarle iniziano a cambiare trasformarndosi in una lingua nota.",
+      "choices": [
+        "[Leggi]",
+        "[Continua] Perdi 1 PV.",
+        "[Continua] Perdi 2 PV.",
+        "[Continua] Perdi 3 PV.",
+        "[Fermati] Perdi 3 PV.",
+        "[Raccoglilo] Prendi il Libro. Perdi PV.",
+        "[Prosegui]"
+      ]
+    },
+    "TRANSMORGRIFIER": {
+      "name": "Trasmodificatore",
+      "description": "Davanti a te c'è uno strano altare, dedicato ad un antico spirito.",
+      "choices": [
+        "[Prega] Trasforma una carta.",
+        "[Prosegui] Scegli una Carta da Trasformare."
+      ]
+    },
+    "VAMPIRES": {
+      "name": "Vampiri(?)",
+      "description": "Ti imbatti in alcune figure incappuciate intente ad eseguire un rito oscuro in un vicolo buio. Mentre ti avvicini, si girano verso di te. Il più alto snuda canini affilati, porgendo una mano pallida ed affusolata. \n \"Unisciti a noi fratello, e accetta il calore della Guglia.\"",
+      "choices": [
+        "[Accetta] Rimuovi i Colpi, Ricevi 5 Morsi. Perdi PV Massimi.",
+        "[Rifiuta]",
+        "[Prosegui]"
+      ]
+    },
+    "BEGGAR": {
+      "name": "Vecchio Mendicante",
+      "description": "Un vecchio mendicante avvolto in un mantello di pelliccia allunga una mano verso di te mentre passi. \"Giovanotto, avresti qualche moneta per me?\"",
+      "choices": [
+        "[Offri Oro] Oro: Rimuovi una carta dal Mazzo.",
+        "[Continua]",
+        "[Prosegui]"
+      ]
+    },
+    "WINDING_HALLS": {
+      "name": "Vie Tortuose",
+      "description": "Avanzi a rilento, ma ti perdi comunque di continuo mentre mura e pavimento sembrano mutare forma inspiegabilmente. Inoltre, il bisbiglio costante delle voci nella tua testa non ti aiuta a raccapezzarti.",
+      "choices": [
+        "[Torna Indietro] Perdi PV Massimi.",
+        "[Accogli la Follia] Ricevi 2 Follia. Perdi PV.",
+        "[Concentrati] Vieni Maledetto - Convulsioni. Ti Curi di PV."
+      ]
+    }
+  },
+  "keywords": {
+    "ARTIFACT": {
+      "names": [
+        "artefatto"
+      ],
+      "description": "Nega il prossimo debuff."
+    },
+    "BLOCK": {
+      "names": [
+        "blocco",
+        "blocca",
+        "blocchi"
+      ],
+      "description": "Bloccare previene il danno."
+    },
+    "BURN": {
+      "names": [
+        "ustione",
+        "ustioni"
+      ],
+      "description": "Le Ustioni sono carte stato ingiocabili che ti infliggono danni."
+    },
+    "CHANNEL": {
+      "names": [
+        "crea",
+        "creato",
+        "crei",
+        "creati"
+      ],
+      "description": "Crei un Globo nel tuo primo spazio libero. Se non ne hai, il tuo primo Globo (a destra) viene Evocato per fare spazio."
+    },
+    "CONFUSED": {
+      "names": [
+        "confuso"
+      ],
+      "description": "Il costo delle carte cambia in maniera casuale quando le peschi."
+    },
+    "CURSE": {
+      "names": [
+        "maledizione",
+        "maledizioni"
+      ],
+      "description": "Le Maledizioni sono carte con effetto negativo che rimangono nel mazzo."
+    },
+    "DARK": {
+      "names": [
+        "oscurità",
+        "oscurità+"
+      ],
+      "description": "Globo: Incrementa il proprio danno da evocazione ogni turno. Quando viene Evocata infligge  il proprio danno al nemico con meno PV."
+    },
+    "DAZED": {
+      "names": [
+        "disorientato"
+      ],
+      "description": "Le carte Disorientato sono delle carte Eteree che non possono essere giocate."
+    },
+    "DEXTERITY": {
+      "names": [
+        "destrezza"
+      ],
+      "description": "La Destrezza aumenta il Blocco ottenuto dalle carte."
+    },
+    "ETHEREAL": {
+      "names": [
+        "eterea"
+      ],
+      "description": "Se questa carta è nella Mano a fine turno, viene esaurita. Le carte esaurite vengono rimosse dal mazzo per il combattimento."
+    },
+    "EVOKE": {
+      "names": [
+        "evoca",
+        "evocato"
+      ],
+      "description": "Consuma il tuo primo Globo (a destra) e usa i suoi effetti di Evocazione."
+    },
+    "EXHAUST": {
+      "names": [
+        "esaurisci",
+        "esaurita",
+        "esauriscila",
+        "esaurire",
+        "esauriscono"
+      ],
+      "description": "Rimossa dal mazzo per questo combattimento."
+    },
+    "FOCUS": {
+      "names": [
+        "focus"
+      ],
+      "description": "Il Focus aumenta l'efficacia dei Globi Creati."
+    },
+    "FRAIL": {
+      "names": [
+        "fragile"
+      ],
+      "description": "Se sei Fragile, ottieni il 25% di Blocco in meno dalle carte."
+    },
+    "FROST": {
+      "names": [
+        "ghiaccio",
+        "ghiaccio+"
+      ],
+      "description": "Globo: Blocca per te."
+    },
+    "INNATE": {
+      "names": [
+        "innata"
+      ],
+      "description": "Inizia ogni combattimento con questa carta in Mano."
+    },
+    "INTANGIBLE": {
+      "names": [
+        "intangibile"
+      ],
+      "description": "Riduce TUTTO il danno e la perdita di PV ad 1."
+    },
+    "LIGHTNING": {
+      "names": [
+        "fulmine",
+        "fulmine+",
+        "fulmini"
+      ],
+      "description": "Globo: infligge danni a un nemico casuale."
+    },
+    "LOCKED": {
+      "names": [
+        "bloccata"
+      ],
+      "description": "Questa carta deve essere ancora sbloccata."
+    },
+    "LOCK_ON": {
+      "names": [
+        "mirino"
+      ],
+      "description": "I globi infliggono 50% danni bonus ai bersagli nel Mirino."
+    },
+    "OPENER": {
+      "names": [
+        "apertura"
+      ],
+      "description": "Le carte d'apertura possono essere giocate soltanto come prima carta in ogni turno."
+    },
+    "PLASMA": {
+      "names": [
+        "plasma",
+        "plasma+"
+      ],
+      "description": "Globo: Ottieni Energia a inizio turno."
+    },
+    "POISON": {
+      "names": [
+        "veleno",
+        "avvelenato"
+      ],
+      "description": "Prima di agire le creature Avvelenate perdono PV. Ogni turno, il Veleno viene ridotto di 1."
+    },
+    "RETAIN": {
+      "names": [
+        "conservi",
+        "permanente",
+        "conservata"
+      ],
+      "description": "Le carte che Conservi non vengono scartate a fine turno. Le carte Permanenti vengono sempre Conservate."
+    },
+    "SHIV": {
+      "names": [
+        "pugnale",
+        "pugnali"
+      ],
+      "description": "I Pugnali sono carte Attacco con costo 0 che si Esauriscono."
+    },
+    "STATUS": {
+      "names": [
+        "stato"
+      ],
+      "description": "Le carte Stato vengono rimosse a fine combattimento."
+    },
+    "STRENGTH": {
+      "names": [
+        "forza"
+      ],
+      "description": "La Forza aggiunge danno agli attacchi."
+    },
+    "STRIKE": {
+      "names": [
+        "colpo"
+      ],
+      "description": "Qualsiasi carta con la parola \"Colpo\" nel nome."
+    },
+    "THORNS": {
+      "names": [
+        "spine"
+      ],
+      "description": "Quando riceve danno da Attacco, danneggia l'attaccante."
+    },
+    "TODO": {
+      "names": [
+        "todo",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE"
+      ],
+      "description": "This card is NOT IMPLEMENTED. Someone should really fix that..."
+    },
+    "TRANSFORM": {
+      "names": [
+        "trasforma"
+      ],
+      "description": "Le carte Trasformate diventano una carta a caso di qualsiasi rarità."
+    },
+    "UNKNOWN": {
+      "names": [
+        "sconosciuta"
+      ],
+      "description": "Questa carta deve essere ancora trovata."
+    },
+    "UNPLAYABLE": {
+      "names": [
+        "ingiocabile"
+      ],
+      "description": "Se peschi carte Ingiocabili non puoi giocarle dalla Mano."
+    },
+    "UPGRADE": {
+      "names": [
+        "potenzia",
+        "potenziata"
+      ],
+      "description": "Potenziare le carte le rende più forti. Le carte possono essere potenziate una sola volta."
+    },
+    "VOID": {
+      "names": [
+        "vuoto",
+        "vuoti"
+      ],
+      "description": "Vuoto è una carta stato ingiocabile che consuma energia quando viene pescata."
+    },
+    "VULNERABLE": {
+      "names": [
+        "vulnerabile"
+      ],
+      "description": "Le creature Vulnerabili prendono il 50% di danno in più dagli Attacchi."
+    },
+    "WEAK": {
+      "names": [
+        "debole",
+        "weaken",
+        "weakened",
+        "weakens"
+      ],
+      "description": "Il danno inflitto da attacchi di creature Deboli è ridotto del 25%."
+    },
+    "WOUND": {
+      "names": [
+        "ferita",
+        "ferite"
+      ],
+      "description": "Le Ferite sono carte stato ingiocabili."
+    },
+    "STANCE": {
+      "names": [
+        "Aspetto",
+        "Aspetti"
+      ],
+      "description": "Puoi avere un solo Aspetto per volta."
+    },
+    "WRATH": {
+      "names": [
+        "furia"
+      ],
+      "description": "In questo Aspetto infliggi e ricevi doppio danno da attacchi."
+    },
+    "CALM": {
+      "names": [
+        "quiete"
+      ],
+      "description": "Quando abbandoni questo Aspetto ottieni [W] [W] ."
+    },
+    "DIVINITY": {
+      "names": [
+        "divino"
+      ],
+      "description": "Quando ottieni l'Aspetto Divino, ottieni [W] [W] [W] . Gli attacchi infliggono triplo danno. Abbandoni questo Aspetto all'inizio del prossimo turno."
+    },
+    "PRAYER": {
+      "names": [
+        "mantra",
+        "through violence"
+      ],
+      "description": "Quando ottieni 10 Mantra ottieni l'Aspetto Divino."
+    },
+    "SCRY": {
+      "names": [
+        "profetizzi",
+        "profetizza"
+      ],
+      "description": "Guarda le prime X carte della pila e scartane quante desideri."
+    },
+    "REGEN": {
+      "names": [
+        "rigenera"
+      ],
+      "description": "Rigenerazione restituisce PV a fine turno. Ogni turno viene il numero è ridotto di 1."
+    },
+    "VIGOR": {
+      "names": [
+        "vigore"
+      ],
+      "description": "Il tuo prossimo attacco infligge doppio danno"
+    },
+    "RITUAL": {
+      "names": [
+        "rituale"
+      ],
+      "description": "Ottieni Forza a fine turno."
+    },
+    "FATAL": {
+      "names": [
+        "letale"
+      ],
+      "description": "Si attiva quando un nemico che non è un seguace viene ucciso da questa carta."
+    }
+  },
+  "monsters": {
+    "ACIDSLIME_L": {
+      "name": "Melma Acida (G)",
+      "move_names": [
+        "Saliva Corrosiva",
+        "Scissione",
+        "Leccata"
+      ]
+    },
+    "ACIDSLIME_M": {
+      "name": "Melma Acida (M)",
+      "move_names": [
+        "Saliva Corrosiva",
+        "Leccata"
+      ]
+    },
+    "ACIDSLIME_S": {
+      "name": "Melma Acida (P)"
+    },
+    "APOLOGY_SLIME": {
+      "name": "Melma Apologetica"
+    },
+    "AWAKENEDONE": {
+      "name": "Il Risvegliato",
+      "move_names": [
+        "Colpo dell'Anima",
+        "Eco Oscuro",
+        "Purificazione",
+        "Poltiglia"
+      ]
+    },
+    "BANDITBEAR": {
+      "name": "Orso",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITCHILD": {
+      "name": "Punte",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITLEADER": {
+      "name": "Romeo",
+      "move_names": [
+        ""
+      ]
+    },
+    "BOOKOFSTABBING": {
+      "name": "Libro Omicida",
+      "move_names": [
+        ""
+      ]
+    },
+    "BRONZEAUTOMATON": {
+      "name": "Automa di Bronzo",
+      "move_names": [
+        "IPER RAGGIO"
+      ]
+    },
+    "BRONZEORB": {
+      "name": "Sfera",
+      "move_names": [
+        ""
+      ]
+    },
+    "BYRD": {
+      "name": "Gryfone",
+      "move_names": [
+        ""
+      ]
+    },
+    "CENTURION": {
+      "name": "Centurione",
+      "move_names": [
+        ""
+      ]
+    },
+    "CHAMP": {
+      "name": "Il Campione",
+      "move_names": [
+        "Posizione Difensiva",
+        "Esecuzione",
+        "Schiaffo"
+      ]
+    },
+    "CHOSEN": {
+      "name": "Prescelto",
+      "move_names": [
+        ""
+      ]
+    },
+    "CORRUPTHEART": {
+      "name": "Cuore della Corruzione",
+      "move_names": [
+        ""
+      ]
+    },
+    "CULTIST": {
+      "name": "Cultista",
+      "move_names": [
+        "",
+        "",
+        "Incantesimo"
+      ]
+    },
+    "DARKLING": {
+      "name": "Brandello di Tenebra",
+      "move_names": [
+        "Chomp! Chomp!"
+      ]
+    },
+    "DECA": {
+      "name": "Deca",
+      "move_names": [
+        ""
+      ]
+    },
+    "DONU": {
+      "name": "Donu",
+      "move_names": [
+        "Circolo di Potere"
+      ]
+    },
+    "EXPLODER": {
+      "name": "Esplosivo",
+      "move_names": [
+        ""
+      ]
+    },
+    "FIREORB": {
+      "name": "Palla di Fuoco",
+      "move_names": [
+        ""
+      ]
+    },
+    "DAGGER": {
+      "name": "Pugnale",
+      "move_names": [
+        ""
+      ]
+    },
+    "FLAMEBRUISER": {
+      "name": "Bruto Ardente",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPTOMANCER": {
+      "name": "Raptomante",
+      "move_names": [
+        ""
+      ]
+    },
+    "FUNGIBEAST": {
+      "name": "Bestia Micotica",
+      "move_names": [
+        "Crescita"
+      ]
+    },
+    "FUZZYLOUSEDEFENSIVE": {
+      "name": "Pulce",
+      "move_names": [
+        "Sputo-Ragnatela"
+      ]
+    },
+    "FUZZYLOUSENORMAL": {
+      "name": "Pulce",
+      "move_names": [
+        "Crescita"
+      ]
+    },
+    "GIANTHEAD": {
+      "name": "Testa Gigante",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINFAT": {
+      "name": "Gremlin Grasso",
+      "move_names": [
+        "Urto"
+      ]
+    },
+    "GREMLINLEADER": {
+      "name": "Comandante Gremlin",
+      "move_names": [
+        "Adunata!"
+      ]
+    },
+    "GREMLINNOB": {
+      "name": "Nob Gremlin",
+      "move_names": [
+        "Craniata",
+        "Carica"
+      ]
+    },
+    "GREMLINTHIEF": {
+      "name": "Gremlin Furtivo",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINTSUNDERE": {
+      "name": "Gremlin Scudiero",
+      "move_names": [
+        "Protezione",
+        "Colpo di Scudo"
+      ]
+    },
+    "GREMLINWARRIOR": {
+      "name": "Gremlin Furente",
+      "move_names": [
+        "Artigliata"
+      ]
+    },
+    "GREMLINWIZARD": {
+      "name": "Gremlin Mago",
+      "move_names": [
+        "Caricamento",
+        "Esplosione Finale"
+      ]
+    },
+    "HEALER": {
+      "name": "Mistica",
+      "move_names": [
+        ""
+      ]
+    },
+    "HEXAGHOST": {
+      "name": "Spettragono",
+      "move_names": [
+        "Animo Ardente",
+        "Scottatura",
+        "Inferno"
+      ]
+    },
+    "JAWWORM": {
+      "name": "Verme-Mascella",
+      "move_names": [
+        "Grido",
+        "Assalto"
+      ]
+    },
+    "LAGAVULIN": {
+      "name": "Lagavulin",
+      "move_names": [
+        "Assorbimento"
+      ]
+    },
+    "LOOTER": {
+      "name": "Furfante",
+      "move_names": [
+        "Affondo",
+        "Rapina"
+      ]
+    },
+    "MAW": {
+      "name": "La Fauce",
+      "move_names": [
+        ""
+      ]
+    },
+    "MUGGER": {
+      "name": "Rapinatore",
+      "move_names": [
+        "Affondo",
+        "Rapina"
+      ]
+    },
+    "NEMESIS": {
+      "name": "Nemesi",
+      "move_names": [
+        ""
+      ]
+    },
+    "ORB_WALKER": {
+      "name": "Sfera Ambulante",
+      "move_names": [
+        "Forza in Crescita"
+      ]
+    },
+    "PUPPETEER": {
+      "name": "Burattinaio",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPULSOR": {
+      "name": "Repulsore",
+      "move_names": [
+        ""
+      ]
+    },
+    "SENTRY": {
+      "name": "Sentinella",
+      "move_names": [
+        "Disintegrare"
+      ]
+    },
+    "SERPENT": {
+      "name": "Progenie della Guglia",
+      "move_names": [
+        ""
+      ]
+    },
+    "SHELLED_PARASITE": {
+      "name": "Parassita Corazzato",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERBLUE": {
+      "name": "Schiavista",
+      "move_names": [
+        "Sfregio"
+      ]
+    },
+    "SLAVERBOSS": {
+      "name": "Caposquadra",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERRED": {
+      "name": "Schiavista",
+      "move_names": [
+        "Graffio",
+        "Trappola"
+      ]
+    },
+    "SLIMEBOSS": {
+      "name": "Boss Melma",
+      "move_names": [
+        "Urto",
+        "Prepazione",
+        "Scissione",
+        "Spruzzo Viscoso"
+      ]
+    },
+    "SNAKEPLANT": {
+      "name": "PiantaSerpe",
+      "move_names": [
+        "Spore Debilitanti"
+      ]
+    },
+    "SNECKO": {
+      "name": "Snecko",
+      "move_names": [
+        "Sguardo Disorientante",
+        "Frustata di Coda",
+        "Morso"
+      ]
+    },
+    "SPHERICGUARDIAN": {
+      "name": "Guardiano Sferico",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIKESLIME_L": {
+      "name": "Melma A Punta(G)",
+      "move_names": [
+        "Leccata",
+        "Scissione"
+      ]
+    },
+    "SPIKESLIME_M": {
+      "name": "Melma A Punta (M)",
+      "move_names": [
+        "Leccata"
+      ]
+    },
+    "SPIKESLIME_S": {
+      "name": "Melma A Punta (P)"
+    },
+    "SPIKER": {
+      "name": "Spuntone",
+      "move_names": [
+        ""
+      ]
+    },
+    "THECOLLECTOR": {
+      "name": "Il Collezionista",
+      "move_names": [
+        ""
+      ]
+    },
+    "THEGUARDIAN": {
+      "name": "Il Guardiano",
+      "move_names": [
+        "Modalità Difensiva",
+        "Botta Violenta",
+        "Rotolata",
+        "Colpo Gemello",
+        "Turbine",
+        "Sovraccarico",
+        "Getto di Vapore"
+      ]
+    },
+    "TIMEEATER": {
+      "name": "Mangiatempo",
+      "move_names": [
+        ""
+      ]
+    },
+    "TORCHHEAD": {
+      "name": "Testa di Torcia",
+      "move_names": [
+        ""
+      ]
+    },
+    "TRANSIENT": {
+      "name": "Effimero",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESHIELD": {
+      "name": "Scudo Vivente",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESPEAR": {
+      "name": "Lancia Vivente",
+      "move_names": [
+        ""
+      ]
+    },
+    "WRITHINGMASS": {
+      "name": "Ammasso in Putrefazione",
+      "move_names": [
+        ""
+      ]
+    }
+  },
+  "characters": {
+    "DEFECT": {
+      "name": "Defect",
+      "description": "Un automa da combattimento divenuto senziente.\nManipola i Globi usando antiche tecnologie."
+    },
+    "IRONCLAD": {
+      "name": "Ironclad",
+      "description": "L'ultimo soldato Ironclad.\nHa venduto l'anima per ottenere poteri demoniaci."
+    },
+    "THE_SILENT": {
+      "name": "Silent",
+      "description": "Una letale cacciatrice dalle terre della nebbia.\nAssassina i nemici con veleno e pugnali."
+    },
+    "WATCHER": {
+      "name": "Watcher",
+      "description": "Un asceta cieca, venuta a \"Giudicare\" la Guglia.\nControlla gli aspetti divini."
+    }
+  }
+}

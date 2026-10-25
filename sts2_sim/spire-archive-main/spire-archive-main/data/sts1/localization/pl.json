@@ -1,0 +1,4958 @@
+{
+  "cards": {
+    "A_THOUSAND_CUTS": {
+      "name": "Tysiąc cięć",
+      "description": "Kiedykolwiek zagrasz kartę, zadaj 1 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "ACCURACY": {
+      "name": "Celność",
+      "description": "Nóż zadaje dodatkowo 4 pkt. obrażeń."
+    },
+    "ACROBATICS": {
+      "name": "Akrobatyka",
+      "description": "Dobierz 3 karty.\nOdrzuć 1 kartę."
+    },
+    "ADRENALINE": {
+      "name": "Adrenalina",
+      "description": "Zyskaj [G].\nDobierz 2 karty.\nWykluczenie.",
+      "upgradeDescription": "Zyskaj [G] [G].\nDobierz 2 karty.\nWykluczenie."
+    },
+    "AFTER_IMAGE": {
+      "name": "Powidok",
+      "description": "Kiedykolwiek zagrasz kartę, zyskaj 1 pkt. Bloku.",
+      "upgradeDescription": "Startowa.\nKiedykolwiek zagrasz kartę zyskaj 1 pkt. Bloku."
+    },
+    "AGGREGATE": {
+      "name": "Agregat",
+      "description": "Zyskaj [B] za każde 4 karty w stosie rozgrywającym."
+    },
+    "ALL_FOR_ONE": {
+      "name": "Wszyscy za jednego",
+      "description": "Zadaj 10 pkt. obrażeń. Przełóż wszystkie karty kosztujące 0 ze stosu kart odrzuconych do ręki."
+    },
+    "ALL_OUT_ATTACK": {
+      "name": "Rozpaczliwy atak",
+      "description": "Zadaj 10 pkt. obrażeń WSZYSTKIM przeciwnikom.\nOdrzuć losową kartę z ręki."
+    },
+    "ALLOCATE": {
+      "name": "Rozdzielenie",
+      "description": "Zyskaj !M! pkt. Skupienia.\nUtrać 1 pkt. Siły.\nUtrać 1 pkt. Zwinności."
+    },
+    "AMPLIFY": {
+      "name": "Wzmocnienie",
+      "description": "W tej turze, następna karta Mocy jest zagrywana dwukrotnie.",
+      "upgradeDescription": "W tej turze, następne +1 karty Mocy są zagrywane dwukrotnie."
+    },
+    "ANGER": {
+      "name": "Złość",
+      "description": "Zadaj 6 pkt. obrażeń.\nDołóż kopię tej karty do stosu kart odrzuconych."
+    },
+    "APOTHEOSIS": {
+      "name": "Apoteoza",
+      "description": "Ulepsz WSZYSTKIE karty do końca walki.\nWykluczenie."
+    },
+    "ARMAMENTS": {
+      "name": "Uzbrojenie",
+      "description": "Zyskaj 5 pkt. Bloku.\nUlepsz kartę z ręki do końca walki.",
+      "upgradeDescription": "Zyskaj 5 pkt. Bloku.\nUlepsz WSZYSTKIE karty w ręce do końca walki."
+    },
+    "ASCENDERSBANE": {
+      "name": "Zmora wyniesionego",
+      "description": "Niezagrywalna.\nEteryczna.\nNie można usunąć z talii."
+    },
+    "AUTO_SHIELDS": {
+      "name": "Automatyczna tarcza",
+      "description": "Jeżeli posiadasz 0 pkt. Bloku, zyskaj 11 pkt. Bloku."
+    },
+    "AXE_KICK": {
+      "name": "Kopnięcie opadające",
+      "description": "Zadaj !D! pkt. obrażeń.\nWyładuj pierwszą Sferę."
+    },
+    "BACKFLIP": {
+      "name": "Salto w tył",
+      "description": "Zyskaj 5 pkt. Bloku.\nDobierz 2 karty."
+    },
+    "BACKSTAB": {
+      "name": "Cios w plecy",
+      "description": "Zadaj 11 pkt. obrażeń.\nStartowa.\nWykluczenie."
+    },
+    "BALL_LIGHTNING": {
+      "name": "Piorun kulisty",
+      "description": "Zadaj 7 pkt. obrażeń. Przywołaj 1 Sferę Gromu."
+    },
+    "BANDAGE_UP": {
+      "name": "Pierwsza pomoc",
+      "description": "Przywraca 4 PŻ.\nWykluczenie."
+    },
+    "BANE": {
+      "name": "Jad",
+      "description": "Zadaj 7 pkt. obrażeń.\nJeśli przeciwnik jest zatruty, zadaj 7 pkt. obrażeń jeszcze raz."
+    },
+    "BARRAGE": {
+      "name": "Ogień zaporowy",
+      "description": "Zadaj 4 pkt. obrażeń za każdą przywołaną Sferę."
+    },
+    "BARRICADE": {
+      "name": "Barykada",
+      "description": "Blok nie zostaje usunięty z początkiem tury."
+    },
+    "BASH": {
+      "name": "Grzmotnięcie",
+      "description": "Zadaj 8 pkt. obrażeń.\nNałóż 2 pkt. Wrażliwości."
+    },
+    "BATTLE_TRANCE": {
+      "name": "Trans bitewny",
+      "description": "Dobierz 3 karty.\nW czasie tej tury nie możesz dobrać\nwięcej kart."
+    },
+    "BEAM_CELL": {
+      "name": "Ogniwo",
+      "description": "Zadaj 3 pkt. obrażeń i nałóż 1 pkt. Wrażliwości."
+    },
+    "BERSERK": {
+      "name": "Berserk",
+      "description": "Otrzymaj 2 pkt. Wrażliwości.\nZyskaj [R] na początku każdej tury."
+    },
+    "BIASED_COGNITION": {
+      "name": "Błąd poznawczy",
+      "description": "Zyskaj 4 pkt. Skupienia.\nNa początku każdej tury, utrać 1 pkt. Skupienia."
+    },
+    "BITE": {
+      "name": "Ugryzienie",
+      "description": "Zadaj 7 pkt. obrażeń.\nPrzywróć 2 PŻ."
+    },
+    "BLADE_DANCE": {
+      "name": "Taniec ostrzy",
+      "description": "Dodaj 3 Noże do ręki."
+    },
+    "BLASTER": {
+      "name": "Blaster",
+      "description": "Zadaj !D! pkt. obrażeń WSZYSTKIM przeciwnikom.\nZyskaj [B] za każdą Przywołaną Sferę.\nWykluczenie."
+    },
+    "BLIND": {
+      "name": "Oślepienie",
+      "description": "Nałóż 2 pkt. Słabości.",
+      "upgradeDescription": "Nałóż 2 pkt. Słabości na WSZYSTKICH przeciwników."
+    },
+    "BLIZZARD": {
+      "name": "Gradobicie",
+      "description": "Zadaj 2 obrażeń WSZYSTKIM przeciwnikom za każdą Przywołaną Sferę Mrozu podczas tej walki."
+    },
+    "BLOOD_FOR_BLOOD": {
+      "name": "Krew za krew",
+      "description": "Kosztuje o 1 [R] mniej\nkiedykolwiek stracisz PŻ w walce.\nZadaj 18 pkt. obrażeń."
+    },
+    "BLOODLETTING": {
+      "name": "Upuszczenie krwi",
+      "description": "Zyskaj [R] [R].\nUtrać 3 PŻ.",
+      "upgradeDescription": "Zyskaj [R] [R] [R].\nUtrać 3 PŻ."
+    },
+    "BLUDGEON": {
+      "name": "Zmiażdżenie",
+      "description": "Zadaj 32 pkt. obrażeń."
+    },
+    "BLUR": {
+      "name": "Smuga",
+      "description": "Zyskaj 5 pkt. Bloku.\nNie tracisz Bloku z początkiem kolejnej tury."
+    },
+    "BODY_SLAM": {
+      "name": "Natarcie",
+      "description": "Zadaj obrażenia o równowartości\ntwojego Bloku.",
+      "upgradeDescription": "(zadaj 0 pkt obrażeń)"
+    },
+    "BOOTSEQUENCE": {
+      "name": "Sekwencja rozruchowa",
+      "description": "Zyskaj 10 pkt Bloku.\nStartowa.\nWykluczenie."
+    },
+    "BOUNCING_FLASK": {
+      "name": "Skaczący flakon",
+      "description": "Nałóż 3 pkt. Trucizny losowemu przeciwnikowi. Powtórz 3 razy."
+    },
+    "BRUTALITY": {
+      "name": "Bestialstwo",
+      "description": "Na początku każdej tury utrać 1 PŻ i dobierz\n1 kartę.",
+      "upgradeDescription": "Startowa.\nNa początku każdej tury utrać 1 PŻ i dobierz\n1 kartę."
+    },
+    "BUFFER": {
+      "name": "Bufor",
+      "description": "Powstrzymuje następną utratę PŻ.",
+      "upgradeDescription": "Powstrzymuje następną utratę PŻ +1 razy."
+    },
+    "BULLET_TIME": {
+      "name": "Zatrzymanie czasu",
+      "description": "Nie możesz dobierać więcej kart w tej turze. Do końca tury koszt wszystkich kart jest zredukowany do 0."
+    },
+    "BURN": {
+      "name": "Poparzenie",
+      "description": "Niezagrywalna.\nNa koniec tury otrzymaj\n2 pkt. obrażeń.",
+      "upgradeDescription": "Niezagrywalna.\nNa koniec tury otrzymaj\n4 pkt. obrażeń"
+    },
+    "BURNING_PACT": {
+      "name": "Płomienny pakt",
+      "description": "Wyklucz 1 kartę.\nDobierz 2 karty."
+    },
+    "BURST": {
+      "name": "Impuls",
+      "description": "Następna karta Umiejętności w tej turze zostanie zagrana dwukrotnie.",
+      "upgradeDescription": "Następne +1 karty Umiejętności w tej turze zostaną zagrane dwukrotnie."
+    },
+    "CALCULATED_GAMBLE": {
+      "name": "Skalkulowane ryzyko",
+      "description": "Odrzuć swoją rękę,\nnastępnie dobierz tyle samo kart.\nWykluczenie.",
+      "upgradeDescription": "Odrzuć swoją rękę,\nnastępnie dobierz tyle samo kart."
+    },
+    "CALTROPS": {
+      "name": "Kolczatki",
+      "description": "Kiedykolwiek przeciwnik cię zaatakuje, zadaj mu 3 pkt. obrażeń."
+    },
+    "CAPACITOR": {
+      "name": "Kondensator",
+      "description": "Zyskaj 2 miejsce na Sferę.",
+      "upgradeDescription": "Zyskaj +1 miejsca na Sferę."
+    },
+    "CARNAGE": {
+      "name": "Rzeź",
+      "description": "Eteryczna.\nZadaj 20 pkt. obrażeń."
+    },
+    "CATALYST": {
+      "name": "Katalizator",
+      "description": "Podwaja pkt. Trucizny u przeciwnika.\nWykluczenie.",
+      "upgradeDescription": "Potraja pkt. Trucizny u przeciwnika.\nWykluczenie."
+    },
+    "CHAOS": {
+      "name": "Chaos",
+      "description": "Przywołaj 1 losową Sferę.",
+      "upgradeDescription": "Przywołaj +1 losowe sfery."
+    },
+    "CHILL": {
+      "name": "Chłód",
+      "description": "Przywołaj 1 Sferę Mrozu za każdego przeciwnika.\nWykluczenie.",
+      "upgradeDescription": "Startowa.\nPrzywołaj 1 Sferę Mrozu za każdego przeciwnika.\nWykluczenie."
+    },
+    "CHOKE": {
+      "name": "Zadławienie",
+      "description": "Zadaj 12 pkt. obrażeń.\nKiedykolwiek zagrasz kartę podczas swojej tury, cel straci 3 PŻ."
+    },
+    "CHRYSALIS": {
+      "name": "Poczwarka",
+      "description": "Dodaj 3 kart(y) Umiej. do stosu rozgrywającego na czas potyczki. Karty są losowe i kosztują 0.\nWykluczenie."
+    },
+    "CLASH": {
+      "name": "Zwarcie",
+      "description": "Może być zagrana tylko, jeśli pozostałe karty w ręce są kartami Ataku.\nZadaj 14 pkt. obrażeń."
+    },
+    "CLEAVE": {
+      "name": "Rozpłatanie",
+      "description": "Zadaj 8 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "CLOAK_AND_DAGGER": {
+      "name": "Płaszcz i sztylet",
+      "description": "Zyskaj 6 pkt. Bloku.\nDodaj 1 Nóż do ręki.",
+      "upgradeDescription": "Zyskaj 6 pkt. Bloku.\nDodaj +1 Noże do ręki."
+    },
+    "CLOTHESLINE": {
+      "name": "Cios w gardło",
+      "description": "Zadaj 12 pkt. obrażeń.\nNałóż 2 pkt. Słabości."
+    },
+    "CLUMSY": {
+      "name": "Niezdarność",
+      "description": "Niezagrywalna.\nEteryczna."
+    },
+    "COLD_SNAP": {
+      "name": "Odłamek lodu",
+      "description": "Zadaj 6 pkt. obrażeń. Przywołaj 1 Sferę Mrozu."
+    },
+    "COMBUST": {
+      "name": "Samozapłon",
+      "description": "Pod koniec tury utrać\n1 PŻ i zadaj 5 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "CONCENTRATE": {
+      "name": "Skupienie",
+      "description": "Odrzuć 3 karty.\nZyskaj [G] [G]."
+    },
+    "CONSERVE_BATTERY": {
+      "name": "Oszczędzanie baterii",
+      "description": "Zyskaj 7 pkt. Bloku.\nW następnej turze otrzymaj [B]."
+    },
+    "CONSUME": {
+      "name": "Absorpcja",
+      "description": "Zyskaj 2 pkt. Skupienia.\nUtrać 1 miejsce na Sferę."
+    },
+    "COOLHEADED": {
+      "name": "Trzeźwość umysłu",
+      "description": "Przywołaj 1 Sferę Mrozu.\nDobierz 1 kartę.",
+      "upgradeDescription": "Przywołaj 1 Sferę Mrozu.\nDobierz +1 karty."
+    },
+    "CORPSE_EXPLOSION": {
+      "name": "Eksplozja zwłok",
+      "description": "Nałóż 6 pkt. Trucizny.\nGdy cel zginie zadaj obrażenia równe jego maks. PŻ WSZYSTKIM przeciwnikom.",
+      "upgradeDescription": "deprecated."
+    },
+    "CORRUPTION": {
+      "name": "Zepsucie",
+      "description": "Umiejętności kosztują 0.\nKiedykolwiek zagrasz kartę Umiejętności, zostanie ona Wykluczona."
+    },
+    "CREATIVE_AI": {
+      "name": "Kreatywna SI",
+      "description": "Na początku każdej tury, dodaj losową kartę Mocy do ręki."
+    },
+    "CRIPPLING_POISON": {
+      "name": "Paraliżująca trucizna",
+      "description": "Nałóż 4 pkt. Trucizny\noraz 2 pkt. Słabości WSZYSTKIM wrogom. Wykluczenie."
+    },
+    "DAGGER_SPRAY": {
+      "name": "Ściana sztyletów",
+      "description": "Zadaj dwukrotnie 4 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "DAGGER_THROW": {
+      "name": "Rzut sztyletem",
+      "description": "Zadaj 9 pkt. obrażeń.\nDobierz 1 kartę.\nOdrzuć 1 kartę."
+    },
+    "DARK_EMBRACE": {
+      "name": "Objęcia mroku",
+      "description": "Kiedykolwiek karta zostanie Wykluczona,\ndobierz 1 kartę."
+    },
+    "DARK_SHACKLES": {
+      "name": "Mroczne kajdany",
+      "description": "Przeciwnik traci 9 pkt. Siły do końca tej tury.\nWykluczenie."
+    },
+    "DARKNESS": {
+      "name": "Mrok",
+      "description": "Przywołaj 1 Sferę Ciemności.",
+      "upgradeDescription": "Przywołaj 1 Sferę Ciemności.\nAktywuj pasywny efekt wszystkich Sfer Ciemności."
+    },
+    "DASH": {
+      "name": "Zryw",
+      "description": "Zyskaj 10 pkt. Bloku.\nZadaj 10 pkt. obrażeń."
+    },
+    "DAZED": {
+      "name": "Oszołomienie",
+      "description": "Niezagrywalna.\nEteryczna."
+    },
+    "DEADLY_POISON": {
+      "name": "Zabójcza trucizna",
+      "description": "Nałóż 5 pkt. Trucizny."
+    },
+    "DECAY": {
+      "name": "Rozkład",
+      "description": "Niezagrywalna.\nPod koniec tury otrzymaj 2 pkt. obrażeń."
+    },
+    "DEEP_BREATH": {
+      "name": "Głęboki wdech",
+      "description": "Wtasuj karty ze stosu odrzuconych do rozgrywającego.\nDobierz 1 kartę.",
+      "upgradeDescription": "Wtasuj karty ze stosu odrzuconych do rozgrywającego.\nDobierz +1 karty."
+    },
+    "DEFEND_B": {
+      "name": "Obrona",
+      "description": "Zyskaj 5 pkt. Bloku."
+    },
+    "DEFEND_G": {
+      "name": "Obrona",
+      "description": "Zyskaj 5 pkt. Bloku."
+    },
+    "DEFEND_R": {
+      "name": "Obrona",
+      "description": "Zyskaj 5 pkt. Bloku."
+    },
+    "DEFEND_P": {
+      "name": "Obrona",
+      "description": "Zyskaj 5 pkt. Bloku."
+    },
+    "DEFLECT": {
+      "name": "Odbicie",
+      "description": "Zyskaj 4 pkt. Bloku."
+    },
+    "DEFRAGMENT": {
+      "name": "Defragmentacja",
+      "description": "Zyskaj 1 pkt. Skupienia."
+    },
+    "DEMON_FORM": {
+      "name": "Demoniczna forma",
+      "description": "Na początku tury zyskaj 2 pkt. Siły."
+    },
+    "DIE_DIE_DIE": {
+      "name": "Giń Giń Giń",
+      "description": "Zadaj 13 pkt. obrażeń WSZYSTKIM przeciwnikom.\nWykluczenie."
+    },
+    "DISARM": {
+      "name": "Rozbrojenie",
+      "description": "Przeciwnik traci\n2 pkt. Siły.\nWykluczenie."
+    },
+    "DISTRACTION": {
+      "name": "Rozproszenie",
+      "description": "Dodaj losową kartę Umiejętności do ręki.\nW tej turze jej koszt wynosi 0.\nWykluczenie."
+    },
+    "DODGE_AND_ROLL": {
+      "name": "Seria uników",
+      "description": "Zyskaj 4 pkt. Bloku.\nZyskaj 4 pkt. Bloku w następnej turze."
+    },
+    "DOOM_AND_GLOOM": {
+      "name": "Zagłada i zniszczenie",
+      "description": "Zadaj 10 pkt. obrażeń WSZYSTKIM przeciwnikom.\nPrzywołaj 1 Sferę Ciemności."
+    },
+    "DOPPELGANGER": {
+      "name": "Klonowanie",
+      "description": "W następnej turze dobierz X kart\ni zyskaj X [G].\nWykluczenie.",
+      "upgradeDescription": "W następnej turze dobierz X+1 kart\ni zyskaj X+1 [G].\nWykluczenie."
+    },
+    "DOUBLE_ENERGY": {
+      "name": "Podwójna energia",
+      "description": "Podwaja twoją Energię.\nWykluczenie.",
+      "upgradeDescription": "Podwaja twoją Energię."
+    },
+    "DOUBLE_TAP": {
+      "name": "Podwójny atak",
+      "description": "W tej turze następna karta Ataku zostanie zagrana dwukrotnie.",
+      "upgradeDescription": "W tej turze +1 następne karty Ataku zostaną zagrane dwukrotnie."
+    },
+    "DOUBT": {
+      "name": "Zwątpienie",
+      "description": "Niezagrywalna.\nPod koniec tury zyskaj\n1 pkt. Słabości."
+    },
+    "DRAMATIC_ENTRANCE": {
+      "name": "Dramatyczne wejście",
+      "description": "Startowa.\nZadaj 8 pkt. obrażeń WSZYSTKIM przeciwnikom.\nWykluczenie."
+    },
+    "DROPKICK": {
+      "name": "Kopniak z wyskoku",
+      "description": "Zadaj 5 pkt. obrażeń.\nJeśli przeciwnik ma nałożoną Wrażliwość,\nzyskaj [R]\ni dobierz 1 kartę."
+    },
+    "DUAL_WIELD": {
+      "name": "Oburęczność",
+      "description": "Stwórz kopię karty Ataku lub Mocy w swojej ręce.",
+      "upgradeDescription": "Stwórz 2 kopie karty Ataku lub Mocy w swojej ręce."
+    },
+    "DUALCAST": {
+      "name": "Podwójny układ",
+      "description": "Wyładuj pierwszą Sferę 2 razy."
+    },
+    "ECHO_FORM": {
+      "name": "Echo",
+      "description": "Pierwsza zagrana karta w każdej turze jest zagrywana dwukrotnie.\nEteryczna.",
+      "upgradeDescription": "Pierwsza zagrana karta w każdej turze jest zagrywana dwukrotnie."
+    },
+    "ELECTRODYNAMICS": {
+      "name": "Elektrodynamika",
+      "description": "Grom zadaje obrażenia WSZYSTKIM przeciwnikom.\nPrzywołaj 2 Sfery Gromu."
+    },
+    "ENDLESS_AGONY": {
+      "name": "Wieczna agonia",
+      "description": "Zadaj 4 pkt. obrażeń.\nKiedykolwiek dobierzesz tę kartę, dodaj jej kopię do ręki.\nWykluczenie."
+    },
+    "ENERGY_PULSE": {
+      "name": "Puls energii",
+      "description": "Zyskaj pkt. Bloku równe twojej Energii.",
+      "upgradeDescription": "Zyskaj pkt. Bloku równe podwójnej ilości twojej Energii."
+    },
+    "ENLIGHTENMENT": {
+      "name": "Oświecenie",
+      "description": "Na czas tej tury koszt wszystkich kart w ręce zostaje zredukowany\ndo 1.",
+      "upgradeDescription": "Na czas tej walki koszt wszystkich kart w ręce zostaje zredukowany\ndo 1."
+    },
+    "ENTRENCH": {
+      "name": "Fortyfikacja",
+      "description": "Podwój swój obecny Blok.",
+      "upgradeDescription": "Podwój swój obecny Blok."
+    },
+    "ENVENOM": {
+      "name": "Zatrucie",
+      "description": "Za każdym razem, gdy karta Ataku zada niezablokowane obrażenia nałóż 1 pkt. Trucizny."
+    },
+    "ESCAPE_PLAN": {
+      "name": "Plan ucieczki",
+      "description": "Dobierz 1 kartę.\nJeśli będzie to karta Umiejętności, zyskasz 3 pkt. Bloku."
+    },
+    "EVISCERATE": {
+      "name": "Wypatroszenie",
+      "description": "Kosztuje o 1 [G] mniej\nza każdą odrzuconą kartę w tej turze.\nZadaj trzykrotnie 7 pkt. obrażeń."
+    },
+    "EVOLVE": {
+      "name": "Ewolucja",
+      "description": "Kiedykolwiek dobierzesz kartę Stanu, dobierz 1 kartę.",
+      "upgradeDescription": "Kiedykolwiek dobierzesz kartę Stanu, dobierz +1 karty."
+    },
+    "EXHUME": {
+      "name": "Ekshumacja",
+      "description": "Wybierz Wykluczoną kartę i umieść ją w ręce.\nWykluczenie."
+    },
+    "EXPERTISE": {
+      "name": "Biegłość",
+      "description": "Dobieraj karty, dopóki nie będziesz mieć 6 w ręce."
+    },
+    "FTL": {
+      "name": "FTL",
+      "description": "Zadaj 5 pkt. obrażeń. Jeżeli w tej turze zagrałeś mniej niż 3 karty, dobierz 1 kartę."
+    },
+    "FEED": {
+      "name": "Pożarcie",
+      "description": "Zadaj 10 pkt. obrażeń.\nPo Uśmierceniu przeciwnika, zyskaj\n3 maks. PŻ.\nWykluczenie."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Niewrażliwość",
+      "description": "Za każdym razem, gdy karta zostanie Wykluczona,\nzyskaj 3 pkt. Bloku."
+    },
+    "FIEND_FIRE": {
+      "name": "Demoniczny ogień",
+      "description": "Wyklucz swoją rękę.\nZadaj 7 pkt. obrażeń za każdą Wykluczoną kartę.\nWykluczenie."
+    },
+    "FINESSE": {
+      "name": "Finezja",
+      "description": "Zyskaj 2 pkt. Bloku.\nDobierz 1 kartę."
+    },
+    "FINISHER": {
+      "name": "Cios kończący",
+      "description": "Zadaj 6 pkt. obrażeń za każdą kartę Ataku zagraną w tej turze."
+    },
+    "FIRE_BREATHING": {
+      "name": "Ognisty oddech",
+      "description": "Za każdym razem, gdy dobierzesz kartę Stanu lub Klątwy, zadaj 6 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "FISSION": {
+      "name": "Podział",
+      "description": "Usuń WSZYSTKIE Sfery. Zyskaj [B] i dobierz 1 kartę za każdą Sferę.",
+      "upgradeDescription": "Wyładuj WSZYSTKIE Sfery. Zyskaj [B] i dobierz 1 kartę za każdą Sferę.\nExhaust."
+    },
+    "FLAME_BARRIER": {
+      "name": "Ognista bariera",
+      "description": "Zyskaj 12 pkt. Bloku.\nKiedykolwiek przeciwnik cię zaatakuje, zadaj mu 4 pkt. obrażeń."
+    },
+    "FLASH_OF_STEEL": {
+      "name": "Błysk stali",
+      "description": "Zadaj 3 pkt. obrażeń.\nDobierz 1 kartę."
+    },
+    "FLECHETTES": {
+      "name": "Rzutki",
+      "description": "Zadaj 4 pkt. obrażeń za każdą kartę Umiejętności w ręce."
+    },
+    "FLEX": {
+      "name": "Prężenie muskułów",
+      "description": "Zyskaj 2 pkt. Siły.\nPod koniec tury utrać\n2 pkt. Siły."
+    },
+    "FLUX_CAPACITOR": {
+      "name": "Kondensator strumienia",
+      "description": "Zamień wszystkie Przywołane Sfery na Sfery Plazmy.\nWykluczenie."
+    },
+    "FLYING_KNEE": {
+      "name": "Cios kolanem",
+      "description": "Zadaj 8 pkt. obrażeń.\nZyskaj [G] w nasępnej turze."
+    },
+    "FOOTWORK": {
+      "name": "Praca nóg",
+      "description": "Zyskaj 2 pkt. Zręczności."
+    },
+    "FORCE_FIELD": {
+      "name": "Pole siłowe",
+      "description": "Kosztuje 1 mniej [B] za każdą kartę Mocy zagraną w tej walce.\nZyskaj 12 pkt. Bloku."
+    },
+    "FUSION": {
+      "name": "Fuzja",
+      "description": "Przywołaj 1 Sferę Plazmy."
+    },
+    "GASH": {
+      "name": "Rozcięcie",
+      "description": "Zadaj 3 pkt. obrażeń.\nWszystkie karty Rozcięcia podczas tej walki zadają 2 dodatkowych obrażeń."
+    },
+    "GENETIC_ALGORITHM": {
+      "name": "Algorytm genetyczny",
+      "description": "Zyskaj !B! pkt. Bloku.\nPo zagraniu, na stałe\nzwiększ otrzymywane\npkt. Bloku o 2.\nWykluczenie."
+    },
+    "GHOSTLY": {
+      "name": "Duchowa forma",
+      "description": "Zyskaj 1 pkt. Nieuchwytności.\nWykluczenie.\nEteryczna.",
+      "upgradeDescription": "Zyskaj 1 pkt. Nieuchwytności.\nWykluczenie."
+    },
+    "GHOSTLY_ARMOR": {
+      "name": "Duchowy pancerz",
+      "description": "Eteryczna.\nZyskaj 10 pkt. Bloku."
+    },
+    "GLACIER": {
+      "name": "Lodowiec",
+      "description": "Zyskaj 7 pkt. Bloku.\nPrzywołaj 2 Sfery Mrozu.",
+      "upgradeDescription": "Zyskaj +3 pkt. Bloku.\nPrzywołaj 2 Sfery Mrozu."
+    },
+    "GLASS_KNIFE": {
+      "name": "Szklany nóż",
+      "description": "Zadaj dwukrotnie 8 pkt. obrażeń. Do końca walki obrażenia tej karty są obniżone o 2."
+    },
+    "GO_FOR_THE_EYES": {
+      "name": "Celuj w oczy",
+      "description": "Zadaj 3 pkt. obrażeń. Jeżeli przeciwnik zamierza atakować, nałóż 1 pkt. Słabości."
+    },
+    "GOOD_INSTINCTS": {
+      "name": "Szósty zmysł",
+      "description": "Zyskaj 6 pkt. Bloku."
+    },
+    "GRAND_FINALE": {
+      "name": "Wielki finał",
+      "description": "Można zagrać tylko wtedy, gdy stos rozgrywający jest pusty.\nZadaj 50 pkt. obrażeń WSZYSTKIM wrogom.",
+      "upgradeDescription": "Stos rozgrywający\nmusi być pusty."
+    },
+    "HAVOC": {
+      "name": "Spustoszenie",
+      "description": "Zagraj kartę z góry stosu rozgrywającego, a następnie ją Wyklucz."
+    },
+    "HEADBUTT": {
+      "name": "Z główki",
+      "description": "Zadaj 9 pkt. obrażeń.\nPrzełóż kartę ze stosu kart odrzuconych na górę stosu rozgrywającego."
+    },
+    "HEATSINKS": {
+      "name": "Radiator",
+      "description": "Kiedykolwiek zagrasz kartę Mocy, dobierz 1 kartę.",
+      "upgradeDescription": "Kiedykolwiek zagrasz kartę Mocy, dobierz +1 karty."
+    },
+    "HEAVY_BLADE": {
+      "name": "Ciężkie ostrze",
+      "description": "Zadaj 14 pkt. obrażeń.\nBonus od Siły zwiększa się 3 razy.",
+      "upgradeDescription": "Zadaj 14 pkt. obrażeń.\nBonus od Siły zwiększa się +2 razy."
+    },
+    "HEEL_HOOK": {
+      "name": "Powalenie",
+      "description": "Zadaj 5 pkt. obrażeń.\nJeśli przeciwnik jest pod wpływem Słabości,\nzyskaj [G]\ni dobierz 1 kartę."
+    },
+    "HELLO_WORLD": {
+      "name": "Hejka świecie",
+      "description": "Na początku tury, dodaj losową Pospolitą kartę do ręki.",
+      "upgradeDescription": "Startowa.\nNa początku tury, dodaj losową Pospolitą kartę do ręki."
+    },
+    "HEMOKINESIS": {
+      "name": "Hemokineza",
+      "description": "Utrać 2 PŻ.\nZadaj 15 pkt. obrażeń."
+    },
+    "HIDE": {
+      "name": "Ukrycie",
+      "description": "Nie stracisz PŻ aż do następnej tury.\nWykluczenie."
+    },
+    "HOLOGRAM": {
+      "name": "Hologram",
+      "description": "Zyskaj 3 pkt. Bloku.\nPrzywróć losową kartę ze stosu kart odrzuconych do ręki.\nWykluczenie.",
+      "upgradeDescription": "Zyskaj +2 pkt. Bloku.\nPrzywróć kartę ze stosu kart odrzuconych do ręki."
+    },
+    "HYPERBEAM": {
+      "name": "Hiper promień",
+      "description": "Zadaj 26 pkt. obrażeń WSZYSTKIM przeciwnikom.\nUtrać 3 Skupienia."
+    },
+    "IMMOLATE": {
+      "name": "Poświęcenie",
+      "description": "Zadaj 21 pkt. obrażeń WSZYSTKIM przeciwnikom.\nWtasuj Poparzenie do stosu kart odrzuconych."
+    },
+    "IMPERVIOUS": {
+      "name": "Nieczułość",
+      "description": "Zyskaj 30 pkt. Bloku.\nWykluczenie."
+    },
+    "INFERNAL_BLADE": {
+      "name": "Piekielne ostrze",
+      "description": "Dodaj losową kartę Ataku do ręki. W tej turze kosztuje 0.\nWykluczenie."
+    },
+    "INFINITE_BLADES": {
+      "name": "A nóż się przyda",
+      "description": "Na początku swojej tury dodaj Nóż do ręki.",
+      "upgradeDescription": "Startowa.\nNa początku swojej tury dodaj Nóż do ręki."
+    },
+    "INFLAME": {
+      "name": "Wewnętrzny ogień",
+      "description": "Zyskaj 2 pkt. Siły."
+    },
+    "INJURY": {
+      "name": "Kontuzja",
+      "description": "Niezagrywalna."
+    },
+    "INTIMIDATE": {
+      "name": "Zastraszenie",
+      "description": "Nałóż 1 pkt. Słabości na WSZYSTKICH przeciwników.\nWykluczenie."
+    },
+    "IRON_WAVE": {
+      "name": "Żelazna fala",
+      "description": "Zyskaj 5 pkt. Bloku.\nZadaj 5 pkt. obrażeń."
+    },
+    "J_A_X": {
+      "name": "J.A.X.",
+      "description": "Utrać 3 PŻ.\nZyskaj 2 pkt. Siły."
+    },
+    "JACK_OF_ALL_TRADES": {
+      "name": "As w rękawie",
+      "description": "Dodaj 1 losową bezbarwną kartę\ndo ręki.\nWykluczenie.",
+      "upgradeDescription": "Dodaj +1 losowe bezbarwne karty\ndo ręki.\nWykluczenie."
+    },
+    "JUGGERNAUT": {
+      "name": "Kolos",
+      "description": "Kiedykolwiek zyskasz\npkt. Bloku, zadaj 5 pkt. obrażeń losowemu przeciwnikowi."
+    },
+    "LEAP": {
+      "name": "Uskok",
+      "description": "Zyskaj 9 pkt. Bloku."
+    },
+    "LEG_SWEEP": {
+      "name": "Podcięcie",
+      "description": "Nałóż 2 pkt. Słabości.\nZyskaj 11 pkt. Bloku."
+    },
+    "LIMIT_BREAK": {
+      "name": "Ponad 9000",
+      "description": "Podwój swoją\nobecną Siłę.\nWykluczenie.",
+      "upgradeDescription": "Podwój swoją obecną Siłę."
+    },
+    "LOCKON": {
+      "name": "Namierzenie",
+      "description": "Zadaj 8 pkt. obrażeń.\nNałóż 2 pkt. Namierzenia."
+    },
+    "LOOP": {
+      "name": "Pętla",
+      "description": "Na początku tury, użyj pasywnego efektu pierwszej Sfery.",
+      "upgradeDescription": "Na początku tury, użyj pasywnego efektu pierwszej Sfery +1 razy."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Uczenie maszynowe",
+      "description": "Dobierz 1 dodatkową kartę na początku każdej tury.",
+      "upgradeDescription": "Startowa.\nDobierz 1 dodatkową kartę na początku każdej tury."
+    },
+    "STUDY": {
+      "name": "Nauka",
+      "description": "Na koniec swojej tury wtasuj Rozeznanie do stosu rozgrywającego."
+    },
+    "MADNESS": {
+      "name": "Szaleństwo",
+      "description": "Na czas walki zredukuj koszt losowej karty w ręce do 0.\nWykluczenie."
+    },
+    "MAGNETISM": {
+      "name": "Magnetyzm",
+      "description": "Na początku każdej tury, dodaj losową bezbarwną kartę do ręki."
+    },
+    "MALAISE": {
+      "name": "Marazm",
+      "description": "Przeciwnik utraci X pkt. Siły. Nałóż X pkt. Słabości.\nWykluczenie.",
+      "upgradeDescription": "Przeciwnik utraci X+1\npkt. Siły. Nałóż X+1\npkt. Słabości.\nWykluczenie."
+    },
+    "MASTER_OF_STRATEGY": {
+      "name": "Mistrz strategii",
+      "description": "Dobierz 3 karty.\nWykluczenie."
+    },
+    "MASTERFUL_STAB": {
+      "name": "Mistrzowskie dźgnięcie",
+      "description": "Zadaj 12 pkt. obrażeń.\nKiedykolwiek otrzymasz obrażenia, zwiększ koszt tej karty o 1."
+    },
+    "MAYHEM": {
+      "name": "Zamęt",
+      "description": "Na początku tury, zagraj kartę ze szczytu stosu rozgrywającego."
+    },
+    "MELTER": {
+      "name": "Roztapiacz",
+      "description": "Pozbaw przeciwnika wszystkich pkt. Bloku.\nZadaj 10 pkt. obrażeń."
+    },
+    "METALLICIZE": {
+      "name": "Przezbrojenie",
+      "description": "Na koniec tury zyskaj\n3 pkt. Bloku."
+    },
+    "METAMORPHOSIS": {
+      "name": "Metamorfoza",
+      "description": "Dodaj 3 kart(y) Ataku do stosu rozgrywającego na czas potyczki. Karty są losowe i kosztują 0.\nWykluczenie."
+    },
+    "METEOR_STRIKE": {
+      "name": "Uderzenie meteorytu",
+      "description": "Zadaj 24 pkt. obrażeń.\nPrzywołaj 3 Sfery Plazmy."
+    },
+    "MIND_BLAST": {
+      "name": "Psioniczny atak",
+      "description": "Startowa.\nZadaj obrażenia równe liczbie kart w stosie rozgrywającym."
+    },
+    "MULTI_CAST": {
+      "name": "Powtórzenie",
+      "description": "Wyładuj pierwszą Sferę X razy.",
+      "upgradeDescription": "Wyładuj pierwszą Sferę X+1 razy."
+    },
+    "NECRONOMICURSE": {
+      "name": "Klątwa umarlaka",
+      "description": "Niezagrywalna.\nOd tej Klątwy nie ma ucieczki."
+    },
+    "NEUTRALIZE": {
+      "name": "Neutralizacja",
+      "description": "Zadaj 3 pkt. obrażeń.\nNałóż 1 pkt. Słabości."
+    },
+    "NIGHT_TERROR": {
+      "name": "Koszmar",
+      "description": "Wybierz kartę.\nW następnej turze dodaj 3 kopie tej karty do ręki. Wykluczenie."
+    },
+    "NORMALITY": {
+      "name": "Przeciętność",
+      "description": "Niezagrywalna.\nW tej turze nie możesz zagrać więcej niż 3 karty."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Trujące opary",
+      "description": "Na początku swojej tury nałóż 2 pkt. Trucizny na WSZYSTKICH przeciwników."
+    },
+    "OFFERING": {
+      "name": "Ofiara",
+      "description": "Utrać 6 PŻ.\nZyskaj [R] [R].\nDobierz 3 karty.\nWykluczenie.",
+      "upgradeDescription": "Utrać 6 PŻ.\nZyskaj [R] [R].\nDobierz +2 kart.\nWykluczenie."
+    },
+    "OUTMANEUVER": {
+      "name": "Przechytrzenie",
+      "description": "Zyskaj [G] [G]\nw następnej turze.",
+      "upgradeDescription": "Zyskaj [G] [G] [G]\nw następnej turze."
+    },
+    "PAIN": {
+      "name": "Ból",
+      "description": "Niezagrywalna.\nJeśli w ręce,\nutrać 1 PŻ za każdą zagraną kartę."
+    },
+    "PANACEA": {
+      "name": "Panaceum",
+      "description": "Zyskaj 1 pkt. Hartu.\nWykluczenie."
+    },
+    "PANACHE": {
+      "name": "Rozmach",
+      "description": "Za każde zagrane 5 kart w jednej turze, zadaj 10 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "PARASITE": {
+      "name": "Pasożyt",
+      "description": "Niezagrywalna.\nJeśli zostanie podmieniona lub usunięta, utrać 3 maksymalne PŻ."
+    },
+    "PERFECTED_STRIKE": {
+      "name": "Perfekcyjne uderzenie",
+      "description": "Zadaj 6 pkt. obrażeń.\nZadaj dodatkowo +2 pkt. obrażeń za KAŻDĄ kartę zawierającą w nazwie \"uderzenie\".",
+      "upgradeDescription": "Zadaj 6 pkt. obrażeń.\nZadaj dodatkowo +3 pkt. obrażeń za KAŻDĄ kartę zawierającą w nazwie \"uderzenie\"."
+    },
+    "PHANTASMAL_KILLER": {
+      "name": "Widmowy zabójca",
+      "description": "W następnej turze karty Ataku zadają podwójne obrażenia."
+    },
+    "PIERCINGWAIL": {
+      "name": "Przeszywający jęk",
+      "description": "W tej turze WSZYSCY przeciwnicy tracą\n6 pkt. Siły.\nWykluczenie."
+    },
+    "POISONED_STAB": {
+      "name": "Trujące dźgnięcie",
+      "description": "Zadaj 6 pkt. obrażeń.\nNałóż 3 pkt. Trucizny."
+    },
+    "POMMEL_STRIKE": {
+      "name": "Uderzenie głowicą",
+      "description": "Zadaj 9 pkt. obrażeń.\nDobierz 1 kartę.",
+      "upgradeDescription": "Zadaj +1 pkt. obrażeń.\nDobierz +1 karty."
+    },
+    "POWER_THROUGH": {
+      "name": "Pomimo ran",
+      "description": "Dodaj 2 Rany do ręki.\nZyskaj 15 pkt. Bloku."
+    },
+    "PREDATOR": {
+      "name": "Łowca",
+      "description": "Zadaj 15 pkt. obrażeń.\nDobierz 2 karty więcej w następnej turze."
+    },
+    "PREPARED": {
+      "name": "Przygotowanie",
+      "description": "Dobierz 1 kartę.\nOdrzuć 1 kartę.",
+      "upgradeDescription": "Dobierz +1 karty.\nOdrzuć +1 karty."
+    },
+    "PUMMEL": {
+      "name": "Furia uderzeń",
+      "description": "Zadaj 2 pkt. obrażeń\n4 razy.\nWykluczenie.",
+      "upgradeDescription": "Zadaj 2 pkt. obrażeń\n+1 razy.\nWykluczenie."
+    },
+    "PURITY": {
+      "name": "Oczyszczenie",
+      "description": "Wyklucz do 3 kart z ręki.\nWykluczenie."
+    },
+    "QUICK_SLASH": {
+      "name": "Szybkie cięcie",
+      "description": "Zadaj 8 pkt. obrażeń.\nDobierz 1 kartę."
+    },
+    "RAGE": {
+      "name": "Wściekłość",
+      "description": "Za każdą kartę Ataku którą zagrasz w tej turze, zyskaj 3 pkt. Bloku."
+    },
+    "RAINBOW": {
+      "name": "Tęcza",
+      "description": "Przywołaj 1 Sferę Gromu, 1 Mrozu i 1 Ciemności.\nWykluczenie.",
+      "upgradeDescription": "Przywołaj 1 Sferę Gromu, 1 Mrozu i 1 Ciemności."
+    },
+    "RAMPAGE": {
+      "name": "Dziki szał",
+      "description": "Zadaj 8 pkt. obrażeń.\nKażde zagranie tej karty zwiększa jej obrażenia o 5 pkt. na czas tej walki."
+    },
+    "REAPER": {
+      "name": "Żniwiarz",
+      "description": "Zadaj 4 pkt. obrażeń WSZYSTKIM wrogom.\nPrzywróć PŻ równe niezabl. obrażeniom.\nWykluczenie."
+    },
+    "REBOOT": {
+      "name": "Restart",
+      "description": "Wtasuj wszystkie karty do stosu rozgrywającego.\nDobierz 4 kart(y).\nWykluczenie."
+    },
+    "REBOUND": {
+      "name": "Rykoszet",
+      "description": "Zadaj 9 pkt. obrażeń.\nUmieść następną zagraną kartę na szczycie stosu rozgrywającego."
+    },
+    "RECKLESS_CHARGE": {
+      "name": "Zuchwała szarża",
+      "description": "Zadaj 7 pkt. obrażeń.\nWtasuj Oszołomienie do stosu rozgrywającego."
+    },
+    "RECYCLE": {
+      "name": "Recykling",
+      "description": "Wyklucz kartę.\nZyskaj [B] równą jej kosztowi."
+    },
+    "REDO": {
+      "name": "Rekurencja",
+      "description": "Wyładuj pierwszą Sferę.\nPrzywołaj Sferę która została Wyładowana."
+    },
+    "REFLEX": {
+      "name": "Refleks",
+      "description": "Niezagrywalna.\nJeśli odrzucisz tę kartę z ręki, dobierz 2 karty.",
+      "upgradeDescription": "Niezagrywalna.\nJeśli odrzucisz tę kartę z ręki, dobierz +1 karty."
+    },
+    "REGRET": {
+      "name": "Żal",
+      "description": "Niezagrywalna.\nNa koniec tury, utrać ilość PŻ równą ilości kart w ręce."
+    },
+    "REINFORCED_BODY": {
+      "name": "Wzmocnione ciało",
+      "description": "Zyskaj 7 pkt. Bloku X razy."
+    },
+    "REPROGRAM": {
+      "name": "Przeprogramowanie",
+      "description": "Utrać 1 pkt. Skupienia.\nZyskaj 1 pkt. Siły.\nZyskaj 1 pkt. Zręczności."
+    },
+    "RIDDLE_WITH_HOLES": {
+      "name": "Dziurawiec",
+      "description": "Zadaj 3 pkt. obrażeń 5 razy."
+    },
+    "RIP_AND_TEAR": {
+      "name": "Rozszarpanie",
+      "description": "Zadaj 7 pkt. obrażeń losowemu przeciwnikowi 2 razy."
+    },
+    "RUPTURE": {
+      "name": "Masochizm",
+      "description": "Kiedykolwiek stracisz\nPŻ w wyniku\nzagranej karty,\nzyskaj 1 pkt. Siły."
+    },
+    "SADISTIC_NATURE": {
+      "name": "Sadyzm",
+      "description": "Kiedykolwiek nałożysz negatywny efekt na przeciwnika, otrzyma on 5 pkt. obrażeń."
+    },
+    "SCRAPE": {
+      "name": "Ekstrakcja",
+      "description": "Zadaj 7 pkt. obrażeń.\nDobierz 4 kart(y).\nOdrzuć każdą dobraną w ten sposób kartę o niezerowym koszcie."
+    },
+    "SEARING_BLOW": {
+      "name": "Gwałtowny cios",
+      "description": "Zadaj 12 pkt. obrażeń.\nMoże być Ulepszona dowolną ilość razy."
+    },
+    "SECOND_WIND": {
+      "name": "Druga szansa",
+      "description": "Wyklucz wszystkie karty niebędące kartami Ataku i zyskaj za każdą 5 pkt. Bloku."
+    },
+    "SECRET_TECHNIQUE": {
+      "name": "Sekretny ruch",
+      "description": "Wybierz kartę Umiejętności ze stosu rozgrywającego i umieść ją w ręce.\nWykluczenie.",
+      "upgradeDescription": "Wybierz kartę Umiejętności ze stosu rozgrywającego i umieść ją w ręce."
+    },
+    "SECRET_WEAPON": {
+      "name": "Sekretna broń",
+      "description": "Wybierz kartę Ataku ze stosu rozgrywającego i umieść ją w ręce.\nWykluczenie.",
+      "upgradeDescription": "Wybierz kartę Ataku ze stosu rozgrywającego i umieść ją w ręce."
+    },
+    "SEEING_RED": {
+      "name": "Amok",
+      "description": "Zyskaj [R] [R].\nWykluczenie."
+    },
+    "SEEK": {
+      "name": "Wyszukanie",
+      "description": "Wybierz 1 kartę ze stosu rozgrywającego i przełóż ją do ręki.\nWykluczenie.",
+      "upgradeDescription": "Wybierz +1 karty ze stosu rozgrywającego i przełóż je do ręki.\nWykluczenie."
+    },
+    "SELF_REPAIR": {
+      "name": "Samonaprawa",
+      "description": "Na końcu walki, przywróć 7 PŻ."
+    },
+    "SENTINEL": {
+      "name": "Strażnik",
+      "description": "Zyskaj 5 pkt. Bloku.\nJeśli ta karta zostanie Wykluczona,\nzyskaj [R] [R].",
+      "upgradeDescription": "Zyskaj +3 pkt. Bloku.\nJeśli ta karta zostanie Wykluczona,\nzyskaj [R] [R] [R]."
+    },
+    "SETUP": {
+      "name": "Ustawienie",
+      "description": "Umieść kartę z ręki na szczycie stosu rozgrywającego.\nKosztuje ona 0 do pierwszego zagrania."
+    },
+    "SEVER_SOUL": {
+      "name": "Rozerwanie duszy",
+      "description": "Wyklucz z ręki\nkarty niebędące\nkartami Ataku.\nZadaj 16 pkt. obrażeń."
+    },
+    "SHAME": {
+      "name": "Wstyd",
+      "description": "Niezagrywalna.\nNa koniec tury zyskaj\n1 pkt. Kruchości."
+    },
+    "SHIV": {
+      "name": "Nóż",
+      "description": "Zadaj !D! pkt. obrażeń.\nWykluczenie."
+    },
+    "SHOCKWAVE": {
+      "name": "Fala uderzeniowa",
+      "description": "Nałóż 3 pkt. Słabości\ni Wrażliwości na WSZYSTKICH przeciwników.\nWykluczenie."
+    },
+    "SHRUG_IT_OFF": {
+      "name": "Bez zadrapań",
+      "description": "Zyskaj 8 pkt. Bloku.\nDobierz 1 kartę."
+    },
+    "SKEWER": {
+      "name": "Szpikulec",
+      "description": "Zadaj 7 pkt. obrażeń\nX razy."
+    },
+    "SKIM": {
+      "name": "Schemat",
+      "description": "Dobierz 3 karty."
+    },
+    "SLICE": {
+      "name": "Cięcie",
+      "description": "Zadaj 6 pkt. obrażeń."
+    },
+    "SLIMED": {
+      "name": "Szlam",
+      "description": "Wykluczenie."
+    },
+    "SPOT_WEAKNESS": {
+      "name": "Znajdź lukę",
+      "description": "Jeśli przeciwnik zamierza zaatakować,\nzyskaj 3 pkt. Siły."
+    },
+    "STACK": {
+      "name": "Stos",
+      "description": "Zyskaj pkt. Bloku równe ilości kart w stosie kart odrzuconych.",
+      "upgradeDescription": "Zyskaj pkt. Bloku równe ilości kart w stosie kart odrzuconych +3."
+    },
+    "STATIC_DISCHARGE": {
+      "name": "Elektrostatyczność",
+      "description": "Kiedykolwiek otrzymasz niezablokowane obrażenia, Przywołaj 1 Sferę Gromu.",
+      "upgradeDescription": "Kiedykolwiek otrzymasz niezablokowane obrażenia, Przywołaj +1 Sfery Gromu."
+    },
+    "STEAM": {
+      "name": "Bariera z pary",
+      "description": "Zyskaj 6 pkt. Bloku. Do końca walki Blok tej karty jest obniżony o 1."
+    },
+    "STEAM_POWER": {
+      "name": "Podkręcenie obrotów",
+      "description": "Dobierz 2 karty.\nDodaj Poparzenie do stosu kart odrzuconych."
+    },
+    "STORM": {
+      "name": "Burza",
+      "description": "Kiedykolwiek zagrasz kartę Mocy, Przywołaj 1 Sferę Gromu.",
+      "upgradeDescription": "Startowa.\nKiedykolwiek zagrasz kartę Mocy, Przywołaj 1 Sferę Gromu."
+    },
+    "STORM_OF_STEEL": {
+      "name": "Nawałnica ostrzy",
+      "description": "Odrzuć obecną rękę.\nZa każdą odrzuconą kartę otrzymasz 1 Nóż do ręki.",
+      "upgradeDescription": "Odrzuć obecną rękę.\nZa każdą odrzuconą kartę otrzymasz 1 Nóż+ do ręki."
+    },
+    "STREAMLINE": {
+      "name": "Strumień",
+      "description": "Zadaj 15 pkt. obrażeń.\nKiedykolwiek zagrasz tę kartę, zmniejsz jej koszt o 1 do końca walki."
+    },
+    "STRIKE_B": {
+      "name": "Uderzenie",
+      "description": "Zadaj 6 pkt. obrażeń."
+    },
+    "STRIKE_G": {
+      "name": "Uderzenie",
+      "description": "Zadaj 6 pkt. obrażeń."
+    },
+    "STRIKE_R": {
+      "name": "Uderzenie",
+      "description": "Zadaj 6 pkt. obrażeń."
+    },
+    "STRIKE_P": {
+      "name": "Uderzenie",
+      "description": "Zadaj 6 pkt. obrażeń."
+    },
+    "SUCKER_PUNCH": {
+      "name": "Bez ostrzeżenia",
+      "description": "Zadaj 7 pkt. obrażeń.\nNałóż 1 pkt. Słabości."
+    },
+    "SUNDER": {
+      "name": "Rozerwanie",
+      "description": "Zadaj 24 pkt. obrażeń.\nJeżeli pokonasz tym atakiem przeciwnika, zyskaj [B] [B] [B]."
+    },
+    "SURVIVOR": {
+      "name": "Ocalenie",
+      "description": "Zyskaj 8 pkt. Bloku.\nOdrzuć 1 kartę."
+    },
+    "SWEEPING_BEAM": {
+      "name": "Rozległy promień",
+      "description": "Zadaj 6 pkt. obrażeń WSZYSTKIM przeciwnikom.\nDobierz 1 kartę."
+    },
+    "SWIFT_STRIKE": {
+      "name": "Szybkie uderzenie",
+      "description": "Zadaj 7 pkt. obrażeń."
+    },
+    "SWORD_BOOMERANG": {
+      "name": "Miecz zwrotny",
+      "description": "Zadaj 3 pkt. obrażeń\n3 razy losowemu przeciwnikowi."
+    },
+    "TACTICIAN": {
+      "name": "Taktyk",
+      "description": "Niezagrywalna.\nJeśli odrzucisz tę kartę,\nzyskaj [G].",
+      "upgradeDescription": "Niezagrywalna.\nJeśli odrzucisz tę kartę,\nzyskaj [G] [G]."
+    },
+    "TEMPEST": {
+      "name": "Nawałnica",
+      "description": "Przywołaj Sfery Gromów: X.\nWykluczenie.",
+      "upgradeDescription": "Przywołaj Sfery Gromów: X+1.\nWykluczenie."
+    },
+    "TERROR": {
+      "name": "Terror",
+      "description": "Nałóż 99 pkt. Wrażliwości.\nWykluczenie."
+    },
+    "THE_BOMB": {
+      "name": "Bomba",
+      "description": "Na koniec 3. tury zadaj\n40 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "THINKING_AHEAD": {
+      "name": "Dwie karty w przód",
+      "description": "Dobierz 2 karty.\nPołóż kartę z ręki na górze stosu rozgrywającego.\nWykluczenie.",
+      "upgradeDescription": "Dobierz 2 karty.\nPołóż kartę z ręki na górze stosu rozgrywającego."
+    },
+    "THUNDER_STRIKE": {
+      "name": "Uderzenie gromu",
+      "description": "Zadaj 7 pkt. obrażeń losowemu przeciwnikowi za każdą Sferę Gromu przywołaną w tej walce."
+    },
+    "THUNDERCLAP": {
+      "name": "Grzmot",
+      "description": "Zadaj 4 pkt. obrażeń WSZYSTKIM przeciwnikom i nałóż po\n1 pkt. Wrażliwości."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Bogaty arsenał",
+      "description": "Na początku swojej tury dobierz 1 kartę i odrzuć 1 kartę."
+    },
+    "TRANSMUTATION": {
+      "name": "Transmutacja",
+      "description": "Dodaj X losowych bezbarwnych kart do ręki. Kosztują 0 w tej turze.\nWykluczenie.",
+      "upgradeDescription": "Dodaj X losowych, ulepszonych bezbarwnych kart do ręki. Kosztują 0 w tej turze.\nWykluczenie."
+    },
+    "TRIP": {
+      "name": "Potknięcie",
+      "description": "Nałóż 2 pkt. Wrażliwości.",
+      "upgradeDescription": "Nałóż 2 pkt. Wrażliwości na WSZYSTKICH przeciwników."
+    },
+    "TRUE_GRIT": {
+      "name": "Prawdziwe męstwo",
+      "description": "Zyskaj 7 pkt. Bloku.\nWyklucz 1 losową kartę.",
+      "upgradeDescription": "Zyskaj +2 pkt. Bloku.\nWyklucz 1 wybraną kartę."
+    },
+    "TURBO": {
+      "name": "TURBO",
+      "description": "Zyskaj [B] [B].\nDodaj Otchłań do stosu kart odrzuconych.",
+      "upgradeDescription": "Zyskaj [B] [B] [B].\nDodaj Otchłań do stosu kart odrzuconych."
+    },
+    "TWIN_STRIKE": {
+      "name": "Podwójne uderzenie",
+      "description": "Zadaj dwukrotnie 5 pkt. obrażeń."
+    },
+    "UNDERHANDED_STRIKE": {
+      "name": "Podstępne uderzenie",
+      "description": "Zadaj 12 pkt. obrażeń.\nJeżeli w tej turze jakakolwiek karta została odrzucona, zyskaj [G] [G]."
+    },
+    "UNDO": {
+      "name": "Równowaga",
+      "description": "Zyskaj 13 pkt. Bloku.\nPod koniec tej tury nie odrzucasz kart."
+    },
+    "UNLOAD": {
+      "name": "Wyładowanie",
+      "description": "Zadaj 14 pkt. obrażeń.\nOdrzuć WSZYSTKIE karty nie będące kartami Ataku."
+    },
+    "UPPERCUT": {
+      "name": "Podbródkowy",
+      "description": "Zadaj 13 pkt. obrażeń.\nNałóż 1 pkt. Słabości.\nNałóż 1 pkt. Wrażliwości."
+    },
+    "VENOMOLOGY": {
+      "name": "Alchemizacja",
+      "description": "Otrzymaj losową miksturę.\nWykluczenie."
+    },
+    "VOID": {
+      "name": "Otchłań",
+      "description": "Niezagrywalna.\nKiedy dobierzesz tę kartę, tracisz\n1 pkt. Energii.\nEteryczna."
+    },
+    "WARCRY": {
+      "name": "Okrzyk bojowy",
+      "description": "Dobierz 1 kartę.\nPrzenieś kartę z ręki na szczyt stosu rozgrywającego.\nWykluczenie.",
+      "upgradeDescription": "Dobierz +1 karty.\nPrzenieś kartę z ręki na szczyt stosu rozgrywającego.\nWykluczenie."
+    },
+    "WELL_LAID_PLANS": {
+      "name": "Plan walki",
+      "description": "Pod koniec tury Zachowaj\n1 kartę.",
+      "upgradeDescription": "Pod koniec tury zachowaj w ręce\nmaksymalnie +1 karty."
+    },
+    "WHIRLWIND": {
+      "name": "Młyniec",
+      "description": "Zadaj 5 pkt. obrażeń WSZYSTKIM przeciwnikom X razy."
+    },
+    "WHITE_NOISE": {
+      "name": "Biały szum",
+      "description": "Dodaj losową kartę Mocy do ręki.\nW tej turze kosztuje 0.\nWykluczenie."
+    },
+    "WILD_STRIKE": {
+      "name": "Dzikie uderzenie",
+      "description": "Zadaj 12 pkt. obrażeń.\nWtasuj Ranę do stosu rozgrywającego."
+    },
+    "WOUND": {
+      "name": "Rana",
+      "description": "Niezagrywalna."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Widmowa forma",
+      "description": "Zyskaj 2 pkt. Nieuchwytności.\nNa koniec tury, utrać 1 pkt. Zwinności."
+    },
+    "WRITHE": {
+      "name": "Cierpienie",
+      "description": "Niezagrywalna.\nStartowa."
+    },
+    "ZAP": {
+      "name": "Porażenie",
+      "description": "Przywołaj 1 Sferę Gromu."
+    },
+    "CORE_SURGE": {
+      "name": "Wezbranie mocy",
+      "description": "Zadaj 11 pkt. obrażeń.\nZyskaj 1 pkt. Hartu.\nWykluczenie."
+    },
+    "COMPILE_DRIVER": {
+      "name": "Kompilacja sterownika",
+      "description": "Zadaj 7 pkt. obrażeń.\nDobierz 1 kartę za każdą posiadaną, unikalną Sferę."
+    },
+    "RITUALDAGGER": {
+      "name": "Rytualny sztylet",
+      "description": "Zadaj !D! pkt. obrażeń. Po Uśmierceniu przeciwnika, trwale zwiększ zadawane obrażenia o 3 pkt.\nWykluczenie."
+    },
+    "PRIDE": {
+      "name": "Duma",
+      "description": "Startowa.\nWykluczenie.\nNa koniec tury, umieść kopię tej karty na szczycie stosu rozgrywającego."
+    },
+    "PANICBUTTON": {
+      "name": "Panika",
+      "description": "Zyskaj 30 pkt. Bloku. Nie możesz zyskać Bloku przez następne 2 tury.\nWykluczenie."
+    },
+    "HANDOFGREED": {
+      "name": "Chciwość",
+      "description": "Zadaj 20 pkt. obrażeń.\nPo Uśmierceniu przeciwnika otrzymaj\n20 szt. złota."
+    },
+    "VIOLENCE": {
+      "name": "Przemoc",
+      "description": "Dobierz 3 losowe karty Ataku ze stosu rozgrywającego i umieść je w ręce.\nWykluczenie."
+    },
+    "IMPATIENCE": {
+      "name": "Niecierpliwość",
+      "description": "Jeśli nie masz w ręce kart Ataku, dobierz 2 karty."
+    },
+    "FORETHOUGHT": {
+      "name": "Przezorność",
+      "description": "Umieść kartę z ręki na dole stosu rozgrywającego.\nKosztuje ona 0 do pierwszego zagrania.",
+      "upgradeDescription": "Umieść dowolną liczbę kart z ręki na dnie stosu rozgrywającego.\nKosztują one 0 do pierwszego zagrania."
+    },
+    "DISCOVERY": {
+      "name": "Odkrywanie",
+      "description": "Wybierz 1 z 3 losowych kart i dodaj ją do ręki. Kosztuje 0 w tej turze.\nWykluczenie.",
+      "upgradeDescription": "Wybierz 1 z 3 losowych kart i dodaj ją do ręki. Kosztuje 0 w tej turze."
+    },
+    "NIRVANA": {
+      "name": "Nirwana",
+      "description": "Kiedykolwiek Prognozujesz, zyskaj\n3 pkt. Bloku."
+    },
+    "EMPTYFIST": {
+      "name": "Pusta pięść",
+      "description": "Zadaj 9 pkt. obrażeń.\nOpuść swoją Postawę."
+    },
+    "EMPTYBODY": {
+      "name": "Puste ciało",
+      "description": "Zyskaj 7 pkt. Bloku.\nOpuść swoją Postawę."
+    },
+    "WREATHOFFLAME": {
+      "name": "Wieniec płomieni",
+      "description": "Twoja następna karta Ataku zada 5 dodatkowych obrażeń."
+    },
+    "FEARNOEVIL": {
+      "name": "Zła się nie ulęknę",
+      "description": "Zadaj 8 pkt. obrażeń.\nJeżeli przeciwnik zamierza zaatakować, przyjmij postawę Spokoju."
+    },
+    "MENTALFORTRESS": {
+      "name": "Umysłowa forteca",
+      "description": "Gdy zmieniasz Postawę, zyskaj 4 pkt. Bloku."
+    },
+    "MASTERY": {
+      "name": "Mistrzostwo",
+      "description": "Gdy spróbujesz zmienić Postawę na już posiadaną Postawę, zyskaj [B]."
+    },
+    "COLLECT": {
+      "name": "Kolekcjonowanie",
+      "description": "Dodaj Cud+ do swojej ręki na początku następnych X tur.\nWykluczenie.",
+      "upgradeDescription": "Dodaj Cud+ do swojej ręki na początku następnych X+1 tur.\nWykluczenie."
+    },
+    "FOREIGNINFLUENCE": {
+      "name": "Obcy wpływ",
+      "description": "Wybierz 1 z 3 kart Ataku dowolnego koloru i dodaj ją do ręki.\nWykluczenie.",
+      "upgradeDescription": "Wybierz 1 z 3 kart Ataku dowolnego koloru i dodaj ją do ręki.\nKosztuje 0 w tej turze.\nWykluczenie."
+    },
+    "FLOWSTATE": {
+      "name": "DEPRECATED Przepływ",
+      "description": "Gniew: przyjmij postawę Spokoju.\nSpokój: przyjmij postawę Gniewu.\nWykluczenie.",
+      "upgradeDescription": "Gniew: przyjmij postawę Spokoju.\nSpokój: przyjmij postawę Gniewu."
+    },
+    "FLURRYOFBLOWS": {
+      "name": "Lawina ciosów",
+      "description": "Zadaj 4 pkt. obrażeń.\nPrzy zmianie Postawy przywróć tę kartę ze stosu kart odrzuconych do ręki."
+    },
+    "PALMTHATRESTRAINS": {
+      "name": "DEPRECATED Restraining Palm",
+      "description": "Deal !D! damage.\nApply !M! Weak."
+    },
+    "WRATH": {
+      "name": "Gniew",
+      "description": "Zadajesz i otrzymujesz podwójne obrażenia od ataków."
+    },
+    "CALM": {
+      "name": "Spokój",
+      "description": "Po opuszczeniu Spokoju, zyskaj [W] [W] ."
+    },
+    "POLYMATH": {
+      "name": "DEPRECATED Polymath",
+      "description": "Enter Calm or Wrath.\nExhaust."
+    },
+    "CONSECRATE": {
+      "name": "Konsekracja",
+      "description": "Zadaj 5 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "FLICKER": {
+      "name": "DEPRECATED Flicker",
+      "description": "Deal !D! damage. If this kills the enemy, return this card to your hand."
+    },
+    "BLASPHEMY": {
+      "name": "Bluźnierstwo",
+      "description": "Przyjmij postawę Boskości.\nZgiń w następnej turze.\nWykluczenie.",
+      "upgradeDescription": "Zachowanie.\nPrzyjmij postawę Boskości.\nZgiń w następnej turze.\nWykluczenie."
+    },
+    "RAGNAROK": {
+      "name": "Ragnarok",
+      "description": "Zadaj 5 pkt. obrażeń losowym przeciwnikom 5 razy."
+    },
+    "FLAMEMASTERY": {
+      "name": "DEPRECATED Flame Mastery",
+      "description": "Gain !M! Strength."
+    },
+    "STEPANDSTRIKE": {
+      "name": "Krok i uderzenie",
+      "description": "Kosztuje 1 mniej za każdą zmianę Postawy w tej turze.\nZyskaj !B! pkt. Bloku.\nZadaj !D! pkt. obrażeń."
+    },
+    "SURVEY": {
+      "name": "DEPRECATED Survey",
+      "description": "Gain !B! Block.\nGain !M! Vigor."
+    },
+    "SWIPE": {
+      "name": "DEPRECATED Swipe",
+      "description": "Deal !D! damage. Deal half this damage to all other enemies."
+    },
+    "BLESSED": {
+      "name": "DEPRECATED Blessed",
+      "description": "Shuffle !M! Miracles into your draw pile.\nExhaust.",
+      "upgradeDescription": "Shuffle !M! Upgraded Miracles into your draw pile.\nExhaust."
+    },
+    "LETFATEDECIDE": {
+      "name": "DEPRECATED Let Fate Decide",
+      "description": "Play the top X cards of your draw pile. If X is 3 or more, Retain X cards."
+    },
+    "RETREATINGHAND": {
+      "name": "DEPRECATED Retreating Hand",
+      "description": "Ethereal.\nGain !B! Block. If the previous card played was an Attack, return this card to your hand.",
+      "upgradeDescription": "Gain !B! Block. If the previous card played was an Attack, return this card to your hand."
+    },
+    "FLARE": {
+      "name": "DEPRECATED Flare",
+      "description": "Deal !D! damage to ALL enemies.\nWrath: Gain [W] [W] ."
+    },
+    "PERFECTEDFORM": {
+      "name": "DEPRECATED Perfected Form",
+      "description": "If you have entered all basic Stances this turn, enter Divinity.\nExhaust.",
+      "upgradeDescription": "If you have entered all basic Stances this turn, enter Divinity."
+    },
+    "AWAKENEDSTRIKE": {
+      "name": "DEPRECATED Awakened Strike",
+      "description": "Deal !D! damage."
+    },
+    "EMPTYMIND": {
+      "name": "Pusty umysł",
+      "description": "Dobierz 2 karty.\nOpuść swoją Postawę.",
+      "upgradeDescription": "Dobierz +1 karty.\nOpuść swoją Postawę."
+    },
+    "EXPERIENCED": {
+      "name": "DEPRECATED Experienced",
+      "description": "Gain !B! Block for each Upgraded card in your hand."
+    },
+    "JUDGEMENT": {
+      "name": "Osąd",
+      "description": "Jeżeli przeciwnik ma\n30 PŻ lub mniej, ustaw jego PŻ na 0."
+    },
+    "PRAY": {
+      "name": "Modlitwa",
+      "description": "Zyskaj 3 pkt. Mantry.\nWtasuj Rozeznanie do stosu rozgrywającego.",
+      "upgradeDescription": "Zyskaj +1 pkt. Mantry.\nWtasuj Rozeznanie+ do stosu rozgrywającego."
+    },
+    "CONCLUDE": {
+      "name": "Konkluzja",
+      "description": "Zadaj 12 pkt. obrażeń WSZYSTKIM przeciwnikom.\nZakończ swoją turę."
+    },
+    "LESSONLEARNED": {
+      "name": "Cenna lekcja",
+      "description": "Zadaj 10 pkt. obrażeń.\nPo Uśmierceniu wroga, Ulepsz losową kartę w swojej talii.\nWykluczenie."
+    },
+    "CUTTHROUGHFATE": {
+      "name": "Nić przeznaczenia",
+      "description": "Zadaj 7 pkt. obrażeń.\nPrognozuj 2.\nDobierz 1 kartę."
+    },
+    "THIRDEYE": {
+      "name": "Trzecie oko",
+      "description": "Zyskaj 7 pkt. Bloku.\nPrognozuj 3."
+    },
+    "SUBLIMESLICE": {
+      "name": "DEPRECATED Sublime Slice",
+      "description": "Deal !D! damage.\nEnter a random Stance."
+    },
+    "SIGNATUREMOVE": {
+      "name": "Popisowy numer",
+      "description": "Można zagrać, jeżeli to jedyna karta ataku w twojej ręce.\nZadaj 30 pkt. obrażeń."
+    },
+    "PREDICTION": {
+      "name": "DEPRECATED Prediction",
+      "description": "Gain !B! Block at the start of your next turn."
+    },
+    "WORSHIP": {
+      "name": "Ubóstwienie",
+      "description": "Zyskaj 5 pkt. Mantry.",
+      "upgradeDescription": "Zachowanie.\nZyskaj 5 pkt. Mantry."
+    },
+    "FASTING": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "FASTING2": {
+      "name": "Post",
+      "description": "Zyskaj 3 pkt. Siły.\nZyskaj 3 pkt. Zręczności.\nZyskaj 1 [W] mniej na początku każdej tury."
+    },
+    "DEVAFORM": {
+      "name": "Forma Dewy",
+      "description": "Eteryczna.\nNa początku swojej tury zyskaj [W] oraz zwiększ ten zysk o 1.",
+      "upgradeDescription": "Na początku swojej tury zyskaj [W] oraz zwiększ ten zysk o 1."
+    },
+    "WIREHEADING": {
+      "name": "Przezorność",
+      "description": "Na początku swojej tury Prognozuj 3."
+    },
+    "REACHHEAVEN": {
+      "name": "Sięgnąć niebios",
+      "description": "Zadaj 10 pkt. obrażeń.\nWtasuj Poprzez przemoc do stosu rozgrywającego.",
+      "upgradeDescription": "Zadaj +5 pkt. obrażeń.\nWtasuj Poprzez przemoc+ do stosu rozgrywającego."
+    },
+    "THROUGHVIOLENCE": {
+      "name": "Poprzez przemoc",
+      "description": "Zachowanie.\nZadaj !D! pkt. obrażeń.\nWykluczenie."
+    },
+    "CLARITY": {
+      "name": "Pewność",
+      "description": "Podejrzyj !M! górne karty ze stosu rozgrywającego. Dodaj 1 do ręki.\nWyklucz drugą.",
+      "upgradeDescription": "Podejrzyj !M! górnych kart ze stosu rozgrywającego. Dodaj 1 do ręki.\nWyklucz pozostałe."
+    },
+    "THWACK": {
+      "name": "DEPRECATED Thwack",
+      "description": "Deal !D! damage."
+    },
+    "MEDITATE": {
+      "name": "Medytacja",
+      "description": "Przywróć kartę ze stosu kart odrzuconych do ręki i Zachowaj ją. Przyjmij postawę Spokoju.\nZakończ swoją turę.",
+      "upgradeDescription": "Przywróć 2 karty ze stosu kart odrzuconych do ręki i Zachowaj je. Przyjmij postawę Spokoju.\nZakończ swoją turę."
+    },
+    "MIRACLE": {
+      "name": "Cud",
+      "description": "Zachowanie.\nZyskaj [W].\nWykluczenie.",
+      "upgradeDescription": "Zachowanie.\nZyskaj [W] [W].\nWykluczenie."
+    },
+    "VAULT": {
+      "name": "Odskok",
+      "description": "Rozegraj kolejną turę.\nZakończ swoją turę.\nWykluczenie."
+    },
+    "FLOW": {
+      "name": "DEPRECATED Flow",
+      "description": "When you play an Attack, gain 1 temporary Dexterity. When you play a Skill, gain 1 temporary Strength."
+    },
+    "CARVEREALITY": {
+      "name": "Nagięcie rzeczywistości",
+      "description": "Zadaj 6 pkt. obrażeń.\nDodaj Karę do swojej ręki.",
+      "upgradeDescription": "Zadaj +4 pkt. obrażeń.\nDodaj Karę+ do swojej ręki."
+    },
+    "SMITE": {
+      "name": "Kara",
+      "description": "Zachowanie.\nZadaj !D! pkt. obrażeń.\nWykluczenie."
+    },
+    "TRUTH": {
+      "name": "Prawda",
+      "description": "Zachowanie.\nZadaj !D! pkt. obrażeń.\nDobierz !M! kartę.\nWykluczenie.",
+      "upgradeDescription": "Zachowanie.\nZadaj !D! pkt. obrażeń.\nDobierz !M! karty.\nWykluczenie."
+    },
+    "INSIGHT": {
+      "name": "Rozeznanie",
+      "description": "Zachowanie.\nDobierz !M! karty.\nWykluczenie.",
+      "upgradeDescription": "Zachowanie.\nDobierz !M! karty.\nWykluczenie."
+    },
+    "DECEIVEREALITY": {
+      "name": "Oszukać przeznaczenie",
+      "description": "Zyskaj 4 pkt. Bloku.\nDodaj Bezpieczeństwo do swojej ręki.",
+      "upgradeDescription": "Zyskaj +3 pkt. Bloku.\nDodaj Bezpieczeństwo+ do swojej ręki."
+    },
+    "SAFETY": {
+      "name": "Bezpieczeństwo",
+      "description": "Zachowanie.\nZyskaj !B! pkt. Bloku.\nWykluczenie."
+    },
+    "WISDOM": {
+      "name": "Wiedza",
+      "description": "Zachowanie.\nDobierz !M! karty.\nWykluczenie."
+    },
+    "PEACE": {
+      "name": "Pokój",
+      "description": "Zachowanie.\nWSZYSCY przeciwnicy tracą !M! pkt. Siły w tej turze.\nWykluczenie."
+    },
+    "WINDMILLSTRIKE": {
+      "name": "Koliste uderzenie",
+      "description": "Zachowanie.\nZadaj 7 pkt. obrażeń.\nPo Zachowaniu zwiększ obrażenia o 4 na czas tej walki."
+    },
+    "ESTABLISHMENT": {
+      "name": "Opieczętowanie",
+      "description": "Gdy karta zostaje zachowana, obniż jej koszt o 1 na czas tej walki.",
+      "upgradeDescription": "Startowa.\nGdy karta zostaje zachowana, obniż jej koszt o 1 na czas tej walki."
+    },
+    "WARDAURA": {
+      "name": "DEPRECATED Ward Aura",
+      "description": "Retain.\nGain !B! Block.\nAt the start of your turn, gain !M! Block."
+    },
+    "METAPHYSICS": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "EVALUATE": {
+      "name": "Oszacowanie",
+      "description": "Zyskaj 6 pkt. Bloku.\nWtasuj Rozeznanie do stosu rozgrywającego.",
+      "upgradeDescription": "Zyskaj +4 pkt. Bloku.\nWtasuj Rozeznanie+ do stosu rozgrywającego."
+    },
+    "DEVOTION": {
+      "name": "Pobożność",
+      "description": "Na początku swojej tury zyskaj 2 pkt. Mantry."
+    },
+    "SOOTHINGAURA": {
+      "name": "DEPRECATED Soothing Aura",
+      "description": "Retain.\nApply !M! Weak.\nAt the start of your turn, apply 1 Weak to a random enemy."
+    },
+    "BRILLIANCEAURA": {
+      "name": "DEPRECATED Brilliance Aura",
+      "description": "Retain.\nAt the start of your turn, draw 1 card.\nExhaust."
+    },
+    "FURYAURA": {
+      "name": "DEPRECATED Fury Aura",
+      "description": "Retain.\nGain !M! temporary Strength.\nAt the start of your turn, gain 1 temporary Strength."
+    },
+    "DEUSEXMACHINA": {
+      "name": "Deus Ex Machina",
+      "description": "Niezagrywalna.\nGdy dobierzesz tę kartę, Wyklucz ją oraz dodaj\n2 Cuda do ręki."
+    },
+    "CLEANSEEVIL": {
+      "name": "Oczyszczenie ze zła",
+      "description": "Dodaj X Kary to swojej ręki.",
+      "upgradeDescription": "Dodaj X Kary+ do swojej ręki."
+    },
+    "TORRENT": {
+      "name": "DEPRECATED Torrent",
+      "description": "Deal !D! damage to ALL enemies !M! times.\nExhaust."
+    },
+    "WINDUP": {
+      "name": "DEPRECATED Windup",
+      "description": "Deal !D! damage.\nGain !M! Vigor."
+    },
+    "SHIELD": {
+      "name": "DEPRECATED Shield",
+      "description": "Retain.\nGain !B! Block.\nExhaust."
+    },
+    "CRESCENTKICK": {
+      "name": "DEPRECATED Crescent Kick",
+      "description": "Deal !D! damage.\nIf you have Vigor,\ngain [W] and\ndraw 1 card."
+    },
+    "TALKTOTHEHAND": {
+      "name": "Mów do ręki",
+      "description": "Zadaj 5 pkt. obrażeń.\nGdy zaatakujesz tego przeciwnika, zyskaj\n2 pkt. Bloku.\nWykluczenie."
+    },
+    "BATTLEHYMN": {
+      "name": "Hymn bitewny",
+      "description": "Na początku każdej tury dodaj Karę do swojej ręki.",
+      "upgradeDescription": "Startowa. Na początku każdej tury dodaj Karę do swojej ręki."
+    },
+    "PROSTRATE": {
+      "name": "Bicie pokłonów",
+      "description": "Zyskaj 2 pkt. Mantry.\nZyskaj 4 pkt. Bloku.",
+      "upgradeDescription": "Deprecated"
+    },
+    "PUNISHMENT": {
+      "name": "DEPRECATED Punishment",
+      "description": "Enter Punishment Stance."
+    },
+    "ERUPTION": {
+      "name": "Erupcja",
+      "description": "Zadaj 9 pkt. obrażeń.\nPrzyjmij postawę Gniewu."
+    },
+    "CLEARTHEMIND": {
+      "name": "Wyciszenie",
+      "description": "Zachowanie.\nPrzyjmij postawę Spokoju.\nWykluczenie."
+    },
+    "WAVEOFTHEHAND": {
+      "name": "Podmuch dłonią",
+      "description": "Kiedykolwiek w tej turze zyskasz Blok, nałóż\n1 pkt. Słabości WSZYSTKIM przeciwnikom."
+    },
+    "SPIRITSHIELD": {
+      "name": "Duchowa tarcza",
+      "description": "Zyskaj 3 pkt. Bloku za każdą kartę w twojej ręce."
+    },
+    "VIGILANCE": {
+      "name": "Czujność",
+      "description": "Zyskaj 8 pkt. Bloku.\nPrzyjmij postawę Spokoju.",
+      "upgradeDescription": "Deprecated"
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Serenity",
+      "description": "While you are in Calm, HP loss is reduced by !M!."
+    },
+    "CRESCENDO": {
+      "name": "Crescendo",
+      "description": "Zachowanie.\nPrzyjmij postawę Gniewu.\nWykluczenie."
+    },
+    "TRANSCENDENCE": {
+      "name": "Transcendencja",
+      "description": "Ulepsz wszystkie karty z Zachowaniem w twojej ręce."
+    },
+    "FOLLOWUP": {
+      "name": "Za ciosem",
+      "description": "Zadaj 7 pkt. obrażeń.\nJeżeli w tej walce ostatnią zagraną kartą był Atak, zyskaj [W]."
+    },
+    "PERSEVERANCE": {
+      "name": "Wytrwałość",
+      "description": "Zachowanie.\nZyskaj 5 pkt. Bloku.\nPo Zachowaniu zwiększ blok o 2 na czas tej walki."
+    },
+    "CRUSHJOINTS": {
+      "name": "Miażdżenie stawów",
+      "description": "Zadaj 8 pkt. obrażeń.\nJeżeli w tej walce ostatnią zagraną kartą była Umiejętność, nałóż 1 pkt. Wrażliwości."
+    },
+    "SASHWHIP": {
+      "name": "Smagnięcie szarfą",
+      "description": "Zadaj 8 pkt. obrażeń.\nJeżeli w tej walce ostatnią zagraną kartą był Atak, nałóż\n1 pkt. Słabości."
+    },
+    "SANCTITY": {
+      "name": "Nienaruszalność",
+      "description": "Zyskaj 6 pkt. Bloku.\nJeżeli w tej walce ostatnią zagraną kartą była Umiejętność, dobierz 2 karty."
+    },
+    "OMNISCIENCE": {
+      "name": "Wszechwiedza",
+      "description": "Wybierz kartę ze stosu rozgrywającego,\nzagraj ją dwukrotnie oraz Wyklucz.\nWykluczenie."
+    },
+    "SCRAWL": {
+      "name": "Bazgroły",
+      "description": "Dobieraj karty aż do zapełnienia ręki.\nWykluczenie."
+    },
+    "SWIVEL": {
+      "name": "Kręciołek",
+      "description": "Zyskaj 8 pkt. Bloku.\nNastępna karta Ataku, którą zagrasz,\nkosztuje 0."
+    },
+    "PROTECT": {
+      "name": "Ochrona",
+      "description": "Zachowanie.\nZyskaj 12 pkt. Bloku."
+    },
+    "FLYINGSLEEVES": {
+      "name": "Fruwające rękawy",
+      "description": "Zachowanie.\nZadaj dwukrotnie\n4 pkt. obrażeń."
+    },
+    "MASTERREALITY": {
+      "name": "Władca rzeczywistości",
+      "description": "Kiedykolwiek stworzysz kartę podczas walki, Ulepsz ją."
+    },
+    "BOWLINGBASH": {
+      "name": "Lawinowe grzmotnięcie",
+      "description": "Zadaj 7 pkt. obrażeń za każdego przeciwnika w walce."
+    },
+    "UNRAVELING": {
+      "name": "Odkrycie kart",
+      "description": "Zagraj wszystkie swoje karty od lewej strony do prawej. Cele są wybierane losowo.\nWykluczenie."
+    },
+    "BIGBRAIN": {
+      "name": "DEPRECATED Big Brain",
+      "description": "Retain.\nDraw 1 card.\nExhaust.",
+      "upgradeDescription": "Retain.\nDraw 1 card."
+    },
+    "SANDSOFTIME": {
+      "name": "Piaski czasu",
+      "description": "Zachowanie.\nZadaj 20 pkt. obrażeń.\nPo Zachowaniu zmniejsz koszt o 1 na czas tej walki."
+    },
+    "BRILLIANCE": {
+      "name": "Błyskotliwość",
+      "description": "Zadaj 12 pkt. obrażeń.\nZadaj dodatkowe obrażenia równe\npkt. Mantry zyskanym\nw tej walce."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Retribution",
+      "description": "Whenever you lose HP, gain !M! Vigor."
+    },
+    "JUSTLUCKY": {
+      "name": "Zwykły fart",
+      "description": "Prognozuj 1.\nZyskaj 2 pkt. Bloku.\nZadaj 3 pkt. obrażeń."
+    },
+    "WEAVE": {
+      "name": "Splot",
+      "description": "Zadaj 4 pkt. obrażeń.\nKiedykolwiek prognozujesz, przywróć tę kartę ze stosu kart odrzuconych do ręki."
+    },
+    "ADAPTATION": {
+      "name": "Blitzkrieg",
+      "description": "Gdy przyjmujesz postawę Gniewu, dobierz 2 karty.",
+      "upgradeDescription": "DEPRECATED"
+    },
+    "CAUSALITY": {
+      "name": "Przyczynowość",
+      "description": "Dobieraj karty aż do zapełnienia ręki.\nWykluczenie.",
+      "upgradeDescription": "Zachowanie.\nDobieraj karty aż do zapełnienia ręki.\nWykluczenie."
+    },
+    "WISH": {
+      "name": "Życzenie",
+      "description": "Wybierz jedno:\nZyskaj 6 pkt. Pancerza,\n3 pkt. Siły albo\n25 szt. Złota.\nWykluczenie."
+    },
+    "CURSEOFTHEBELL": {
+      "name": "Klątwa dzwonu",
+      "description": "Niezagrywalna.\nNie można usunąć z talii."
+    },
+    "INNERPEACE": {
+      "name": "Oaza spokoju",
+      "description": "Jeśli jesteś w postawie Spokoju, dobierz\n3 karty. W przeciwnym wypadku przyjmij postawę Spokoju."
+    },
+    "TANTRUM": {
+      "name": "Furia",
+      "description": "Zadaj 3 pkt. obrażeń\n3 razy.\nPrzyjmij postawę Gniewu.\nWtasuj tę kartę do stosu rozgrywającego."
+    },
+    "ALPHA": {
+      "name": "Alfa",
+      "description": "Wtasuj Beta do stosu rozgrywającego.\nWykluczenie.",
+      "upgradeDescription": "Startowa.\nWtasuj Beta do stosu rozgrywającego.\nWykluczenie."
+    },
+    "BETA": {
+      "name": "Beta",
+      "description": "Wtasuj Omega do stosu rozgrywającego.\nWykluczenie."
+    },
+    "OMEGA": {
+      "name": "Omega",
+      "description": "Na koniec swojej tury zadaj !M! pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "VENGEANCE": {
+      "name": "Skumulowana furia",
+      "description": "Na początku swojej następnej tury przyjmij postawę Gniewu oraz dobierz 2 karty."
+    },
+    "PATHTOVICTORY": {
+      "name": "Punkty nacisku",
+      "description": "Nałóż 8 pkt. Piętna.\nWSZYSCY przeciwnicy tracą PŻ równe ich Piętnu."
+    },
+    "WALLOP": {
+      "name": "Łomot",
+      "description": "Zadaj 9 pkt. obrażeń.\nZyskaj Blok równy niezablokowanym obrażeniom."
+    },
+    "HALT": {
+      "name": "Stop",
+      "description": "Zyskaj 3 pkt. Bloku.\nJeżeli jesteś w postawie Gniewu, zyskaj 9 dodatkowych pkt. Bloku."
+    },
+    "WHEELKICK": {
+      "name": "Kopniak z półobrotu",
+      "description": "Zadaj 15 pkt. obrażeń.\nDobierz 2 karty."
+    },
+    "INDIGNATION": {
+      "name": "Wzburzenie",
+      "description": "Jeśli jesteś w postawie Gniewu, nałóż 3 pkt. Wrażliwości WSZYSTKIM przeciwnikom. Inaczej przyjmij postawę Gniewu."
+    },
+    "BECOMEALMIGHTY": {
+      "name": "Wszechmoc",
+      "description": "Zyskaj !M! pkt. Siły."
+    },
+    "LIVEFOREVER": {
+      "name": "Wieczne życie",
+      "description": "Zyskaj !M! pkt. Pancerza."
+    },
+    "FAMEANDFORTUNE": {
+      "name": "Sława i bogactwo",
+      "description": "Zyskaj !M! szt. Złota."
+    },
+    "CONJUREBLADE": {
+      "name": "Magiczne ostrze",
+      "description": "Wtasuj Wymazanie do stosu rozgrywającego.\nWykluczenie.",
+      "upgradeDescription": "Wtasuj Wymazanie z X+1 do stosu rozgrywającego.\nWykluczenie."
+    },
+    "EXPUNGER": {
+      "name": "Wymazanie",
+      "description": "Zadaj !D! pkt. obrażeń\nX razy."
+    },
+    "WAVEOFTHEHAND2": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATED"
+    },
+    "DISCIPLINE": {
+      "name": "DEPRECATED Discipline",
+      "description": "If you end your turn with unused [W] , draw that many additional cards next turn."
+    },
+    "FLICK": {
+      "name": "DEPRECATED Flick",
+      "description": "Deal !D! damage.\nIf an enemy is Flicked 3 times, they take !M! damage."
+    },
+    "LIKEWATER": {
+      "name": "Jak woda",
+      "description": "Na koniec swojej tury, jeżeli jesteś w postawie Spokoju, zyskaj 5 Bloku."
+    }
+  },
+  "relics": {
+    "ANCHOR": {
+      "name": "Kotwica",
+      "description": "Zaczynaj każdą walkę\nz 10 pkt. Bloku.",
+      "flavor": "Przypinając tę błyskotkę czujesz się cięższy i bardziej stabilny."
+    },
+    "ANCIENT_TEA_SET": {
+      "name": "Serwis do herbaty",
+      "description": "Za każdym razem, gdy\nodwiedzisz Obozowisko,\nkolejną walkę zaczynasz\nz dodatkowymi [E] [E] .",
+      "flavor": "Klucz do pokrzepiającego snu."
+    },
+    "ART_OF_WAR": {
+      "name": "Sztuka wojny",
+      "description": "Jeśli nie zagrasz żadnej karty Ataku podczas swojej tury, zdobądź [E] na początku kolejnej tury.",
+      "flavor": "Ten starożytny manuskrypt skrywa wiedzę minionego wieku."
+    },
+    "ASTROLABE": {
+      "name": "Astrolabium",
+      "description": "Przy podniesieniu wybierz i Podmień 3 karty, a nastepnie Ulepsz je.Wybierz 3 karty do",
+      "flavor": "Narzędzie pozwalające zdobyć bezcenną wiedzę z gwiazd."
+    },
+    "BAG_OF_MARBLES": {
+      "name": "Sakwa szklanych kulek",
+      "description": "Na początku każdej walki nałóż\n1 pkt. Wrażliwości na WSZYSTKICH przeciwników.",
+      "flavor": "Niegdyś bardzo popularne w Mieście. Przydatne do wytrącania przeciwników z równowagi."
+    },
+    "BAG_OF_PREPARATION": {
+      "name": "Torba podróżnika",
+      "description": "Dobierz 2 dodatkowe karty na początku walki.",
+      "flavor": "Większa niż standardowy plecak podróżny. Posiada wiele dodatkowych kieszeni i uchwytów."
+    },
+    "BIRD_FACED_URN": {
+      "name": "Urna z głową ptaka",
+      "description": "Za każdą zagraną kartę Mocy przywróć 2 PŻ.",
+      "flavor": "Na urnie ukazany jest przebiegle wyglądający wroni bóg – Mazaleth."
+    },
+    "BLACK_BLOOD": {
+      "name": "Czarna krew",
+      "description": "Zastępuje Płonącą krew. Przywraca 12 PŻ pod koniec walki.",
+      "flavor": "Wściekłość staje się jeszcze mroczniejsza."
+    },
+    "BLACK_STAR": {
+      "name": "Czarna gwiazda",
+      "description": "Pokonani elitarni przeciwnicy gubią dodatkowy Artefakt.",
+      "flavor": "Odnaleziona po raz pierwszy w Mieście Węży, obok samotnie stojącej świecy."
+    },
+    "BLOOD_VIAL": {
+      "name": "Fiolka z krwią",
+      "description": "Na początku każdej walki przywróć 2 PŻ.",
+      "flavor": "Fiolka zawierająca krew wyższego wampira."
+    },
+    "BLOODY_IDOL": {
+      "name": "Krwawy bożek",
+      "description": "Kiedykolwiek zyskasz Złoto, przywróć 5 PŻ.",
+      "flavor": "Bożek, który stale płacze krwią."
+    },
+    "BLUE_CANDLE": {
+      "name": "Niebieska świeca",
+      "description": "Możesz grać kartami Klątw.\nZagrywając Klątwę utracisz 1 PŻ, a zagrana karta zostanie wykluczona.",
+      "flavor": "Im większy mrok, tym jaśniejszy świecy jest blask."
+    },
+    "BOTTLED_FLAME": {
+      "name": "Zabutelkowany ogień",
+      "description": "Przy podniesieniu wybierz kartę Ataku. Na początku każdej walki, ta karta będzie w twojej ręce.Wybierz kartę do Na początku każdej walki dobierz kartę  do ręki.",
+      "flavor": "W tym naczyniu płonie wieczny ogień."
+    },
+    "BOTTLED_LIGHTNING": {
+      "name": "Zabutelkowany grom",
+      "description": "Przy podniesieniu wybierz kartę Umiejetności. Na początku każdej walki ta karta będzie w twojej ręce.Wybierz kartę do Na początku każdej walki dobierz kartę  do ręki.",
+      "flavor": "Spoglądając w szalejący sztorm, widzisz cząstkę siebie, która odwzajemnia spojrzenie."
+    },
+    "BOTTLED_TORNADO": {
+      "name": "Zabutelkowany huragan",
+      "description": "Przy podniesieniu wybierz kartę Mocy. Na początku każdej walki ta karta będzie w twojej ręce.Wybierz kartę do Na początku każdej walki dobierz kartę  do ręki.",
+      "flavor": "Te naczynie delikatnie szumi."
+    },
+    "BRONZE_SCALES": {
+      "name": "Łuski z brązu",
+      "description": "Na początku każdej walki zyskaj\n3 pkt. Cierni.",
+      "flavor": "Ostre łuski Strażnika, które same zmieniają położenie, aby chronić użytkownika."
+    },
+    "BURNING_BLOOD": {
+      "name": "Płonąca krew",
+      "description": "Przywraca 6 PŻ pod koniec walki.",
+      "flavor": "Twoja krew wrze w niegasnącej wściekłości."
+    },
+    "CABLES": {
+      "name": "Pozłacane kable",
+      "description": "Umiejętność pasywna pierwszej Sfery, uruchamia się dwa razy.",
+      "flavor": "\"Interesujące! Nawet automatony są podatne na placebo.\" - Ranwid"
+    },
+    "CALIPERS": {
+      "name": "Cyrkiel",
+      "description": "Na początku tury tracisz\n15 pkt. Bloku zamiast wszystkich.",
+      "flavor": "\"Mechaniczna precyzja prowadzi do wielkości\" – Architekt"
+    },
+    "CALLING_BELL": {
+      "name": "Dzwon wezwania",
+      "description": "Otrzymujesz unikalną Klątwę oraz\n3 Artefakty.Dzwon wybił...PomińZamknij",
+      "flavor": "Ten wykonany z ciemnego żelaza dzwon zabrzmiał 3 razy podczas podnoszenia. Potem zamilkł na zawsze."
+    },
+    "CAULDRON": {
+      "name": "Kocioł",
+      "description": "Otrzymujesz 5 losowych mikstur.Blup blip bloop...!",
+      "flavor": "Handlarz całkiem umiejętnie warzy mikstury – kupując 4, dostajesz 1 gratis."
+    },
+    "CENTENNIAL_PUZZLE": {
+      "name": "Stuletnia łamigłówka",
+      "description": "Gdy stracisz PŻ po raz pierwszy w walce, dobierz 3 karty.",
+      "flavor": "Po rozwiązaniu łamigłówki czujesz przyjemne ciepło w mostku."
+    },
+    "CHAMELEON_RING": {
+      "name": "Pierścień kameleona",
+      "description": "Teraz możesz warzyć mikstury w Obozowiskach.",
+      "flavor": "Zbezczeszczony."
+    },
+    "CHAMPION_BELT": {
+      "name": "Pas czempiona",
+      "description": "Kiedykolwiek nałożysz Wrażliwość, dodatkowo nakładasz też 1 pkt. Słabości.",
+      "flavor": "Tylko najwspanialsi mogą nosić ten pas."
+    },
+    "CHARON_S_ASHES": {
+      "name": "Prochy Charona",
+      "description": "Kiedykolwiek Wykluczysz kartę, zadaj 3 pkt. obrażeń WSZYSTKIM przeciwnikom.",
+      "flavor": "Mówi się, że Charon to bóg odrodzenia, wiecznie umierający i odradzający się w płomieniach."
+    },
+    "CHEMICAL_X": {
+      "name": "Związek X",
+      "description": "Kiedykolwiek zagrasz kartę kosztującą X, jej efektywność zostaje zwiększona o 2.",
+      "flavor": "UWAGA: Nie mieszać z cukrem, przyprawami i różnymi ślicznościami."
+    },
+    "CIRCLET": {
+      "name": "Diadem",
+      "description": "Wygląda ślicznie.",
+      "flavor": "Nie ma już innych artefaktów do odnalezienia. Niesamowite!"
+    },
+    "CRACKED_CORE": {
+      "name": "Pęknięty rdzeń",
+      "description": "Na początku każdej walki, Przywołaj 1 Sferę Gromu.",
+      "flavor": "Mistyczne źródło życia, które zasila Automatony w Iglicy. Wygląda na pęknięte."
+    },
+    "FROZENCORE": {
+      "name": "Zamrożony rdzeń",
+      "description": "Zastępuje Pęknięty Rdzeń. Gdy kończysz turę posiadając wolne miejsce na sferę, Przywołaj\n1 Sferę Mrozu.",
+      "flavor": "Pęknięcie w rdzeniu zostało wypełnione pulsującą, zimną energią."
+    },
+    "CURSED_KEY": {
+      "name": "Przeklęty klucz",
+      "description": "Kiedykolwiek otwierasz zwykłą skrzynię, otrzymujesz Klątwę.Zyskaj [E] na początku każdej tury.",
+      "flavor": "Czujesz złowrogą energię emanującą z klucza. Moc ma swoją cenę."
+    },
+    "DARKSTONE_PERIAPT": {
+      "name": "Kamienny amulet",
+      "description": "Kiedykolwiek otrzymasz Klątwę, twoje maks. PŻ zostaną zwiększone o",
+      "flavor": "Amulet czerpie moc z mrocznej energii, wzmacniając siły witalne noszącego."
+    },
+    "DATADISK": {
+      "name": "Nośnik danych",
+      "description": "Rozpocznij każdą walkę\nz 1 pkt. Skupienia.",
+      "flavor": "Ten niepozorny dysk zawiera bezcenne dane o ptakach i wężach."
+    },
+    "DEAD_BRANCH": {
+      "name": "Uschnięta gałąź",
+      "description": "Kiedykolwiek karta zostanie Wykluczona, dodaj losową kartę do ręki.",
+      "flavor": "Gałąź z drzewa zapomnianej ery."
+    },
+    "DERP_ROCK": {
+      "name": "Głupi kamień",
+      "description": "Na początku każdej tury, zyskaj  pkt. Energii.\n(nie może byc usunięty ani podmieniony)",
+      "flavor": "Zajmuje miejsce"
+    },
+    "DISCERNING_MONOCLE": {
+      "name": "Elegancki monokl",
+      "description": "Ceny u Handlarza zostają obniżone o 20%",
+      "flavor": "Wygląda naprawdę elegancko."
+    },
+    "DODECAHEDRON": {
+      "name": "DEPRECATED Runiczny dwunastościan",
+      "description": "Jeśli posiadasz wszystkie PŻ, zyskaj [E] na początku każdej tury.",
+      "flavor": "Runy są zupełnie nieczytelne."
+    },
+    "DREAM_CATCHER": {
+      "name": "Łapacz snów",
+      "description": "Kiedykolwiek odpoczywasz, możesz dodać kartę do swojej talii.",
+      "flavor": "Nordyckie plemiona często używały łapaczy snów, wierząc, że prowadzą one do samorozwoju."
+    },
+    "DU_VU_DOLL": {
+      "name": "Lalka Du-Vu",
+      "description": "Zaczynasz walkę z dodatkowym\n1 pkt. Siły za każdą Klątwę w swojej talii. Nie posiadasz Klątw. Posiadane karty Klątw: .",
+      "flavor": "Lalka stworzona, by czerpać siłę ze złowrogiej energii."
+    },
+    "ECTOPLASM": {
+      "name": "Ektoplazma",
+      "description": "Nie możesz już zdobywać Złota.Zyskaj [E] na początku każdej tury.",
+      "flavor": "Ten śluz zdaje się pulsować życiem."
+    },
+    "EMOTION_CHIP": {
+      "name": "Czip emocji",
+      "description": "Jeżeli w poprzedniej turze otrzymałeś obrażenia, na początku tury uruchamiają się umiejętności pasywne posiadanych Sfer.",
+      "flavor": "...<3...?"
+    },
+    "ENCHIRIDION": {
+      "name": "Enchiridion",
+      "description": "Zaczynaj każdą walkę z losową kartą Mocy w ręce. Kosztuje 0 do końca tury.",
+      "flavor": "Legendarny dziennik prastarego licza."
+    },
+    "ETERNAL_FEATHER": {
+      "name": "Wieczne pióro",
+      "description": "Za każde ? kart w twojej talii, przywróć 3 PŻ podczas przebywania w Obozowisku.",
+      "flavor": "To pióro wygląda na niezniszczalne. Ciekawe od jakiego ptaka pochodzi... "
+    },
+    "FROZEN_EGG_2": {
+      "name": "Zamrożone jajo",
+      "description": "Kiedykolwiek dodasz kartę Mocy do talii, zostanie ona ulepszona.",
+      "flavor": "Bjajecznie piękny kawałek lodu, bez szans na wyklucie."
+    },
+    "FROZEN_EYE": {
+      "name": "Zamrożone oko",
+      "description": "Podczas przeglądania stosu rozgrywającego karty ukazują się w odpowiedniej kolejności.",
+      "flavor": "Spoglądając w oko, możesz zobaczyć przebłyski twojej przyszłości."
+    },
+    "GAMBLING_CHIP": {
+      "name": "Żeton pokerowy",
+      "description": "Na początku każdej walki, odrzuć dowolną liczbę kart i dobierz ich tyle samo.",
+      "flavor": "Dostrzegasz na nim małą inskrypcję, która mówi: \"Szczęśliwy żeton Niedźwiedzia!\""
+    },
+    "GINGER": {
+      "name": "Imbir",
+      "description": "Twoja postać nie może zostać Osłabiona.",
+      "flavor": "Niezwykle użyteczny w przyrządzaniu toników."
+    },
+    "GIRYA": {
+      "name": "Giria",
+      "description": "Możesz teraz zyskać Siłę w Obozowiskach (maks. 3 razy).",
+      "flavor": "Ta giria jest niesamowicie ciężka. Gdyby użyć jej do treningu, twoja postać stałaby się o wiele silniejsza."
+    },
+    "GOLDEN_IDOL": {
+      "name": "Złoty bożek",
+      "description": "Przeciwnicy gubią 25% więcej Złota.",
+      "flavor": "Szczerozłoty. Jego aura potęguje uczucie bogactwa."
+    },
+    "GREMLIN_HORN": {
+      "name": "Róg gremlina",
+      "description": "Kiedykolwiek przeciwnik zginie, zyskaj [E] i dobierz 1 kartę.",
+      "flavor": "\"Gremlińskie poroże rośnie aż do śmierci. Nadzwyczajne\" – Ranwid"
+    },
+    "HAPPY_FLOWER": {
+      "name": "Szczęśliwy kwiat",
+      "description": "Co każdą . turę zyskaj [E] .",
+      "flavor": "Ten wiecznie szczęśliwy kwiatek stanowi nie lada gratkę w kręgach szlacheckich."
+    },
+    "ICE_CREAM": {
+      "name": "Lody",
+      "description": "Zachowujesz Energię pomiędzy turami.",
+      "flavor": "\"Pyszne!\""
+    },
+    "INSERTER": {
+      "name": "Podajnik",
+      "description": "Co 2 tury, zyskaj 1 miejsce na Sferę.",
+      "flavor": "Włóż. Wyjmij. Ułóż. Powtórz."
+    },
+    "JUZU_BRACELET": {
+      "name": "Bransoletka Juzu",
+      "description": "Nie trafiasz na zwykłych przeciwników w nieznanych pokojach „?”.",
+      "flavor": "Chroni przed nieznanym."
+    },
+    "KUNAI": {
+      "name": "Kunai",
+      "description": "Za każdym razem gdy zagrasz ? karty Ataku w jednej turze, zyskaj 1 pkt. Zręczności.",
+      "flavor": "Ostrze cenione przez zabójców za śmiercionośność z dystansu."
+    },
+    "LANTERN": {
+      "name": "Latarnia",
+      "description": "Rozpocznij każdą walkę z dodatkowym [E]",
+      "flavor": "Wyjątkowa latarenka, która świeci tylko dla jej posiadacza."
+    },
+    "LEE_S_WAFFLE": {
+      "name": "Gofry od Lee",
+      "description": "Podnoszą maks. liczbę PŻ o 7\ni przywracają utracone PŻ.",
+      "flavor": "\"Najlepszy przysmak w całej Iglicy! Upieczony dzisiaj specjalnie dla ciebie.\""
+    },
+    "LETTER_OPENER": {
+      "name": "Otwieracz do listów",
+      "description": "Kiedykolwiek zagrasz 3 karty Umiejętności podczas jednej tury, zadaj 5 pkt. obrażeń WSZYSTKIM przeciwnikom.",
+      "flavor": "Nienaturalnie ostry."
+    },
+    "LIVING_BLADE": {
+      "name": "Żywe ostrze",
+      "description": "Możesz zdobyć dowolną liczbę kart każdego rodzaju.",
+      "flavor": "ZBEZCZESZCZONE"
+    },
+    "LIZARD_TAIL": {
+      "name": "Jaszczurzy ogon",
+      "description": "W przypadku śmierci odzyskujesz 50% maks. PŻ (jednorazowo).",
+      "flavor": "Sztuczny ogon, służący do zmylenia przeciwników."
+    },
+    "MAGIC_FLOWER": {
+      "name": "Magiczny kwiat",
+      "description": "Leczenie podczas walki jest o 50% skuteczniejsze.",
+      "flavor": "Zachowany w perfekcyjnym stanie kwiat, który wyginął dawno, dawno temu."
+    },
+    "MANGO": {
+      "name": "Mango",
+      "description": "Podnosi maks. liczbę PŻ o",
+      "flavor": "Zapomniany i pożądany przez wielu owoc. Doskonale zachowany, bez śladów Plagi."
+    },
+    "MARK_OF_PAIN": {
+      "name": "Znamię bólu",
+      "description": "Zyskaj [E] na początku każdej tury. Zaczynaj walkę z 2 Ranami w talii.",
+      "flavor": "Znamię to było używane przez plemiona z północy do oznaczania wojowników, którzy byli w stanie kontrolować ból podczas walki"
+    },
+    "MATRYOSHKA": {
+      "name": "Matrioszka",
+      "description": "Następne 2 skrzynie będą zawierały 2 artefakty.\n(Nie wliczając skrzyń bossów)Następna skrzynia będzie zawierała 2 artefakty.\n(Nie wliczając skrzyni bossów)Artefakt został zużyty.",
+      "flavor": "Ornament na lalkach przedstawia nieznanego, białookiego ptaka z niebieskimi piórami."
+    },
+    "MEAT_ON_THE_BONE": {
+      "name": "Mięso z kością",
+      "description": "Jeśli, pod koniec walki, twoje PŻ są na poziomie 50% lub niższym, przywróć 12 PŻ.",
+      "flavor": "Wygląda na to, że mięso nieustannie się odnawia i nigdy nie kończy."
+    },
+    "MEDICAL_KIT": {
+      "name": "Apteczka",
+      "description": "Od teraz możesz zagrywać karty Stanu. Zagrywając kartę Stanu sprawisz, że ta zostanie Wykluczona.",
+      "flavor": "\"Ma wszystko czego potrzebujesz! Maść na swędzenie, maść na poparzenia, surowicę i więcej!\""
+    },
+    "MEMBERSHIP_CARD": {
+      "name": "Karta członkowska",
+      "description": "50% zniżki na wszystkie produkty!",
+      "flavor": "\"Jedyna w swoim rodzaju okazja dla najbardziej lojalnych klientów!\""
+    },
+    "MERCURY_HOURGLASS": {
+      "name": "Klepsydra rtęciowa",
+      "description": "Na początku tury zadaj\n3 pkt. obrażeń WSZYSTKIM przeciwnikom.",
+      "flavor": "Zaklęta klepsydra, która przelewa się bez końca."
+    },
+    "MOLTEN_EGG_2": {
+      "name": "Wulkaniczne jajo",
+      "description": "Kiedykolwiek dodasz kartę Ataku do talii, zostanie ona ulepszona.",
+      "flavor": "Jajo feniksa. Rozgrzane do czerwoności dzięki gorącej lawie."
+    },
+    "MUMMIFIED_HAND": {
+      "name": "Zmumifikowana ręka",
+      "description": "Kiedykolwiek zagrasz kartę Mocy, losowa karta w twojej ręce kosztuje 0 do końca tury.",
+      "flavor": "Często drga, szczególnie, gdy masz wysoki puls."
+    },
+    "NECRONOMICON": {
+      "name": "Nekronomikon",
+      "description": "Pierwszy zagrany w turze Atak, który kosztuje 2 lub więcej, jest zagrywany dwukrotnie. Podnosząc ten artefakt otrzymasz kartę Klątwy. lub więcej, jest zagrywany dwukrotnie.",
+      "flavor": "Tylko głupiec próbowałby wydobyć z niej złowieszczą moc. W nocy nawiedza cię koszmar księgi pożerającej twoją duszę."
+    },
+    "NEOWSBLESSING": {
+      "name": "Lament Neow",
+      "description": "Przeciwnicy w pierwszych 3 walkach będą mieć po 1 PŻ.Błogosławieństwo zostało wyczerpane.",
+      "flavor": "Błogosławieństwo Neow, specjalnie dla ciebie."
+    },
+    "NILRY_S_CODEX": {
+      "name": "Kodeks Nilry'ego",
+      "description": "Z końcem każdej tury, możesz wybrać 1 z 3 losowych kart i dodać ją do stosu rozgrywającego.",
+      "flavor": "Stworzony przez niesławnego mistrza gry. Mówi się, że poszerza horyzonty."
+    },
+    "NINJA_SCROLL": {
+      "name": "Zwój ninja",
+      "description": "Zaczynaj każdą walkę z 3. kartami Noży w ręce.",
+      "flavor": "Zawiera sekrety skrytobójców."
+    },
+    "NLOTH_S_GIFT": {
+      "name": "Dar N'loth'a",
+      "description": "Trzykrotnie większa szansa otrzymania rzadkich kart z pokonanych przeciwników.",
+      "flavor": "Dziwny podarunek od N'loth'a. Zawsze kiedy próbujesz go odpakować, w środku pojawia się zapakowany prezent takiej samej wielkości."
+    },
+    "NUCLEAR_BATTERY": {
+      "name": "Bateria jądrowa",
+      "description": "Na początku każdej walki, Przywołaj 1 Sferę Plazmy.",
+      "flavor": "Ooooch..."
+    },
+    "NULLSTONE_PERIAPT": {
+      "name": "Kamienna tablica",
+      "description": "Skontruj kolejny negatywny efekt otrzymany od przeciwnika.\nOdnawia się co 10 tur.",
+      "flavor": "ZBEZCZESZCZONE."
+    },
+    "ODD_MUSHROOM": {
+      "name": "Dziwny grzyb",
+      "description": "Mając nałożoną Wrażliwość, otrzymujesz 25% więcej obrażeń, zamiast 50%.",
+      "flavor": "\"Po zjedzeniu trichella parastius poczułem się większy i... twardszy.\" - Ranwid "
+    },
+    "ODDLY_SMOOTH_STONE": {
+      "name": "Szokująco gładki kamień",
+      "description": "Rozpocznij każdą walkę\nz 1 pkt. Zręczności.",
+      "flavor": "Pierwszy raz widzisz coś tak nieskazitelnie gładkiego. To musi być robota Starożytnych."
+    },
+    "OLD_COIN": {
+      "name": "Antyczna moneta",
+      "description": "Otrzymaj 300 szt. Złota.",
+      "flavor": "Unikalne monety są wysoko cenione przez kupców za swoją historyczną wartość i niespotykany skład."
+    },
+    "OMAMORI": {
+      "name": "Omamori",
+      "description": "Neutralizuje 2 następne Klątwy.Neutralizuje następną Klątwę.Artefakt został zużyty.",
+      "flavor": "Zwyczajny amulet mający odgonić złe duchy. Ten wygląda, jakby posiadał cząstkę boskiej mocy."
+    },
+    "ORICHALCUM": {
+      "name": "Orichalcum",
+      "description": "Jeśli zakończysz turę bez Bloku, zyskaj 6 pkt. Bloku.",
+      "flavor": "Zielonkawy metal nieznanego pochodzenia. Pozornie niezniszczalny."
+    },
+    "ORNAMENTAL_FAN": {
+      "name": "Ozdobny wachlarz",
+      "description": "Za każdym razem, gdy zagrasz 3 karty Ataku w jednej turze, zyskaj 4 pkt. Bloku.",
+      "flavor": "Wygląda na to, że wachlarz rozwija się i sztywnieje, gdy przelewa się krew."
+    },
+    "ORRERY": {
+      "name": "Planetarium",
+      "description": "Wybierz i dodaj 5 kart do talii.Wiedza to potęga!",
+      "flavor": "\"Kiedy w końcu zrozumiesz wszechświat...\" - Zoroth"
+    },
+    "PANDORA_S_BOX": {
+      "name": "Puszka Pandory",
+      "description": "Podmień wszystkie karty Uderzeń oraz Obrony.Puszka Pandory została otwarta...",
+      "flavor": "Otwieranie jej nie wydaje się najlepszym pomysłem."
+    },
+    "PANTOGRAPH": {
+      "name": "Pantograf",
+      "description": "Na początku walki z bossem przywróć 25 PŻ.",
+      "flavor": "\"Solidne fundamenty nigdy nie są dziełem przypadku. Planowanie jest koniecznością.\" - Architekt"
+    },
+    "PAPER_CRANE": {
+      "name": "Papierowy żuraf",
+      "description": "Osłabieni przeciwnicy zadają 40% mniej obrażeń, zamiast 25%.",
+      "flavor": "Origami zwierzęcia z poprzedniego wieku."
+    },
+    "PAPER_FROG": {
+      "name": "Papierowa żapka",
+      "description": "Wrażliwi przeciwnicy otrzymują 75% więcej obrażeń, zamiast 50%.",
+      "flavor": "Ten kawałek papieru nieustannie rozkłada się i składa, zamieniając się w różne małe istoty."
+    },
+    "PEACE_PIPE": {
+      "name": "Fajka pokoju",
+      "description": "Od teraz możesz usuwać karty w Obozowiskach.",
+      "flavor": "Ożywia umysł i ciało."
+    },
+    "PEAR": {
+      "name": "Gruszka",
+      "description": "Podnosi maks. liczbę PŻ o",
+      "flavor": "Zwyczajny owoc sprzed Plagi."
+    },
+    "PEN_NIB": {
+      "name": "Stalówka",
+      "description": "Co 10. zagrany Atak zadaje podwójne obrażenia.",
+      "flavor": "Trzymając stalówkę, zaczynasz widzieć istoty zgładzone przez poprzedniego posiadacza. Brutalne."
+    },
+    "PHILOSOPHER_S_STONE": {
+      "name": "Kamień filozoficzny",
+      "description": "Zyskaj [E] na początku każdej tury. WSZYSCY przeciwnicy zaczynają walkę z 1 pkt. Siły.",
+      "flavor": "Kamień emanuje pradawną energią, która umacnia wszystko dookoła."
+    },
+    "POTION_BELT": {
+      "name": "Pas na mikstury",
+      "description": "Przy podniesieniu, zyskaj 2 miejsca na mikstury.",
+      "flavor": "W tym pasie są miejsca na butelki!"
+    },
+    "PRAYER_WHEEL": {
+      "name": "Młynek modlitewny",
+      "description": "Pospolici przeciwnicy gubią dodatkową kartę.",
+      "flavor": "Nigdy nie przestaje się kręcić."
+    },
+    "QUESTION_CARD": {
+      "name": "Karta pytań",
+      "description": "Pula kart na ekranie wyboru jest zwiększona o 1 .",
+      "flavor": "\"Ci, którzy mają większy wybór, minimalizują chaos.\" - Kublai Wielki"
+    },
+    "RED_CIRCLET": {
+      "name": "Czerwony diadem",
+      "description": "Wygląda ślicznie.",
+      "flavor": "To tyle, jeśli chodzi o artefakty. Dobra robota!"
+    },
+    "RED_MASK": {
+      "name": "Czerwona maska",
+      "description": "Na początku każdej walki, nałóż\n1 pkt. Słabości na WSZYSTKICH przeciwników.",
+      "flavor": "Ta elegancko wyglądająca maska należy do lidera Klanu Czerwonej Maski. Teoretycznie czyni cię to ich przywódcą, co nie?"
+    },
+    "RED_SKULL": {
+      "name": "Czerwona czaszka",
+      "description": "Jeśli liczba twoich PŻ jest niższa niż 50%, zyskujesz 3 pkt. Siły.",
+      "flavor": "Mała czaszka pokryta ozdobną farbą."
+    },
+    "REGAL_PILLOW": {
+      "name": "Królewska poduszka",
+      "description": "Przywróć dodatkowo 15 PŻ przy odpoczynku.",
+      "flavor": "Nareszcie można się wyspać."
+    },
+    "RING_OF_THE_SERPENT": {
+      "name": "Pierścień żmii",
+      "description": "Podmienia Pierścień węża. ?Na początku każdej tury, dobierz 1 dodatkową kartę.",
+      "flavor": "Twój pierścień zmienił swoją formę."
+    },
+    "RING_OF_THE_SNAKE": {
+      "name": "Pierścień węża",
+      "description": "Na początku każdej walki, dobierz 2 dodatkowe karty.",
+      "flavor": "Zrobiony ze skamieniałego węża. Świadczy o wielkich umiejętnościach łowczyni."
+    },
+    "RUNIC_CAPACITOR": {
+      "name": "Runiczny kondensator",
+      "description": "Rozpoczynasz walkę z 3 dodatkowymi miejscami na Sfery.",
+      "flavor": "Więcej znaczy lepiej."
+    },
+    "RUNIC_CUBE": {
+      "name": "Runiczna kostka",
+      "description": "Kiedykolwiek utracisz PŻ, dobierz 1 kartę.",
+      "flavor": "Runy są zupełnie nieczytelne."
+    },
+    "RUNIC_DOME": {
+      "name": "Runiczna kopuła",
+      "description": "na początku każdej tury. Nie odczytujesz już Zamiaru przeciwników.Zyskaj [E]",
+      "flavor": "Runy są zupełnie nieczytelne. "
+    },
+    "RUNIC_PYRAMID": {
+      "name": "Runiczna piramida",
+      "description": "Nie odrzucasz kart z końcem tury.",
+      "flavor": "Runy są zupełnie nieczytelne."
+    },
+    "SELF_FORMING_CLAY": {
+      "name": "Samoformująca się glina",
+      "description": "Za każdym razem, gdy otrzymasz obrażenia w walce, zyskaj\n3 pkt. Bloku w następnej turze.",
+      "flavor": "\"Interesujące! Wygląda na to, że formuje kształty, gdy tylko o czymś pomyślę! Tele-glina?\" - Ranwid"
+    },
+    "SHOVEL": {
+      "name": "Łopata",
+      "description": "Od teraz możesz kopać i szukać łupów w Obozowiskach.",
+      "flavor": "Iglica skrywa artefakty znamienitych podróżników i dawnych cywilizacji. Czas je wykopać!"
+    },
+    "SHURIKEN": {
+      "name": "Shuriken",
+      "description": "Za każdym razem, gdy zagrasz ? karty Ataku w jednej turze, zyskaj\n1 pkt. Siły.",
+      "flavor": "Lekka broń miotana. Zaleca się celować w oczy."
+    },
+    "SINGING_BOWL": {
+      "name": "Misa dźwiękowa",
+      "description": "Gdy pominiesz dodanie karty, zwiększ maks. liczbę PŻ o +2.",
+      "flavor": "Ten mocno wyeksploatowany artefakt wydaje piękny dźwięk przy stuknięciu w niego."
+    },
+    "SMILING_MASK": {
+      "name": "Uśmiechnięta maska",
+      "description": "Usuwanie kart u Handlarza kosztuje 50 szt. Złota.",
+      "flavor": "Maska noszona przez Handlarza. Musi mieć ich więcej..."
+    },
+    "SNAKE_SKULL": {
+      "name": "Czaszka wonsza",
+      "description": "Kiedykolwiek nałożysz Truciznę, nałóż dodatkowo\n1 pkt. Trucizny.",
+      "flavor": "Czaszka wonsza w idealnym stanie. Zadziwiająco czysta i gładka. Brud odpada z niej w pewien niewytłumaczalny sposób."
+    },
+    "SNECKO_EYE": {
+      "name": "Oko wonsza",
+      "description": "Podczas każdej tury dobierz 2 dodatkowe karty. Zaczynaj każdą walkę w stanie Dezorientacji.",
+      "flavor": "Oko pokonanego wonsza. NL O wiele większe niż mogło by się zdawać."
+    },
+    "SOZU": {
+      "name": "Sozu",
+      "description": "Nie możesz otrzymywać nowych mikstur.Zyskaj [E] na początku każdej tury.",
+      "flavor": "Zauważasz, że w obecności tego artefaktu magiczne płyny tracą swoje właściwości."
+    },
+    "SPIRIT_POOP": {
+      "name": "Dusze odchody",
+      "description": "Obrzydliwe.",
+      "flavor": "Zwęglone resztki ofiary złożonej duchom."
+    },
+    "STRANGE_SPOON": {
+      "name": "Dziwna łyżka",
+      "description": "Od teraz karty, które zostają Wykluczone po zagraniu, mają 50% szans na odrzucenie.",
+      "flavor": "Wydaje się wyginać od samego patrzenia."
+    },
+    "STRAWBERRY": {
+      "name": "Truskawka",
+      "description": "Podnosi maks. liczbę PŻ o",
+      "flavor": "\"Pyszna! Nie widziałem ich wiele od czasu Plagi.\"- Ranwid"
+    },
+    "SUNDIAL": {
+      "name": "Zegar słoneczny",
+      "description": "Co . przetasowanie talii zyskaj [E] [E] .",
+      "flavor": "\"Głupia obsesja człowieka na punkcie czasu sprawiała, że szukał on wskazówek na niebie, mając nadzieję, że znajdzie coś powtarzalnego.\" - Zoroth"
+    },
+    "SYMBIOTIC_VIRUS": {
+      "name": "Symbiotyczny wirus",
+      "description": "Na początku każdej walki, Przywołaj 1 Sferę Ciemności.",
+      "flavor": "Trochę złego może zdziałać wiele dobrego..."
+    },
+    "TEST_1": {
+      "name": "Test 1",
+      "description": "Kiedykolwiek użyjesz mikstury, zyskaj  [E] .",
+      "flavor": "Testowy artefakt w fazie beta, jeśli go lubisz daj znać twórcom"
+    },
+    "TEST_2": {
+      "name": "Test 2",
+      "description": "When viewing your Draw Pile, the cards are now shown in order.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_3": {
+      "name": "Test 3",
+      "description": "Gdy go otrzymasz, wszystkie karty Obrony zostają ulepszone.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_4": {
+      "name": "Test 4",
+      "description": "Na początku walki wszystkie karty Uderzeń mają koszt użycia zredukowany do 0.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_5": {
+      "name": "Test 5",
+      "description": "Przy podniesieniu, ulepsz 2 losowych Umiejętności.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_6": {
+      "name": "Test 6",
+      "description": "Na koniec każdej tury, zyskaj ? pkt. Bloku za każde 100 szt. złota jakie posiadasz.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_7": {
+      "name": "Test 7",
+      "description": "Elity upuszczają teraz 2 Artefakty kiedy zostaną pokonane.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "TEST_8": {
+      "name": "Test 8",
+      "description": "Dobierz 2 dodatkowe karty w każdej turze. Zaczynaj każdą walkę z Dezorientacją.",
+      "flavor": "Test relic for beta. If you like it, let the devs know."
+    },
+    "THE_COURIER": {
+      "name": "Kurier",
+      "description": "Handlarzowi już nigdy nie zabraknie kart, artefaktów oraz mikstur. Dodatkowo wszystko jest przecenione o 20%.",
+      "flavor": "Ukochane zwierzątko Handlarza."
+    },
+    "THE_SPECIMEN": {
+      "name": "Okaz",
+      "description": "Gdy przeciwnik zginie, przenieś całą Truciznę jaką posiadał na innego, losowego przeciwnika.",
+      "flavor": "\"Fascynujące! Znalazłem zmutowane stworzenie, wykazujące zadziwiające właściwości toksyczne. Przechowam próbkę do późniejszych badań.\" - Ranwid"
+    },
+    "THREAD_AND_NEEDLE": {
+      "name": "Igła i nitka",
+      "description": "Na początku każdej walki, zyskaj 4 pkt. Pancerza.",
+      "flavor": "Owijasz się magiczną nicią."
+    },
+    "TINGSHA": {
+      "name": "Tingsha",
+      "description": "Kiedykolwiek odrzucisz kartę podczas swojej tury, zadaj\n3 pkt. obrażeń losowemu przeciwnikowi za każdą odrzuconą kartę.",
+      "flavor": "Dźwięk generowany przez ten instrument wydaje się osiągać prawdziwie bolesny poziom głośności."
+    },
+    "TINY_CHEST": {
+      "name": "Tycia skrzynka",
+      "description": "Co 4. nieznany pokój „?” jest pokojem ze Skarbami.",
+      "flavor": "\"Porządny prototyp.\" - Architekt"
+    },
+    "TINY_HOUSE": {
+      "name": "Tyci domek",
+      "description": "Otrzymaj 1 miksturę.\nOtrzymaj ? szt. Złota.\nZwiększ maks. liczbę PŻ o 5.\nOtrzymaj 1 kartę.\nUlepsz 1 losową kartę.Tyci domek!",
+      "flavor": "\"Niemal perfekcyjny przykład miniaturyzacji. Moja najlepsza praca do tej pory, ale wciąż nieskończona.\" - Architekt"
+    },
+    "TOOLBOX": {
+      "name": "Przybornik",
+      "description": "Na początku każdej walki, wybierz 1 z 3 losowych, bezbarwnych kart i dodaj ją do ręki.",
+      "flavor": "Narzędzia do każdej pracy."
+    },
+    "TORII": {
+      "name": "Torii",
+      "description": "Gdy otrzymasz 5 lub mniej nieblokowanych obrażeń, redukujesz je do 1.",
+      "flavor": "Trzymając małe Torii, czujesz jak przez twój umysł przepływa spokój i bezpieczeństwo."
+    },
+    "TOUGH_BANDAGES": {
+      "name": "Wytrzymałe bandaże",
+      "description": "Za każdym razem, gdy odrzucisz kartę podczas swojej tury, zyskaj 3 pkt. Bloku.",
+      "flavor": "Przegrana umacnia."
+    },
+    "TOXIC_EGG_2": {
+      "name": "Toksyczne jajo",
+      "description": "Kiedykolwiek dodasz kartę Umiejętności do talii, zostanie ona ulepszona.",
+      "flavor": "\"Cóż za fenomenalne odkrycie! Wydaje się być niewyklutym jajkiem jakiegoś magicznego stworzenia. Kto lub co je stworzyło?\" - Ranwid"
+    },
+    "TOY_ORNITHOPTER": {
+      "name": "Zabawkowy skrzydłowiec",
+      "description": "Kiedykolwiek użyjesz mikstury, przywróć 5 PŻ.",
+      "flavor": "\"Ta mała zabawka jest perfekcyjnym kompanem samotnych podróży!\""
+    },
+    "TURNIP": {
+      "name": "Rzepa",
+      "description": "Nie można nałożyć na ciebie efektu Kruchości.",
+      "flavor": "Krzepka ta rzepka."
+    },
+    "UNCEASING_TOP": {
+      "name": "Nieustający bączek",
+      "description": "Gdy twoja ręka jest pusta, dobierz kartę.",
+      "flavor": "\"Czy ja nadal śnię?\""
+    },
+    "VAJRA": {
+      "name": "Dordże",
+      "description": "Rozpocznij każda walkę\nz 1 pkt. Siły.",
+      "flavor": "Ozdobny artefakt, nadawany zasłużonym w bitwach wojownikom."
+    },
+    "VELVET_CHOKER": {
+      "name": "Aksamitna obroża",
+      "description": "Nie możesz zagrać więcej niż  kart na turę.Zyskaj [E] na początku każdej tury. Możesz zagrać do",
+      "flavor": "\"Ogromna moc, lecz ograniczona.\" - Kublai Wielki"
+    },
+    "WAR_PAINT": {
+      "name": "Barwy wojenne",
+      "description": "Przy podniesieniu, ulepsz 2 losowe karty Umiejętności.",
+      "flavor": "Niegdyś, przed ruszeniem do ataku, klan Pancerników oznaczał wojowników specjalną farbą, która miała wspomagać ich w walce."
+    },
+    "WHETSTONE": {
+      "name": "Osełka",
+      "description": "Przy podniesieniu, ulepsz 2 losowe karty Ataku.",
+      "flavor": "\"Ciało nigdy nie pokona stali.\" - Kublai Wielki"
+    },
+    "WHITE_BEAST_STATUE": {
+      "name": "Statuetka białej bestii",
+      "description": "Po walce zawsze wypada mikstura.",
+      "flavor": "Mała biała statuetka stworzenia, którego nie poznajesz."
+    },
+    "BOOT": {
+      "name": "But",
+      "description": "Gdy zadasz 4 lub mniej nieblokowanych obrażeń kartą Ataku, zwiększ je do 5.",
+      "flavor": "Gdy nakręcony, staje się coraz większy."
+    },
+    "MARK_OF_THE_BLOOM": {
+      "name": "Piętno w kształcie kwiatu",
+      "description": "Nie odzyskujesz już PŻ.",
+      "flavor": "Na Pograniczu, myśli i rzeczywistość to jedno."
+    },
+    "BUSTED_CROWN": {
+      "name": "Uszkodzona korona",
+      "description": "Pula kart na ekranie wyboru jest zmniejszona o 2.Zyskaj [E] na początku każdej tury.",
+      "flavor": "Korona Czempiona... czy marna podróbka?"
+    },
+    "EMPTY_CAGE": {
+      "name": "Pusta klatka",
+      "description": "Przy podniesieniu usuń 2 karty z talii.Wybierz 2 karty do usunięcia.",
+      "flavor": "\"Niecodzienny widok, zamknąć w klatce coś co czcisz.\" - Ranwid"
+    },
+    "INCENSE_BURNER": {
+      "name": "Kadzielnica",
+      "description": "Co 5. turę, zyskaj\n1 pkt. Nieuchwytności.",
+      "flavor": "Kadzielnica z dawnych czasów. Palenie cennego drewna zdaje się niewyobrażalne."
+    },
+    "FUSION_HAMMER": {
+      "name": "Młot fuzji",
+      "description": "na początku każdej tury. Nie możesz już ulepszać kart w Obozowiskach.Zyskaj [E]",
+      "flavor": "Raz chwyconego, nie można już puścić."
+    },
+    "COFFEE_DRIPPER": {
+      "name": "Zaparzacz do kawy",
+      "description": "na początku każdej tury. Nie możesz już odpoczywać w Obozowiskach.Zyskaj [E]",
+      "flavor": "\"Tak, poproszę jeszcze jedną filiżankę. Wracać do pracy. Wracać do pracy!\" - Architekt"
+    },
+    "SSSERPENTHEAD": {
+      "name": "Głowa gadziny",
+      "description": "Gdy rozpoczniesz wydarzenie w nieznanym pokoju „?”, otrzymaj 50 szt. złota.",
+      "flavor": "Najbardziej satysfakcjonujące życie to takie w którym możesz sobie pozwolić na wszystko!"
+    },
+    "MUTAGENICSTRENGTH": {
+      "name": "Mutageniczna siła",
+      "description": "Każdą walkę rozpocznij\nz ? pkt. Siły. Na końcu pierwszej tury utrać 3 pkt. Siły.",
+      "flavor": "\"Skutek jest tymczasowy, wywoływany przez zagrożenie.\" - Nieznany"
+    },
+    "FACEOFCLERIC": {
+      "name": "Twarz Kleryka",
+      "description": "Zwiększ swoją maksymalną ilość PŻ o 1 po każdej walce.",
+      "flavor": "Wszyscy kochają kapłanów."
+    },
+    "NLOTHSMASK": {
+      "name": "Twarz głodnego N'loth'a",
+      "description": "Następna pospolita skrzynia będzie pusta.",
+      "flavor": "Jesteś głodny."
+    },
+    "GREMLINMASK": {
+      "name": "Oblicze gremlina",
+      "description": "Zacznij każdą walkę\nz 1 pkt. Słabości.",
+      "flavor": "Czas uciekać."
+    },
+    "CULTISTMASK": {
+      "name": "Nakrycie głowy kultysty",
+      "description": "Czujesz się bardziej rozmowny.KAA!\nKAAA",
+      "flavor": "Witaj w Stadzie!"
+    },
+    "THEABACUS": {
+      "name": "Liczydło",
+      "description": "Kiedykolwiek przetasujesz talię, zyskaj 6 pkt. Bloku.",
+      "flavor": "Raz...Dwa...Trzy...Giniesz ty!"
+    },
+    "DOLLYSMIRROR": {
+      "name": "Lustro Dolly",
+      "description": "Otrzymaj kopię karty ze swojej talii.Wybierz 1 kartę do skopiowania.",
+      "flavor": "\"Wyglądam w nim zabawnie.\""
+    },
+    "CLOCKWORKSOUVENIR": {
+      "name": "Mechanizm zegarowy",
+      "description": "Na początku każdej walki zyskaj\n1 pkt. Hartu.",
+      "flavor": "\"Tak wiele kółek zębatych.\""
+    },
+    "MEALTICKET": {
+      "name": "Talon na posiłek",
+      "description": "Kiedykolwiek odwiedzisz Handlarza, przywróć 15 PŻ.",
+      "flavor": "\"Darmowe klopsiki przy każdej wizycie!\""
+    },
+    "TWISTEDFUNNEL": {
+      "name": "Pogięty lejek",
+      "description": "Na początku każdej walki, nałóż\n4 pkt. Trucizny WSZYSTKIM przeciwnikom.",
+      "flavor": "\"Nie napiłbym się z niego.\""
+    },
+    "HANDDRILL": {
+      "name": "Ręczne wiertło",
+      "description": "Kiedykolwiek zniszczysz blok przeciwnika, nałóż\n2 pkt. Wrażliwości.",
+      "flavor": "\"Kręci mi się w głowie...\""
+    },
+    "HOVERINGKITE": {
+      "name": "Latawiec",
+      "description": "Przy pierwszym odrzuceniu karty w każdej turze, zyskaj [E] .",
+      "flavor": "Latawiec unosi się obok ciebie, napędzany mistyczną siłą."
+    },
+    "SLING": {
+      "name": "Proca odwagi",
+      "description": "Każdą walkę z elitarnym przeciwnikiem rozpocznij\nz 2 pkt. Siły.",
+      "flavor": "\"Ach, przydatne narzędzie do eliminacji twardszych przeciwników.\""
+    },
+    "ORANGEPELLETS": {
+      "name": "Pomarańczowe pigułki",
+      "description": "Kiedykolwiek w jednej turze zagrasz karty Mocy, Ataku i Umiejętności, pozbądź się wszystkich negatywnych efektów.",
+      "flavor": "\"Wytworzone z grzybów rosnących w Iglicy, zapobiegają wszelkim dolegliwościom.\""
+    },
+    "WRISTBLADE": {
+      "name": "Ukryte ostrze",
+      "description": "Karty Ataku kosztujące 0 zadają o 3 pkt. więcej obrażeń.",
+      "flavor": "Poręczne przy zabójstwach."
+    },
+    "STONECALENDAR": {
+      "name": "Kamienny kalendarz",
+      "description": "Na koniec ?. tury, zadaj\n52 pkt. obrażeń WSZYSTKIM przeciwnikom.",
+      "flavor": "Upływ czasu w Iglicy jest niedostrzegalny."
+    },
+    "NUNCHAKU": {
+      "name": "Nunczako",
+      "description": "Co każdy zagrany . atak,\nzyskaj [E] .",
+      "flavor": "Dobre narzędzie do treningów. Poprawia postawę i zręczność noszącego."
+    },
+    "BRIMSTONE": {
+      "name": "Siarka",
+      "description": "Na początku każdej tury, zyskasz\n? pkt. Siły, ale WSZYSCY przeciwnicy zyskają 1 pkt. Siły.",
+      "flavor": "Emanuje piekielnym gorącem."
+    },
+    "PRESERVEDINSECT": {
+      "name": "Zakonserwowany owad",
+      "description": "Elitarni przeciwnicy mają 25% mniej PŻ.",
+      "flavor": "Wygląda na to, że ten owad emituje pole kurczące, które działa na wyjątkowo dużych przeciwników."
+    },
+    "POCKETWATCH": {
+      "name": "Kieszonkowy zegarek",
+      "description": "Kiedykolwiek podczas tury zagrasz 3 karty (lub mniej), dobierz 3 dodatkowe karty w następnej turze.",
+      "flavor": "Wskazówki zatrzymały się na godzinie trzeciej."
+    },
+    "FOSSILIZEDHELIX": {
+      "name": "Skamieniała muszla",
+      "description": "Zapobiega pierwszej utracie PŻ podczas walki.",
+      "flavor": "Wygląda na niezniszczalną. Ciekawe do jakiego stworzenia należała."
+    },
+    "PRISMATICSHARD": {
+      "name": "Pryzmat",
+      "description": "Pula kart do wyboru zawiera teraz karty bezbarwne i należące do innych kolorów.",
+      "flavor": "Spojrzenie przez pryzmat, pozwoliło ujrzeć świat z innej perspektywy."
+    },
+    "WARPEDTONGS": {
+      "name": "Spaczone szczypce",
+      "description": "Na początku tury Ulepsza losową kartę z ręki do końca walki.",
+      "flavor": "Obecność tych przeklętych szczypiec sprawia, że pragniesz zwrócić je tam, skąd je wziąłeś."
+    },
+    "WINGEDGREAVES": {
+      "name": "Uskrzydlone buty",
+      "description": "Możesz teraz zignorować ścieżki podczas podróży po Iglicy. Można użyć 3 razy.",
+      "flavor": "Stylowe."
+    },
+    "MAWBANK": {
+      "name": "Paszczurowa skarbonka",
+      "description": "Za każdym razem, gdy wchodzisz do pokoju zyskaj 12 szt. Złota. Przestaje działać po wydaniu Złota u Handlarza.Ten artefakt został zużyty.",
+      "flavor": "Zadziwiająco popularna, mimo regularnych ataków Paszczurów."
+    },
+    "MELANGE": {
+      "name": "Melanż",
+      "description": "Za każdym razem, gdy tasujesz swój stos rozgrywający, Prognozuj 3.",
+      "flavor": "Tajemniczy piasek nieznanego pochodzenia. Pachnie cynamonem."
+    },
+    "PUREWATER": {
+      "name": "Czysta woda",
+      "description": "Na początku każdej walki dodaj Cud do ręki.",
+      "flavor": "Przefiltrowana przez drobny piasek i wolna od zanieczyszczeń."
+    },
+    "HOLYWATER": {
+      "name": "Woda święcona",
+      "description": "Podmienia Czystą Wodę. Na początku każdej walki dodaj\n3 Cuda do ręki.",
+      "flavor": "Zebrana w czasach przed powstaniem Iglicy."
+    },
+    "SACREDBARK": {
+      "name": "Święta kora",
+      "description": "Podwój efektywność swoich mikstur.",
+      "flavor": "Mówi się, że ta kora pochodzi z Drzewa Świata."
+    },
+    "INKBOTTLE": {
+      "name": "Kałamarz",
+      "description": "Po zagraniu 10 kart, dobierz 1 kartę.",
+      "flavor": "Po wyczerpaniu wydaje się napełniać innym kolorem."
+    },
+    "YIN": {
+      "name": "DEPRECATED Yin",
+      "description": "Whenever you play a Skill, gain 1 temporary Strength.",
+      "flavor": "You cannot have light without dark. Or can you?"
+    },
+    "YANG": {
+      "name": "Dwoistość",
+      "description": "Kiedykolwiek zagrasz kartę Ataku, zyskaj tymczasowo 1 pkt. Zręczności.",
+      "flavor": "\"I słońce zgasło na zawsze, jakby zasłony przed nim opadły.\" - Zoroth"
+    },
+    "AKABEKO": {
+      "name": "Akabeko",
+      "description": "W każdej walce twoja pierwsza karta Ataku zadaje 8 pkt. dodatkowych obrażeń.",
+      "flavor": "\"Muuu~\""
+    },
+    "VIOLETLOTUS": {
+      "name": "Fioletowy lotos",
+      "description": "Gdy opuścisz Spokój, zyskaj dodatkowy [E] .",
+      "flavor": "Starożytne teksty podają, że powierzchnie \"źródeł many\" były zaścielone tymi kwiatami."
+    },
+    "TEARDROPLOCKET": {
+      "name": "Medalion z łezką",
+      "description": "Rozpocznij kazdą walkę w postawie Spokoju.",
+      "flavor": "Jego właściciel jest niewidomy, jego zawartość niewidoczna."
+    },
+    "CERAMICFISH": {
+      "name": "Ceramiczna ryba",
+      "description": "Kiedykolwiek dodasz kartę do talii, zyskaj 9 szt. Złota.",
+      "flavor": "Te starannie malowane ryby były czczone, aby obdarzały wielkim bogactwem."
+    },
+    "SLAVERSCOLLAR": {
+      "name": "Niewolnicza obroża",
+      "description": "Podczas walk z Bossami i Elitami zyskaj [E] na początku swojej tury.",
+      "flavor": "Zardzewiałe, nieszczęsne łańcuchy."
+    },
+    "STRIKEDUMMY": {
+      "name": "Manekin do ćwiczeń",
+      "description": "Karty zawierające w nazwie \"Uderzenie\" zadają 3 pkt. dodatkowych obrażeń.",
+      "flavor": "Został sprany na kwaśne jabłko."
+    },
+    "CLOAKCLASP": {
+      "name": "Zapięcie do płaszcza",
+      "description": "Na koniec swojej tury zyskaj\n1 pkt. Bloku za każdą kartę w swojej ręce.",
+      "flavor": "Prosta, ale solidna konstrukcja."
+    },
+    "TUNGSTENROD": {
+      "name": "Wolframowy pręt",
+      "description": "Kiedykolwwiek utracisz PŻ, utrać ich o 1 mniej.",
+      "flavor": "Jest bardzo, bardzo ciężki."
+    },
+    "HORNCLEAT": {
+      "name": "Knaga rożkowa",
+      "description": "Na początku swojej drugiej tury zyskaj 14 pkt. Bloku.",
+      "flavor": "Przyjemnie trzyma się w dłoni. Do czego to mogło służyć?"
+    },
+    "CAPTAINSWHEEL": {
+      "name": "Kapitański ster",
+      "description": "Na początku swojej trzeciej tury zyskaj 18 pkt. Bloku.",
+      "flavor": "Drewniany drobiazg rzeźbiony z delikatną precyzją. Wyryto na nim imię, ale język jest obcy."
+    },
+    "GOLDENEYE": {
+      "name": "Złote oko",
+      "description": "Podczas Prognozowania, Prognozuj 2 dodatkowe karty.",
+      "flavor": "Wejrzyj w umysły pobliskich istot, przewidując ich przyszłe ruchy."
+    },
+    "DAMARU": {
+      "name": "Damaru",
+      "description": "Na początku swojej tury zyskaj\n1 pkt. Mantry.",
+      "flavor": "Dźwięk tego bębenka utrzymuje twój umysł w czujności, wskazując drogę do celu."
+    }
+  },
+  "powers": {
+    "ACCURACY": {
+      "name": "Celność",
+      "description": "Noże zadają dodatkowo\nX pkt. obrażeń."
+    },
+    "AFTER_IMAGE": {
+      "name": "Powidok",
+      "description": "Kiedykolwiek zagrasz kartę, zyskaj X pkt. Bloku."
+    },
+    "AMPLIFY": {
+      "name": "Wzmocnienie",
+      "description": "W tej turze, zagraj następną kartę Mocy dwukrotnie.XW tej turze, zagraj następne X kart(y) Mocy dwukrotnie."
+    },
+    "ANGER": {
+      "name": "Wściekłość",
+      "description": "Kiedykolwiek zagrasz kartę Umiejętności, zyskuje X pkt. Siły."
+    },
+    "ANGRY": {
+      "name": "Gniew",
+      "description": "XPo otrzymaniu obrażeń od kart Ataku, zyskuje X pkt. Siły."
+    },
+    "ARTIFACT": {
+      "name": "Hart",
+      "description": "Neguje X negatywny efekt.X negatywne efekty."
+    },
+    "ATTACK_BURN": {
+      "name": "Spalenie ataku",
+      "description": "Przez kolejną X turę, kiedykolwiek zagrasz kartę Ataku, wyklucz ją.XPrzez kolejne X tury, kiedykolwiek zagrasz kartę Ataku, wyklucz ją."
+    },
+    "BARRICADE": {
+      "name": "Barykada",
+      "description": "Blok nie przepada z początkiem twojej tury.XBlok nie przepada z początkiem tury."
+    },
+    "BERSERK": {
+      "name": "Berserk",
+      "description": "Na początku tury zyskaj X"
+    },
+    "BIAS": {
+      "name": "Błąd systemu",
+      "description": "Na początku tury utrać X pkt. Skupienia."
+    },
+    "BLUR": {
+      "name": "Rozmycie",
+      "description": "Blok nie przepada z początkiem następnej tury.XBlok nie przepada z początkiem X następnych tur."
+    },
+    "BRUTALITY": {
+      "name": "Bestialstwo",
+      "description": "Na początku tury utrać X PŻ i dobierz X kartę.XNa początku tury utrać X PŻ i dobierz X kart."
+    },
+    "BUFFER": {
+      "name": "Bufor",
+      "description": "Powstrzymuję następną utratę PŻ.XPowstrzymuje następne utraty PŻ X razy."
+    },
+    "BULLET_TIME": {
+      "name": "Zatrzymanie czasu",
+      "description": "Koszt wszystkich zielonych kart wynosi 0."
+    },
+    "BURST": {
+      "name": "Impuls",
+      "description": "W tej turze następna karta Umiejętności zostanie zagrana dwukrotnieXW tej turze następne X karty Umiejętności zostaną zagrane dwukrotnie."
+    },
+    "CHOKED": {
+      "name": "Garota",
+      "description": "W tej turze traci X PŻ za każdą zagraną przez ciebie kartę."
+    },
+    "COMBUST": {
+      "name": "Samozapłon",
+      "description": "Na końcu tury utrać X PŻ i zadaj X pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "CONFUSION": {
+      "name": "Dezorientacja",
+      "description": "Koszt każdej dobranej karty jest losowy."
+    },
+    "CONSERVE": {
+      "name": "Oszczędzanie",
+      "description": "Energia jest zachowywana w tej turze.XEnergia jest zachowywana przez X następnych tur."
+    },
+    "CONSTRICTED": {
+      "name": "Stłamszenie",
+      "description": "Na koniec tury otrzymaj X pkt. obrażeń."
+    },
+    "CORRUPTION": {
+      "name": "Zepsucie",
+      "description": "Karty Umiejętności kosztują 0. Kiedykolwiek zagrasz kartę Umiejętności, zostanie ona wykluczona.XKiedykolwiek zagrasz kartę Umiejętności, zostanie ona wykluczona."
+    },
+    "CREATIVE_AI": {
+      "name": "Kreatywna SI",
+      "description": "Na początku tury dodaj X losową kartę Mocy do ręki.X losowe karty Mocy do ręki."
+    },
+    "CURIOSITY": {
+      "name": "Ciekawość",
+      "description": "Kiedykolwiek zagrasz kartę Mocy, zyskuje X pkt. Siły."
+    },
+    "CURL_UP": {
+      "name": "Skulenie",
+      "description": "Przy przyjęciu obrażeń od Ataku, zwija się do pozycji obronnej\ni zyskuje X pkt. Bloku (raz na potyczkę)."
+    },
+    "DARK_EMBRACE": {
+      "name": "Objęcia mroku",
+      "description": "Kiedykolwiek karta zostanie wykluczona, dobierz 1 kartę.XKiedykolwiek karta zostanie wykluczona, dobierz X karty."
+    },
+    "DEMON_FORM": {
+      "name": "Demoniczna forma",
+      "description": "Z początkiem tury zyskaj\nX pkt. Siły."
+    },
+    "DEXLOSS": {
+      "name": "Dwie lewe ręce",
+      "description": "Na koniec tury utrać X pkt. Zręczności."
+    },
+    "DEXTERITY": {
+      "name": "Zręczność",
+      "description": "Zwiększa ilość zdobywanych\npkt. Bloku (z kart) o XZmniejsza ilość zdobywanych\npkt. Bloku (z kart) o X."
+    },
+    "DOUBLE_DAMAGE": {
+      "name": "Podwójne obrażenia",
+      "description": "Atak zadaje podwójne obrażenia przez X turę.X tury."
+    },
+    "DOUBLE_TAP": {
+      "name": "Podwójny atak",
+      "description": "Podczas tej tury następna karta Ataku zostanie zagrana dwukrotnie.XPodczas tej tury następne X karty Ataku zostaną zagrane podwójnie."
+    },
+    "DRAW": {
+      "name": "Dobieranie",
+      "description": "Dobierz X dodatkową kartę na początku każdej tury.X kartę mniej na początku każdej tury.X dodatkowe karty na początku każdej tury.X karty mniej na początku każdej tury."
+    },
+    "DRAW_CARD": {
+      "name": "Dobieranie karty",
+      "description": "Dobierz X kart(y) w następnej turze.X kartę w następnej turze."
+    },
+    "DRAW_DOWN": {
+      "name": "Utrata karty",
+      "description": "Dobierz o X kartę mniej w następnej turze.X kart(y) mniej w następnej turze."
+    },
+    "DRAW_REDUCTION": {
+      "name": "Rozsypana talia",
+      "description": "Dobierz 1 kartę mniej w kolejnej turze.XDobierz 1 kartę mniej przez X kolejne tury."
+    },
+    "ECHO_FORM": {
+      "name": "Echo",
+      "description": "Pierwsza zagrana karta w każdej turze jest zagrywana dwukrotnieXPierwsze X zagrane karty w każdej turze są zagrywane dwukrotnie."
+    },
+    "ELECTRO": {
+      "name": "Elektro",
+      "description": "Grom zadaje obrażenia WSZYSTKIM przeciwnikom.XX"
+    },
+    "ENERGIZED": {
+      "name": "Pobudzenie",
+      "description": "Zyskaj X dodatkowy [G] w następnej turze.X dodatkowe [G] w następnej turze.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENERGIZEDBLUE": {
+      "name": "Pobudzenie",
+      "description": "Zyskaj X dodatkowy [B] w następnej turze.X dodatkowe [B] w następnej turze.X - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+    },
+    "ENTANGLED": {
+      "name": "Spętanie",
+      "description": "Nie możesz zagrywać kart Ataku przez jedną turę."
+    },
+    "ENVENOM": {
+      "name": "Otrucie",
+      "description": "Kiedykolwiek zadasz niezablokowane obrażenia kartą Ataku, nałóż X pkt. Trucizny."
+    },
+    "EVOLVE": {
+      "name": "Ewolucja",
+      "description": "Kiedykolwiek dobierzesz kartę Stanu, dobierz kartę.XKiedykolwiek dobierzesz kartę Stanu, dobierz X karty."
+    },
+    "EXPLOSIVE": {
+      "name": "Wybuchowość",
+      "description": "Za X tury wybuchnie zadając X pkt. obrażeń.XNa początku swojej tury wybuchnie zadając"
+    },
+    "EXTRA_CARDS": {
+      "name": "Dodatkowe karty",
+      "description": "Dobierz 1 kartę więcej w kolejnej turze.XDobierz X kart więcej w kolejnej turze."
+    },
+    "FEEL_NO_PAIN": {
+      "name": "Niewrażliwość na ból",
+      "description": "Kiedykolwiek karta zostanie Wykluczona, otrzymaj X pkt. Bloku."
+    },
+    "FIRE_BREATHING": {
+      "name": "Ognisty oddech",
+      "description": "Na końcu tury za każdą kartę Ataku rzuconą w tej turze zadaj X pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "FLAME_BARRIER": {
+      "name": "Ognista osłona",
+      "description": "Kiedykolwiek otrzymasz obrażenia od Ataku, zadaj X pkt. obrażeń atakującemu."
+    },
+    "FLEX": {
+      "name": "Zakwasy",
+      "description": "Na końcu tury utrać X pkt. Siły."
+    },
+    "FLIGHT": {
+      "name": "W powietrzu",
+      "description": "Obrażenia od kart Ataku są zredukowane o 50%.\nZnika po zadaniu obrażeń kartami Ataku X razy w ciągu jednej tury."
+    },
+    "FOCUS": {
+      "name": "Skupienie",
+      "description": "Zwiększa efektywność Sfer o XZmniejsza efektywność Sfer o X."
+    },
+    "FRAIL": {
+      "name": "Kruchość",
+      "description": "Otrzymaj 25% mniej Bloku z kart przez X turę.X tur(y)."
+    },
+    "GAMBIT": {
+      "name": "Zagrywka",
+      "description": "Po X turze, zyskaj X turach, zyskaj X [B]."
+    },
+    "GROWTHPOWER": {
+      "name": "Wzrost",
+      "description": "Z końcem swojej tury zyska\nX pkt. Siły."
+    },
+    "HEATSINK": {
+      "name": "Radiator",
+      "description": "Kiedykolwiek zagrasz kartę Mocy, dobierz X kartę.X karty."
+    },
+    "HELLO": {
+      "name": "Hejka",
+      "description": "Na początku tury dodaj X losowe Pospolite karty do ręki.X losową Pospolitą kartę do ręki."
+    },
+    "HEX": {
+      "name": "Przekleństwo",
+      "description": "Kiedykolwiek zagrasz kartę nie będącą Atakiem, wtasuj X kartę Oszołomienia do stosu rozgrywającego."
+    },
+    "HIDE": {
+      "name": "Ukrycie",
+      "description": "XX"
+    },
+    "INFINITE_BLADES": {
+      "name": "A nóż się przyda",
+      "description": "Na początku tury dodaj X Noże do ręki.X Nóż do ręki."
+    },
+    "INTANGIBLE": {
+      "name": "Nieuchwytność",
+      "description": "Redukuje WSZYSTKIE otrzymywane obrażenia oraz utratę PŻ do 1 pkt. w tej turze. Efekt jest nakładany ponownie co drugą turę."
+    },
+    "INVINCIBLE": {
+      "name": "Niezwyciężone",
+      "description": "Może utracić jeszcze X PŻ w tej turze.XNie może już zostać zranione w tej turze."
+    },
+    "BEATOFDEATH": {
+      "name": "Puls śmierci",
+      "description": "Kiedykolwiek zagrasz kartę, otrzymaj X pkt. obrażeń."
+    },
+    "INTANGIBLEPLAYER": {
+      "name": "Nieuchwytność",
+      "description": "Redukuje WSZYSTKIE otrzymywane obrażenia oraz utratę PŻ do 1 pkt."
+    },
+    "INVERTED": {
+      "name": "Na opak",
+      "description": "Niewrażliwość na obrażenia. Kiedykolwiek zyskujesz pkt. Bloku, tracisz tyle samo PŻ."
+    },
+    "JUGGERNAUT": {
+      "name": "Kolos",
+      "description": "Kiedykolwiek zyskujesz pkt. Bloku, zadasz X pkt. obrażeń losowemu przeciwnikowi."
+    },
+    "KNOWLEDGE": {
+      "name": "Wiedza",
+      "description": "Kiedykolwiek zagrasz kartę Mocy, dobierz X karty."
+    },
+    "LIFE_LINK": {
+      "name": "Łącze życia",
+      "description": "Jeśli inni przeciwnicy żyją, odradza się w ciągu 2 tur z 50% PŻ."
+    },
+    "LOCKON": {
+      "name": "Namierzenie",
+      "description": "Otrzymuje X% więcej obrażeń od Sfer przez X turę.X tury."
+    },
+    "LOOP": {
+      "name": "Pętla",
+      "description": "Na początku tury użyj pasywnej umiejętności pierwszej Sfery.XNa początku tury użyj pasywnej umiejętności pierwszej Sfery X razy."
+    },
+    "MACHINE_LEARNING": {
+      "name": "Uczenie maszynowe",
+      "description": "Dobierz X dodatkową kartę na początku każdej tury.X dodatkowe karty na początku każdej tury."
+    },
+    "STUDY": {
+      "name": "Nauka",
+      "description": "Na koniec swojej tury wtasuj\nX Rozeznania do stosu rozgrywającego.X Rozeznanie do stosu rozgrywającego."
+    },
+    "MAGNETISM": {
+      "name": "Magnetyzm",
+      "description": "Na początku tury dodaj %s losową bezbarwną kartę do ręki.XNa początku tury dodaj %s losowe bezbarwne karty do ręki."
+    },
+    "MALLEABLE": {
+      "name": "Plastyczność",
+      "description": "Po otrzymaniu obrażeń od Ataku, zyskuje X pkt. Bloku. Otrzymywany Blok wzrasta po aktywacji efektu X. Wartość powraca do X na początku tury."
+    },
+    "MAYHEM": {
+      "name": "Zamęt",
+      "description": "Na początku tury zagraj kartę ze szczytu stosu rozgrywającego.XNa początku tury zagraj X karty ze szczytu stosu rozgrywającego."
+    },
+    "METALLICIZE": {
+      "name": "Opancerzenie",
+      "description": "Zyskaj X pkt. Bloku z końcem tury.XZyskuje X pkt. Bloku z końcem swojej tury."
+    },
+    "MINION": {
+      "name": "Sługa",
+      "description": "Sługusy uciekają, gdy ich przywódca zginie."
+    },
+    "MODE_SHIFT": {
+      "name": "Zmiana trybu",
+      "description": "Po przyjęciu X pkt. obrażeń, zmienia tryb na defensywny."
+    },
+    "NEXT_TURN_BLOCK": {
+      "name": "Blok w następnej turze",
+      "description": "Na początku następnej tury zyskaj X pkt. Bloku."
+    },
+    "NIGHT_TERROR": {
+      "name": "Koszmar",
+      "description": "Dodaj X do ręki na początku następnej tury."
+    },
+    "NO_ATTACK": {
+      "name": "Bezsilność",
+      "description": "Podczas tej tury nie możesz zagrywać kart Ataku."
+    },
+    "NO_DRAW": {
+      "name": "Zakaz dobierania",
+      "description": "Do końca tej tury nie możesz dobierać kart."
+    },
+    "NOXIOUS_FUMES": {
+      "name": "Trujące opary",
+      "description": "Na początku tury nałóż X pkt. Trucizny na WSZYSTKICH przeciwników."
+    },
+    "NULLIFY_ATTACK": {
+      "name": "Anulowanie ataku",
+      "description": "Całkowicie Blokuje jeden Atak w każdej turze."
+    },
+    "PAINFUL_STABS": {
+      "name": "Bolesne dźgnięcia",
+      "description": "Kiedykolwiek otrzymasz obrażenia od tego przeciwnika, dodaj kartę Rany do stosu kart odrzuconych."
+    },
+    "PANACHE": {
+      "name": "Rozmach",
+      "description": "Kiedy zagrasz X kartę więcej w tej turze, zadaj X pkt. obrażeń WSZYSTKIM przeciwnikom.X kart(y) więcej w tej turze, zadaj"
+    },
+    "PEN_NIB": {
+      "name": "Stalówka",
+      "description": "Twoja następna karta Ataku zada podwójne obrażenia."
+    },
+    "PHANTASMAL": {
+      "name": "Widmo",
+      "description": "Zadaj podwójne obrażenia w następnej turze.XZadaj podwójne obrażenia przez następne X tury."
+    },
+    "PLATED_ARMOR": {
+      "name": "Pancerz",
+      "description": "Zyskaj X pkt. Bloku z końcem tury. Utrata PŻ w wyniku Ataku zmniejsza wartość Pancerza o 1.XZyska X pkt. Bloku z końcem swojej tury. Utrata PŻ w wyniku Ataku zmniejsza wartość Pancerza o 1."
+    },
+    "POISON": {
+      "name": "Trucizna",
+      "description": "Na początku tury utrać X PŻ, następnie wartość Trucizny zmniejsza się o 1.XNa początku swojej tury utraci"
+    },
+    "PRIME": {
+      "name": "Pełnia",
+      "description": "Kiedykolwiek Przywołasz Sferę, dobierz X kartę.X karty."
+    },
+    "PRIMITIVE": {
+      "name": "Prymityw",
+      "description": "Kiedykolwiek zagrasz Pospolitą kartę, dobierz X kartę.X karty."
+    },
+    "RAGE": {
+      "name": "Szał",
+      "description": "Kiedykolwiek podczas tej tury zagrasz kartę Ataku, zyskasz X pkt. Bloku."
+    },
+    "REBOUND": {
+      "name": "Rykoszet",
+      "description": "Następna karta, którą zagrasz w tej turze, zostaje położona na szczycie stosu rozgrywającego.XNastępne X karty, które zagrasz w tej turze, zostaną położone na szczycie stosu rozgrywającego."
+    },
+    "REDUCE_DAMAGE": {
+      "name": "Redukcja obrażeń",
+      "description": ""
+    },
+    "REGENERATE": {
+      "name": "Regeneracja",
+      "description": "Odzyskuje X PŻ z końcem swojej tury."
+    },
+    "REGENERATION": {
+      "name": "Regeneracja",
+      "description": "Z końcem tury przywróć X PŻ, następnie zredukuj wartość Regeneracji o 1.X"
+    },
+    "REPAIR": {
+      "name": "Naprawa",
+      "description": "Na koniec potyczki, przywróć X PŻ."
+    },
+    "RETAIN_CARDS": {
+      "name": "Zachowaj karty",
+      "description": "Na końcu każdej tury możesz zachować X kartę.X kart(y)."
+    },
+    "RETAIN_HAND": {
+      "name": "Zachowaj rękę",
+      "description": "Nie odrzucasz ręki pod koniec tury przez X tur.XNie odrzucasz ręki pod koniec tury."
+    },
+    "RIPOSTE": {
+      "name": "Riposta",
+      "description": "X"
+    },
+    "RITUAL": {
+      "name": "Rytuał",
+      "description": "Z końcem swojej tury zyskuje\nX pkt. Siły.XNa koniec swojej tury zyskaj"
+    },
+    "RUPTURE": {
+      "name": "Masochizm",
+      "description": "Po utracie PŻ w wyniku działania karty, zyskaj X pkt. Siły."
+    },
+    "SADISTIC": {
+      "name": "Sadyzm",
+      "description": "Kiedykolwiek nałożysz negatywny efekt na przeciwnika, zadaj mu X pkt. obrażeń."
+    },
+    "SERPENTINE": {
+      "name": "Padalec",
+      "description": "Niewrażliwość na Mikstury."
+    },
+    "SHACKLED": {
+      "name": "Spętanie",
+      "description": "Odzyskuje X pkt. Siły z końcem swojej tury."
+    },
+    "SHARP_HIDE": {
+      "name": "Kłująca skóra",
+      "description": "Kiedykolwiek zagrasz kartę Ataku, otrzymasz X pkt. obrażeń."
+    },
+    "SHRIEK_FROM_BEYOND": {
+      "name": "Krzyk z zaświatów",
+      "description": "Kiedykolwiek zagrasz kartę Ataku, odrzuć losową kartę."
+    },
+    "SKILL_BURN": {
+      "name": "Wypalenie umiejętności",
+      "description": "Na czas X tury, kiedykolwiek zagrasz kartę Umiejętności, #Wyklucz ją.XNa czas kolejnych X tur, kiedykolwiek zagrasz kartę Umiejętności, #Wyklucz ją."
+    },
+    "SLOW": {
+      "name": "Ślamazarność",
+      "description": "Za każdą kartę zagraną podczas tej tury, X otrzyma 10% więcej obrażeń od kart Ataku.X (Otrzyma X% więcej obrażeń)"
+    },
+    "SPLIT": {
+      "name": "Podział",
+      "description": "Gdy liczba PŻ spadnie poniżej 50%, podzieli się na 2 mniejsze stwory o identycznej liczbie PŻ co X."
+    },
+    "SPORE_CLOUD": {
+      "name": "Chmura zarodników",
+      "description": "Po śmierci, nakłada na ciebie X pkt. Wrażliwości."
+    },
+    "STASIS": {
+      "name": "Zastój",
+      "description": "Po śmierci, X wraca do twojej ręki."
+    },
+    "STATICDISCHARGE": {
+      "name": "Elektrostatyczność",
+      "description": "Kiedy otrzymasz obrażenia od Ataku, Przywołaj Sfery Gromu w liczbie: X."
+    },
+    "STORM": {
+      "name": "Burza",
+      "description": "Kiedykolwiek zagrasz kartę Mocy, Przywołaj Sfery Gromu w liczbie:  X."
+    },
+    "STRENGTH": {
+      "name": "Siła",
+      "description": "Zwiększa obrażenia o XZmniejsza obrażenia o X."
+    },
+    "THEBOMB": {
+      "name": "Bomba",
+      "description": "Na koniec %1$s turny zadaj %2$s pkt. obrażeń WSZYSTKIM przeciwnikom.XNa koniec tej tury zadaj %1$s pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "THIEVERY": {
+      "name": "Kieszonkostwo",
+      "description": "kradnie X szt. Złota kiedy atakuje."
+    },
+    "THORNS": {
+      "name": "Ciernie",
+      "description": "Przy otrzymywaniu obrażeń zadaje X pkt. obrażeń atakującemu."
+    },
+    "THOUSAND_CUTS": {
+      "name": "Tysiąc cięć",
+      "description": "Kiedykolwiek zagrasz kartę, zadaj X pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "TIME_WARP": {
+      "name": "Pętla czasowa",
+      "description": "Kiedykolwiek zagrasz X kart, twoja tura się zakończy, a Pożeracz Czasu zyska X pkt. Siły."
+    },
+    "TOOLS_OF_THE_TRADE": {
+      "name": "Bogaty arsenał",
+      "description": "Na początku tury dobierz X kartę i odrzuć X kartę.X kart(y) i odrzuć X kart(y)."
+    },
+    "UNAWAKENED": {
+      "name": "Sen",
+      "description": "Przeciwnik jeszcze się nie obudził..."
+    },
+    "UNSTABLE": {
+      "name": "Niestabilny",
+      "description": ""
+    },
+    "VENOMOLOGY": {
+      "name": "Toksynologia",
+      "description": "Wartość Trucizny zwiększa się o X zamiast zmniejszać się."
+    },
+    "VULNERABLE": {
+      "name": "Wrażliwość",
+      "description": "Otrzyma X% więcej obrażeń od Ataków przez X turę.X tur(y)."
+    },
+    "WEAKENED": {
+      "name": "Osłabienie",
+      "description": "Ataki zadają X% mniej obrażeń przez X turę.X tur(y)."
+    },
+    "WRAITH_FORM_V2": {
+      "name": "Widmowa forma",
+      "description": "Z końcem tury utrać X pkt. Zręczności."
+    },
+    "EQUILIBRIUM": {
+      "name": "Równowaga",
+      "description": "Nie odrzucasz kart w tej turze.XNie odrzucasz kart przez X tur(y)."
+    },
+    "FADING": {
+      "name": "Przemijanie",
+      "description": "Zginie za X tur(y).XZginie w tej turze."
+    },
+    "SHIFTING": {
+      "name": "Przenikanie",
+      "description": "XKiedykolwiek otrzyma obrażenia, traci tyle samo pkt. Siły do końca swojej tury."
+    },
+    "TIMEMAZEPOWER": {
+      "name": "Labirynt czasu",
+      "description": "Po zagraniu X kart, twoja tura się kończy."
+    },
+    "NOBLOCKPOWER": {
+      "name": "Brak bloku",
+      "description": "Nie zyskujesz pkt. Bloku z kart."
+    },
+    "CORPSEEXPLOSIONPOWER": {
+      "name": "Eksplozja zwłok",
+      "description": "Gdy ten przeciwnik zginie, zadaj obrażenia równe jego maksymalnym PŻ WSZYSTKIM przeciwnikom.XGdy ten przeciwnik zginie, zadaj obrażenia równe X-krotności jego maksymalnych punktów życia WSZYSTKIM przeciwnikom."
+    },
+    "SURROUNDED": {
+      "name": "Otoczenie",
+      "description": "Otrzymujesz 50% więcej obrażeń od ataków z tyłu. Używaj kierowanych kart i mikstur, aby zmienić swoją pozycję."
+    },
+    "COMPULSIVE": {
+      "name": "Reaktywność",
+      "description": "Po otrzymaniu obrażeń od ataku, zmienia swój Zamiar."
+    },
+    "BACKATTACK": {
+      "name": "Atak od tyłu",
+      "description": "Zadaje 50% więcej obrażeń, gdy atakuje cię od tyłu."
+    },
+    "NIRVANA": {
+      "name": "Nirwana",
+      "description": "Kiedykolwiek Prognozujesz zyskaj X pkt. Bloku."
+    },
+    "VIGOR": {
+      "name": "Wigor",
+      "description": "Twoja następna karta Ataku zada X pkt. dodatkowych obrażeń."
+    },
+    "CONDENSE": {
+      "name": "DEPRECATED Condense",
+      "description": "You cannot take more than X from any attack."
+    },
+    "GROUNDED": {
+      "name": "DEPRECATED Grounded",
+      "description": "Whenever you play a Skill, enter Calm."
+    },
+    "ADAPTATION": {
+      "name": "Adaptacja",
+      "description": "Gdy przyjmujesz postawę Gniewu, dobierz X kartę.X kart(y)."
+    },
+    "MASTERY": {
+      "name": "DEPRECATED Mastery",
+      "description": "Whenever you attempt to switch Stances to your current Stance, gain X [W]."
+    },
+    "CONTROLLED": {
+      "name": "Umysłowa forteca",
+      "description": "Gdy zmieniasz Postawę, zyskaj\nX pkt. Bloku."
+    },
+    "HOTHOT": {
+      "name": "DEPRECATED Hot hot",
+      "description": "While you are in Wrath, deal X damage back whenever you receive attack damage."
+    },
+    "FREETOPLAYPOWER": {
+      "name": "DEPRECATED FreeToPlayPower",
+      "description": "Ignore energy costs on the next card you play this turn.XIgnore energy costs on the next X cards you play this turn."
+    },
+    "COLLECT": {
+      "name": "Kolekcjonowanie",
+      "description": "Na początku następnej tury dodaj Cud+ do swojej ręki.XNa początku następnych X tur dodaj Cud+ do swojej ręki."
+    },
+    "EMOTIONALTURMOILPOWER": {
+      "name": "DEPRECATED Emotional Turmoil",
+      "description": "At the start of your turn, enter a new random basic stance."
+    },
+    "SERENITY": {
+      "name": "DEPRECATED Serenity",
+      "description": "While you are in Calm, HP loss is reduced by"
+    },
+    "ENDTURNDEATH": {
+      "name": "Bluźnierca",
+      "description": "Zgiń na początku swojej następnej tury."
+    },
+    "ALWAYSMAD": {
+      "name": "DEPRECATED Always Mad",
+      "description": "No longer receive double damage while in Wrath."
+    },
+    "MANTRA": {
+      "name": "Mantra",
+      "description": "Gdy zdobędziesz X pkt. Mantry, przyjmij postawę Boskości."
+    },
+    "ANGELFORM": {
+      "name": "DEPRECATED AngelForm",
+      "description": "At the end of your turn, gain X Plated Armor."
+    },
+    "WIREHEADINGPOWER": {
+      "name": "Przezorność",
+      "description": "Na początku swojej tury Prognozuj X."
+    },
+    "VAULT": {
+      "name": "Krypta",
+      "description": "Otrzyma X pkt. obrażeń na początku twojej następnej tury."
+    },
+    "FLOWPOWER": {
+      "name": "DEPRECATED FlowPower",
+      "description": "When you play an Attack, gain X temporary Strength. When you play a Skill, gain ,X temporary Dexterity."
+    },
+    "ESTABLISHMENTPOWER": {
+      "name": "Prawo i porządek",
+      "description": "Gdy karta zostanie Zachowana, zmniejsz jej koszt o X."
+    },
+    "DEVOTIONPOWER": {
+      "name": "Pobożność",
+      "description": "Na początku swojej tury zyskaj\nX pkt. Mantry."
+    },
+    "BLOCKRETURNPOWER": {
+      "name": "Zwrot bloku",
+      "description": "Gdy zostanie zaatakowany, zyskujesz X pkt. Bloku."
+    },
+    "BATTLEHYMN": {
+      "name": "Hymn bitewny",
+      "description": "Na początku tury dodaj X Kary do swojej ręki.X Karę do swojej ręki."
+    },
+    "FREEATTACKPOWER": {
+      "name": "Większa siła ognia",
+      "description": "Zignoruj koszt następnej zagranej karty Ataku.XZignoruj koszt następnych X zagranych kart Ataku."
+    },
+    "NOSKILLS": {
+      "name": "Zero umiejętności",
+      "description": "Nie możesz zagrywać kart Umiejętności w tej turze."
+    },
+    "MASTERREALITYPOWER": {
+      "name": "Władca rzeczywistości",
+      "description": "Kiedykolwiek stworzysz kartę podczas walki, ulepsz ją.XdeprecatedXdeprecatedXdeprecated"
+    },
+    "STRIKEUP": {
+      "name": "Wytrenowane ciosy",
+      "description": "Karty zawierające w nazwie Uderzenie zadają X pkt. dodatkowych obrażeń."
+    },
+    "RETRIBUTION": {
+      "name": "DEPRECATED Retribution",
+      "description": "Whenever you lose HP, gain X Vigor."
+    },
+    "CANNOTCHANGESTANCEPOWER": {
+      "name": "Zakaz zmiany postawy",
+      "description": "Nie możesz zmienić postawy w tej turze."
+    },
+    "OMEGAPOWER": {
+      "name": "Omega",
+      "description": "Na koniec swojej tury zadaj X pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "DUPLICATIONPOWER": {
+      "name": "Powielenie",
+      "description": "W tej turze twoja następna karta zostanie zagrana dwukrotnie.XW tej turze twoje X następne karty zostaną zagrane dwukrotnie."
+    },
+    "WRATHNEXTTURNPOWER": {
+      "name": "Skumulowana Furia",
+      "description": "Przyjmij postawę Gniewu na początku swojej tury."
+    },
+    "DEVAFORM": {
+      "name": "Dewa",
+      "description": "Na początku swojej tury zyskaj [W] XNa początku swojej tury zyskaj [W] X razy Xoraz zwiększ ten zysk o X.XTRANSLATE NOTE: At the start of your turn, gain [W] 2 times and increase this by 1."
+    },
+    "OMNISCIENCEPOWER": {
+      "name": "Wszechwiedza",
+      "description": "DEPERCATEDXDEPRECATED"
+    },
+    "WAVEOFTHEHANDPOWER": {
+      "name": "Podmuch dłonią",
+      "description": "Kiedykolwiek zyskasz Blok, nałóż X pkt. Słabości WSZYSTKIM przeciwnikom."
+    },
+    "WAVEOFTHEHANDPOWER2": {
+      "name": "DEPRECATED",
+      "description": "DEPRECATEDXDEPRECATED"
+    },
+    "ENERGYDOWNPOWER": {
+      "name": "Post",
+      "description": "Na początku swojej tury\nutrać X"
+    },
+    "DISCIPLINEPOWER": {
+      "name": "DEPRECATED Dyscyplina",
+      "description": "Jeżeli kończysz turę z niewykorzystanymi [W] , dobierz tyle dodatkowych kart w następnej turze."
+    },
+    "FLICKPOWER": {
+      "name": "DEPRECATED Flick",
+      "description": "When this enemy gets Flick X2 more times, it receives X1 more time, it receives X damage."
+    },
+    "PATHTOVICTORYPOWER": {
+      "name": "Piętno",
+      "description": "Kiedykolwiek zagrasz Punkty nacisku, traci X PŻ."
+    },
+    "LIKEWATERPOWER": {
+      "name": "Jak woda",
+      "description": "Na koniec swojej tury, jeżeli jesteś w postawie Spokoju, zyskaj X pkt. Bloku."
+    }
+  },
+  "potions": {
+    "ANCIENT_POTION": {
+      "name": "Mikstura hartu",
+      "description": "Otrzymujesz 1 pkt. Hartu."
+    },
+    "ATTACKPOTION": {
+      "name": "Mikstura ataku",
+      "description": "Wybierz 1 z 3 kart Ataku i dodaj ją do ręki. W tej turze kosztuje 0.1Wybierz 1 z 3 kart Ataku i dodaj jej 2 kopie do ręki. W tej turze kosztują 0."
+    },
+    "BLOCK_POTION": {
+      "name": "Mikstura bloku",
+      "description": "Dodaje 12 pkt. Bloku."
+    },
+    "BLOODPOTION": {
+      "name": "Mikstura krwi",
+      "description": "Przywraca 20% twoich Maksymalnych PŻ."
+    },
+    "DEXTERITY_POTION": {
+      "name": "Mikstura zręczności",
+      "description": "Dodaje 2 pkt. Zręczności."
+    },
+    "ELIXIR": {
+      "name": "Eliksir",
+      "description": "DEPRECATEDDEPRECATEDDEPRECATEDDEPRECATEDDEPRECATED"
+    },
+    "ENERGY_POTION": {
+      "name": "Mikstura energii",
+      "description": "Zyskaj 2 pkt. Energii."
+    },
+    "ENTROPICBREW": {
+      "name": "Entropiczny napar",
+      "description": "Wypełnia wszystkie puste miejsca na mikstury losowymi miksturami."
+    },
+    "ESSENCEOFSTEEL": {
+      "name": "Esencja stali",
+      "description": "Zyskaj 4 pkt. Pancerza."
+    },
+    "EXPLOSIVE_POTION": {
+      "name": "Mieszanka wybuchowa",
+      "description": "Zadaj 10 pkt. obrażeń WSZYSTKIM przeciwnikom."
+    },
+    "FAIRYPOTION": {
+      "name": "Wróżka w butelce",
+      "description": "Po otrzymaniu śmiertelnych obrażeń, przywraca 30% twoich Maksymalnych PŻ i zostaje usunięta."
+    },
+    "FEARPOTION": {
+      "name": "Płynny strach",
+      "description": "Nakłada 3 pkt. Wrażliwości."
+    },
+    "FIRE_POTION": {
+      "name": "Płynny ogień",
+      "description": "Zadaj 20 pkt. obrażeń."
+    },
+    "FOCUSPOTION": {
+      "name": "Roztwór NZT-48",
+      "description": "Zyskaj 2 pkt. Skupienia."
+    },
+    "FRUIT_JUICE": {
+      "name": "Multiwitamina",
+      "description": "Zyskaj 5 maksymalnych PŻ."
+    },
+    "GAMBLERSBREW": {
+      "name": "Wywar hazardzisty",
+      "description": "Odrzuć wybraną ilość kart i dobierz ich tyle samo."
+    },
+    "GHOSTINAJAR": {
+      "name": "Duszek w słoiku",
+      "description": "Zyskaj 1 pkt. Nieuchwytności."
+    },
+    "HEALTH_POTION": {
+      "name": "Mikstura lecząca",
+      "description": "DEPRECATEDDEPRECATED"
+    },
+    "LIQUIDBRONZE": {
+      "name": "Płynny Brąz",
+      "description": "Zyskaj 3 pkt. Cierni."
+    },
+    "POISON_POTION": {
+      "name": "Fiolka trucizny",
+      "description": "Nakłada 6 pkt. Trucizny."
+    },
+    "POTION_SLOT": {
+      "name": "Miejsce na miksturę",
+      "description": "Korzystaj z mikstur podczas walki, aby zyskiwać bonusy\nlub ranić przeciwników.0Miejsce na miksturę"
+    },
+    "POWERPOTION": {
+      "name": "Mikstura mocy",
+      "description": "Wybierz 1 z 3 kart Mocy i dodaj ją do ręki. W tej turze kosztuje 0.1Wybierz 1 z 3 kart Mocy i dodaj jej 2 kopie do ręki. W tej turze kosztują 0."
+    },
+    "REGEN_POTION": {
+      "name": "Mikstura regeneracji",
+      "description": "Zyskaj 5 pkt. Regeneracji."
+    },
+    "SKILLPOTION": {
+      "name": "Mikstura umiejętności",
+      "description": "Wybierz 1 z 3 kart Umiejętności i dodaj ją do ręki. W tej turze kosztuje 0.1Wybierz 1 z 3 kart Umiejętności i dodaj jej 2 kopie do ręki. W tej turze kosztują 0."
+    },
+    "SMOKEBOMB": {
+      "name": "Bomba dymna",
+      "description": "Ucieknij z walki (nie działa na bossów). Nie zyskujesz łupów.0Otoczono mnie!"
+    },
+    "SNECKOOIL": {
+      "name": "Olej Wonsza",
+      "description": "Dobierz 5 kart. Losowo zmień koszt kart w swojej ręce."
+    },
+    "SPEEDPOTION": {
+      "name": "Mikstura chyżości",
+      "description": "Zyskaj 5 pkt. Zręczności.\nNa koniec tury utrać\n pkt. Zręczności."
+    },
+    "STEROIDPOTION": {
+      "name": "Sterydy",
+      "description": "Zyskaj 5 pkt. Siły. Na koniec tury utrać  pkt. Siły."
+    },
+    "STRENGTH_POTION": {
+      "name": "Mikstura siły",
+      "description": "Zyskaj 2 pkt. Siły."
+    },
+    "SWIFT_POTION": {
+      "name": "Mikstura szybkości",
+      "description": "3Dobierz  kart(y)."
+    },
+    "WEAK_POTION": {
+      "name": "Mikstura osłabienia",
+      "description": "Nakłada 3 pkt. Słabości."
+    },
+    "STANCEPOTION": {
+      "name": "Mikstura postawy",
+      "description": "Przyjmij postawę Spokoju lub Gniewu."
+    },
+    "DUPLICATIONPOTION": {
+      "name": "Mikstura powielenia",
+      "description": "W tej turze twoja następna karta zostanie zagrana dwukrotnie.1W tej turze twoje 2 następne karty zostaną zagrane dwukrotnie."
+    },
+    "ELIXIRPOTION": {
+      "name": "Eliksir",
+      "description": "Wyklucz dowolną liczbę kart ze swojej ręki."
+    },
+    "HEARTOFIRON": {
+      "name": "Żelazne serce",
+      "description": "Zyskaj 6 pkt. Opancerzenia."
+    },
+    "CUNNINGPOTION": {
+      "name": "Mikstura sprytu",
+      "description": "Dodaj 3 Noże+ do swojej ręki."
+    },
+    "POTIONOFCAPACITY": {
+      "name": "Mikstura pojemności",
+      "description": "Zyskaj 2 miejsca na Sfery."
+    },
+    "ESSENCEOFDARKNESS": {
+      "name": "Esencja ciemności",
+      "description": "Przywołaj 1 Sferę Ciemności w każde miejsce na Sferę."
+    },
+    "BOTTLEDMIRACLE": {
+      "name": "Zabutelkowany cud",
+      "description": "Dodaj 2 Cuda do swojej ręki."
+    },
+    "AMBROSIA": {
+      "name": "Ambrozja",
+      "description": "Przyjmij Postawę Boskości."
+    },
+    "DISTILLEDCHAOS": {
+      "name": "Destylowany chaos",
+      "description": "Zagraj 3 kart(y) ze szczytu stosu rozgrywającego."
+    },
+    "LIQUIDMEMORIES": {
+      "name": "Płynne wspomnienia",
+      "description": "Wybierz kartę ze stosu kart odrzuconych i przywróć ją do ręki. Kosztuje 0 w tej turze.1Wybierz  karty ze stosu kart odrzuconych i przywróć je do ręki. Kosztują 0 w tej turze."
+    },
+    "CULTISTPOTION": {
+      "name": "Mikstura kultusty",
+      "description": "Zyskaj 1 pkt. Rytuału."
+    },
+    "COLORLESSPOTION": {
+      "name": "Bezbarwna mikstura",
+      "description": "Wybierz 1 z 3 bezbarwnych kart i dodaj ją do ręki. W tej turze kosztuje 0.1Wybierz 1 z 3 bezbarwnych kart i dodaj jej 2 kopie do ręki. W tej turze kosztują 0."
+    },
+    "BLESSINGOFTHEFORGE": {
+      "name": "Błogosławieństwo kuźni",
+      "description": "Ulepsz wszystkie karty w swojej ręce do końca walki."
+    }
+  },
+  "events": {
+    "BACK_TO_BASICS": {
+      "name": "Antyczne Ryciny",
+      "description": "Przemierzając miasto zauważasz ścianę pokrytą pismem Starożytnych. W trakcie próby zrozumienia, co te zagadkowe symbole i glify mogą znaczyć, napis zaczyna się świecić. \n Nagle zapiski stają się jasne...",
+      "choices": [
+        "[Elegancja] Usuń kartę z talii.",
+        "[Prostota] Ulepsz WSZYSTKIE karty Uderzeń oraz Obrony. Wybierz kartę do usunięcia.",
+        "[Odejdź]"
+      ]
+    },
+    "WORLD_OF_GOOP": {
+      "name": "Bagno",
+      "description": "Wpadasz w kałużę. \n TO SZLAMOWY GLUT! \n Rozpaczliwie próbujesz wygrzebać się z niego, czując jak powoli zaczyna palić twoją skórę. \n Czujesz maź w uszach, nosie, ABSOLUTNIE WSZĘDZIE. \n \n Po wydostaniu się zauważasz, że brakuje ci trochę złota. Zaglądając w kałużę spostrzegasz swoje zagubione monety, razem ze złotem innych pechowych podróżników.",
+      "choices": [
+        "[Zbierz złoto] Otrzymaj szt. złota. Utrać PŻ.",
+        "[Zostaw je] Utrać szt. złota."
+      ]
+    },
+    "THE_LIBRARY": {
+      "name": "Biblioteka",
+      "description": "Natrafiasz na bogato zdobiony budynek, który wydaje się być opuszczony. \n Zauważasz leżącą na ziemi tabliczkę, najprawdopodobniej oderwaną od ściany. Widnieje na niej napis: \"BIBLIOTEKA\". \n Wewnątrz znajdujesz niezliczone ilości zwojów, manuskryptów i książek. \n Wybierasz jedeną z nich i rozsiadasz się wygodnie w krześle, aby zaznać chwili relaksu.",
+      "choices": [
+        "[Czytaj] Wybierz 1 z 20 kart i dodaj ją do talii.",
+        "[Śpij] Przywróć PŻ."
+      ]
+    },
+    "FOUNTAIN_OF_CLEANSING": {
+      "name": "Boskie Źródło",
+      "description": "Natrafiasz na wartki strumień wody wypływający z niewielkiej fontanny.",
+      "choices": [
+        "[Napij się] Usuń wszystkie Klątwy z talii.",
+        "[Odejdź]"
+      ]
+    },
+    "UPGRADE_SHRINE": {
+      "name": "Dobrodziej",
+      "description": "Natrafiasz na intrygującą kapliczkę, poświęconą nieznanemu bóstwu.",
+      "choices": [
+        "[Módl się] Ulepsz kartę.",
+        "[Odejdź] Wybierz kartę do ulepszenia."
+      ]
+    },
+    "MATCH_AND_KEEP": {
+      "name": "Dopasuj i Zabierz!",
+      "description": "\"Mam dwanaście kart! Dopasuj je, aby zabrać je ze sobą! Pięć prób, zero powtórek. \n To co, tasujemy?\"",
+      "choices": [
+        "[Kontynuuj]",
+        "[Odejdź]",
+        "[Graj] Pozostałe próby:"
+      ]
+    },
+    "BONFIRE_ELEMENTALS": {
+      "name": "Duchy Paleniska",
+      "description": "Natrafiasz na istoty wyglądające jak purpurowe duchy ognia, tańczące wokół potężnego paleniska.",
+      "choices": [
+        "[Kontynuuj]",
+        "[Odejdź]",
+        "[Ofiaruj] Otrzymaj nagrodę zależną od ofiarowanej karty. Wybierz kartę do złożenia w ofierze."
+      ]
+    },
+    "ADDICT": {
+      "name": "Dziad Proszalny",
+      "description": "Podczas próby ominięcia grupy zakapturzonych postaci, jedna z nich zauważa cię i podchodzi do ciebie. \n \"Masz może coś dla mnie, przyjacielu? Proszę... może kilka złotych monet?\" \n \"Potrzebuję jedynie miejsca na nocleg. Mam skarby, które mogę przehandlować...\" \n Wygląda na wariata, ale raczej nieszkodliwego.",
+      "choices": [
+        "[Ofiaruj złoto] szt. złota: Otrzymaj Artefakt.",
+        "[Okradnij] Otrzymaj Artefakt. Otrzymaj Klątwę - Wstyd.",
+        "[Odejdź]"
+      ]
+    },
+    "LIARS_GAME": {
+      "name": "Gadzina",
+      "description": "Przechodząc przez pomieszczenie widzisz dziurę w ziemi. Gdy podchodzisz bliżej, wyłania się z niej ogromne stworzenie, wyglądem przypominające węża. \n \n \"Ho ho! Proszę, proszę! Co my tu mamy? Witaj podróżniku. Zadam ci prossste pytanie. \n Najbardziej sssatysfakcjonujące życie to takie, w którym możesz sobie pozwolić na wszyssstko! \n Zgadzasz ssssię ze mną?\"",
+      "choices": [
+        "[Zgódź się] Otrzymaj szt. złota. Otrzymaj Klątwę - Zwątpienie.",
+        "[Nie zgódź się]"
+      ]
+    },
+    "NEST": {
+      "name": "Gniazdo",
+      "description": "Widzisz długą kolejkę zakapturzonych postaci wchodzących do \n niesamowitej katedry.",
+      "choices": [
+        "[Zostań] Otrzymaj Rytualny Sztylet. Utrać PŻ.",
+        "[Okradnij] Otrzymaj"
+      ]
+    },
+    "MUSHROOMS": {
+      "name": "Grzybki",
+      "description": "Poddajesz się tej nienaturalnej żądzy. Jedząc grzyba za grzybem, czujesz jak świat zaczyna wirować, a potem mdlejesz. Po przebudzeniu czujesz, że coś jest z tobą nie tak. \n Odzyskujesz 25% PŻ, ale łapiesz też infekcję.",
+      "choices": [
+        "[Rozdepcz] Rozgniewasz grzyby.",
+        "[Zjedz] Przywróć PŻ. Otrzymaj Klątwę - Pasożyt.",
+        "[Walcz]",
+        "[Odejdź]"
+      ]
+    },
+    "THE_MOAI_HEAD": {
+      "name": "Głowa Moai",
+      "description": "Natrafiasz na *bardzo* dziwne pomieszczenie. Ze ściany o parę kroków przed tobą wyłania się wielka, kamienna głowa. \n Jej usta są szeroko otwarte i odsłaniają ogromne zęby, dosłownie skąpane we krwi. Powierzchnia głowy upstrzona jest rycinami, które wskazują na to, że ludzie wskakują w usta, aby dać się pożreć. Pytanie brzmi – czemu?",
+      "choices": [
+        "[Wskocz] Przywróć utracone PŻ. Utrać maksymalnych PŻ.",
+        "[Ofiaruj Złotego bożka] Otrzymaj 333 szt. złota. Utrać Złotego bożka."
+      ]
+    },
+    "FACETRADER": {
+      "name": "Handlarz Twarzami",
+      "description": "Mijasz upiorną, sześcioramienną statuę trzymającą kilka masek... \n Nagle coś za tobą łagodnie szepcze, \n \"Stój.\"",
+      "choices": [
+        "[Pozwól] Utrać szt. złota.",
+        "[Wymiana] 50%: Dobra Twarz. 50%: Zła Twarz.",
+        "[Odejdź]",
+        "[Kontynuuj] PŻ, otrzymaj"
+      ]
+    },
+    "DESIGNER": {
+      "name": "In-Spirujący Twórca",
+      "description": "Odkrywasz kolorowy sklepik z szyldem \"IN-SPIRACJE\". Wchodzisz do środka, będąc ciekaw co tam ujrzysz. \n \"O nie, nie ma mowy. Nie, nie możesz tu wejść!\" \n \n Dziwacznie ubrany mężczyzna pojawia się przy wejściu i zagradza ci drogę.",
+      "choices": [
+        "[Modyfikacje] Utrać szt. złota. Ulepsz kartę.",
+        "[Czyszczenie] Utrać szt. złota. Usuń kartę.",
+        "[Pełna obsługa] Utrać szt. złota. Usuń kartę oraz ulepsz losową kartę.",
+        "[Uderz] Utrać PŻ."
+      ]
+    },
+    "SHINING_LIGHT": {
+      "name": "Jaśniejące światło",
+      "description": "Natrafiasz na migotliwą koncentrację światła, znajdującą się w centrum pomieszczenia. \n \n Ciepły blask i hipnotyzujące wzory zapraszają cię do środka.",
+      "choices": [
+        "[Wejdź] Ulepsz 2 losowe karty. Utrać PŻ.",
+        "[Odejdź]"
+      ]
+    },
+    "SENSORYSTONE": {
+      "name": "Kamień doznań",
+      "description": "Przemierzając Pogranicze natrafiasz na wirujący w powietrzu połyskujący hipersześcian o zmiennej strukturze.",
+      "choices": [
+        "[Przypomnij] Dodaj 1 bezbarwną kartę do swojej talii.",
+        "[Przypomnij] Dodaj 2 bezbarwne karty do swojej talii. Utrać PŻ.",
+        "[Przypomnij] Dodaj 3 bezbarwne karty do swojej talii. Utrać PŻ."
+      ]
+    },
+    "THE_CLERIC": {
+      "name": "Kleryk",
+      "description": "Nietuzinkowy, niebieski humanoid w złotym hełmie(?) podchodzi do ciebie, nieustannie się uśmiechając. \n \"Witaj przyjacielu! Jestem Klerykiem! Może zainteresują cię moje usługi?!\" – wykrzyknęła ta przedziwna istota.",
+      "choices": [
+        "[Ulecz] 35 szt. złota: Przywróć PŻ.",
+        "[Oczyść] szt. złota: Usuń kartę z talii.",
+        "[Odejdź]"
+      ]
+    },
+    "THE_WOMAN_IN_BLUE": {
+      "name": "Kobieta w Błękicie",
+      "description": "Z ciemności wyłania się ręka, która wciąga cię do małego sklepu. W środku dostrzegasz bladą, schludnie ubraną kobietę wskazującą na ścianę pełną mikstur. \n \"Kup miksturę. Teraz!\"",
+      "choices": [
+        "[Kup 1 miksturę]",
+        "[Kup 2 mikstury]",
+        "[Kup 3 mikstury] szt. złota",
+        "[Odejdź]"
+      ]
+    },
+    "COLOSSEUM": {
+      "name": "Koloseum",
+      "description": "Trach!!! \n .. \n ...... \n ... \n Uderzenie pozbawia cię przytomności...",
+      "choices": [
+        "[Kontynuuj]",
+        "[Walcz]",
+        "[STCHÓRZ] Ucieknij.",
+        "[ZWYCIĘŻ] Trudna walka z wieloma nagrodami."
+      ]
+    },
+    "WHEEL_OF_CHANGE": {
+      "name": "Koło Lepszej Zmiany",
+      "description": "Natrafiasz na dostojnie wyglądającego gremlina. \n \"Czas puścić koło w ruch! Jesteś G O T Ó W ? Oczywiście, że jesteś!\"",
+      "choices": [
+        "[Graj]"
+      ]
+    },
+    "TOMB_OF_LORD_RED_MASK": {
+      "name": "Krypta Czerwonej Maski",
+      "description": "Po drugiej stronie lewitującej ścieżki zauważasz misternie ozdobioną kryptę. Po dotarciu do niej, twoje oko przykuwa otwór na złote monety z wydrapaną powyżej inskrypcją – niestety, zupełnie nieczytelną.",
+      "choices": [
+        "[Załóż Czerwoną maskę] Otrzymaj 222 szt. złota.",
+        "[Ofiaruj: szt. złota] Utrać całe złoto. Otrzymaj Artefakt.",
+        "[Odejdź]"
+      ]
+    },
+    "WINDING_HALLS": {
+      "name": "Kręte Korytarze",
+      "description": "Z każdym krokiem w głąb krętych korytarzy czujesz, że coraz bardziej gubisz drogę, a ściany zmieniają swoje położenie na twoich oczach. \n \n Te szepty z tyłu głowy również nie pomagają.",
+      "choices": [
+        "[Odtwórz przebytą drogę] Utrać maks. PŻ.",
+        "[Popadnij w obłęd] Otrzymaj 2 karty Szaleństwa. Utrać PŻ.",
+        "[Skup się] Otrzymaj Klątwę - Cierpienie. Przywróć PŻ."
+      ]
+    },
+    "LAB": {
+      "name": "Laboratorium",
+      "description": "Natrafiasz na pomieszczenie wypełnione probówkami, zlewkami, kolbami, pęsetami, klamrami zaciskowymi, mieszadełkami, szczypcami, goglami, lejkami, pipetami, cylindrami, chłodnicami i zauważasz nawet rzadką spiralną kolbę laboratoryjną. \n \n Skąd w ogóle znasz nazwy tych wszystkich obiektów? \n Nie ma to znaczenia, bo i tak rozglądasz się po pokoju.",
+      "choices": [
+        "[Przeszukaj] Znajdź kilka mikstur!"
+      ]
+    },
+    "DEAD_ADVENTURER": {
+      "name": "Martwy Podróżnik",
+      "description": "W trakcie przeszukiwania dobytku martwego podróżnika powraca bestia, która najprawdopodobniej zabiła nieszczęśnika.",
+      "choices": [
+        "[Przeszukaj] Znajdź łup.",
+        "[Odejdź]"
+      ]
+    },
+    "THE_MAUSOLEUM": {
+      "name": "Mauzoleum",
+      "description": "Przemierzając kolejne grobowce, natrafiasz na ogromny sarkofag wysadzany klejnotami, stojący na samym środku okrągłego pomieszczenia. \n Nie możesz odczytać zapisanych na nim inskrypcji, ale dostrzegasz czarną mgłę wydobywającą się z niego.",
+      "choices": [
+        "[Otwórz sarkofag] Otrzymaj 1 Artefakt. % szansy na Klątwę - Cierpienie.",
+        "[Odejdź]"
+      ]
+    },
+    "N_LOTH": {
+      "name": "N'loth",
+      "description": "Dziwna istota z garbem z którego wyrasta kilka macek, grzebie w znajdującej się przed tobą stercie śmieci i odpadków. Gdy się do niej zbliżasz, stworzenie podczłapuje do ciebie. \n \"N'loth głodny. Nakarm N'loth'a.\"",
+      "choices": [
+        "[Ofiaruj: ] Utrać ten Artefakt. Otrzymaj unikalny Artefakt.",
+        "[Odejdź]"
+      ]
+    },
+    "DRUG_DEALER": {
+      "name": "Naukowiec",
+      "description": "Podchodzi do ciebie mężczyzna z przepaską na oku i demonicznym uśmiechem. \n \"Witaj, nieznajomy. Masz ochotę na odrobinkę zaawansowanej nauki? Mogę uczynić cię silniejszym niż trening czy dowolne błogosławieństwo. Na pewno ci się przyda w twojej bohaterskiej i samobójczej misji.\" \n \n \"Więc co powiesz?\"",
+      "choices": [
+        "[Przetestuj J.A.X.] Otrzymaj J.A.X.",
+        "[Zostań obiektem testowym] Podmień 2 karty.",
+        "[Wypij mutagen] Otrzymaj unikalny Artefakt.",
+        "[Odejdź]"
+      ]
+    },
+    "PURIFIER": {
+      "name": "Oczyszczenie",
+      "description": "Natrafiasz na ciekawie ozdobioną kapliczkę, poświęconą nieznanemu bóstwu.",
+      "choices": [
+        "[Módl się] Usuń kartę z talii.",
+        "[Odejdź] Wybierz kartę do usunięcia."
+      ]
+    },
+    "THE_JOUST": {
+      "name": "Pojedynek",
+      "description": "Przechodząć przez ogromne pomieszczenie docierasz do wąskiego i długiego mostu. Spostrzegasz, że na każdym z jego końców stoi rycerz. Podchodzisz... \n \"Stać!\" \n \n Rycerz, wymachując swoją lancą, zmusza cię do zatrzymania się.",
+      "choices": [
+        "[Kontynuuj]",
+        "[Rycerz] Postaw szt. złota - 30% szans na zwycięstwo szt. złota.",
+        "[Oglądaj]"
+      ]
+    },
+    "DUPLICATOR": {
+      "name": "Powielacz",
+      "description": "Natrafiasz na misternie ozdobioną kapliczkę poświęconą jakiemuś nieznanemu bóstwu.",
+      "choices": [
+        "[Módl się] Duplikuje wybraną kartę z talii.",
+        "[Odejdź] Wybierz kartę do zduplikowania."
+      ]
+    },
+    "BIG_FISH": {
+      "name": "Przedostatnia Wieczerza",
+      "description": "Idąc wzdłuż wyjątkowo długiego korytarza zauważasz banana, pączka oraz pudełko, każde z nich lewitujące w powietrzu. Nie... po dokładniejszych oględzinach zauważasz, że zwisają one na cieniutkich sznurkach, wychodzących z otworów w stropie pomieszczenia. Gdy podchodzisz bliżej, z góry dobiega cichy chichot. \n Co robisz?",
+      "choices": [
+        "[Banan] Przywróć PŻ.",
+        "[Pączek] Maksymalne PŻ + .",
+        "[Pudełko] Otrzymaj 1 Artefakt. Otrzymaj Klątwę - Żal.",
+        "[Odejdź]"
+      ]
+    },
+    "CURSED_TOME": {
+      "name": "Przeklęta Księga",
+      "description": "W opuszczonej świątyni znajdujesz ogromną księgę, otwartą i upstrzoną zagadkowymi symbolami. \n \n Gdy próbujesz rozszyfrować ten zawiły tekst, wyrazy zaczynają zmieniać położenie i przekształcać całość w znany ci język.",
+      "choices": [
+        "[Czytaj]",
+        "[Kontynuuj] Utrać 1 PŻ.",
+        "[Kontynuuj] Utrać 2 PŻ.",
+        "[Kontynuuj] Utrać 3 PŻ.",
+        "[Przestań] Utrać 3 PŻ.",
+        "[Zabierz] Otrzymaj Księgę. Utrać PŻ.",
+        "[Odejdź]"
+      ]
+    },
+    "FALLING": {
+      "name": "Przepaść",
+      "description": "Zmierzając w górę, przeskakujesz z jednej lewitującej struktury na drugą, gdy nagle się potykasz. \n \n Zaczynasz spadać.",
+      "choices": [
+        "[Kontynuuj] [Wyląduj] Utrać",
+        "[Zablokowane] Wymagania: karta Umiejętności [Przekieruj] Utrać",
+        "[Zablokowane] Wymagania: karta Mocy [Uderz] Utrać"
+      ]
+    },
+    "GHOSTS": {
+      "name": "Rada Duchów",
+      "description": "W pewnym momencie twojej wspinaczki gęsty , czarny dym zaczyna wydobywać się spod ziemi oraz ze ścian wokół ciebie. Po chwili kłębowisko zaczyna przeobrażać się w trzy zamaskowane postacie które zwracają się w twoją stronę. \n \n \"Kolejna marionetka Neow.\" \n \"PRAWDA! ONA TWORZY NAJLEPSZE ZABAWKI!\" \n \n Pod maską trzeciej postaci zauważasz przesadnie szeroki uśmiech. \n \"Zignoruj ich... Nie masz może ochoty posmakować naszej mocy?\"",
+      "choices": [
+        "[Zgódź się] Otrzymaj 5 kart Duchowej formy. Utrać maksymalnych PŻ.",
+        "[Odmów]"
+      ]
+    },
+    "MINDBLOOM": {
+      "name": "Rozkwit Umysłu",
+      "description": "Podczas podróży przez Iglicę, nagle zaczynasz się czuć bardzo... prawdziwie... \n \n Wyobrażenia potworów i bogactw zaczynają się maifestować. \n Czujesz, że to uczucie jest bardzo przelotne. Co robisz?",
+      "choices": [
+        "[Jestem Wojną] Walcz z Bossem z Aktu 1. Otrzymaj rzadki Artefakt.",
+        "[Jestem Bogaczem] Otrzymaj 999 szt. złota. Otrzymaj 2. Klątwy - Przeciętność.",
+        "[Jestem Okazem Zdrowia] Przywróć utracone PŻ. Otrzymaj Klątwę - Zwątpienie.",
+        "[Jestem Przebudzony] Ulepsz WSZYSTKIE karty. Nie możesz już przywracać PŻ.",
+        "[Odejdź]"
+      ]
+    },
+    "SECRETPORTAL": {
+      "name": "Sekretny Portal",
+      "description": "Wędrując poprzez obcy krajobraz natrafiasz na niecodzienny, nawet jak na to miejsce, widok. W jednej z żywych ścian Pogranicza znajduje się ogrodzone wejście za którym kłębi się magiczny portal. \n \n Nie masz pojęcia dokąd prowadzi, ale być może przyspieszy twoją podróż przez Iglicę.",
+      "choices": [
+        "[Przejdź przez portal] Natychmiast przenieś się do bossa.",
+        "[Odejdź]"
+      ]
+    },
+    "SPIRE_HEART": {
+      "name": "Serce Iglicy",
+      "description": "Du-dum ... du-dum ... du-dum ... \n Głęboki, pulsujący strach przenika całe pomieszczenie... \n Czy to serce Iglicy? Źródło wszelkiego zła?",
+      "choices": [
+        "[Kontynuuj]"
+      ]
+    },
+    "GOLDEN_WING": {
+      "name": "Skrzydlata Statua",
+      "description": "W gruzowisku zauważasz intrygującą, przypominającą skrzydło, statuę o niebieskiej barwie. \n Dostrzegasz wysypujące się z jej szczelin złoto. Może w środku jest go więcej...",
+      "choices": [
+        "[Módl się] Usuń kartę z talii. Utrać PŻ.",
+        "[Zniszcz] Zyskaj - szt. złota.",
+        "[Odejdź]"
+      ]
+    },
+    "BEGGAR": {
+      "name": "Stary Żebrak",
+      "description": "Stary, przywdziany w futro żebrak wyciąga w twoją stronę dłoń. \"Poratujesz paroma sztukami złota, dziecko?\"",
+      "choices": [
+        "[Ofiaruj złoto] szt. złota: Usuń kartę z talii.",
+        "[Kontynuuj]",
+        "[Odejdź]"
+      ]
+    },
+    "MYSTERIOUS_SPHERE": {
+      "name": "Tajemnicza Sfera",
+      "description": "Natrafiasz na sterczącą z ziemi tajemniczą, kościaną sferę. W jej wnętrzu znajduje się, otoczony zjawiskową poświatą, obiekt. \n Podczas gdy ciekawość każe ci zajrzeć do środka, spostrzegasz kilku nieruchomych wartowników, uważnie pilnujących sfery.",
+      "choices": [
+        "[Otwórz sferę] Potyczka. Nagroda: rzadki Artefakt.",
+        "[Odejdź]",
+        "[Walcz]"
+      ]
+    },
+    "VAMPIRES": {
+      "name": "Wampiry(?)",
+      "description": "Idąc wzdłuż spowitej mrokiem ulicy, dostrzegasz grupę zakapturzonych postaci, odprawiających jakiś mroczny rytuał. Gdy się zbliżasz, jednocześnie zwracają się w twoją stronę. Najwyższy z nich obnaża długie kły i wyciąga w twoją stronę chudą, bladą rękę. \n \"Dołącz do nas bracie i poczuj żar Iglicy.\"",
+      "choices": [
+        "[Zgódź się] Usuń karty Uderzeń. Zyskaj 5 kart Ugryzień. Utrać % maksymalnych PŻ.",
+        "[Odmów]",
+        "[Odejdź]"
+      ]
+    },
+    "NOTEFORYOURSELF": {
+      "name": "Wiadomość dla Siebie",
+      "description": "Zauważasz luźną cegłę w filarze, który przyciągnął twoją uwagę.",
+      "choices": [
+        "[Kontynuuj]",
+        "[Weź i zostaw] Otrzymaj i zostaw kartę.",
+        "[Ignoruj]",
+        "[Odejdź]"
+      ]
+    },
+    "KNOWING_SKULL": {
+      "name": "Wszechwiedząca Czaszka",
+      "description": "Znajdujesz się w starej, zdobionej komnacie. W jej centrum, na kunsztownym piedestale, leży sporych rozmiarów czaszka. Gdy się do niej zbliżasz, czaszka staje w płomieniach, po czym zwraca się w twoją stronę.",
+      "choices": [
+        "[Kontynuuj]",
+        "[Informacji?] Odkryj Bossa. Utrać",
+        "[Sukcesu?] Otrzymujesz bezbarwną kartę. Utrać PŻ.",
+        "[Wzocnienia?] Otrzymaj miksturę. Utrać PŻ.",
+        "[Bogactwa?] Otrzymaj szt. złota. Utrać PŻ.",
+        "[Wyjścia stąd?] Utrać PŻ.",
+        "[Odejdź]"
+      ]
+    },
+    "MASKED_BANDITS": {
+      "name": "Zamaskowani Bandyci",
+      "description": "He he.. Dzięki za złoto! \n Oh, jak ja kocham złote monety. Są takie piękne. \n Błyszczące cudeńka!",
+      "choices": [
+        "[Zapłać] Utrać CAŁE swoje złoto.",
+        "[Walcz!]",
+        "[Kontynuuj]",
+        "[Odejdź]"
+      ]
+    },
+    "FORGOTTEN_ALTAR": {
+      "name": "Zapomniany Ołtarz",
+      "description": "Widzisz przed sobą ołtarz jakiegoś zapomnianego bóstwa. \n Na ołtarzu stoi bogato zdobiona figura kobiety z rozpostartymi ramionami. \n Wzywa ciebie, żądając ofiary.",
+      "choices": []
+    },
+    "TRANSMORGRIFIER": {
+      "name": "Zmiennokarty",
+      "description": "Natrafiasz na intrygującą kapliczkę poświęconą nieznanemu bóstwu.",
+      "choices": [
+        "[Módl się] Podmień kartę.",
+        "[Odejdź] Wybierz kartę do podmiany."
+      ]
+    },
+    "WEMEETAGAIN": {
+      "name": "Znów się Spotykamy!",
+      "description": "\"Znów się spotykamy!\" \n Wesoły, rozczochrany człowieczek podchodzi do ciebie radośnie. Nie znasz go. \n \n \"To ja, Ranwid! Masz coś dzisiaj dla mnie? To co zwykle? Gość taki jak ja, nie da rady sam, wiesz?\" \n Spoglądasz na niego podejrzliwie i rozważasz swoje opcje...",
+      "choices": [
+        "[Daj miskturę] Utrać . Otrzymaj Artefakt.",
+        "[Daj złoto] Utrać szt. złota. . Otrzymaj Artefakt.",
+        "[Daj kartę] Utrać . Otrzymaj Artefakt.",
+        "[Zaatakuj]"
+      ]
+    },
+    "SCRAP_OOZE": {
+      "name": "Złomoglut",
+      "description": "Wchodząc do pomieszczenia słyszysz bulgot oraz zgrzyt metalu. Widzisz przed sobą szlamową istotę, która zjadła zdecydowanie za dużo żelastwa. \n Z wnętrza istoty wydobywa się dziwne światło, czyżby czegoś magicznego? Być może uda ci się wydobyć ze stwora coś wartościowego, jeżeli tylko sięgniesz do... środka. Jednakże, żrąca maź i ostre kawałki mogą cię zranić.",
+      "choices": [
+        "[Sięgnij do środka] Utrać PŻ. %: Znajdź Artefakt.",
+        "[Odejdź]"
+      ]
+    },
+    "GOLDEN_SHRINE": {
+      "name": "Złota Kapliczka",
+      "description": "Natrafiasz na ciekawie wyglądającą kapliczkę poświęconą starożytnemu duchowi.",
+      "choices": [
+        "[Módl się] Otrzymaj szt. złota.",
+        "[Zniszcz] Otrzymaj 250 szt. złota. Otrzymaj Klątwę - Żal.",
+        "[Odejdź]"
+      ]
+    },
+    "GOLDEN_IDOL": {
+      "name": "Złoty Bożek",
+      "description": "Natrafiasz na niepozornie wyglądający piedestał z błyszczącym złotym bożkiem. Wygląda na wartościowego. \n \n Na pierwszy rzut oka, brak śladu jakichkolwiek pułapek.",
+      "choices": []
+    },
+    "ACCURSED_BLACKSMITH": {
+      "name": "Złowroga Kuźnia",
+      "description": "Wchodzisz do małej chatki. W środku wydaje znajdować się coś na kształt kuźni. Jej narzędzia pokryte są warstwą kurzu, a mimo to ogień pieca wciąż radośnie tańczy. Zastanawiasz się co z nią zrobić...",
+      "choices": [
+        "[Wykuj] Ulepsz kartę z talii.",
+        "[Przeszukaj] Otrzymaj unikalny Artefakt. Otrzymaj Klątwę - Ból.",
+        "[Odejdź] Wybierz kartę do ulepszenia."
+      ]
+    },
+    "LIVING_WALL": {
+      "name": "Żywa Ściana",
+      "description": "Ślepy zaułek! Odwracasz się, żeby zawrócić. Nagle z góry z łoskotem spada ściana, zagradzając drogę! \n \n Z trzech stron wyłaniają się twarze i mówią: \n \"Zapomnij o czym wiesz i wolność swą odbierz.\" \n \"Do przejścia zmiana jest wymagana.\" \n \"Jeżeli chcesz mnie ominąć, musisz się rozwinąć.\"",
+      "choices": [
+        "[Zapomnij] Usuń kartę z talii.",
+        "[Zmień się] Podmień kartę z talii.",
+        "[Rozwiń się] Ulepsz kartę z talii. Wybierz kartę do usunięcia. Wybierz kartę do podmiany. Wybierz kartę do ulepszenia.",
+        "[Odejdź]"
+      ]
+    }
+  },
+  "keywords": {
+    "ARTIFACT": {
+      "names": [
+        "hart",
+        "hartu"
+      ],
+      "description": "Neutralizuje negatywny efekt."
+    },
+    "BLOCK": {
+      "names": [
+        "blok",
+        "bloku",
+        "blokuje"
+      ],
+      "description": "Pochłania otrzymywane obrażenia."
+    },
+    "BURN": {
+      "names": [
+        "poparzenie",
+        "poparzenia",
+        "poparzeń"
+      ],
+      "description": "Niezagrywalna karta Stanu, zadająca obrażenia."
+    },
+    "CHANNEL": {
+      "names": [
+        "przywołanie",
+        "przywołaj",
+        "przywołanych",
+        "przywołasz",
+        "przywołany",
+        "przywołano",
+        "przywołaną",
+        "przywołane",
+        "przywołać"
+      ],
+      "description": "Umieszcza Sferę w pierwszym pustym miejscu. Jeżeli nie masz już miejsca, twoja pierwsza Sfera zostaje Wyładowana."
+    },
+    "CONFUSED": {
+      "names": [
+        "dezorientacja",
+        "dezorientacji",
+        "dezorientacją"
+      ],
+      "description": "Koszt każdej dobranej karty jest losowy."
+    },
+    "CURSE": {
+      "names": [
+        "klątwa",
+        "klątwy",
+        "klątw"
+      ],
+      "description": "Negatywna karta będąca na stałe w twojej talii."
+    },
+    "DARK": {
+      "names": [
+        "ciemność",
+        "ciemność+",
+        "ciemności"
+      ],
+      "description": "Sfera: Zwiększa obrażenia w każdej turze. Wyładowanie zadaje obrażenia przeciwnikowi z najmniejszą liczbą PŻ."
+    },
+    "DAZED": {
+      "names": [
+        "oszołomienie",
+        "oszołomienia"
+      ],
+      "description": "Niezagrywalna Eteryczna karta Stanu."
+    },
+    "DEXTERITY": {
+      "names": [
+        "zręczność",
+        "zręczności"
+      ],
+      "description": "Zwiększa ilość otrzymywanego Bloku z kart."
+    },
+    "ETHEREAL": {
+      "names": [
+        "eteryczność",
+        "eteryczne",
+        "eteryczna"
+      ],
+      "description": "Jeśli ta karta będzie w twojej ręce pod koniec tury, zostanie wykluczona. Wykluczone karty są usuwane z talii do końca walki."
+    },
+    "EVOKE": {
+      "names": [
+        "wyładowanie",
+        "wyładuj",
+        "wyładowaną",
+        "wyładowana"
+      ],
+      "description": "Zużyj Sferę pierwszą od prawej, aby ją Wyładować."
+    },
+    "EXHAUST": {
+      "names": [
+        "wykluczenie",
+        "wyklucz",
+        "wykluczona",
+        "wykluczone",
+        "wykluczysz",
+        "wyklucza",
+        "wykluczoną"
+      ],
+      "description": "Karta zostanie usunięta z talii do końca walki."
+    },
+    "FOCUS": {
+      "names": [
+        "skupienie",
+        "skupienia"
+      ],
+      "description": "Zwiększa efektywność Przywołanych Sfer."
+    },
+    "FRAIL": {
+      "names": [
+        "kruchość",
+        "kruchości"
+      ],
+      "description": "Zmniejsza otrzymywane z kart pkt. Bloku o 25%."
+    },
+    "FROST": {
+      "names": [
+        "mróz",
+        "mróz+",
+        "mrozu"
+      ],
+      "description": "Sfera: Zyskujesz Blok."
+    },
+    "INNATE": {
+      "names": [
+        "startowa"
+      ],
+      "description": "Zaczniesz walkę z tą kartą\nw ręce."
+    },
+    "INTANGIBLE": {
+      "names": [
+        "nieuchwytność",
+        "nieuchwytności"
+      ],
+      "description": "Zmniejsza WSZYSTKIE otrzymywane obrażenia do 1 pkt."
+    },
+    "LIGHTNING": {
+      "names": [
+        "grom",
+        "grom+",
+        "gromu"
+      ],
+      "description": "Sfera: Zadaje obrażenia losowym przeciwnikom."
+    },
+    "LOCKED": {
+      "names": [
+        "zablokowana"
+      ],
+      "description": "Karta musi zostać wcześniej odblokowana."
+    },
+    "OPENER": {
+      "names": [
+        "Starter"
+      ],
+      "description": "Starter może zostać zagrany jedynie jako pierwsza karta w turze."
+    },
+    "PLASMA": {
+      "names": [
+        "plazma",
+        "plazma+",
+        "plazmy",
+        "plazmę"
+      ],
+      "description": "Sfera: Zyskujesz energię."
+    },
+    "POISON": {
+      "names": [
+        "trucizna",
+        "trucizny",
+        "truciznę"
+      ],
+      "description": "Zatrute istoty tracą PŻ na początku swojej tury. W każdej turze wartość Trucizny\nzmniejsza się o 1."
+    },
+    "RETAIN": {
+      "names": [
+        "zachowanie",
+        "zachowaj",
+        "zachowana",
+        "zachowaniem",
+        "zachowaną",
+        "zachowaniu"
+      ],
+      "description": "Zachowane karty nie zostają odrzucone pod koniec tury."
+    },
+    "SHIV": {
+      "names": [
+        "nóż",
+        "noże",
+        "noży"
+      ],
+      "description": "Karta Ataku kosztująca 0\ni wykluczana po zagraniu."
+    },
+    "STATUS": {
+      "names": [
+        "stan",
+        "stanu"
+      ],
+      "description": "Karty Stanu są usuwane z talii po zakończeniu walki."
+    },
+    "STRENGTH": {
+      "names": [
+        "siła",
+        "siły"
+      ],
+      "description": "Zwiększa obrażenia zadawane kartami Ataku."
+    },
+    "STRIKE": {
+      "names": [
+        "uderzenie"
+      ],
+      "description": "Dowolna karta z \"uderzenie\" w nazwie."
+    },
+    "THORNS": {
+      "names": [
+        "ciernie",
+        "cierni"
+      ],
+      "description": "Kiedy otrzymujesz obrażenia od Ataku, zadajesz obrażenia atakującemu cię przeciwnikowi."
+    },
+    "TODO": {
+      "names": [
+        "todo",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE",
+        "JUST FOR DEVS, DONT TRANSLATE"
+      ],
+      "description": "This card is NOT IMPLEMENTED. Someone should really fix that..."
+    },
+    "TRANSFORM": {
+      "names": [
+        "podmień",
+        "podmienione"
+      ],
+      "description": "Podmieniona karta staje się kartą o losowej rzadkości."
+    },
+    "UNKNOWN": {
+      "names": [
+        "nieznane"
+      ],
+      "description": "Tę kartę należy wcześniej odkryć."
+    },
+    "UNPLAYABLE": {
+      "names": [
+        "niezagrywalna"
+      ],
+      "description": "Karta ta jest, no... niezagrywalna."
+    },
+    "UPGRADE": {
+      "names": [
+        "ulepszenie",
+        "ulepsz",
+        "ulepsza",
+        "ulepszy"
+      ],
+      "description": "Sprawia, że karty stają się potężniejsze. Karty można ulepszyć tylko raz."
+    },
+    "VOID": {
+      "names": [
+        "otchłań",
+        "otchłani"
+      ],
+      "description": "Niezagrywalna karta stanu, która przy dobraniu zużywa energię."
+    },
+    "VULNERABLE": {
+      "names": [
+        "wrażliwość",
+        "wrażliwości",
+        "wrażliwi"
+      ],
+      "description": "Wrażliwe istoty otrzymują 50% więcej obrażeń od Ataków."
+    },
+    "WEAK": {
+      "names": [
+        "słabość",
+        "słabości",
+        "osłabienia",
+        "osłabiona",
+        "osłabieni"
+      ],
+      "description": "Osłabione istoty zadają 25% mniej obrażeń Atakami."
+    },
+    "WOUND": {
+      "names": [
+        "rana",
+        "rany",
+        "ran",
+        "ranę"
+      ],
+      "description": "Niezagrywalna karta Stanu."
+    },
+    "LOCK_ON": {
+      "names": [
+        "namierzenie",
+        "namierz",
+        "namierza",
+        "namierzy",
+        "namierzenia"
+      ],
+      "description": "Namierzeni przeciwnicy otrzymują 50% więcej obrażeń od Sfer."
+    },
+    "STANCE": {
+      "names": [
+        "postawa",
+        "postawy",
+        "postaw",
+        "postawę",
+        "postawie"
+      ],
+      "description": "Możesz posiadać tylko jedną postawę w danym momencie."
+    },
+    "WRATH": {
+      "names": [
+        "gniew",
+        "gniewu"
+      ],
+      "description": "W tej Postawie, zadajesz i otrzymujesz podwójne obrażenia od ataków."
+    },
+    "CALM": {
+      "names": [
+        "spokój",
+        "spokoju"
+      ],
+      "description": "Po opuszczeniu tej Postawy, zyskaj [W] [W] ."
+    },
+    "DIVINITY": {
+      "names": [
+        "boskość",
+        "boskości"
+      ],
+      "description": "Po przyjęciu tej Postawy, zyskaj [W] [W] [W] . Karty Ataku zadają potrójne obrażenia. Opuść tę Postawę na początku następnej tury."
+    },
+    "PRAYER": {
+      "names": [
+        "mantra",
+        "mantry",
+        "poprzez przemoc"
+      ],
+      "description": "Po zdobyciu 10 pkt. Mantry, przyjmij postawę Boskości."
+    },
+    "SCRY": {
+      "names": [
+        "prognozowanie",
+        "prognozuj",
+        "prognozowania",
+        "prognozujesz"
+      ],
+      "description": "Podejrzyj X kart ze stosu rozgrywającego. Każdą z nich możesz odrzucić."
+    },
+    "REGEN": {
+      "names": [
+        "regeneracja",
+        "regeneracji"
+      ],
+      "description": "Regeneracja przywraca PŻ na koniec tury. W każdej turze zmniejsza się o 1."
+    },
+    "VIGOR": {
+      "names": [
+        "wigor",
+        "wigoru"
+      ],
+      "description": "Twój następny atak zadaje dodatkowe obrażenia."
+    },
+    "RITUAL": {
+      "names": [
+        "rytuał",
+        "rytuału"
+      ],
+      "description": "Zyskaj pkt. Siły na koniec swojej tury."
+    },
+    "FATAL": {
+      "names": [
+        "uśmiercenie",
+        "uśmierceniu"
+      ],
+      "description": "Efekt wywoływany poprzez zabicie tą kartą przeciwnika nie będącego sługą."
+    }
+  },
+  "monsters": {
+    "ACIDSLIME_L": {
+      "name": "Toksyglut (D)",
+      "move_names": [
+        "Żrąca ślina",
+        "Podział",
+        "Liźnięcie"
+      ]
+    },
+    "ACIDSLIME_M": {
+      "name": "Toksyglut (Ś)",
+      "move_names": [
+        "Żrąca ślina",
+        "Liźnięcie"
+      ]
+    },
+    "ACIDSLIME_S": {
+      "name": "Toksyglut (M)"
+    },
+    "APOLOGY_SLIME": {
+      "name": "Nie-maź-się"
+    },
+    "AWAKENEDONE": {
+      "name": "Przebudzony",
+      "move_names": [
+        "Uderzenie duszy",
+        "Mroczne echo",
+        "Wyzwolenie",
+        "Zamulenie"
+      ]
+    },
+    "BANDITBEAR": {
+      "name": "Niedźwiedź",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITCHILD": {
+      "name": "Zadzior",
+      "move_names": [
+        ""
+      ]
+    },
+    "BANDITLEADER": {
+      "name": "Romeo",
+      "move_names": [
+        ""
+      ]
+    },
+    "BOOKOFSTABBING": {
+      "name": "Księga Sztychów",
+      "move_names": [
+        ""
+      ]
+    },
+    "BRONZEAUTOMATON": {
+      "name": "Automaton z Brązu",
+      "move_names": [
+        "HIPERPROMIEŃ"
+      ]
+    },
+    "BRONZEORB": {
+      "name": "Sfera",
+      "move_names": [
+        ""
+      ]
+    },
+    "BYRD": {
+      "name": "Ptok",
+      "move_names": [
+        ""
+      ]
+    },
+    "CENTURION": {
+      "name": "Setnik",
+      "move_names": [
+        ""
+      ]
+    },
+    "CHAMP": {
+      "name": "Czempion",
+      "move_names": [
+        "Postawa obronna",
+        "Egzekucja",
+        "Z liścia"
+      ]
+    },
+    "CHOSEN": {
+      "name": "Wybrana",
+      "move_names": [
+        ""
+      ]
+    },
+    "CORRUPTHEART": {
+      "name": "Spaczone Serce",
+      "move_names": [
+        ""
+      ]
+    },
+    "CULTIST": {
+      "name": "Kultysta",
+      "move_names": [
+        "",
+        "",
+        "Zaklinanie"
+      ]
+    },
+    "DARKLING": {
+      "name": "Cichociemny",
+      "move_names": [
+        "Chrup! Chrup!"
+      ]
+    },
+    "DECA": {
+      "name": "Cleo",
+      "move_names": [
+        ""
+      ]
+    },
+    "DONU": {
+      "name": "Donutan",
+      "move_names": [
+        "Krąg mocy"
+      ]
+    },
+    "EXPLODER": {
+      "name": "Wybuchowiec",
+      "move_names": [
+        ""
+      ]
+    },
+    "FIREORB": {
+      "name": "Ogniosfera",
+      "move_names": [
+        ""
+      ]
+    },
+    "FLAMEBRUISER": {
+      "name": "Ognisty Mięśniak",
+      "move_names": [
+        ""
+      ]
+    },
+    "FUNGIBEAST": {
+      "name": "Grzybozwierz",
+      "move_names": [
+        "Przyrost"
+      ]
+    },
+    "FUZZYLOUSEDEFENSIVE": {
+      "name": "Gnida",
+      "move_names": [
+        "Sieć"
+      ]
+    },
+    "FUZZYLOUSENORMAL": {
+      "name": "Gnida",
+      "move_names": [
+        "Przyrost"
+      ]
+    },
+    "GIANTHEAD": {
+      "name": "Tęgi Łeb",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINFAT": {
+      "name": "Grublin",
+      "move_names": [
+        "Uderzenie"
+      ]
+    },
+    "GREMLINLEADER": {
+      "name": "Gremlin Przywódca",
+      "move_names": [
+        "Do mnie!"
+      ]
+    },
+    "GREMLINNOB": {
+      "name": "Herszt Gremlinów",
+      "move_names": [
+        "Z czachy",
+        "Szarża"
+      ]
+    },
+    "GREMLINTHIEF": {
+      "name": "Przebiegły Gremlin",
+      "move_names": [
+        ""
+      ]
+    },
+    "GREMLINTSUNDERE": {
+      "name": "Gremlin Tarczownik",
+      "move_names": [
+        "Obrona",
+        "Z tarczy"
+      ]
+    },
+    "GREMLINWARRIOR": {
+      "name": "Szalony Gremlin",
+      "move_names": [
+        "Zadrapanie"
+      ]
+    },
+    "GREMLINWIZARD": {
+      "name": "Gremlin Znachor",
+      "move_names": [
+        "Ładowanie",
+        "Pustoszący cios"
+      ]
+    },
+    "HEALER": {
+      "name": "Mistyk",
+      "move_names": [
+        ""
+      ]
+    },
+    "HEXAGHOST": {
+      "name": "Heksaduch",
+      "move_names": [
+        "Rozpalenie",
+        "Spopielenie",
+        "Inferno"
+      ]
+    },
+    "JAWWORM": {
+      "name": "Szczękościsk",
+      "move_names": [
+        "Ryk",
+        "Zgryz"
+      ]
+    },
+    "LAGAVULIN": {
+      "name": "Lagavulin",
+      "move_names": [
+        "Pożarcie duszy"
+      ]
+    },
+    "LOOTER": {
+      "name": "Szabrownik",
+      "move_names": [
+        "Natarcie",
+        "Ograbienie"
+      ]
+    },
+    "MAW": {
+      "name": "Paszczur",
+      "move_names": [
+        ""
+      ]
+    },
+    "MUGGER": {
+      "name": "Rabuś",
+      "move_names": [
+        "Natarcie",
+        "Ograbienie"
+      ]
+    },
+    "NEMESIS": {
+      "name": "Nemezis",
+      "move_names": [
+        ""
+      ]
+    },
+    "ORB_WALKER": {
+      "name": "Kulminator",
+      "move_names": [
+        "Wzmocnienie"
+      ]
+    },
+    "PUPPETEER": {
+      "name": "Pacynkarz",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPULSOR": {
+      "name": "Repulsor",
+      "move_names": [
+        ""
+      ]
+    },
+    "SENTRY": {
+      "name": "Wartownik",
+      "move_names": [
+        "Rozczłonkowanie"
+      ]
+    },
+    "SERPENT": {
+      "name": "Macki Iglicy",
+      "move_names": [
+        ""
+      ]
+    },
+    "SHELLED_PARASITE": {
+      "name": "Panceżyt",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERBLUE": {
+      "name": "Poganiacz",
+      "move_names": [
+        "Zadrapanie"
+      ]
+    },
+    "SLAVERBOSS": {
+      "name": "Nadzorca",
+      "move_names": [
+        ""
+      ]
+    },
+    "SLAVERRED": {
+      "name": "Poganiacz",
+      "move_names": [
+        "Zadrapanie",
+        "Spętanie"
+      ]
+    },
+    "SLIMEBOSS": {
+      "name": "Masterszlam",
+      "move_names": [
+        "Miażdżenie",
+        "Przygotowywanie",
+        "Podział",
+        "Z gluta"
+      ]
+    },
+    "SNAKEPLANT": {
+      "name": "Wężołówka",
+      "move_names": [
+        "Pasożytnicze zarodniki"
+      ]
+    },
+    "SNECKO": {
+      "name": "Wonsz",
+      "move_names": [
+        "Hipnotyzujący blask",
+        "Trzaśnięcie ogonem",
+        "Ugryzienie"
+      ]
+    },
+    "SPHERICGUARDIAN": {
+      "name": "Sferyczny Strażnik",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIKESLIME_L": {
+      "name": "Kolcoglut (D)",
+      "move_names": [
+        "Liźnięcie",
+        "Podział"
+      ]
+    },
+    "SPIKESLIME_M": {
+      "name": "Kolcoglut (Ś)",
+      "move_names": [
+        "Liźnięcie"
+      ]
+    },
+    "SPIKESLIME_S": {
+      "name": "Kolcoglut (M)"
+    },
+    "SPIKER": {
+      "name": "Cierń",
+      "move_names": [
+        ""
+      ]
+    },
+    "THECOLLECTOR": {
+      "name": "Kolekcjoner",
+      "move_names": [
+        ""
+      ]
+    },
+    "THEGUARDIAN": {
+      "name": "Strażnik",
+      "move_names": [
+        "Tryb obronny",
+        "Wściekłe uderzenie",
+        "Skulenie",
+        "Podwójny cios",
+        "Wir",
+        "Ładowanie",
+        "Chłodzenie"
+      ]
+    },
+    "TIMEEATER": {
+      "name": "Pożeracz Czasu",
+      "move_names": [
+        ""
+      ]
+    },
+    "TORCHHEAD": {
+      "name": "Pochodnik",
+      "move_names": [
+        ""
+      ]
+    },
+    "TRANSIENT": {
+      "name": "Przemijacz",
+      "move_names": [
+        ""
+      ]
+    },
+    "DAGGER": {
+      "name": "Sztylet",
+      "move_names": [
+        ""
+      ]
+    },
+    "REPTOMANCER": {
+      "name": "Gadzinomantka",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESHIELD": {
+      "name": "Tarcza Iglicy",
+      "move_names": [
+        ""
+      ]
+    },
+    "SPIRESPEAR": {
+      "name": "Włócznia Iglicy",
+      "move_names": [
+        ""
+      ]
+    },
+    "WRITHINGMASS": {
+      "name": "Wijąca się Masa",
+      "move_names": [
+        ""
+      ]
+    }
+  },
+  "characters": {
+    "DEFECT": {
+      "name": "Defekt",
+      "description": "Bojowy automaton, który zyskał świadomość.\nAntyczna technologia pozwala mu manipulować Sferami."
+    },
+    "IRONCLAD": {
+      "name": "Pancernik",
+      "description": "Ostatni żołnierz klanu Pancerników.\nZaprzedał duszę, aby posiąść demoniczne moce."
+    },
+    "THE_SILENT": {
+      "name": "Cień",
+      "description": "Zabójcza łowczyni z okolic mgliszczy.\nRozprawia się z przeciwnikami przy użyciu sztyletów i trucizny."
+    },
+    "WATCHER": {
+      "name": "Obserwatorka",
+      "description": "Niewidoma ascetka, która przybyła aby \"Ocenić\" Iglicę.\nMistrzyni boskich Postaw."
+    }
+  }
+}

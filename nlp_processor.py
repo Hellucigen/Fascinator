@@ -26,6 +26,16 @@ from prompt_templates import PARSE_FAST, ANSWER_SHORT, INTENTION_EXTRACT
 from cognitive_context import (classify_action_evidence, render_action_evidence,
                                EV_NONE)
 
+# 机制名出口清洗（2026-10-17）：Drive/Network 图谱 id 与激素英文键不许
+# 让模型见到——见过就可能念给用户（18:34/19:35 实锤）。prompt 定稿前
+# 统一换成自然语言。认知模块缺位时原样返回（不拦语言层）。
+try:
+    from continuous_cognition import (
+        redact_internal_state_names as _redact_names)
+except Exception:                                  # noqa: BLE001
+    def _redact_names(t):
+        return t
+
 # 配置日志，方便查看调试信息
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -34,6 +44,118 @@ logger = logging.getLogger(__name__)
 SPEECH_ACTS = ["断言类", "指令类", "承诺类", "表达类", "宣告类"]
 
 SYSTEM_PROMPT = NLP_PARSE  # Architecture Refactor 0.1: 统一模板
+
+def _capture_prompt(branch: str, system: str, user: str) -> None:
+    """原始 prompt 逐字捕获（2026-10-16 观测缺口补账）：真实回合发出的
+    system+user 全文落盘 logs/prompt_capture.jsonl——"她到底看到了什么"
+    从此不必由模板推断。失败容忍：观测绝不反压回答。"""
+    try:
+        import json as _j
+        import os as _os
+        import time as _t
+        try:
+            import fas_log
+            d = getattr(getattr(fas_log, "_ST", None), "log_dir", "logs")
+        except Exception:                                # noqa: BLE001
+            d = "logs"
+        _os.makedirs(d, exist_ok=True)
+        with open(_os.path.join(d, "prompt_capture.jsonl"), "a",
+                  encoding="utf-8") as f:
+            f.write(_j.dumps({"ts": _t.strftime("%Y-%m-%d %H:%M:%S"),
+                              "branch": branch, "system": system,
+                              "user": user}, ensure_ascii=False) + "\n")
+    except Exception:                                    # noqa: BLE001
+        pass
+
+
+_NON_TEACHING_DAS = {
+    "greeting", "farewell", "thanking", "apology", "emotion_expression",
+    "question", "request", "opinion", "agreement", "disagreement",
+    "comfort", "congratulation", "invitation", "backchannel", "suggestion",
+    "curiosity_expression", "answer",
+}
+
+
+def should_extract_memory(parsed: dict, skip_regular_extract: bool = False) -> bool:
+    """这句话是否值得跑知识抽取（纯函数，2026-10-19）。
+
+    语义边界：用户**提问**不等于用户断言了问题里包含的事实。
+    "阿司匹林是什么药"里用户没有断言"阿司匹林是药"——纯语义疑问
+    （memory_type=semantic 的 question/curiosity_expression）不走抽取，
+    免得把问句预设当成知识写进图谱。疑问句里若带自身经历/处境
+    （"我膝盖疼了两周了，怎么办？"→ episodic），照常抽取——抽取的是
+    他陈述的部分，问的对象依然由 MEMORY_EXTRACT 的规则不落成断言边。
+    其余判定维持既有分工：非教学性 dialogue_act 默认不抽取，
+    除非解析给出了可入库的 memory_type。"""
+    if skip_regular_extract:
+        return False
+    da = parsed.get("dialogue_act", "")
+    mtype = parsed.get("memory_type")
+    if da in ("question", "curiosity_expression") and mtype == "semantic":
+        return False
+    if not da:
+        return mtype in ("episodic", "semantic")
+    return da not in _NON_TEACHING_DAS or mtype in ("episodic", "semantic")
+
+
+def _rel_time(iso, now=None):
+    """entry["time"]（chat_log 的 ISO 时间戳）→ 可读相对时间标注。
+
+    纯函数（now 可注入供测试）。缺失/非法 → None——调用方保持旧形态，
+    **不得编造时间**（2026-10-24 修复：取证实锤 1 小时前的回答被渲染成
+    "我刚答的"，模型据此把旧话当刚发生的事复诵）。"""
+    import datetime as _dt
+    s = str(iso or "").strip()
+    if not s:
+        return None
+    try:
+        t = _dt.datetime.fromisoformat(s)
+    except ValueError:
+        return None
+    if t.tzinfo is not None:
+        t = t.replace(tzinfo=None)
+    now = now or _dt.datetime.now()
+    d = max(0.0, (now - t).total_seconds())
+    if d < 90:
+        return "刚刚"
+    if d < 3600:
+        return "%d分钟前" % int(d // 60)
+    if d < 36 * 3600:
+        h = d / 3600.0
+        return "约1小时前" if h < 1.5 else "约%d小时前" % int(round(h))
+    return t.strftime("%m-%d %H:%M")
+
+
+def render_recent_dialogue(entries: list, limit: int = 6,
+                           max_chars: int = 80) -> str:
+    """近期对话渲染（纯函数，2026-10-19 事项A）：L1/L2 共用同一形态。
+
+    修复前每行只取一侧：常规问答轮只渲染用户提问行，**她自己的被动答话
+    文本从不入她的上下文**——上一轮"我刚说了什么"她只能从用户的半句里猜。
+    现在常规问答轮渲染成对（用户问 + FAS 答）。三条不变式防副作用：
+    ①主动行本就以她的文本为行体，不再叠加"答话行"（防主动表达重复注入）；
+    ②"(FAS…"占位行保持旧单行形态；③行体截断与角色标签规则逐字沿用。
+    2026-10-24 增补：条目带 time 字段时逐行标注真实相对时间
+    （chat_log 一直有此字段且持久化跨重启，此前渲染从未使用——旧回答
+    因此被当成"我刚答的"）；无 time/非法 time 的条目保持旧标签，
+    时间未知就不标，不虚构。"""
+    lines = []
+    for x in entries[-limit:]:
+        ui = str(x.get("user_input") or "")
+        sr = str(x.get("system_response") or "")
+        t = _rel_time(x.get("time"))
+        if x.get("proactive") or ui.startswith("(主动"):
+            lines.append("FAS（我主动说的" + (f"，{t}" if t else "") + "）："
+                         + (sr or ui)[:max_chars])
+        elif ui and not ui.startswith("(FAS"):
+            lines.append((f"用户（{t}说）：" if t else "用户：") + ui[:max_chars])
+            if sr:
+                lines.append((f"FAS（{t}答的）：" if t else "FAS（我刚答的）：")
+                             + sr[:max_chars])
+        else:
+            lines.append("FAS：" + (ui or sr)[:max_chars])
+    return "\n".join(lines)
+
 
 RECONSTRUCT_PROMPT = ChatPromptTemplate.from_messages([
     ("system", SYSTEM_PROMPT),
@@ -53,7 +175,7 @@ class NLPProcessor:
 
     def __init__(self, model=None,
                  provider: str = None, api_key: str = None):
-        self._provider_name = provider or "mimo"
+        self._provider_name = provider or "qwen"
         self._api_key = api_key
 
         # 智能默认模型：未指定时按 provider 选择
@@ -63,10 +185,15 @@ class NLPProcessor:
             self.model = "deepseek-v4-flash"
         elif self._provider_name in ("mimo", "xiaomi"):
             self.model = "mimo-v2.6-flash"
+        elif self._provider_name in ("qwen", "qianwen", "tongyi"):
+            self.model = "qwen3.8-flash"
         else:
             self.model = "qwen2.5:7b-instruct-q5_k_m"
         # 对话回答模型（2026-09-22 全档统一 mimo-v2.6-flash，不再有 pro/便宜档之分）
-        self._chat_model = "mimo-v2.6-flash" if self._provider_name in ("mimo", "xiaomi") else self.model
+        self._chat_model = (
+            "mimo-v2.6-flash" if self._provider_name in ("mimo", "xiaomi")
+            else "qwen3.8-flash" if self._provider_name in ("qwen", "qianwen", "tongyi")
+            else self.model)
         self._apply_fast_parse()
 
         logger.info(f"[NLP] 初始化开始 (provider={self._provider_name}, model={self.model})")
@@ -95,6 +222,8 @@ class NLPProcessor:
             return "mimo-v2.6-flash"
         if self._provider_name == "deepseek":
             return "deepseek-v4-flash"
+        if self._provider_name in ("qwen", "qianwen", "tongyi"):
+            return "qwen3.8-flash"
         return self.model
 
     def _init_fast_backend(self):
@@ -109,6 +238,11 @@ class NLPProcessor:
             elif self._provider_name in ("mimo", "xiaomi"):
                 from llm_provider import MiMoBackend
                 self._fast_backend = MiMoBackend(
+                    model=fm, api_key=self._api_key,
+                    temperature=0.1, max_tokens=4096, json_mode=True)
+            elif self._provider_name in ("qwen", "qianwen", "tongyi"):
+                from llm_provider import QwenBackend
+                self._fast_backend = QwenBackend(
                     model=fm, api_key=self._api_key,
                     temperature=0.1, max_tokens=4096, json_mode=True)
             elif self._provider_name == "ollama":
@@ -133,6 +267,16 @@ class NLPProcessor:
             self._expand_backend = DeepSeekBackend(
                 model=self.model, api_key=self._api_key,
                 temperature=0.35, max_tokens=8192, json_mode=True)
+        elif self._provider_name in ("qwen", "qianwen", "tongyi"):
+            from llm_provider import QwenBackend
+            # qwen3.8-flash 亦为思考模型：推理 token 与可见输出共享预算，
+            # 沿用主链大预算（16384）。
+            self._backend = QwenBackend(
+                model=self.model, api_key=self._api_key,
+                temperature=0.1, max_tokens=16384, json_mode=True)
+            self._expand_backend = QwenBackend(
+                model=self.model, api_key=self._api_key,
+                temperature=0.35, max_tokens=16384, json_mode=True)
         elif self._provider_name in ("mimo", "xiaomi"):
             from llm_provider import MiMoBackend
             # mimo-v2.6-flash 是思考模型：max_completion_tokens 把「思考 token +
@@ -165,6 +309,11 @@ class NLPProcessor:
             self._chat_backend = DeepSeekBackend(
                 model=self.model, api_key=self._api_key,
                 temperature=0.7, max_tokens=512)
+        elif self._provider_name in ("qwen", "qianwen", "tongyi"):
+            from llm_provider import QwenBackend
+            self._chat_backend = QwenBackend(
+                model=self._chat_model, api_key=self._api_key,
+                temperature=0.7, max_tokens=4096)
         elif self._provider_name in ("mimo", "xiaomi"):
             from llm_provider import MiMoBackend
             # 对话回答同样走 mimo-v2.6-flash（全场景统一思考模型）。思考 token
@@ -227,9 +376,14 @@ class NLPProcessor:
             self.model = "deepseek-v4-flash"
         elif provider in ("mimo", "xiaomi"):
             self.model = "mimo-v2.6-flash"
+        elif provider in ("qwen", "qianwen", "tongyi"):
+            self.model = "qwen3.8-flash"
         elif provider == "ollama":
             self.model = "qwen2.5:7b-instruct-q5_k_m"
-        self._chat_model = "mimo-v2.6-flash" if provider in ("mimo", "xiaomi") else self.model
+        self._chat_model = (
+            "mimo-v2.6-flash" if provider in ("mimo", "xiaomi")
+            else "qwen3.8-flash" if provider in ("qwen", "qianwen", "tongyi")
+            else self.model)
         self._apply_fast_parse()
         self._init_backend()
         self._init_chat_backend()
@@ -536,28 +690,39 @@ class NLPProcessor:
             blocks.append(f"【当前心情】{mood}")
         recent = cog.get("recent_dialogue") or []
         if recent:
-            dlg = "\n".join(
-                ("用户：" if x.get("user_input") else "FAS：")
-                + str(x.get("user_input") or x.get("system_response"))[:60]
-                for x in recent[-3:])
+            # 2026-10-16 捕获实锤：主动话语的 user_input 是"(主动)"占位，
+            # 旧渲染把它标成"用户："——她看到自己说过的话被标成你说的。
+            # L1 窗口保持更短（3 条×60 字），行形态与 L2 共用纯函数。
+            dlg = render_recent_dialogue(recent, 3, 60)
             blocks.append(f"【近期对话】\n{dlg}")
+        # 认知状态切片（2026-10-16 补漏：L1 也是用户看到的第一人称回应，
+        # 被问"在想什么"同样必须有念头内容在场，否则只会空转）
+        _cstate = str(cog.get("cognitive_state") or "")
+        if _cstate:
+            blocks.append("【我此刻心里正在想的事（内容实况；据它如实回答，"
+                          "没有就说没有，不许编造；这些是你内心的活动，"
+                          "不要原样念给用户）】\n" + _cstate[:1400])
         prompt_tpl = ChatPromptTemplate.from_messages([
             ("system", ANSWER_SHORT),
             ("human", "{{input}}"),
         ], template_format="mustache")
-        user_prompt = "\n\n".join(blocks + [f"【用户的话】\n{text}",
-                                            "请回应："])
+        user_prompt = _redact_names("\n\n".join(
+            blocks + [f"【用户的话】\n{text}", "请回应："]))
         try:
+            _capture_prompt("answer_l1", ANSWER_SHORT, user_prompt)
             chain = prompt_tpl | self._chat()
             resp = chain.invoke({"input": user_prompt})
             ans = resp.content if hasattr(resp, "content") else str(resp)
             out = (ans or "").strip()
             if out in ("空字符串", '""', "''", "无"):
                 out = ""
-            return out
+            # 失败/空产出返回 None 而非 ""（2026-10-22 吞消息修复）：
+            # 上层以 `is None` 判"转正常回答重生成"，空串会绕过全部失败
+            # 分支、把空 answer 原样投出去（22:23"秦皇岛"实锤被无视）。
+            return out or None
         except Exception as e:
             logger.warning(f"[NLP] 短回应生成失败: {e}")
-            return ""
+            return None
 
     def _sanitize_result(self, raw_data: Any) -> Dict[str, Any]:
         result = {
@@ -1068,6 +1233,15 @@ class NLPProcessor:
                         "作为语言实现）\n"
                         + mode_line + "\n" + att_block + "\n"
                     )
+                    # 认知状态切片（2026-10-16）：上面是数值读数，这里是
+                    # 念头本身的内容。被问"在想什么/在干嘛"据它如实回答；
+                    # 思路流的性质是她的心理活动，不是外部事实。
+                    _cstate = str(cognitive_context.get("cognitive_state") or "")
+                    if _cstate:
+                        cog_str += ("\n【我此刻心里正在想的事（这是内容的实况；"
+                                    "据它如实回答，没有就说没有，不许编造；"
+                                    "这些词是你内心的活动，不要原样念给用户）】\n"
+                                    + _cstate[:1600] + "\n")
                     # ── 认知资源路由：demand/gap 三层结构（analyze_
                     # cognitive_demand 的产物,量化路由依据）。意识层消费
                     # 的是定性观感而非数值——这里只有 top 维度名,不暴露
@@ -1181,7 +1355,7 @@ class NLPProcessor:
                     f"{i+1}. {r.get('title','')}\n   {r.get('snippet','')[:200]}\n   来源: {r.get('url','')[:100]}"
                     for i, r in enumerate(web_results[:5]))
                 cog_str += f"""
-【网络搜索结果】（来自互联网的实时信息，非图谱记忆；回答时可引用，需与图谱知识区分）
+【网络搜索结果】（来自互联网的实时信息，非图谱记忆；只有用户明确在问外部信息时才可引用——闲聊/感受/回忆类问题不得用它作答；引用时须与图谱知识区分）
 {web_lines}
 """
 
@@ -1225,16 +1399,15 @@ class NLPProcessor:
 {rc_lines}
 """
 
-            # ── 近期对话（语境/指代依据；含 FAS 主动发言）──
+            # ── 近期对话（语境/指代依据；含 FAS 主动发言+被动答话，
+            #    渲染走共用纯函数 render_recent_dialogue）──
             recent = cognitive_context.get("recent_dialogue") or []
             recent = [x for x in recent if x.get("user_input") or x.get("system_response")]
             if recent:
-                dlg_lines = "\n".join(
-                    ("用户：" if x.get("user_input") and not x.get("user_input").startswith("(FAS") else "FAS：")
-                    + str(x.get("user_input") or x.get("system_response"))[:80]
-                    for x in recent[-6:])
+                # 主动话语的"(主动)"占位不得标成"用户："（2026-10-16 捕获实锤）
+                dlg_lines = render_recent_dialogue(recent, 6, 80)
                 cog_str += f"""
-【近期对话】（就在刚才发生，'你这话/刚才'等指代以此为准）
+【近期对话】（每行标注真实发生时间；'你这话/刚才'等指代只适用于标注"刚刚"的行）
 {dlg_lines}
 """
 
@@ -1268,6 +1441,12 @@ class NLPProcessor:
                 _line = render_action_evidence(_sess_ev, default_desc="进入 Minecraft 世界")
                 if _line:
                     cog_str += chr(10) + _line + chr(10)
+
+            # ── 语音朗读结果（念没念成都如实措辞，不得假称出声过）──
+            _ve = cognitive_context.get("voice_evidence") or {}
+            _vline = render_action_evidence(_ve, default_desc="语音朗读")
+            if _vline:
+                cog_str += chr(10) + _vline + chr(10)
 
             # ── 交流决定（decision 分区：已经形成的裁决，语言层不许翻案）──
             _dec = cognitive_context.get("decision") or {}
@@ -1338,16 +1517,18 @@ class NLPProcessor:
 【相关记忆】（以情感回应为主，事实以记忆为依据）
 {topk_str}
 {topk_edge_str}"""
-                user_prompt = f"""{cog_str}{_mem_block}
+                user_prompt = _redact_names(f"""{cog_str}{_mem_block}
 【用户原始输入】
 {original_text}
 
-请根据以上认知分析自然回应："""
+请根据以上认知分析自然回应：""")
 
                 answer_prompt = ChatPromptTemplate.from_messages([
                     ("system", SOCIAL_ANSWER_SYSTEM_PROMPT),
                     ("human", "{input}")
                 ])
+                _capture_prompt("answer_social",
+                                SOCIAL_ANSWER_SYSTEM_PROMPT, user_prompt)
 
                 chain = answer_prompt | self._chat()
                 response = chain.invoke({"input": user_prompt})
@@ -1356,19 +1537,20 @@ class NLPProcessor:
                 return answer_text.strip()
 
             # ── 知识/经历回应 ──
-            user_prompt = f"""{cog_str}
+            user_prompt = _redact_names(f"""{cog_str}
 【相关记忆】
 {topk_str}
 {topk_edge_str}
 【用户原始输入】
 {original_text}
 
-请根据以上认知分析及你的记忆回应："""
+请根据以上认知分析及你的记忆回应：""")
 
             answer_prompt = ChatPromptTemplate.from_messages([
                 ("system", ANSWER_SYSTEM_PROMPT),
                 ("human", "{input}")
             ])
+            _capture_prompt("answer", ANSWER_SYSTEM_PROMPT, user_prompt)
 
             chain = answer_prompt | self._chat()
             response = chain.invoke({"input": user_prompt})

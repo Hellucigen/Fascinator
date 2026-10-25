@@ -8,8 +8,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-_ASR_MODEL_DIR = os.environ.get("ASR_MODEL_DIR", "E:/Models/Paraformer")
-_EMO_MODEL_DIR = os.environ.get("EMO_MODEL_DIR", "E:/Models/emotion2vec_plus_large")
+_ASR_MODEL_DIR = os.environ.get("ASR_MODEL_DIR", "E:/Models/nlp/Paraformer")
+_EMO_MODEL_DIR = os.environ.get("EMO_MODEL_DIR", "E:/Models/nlp/emotion2vec_plus_large")
 
 _asr_model = None
 _emo_model = None

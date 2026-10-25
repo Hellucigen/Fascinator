@@ -1,0 +1,84 @@
+[
+  {
+    "id": "IRONCLAD",
+    "name": "Ironclad",
+    "hp": 80,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_R",
+      "STRIKE_R",
+      "STRIKE_R",
+      "STRIKE_R",
+      "STRIKE_R",
+      "DEFEND_R",
+      "DEFEND_R",
+      "DEFEND_R",
+      "DEFEND_R",
+      "BASH"
+    ],
+    "starting_relic": "Burning Blood",
+    "description": "The remaining soldier of the Ironclads.\nSold his soul to harness demonic energies."
+  },
+  {
+    "id": "THE_SILENT",
+    "name": "Silent",
+    "hp": 70,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_G",
+      "STRIKE_G",
+      "STRIKE_G",
+      "STRIKE_G",
+      "STRIKE_G",
+      "DEFEND_G",
+      "DEFEND_G",
+      "DEFEND_G",
+      "DEFEND_G",
+      "DEFEND_G",
+      "SURVIVOR",
+      "NEUTRALIZE"
+    ],
+    "starting_relic": "Ring of the Snake",
+    "description": "A deadly huntress from the foglands.\nEradicates foes with daggers and poisons."
+  },
+  {
+    "id": "DEFECT",
+    "name": "Defect",
+    "hp": 75,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_B",
+      "STRIKE_B",
+      "STRIKE_B",
+      "STRIKE_B",
+      "DEFEND_B",
+      "DEFEND_B",
+      "DEFEND_B",
+      "DEFEND_B",
+      "ZAP",
+      "DUALCAST"
+    ],
+    "starting_relic": "Cracked Core",
+    "description": "A combat automaton which became self-aware.\nAncient technology allows the manipulation of Orbs."
+  },
+  {
+    "id": "WATCHER",
+    "name": "Watcher",
+    "hp": 72,
+    "energy_per_turn": 3,
+    "starting_deck": [
+      "STRIKE_P",
+      "STRIKE_P",
+      "STRIKE_P",
+      "STRIKE_P",
+      "DEFEND_P",
+      "DEFEND_P",
+      "DEFEND_P",
+      "DEFEND_P",
+      "ERUPTION",
+      "VIGILANCE"
+    ],
+    "starting_relic": "Pure Water",
+    "description": "A blind ascetic who has come to \"Evaluate\" the Spire.\nMaster of the divine Stances."
+  }
+]

@@ -382,6 +382,27 @@ check("seed 表达命中 CONNECT（语义层，不是正则层）",
       it_cn is not None or info_cn.get("need_param", {}).get("concept") == "CONNECT",
       str(it_cn) + str(info_cn))
 
+# ── 语音朗读（2026-10-21 用户点破"她知道要读什么吗"）──
+c_spk = AC.ACTION_CONCEPTS.get("SPEAK_TEXT")
+check("SPEAK_TEXT 注册：voice 域、inline:voice_speak、可选 text 参数（回指兜底）",
+      c_spk is not None and c_spk.domain == "voice"
+      and c_spk.executor == "inline:voice_speak"
+      and "text" in c_spk.optional_params
+      and not c_spk.required_params)
+AC.ensure_action_concepts(kg)
+check("语音朗读概念节点进图（ensure 幂等，可被点亮/召回）",
+      "语音朗读" in kg.nodes
+      and sum(1 for n in kg.nodes.values() if n.id == "语音朗读") == 1)
+_it_spk, _info_spk = R.resolve_desktop_intents("念给我听")
+check("'念给我听' fast 入口命中 SPEAK_TEXT",
+      "SPEAK_TEXT" in _it_spk, str(_it_spk) + str(_info_spk))
+_it_s2, _ = R.resolve_desktop_intents("读吧")
+check("裸回指命令'读吧'命中 SPEAK_TEXT（交给执行块回指上一条消息）",
+      "SPEAK_TEXT" in _it_s2, str(_it_s2))
+_it_neg, _info_neg = R.resolve_desktop_intents("别念给我听")
+check("否定优先：'别念给我听'不产执行意图",
+      "SPEAK_TEXT" not in _it_neg, str(_it_neg) + str(_info_neg))
+
 print()
 if FAILURES:
     print(f"✗ {len(FAILURES)} 项失败: {FAILURES}")

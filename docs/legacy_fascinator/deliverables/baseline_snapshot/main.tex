@@ -1,0 +1,727 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+\usepackage{caption}
+\sloppy
+\setlength{\emergencystretch}{3em}
+\captionsetup{font=small,labelfont=bf}
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{2pt}
+
+\title{\bfseries From Embodied Experience to Reusable Relational Knowledge:\\ Evidence-Weighted Write-Back and Activation-Based Access on a\\ Unified Cognitive Graph---Mechanisms, Persistent Reuse, and Structure-Dependent Boundaries}
+\author{Kailin Yan\\ \small Department of Computer Science\\ \small \texttt{2024015943@st.cupk.edu.cn}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Embodied agents accumulate experience rapidly, yet that experience usually survives only as unstructured logs and is never re-organized into reusable knowledge. We report \textsc{Fascinator} (FAS), a prototype cognitive architecture in which semantic, episodic, and procedural content live on a single typed, weighted knowledge graph; an evidence-weighted attribution pipeline writes experience back as relational structure; and spreading activation constitutes a measurable knowledge-access field, while ledger, event-framework, and re-activation channels measurably route stored knowledge back into behavior. Evidence comes from deterministic zero-LLM sandboxes---a preregistered $4\times50$ paired-seed mechanism campaign and 5-seed deterministic behavioral experiments---and a 20-paired-seed routing campaign with a real LLM decision head, totaling 34{,}016 reproducible runs, all programmatically extracted. Main findings: (i) in an information-asymmetric beacon task, persistent graph context yields 20/20 completion versus 0/20 without context (McNemar $p{=}2\times10^{-6}$), yet the same benefit is fully reproduced by an activation-free aggregation (D-flat, 20/20)---\emph{persistent relational reuse is supported; the necessity of activation is not}; (ii) the multi-input convergence mechanism genuinely runs (JCG${>}0$ on 200/200 paired seeds), but its incremental value over flat retrieval is rejected under all four preregistered conditions ($\Delta$JCG${<}0$, Holm $p{=}1.5\times10^{-9}$, 0/200 reversals); the only systematic positive difference appears in a combinational shared-hub topology (FAS 30/30 \emph{vs} flat 0/30); (iii) relation-direction semantics is confirmed as a structural limit of propagation ($\rho$ 0.325$\rightarrow$0.645, $p{=}0.002$, $r{=}0.886$, 10/10 seeds; 21/21 paired tests at $p{=}0.001953$); (iv) diffusion's causal footprint lies in knowledge access rather than action selection, and wider spread dilutes targets ($\rho{=}{-}0.445$, ${-}0.656$). We therefore position FAS's empirical contribution as \emph{persistent relational knowledge with structure-dependent activation-based access}, and state explicitly where it does not help: flat retrieval already suffices for most retrieval and noise-robustness tasks. All negative results and two assembly audits are reported in full.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+As soon as an embodied agent acts for more than a few minutes, it produces a stream of experience: actions, observations, successes, failures. The destination of that stream separates two very different classes of system. In one class, experience accumulates as logs---available for reflection prompts or retrieval augmentation, but never re-organized into structure that changes future behavior. In the other class, experience is consolidated: concrete episodes give way to general relational knowledge that persists, is re-activated in relevant situations, and measurably participates in later decisions. Whether or not the system's core includes a large language model (LLM), the gap between logs and consolidation is one of the core engineering problems for long-lived agents.
+
+Existing positions are familiar. Cognitive architectures such as ACT-R~\citep{anderson2004integrated} and Soar~\citep{laird2012soar} consolidate experience through specific mechanisms (chunks, reinforcement), but keep memory stores representationally separate. LLM-based agents~\citep{yao2023react,park2023generative,shinn2023reflexion} typically save experience as text or vectors and reuse it through prompting; consolidation is delegated to the model and is not auditable. Graph structure offers a middle path: if episodic, semantic, and procedural content share one explicitly typed graph, consolidation of experience into reusable knowledge can become a first-class, auditable operation rather than a side effect of prompting.
+
+This paper reports a Python prototype built around that idea, \textsc{Fascinator} (FAS): a \emph{unified cognitive graph} on which spreading activation drives attention and candidate generation~\citep{collins1975spreading}, an attribution pipeline writes experience back as typed relational structure, and ledger and event-framework channels regulate the flow of stored knowledge into behavior. The central claim is not that \emph{activation beats lookup}; it is that \emph{persistent relational knowledge itself} has measurable behavioral value in information-asymmetric embodied tasks, that spreading activation is that knowledge's runtime access mechanism, and that its \emph{incremental} value over plain retrieval is structure-dependent and bounded---a boundary we locate with preregistered experiments. The contributions, organized along this thread:
+
+\begin{enumerate}
+\item \textbf{A persistent relational-knowledge loop on a unified graph}: semantic/episodic/procedural content in one typed weighted graph; evidence-weighted write-back as the only new-structure source; dual (structure + activation) inheritance across episodes (Sections~\ref{sec:arch}--\ref{sec:loop}).
+\item \textbf{Behavioral evidence of persistent relational reuse under information asymmetry}: on the beacon task (20 paired seeds), graph context 20/20 vs 0/20 without context (McNemar $p{=}2\times10^{-6}$); an activation-free aggregation (D-flat) also achieves 20/20---``persistent reuse'' and ``activation necessary'' are reported as two separate claims (Section~\ref{sec:res-reuse}).
+\item \textbf{Structure-dependent, not universal, activation advantage}: the preregistered mechanism campaign ($4\times50$ paired seeds, 34{,}016 runs) rejects incremental value over flat retrieval under all four confirmatory conditions ($\Delta$JCG${<}0$, Holm $p{=}1.5\times10^{-9}$, 0/200 reversals), while a single downstream-convergence condition (multi-path via a shared hub) shows FAS 30/30 \emph{vs} flat 0/30; relation-direction semantics is diagnosed as a structural limit of propagation (Section~\ref{sec:res-act}--\ref{sec:res-topo}, \ref{sec:whydiff}).
+\item \textbf{A reproducible, honest experimental protocol}: deterministic zero-LLM subject experiments, two assembly audits reported as such, full-archive programmatic extraction, and negative results given equal weight (Sections~\ref{sec:method}, \ref{sec:whydiff}).
+\end{enumerate}
+
+The evidentiary standard is stated up front. Subject experiments are deterministic per seed ($n{=}5$; paired-mechanism experiments $n{=}50$; routing $n{=}20$ paired seeds; beacon $n{=}20$ paired seeds; relation direction $n{=}10$ paired seeds); paired experiments report Wilcoxon signed-rank tests with effect size $r$ and explicit multiple-comparison corrections and their consequences. Where the word ``causal'' or ``leads to'' is used, it means rule-like regularities inferred from temporally ordered action--outcome observations with evidence weights---not interventional causal identification; no do-style test is performed anywhere. Every number is programmatically extracted from archived run outputs (provenance in Table~\ref{tab:audit}).
+
+\section{Problem and Design Goals}
+\label{sec:problem}
+
+\subsection{The gap between logs and consolidation}
+We state the core problem as a decision problem: given a stream of experience $\mathcal{E}={[}e_1,\ldots,e_T{]} $ (each $e_t$ a temporally ordered action--observation pair), a behavioral interface that changes the environment, and a new interaction beginning at an arbitrary time---\emph{what must be saved, in what structure, so that past experience is present when needed, and changes action?} Our answer assumes: accessible structured relational knowledge, not logs; and ``accessible'' requires a runtime mechanism linking current focus to persistent structure. The information-asymmetric beacon task of Section~\ref{sec:res-reuse} turns this requirement measurable: the knowledge needed is absent from current observation, unavailable from prompt replay, and can only come from relational structure in persistent memory.
+
+\subsection{Design goals}
+FAS's design goals, all of which are put to the test in this paper (not vision statements):
+\begin{enumerate}
+\item \textbf{Single-graph substrate}: semantic, episodic, procedural, intentional, and affective content coexist in one typed weighted directed graph, distinguished only by label and relation type; \emph{cross-space links are the core capability} (Section~\ref{sec:arch-graph}).
+\item \textbf{One knowledge write-back channel}: experience becomes new relational structure only through the evidence-weighted attribution pipeline; auxiliary layers beside the graph (short-term buffer, statistical timeline) only tag or annotate, never build structure (Section~\ref{sec:arch-wb}).
+\item \textbf{Measurable persistence}: structure and its runtime load (activation values) are inherited together across episodes; ``re-activation across contexts'' is a measurable event, not a metaphor (Section~\ref{sec:arch-persist}).
+\item \textbf{Single access dynamics}: spreading activation constitutes the knowledge-access field driving attention (Top-$k$); its \emph{boundary}---incremental value over flat retrieval---is the core empirical object of this paper (Sections~\ref{sec:arch-act}, \ref{sec:whydiff}).
+\item \textbf{Explicit pathways from stored knowledge to behavior}: ledger, event framework, and re-activation are three consumer channels built to be isolatable (Section~\ref{sec:arch-consumers}).
+\item \textbf{Auditability}: all experiments deterministic, zero-LLM (except the decision-head family), fully archived, with assembly audits as a first-class step (Section~\ref{sec:method}).
+\end{enumerate}
+
+\subsection{Non-goals}
+This paper explicitly does not claim: general intelligence; open-ended learning from scratch (the P0 experiment of Section~\ref{sec:res-system} shows that regime is never entered); universal superiority over LLM memory systems; causal understanding or interventional identification; a universal spreading-activation advantage over flat retrieval (Section~\ref{sec:whydiff} presents the rejected evidence); or a robust value for explicit routing (Section~\ref{sec:res-system}). Research questions (RQ) are mapped to experiment and evidence level in Section~\ref{sec:method-rq} and answered in corresponding result subsections.
+
+\section{FAS Architecture}
+\label{sec:arch}
+
+We present the system content-first: the graph (with ontology diagram, Fig.~\ref{fig:ontology}), activation, how experience becomes knowledge and how knowledge persists, then consumption and the LLM boundary.
+
+\subsection{The unified cognitive graph}
+\label{sec:arch-graph}
+FAS maintains a directed, typed, weighted graph $G=(V,E,W)$. Nodes carry a label $\tau_v$ marking memory role (seven classes---items, recipes, action experiences, changes, events, intentions, gaps---sharing one namespace; corresponding to the \texttt{semantic}, \texttt{episodic}, \texttt{self}, \texttt{action}/\texttt{procedural}, \texttt{intention} implemented spaces), a base weight $w_v$, a timestamp, and a runtime activation $a_v\in\mathbb{R}$; each edge $e=(u,v,\rho,w)$ carries a relation type $\rho$ (eight classes: produces/belongs-to/drops/needs/needs-tool/leads-to/involves/results) and a static weight $w\in[-2,2]$; negative weights denote suppression. \emph{There is no separate episodic, skill, or intention store}: goals, events, action patterns, and affect are nodes of the same graph, distinguished only by label and relation type. Beside the graph there are only two auxiliary layers---a short-term episodic buffer (capacity 100, for short-horizon integration) and a statistical timeline (the ledger)---which do not constitute a second knowledge store: promotion paths only tag, never build structure (the sole structure-writing channel is the attribution pipeline of Section~\ref{sec:arch-wb}). The space split is for lifecycle management only; it does not isolate topology. Fig.~\ref{fig:ontology} shows the ontology layout with example cross-space links; Table~\ref{tab:components} records each component's implementation and evidence status (implementation status re-verified line-by-line in the 2026-09 code audit; Appendix~\ref{app:audit}).
+
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  sp/.style={draw, rounded corners, align=center, inner sep=3.5pt, font=\scriptsize},
+  sem/.style={sp, fill=blue!8}, epi/.style={sp, fill=orange!12},
+  proc/.style={sp, fill=green!10}, selfst/.style={sp, fill=purple!8}, emo/.style={sp, fill=red!8},
+  edgeT/.style={font=\tiny, fill=white, inner sep=1pt},
+  typed/.style={-{Latex}, semithick, gray!70}, neg/.style={-{Latex}, thick, red!70, dashed},
+  cross/.style={-{Latex}, semithick, blue!60!black}]
+\node[sp, minimum width=5.2cm, fill=gray!6, font=\footnotesize, draw=gray!60]
+  (G) at (0,0) {Unified cognitive graph $G{=}(V,E,W)$\\ \scriptsize single namespace; shared labels \& relation types\\ \scriptsize \emph{cross-space links are the core capability}};
+\node[sem] (it) at (-3.2,1.7) {item\\ \texttt{oak\_log}, \texttt{stick}};
+\node[sem] (rc) at (-1.6,2.6) {recipe\\ \texttt{oak\_planks}};
+\node[sem] (ch) at (-3.4,-1.2) {change\\ \texttt{inventory:oak\_log:}\\ \texttt{count\_increased}};
+\node[epi] (ev) at (1.8,2.5) {event\\ \texttt{tree disappeared}};
+\node[epi] (ae) at (3.4,1.3) {action experience\\ \texttt{gather(oak\_log)}};
+\node[proc] (ac) at (2.9,-1.5) {action skill\\ \texttt{gather\_resource},\\ \texttt{craft\_item}};
+\node[selfst] (ci) at (-1.9,-3.3) {intention/gap\\ \texttt{CI\_*}, \texttt{gap:use}};
+\node[emo] (em) at (-3.3,0.3) {affect\\ arousal, stress};
+\draw[typed] (it) -- node[edgeT, above]{belongs} (rc);
+\draw[typed] (it) -- node[edgeT, left]{drops} (ac);
+\draw[typed] (rc) -- node[edgeT, right]{needs} (ac);
+\draw[cross] (ae) -- (ch); \node[edgeT] at (1.6,0.75){leads-to $w{=}conf$};
+\draw[cross] (ae) -- node[edgeT, below left]{involves} (it);
+\draw[cross] (ci) -- node[edgeT, pos=0.2, left]{points-to} (it);
+\draw[cross] (ev) -- node[edgeT, above]{involves} (it);
+\draw[cross] (em) -- node[edgeT, below right]{modulates}(G);
+\draw[cross] (ac) -- node[edgeT, right]{skill} (G);
+\draw[neg] (ev) -- node[edgeT, below, text=red!70]{suppress $-w$} (it);
+\begin{scope}[on background layer]
+\node[draw=blue!30, rounded corners, fit=(it)(rc)(ch), inner sep=3pt, label={[font=\scriptsize, blue!60!black]south west:semantic}]{};
+\node[draw=orange!40, rounded corners, fit=(ev)(ae), inner sep=3pt, label={[font=\scriptsize, orange!70!black]south east:episodic space}]{};
+\node[draw=green!50, rounded corners, fit=(ac), inner sep=3pt, label={[font=\scriptsize, green!50!black]north east:procedural space}]{};
+\node[draw=purple!40, rounded corners, fit=(ci), inner sep=3pt, label={[font=\scriptsize, purple!60!black]north west:self/intention space}]{};
+\end{scope}
+\end{tikzpicture}}%
+\caption{The unified graph ontology (schematic). Seven label classes and eight relation types share one namespace; there is no separate episodic, skill, or intention store. Cross-space links (solid) are the core capability: \texttt{action experience} $\xrightarrow{\texttt{leads-to}}$ \texttt{change} is the product of the write-back pipeline (Section~\ref{sec:arch-wb}); \texttt{gap} points to an entity to inject activation; \texttt{event} carries a negative-polarity slot edge (red dashed) suppressing the entity (Section~\ref{sec:arch-consumers}).}
+\label{fig:ontology}
+\end{figure}
+
+\subsection{Cognitive state and spreading activation}
+\label{sec:arch-act}
+The cognitive state at time $t$ is the activation field $\mathbf{a}(t)$. Inputs (observations, intentions, gap injections) deposit initial energy into the corresponding nodes; each step, every active node $u$ emits to neighbors:
+\begin{equation}
+\Delta a_{u\rightarrow v}(t) \;=\; a_u(t)\,\cdot\, \tilde w_{uv}\,\cdot\, \beta_{\mathrm{cat}}(\rho)\,\cdot\, g_{\mathrm{rel}}(\rho)\,\Big/\; \textstyle\sum_{v'} \max\big(\tilde w_{uv'},0\big),
+\label{eq:spread}
+\end{equation}
+followed by decay $a_v(t{+}1) = (1-\lambda)\,a_v(t) + \sum_u \Delta a_{u\rightarrow v}(t)$, clamped by per-space maxima (episodic space $a_{\max}{=}3$, global default $5$). Emission follows a ``emit = transfer'' policy: each node's emitted quantity per step (default 1.0) is deducted from itself; source nodes are exempt. This is an engineering choice of short-memory, not an energy-conservation law. Negative-weight edges contribute suppressive flow; suppression is only issued when the emitting node's positive-weight total is greater than zero (nodes with purely negative out-edges never propagate). The emission budget is scaled by a modulatory gain
+\begin{equation}
+g \;=\; \mathrm{clip}\big(1 + 0.3\,\mathrm{arousal} - 0.15\,\mathrm{stress},\; 0.7,\; 1.6\big),
+\label{eq:mod}
+\end{equation}
+where arousal is derived from affective-node activation and stress from a slow cortisol offset; the continuous-cognition cycle feeds both each tick. Attention is the Top-$k$ of the field and constitutes input to action selection (closed-form planning on the graph, curiosity gap candidates, ledger priors). Fig.~\ref{fig:act-schematic} gives the intuition of activation-based access, drawn \emph{side by side with its flat-retrieval comparison}: the schematic only builds intuition; the conclusions are carried by the numeric experiments of Sections~\ref{sec:res-act}--\ref{sec:res-topo}.
+
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  nd/.style={circle, draw, minimum size=10mm, inner sep=0pt, align=center, font=\scriptsize},
+  hub/.style={nd, fill=purple!25}, hot/.style={nd, fill=red!50},
+  warm/.style={nd, fill=orange!40}, cool/.style={nd, fill=blue!12},
+  annot/.style={align=center, text=black!80, font=\scriptsize},
+  flow/.style={-{Latex}, semithick}, flat/.style={-{Latex}, thick, gray!50, dashed},
+  inib/.style={-{Latex}, thick, red!70, dashed}]
+\node[hot] (a) at (0,2.0) {gap A\\ demand 1}; \node[warm] (x) at (1.7,1.2) {entity a};
+\node[hot] (b) at (0,0) {gap B\\ demand 2}; \node[warm] (y) at (1.7,0.8) {entity b};
+\node[hub] (P) at (3.4,1.0) {shared\\ hub P};
+\node[cool] (T) at (5.6,1.8) {target\\ oak\_log};
+\node[cool] (rp) at (5.6,0.2) {recipe\\ planks};
+\node[cool, draw=gray!60, fill=gray!12] (ev) at (7.4,2.6) {event\\ failure};
+\draw[flow] (a) -- (x); \draw[flow] (x) -- (P);
+\draw[flow] (b) -- (y); \draw[flow] (y) -- (P);
+\draw[flow] (P) -- (rp); \draw[flow] (rp) -- (T);
+\draw[inib] (ev) -- (T);
+\draw[flat] (-0.354,1.646) -- (-1.3,0.6) -- (-1.3,-0.55) -- (2.5,-0.55) -- (5.25,-0.15) node[annot, pos=0.70, above, sloped]{flat: nearest};
+\draw[flat] (0.5,0) -- (2.55,0.15) -- (4.0,0.15) -- (5.1,1.8) node[annot, pos=0.37, below, sloped]{Top-1};
+\node[annot, align=left, anchor=west] at (0.15,-1.55) {
+  Diffusion paths: multi-source input converges via relational structure on hub $P$---downstream convergence (Section~\ref{sec:res-act}):\\[-0.5mm]
+  \quad $\bullet$ mechanism runs: JCG$>$0 on 200/200 paired seeds; $\ge$2-input MRR@1$=$1.0 (hypothesis group)\\[-0.5mm]
+  \quad $\bullet$ only systematic positive difference: combinational topology O3, FAS 30/30 \emph{vs} flat 0/30 (single weight $w{=}0.5$ design)\\[-0.5mm]
+  Flat path: nearest-neighbor retrieval reaches the target directly---sufficient for ordinary retrieval:\\[-0.5mm]
+  \quad $\bullet$ $\Delta$JCG${<}0$ under all 4 preregistered conditions (Holm $p{=}1.5\times10^{-9}$, 0/200 reversals)\\[-0.5mm]
+  \quad $\bullet$ wider spread dilutes targets ($\rho{=}{-}0.445$, ${-}0.656$); \emph{not drawn as diffusion-always-wins}.};
+\end{tikzpicture}}%
+\caption{Spreading activation and flat retrieval side by side. Every numbered claim comes from the archived experiments of Sections~\ref{sec:res-act}--\ref{sec:res-topo}; the figure only builds intuition.}
+\label{fig:act-schematic}
+\end{figure}
+
+\subsection{Experience attribution and write-back}
+\label{sec:arch-wb}
+After an action settles, its receipt and the attribution window (8--120 s of environment time) of observations form candidate action--observation pairs. Repeated pairs aggregate into hypotheses carrying support $s$, contra-evidence $c$, and Laplace confidence $\mathrm{conf}=s/(s+c+2)$. When $s\ge 5$ and $\mathrm{conf}\ge 0.80$, the hypothesis is \emph{promoted} to a typed relation on the graph
+\begin{equation}
+\mathtt{action:}A(x) \;\xrightarrow[\;w=\mathrm{conf}\;]{\;\texttt{leads-to}\;}\; \mathtt{change:}O,
+\label{eq:wb}
+\end{equation}
+(semantic space), and both endpoints are mark-activated. This is how experience becomes \emph{new relational structure}: \texttt{action:}/\texttt{change:} nodes exist only as products of this pipeline. The same ledger maintains per-action success-rate memories, consumed by action selection as prior bonuses ($\pm0.05$), the second statistical path from experience to behavior. A third channel encodes discrete events as event-framework nodes with polarity-slot edges (implemented and production-default off; this paper assembles it explicitly, Section~\ref{sec:res-persist}). The attribution/write-back algorithm is Algorithm~\ref{alg:wb}.
+
+\begin{algorithm}[t]
+\caption{Attribution--write-back: experience to relational knowledge}\label{alg:wb}
+\begin{algorithmic}[1]
+\Require action--observation stream $(a_t,o_t)$ within the window; ledger $\mathcal{L}$; graph $G$
+\State For each action $A_t$, associate observations $O_k$ in the window with its settlement as candidate pairs $(A_t,O_k)$
+\State Aggregate by action signature: $s\mathrel{+}=1$ (positive outcome), $c\mathrel{+}=1$ (contra)
+\State $\mathrm{conf}=s/(s+c+2)$ (Laplace smoothing)
+\If{$s \ge \mathrm{KG\_SUPPORT}=5$ and $\mathrm{conf} \ge \mathrm{KG\_CONFIDENCE}=0.80$}
+  \State create \texttt{action:}A, \texttt{change:}O nodes if absent
+  \State write edge \texttt{action} $\xrightarrow{\texttt{leads-to},\ w=\mathrm{conf}}$ \texttt{change}; mark both active
+\EndIf
+\State ledger in parallel maintains per-action success priors $\mathcal{L}.\mathrm{prior}(\mathrm{sig}(A))$ consumed by action selection
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Persistence and dual inheritance}
+\label{sec:arch-persist}
+Knowledge survives episode boundaries by construction (the graph is inherited, not reinitialized); persistence carries two payloads: \emph{structure} and \emph{activation values} are both serialized into the next episode, so ``re-activation across contexts'' is a measurable event. Section~\ref{sec:res-persist} measures that re-activated ($a\ge0.05$) differences are carried exactly by episodic structure connecting shared entities (4/12 vs 0/8 vs 0/0). On the engineering side, snapshot rotation and a shrink guard (save refusal to overwrite a running graph with an empty one) are data-integrity mechanisms, not cognitive content.
+
+\subsection{Consumers: from stored knowledge back to behavior}
+\label{sec:arch-consumers}
+Four classes of consumer use the knowledge produced by write-back; production and experimental assembly are explicitly separated (Section~\ref{sec:loop-prod}). \textbf{(a) Ledger channel (production):} candidate action scores are reweighted by ledger success priors ($+0.05$ success / $-0.05$ failure); in production this comprises the reward ledger in \texttt{internal\_state} plus the trial ledger of the autonomy layer. \textbf{(b) Affect/neuromodulation (production, every tick):} arousal and stress scalars modulate emission gain via Eq.~\ref{eq:mod}. \textbf{(c) Continuous intentions and replay gating (production):} the continuous-cognition cycle runs graph dynamics every 2.5 s; CI lifecycle and idle-gated offline experience replay belong here. \textbf{(d) Event framework (experimental assembly, production-default off):} negative events suppress entity activation via polarity-slot edges; the code is production-hardened (settlement-native write-back in \texttt{action\_system}) but \texttt{enabled=False} by default so that nothing lands on the graph in production; all behavioral evidence comes from experimental assembly. Hebbian co-activation strengthening (whitelisted weight classes) and the re-activation retrieval channel are standing mechanisms. \emph{Experimental layers} (sandbox assembly and the routing decision head) never enter the production default path; experimental mode is gated by a single switch, and the run recorder only observes---it never modifies cognitive behavior.
+
+\subsection{The LLM as a budgeted interface}
+\label{sec:arch-llm}
+FAS uses the LLM for language production, interpretation of unstructured input, and (low-frequency) reflection; it never uses the LLM as memory, nor as the source of the knowledge this paper studies. All subject experiments run under an import-time guard that hard-disables the LLM (zero-LLM contract; any call errors out)---the only exceptions are the explicitly labeled decision-head experiments and the LLM-heavy baseline (Section~\ref{sec:method-routing}).
+
+\begin{table}[t]
+\centering\small
+\caption{Component status (T1: implementation / experimental validation / evidence level / default switch). Evidence levels: L1 structural-representational, L2 mechanism, L3 behavior; status re-verified line-by-line in the 2026-09 code audit (Appendix~\ref{app:audit}).}
+\label{tab:components}
+\begin{tabular}{L{3.6cm}L{1.9cm}L{1.9cm}L{1.4cm}L{3.9cm}}
+\toprule
+\textbf{Component} & \textbf{Impl.} & \textbf{Validated} & \textbf{Level} & \textbf{Notes / default} \\
+\midrule
+Unified graph (single graph, 7 label classes, 8 relation types, negative weights) & production & all experiments & L1 & auxiliary layers never build structure \\
+Spreading activation (decay/gain/suppression/Top-$k$/emit-as-transfer) & production & Exp.\ B, four conditions & L2 & runs every tick \\
+Evidence-weighted write-back (window/support/confidence/promotion) & production & B1/B2, A2, H & L1/L2 & sole structure-writing channel \\
+Persistence and inheritance (structure + activation) & production & G, C & L1/L2 & cross-episode; snapshot rotation + shrink guard \\
+Ledger consumers (reward ledger + trial ledger) & production & Exp.\ C (assembly) & L3 & prior bonus $\pm0.05$ \\
+Event framework (polarity-slot edges) & implemented & D/C20e/C20g (assembly) & L2/L3 & \textbf{production default OFF} \\
+Affect/neuromodulation (graph citizens: tonic truth, derived level, graph as effect source) & production & C-emo & L2 & every tick \\
+Hebbian co-activation & production & Exp.\ F & L2 & default on; behavior sub-threshold \\
+CI lifecycle & production & D-CI & L2 & expression level unvalidated \\
+Offline experience replay gating & production & not touched in this paper & --- & idle gating \\
+Episodic buffer subject (capacity/forgetting/retrieval/promotion) & production & not touched in this paper & --- & short-horizon integration layer; promotes tags only \\
+Web-search action node & production & not touched in this paper & --- & \texttt{web\_search} action node for external knowledge acquisition \\
+Hormone graph citizenship (tonic real value, derived level, graph as effect source) & production & not touched in this paper & --- & modulator is graph citizen; hormone \emph{direct behavioral} control not implemented \\
+routing v2 decision head & experimental & v2 campaign, 520 runs & L3 (exploratory) & not attached to production \\
+Prospective memory, full perception pipeline, symbolic reasoning, RL policy nodes & not implemented & --- & --- & future work \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\caption{Main behavioral results (T3). All numbers from archived runs, deterministic per seed or paired statistics; section in parentheses. $\dagger$[$\S $]paired Wilcoxon, raw p; does not survive correction (Appendix~\ref{app:routing}).}
+\label{tab:behavior}
+\begin{tabular}{L{3.6cm}L{5.2cm}L{3.6cm}L{2.4cm}}
+\toprule
+\textbf{Experiment} & \textbf{Conditions \& sample} & \textbf{Result} & \textbf{Conclusion} \\
+\midrule
+Beacon A10 (closed-book) & fas/D-flat/D-noact/llm-direct $\times 20$ paired seeds & fas 20/20, D-flat 20/20, D-noact 0/20, direct 0/20; McNemar $p{=}2\times10^{-6}$; first action gather\_oak\_log 20/20 & persistent reuse supported; activation not necessary (\S\ref{sec:res-reuse}) \\
+Ledger channel (Exp.\ C) & Transfer vs No-Transfer, 5/5 seeds & 13 vs 16 ticks, 8 vs 9 actions; first-action birch$\rightarrow$oak flip 5/5 & experience changes \emph{how} it acts (\S\ref{sec:res-persist}) \\
+Event framework (D/C20e/C20g) & inject vs control n=5; real receipts n=3/4 & first action oak@6 vs birch@9; real failure 15 vs 17 ticks & graph-encoded experience flips action selection (assembly layer) (\S\ref{sec:res-persist}) \\
+Long chain L0/L3/L3b & n=5, 14 steps & 5/5 @315; L3 0/5; L3b bit-identical 315 & out-of-recipe transitions need task priors (\S\ref{sec:res-system}) \\
+Zero prior P0/P1/P2 & 25 episodes/condition & P0 0/25 ($+29$ nodes); P1$=$P2 25/25 @4 & scaffolding is a precondition (\S\ref{sec:res-system}) \\
+Routing v2 T4 & fas vs direct, n=20 paired & 19/20 vs 15/20, $p^{\dagger}{=}0.046$; decisions 5.45 vs 7.25, $p{=}0.029$; util 0.48 vs 0.30, $p{=}0.010$ & directional observation, corrected $p{\approx}1$ (\S\ref{sec:res-system}) \\
+Routing v2 T3 & fas vs history/rag, n=20 & 4.15 vs 2.3/2.8 decisions, $p{=}0.003/0.044$ & re-routing slower (\S\ref{sec:res-system}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The Experience-to-Knowledge Loop}
+\label{sec:loop}
+
+Fig.~\ref{fig:loop} shows the complete conceptual loop of FAS. It starts with \emph{embodied interaction} in the environment: actions are settled, observations ingested; experience is segmented into temporally ordered action--observation fragments (the attribution window of Section~\ref{sec:arch-wb}); repeated patterns accumulate \emph{evidence} into candidate relations, and, after support and confidence checks, are \emph{written back} as persistent graph structure. New inputs then unfold across this graph via \emph{spreading activation}, forming a \emph{task-relevant cognitive state} with a Top-$k$ focus; \emph{consumers} (ledger, event framework, affective modulation) carry that state into action selection; actions change the environment, producing new experience, closing the loop. Language production, interpretation of unstructured input, and reflection are the only LLM calls in the loop (Section~\ref{sec:arch-llm}): the LLM is a \emph{consumer/decision component}, not memory, and not the source of the knowledge studied here.
+
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  loop/.style={draw, rounded corners, align=center, inner sep=4pt, font=\footnotesize},
+  scaff/.style={draw, rounded corners, align=center, inner sep=3pt, font=\scriptsize, fill=gray!12, dashed},
+  flow/.style={-{Latex}, semithick},
+  node distance=3.5mm and 6mm]
+\node[loop] (env) {embodied interaction\\ \scriptsize actions, observations};
+\node[loop, right=of env] (per) {perception intake};
+\node[loop, right=of per] (epi) {action--observation fragments\\ \scriptsize attribution window 8--120 s};
+\node[loop, right=of epi] (ev) {evidence accumulation\\ \scriptsize support / contra / confidence};
+\node[loop, right=of ev] (wb) {relational write-back\\ \scriptsize promotion to graph + mark-active};
+\node[loop, below=of wb] (graph) {unified cognitive graph $G{=}(V,E,W)$};
+\node[loop, below=of graph] (act) {spreading activation\\ \scriptsize decay, gain, suppression, Top-$k$};
+\node[loop, below=of act] (cs) {task-relevant cognitive state};
+\node[loop, below=of cs] (beh) {behavior / action selection};
+\node[scaff, left=of ev] (s1) {scaffolding: recipe/block tables};
+\node[scaff, left=of cs] (s2) {consumers: reward ledger, trial ledger,\\ event framework (production default off)};
+\draw[flow] (env) -- (per);
+\draw[flow] (per) -- (epi);
+\draw[flow] (epi) -- (ev);
+\draw[flow] (ev) -- (wb);
+\draw[flow] (wb) -- (graph);
+\draw[flow] (graph) -- (act);
+\draw[flow] (act) -- (cs);
+\draw[flow] (cs) -- (beh);
+\draw[flow] (beh) -| ([xshift=-6mm]env.south) |- (env);
+\draw[flow] (s1) -- (ev);
+\draw[flow] (s2) -- (cs);
+\end{tikzpicture}}%
+\caption{The FAS conceptual loop: from embodied interaction to reusable relational knowledge, and back to behavior via activation and consumers. Dashed blocks are scaffolding (mechanics tables; the necessary precondition characterized by the P0 experiment, Section~\ref{sec:res-system}) and consumption channels. The LLM's only positions in the loop are language production/interpretation/reflection (Section~\ref{sec:arch-llm}); it does not serve the knowledge channels studied here.}
+\label{fig:loop}
+\end{figure}
+
+\subsection{Terminology and evidence language}
+Terms are used uniformly. \emph{Experience}: a temporally ordered action--observation stream with timestamps and settlement outcomes. \emph{Relational knowledge}: typed assertions encoded as graph nodes and typed, weighted directed edges---distinct from raw log entries and vector embeddings. \emph{Write-back}: the pipeline step that converts experience fragments into candidate relations and promotes them into persistent structure; it is the \emph{only} pathway from experience to knowledge in FAS. \emph{Persistent}: structure survives session/episode boundaries, with runtime load (activation values) inherited along with it. \emph{Reuse}: existing structure relevant to a new situation is re-lit and enters the cognitive working set. \emph{Functional consumption}: stored knowledge enters action selection through an explicit consumer mechanism---not ``knowledge exists'' but ``knowledge changes behavior.'' What does \emph{spreading activation} do?---access and modulation: it decides \emph{what} enters the working set and at what strength it competes for attention; it does not make action decisions for consumers (Section~\ref{sec:whydiff} presents the evidence for what it does \emph{not} do).
+
+Evidence language is fixed at three levels: \emph{representational} (existence and re-activation of learned nodes/edges), \emph{mechanism} (measurable dynamics: activation trajectories, weight changes, ledger counts), \emph{behavioral} (observable actions: completion ticks, action counts, first-action identity). Evidence grades run L1 (structural) $\rightarrow$ L2 (mechanism) $\rightarrow$ L3 (behavior); L4 (general-capability claims) is explicitly not claimed.
+
+\subsection{Production and experimental paths}
+\label{sec:loop-prod}
+To avoid confusion, all evidence is attributed to four layers, labeled at each occurrence: \textbf{P1 production default path}---zero-LLM subject behavior (graph, activation, ledger, modulation, CI loop, replay gate) runs with production configuration in the sandbox. \textbf{P2 production mechanism, assembled validation}---ledger (Exp.\ C) and event framework (Exp.\ D/C20e/C20g, \texttt{enabled=False}): the mechanism lives in production code; differences are exposed by experimental assembly. \textbf{P3 mechanism-isolation layer}---the core incremental value campaign and the relation-direction diagnosis: controlled mechanism experiments on reference models distilled from production semantics; no behavioral benefit in the production loop is claimed or required. \textbf{P4 experimental-layer harness}---the routing decision head (not attached to production). Two audit facts are reported as such: (i) an early ablation matrix ran on an assembly missing the diffusion executor (the continuous-cognition loop was not wired), so its zero differences only support ``completion-level insensitivity to activation''; after repair, access-layer experiments carry the mechanism evidence; (ii) the first routing harness never built edges, swallowed 521/521 exceptions, and always produced an empty first-step focus---it was declared invalid and rebuilt and re-run (Appendix~\ref{app:routing}); a 2026-09-30 audit additionally found that the production answer pipeline originally did not render attention/demand annotations, and it has since been wired to the same cognitive structure (\texttt{nlp\_render\_cognitive\_context=True}), aligning production and harness paths on annotation rendering---this alignment fixes the reporting definition but changes no experimental number. Combined constraint: mechanism- and assembly-level evidence fully supports this paper's claims, but no ``production superiority'' statement may be extrapolated from it (Limitation 12, Section~\ref{sec:limits}).
+
+\section{Experimental Methodology}
+\label{sec:method}
+
+\subsection{Research questions and experiment mapping}
+\label{sec:method-rq}
+Research questions and evidence levels are announced up front and answered in corresponding result subsections (Table~\ref{tab:rqmap}): \textbf{RQ1 (reuse)}: does persistent relational knowledge measurably help behavior under information asymmetry ($\rightarrow$\S\ref{sec:res-reuse}, L3); \textbf{RQ2 (persistence \& transfer)}: do learned structures survive episodes, get re-activated, and reach behavior via named channels ($\rightarrow$\S\ref{sec:res-persist}, L1--L3); \textbf{RQ3 (activation mechanism)}: what is the incremental value of spreading activation over flat retrieval, and where does it hold ($\rightarrow$\S\ref{sec:res-act}--\ref{sec:res-topo}, L2); \textbf{RQ4 (boundary)}: where are these mechanisms irrelevant to task success, and what is the structural reason ($\rightarrow$\S\ref{sec:whydiff}, negative L3).
+
+\begin{table}[t]
+\centering\small
+\caption{RQ $\rightarrow$ experiment $\rightarrow$ evidence-level map (T2). Subject experiments $n{=}5$ seeds deterministic; mechanism $n{=}50$ paired; beacon/routing $n{=}20$ paired; relation direction $n{=}10$ paired.}
+\label{tab:rqmap}
+\begin{tabular}{L{1.3cm}L{5.4cm}L{4.2cm}L{1.2cm}L{1.9cm}}
+\toprule
+\textbf{RQ} & \textbf{Experiment (conditions)} & \textbf{Key observations} & \textbf{Level} & \textbf{Verdict} \\
+\midrule
+RQ1 reuse & Beacon A10 (fas/D-flat/D-noact/llm-direct $\times20$) & 20/20 vs 20/20 vs 0/20 vs 0/20; McNemar $2\times10^{-6}$ & L3 & positive + boundary \\
+RQ2 persist & B1/B2 write-back isolation; A2 reuse; G0/G1/G2; Exp.\ C; D/C20e/C20g & 0 vs 13 nodes; 4/12 vs 0/8 vs 0/0; 13 vs 16 ticks; first-action flip 5/5 & L1--L3 & positive \\
+RQ3 activation & four conditions; Exp.\ B; mechanism campaign (C-1..C-4, combo, sweeps, counterfactuals, hidden oracle) & 61.5/16.6/45.8/17.2; JCG 200/200; $\Delta$JCG${<}0$ 4/4; combo 30/30 vs 0/30 & L2 & positive + rejected \\
+RQ3 activation & relation direction (F vs B projection, 3 injections $\times$ 10 seeds) & $\rho$ 0.325$\rightarrow$0.645; dilution 0.833 vs 0.475 & L2 & mechanism diagnosis \\
+RQ4 boundary & A/B closure; L long chain; P priors; I env; routing v2; robustness; dilution & completion-layer zero differences; 0/25; 259 vs 315; T3 slower; MRR worse than flat & L3 (neg.) & boundary \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Environment and agent configuration}
+All experiments run in the deterministic \texttt{SandboxWorld}: a discrete Minecraft-style grid world with a simulated clock (16 s/tick), recipe tables, block tables with drops and tool requirements, and a fake device bridge replacing a real Minecraft LAN bridge. The agent stack is the production stack---knowledge graph, diffusion engine, continuous-cognition components, autonomy loop, action manager, and the real skill layer (\texttt{gather\_resource}, \texttt{craft\_item}, \texttt{place\_block}, \texttt{smelt}, \texttt{explore}, etc.)---with the LLM disabled by an import-time guard (zero-LLM contract). One long-chain condition uses a documented simplification: sandbox smelting settles instantly into the inventory, absorbing the real system's furnace-extraction step (whose retry window is wall-clock based and unreachable under sandbox time scaling); results relying on this simplification are marked.
+
+\subsection{Deterministic sandbox protocol and assembly audits}
+Each condition is instantiated with a fixed seed; identical seeds reproduce bit-identical trajectories (verified by re-runs). Subject experiments use $n{=}5$ seeds (1--5) throughout; the mechanism campaign $n{=}50$ paired seeds; beacon and routing $n{=}20$ paired seeds; relation direction $n{=}10$ paired seeds. Every run is archived by the run recorder (metadata, event stream, start/end graph snapshots, metrics) into content-addressed directories. The archival census of behavioral families (\verb|FAS_Research_Experiments/|) totals 494 runs (ablation 77, eventframe 53, sandbox 43, ci 34, transfer 32, reuse\_a2 31, prior\_boundary 31, longchain 29, reuse 28, emotion 25, hebbian 24, event\_transfer 22, diffusion\_b2 22, envchange 14, diffusion 12, baselines 8, prior\_conditions 7, minecraft 2); further, the mechanism campaign 34{,}016 runs (line-countable in \verb|raw_results.jsonl|), beacon 80, routing v2 520, relation direction 60, and the 663-run falsification campaign are archived under \verb|experiments/|. Failures and pilots are all retained.
+
+\emph{Assembly-validity audit} is a first-class step in this protocol and has occurred twice, both reported (Section~\ref{sec:loop-prod}); the mechanism campaign additionally rests on an independent 663-run falsification campaign (\texttt{research\_audit/mechanism\_falsification}) that first confirmed the convergence reference model (JCG$>{0}$ rate 0.970; $\ge$2-input MRR@1$=$1.0); the paper's primary numbers use that campaign's statistics file as their source. (Note: the \texttt{experiments/mechanism\_campaign} directory is a different experiment---an activation-landscape audit whose probes failed and whose formal runs never executed; it is not a number source.)
+
+\subsection{Metrics and evidence levels}
+Mechanism level: weight changes, ledger counts, gain readbacks, activation trajectories. Representational: existence/re-activation of learned nodes and edges, access-field size, activation quality. Behavioral: completion ticks, action counts, redundant and failed actions, first-action identity. Task success is just one of many metrics. Statistics: paired experiments use Wilcoxon signed-rank and effect size $r$; multiple-comparison corrections are stated with their consequences; the mechanism campaign's testing scheme was fixed before execution.
+
+\subsection{The mechanism-campaign protocol (core incremental value, preregistered)}
+\label{sec:method-civ}
+The core incremental value campaign studies the \emph{incremental} value of spreading activation over flat retrieval and is preregistered (\texttt{experiments/core\_incremental\_value/}, four subject topologies T1--T4: 3 inputs/100 nodes/25\% density; 3 inputs/300 nodes/50\%; 5 inputs/300 nodes/50\%; 5 inputs/1000 nodes/75\%). Four candidate generators are compared pairwise: \textbf{B1} direct injection (graph-free); \textbf{B2} flat path-product (a closed-form approximation of nearest-neighbor retrieval on the same structure---same structural information, no iterative propagation); \textbf{B3} random activation (equal-energy control); \textbf{B4} oracle (ground-truth solution used for generator-correctness prechecks; T1--T4 MRR$=$1.0). The primary metric JCG (joint convergence gain) measures multi-input convergence onto shared targets (incremental over single-input marginal). Preregistered confirmatory conditions C-1..C-4 ($n{=}50$ paired seeds each) use one-sided paired Wilcoxon with Holm correction to test H3 (\emph{diffusion's JCG exceeds flat's}). Ancillary families (all actually run and archived): insertion-order 10 permutations (expect CV$=$0), label/ID permutation (hidden oracle, $n{=}30$), counterfactual C2 (diffusion must not fabricate convergence with no joint target), negative-edge test (suppression must not change total score), weight sweep $w\in\{0.1..0.9\}$, noise/distractor sweeps (dilution), and combinational-topology detectors O1--O3 (joint 2-path layout with a single weight configuration $w{=}0.5$). Results in Sections~\ref{sec:res-act}--\ref{sec:res-topo}; condition-level numbers in Appendix~\ref{app:civ}.
+
+\subsection{LLM decision-head protocol (routing experiments)}
+\label{sec:method-routing}
+One family places a real LLM at the decision point. A single model (temperature 0, fixed output budget, one call per decision) chooses one action from a set derived from the environment; menu, environment state, task facts (recipe priors), experience stream, and per-decision budgets are identical across conditions---the only difference is the context the model sees before deciding: (A) none; (B) raw last-8 experiences; (C) embedding-similarity retrieval top-5 (preregistered $k{=}5$); (D) genuine FAS mechanism-selected context (progressive graph entry, propagation, Top-$k$ focus, plus three-layer cognitive demand/gap/routing analysis); (E) random memory entries (counterfactual control). Three ablations of D remove diffusion, demand annotation, and graph structure respectively. Four task classes (knowledge reuse, interference suppression, environmental-re-routing, competing targets T1--T4). The repaired official campaign runs on the production edge-building path: seeding a real graph (37 nodes), real observation-driven edge construction, core exceptions propagate, and 9 harness invariants are fail-fast; $5\times4\times20+3\times2\times20=520$ runs in total, all valid (\texttt{harness\_valid}=520/520, core exceptions 0). The campaign is positioned as exploratory; it measures context-selection value, and the FAS loop does not control execution.
+
+\subsection{Reproducibility}
+Fixed seeds; single-process deterministic execution; no wall-clock-dependent logic in the measurement path (one documented exception above); no LLM; archived raw runs and content summaries; 104 regression tests pass at the time of writing. \texttt{PAPER\_FACT\_DATABASE.json} remains the single-source index for all numbers in this paper.
+
+\begin{table}[t]
+\centering\small
+\caption{Implementation $\rightarrow$ claim audit (T6, excerpt; full table in Appendix~\ref{app:audit}). Verdicts: S=mechanism exists and is experimentally verified; Q=qualified/assembly-level; U=unsupported and reported as such.}
+\label{tab:audit}
+\begin{tabular}{L{4.6cm}L{3.2cm}L{3.6cm}L{1.7cm}}
+\toprule
+\textbf{Claim} & \textbf{Key implementation} & \textbf{Audit notes} & \textbf{Verdict} \\
+\midrule
+S1 experience $\rightarrow$ new relational structure under scaffolding & attribution pipeline\\ (\texttt{scoring/}\\ \texttt{aggregation/}\\ \texttt{promotion}) + \texttt{writeback\_on} & 4 degenerate + 2 window-contaminated are self-reported artifacts; code matches & S \\
+S2 persistence and cross-context re-activation & graph save/load + snapshot rotation + shrink guard & G0's 4/12 carried by episodic structure (access layer) & S \\
+S3 ledger channel changes action selection & reward/trial ledgers $\rightarrow$ candidate prior bonus & difference lands at action-selection layer, not completion layer---matches paper's self-scope & S \\
+S4 event framework changes action selection & \texttt{action\_system} settlement write-back; \texttt{enabled=False} (config) & audit confirms production-default off, zero graph writes & S (assembly) \\
+S5 scalar modulation of propagation dynamics & \texttt{internal\_state} tonic/level; modulator as graph citizen; projection & graph is the effect source; R2 gate P8 target ran & S \\
+S6 mechanics tables necessary; zero-prior lock & mechanics tables (prior\_extra) + goal system & P0 locks at unreachable goal = upstream experience-generation failure; behavior matches code & S \\
+S7 relation direction limits propagation & directed graph; 8 bidirectional whitelist vs forward; recipe edges sinkified & independent re-check $\rho$ .33$\rightarrow$.65, $r{=}.886$, 10/10; no behavioral test; production graph unmodified & S (mechanism) \\
+Q1 diffusion produces a distinct access pattern (not behavior) & \texttt{diffusion\_engine} (diffuse\_step/\_emit) & independent falsification campaign: 663 runs, JCG$>$0 0.970 & Q \\
+U2 semantic write-backs consumed by planner & planner does not read semantic write-back graph & code audit: no consumption path & U \\
+U5 routing robustly better than baselines & \texttt{run\_exp\_routing\_v2.py} (harness) & 520/520 valid; T4 raw $p{=}.046$ corrected $p{\approx}1$; tokens 2.1--3.7$\times$ & U (directional) \\
+(extra) production answer pipeline renders attention/demand & \texttt{nlp\_render\_}\\ \texttt{cognitive\_}\\ \texttt{context=True} (wired 2026-09-30) & audit-identified definitional gap repaired; rendered as projection references, values not exposed & fixed \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Persistent relational knowledge reuse: the information-asymmetric beacon task}
+\label{sec:res-reuse}
+\emph{Design and motivation for the acquisition phase.} RQ1 requires that the knowledge needed is absent from current observation, unavailable from prompting, and only reachable through relational structure in persistent memory---information asymmetry. The Beacon A10 task operationalizes this: \emph{closed-book}---the target recipe's knowledge exists \emph{only} in experience-written memory, in no input prompt; craft-menu gating (item: nodes unlock the full crafting chain only while that item's context is present); facts stripping of the recipe; seed\_goal=False. Four conditions ($n{=}20$ paired seeds, temperature 0, all 80 runs valid): \textbf{fas\_full} (production graph + activation context), \textbf{D-noact} (graph context with activation dynamics disabled: structure present, runtime access absent), \textbf{D-flat} (flat retrieval without activation aggregation), \textbf{llm\_direct} (no memory context at all, model only).
+
+\begin{figure}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  bn/.style={draw, rounded corners, align=center, inner sep=4pt, font=\scriptsize},
+  sc/.style={bn, fill=blue!8}, wb/.style={bn, fill=orange!12}, ob/.style={bn, fill=gray!8},
+  res/.style={bn, fill=green!10}, neg/.style={bn, fill=red!6},
+  flow/.style={-{Latex}, semithick}, note/.style={font=\scriptsize, gray!50, align=center}]
+\node[sc] (prac) at (0,0) {practice phase (8 rounds)\\ \scriptsize action--observation stream};
+\node[wb] (wbk) at (0,-2.1) {write-back (attribution pipeline)\\ \scriptsize \texttt{gather\_resource(oak\_log)} $\xrightarrow{\texttt{leads-to},w{=}0.889}$\\ \scriptsize \texttt{change:inventory:oak\_log:count\_increased}\\ \scriptsize support 8, confidence 0.889, promotion + mark-active};
+\node[sc] (gra) at (0,-4.6) {persistent unified graph (structure + activation inheritance)};
+\draw[flow] (prac) -- (wbk); \draw[flow] (wbk) -- (gra);
+\node[ob] (bk) at (9.5,0) {beacon task (closed-book, n=20)\\ \scriptsize recipe only in memory, menu gating, facts stripped};
+\node[res] (fas) at (5.6,-2.3) {\textbf{fas\_full}:\\ persistent graph + activation context\\ 20/20 completed ($\bar{x}$ decisions 2.15)\\ first action gather\_oak\_log 20/20};
+\node[res] (dflat) at (14.0,-2.3) {\textbf{D-flat}:\\ activation-free aggregation control\\ 20/20 completed ($\bar{x}$ decisions 2.1)};
+\node[neg] (dno) at (7.2,-4.6) {\textbf{D-noact} 0/20\\ structure present, runtime absent};
+\node[neg] (dir) at (12.2,-4.6) {\textbf{llm\_direct} 0/20\\ no memory context};
+\draw[flow] (bk) -- (fas); \draw[flow] (bk) -- (dflat);
+\draw[flow] (bk) -- (dno); \draw[flow] (bk) -- (dir);
+\draw[flow] (gra.east) to[out=0,in=190] (bk.west);
+\node[note] at (9.3,-5.9) {McNemar exact: fas vs direct $p{=}2\times10^{-6}$; fas vs D-noact $p{=}2\times10^{-6}$;\\ fas vs D-flat $p{=}1.0$ (decision Wilcoxon $p{=}0.72$)---\emph{persistent relational reuse supported;}\\\emph{activation necessity not supported}.};
+\end{tikzpicture}}%
+\caption{A complete real case study: the wood$\rightarrow$plank chain from practice experience, through evidence-weighted write-back into persistent graph structure, to the behavioral benefit in the information-asymmetric beacon task. All numbers from \texttt{experiments/beacon\_v1/analysis\_final.json} (80 runs, four conditions $\times 20$ paired seeds).}
+\label{fig:case}
+\end{figure}
+
+\emph{Results.} fas\_full completes 20/20 (decisions mean 2.15, median 2); llm\_direct completes 0/20 (decisions mean 8.0---every decision window is used up without unlocking the chain); McNemar exact $p{=}2\times10^{-6}$ for both fas \emph{vs} direct and fas \emph{vs} D-noact. \textbf{D-noact 0/20}: removing activation dynamics from the same graph context---structure still present---fails immediately: structure alone is not usable access. \textbf{D-flat 20/20} (decisions mean 2.1; no statistical difference from fas, decision Wilcoxon $p{=}0.72$): activation-free flat aggregation fully reproduces the behavioral benefit.
+
+\emph{Interpretation and boundary.} This three-way result separates two claims: (a) \textbf{persistent relational reuse} produces behavioral benefit on a high-noise, recipe-opaque, information-asymmetric task (fas/direct and fas/D-noact contrasts are kept in their strongest form); (b) \textbf{the necessity of activation is not supported}---the D-flat equivalence joins the mechanism campaign (Section~\ref{sec:res-act}) directly: flat retrieval suffices on reachable tasks. Note the scale: the beacon bounds the large slope of ``memory context present vs absent''; the finer question at the bottom of that slope (``which access mechanism is best'') is answered at the mechanism level in Sections~\ref{sec:res-act}--\ref{sec:res-topo}. First-action identity gives a mechanism fingerprint: fas first-actions gather\_oak\_log 20/20, D-noact likewise (but cannot advance), direct only 17/20---the difference is not in first action choice but in subsequent unlocking.
+
+\subsection{Persistence and transfer}
+\label{sec:res-persist}
+\emph{Priors establish structural existence.} For RQ2, we first show that written-back structure is not a rearrangement of injected knowledge. The write-back isolation experiment breaks graph write-back on a single switch (\texttt{writeback\_on=False}): perception, actions, and environment are identical; two lineages (B1/B2) practice the same four-step chain (oak log $\rightarrow$ planks $\rightarrow$ stick/crafting table $\rightarrow$ oak fence) for eight rounds in the same world. B1's final graph contains \textbf{0} \texttt{action:}/\texttt{change:} nodes; B2 contains \textbf{13} (Fig.~\ref{fig:writeback}a). Sorting the 15 promoted relations of B2 (Table~\ref{tab:taxonomy}): 11 substantive action--effect associations (``mining yields items and removes a block,'' ``crafting consumes inputs and produces outputs''---absent from the initial graph: recipe tables know \emph{what can craft what}, but the \emph{changes execution produces} can only be established by doing), 4 degenerate relations (action pointing at its own success event), and 2 substantive pairs polluted by the attribution window (downstream craft effects attributed to the upstream gather). The current promotion rules do not distinguish the degenerate class---we report rather than hide them. The A2 reuse experiment: after 8 rounds of practice, each seed promotes 4 relations and mark-activates them. Completion metrics are identical across conditions (5/5 @11 ticks)---the first closure-masking instance (formalized in Section~\ref{sec:whydiff}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_writeback.pdf}
+\caption{(a) Write-back isolation: identical experience; write-back off yields 0 learned \texttt{action:}/\texttt{change:} nodes; on yields 13. (b) The 15 promoted relations sort into 11 substantive + 4 degenerate.}
+\label{fig:writeback}
+\end{figure}
+
+\emph{Cross-context re-activation.} Episode 1 practices the chain in context A (resource forest west, bare land). Episode 2 changes the surface context completely (forest east, interfering birch stand, different layout) with a structurally similar goal. Three conditions inherit from Episode 1: \textbf{G0} full graph; \textbf{G1} a flat-memory control with episodic-space nodes stripped (semantic facts kept, event structure removed); \textbf{G2} clean graph. 5/5 seeds: G0 re-activates \textbf{4 of 12} marked nodes ($a\ge0.05$); G1 \textbf{0 of 8}; G2 has none (Fig.~\ref{fig:reactivation}). The re-activation difference is carried exactly by the episodic event structure connecting shared entities; behavioral metrics are identical across conditions---representational and access-layer differences are separated from the behavior layer for the first time.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/fig_reactivation.pdf}
+\caption{Cross-context re-activation. Episode-1 marked nodes re-lit ($a\ge0.05$) in Episode 2; dots are seeds, bars means. The difference tracks episodic event structure, not the amount of semantic facts.}
+\label{fig:reactivation}
+\end{figure}
+
+\emph{Ledger consumption.} Full functional consumption across contexts is established by Experiment C: after 8 practice rounds of a three-step chain (ledger promotes 7 relations), migrate to a structurally related four-step task with the ledger inherited (Transfer) or fresh (No-Transfer). Deterministic, 5/5 seeds: Transfer completes in 13 ticks / 8 actions; No-Transfer needs 16 ticks / 9 actions; first action flips from curiosity-driven detour to experienced resource (Fig.~\ref{fig:ledger}). The difference lands exactly on the three candidate actions shared by both tasks ((1.0, obs=8) \emph{vs} (None, 0)). Task success is 5/5 in both conditions.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/fig_ledger_transfer.pdf}
+\caption{Ledger-mediated transfer (Exp.\ C). Transfer saves 3 ticks and 1 action; first action flips from birch to oak.}
+\label{fig:ledger}
+\end{figure}
+
+\emph{Event-framework consumption.} Experiment D tests the graph-encoded-event channel. A negative event (a tree that disappears on first dig) is encoded as an event-framework node whose negative-polarity slot edge suppresses entity activation via the diffusion engine's uniform suppression mechanism; after three warm-up ticks allowing suppression to accumulate before the first decision, the suppressed curiosity path loses the first-action competition: 5/5 control first-actions birch @9 \emph{vs} inhibit oak @6 (3 ticks earlier, 1 curious action saved). With \emph{real} failure receipts (the event framework is written only on settlement callback when an action genuinely fails), control retries the doomed target once (n$=$4 with 1 redundant retry, @17), the event-framework condition never (n$=$3, @15)---and because that failure mode is a transient timeout, the statistical channel is fully silent on it (no attempt/cooldown/causal-ledger entry): the graph-side event framework is the only trace of the failure, and the only source of the behavioral difference. Scope statement: this channel is assembled and fixed at the experimental layer (two structural dead-locks in the native wiring---gap injection anchor and novelty saturation---had to be handled before differences appeared), and production default is off (\texttt{enabled=False}). It is evidence that graph-encoded experience \emph{can} flip action selection, not evidence that production does so today.
+
+\subsection{Activation mechanism: convergence runs; incremental value rejected}
+\label{sec:res-act}
+\emph{Access-layer separation (first).} To locate ``what activation does'' at the mechanism level: four conditions on an access task---diffusion on; diffusion off ($\beta{=}0$, injection only); random-activation control (same energy injected into random semantic nodes); retrieval-oracle control (target-chain nodes raised every tick). Full diffusion produces activation quality $61.5$ over a field of 39 lit nodes; diffusion off $16.6$ over 17; the random control is comparable in quality ($45.8$) but with a larger, structureless field whose out-of-sight targets light at drift moments (ticks 1--9 across seeds) rather than in a fixed pattern; the oracle $17.2$ over 18 (Fig.~\ref{fig:diffusion}). Structural diffusion is therefore distinguishable from both noise and lookup at the knowledge-access layer. The companion causal experiment (Exp.\ B, re-run after the assembly fix, in place): gap ``pointed-at'' entity activation 1.5$\rightarrow$5.0 capped (control wanders 1.1--1.7); \emph{out-of-sight} pure-diffusion signal oak\_log 0.43 \emph{vs} 0.0; gap-source energy drains under emit-as-transfer (1.43$\rightarrow$0.16) while the control sticks; 2-hop lit field 5 vs 4. Completion layer: zero difference in both experiments.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_diffusion.pdf}
+\caption{Four-condition activation task (n=5, deterministic). Structural diffusion produces a distinct access field; same-energy random activation cannot reproduce it; the target-chain oracle is narrower.}
+\label{fig:diffusion}
+\end{figure}
+
+\emph{The convergence mechanism genuinely runs.} The mechanism campaign (Section~\ref{sec:method-civ}) first asks whether the mechanism runs: JCG$>{0}$ on \textbf{200/200} paired seeds (each confirmatory condition $n{=}50$; median JCG 0.0977/0.0977/0.2158/0.2177); the hypothesis group ($\ge$2 inputs) reaches MRR@1$=$1.0. Counterfactual C2 (no joint target): all four methods 0.0---convergence is not a self-fulfilling prophecy; hidden oracle (30 seeds label/ID permutation) rank\_median$=$22.5 unchanged (target has no structural privilege); insertion order, 10 permutations, CV$=$0.0. Mechanism conclusion: \emph{multi-input convergence on the graph is a real, reproducible mechanism phenomenon}.
+
+\emph{Incremental value rejected under preregistration.} Primary result (Table~\ref{tab:mechanism}, Fig.~\ref{fig:boundary}a): against flat path-product (B2), all four preregistered conditions show $\Delta$JCG${<}0$ (median differences ${-}0.402$, ${-}0.402$, ${-}0.784$, ${-}0.782$; paired $n{=}50$/condition; one-sided Wilcoxon with Holm, $p{=}1.5\times10^{-9}$; effect $r{=}0.615$; times FAS beats flat: \textbf{0/200}). MRR: FAS below B2 (0.0435/0.0426 vs 0.5/0.5 on C-1/C-2; tie at 1.0 on C-3/C-4). Noise robustness unsupported: robustness sweep slope 0.0076 (B2 0.0), AUC 0.0427 vs 0.04, critical noise 0.0$=$0.0---no evidence diffusion resists noise better (Fig.~\ref{fig:boundary}). B1 direct injection and B3 random activation confirm the contrast setup works independently of the graph; B4 oracle precheck MRR$=$1.0 excludes generator-side error. \textbf{H3 is rejected}: under these topologies and information budgets, flat retrieval is no worse than diffusion, and usually better.
+
+\begin{table}[t]
+\centering\small
+\caption{Mechanism-level results (T4, excerpt). Main family from the mechanism campaign (\texttt{core\_incremental\_value/statistics.csv}, \texttt{analysis.json}); relation direction from \texttt{relation\_direction\_campaign/paired\_statistics.csv}.}
+\label{tab:mechanism}
+\begin{tabular}{L{4.6cm}L{5.6cm}L{4.2cm}}
+\toprule
+\textbf{Test} & \textbf{Numbers} & \textbf{Source/section} \\
+\midrule
+JCG$>$0 (mechanism runs) & 200/200 paired seeds; medians 0.0977/0.0977/0.2158/0.2177 & \S\ref{sec:res-act} \\
+Hypothesis-group MRR@1 & 1.0 ($\ge$2-input hypothesis group) & \S\ref{sec:res-act} \\
+$\Delta$JCG$<$0 (C-1..C-4) & ${-}0.402$/${-}0.402$/${-}0.784$/${-}0.782$; Holm $p{=}1.5\times10^{-9}$, $r{=}0.615$, 0/200 reversals & \S\ref{sec:res-act}, \S\ref{sec:whydiff} \\
+MRR (fas vs B2, C-1/C-2) & 0.0435/0.0426 vs 0.5/0.5 & \S\ref{sec:res-act} \\
+Robustness (noise) & slope 0.0076 vs 0.0, AUC 0.0427 vs 0.04, critical noise 0.0$=$0.0 & \S\ref{sec:res-act} \\
+Hidden oracle / insertion order / counterfactual & rank 22.5 unchanged; CV$=$0.0; C2 all 0.0 & \S\ref{sec:res-act} \\
+Combinational O3 (combo) & FAS 30/30 vs B2 0/30, B1 0/30, B3 5/30 (single weight $w{=}0.5$ design) & \S\ref{sec:res-topo} \\
+Weight sweep & both methods reach MRR$=$1.0 together at $w{=}0.7$ (T1$\equiv$T4) & \S\ref{sec:res-topo} \\
+Dilution & $\rho(\mathrm{reach},\mathrm{act})$: $-0.445$ (noise), $-0.656$ (distractor) & \S\ref{sec:res-topo}, \S\ref{sec:whydiff} \\
+Negative-edge test & joint top1 0.0333$=$0.0333, total 17.41 unchanged (no collapse) & \S\ref{sec:res-act} \\
+Relation direction $\rho(\mathrm{score},\mathrm{act})$ & F 0.325 $\rightarrow$ B 0.645 ($p{=}0.002$, $r{=}0.886$, 10/10 seeds; 21/21 tests $p{=}0.001953$) & \S\ref{sec:res-topo} \\
+Vectorized four conditions & 61.5/16.6/45.8/17.2 & \S\ref{sec:res-act} \\
+Affective dose & 49.8/52.5/57.4; disabled$\equiv$neutral (bitwise) & \S\ref{sec:res-system} \\
+Hebbian isolation & 3 edges $+0.074$ vs 0; behavior flat & \S\ref{sec:res-system} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Topology-dependent behavior}
+\label{sec:res-topo}
+\emph{The shared-hub exception.} The only systematic positive difference appears in combinational topology O3: multiple inputs' relevant paths converge through a \emph{shared hub} (joint 2-path via shared pivot). FAS 30/30 complete (B2 0/30, B1 0/30, B3 5/30). We treat the exception cautiously: (i) single design (weight fixed at $w{=}0.5$, no sweep, no selection); (ii) mechanism-level conclusion, no behavioral test; (iii) semantics are clear---when the task requires \emph{convergence} rather than nearest-neighbor, diffusion's multi-path superposition strengthens the target at the hub. It is the positive example of the boundary argument in Section~\ref{sec:whydiff}, not general evidence that ``diffusion is better.''
+
+\emph{Weight threshold, not diffusion advantage.} Weight sweep: both methods jump to MRR$=$1.0 together at $w{=}0.7$ (FAS 0.083@0.5$\rightarrow$1.0@0.7; B2 0.077$\rightarrow$1.0). The jump is a \emph{structural} threshold (signal strength crossing a resolvability boundary), not a FAS-specific advantage---Fig.~\ref{fig:boundary}b shows both curves rising together through the threshold.
+
+\emph{Direction semantics as a structural limit of propagation.} A multi-input convergence probe once measured that demand-side injections are structurally \emph{impossible} to reach shared components through diffusion. A controlled mechanism diagnosis separates two hypotheses: (A) the diffusion engine is broken; (B) the graph's \emph{direction semantics} make recipe structure untraversable to forward propagation. Static audit: the production recipe graph (44 nodes/53 edges) is a depth-1 star forest; the target nodes of all five recipe relations \textbf{are sinks} (sink\_fraction $=1.0$); forward 2-hop reachability is 0. Construct experiment graph B = production graph F + generic reverse-edge projection (41 reverse edges, 53$\rightarrow$94 edges; no node special-casing; sandbox-memory only, \emph{production graph zero modification}); 60 runs $=$ 2 graphs $\times$ 3 injection conditions (I1/I2 single input, I3 dual input) $\times$ 10 paired seeds. Results support B and exclude A: forward reach2 F always 0, B 10/9/12; rank correlation between topological score and diffusion activation $\rho$ rises from F 0.325 to B \textbf{0.645} (I3; $p{=}0.002$, $r{=}0.886$, 10/10 seeds in the same direction; all 21 paired tests $p{=}0.001953$, the minimum possible at $n{=}10$). \textbf{Dilution trade-off}: the shared node (\texttt{item:stick}) absolute activation F 0.833 \emph{vs} B 0.475---the bidirectional projection improves \emph{topological alignment and coverage breadth} (lit nodes 22/21/27 \emph{vs} 6/6/9), not single-node magnitude; ``bidirectional semantics raise shared-node activation'' does not hold. Additive convergence: B/I3 measured 0.475 $\approx$ linear prediction 0.491 (B/I1 0.253 + B/I2 0.239). Gini 0.417 $\rightarrow$ 0.792--0.824. Full data in Appendix~\ref{app:reldir}. Fig.~\ref{fig:boundary}c and the related points jointly delineate the diffusion applicability boundary.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_evidence_matrix.pdf}
+\caption{Unified evidence matrix: eleven experiment families' key results, samples, tests, and verdicts. Row effects are incommensurable units; only the verdict direction ({\checkmark}/$\times$/$\triangle$) is comparable across rows; every number is read programmatically from archived outputs.}
+\label{fig:matrix}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_diffusion_boundary.pdf}
+\caption{The diffusion applicability boundary. (a) Preregistered confirmatory family: all four $\Delta$JCG negative (Holm $p{=}1.5\times10^{-9}$); the only positive point is the combinational topology (star, single-weight $w{=}0.5$ design). (b) Weight sweep: both methods reach MRR$=$1.0 together at $w{=}0.7$---a mechanism threshold, not a FAS advantage. (c) Dilution trade-off: the wider the spread (more reachable nodes), the flatter the target activation ($\rho{=}{-}0.445$, ${-}0.656$).}
+\label{fig:boundary}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  bar/.style={draw, fill=blue!25, minimum height=0pt, anchor=south west},
+  bbar/.style={draw, fill=orange!45, minimum height=0pt, anchor=south west},
+  lbl/.style={font=\scriptsize},
+  axis/.style={gray!60, thin}]
+\node[lbl, anchor=west] at (0,2.7) {(a) 2-hop reachability (reach2 / reach3)};
+\draw[axis] (0,0) -- (5.0,0);
+\fill[blue!25] (0.05,0) rectangle (0.6,0.9); \node[lbl, anchor=west] at (0.4,-0.32) {F: 0};
+\fill[orange!45] (1.2,0) rectangle (1.2+12*0.07,2.0); \node[lbl, anchor=west] at (1.2,-0.32) {B: 9--12 (reach2)};
+\fill[orange!60] (3.4,0) rectangle (3.4+6*0.07,1.2); \node[lbl, anchor=west] at (3.4,-0.32) {B: 6 (reach3)};
+\node[lbl, anchor=west] at (0,-1.55) {(b) topological alignment $\rho(\mathrm{score},\mathrm{act})$ (I3)};
+\draw[axis] (0,-1.55) -- (11.0,-1.55);
+\fill[blue!25] (0.05,-1.55) rectangle (0.05+0.325*8,-1.55+0.9); \node[lbl, anchor=west] at (0.05,-2.42) {F: 0.325};
+\fill[orange!45] (4.2,-1.55) rectangle (4.2+0.645*8,-1.55+0.9); \node[lbl, anchor=west] at (4.2,-2.42) {B: 0.645};
+\node[lbl, anchor=west] at (0,-3.65) {(c) shared-node absolute activation (\texttt{item:stick}, I3)};
+\draw[axis] (0,-3.65) -- (9.0,-3.65);
+\fill[blue!25] (0.05,-3.65) rectangle (0.05+0.833*6,-3.65+0.9); \node[lbl, anchor=west] at (0.05,-4.52) {F: 0.833};
+\fill[orange!45] (4.2,-3.65) rectangle (4.2+0.475*6,-3.65+0.9); \node[lbl, anchor=west] at (4.2,-4.52) {B: 0.475};
+\node[lbl, align=left, anchor=west] at (0,-5.5) {$\rho$ doubles but single-node activation dilutes: the bidirectional projection improves alignment\\ and coverage, not guaranteed higher shared-node absolute activation. Numbers from Appendix~\ref{app:reldir}.};
+\end{tikzpicture}
+\caption{Relation-direction experiment summary (n=10 paired seeds; all 21 tests $p{=}0.001953$, $r{=}0.886$, 10/10 seeds same direction). (a) bidirectional projection restores multi-hop reachability; (b) topological alignment doubles under dual input; (c) shared-node absolute activation is instead lower---the benefit comes with a dilution cost.}
+\label{fig:reldir}
+\end{figure}
+
+\subsection{System-level evidence}
+\label{sec:res-system}
+This section collects system-level and boundary evidence not covered above; it carries the same weight as the positive results.
+
+\emph{Long chain.} A 14-step chain (13 in-recipe + the smelting-instant-settlement simplification; 14 steps, a two-tool intermediary branch, decoy resources) completes 5/5 seeds at 315 ticks under full configuration (L0). Removing graph prior edges \emph{and} the smelting task prior (L3): 0/5 (65 actions/58 redundant/33 failed)---the agent cannot plan out-of-recipe transitions. Re-adding only the smelting prior (L3b) restores the bit-identical 315 ticks. The decomposition is unambiguous: the long chain needs task priors for out-of-recipe transitions beyond the mechanics tables; graph prior edges are dispensable at this depth. $-$diffusion (L1) is faster (259 ticks)---joined to Section~\ref{sec:whydiff}; $-$write-back promotion (L2, 0 promotions) equals L0 (315 ticks)---completion is insensitive to knowledge-organization differences.
+
+\emph{Zero-prior experience starvation.} Three prior levels: P2 (full priors), P1 (mechanics tables only), P0 (zero priors). Two-step craft task, five episodes per seed: P1 and P2 all 25 episodes complete (median 4 ticks, indistinguishable); P0 \textbf{0/25}. Direct replay diagnoses: under P0 the closure planner finds no path to the target's product, and the goal system degrades into perpetual \texttt{explore\_area(target)}; after 60 ticks the inventory is empty and the attribution ledger is completely untouched (0 aggregations/0 hypotheses/0 promotions)---though the graph still grows from perception ($+29$ nodes over 5 episodes). Zero priors do \emph{not} constitute a small-sample test of learning ability: the agent already failed at upstream experience generation. Conclusion: the system is \emph{scaffolded grounded knowledge acquisition}---experience does not automatically become knowledge; the architecture must provide the mechanisms that make experience readable/writable, and those mechanisms constitute the boundary of capability. Graph prior edges are dispensable; the mechanics tables are not.
+
+\emph{Hebbian behavioral face is sub-threshold.} 30 episodes: the enabled condition changes exactly 3 whitelisted edges (monotone, dominated by \texttt{oak\_log}--\texttt{gatherable}, $+0.074$; total-sum drift $+0.079$), the disabled condition zero changes; retrieval ranks and activation delays are bitwise unchanged---mechanism isolation established, behavioral benefit not established.
+
+\emph{Scalar affective modulation.} Fixed task and world, three states (neutral/high-arousal/high-stress) plus a fourth condition (the \emph{same} arousal value with the pathway disabled). Activation quality is monotone in gain ($g{=}0.85$: 49.8; 1.0: 52.5; 1.3: 57.4); disabled is bitwise identical to neutral---the effect isolates to the modulation wiring itself. Action-level metrics do not move: affective modulation changes \emph{how wide cognition unfolds}, not \emph{what gets achieved}.
+
+\emph{CI lifecycle.} The sandbox assembles the continuous-cognition loop with language budget pinned off: CIs form from real experience (3--4 per run, formation times corresponding to basis events; control 0), compete within the cap, strengthen, linger \texttt{ready}, decay into \texttt{discarded}. The re-fire gate never triggers, and the reason is measured (field temperature 1.61--2.12 $\gg$ cold-field threshold 0.35); expression never reached (peak 0.46 $<$ threshold 0.78). CI evidence covers formation through persistence and decay; expression level unvalidated.
+
+\emph{Explicit routing: the repaired exploratory boundary.} The first campaign was rejected by audit (archived as such: the harness never built edges, swallowed 521/521 exceptions, and had an empty focus on 80/80 first steps); the rebuilt official campaign is 520/520 valid. On T4 (competing targets: hunger management + goal), FAS context 19/20 \emph{vs} no-context 15/20 (uncorrected $p{=}0.046$), decisions 5.45 vs 7.25 ($p{=}0.029$), target utilization 0.48 vs 0.30 ($p{=}0.010$)---directional evidence; after multiple-comparison correction over the 280 tests, all $p{\approx}1$, so no confirmatory claim is made. T3 environmental re-routing is significantly slower (4.15 vs 2.3/2.8, $p{=}0.003$/$0.044$); T1/T2 completion is identical across all conditions (20/20). Token costs are structural at 2.1--3.7$\times$ (per-decision prompt: fas 1456/1084/2070/2662 vs direct 661/528/554/1267). Mechanism telemetry confirms the assembly works (diffusion ON: activation divergence 2.4$\rightarrow$9.9; demand present 100\% vs 0\%) and implicates observation-co-occurrence subgraphs as the carrier of the positive effect (Section~\ref{sec:res-topo}). Under this paper's standard, routing conclusions sit with the other negative results; the full campaign and the v1 invalidation record are in Appendix~\ref{app:routing}.
+
+\emph{Live observations.} Real Minecraft bridge (zero LLM in the action path): M1 (25 min, discovery form) net graph $+100$ nodes, $+365$ edges, 400 events (a recorder defect lost 86, patched and labeled as such); M2 (25 min, convergence form) only $+35$ nodes/$+95$ edges with dominant behavior shifted to learned goals (investigate 89); the live causal ledger (89 aggregations / 78 hypotheses / 29 promotions) comes entirely from real behavior. Explicitly: this is \emph{observational} evidence; the causal bridge ``write-back $\rightarrow$ behavioral improvement'' is not established in the live window (M2 had no obtain closed loop---an honest negative observation).
+
+\section{Why Diffusion Does Not Always Help}
+\label{sec:whydiff}
+
+The mechanism campaign's negative conclusion is not an engineering failure but a theoretical contribution: it replaces the slogan ``spreading activation is useful'' with a testable conditional statement. This section organizes all negative results into four cases and one hypothesis.
+
+\subsection{Case A: plain relevant retrieval already suffices}
+Across 4 preregistered conditions and 200 paired seeds, flat path-product is no worse than---and usually better than---diffusion on both JCG and MRR (Section~\ref{sec:res-act}). Combined with D-flat's complete behavioral reproduction (Section~\ref{sec:res-reuse}): when the task only asks ``retrieve the related thing,'' flat retrieval does the same work at lower complexity.
+
+\subsection{Case B: wider spread dilutes the target}
+The dilution check gives the mechanism-level reason: the wider the diffusion front (more reachable nodes), the lower the target activation ($\rho{=}{-}0.445$ noise sweep, ${-}0.656$ distractor sweep). MRR degradation with spread (0.0435/0.0426 \emph{vs} flat 0.5/0.5) and the null robustness sweep jointly show that in interference-rich graphs the breadth of diffusion is a liability, not an asset. This supplies the mechanism-level explanation for the faster $-$diffusion long chain (259 vs 315 ticks): wider activation introduces candidate-side detours.
+
+\subsection{Case C: the shared-hub exception and its conditions}
+The only systematic positive difference (combo 30/30 vs 0/30) is the combinational topology: multi-input relevant paths converging through a shared hub. Joined with A and B, the shape of the boundary is: \emph{when the task needs relational convergence rather than nearest-neighbor retrieval, diffusion can offer at most a directional advantage; when the task only needs nearest-neighbor, flat suffices and is cheaper.} The combinational exception is limited to a single weight design ($w{=}0.5$); we neither generalize it to a law nor claim it holds on larger graphs and more weights (Future Work item 1).
+
+\subsection{Case D: convergence with routing and long-chain results}
+The decision-head campaign converges on the same conclusion: (i) on T1/T2 fully-observable information, all conditions complete equally (20/20)---marginal context value $\approx$ 0; (ii) on T3 re-routing, graph context is \emph{slower}; the only directional positive evidence, T4, appears in an information-competition scenario, carried by observation co-occurrence rather than recipe propagation. The beacon forms the perfect contrast: \emph{information asymmetry} is a necessary condition for memory-context value---the beacon locks knowledge in memory (20/20 vs 0/20), while routing tasks put knowledge in observation (no difference). Together the two directions support ``the condition for cashing out memory value is that decision information is not in current observation.'' \emph{Closure masking} (completion-layer systematic insensitivity to internal differences: B0/B1/B2 all 11 ticks, re-activation three conditions 16, modulation four conditions 9) gives the general statement: on tasks whose closure guarantees reachability, the planner alone suffices and activation-level knowledge falls outside the decision envelope; evaluations that report only closure-guaranteed completion rates systematically fail to detect memory phenomena in their objects of study.
+
+\subsection{A guarded hypothesis (not a law)}
+\label{sec:whydiff-hyp}
+Across A--D we posit a testable hypothesis rather than a law: \emph{when the decision-relevant information is absent from current observation and the task structure requires multi-relation convergence, activation-based access has positive value over flat retrieval; when information is observable or the task is nearest-neighbor, that value is zero or negative.} Its directly testable derivatives (a parameterized shared-hub sweep; an information-asymmetric decision-head task) are listed as future work. The beacon supports the ``information-asymmetry'' side, the combo supports the ``convergence'' side, and the mechanism campaign covers the rest---four evidence lines meet at the hypothesis; none stamp it.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What FAS actually demonstrates}
+\textbf{Shown (within the exact scope of this protocol):} (i) under mechanism-level scaffolding, embodied experience converts into relational structure absent from the initial graph and all injected sources (0 vs 13 nodes, 15 promotions, A2 4 per seed); (ii) that structure persists and re-activates in changed contexts (4/12 vs 0/8 vs 0/0); (iii) two named consumers (ledger, event framework) measurably change behavior (13 vs 16 ticks; 5/5 first-action flips); (iv) under information asymmetry, persistent relational reuse yields behavioral benefit (beacon 20/20 vs 0/20, $p{=}2\times10^{-6}$), fully reproducible by activation-free aggregation; (v) activation dynamics are measurable and separable from noise and lookup (61.5/16.6/45.8/17.2), the convergence mechanism runs (200/200), yet its incremental value over flat is preregistration-rejected (0/200 reversals), with the single exception of the shared-hub combinational topology (30/30 vs 0/30); (vi) relation-direction semantics is the limiting factor for propagation on the measured recipe graph ($\rho$ doubling with coverage expansion and magnitude dilution). \textbf{Not shown:} general intelligence, open-ended learning, universal superiority over LLM agents, causal understanding, universal diffusion benefits, robust value of explicit routing, behavioral Hebbian benefit. Each item is accompanied by its evidence or its absence.
+
+\subsection{The role of scaffolding}
+P0 (0/25) shows scaffolding is not a convenience but a precondition: the goal system locks onto an unreachable target before any attributable experience exists, and the learning channel starves. This positions FAS as \emph{scaffolded grounded} rather than \emph{learning from scratch}: experience \emph{does not automatically become knowledge}; the architecture must provide the mechanisms (attribution window, thresholds, negative-polarity slot edges, mechanics tables) that make experience readable and writable. This observation holds for any system that must act before it can learn, and is among the most important theoretical conclusions of this paper: scaffolding is both a necessary transformation and the boundary of capability.
+
+\subsection{Why the unified graph matters}
+The three functional evidence chains (G's 4/12 re-activation, C's first-action flip, D's suppression flip) exist because experience, semantics, and action candidates \emph{share one addressable structure}: re-activation needs typed edges connecting shared entities; transfer needs historical hit-counts of the shared action to land exactly on the candidate; suppression needs heterogeneous nodes (event, entity, gap anchor) to compete in the same field. In separated stores each coupling would require custom bridging; here they are natural consequences of graph traversal and graph-based activation. The value of the unified graph is of the form \emph{observable consequences}.
+
+\subsection{Why mechanism existence does not equal behavioral change}
+Closure masking and Hebbian sub-threshold together give a two-layer answer. Structurally: on closure-guaranteed tasks the planner achieves alone, and activation-level knowledge falls outside the decision envelope---representational changes are visible only at representational/mechanism-level metrics, which is why this paper reports mechanism and behavior as separate claims, per layer. At the signal level: a $+0.074$ weight drift is below the distinguishable threshold of consumers. Evaluation implication: evaluations that report only closure-guaranteed completion rates systematically fail to detect the memory phenomena of their subject.
+
+\subsection{Implications for future cognitive architectures}
+The next step is not ``tune $\epsilon$ bigger''-style parameter patching: develop stronger event consumers (CI expression-level activation engineering); bake relation-direction semantics into ontology design rather than assume it is naturally correct (per-relation-class direction semantics: recipe-class forward, observation-co-occurrence-class bidirectional); construct beacon task families with genuine information asymmetry; treat scaffolding minimization as an operational research problem. All are concrete experiments in Section~\ref{sec:future}.
+
+\section{Limitations}
+\label{sec:limits}
+(1) Causal vocabulary is rule-like; no interventional/do tests. (2) Single sandbox environment family, single Minecraft-style domain; no third-party benchmarks, no external baseline replications. (3) Long-chain task carries the documented environment simplification. (4) Subject experiments use five deterministic seeds---descriptive statistics only; paired experiments ($n{=}10$, $n{=}20$, $n{=}50$) carry the significance claims with the stated multiple-comparison declarations. (5) Semantic write-back structure is not consumed by the planner; learned knowledge affects behavior through the ledger, event-framework, and re-activation channels only. (6) Zero-prior conditions test locking, not learning ability. (7) Not implemented: prospective memory, full perception pipeline, symbolic reasoning, RL policy nodes; hormone \emph{direct behavioral} control is not implemented (hormone representation within the modulator is in place, and external knowledge acquisition is partially in place via the \texttt{web\_search} action node, outside this paper's experimental scope); several implemented mechanisms are not experimentally validated in this paper. (8) Event-framework behavioral results come from experimental assembly of a production-default-off mechanism. (9) Scaffolding dependence is not quantified. (10) Experimental graphs are small (44--1000 nodes); the relation-direction conclusion is limited to this scale and the recipe relation classes. (11) Routing tasks are fully observable at decision time and the negative results are conditional on that; the decision-head protocol measures context-selection value, with the FAS loop not controlling execution; before 2026-09-30 the cognitive-annotation block rendered in condition D was outside the production answer-pipeline definition (since wired); token costs and directional differences are directional evidence only. (12) The mechanism campaign ($n{=}50$) and relation direction ($n{=}10$) are mechanism-level evidence without production behavioral tests; the single combinational positive difference is limited to a single weight configuration. (13) The beacon is a single task family (craft domain, closed book); cross-task generality of ``information-asymmetry benefit'' is untested.
+
+\section{Future Work}
+\label{sec:future}
+\emph{Parameterized shared-hub family sweep}: joint surface over weight $\times$ hub size $\times$ path depth to delimit Case C's boundary (direct expansion of the single combo point). \emph{Information-asymmetric task family}: extend the beacon to longer chains, partially observable states, delayed consequences, and cross-session dependencies, constructing testable conditions for routing and re-activation value. \emph{Relational ontology refinement}: per-relation-class direction semantics (recipe forward, observation-co-occurrence bidirectional), extending the $n{=}10$ paired conclusion to behavioral tests and more seeds. \emph{Event-framework live validation}: independent observation windows checking polarity stability of failure write-backs (production default off $\rightarrow$ decision-support material, no unilateral ignition). \emph{Scaffolding minimization}: unload mechanics tables one at a time from P1 and quantify marginal contributions. \emph{Stronger consumers}: CI expression-level (0.46 $\rightarrow$ 0.78 engineering path) and expression-behavior causal tests; develop a planning consumption path for semantic write-backs. \emph{Interventional tests}: explicit cut-offs and dose sweeps for each consumption channel; belief-violation stress of the ledger channel. \emph{Scale}: larger graphs, more seeds, multiple domains (plus at least one external evaluation protocol). \emph{LLM integration}: whole-system evaluation at higher utterance density, testing the joint benefit of ``graph persistence + language production.''
+
+\section{Conclusion}
+On a unified cognitive graph, with mechanism-level scaffolding, embodied experience becomes new, typed, evidence-weighted relational knowledge: it persists, re-activates across contexts, and reaches behavior through the ledger and event-framework channels in measurable, deterministic ways; on the information-asymmetric beacon task, persistent relational reuse yields a 20/20 \emph{vs} 0/20 behavioral difference ($p{=}2\times10^{-6}$). Spreading activation provides an access-layer landscape separable from noise and lookup; the multi-input convergence mechanism genuinely runs, but its incremental value over flat retrieval is systematically rejected by the preregistered campaign, with the single positive difference at the shared-hub combinational topology, and relation-direction semantics as the structural limit of propagation. The boundaries are equally clear: no-scaffolding learning regimes are never entered; closure-guaranteed tasks mask internal differences on success metrics; diffusion's causal footprint is knowledge access, not action selection; explicit routing's benefit is not robustly established. We offer the architecture and the protocol---deterministic, zero-LLM, fully archived, with assembly audits---as a substrate for studying these couplings, and hand over all negative results as part of the map.
+
+\begin{algorithm}[t]
+\caption{Spreading-activation step with modulation and suppression}\label{alg:spread}
+\begin{algorithmic}[1]
+\Require activation field $\mathbf{a}(t)$; graph $G$; category gains $\beta_{\mathrm{cat}}, g_{\mathrm{rel}}$; decay $\lambda$; modulation state (arousal $\alpha$, stress $\sigma$)
+\Ensure updated $\mathbf{a}(t{+}1)$
+\State $g \gets \mathrm{clip}(1 + 0.3\,\alpha - 0.15\,\sigma,\ 0.7,\ 1.6)$
+\ForAll{active $u$ with positive-weight total $W^+_u > 0$}
+  \ForAll{out-edges $(u,v,\rho)$}
+    \State $\Delta \gets a_u \cdot \tilde w_{uv} \cdot \beta_{\mathrm{cat}}(\rho) \cdot g_{\mathrm{rel}}(\rho) \cdot g \,/\, \sum_{v'} \max(\tilde w_{uv'},0)$
+    \State $\Delta a_v \mathrel{+}= \Delta$ \Comment{negative $\tilde w$ yields suppression; emit-as-transfer}
+  \EndFor
+  \State collect co-activated endpoint pairs for Hebbian update (whitelisted classes; capped)
+\EndFor
+\ForAll{$v$}
+  \State $a_v \gets \min\big(a_{\max},\ (1-\lambda)\,a_v + \Delta a_v\big)$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+\section{Per-Seed Results and Experiment Provenance}
+\label{app:seeds}
+All subject conditions run on the stated seed pools, deterministic per seed; identical numbers across seeds mean identical trajectories, not averages. Representative per-seed tables are in the machine-generated \texttt{summary.json} files and the fact database \texttt{PAPER\_FACT\_DATABASE.json}; every number in the main text re-reads these files. Table~\ref{tab:family} maps experiment families to main-text sections. Internal history codes are retained for disambiguation.
+
+\begin{table}[ht]
+\centering\small
+\caption{Family $\rightarrow$ section provenance. B0/B1/B2 denote write-back switch injection conditions; Experiment B denotes the diffusion causal experiment; B2 also denotes the diffusion four-condition family (internal history code)---do not conflate.}
+\label{tab:family}
+\begin{tabular}{L{4.6cm}L{3.4cm}L{6.0cm}}
+\toprule
+\textbf{Family (internal code)} & \textbf{Section} & \textbf{Purpose} \\
+\midrule
+Beacon A10 & \S\ref{sec:res-reuse} & information asymmetry: 20/20 vs 0/20 vs 0/20 vs 20/20 \\
+A2 / reuse & \S\ref{sec:res-persist} & 8-round promotion of 4; inheritance and activation residual 5.0 vs 0.0 \\
+B0/B1/B2 (writeback) & \S\ref{sec:res-persist} & write-back isolation 0 vs 13 nodes \\
+G0/G1/G2 & \S\ref{sec:res-persist} & cross-context re-activation 4/12-0/8-0/0 \\
+Exp.\ C (transfer) & \S\ref{sec:res-persist} & ledger channel 13 vs 16 ticks \\
+Exp.\ D/C20e/C20g & \S\ref{sec:res-persist} & event-framework channel @6 vs @9, @15 vs @17 \\
+Exp.\ B (diffusion) & \S\ref{sec:res-act} & diffusion access-layer differences (incl. C18 assembly fix) \\
+B2 (diffusion\_b2) & \S\ref{sec:res-act} & four-condition separation 61.5/16.6/45.8/17.2 \\
+falsification & \S\ref{sec:method-civ}, \ref{sec:res-act} & 663 runs: JCG 0.970, $\ge$2-input MRR@1$=$1.0 \\
+core incremental value & \S\ref{sec:res-act}--\ref{sec:res-topo}, App.~\ref{app:civ} & 34{,}016 runs: C-1..C-4, combo, sweeps, counterfactuals, oracle \\
+C-emo (emotion) & \S\ref{sec:res-system} & dose response 49.8/52.5/57.4 \\
+D-CI (ci) & \S\ref{sec:res-system} & CI lifecycle 3--4; expression unattained \\
+F (hebbian) & \S\ref{sec:res-system} & Hebbian weight isolation $+0.074$; behavior sub-threshold \\
+H/K/L (longchain) & \S\ref{sec:res-system} & L0 315 / L1 259 / L3 0-5 / L3b 5-5 \\
+J/P (prior\_boundary) & \S\ref{sec:res-system} & P0 0/25; P1$=$P2 25/25 \\
+I/U (envchange) & \S\ref{sec:res-system} & environment-change scale insufficient; Q1--Q3 re-validation \\
+M1--M3 (live) & \S\ref{sec:res-system} & observational forms; live causal ledger \\
+A/B matrix (ablation) & \S\ref{sec:whydiff} & completion-layer masking; $-$Prior artifact \\
+S1--S11 (sandbox scenes) & corresponding sections & form and sensitivity observations \\
+baselines (reactive/memory\_only/graph\_retrieval/llm\_heavy) & \S\ref{sec:method} & no-cognition controls \\
+routing v1 (invalid) & \S\ref{sec:res-system}, App.~\ref{app:routing} & declared invalid; not a basis for claims \\
+routing v2 & \S\ref{sec:res-system}, App.~\ref{app:routing} & 520 runs, exploratory boundary \\
+relation direction & \S\ref{sec:res-topo}, App.~\ref{app:reldir} & direction-semantics mechanism diagnosis \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Worked Write-Back Example}
+\label{app:wb}
+The full promotion list of the B2 lineage (15 relations; classification in Table~\ref{tab:taxonomy}) and the corresponding graph snapshots (\texttt{A1\_B1}/\texttt{A1\_B2}) ship with the artifacts. Example promotion (seed 1): \texttt{gather\_resource(oak\_log)} $\xrightarrow{\texttt{leads-to}}$ \texttt{change:inventory:oak\_log:count\_increased}, cumulative support 8 / confidence 0.889 after 8 rounds, both endpoints mark-activated on write.
+
+\begin{table}[h]
+\centering\small
+\caption{B2-lineage (seed 1) 15 promoted-relation taxonomy. Classification by edge content; the two window-polluted pairs are a subset of the substantive class.}
+\label{tab:taxonomy}
+\begin{tabular}{L{6.6cm}L{2.2cm}L{5.2cm}}
+\toprule
+\textbf{Promoted relation} & \textbf{Class} & \textbf{Reading} \\
+\midrule
+\texttt{gather\_resource(oak\_log)} $\rightarrow$ \texttt{change:inventory:\newline oak\_log:count\_increased} & substantive & mining yields items \\
+\texttt{gather\_resource(oak\_log)} $\rightarrow$ \texttt{change:block:\newline oak\_log:disappeared} & substantive & mining removes blocks \\
+\texttt{craft\_item(oak\_planks)} $\rightarrow$ \texttt{change:inventory:\newline oak\_log:count\_decreased} & substantive & crafting consumes logs \\
+\texttt{craft\_item(oak\_planks)} $\rightarrow$ \texttt{change:inventory:\newline stick:count\_decreased} & substantive & crafting consumes sticks \\
+$\;\;\vdots$ (7 further inventory/block pairs) & substantive & \\
+\midrule
+\texttt{gather\_resource(oak\_log)} $\rightarrow$ \texttt{change:inventory:\newline oak\_planks:count\_increased} & substantive, window-polluted & downstream craft attributed to upstream gather \\
+\texttt{gather\_resource(oak\_log)} $\rightarrow$ \texttt{change:inventory:\newline stick:count\_increased} & substantive, window-polluted & same \\
+\midrule
+\texttt{$\{A\}$} $\rightarrow$ \texttt{change:self:\{A\}:succeeded} ($\times 4$) & degenerate & action $\rightarrow$ own success; tautology \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Routing v2: Full Campaign}
+\label{app:routing}
+\subsection{v1 invalidation record}
+The first campaign (v1) was rejected by assembly audit before formal writing: R1 the experimental graph had zero edges (the runner never built edges; activation only traveled existing edges); R2 521/521 demand/gap/routing calls threw, swallowed into placeholder text (the ``--demand'' ablation $\equiv$ identity); R3 80/80 first-step focus empty. No v1 number (including anything in earlier paper drafts) is a basis for any claim in this paper; the paper's own stale statistics file has been renamed \texttt{statistics\_V1\_INVALID.csv} with notes (\texttt{STATISTICS\_README.md}), and the current \texttt{statistics.csv} is the official v2 campaign statistics.
+
+\subsection{v2 results}
+Table~\ref{tab:routing} summarizes the official campaign (520/520 valid; 9 harness invariants pass; core exceptions 0). Token statistics (per-decision prompt means): fas\_full 1456/1084/2070/2662 (T1--T4) vs llm\_direct 661/528/554/1267, i.e., 2.1--3.7$\times$; all 20 principal token comparisons $p\le0.003$. Mechanism telemetry (ablation family $n{=}40$): diffusion ON raises activation divergence 2.4$\rightarrow$9.9, pick precision 0.717 vs 0.734, demand present 100\% vs 0\% (ablation control valid).
+
+\begin{table}[ht]
+\centering\small
+\caption{Routing v2: task-level results ($n{=}20$ paired seeds, Wilcoxon; correction statement in text).}
+\label{tab:routing}
+\begin{tabular}{L{3.4cm}L{3.0cm}L{3.4cm}L{4.0cm}}
+\toprule
+\textbf{Task} & \textbf{Key contrast} & \textbf{Numbers} & \textbf{Significance (uncorrected)} \\
+\midrule
+T1 knowledge reuse & fas vs direct decisions & 3.25 vs 4.2 & $p{=}0.064$ (directional fewer) \\
+T1 knowledge reuse & fas vs history & 3.25 vs 2.5 & $p{=}0.035$ (worse) \\
+T2 interference suppression & all conditions completion & 20/20 & none (ceiling) \\
+T3 environmental re-routing & fas vs history / rag & 4.15 vs 2.3 / 2.8 & $p{=}0.003$ / $0.044$: slower \\
+T4 competing targets & fas vs direct completion & 19/20 vs 15/20 & $p{=}0.046$ (directional) \\
+T4 competing targets & decisions & 5.45 vs 7.25 & $p{=}0.029$ \\
+T4 competing targets & target utilization & 0.48 vs 0.30 & $p{=}0.010$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Reading}
+After Bonferroni correction over 280 tests, all three T4 metrics give $p{\approx}1$; T4 is therefore directional only. The positive reading is ``FAS context $\neq$ no context'' in an information-competition scenario; but mechanism telemetry joined with Section~\ref{sec:res-topo} implicates associative recall on observation-co-occurrence subgraphs, not propagation of recipe knowledge, as the carrier. T3's efficiency deficit and token costs are the robust cost side. The campaign's boundary assumption (fully observable tasks $\Rightarrow$ limited marginal value of memory context) is stated in the main text, together with its untested complement (information asymmetry)---the beacon task (Section~\ref{sec:res-reuse}) provides the first closing evidence for exactly that complement.
+
+\section{Relation-Direction Experiment: Full Data}
+\label{app:reldir}
+Static audit (production recipe graph, 44 nodes/53 edges): the five relation classes (produces 8 / belongs 18 / drops 13 / needs 11 / needs-tool 3) have all-sink targets (sink\_fraction $=1.0$); \texttt{item:*} 13/13 with zero out-edges; a depth-1 star forest; forward 2-hop reachability 0. Graph B = F + 41 generic reverse projections (53$\rightarrow$94 edges, no node special-casing). 60 runs $=$ 2 graphs $\times$ 3 injections (I1/I2 single, I3 dual) $\times$ 10 paired seeds; all 21 paired tests $p{=}0.001953$ (minimum possible for $n{=}10$ Wilcoxon), $r{=}0.886$, 10/10 seeds same direction. Main-axis numbers: reach2 F 0 / B 10,9,12; reach3 B 6; lit nodes 6,6,9 / 22,21,27; $\rho(\mathrm{score},\mathrm{act})$ F 0.265/0.275/0.325 vs B 0.542/0.513/0.645 (I3 dual input $p{=}0.002$); shared-node absolute activation (I3) F 0.833 vs B 0.475 (single-input I1/I2 0.417 vs 0.253/0.239); additive prediction 0.491 $\approx$ B/I3 measured 0.475; Gini 0.417 $\rightarrow$ 0.792--0.824. Not run, recorded as such: the suppression-OFF control (C3) is UNAVAILABLE because the architecture has no global negative-weight switch; no behavioral experiment this round; the production graph was not modified.
+
+\section{Mechanism Campaign: Configuration and Full Statistics}
+\label{app:civ}
+The preregistration is in full at \texttt{experiments/core\_incremental\_value/} (manifest.json includes the committed seed reservoir and the H3-rejection scenario). The statistics file \texttt{statistics.csv} (family=primary, four rows) and \texttt{analysis.json} (all sweep/counterfactual/permutation/weight/negative-edge/hidden-oracle keys) ship with the artifacts; every T4 number (Table~\ref{tab:mechanism}) and Fig.~\ref{fig:boundary} datum is read programmatically from these two files. (Provenance correction: \texttt{research\_audit/mechanism\_falsification/} is the 663-run falsification campaign establishing the convergence reference model (JCG$>$0 rate 0.970; MRR@1$=$1.0 hypothesis group); \texttt{experiments/mechanism\_campaign/} is the later activation-landscape audit whose probes failed and whose formal runs never executed---do not conflate the two.)
+
+\section{Implementation $\rightarrow$ Claim Audit (Full Table)}
+\label{app:audit}
+The full audit (2026-09-30; \texttt{research\_audit/CLAIM\_IMPLEMENTATION\_MATRIX.md}) covers 17 claims (S1--S7/Q1--Q5/U1--U5) with zero conflicts between audit verdicts and the paper's self-assessment; one extra finding was actioned: the production answer pipeline did not render attention\_context and demand/routing annotations (audit-identified definitional gaps CON-1/CON-2), wired on 2026-09-30 (\texttt{nlp\_render\_cognitive\_context=True}; the eight-zone and demand/gap/resource three-layer annotation enters the production prompt at dimension-name level; values are not exposed); Q1/U5 hold under the harness definition, and production now attaches the same channel. Remaining audit points (per-claim implementation locations for S1--S7 and Q1--Q5, and the U2 clarification that the paper never claimed a standalone logic-closure module) are in the main-text Table~\ref{tab:audit} and the audit file itself.
+
+\section{Configuration}
+Sandbox clock 16 s/tick; attribution window 8--120 s; promotion thresholds $s\ge5$, $\mathrm{conf}\ge0.80$ (Laplace $s/(s+c+2)$); diffusion clamped by per-space caps (episodic 3.0 / global 5.0), category-dependent $\lambda$, emission normalized by positive weight, emit-as-transfer coefficient 1.0 (sources exempt); modulation clip $[0.7,1.6]$; Hebbian $\epsilon{=}0.0015$, $\gamma_{\max}{=}0.5$, whitelisted classes \{\texttt{semantic-relation}, \texttt{emotional-relation}\}; CI cap 3, formation 0.55, expression 0.78, discard 0.10; re-fire cold-field threshold 0.35; event-framework production switch \texttt{experience\_eventframe.enabled=False}; beacon hooks: closed-book recipe, craft-menu gating, facts stripped, seed\_goal=False; mechanism campaign: T1--T4 topologies (3in/100n/25\%, 3in/300n/50\%, 5in/300n/50\%, 5in/1000n/75\%), B1--B4 generators, JCG definition, Holm correction, committed seeds (full machine-readable configuration ships with the artifacts, including the seed reservoir).
+
+\end{document}

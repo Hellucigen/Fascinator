@@ -1,0 +1,24 @@
+{
+ "verification": {
+  "flat_focus_uses_EmbeddingProvider": true,
+  "no_activation_no_propagation": false,
+  "model_path": "BAAI/bge-small-zh-v1.5",
+  "model_is_dir": false,
+  "k": 8,
+  "model_name": "BAAI/bge-small-zh-v1.5"
+ },
+ "analysis": {
+  "n": 20,
+  "top8_hit_planks": 20,
+  "top8_hit_log": 20,
+  "planks_rank_set": [
+   2
+  ],
+  "log_rank_set": [
+   4
+  ],
+  "graph_nodes": [
+   44
+  ]
+ }
+}

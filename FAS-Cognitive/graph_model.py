@@ -147,6 +147,34 @@ DEFAULT_GRAPH_SPACE = "semantic"
 # 历史上这三处各自抄了一份字面量，改一处要同步三处——统一到这里。
 ENGINE_PART_LABELS = ("infrastructure", "procedural", "disposition")
 
+# ── 内容资格 vs 计算资格（2026-10-20 根因修复 C1/C2）──
+# 图谱里住着第三种东西：既不是引擎零件、也不是"一条具体记忆/内容"的
+# **本体脚手架**——先验类别节点（用途/属性/自然物…）、言外行为标签（断言/
+# 指令…）、时间桶（傍晚/夜间…）、性格维度镜像。它们有正当的计算用途
+# （缺口推理、分类传播、时段关联、调制），扩散与边一概不挡；但它们会
+# 因为度大+常驻激活而冒充"记忆"挤进 basis/热素材/被动 top-k（实拍：
+# 断言3.66、属性进全部三个念头）。内容资格只看数据标记，不看节点名。
+CONTENT_SCAFFOLD_TYPES = frozenset({
+    "prior_concept",        # prior_knowledge/world_prior 本体表
+    "speech_act_concept",   # Searle 五类言外行为标签
+    "time_of_day", "day_phase",   # 时间桶/昼夜层
+    "trait",                # 性格维度镜像
+    "time_node",            # 情景时间链锚点（time_chain.py，2026-10-21）
+})
+CONTENT_SCAFFOLD_SOURCES = frozenset({
+    "prior_seed", "mc_world_seed", "world_prior",
+})
+
+
+def is_content_scaffold(node) -> bool:
+    """内容资格判定（单一真源，同 is_cognitive_visible 的分工哲学）：
+    True=本体/标签/时间桶/性格脚手架——可参与扩散与计算，不得作为
+    记忆内容进候选/basis/回答上下文。不误伤：真实经历、普通概念、
+    用户/自我实体均不命中；时间**信息**仍由 raw_dialog/时刻行供给。"""
+    a = getattr(node, "extra_attrs", {}) or {}
+    return str(a.get("type") or "") in CONTENT_SCAFFOLD_TYPES or \
+        str(a.get("source") or "") in CONTENT_SCAFFOLD_SOURCES
+
 
 def is_cognitive_visible(node) -> bool:
     """节点是否作为"认知内容"参与语义召回与回答上下文。
@@ -162,11 +190,76 @@ def is_cognitive_visible(node) -> bool:
       其余 → 引擎零件，不可见
 
     Note: 能力节点多为 procedural（它们由动作执行器实现），因此标记优先于 label。
+    调制镜像（drive/cognitive_network/modulator 等）不是内容（2026-10-19
+    表达边界修复）——它们参与扩散与排序，但永不作为语义素材外显。
     """
     attrs = getattr(node, "extra_attrs", {}) or {}
+    if is_modulator_node(node):
+        return False
+    if is_content_scaffold(node):
+        return False          # 本体/标签/时间桶：计算在场，内容缺席
     if attrs.get("self_capability"):
         return True
     return getattr(node, "label", "") not in ENGINE_PART_LABELS
+
+
+# 两级内容禁入谓词（2026-10-19 任务书原则一/1.4，type 全部来自真实创建
+# 代码，不猜名字）：
+#   is_modulator_node：认知控制量（驱动/网络/调制器/靶）——内容链路全面
+#     禁入；在表达素材里连行都不出现。
+#   is_state_mirror：运行状态镜像（桥连接状态等）——禁入**内容配对**
+#     （假设端点、basis、联想证据），但允许经"诚实状态注记"参与当前
+#     状态判断（渲染保留〔桥接状态（当前=…）〕行，不得叙述成经历）。
+# canon=cognitive_state 是控制量镜像的通用兜底（mc_session 除外——它归
+# 状态镜像级）。
+MODULATOR_NODE_TYPES = frozenset({
+    "drive", "cognitive_network", "modulator", "modulator_target",
+})
+STATE_MIRROR_TYPES = frozenset({"mc_session"})
+
+
+def is_modulator_node(node) -> bool:
+    """认知控制量：只允许参与扩散调制/内部排序，禁止进入假设配对、
+    内容素材、prompt 叙述、摘要与调试输出（其邻居不受牵连）。"""
+    attrs = getattr(node, "extra_attrs", {}) or {}
+    t = str(attrs.get("type") or "")
+    if t in MODULATOR_NODE_TYPES or t in STATE_MIRROR_TYPES:
+        return t in MODULATOR_NODE_TYPES
+    return str(attrs.get("canon") or "") == "cognitive_state"
+
+
+# 只进不出的节点类型（2026-10-20 共振腔修复）：内部痕迹与状态镜像可以
+# 被点亮（"我在想它"合法），但不得向外界泵能量——非消耗级联里任意一条
+# 双向痕迹边（思考—关于→X / X—关于→思考）都是自激振荡器，实测
+# Minecraft会话(5.0)⇄两个 10-09 旧念头互相供电钉死封顶十一天。
+# 泛化自 action_outcome 的既有先例（2026-10-15 同款实测注释）。
+NON_EMITTING_TYPES = frozenset({
+    "action_outcome", "thought", "reflection", "communication_intention",
+    "intention", "expression_event", "feedback_pending",
+    "time_node",   # 时间链锚点是纯结构（2026-10-21）：不参与能量与内容
+})
+
+
+def is_non_emitting(node) -> bool:
+    """内部痕迹/镜像：只接收激活，不发射（级联物理的能量守恒护栏）。
+    数据判据=type 字段；drive/modulator 不在其列（它们的注入是设计通道）。"""
+    a = getattr(node, "extra_attrs", {}) or {}
+    return str(a.get("type") or "") in NON_EMITTING_TYPES or is_state_mirror(node)
+
+
+def is_state_mirror(node) -> bool:
+    """状态镜像：可参与状态判断（带注记），不得参与内容联想与经历叙述。"""
+    attrs = getattr(node, "extra_attrs", {}) or {}
+    return str(attrs.get("type") or "") in STATE_MIRROR_TYPES
+
+
+def is_internal_trace(node) -> bool:
+    """内部痕迹（非发射节点去掉状态镜像）：思考/反思/行动记录/表达事件等。
+    它们经双向 关于 边持续**累积**能量（黑户），旧想法因此能在热位挂几天
+    （10-21 实锤：10-14 的 思考_1791964801 act=2.35 进"所用图谱"）——内容
+    素材视图（render 热切片、调试气泡 hot）不该把它们当"这次话用的东西"；
+    想法本身另有 思路流 段按时间呈现。镜像不在此列（保留带注记的状态行）。"""
+    return is_non_emitting(node) and not is_state_mirror(node)
 
 # ── 关系类别（Architecture Refactor 0.1；episodic_relation 增于架构对齐 2026-09-19）──
 # relation_category 决定边的传播方向、衰减倍率与激活增益。
@@ -484,7 +577,8 @@ class KnowledgeGraph:
 
     # ---- 边操作 ----
 
-    def add_edge(self, edge: Edge, force_weight: bool = False) -> bool:
+    def add_edge(self, edge: Edge, force_weight: bool = False,
+                 keep_relation: bool = False) -> bool:
         with self._lock:
             if edge.src not in self.nodes or edge.dst not in self.nodes:
                 # PIN-11 留痕:主写图路径(202 处调用)大多不检查返回值,
@@ -495,10 +589,39 @@ class KnowledgeGraph:
                     f"[图谱] add_edge 被丢弃(端点缺失): {edge.src} "
                     f"-[{edge.relation}]-> {edge.dst}")
                 return False
+            if edge.src == edge.dst:
+                # 本体自环无意义（2026-10-21 普查 7 条：种子表把 cobblestone
+                # 产 cobblestone、别名"容器"属于"容器"等写成自映射，抽取漏斗
+                # 也漏过 src==dst）。在**唯一主写入口**拒收，所有产生方一并
+                # 治愈——数据卫生闸，不是内容闸。
+                logger.warning(
+                    f"[图谱] add_edge 被丢弃(自环): {edge.src} "
+                    f"-[{edge.relation}]->")
+                return False
             # ── 关系归一漏斗（架构对齐 2026-09-19）──
             # 只允许规范原子关系入图；同义表面形式就地归一（mutate 传入对象，
             # 调用方后续引用同一对象时看到的也是规范词）。
-            edge.relation = _norm_rel(edge.relation)
+            # keep_relation（2026-10-19 外部抽取语义保真）：外部内容抽取
+            # 通道对"词表表达不了、但有原文证据的具体谓词"保留原词；调用
+            # 方须自行给出 relation_category（传播按共现类走）并在边上标
+            # relation_status="unnormalized"。其余写图路径行为逐字不变。
+            _raw_rel = str(edge.relation or "").strip()
+            if keep_relation:
+                if not isinstance(edge.extra_attrs, dict):
+                    edge.extra_attrs = {}
+            else:
+                edge.relation = _norm_rel(edge.relation)
+                _fb = _schema().FALLBACK_RELATION
+                if (_raw_rel and str(edge.relation) == _fb
+                        and _raw_rel != _fb
+                        and not (edge.extra_attrs or {}).get("relation_raw")):
+                    # 兜底压平必须可见：词表外自由谓词被压成"关联"时，
+                    # 原始谓词与状态写进边属性——"关联"从此可以被审计，
+                    # 不改变图语义本身。
+                    if not isinstance(edge.extra_attrs, dict):
+                        edge.extra_attrs = {}
+                    edge.extra_attrs["relation_raw"] = _raw_rel[:24]
+                    edge.extra_attrs["relation_status"] = "normalized_fallback"
             # 类别补全：调用方未显式指定（留默认）时，按规范词表的类别落。
             if edge.relation_category == DEFAULT_RELATION_CATEGORY:
                 edge.relation_category = _schema().category_for(edge.relation)

@@ -9,7 +9,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-_YAMNET_MODEL_DIR = os.environ.get("YAMNET_MODEL_DIR", "E:/Models/yamnet_model")
+_YAMNET_MODEL_DIR = os.environ.get("YAMNET_MODEL_DIR", "E:/Models/audio/yamnet_model")
 _YAMNET_CLASS_MAP = os.path.join(_YAMNET_MODEL_DIR, "assets", "yamnet_class_map.csv")
 
 _yamnet_model = None

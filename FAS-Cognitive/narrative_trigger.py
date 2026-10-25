@@ -42,6 +42,12 @@ ACTION_VERBS = ("去", "吃", "喝", "玩", "买", "睡", "跑", "坐", "飞", "
 CLAUSE_SPLIT = re.compile(r"[。！？!?；;，,\n]+")
 TOKEN_RE = re.compile(r"[\u4e00-\u9fa5A-Za-z0-9]{2,}")
 
+# 概念定义信号词（A1，2026-10-20）：区分"讲解概念"与"讲述事件"——
+# 心理可见性案例的根修判据（详见 narrative_score 内注释）
+DEFINITION_MARKERS = ("概念", "理论", "术语", "定义为", "指的是", "是指",
+                      "所谓", "称为", "叫做", "意思是", "提出", "机制",
+                      "定义", "解释")
+
 # 阈值
 THRESHOLD_BALANCED = 0.35
 THRESHOLD_ECONOMY = 0.65
@@ -91,8 +97,24 @@ def narrative_score(text: str, profile: str = "balanced") -> dict:
         0.30 * event_score + 0.25 * temporal_score + 0.25 * causal_score
         + 0.10 * shared_score + 0.10 * state_score + bonus, 3)
 
+    # 概念定义信号（2026-10-20 根因修复 A1，综合判据而非单一长度阈值）：
+    # "提出了X概念，X是指……"这类聊天从句多、偶含"说/提出"，旧判分器把
+    # 它判成剧情 → 概念抽取通道整轮被跳过，术语只活在情节摘要文本里，
+    # 永远无法作为节点被扩散（心理可见性案例）。四类内容的区分：
+    #   纯叙事（事件推进强）           → narrative
+    #   定义/讲解主导（事件推进弱）     → normal（走概念/断言抽取）
+    #   混合（定义强且事件也强）        → narrative（概念由 A2 entities
+    #                                     条款与 B1 留痕在叙事通道内兜住）
+    #   普通聊天（都弱）                → normal
+    # 事件子句判据在"被看到/被理解"这类被动描述上误报（"看"字命中），
+    # 所以主导性用**故事推进的硬信号**：没有任何时间/因果连接词的
+    # 多定义标记文本，是在讲解概念而不是讲述事件。
+    def_hits = sum(1 for w in DEFINITION_MARKERS if w in joined)
+    definition_dominant = def_hits >= 2 and (t_hits + c_hits) == 0
+
     threshold = THRESHOLD_ECONOMY if profile == "economy" else THRESHOLD_BALANCED
-    is_narrative = n_clauses >= 2 and score >= threshold
+    is_narrative = (n_clauses >= 2 and score >= threshold
+                    and not definition_dominant)
 
     return {
         "score": score,
@@ -108,6 +130,8 @@ def narrative_score(text: str, profile: str = "balanced") -> dict:
             "bonus": bonus,
             "temporal_hits": t_hits,
             "causal_hits": c_hits,
+            "definition_hits": def_hits,
+            "definition_dominant": definition_dominant,
         },
         # 第一人称信号：供 _ingest_narrative 区分 经历 vs 讲述
         "first_person": bool(re.search(r"我[们]?|俺|本人", joined)),

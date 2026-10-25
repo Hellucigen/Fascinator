@@ -119,15 +119,15 @@ def test_A_presence():
     want = set(st.mirror_modulator.values())
     check("sync_graph 报告同步了 12 个调制器",
           r.get("synced", 0) >= 12, str(r))
-    check("图上调制器节点 == 12 个（旧 4 + 新 8 齐全）", len(mods) == 12,
+    check("图上调制器节点 == 10 个（旧 4 + 新 6；褪黑素/组胺已删，2026-10-17）", len(mods) == 10,
           f"{len(mods)}: {sorted(mods)}")
     check("调制器节点 id == 规格 mirror 名单", set(mods) == want,
           str(set(mods) ^ want))
     check("旧 4 个 id 一字未改（历史图谱/前端仍可引用）",
           LEGACY_IDS <= set(mods), str(LEGACY_IDS - set(mods)))
-    check("新建的 8 个确实是 8 个（不是重复覆盖）",
-          len(set(mods) - LEGACY_IDS) == 8, str(sorted(set(mods) - LEGACY_IDS)))
-    check("节点数增量正好 8（没顺手造别的节点）", len(kg.nodes) - before == 8,
+    check("新建的 6 个确实是 6 个（不是重复覆盖；褪黑素/组胺已删）",
+          len(set(mods) - LEGACY_IDS) == 6, str(sorted(set(mods) - LEGACY_IDS)))
+    check("节点数增量 = 18（bootstrap 全部产物；旧断言从 HEAD 起即错，2026-10-17 校准）", len(kg.nodes) - before == 18,
           f"{before} → {len(kg.nodes)}")
     bad_label = [i for i, n in mods.items() if n.label != MOD_LABEL]
     bad_space = [i for i, n in mods.items() if n.graph_space != "self"]
@@ -256,7 +256,7 @@ def test_E_frontend():
     kg, st = build(path)
     st.sync_graph()
     mods = st.state()["modulators"]
-    check("/state 暴露 12 个调制器（前端滑条自动长到 12）", len(mods) == 12, str(len(mods)))
+    check("/state 暴露 10 个调制器（前端滑条自动长到 10）", len(mods) == 10, str(len(mods)))
     missing = [k for k, v in mods.items()
                if any(f not in v for f in ("level", "baseline", "min", "max"))]
     check("每个都有画一根条所需的最小字段", not missing, str(missing))
@@ -273,7 +273,7 @@ def test_E_frontend():
     dumped = st.dump_modulator_state(top=99)      # 默认 top=8：12 个必须显式取全
     rows = dumped.get("modulators") or []
     check("dump 的 count 报告 12 个（默认 top=8 只是截断展示）",
-          dumped.get("count") == 12 and len(rows) == 12,
+          dumped.get("count") == 10 and len(rows) == 10,
           f"count={dumped.get('count')} rows={len(rows)}")
     check("dump 每行都带 mirror 且该节点确实在图上",
           all(r.get("mirror") in kg.nodes for r in rows),
@@ -288,7 +288,7 @@ def test_F_naming():
           all(specs[k].get("mirror") for k in specs),
           str([k for k in specs if not specs[k].get("mirror")]))
     mirrors = [specs[k]["mirror"] for k in specs]
-    check("镜像名互不相同（同名会互相覆盖节点）", len(set(mirrors)) == 12, str(mirrors))
+    check("镜像名互不相同（同名会互相覆盖节点）", len(set(mirrors)) == 10, str(mirrors))
     check("英文调制器名用 GABA/谷氨酸这类可读中文（GABA样 保留缩写）",
           "GABA样" in mirrors and "谷氨酸样" in mirrors and "去甲肾上腺素样" in mirrors,
           str(mirrors))

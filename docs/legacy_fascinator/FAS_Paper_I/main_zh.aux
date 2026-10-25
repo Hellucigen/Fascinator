@@ -1,0 +1,127 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{anderson2004integrated}
+\citation{laird2012soar}
+\citation{yao2023react,park2023generative,shinn2023reflexion}
+\citation{collins1975spreading}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{引言}{section.1}{}}
+\citation{anderson2004integrated}
+\citation{laird2012soar}
+\citation{hart2008opencog}
+\citation{tulving1983elements,baddeley2000episodic}
+\citation{zacks2007event,schacter2007remembering}
+\citation{collins1975spreading}
+\citation{itti2001computational,posner1980orienting,cowan2001magical}
+\citation{yao2023react}
+\citation{park2023generative}
+\citation{shinn2023reflexion}
+\citation{lewis2020rag}
+\citation{gutierrez2024hipporag}
+\citation{edge2024graphrag}
+\citation{packer2023memgpt}
+\citation{wang2023voyager}
+\@writefile{toc}{\contentsline {section}{\numberline {2}相关工作}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{相关工作}{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Fascinator 架构}{2}{section.3}\protected@file@percent }
+\newlabel{sec:arch}{{3}{2}{Fascinator 架构}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 统一图谱本体（示意）。七个标签类与八个关系类型共享单一命名空间；不存在独立的情景、技能或意图存储。跨空间链接（蓝色、走廊绕行）是核心能力：从 \texttt  {action experience} 指向 \texttt  {change} 的 \texttt  {leads-to} 边（权重 = 置信度）是写回管线的产物（第\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces \ref {sec:arch-wb} 节）；\texttt  {gap} 指向实体以注入激活；\texttt  {event} 携带负极性槽边（红色虚线）抑制实体（第\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces \ref {sec:arch-persist} 节）。}}{3}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:ontology}{{1}{3}{统一图谱本体（示意）。七个标签类与八个关系类型共享单一命名空间；不存在独立的情景、技能或意图存储。跨空间链接（蓝色、走廊绕行）是核心能力：从 \texttt {action experience} 指向 \texttt {change} 的 \texttt {leads-to} 边（权重 = 置信度）是写回管线的产物（第~\ref {sec:arch-wb} 节）；\texttt {gap} 指向实体以注入激活；\texttt {event} 携带负极性槽边（红色虚线）抑制实体（第~\ref {sec:arch-persist} 节）。}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}统一认知图谱}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:arch-graph}{{3.1}{3}{统一认知图谱}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}认知状态与传播激活}{3}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:arch-act}{{3.2}{3}{认知状态与传播激活}{subsection.3.2}{}}
+\newlabel{eq:spread}{{1}{3}{认知状态与传播激活}{equation.1}{}}
+\newlabel{eq:mod}{{2}{3}{认知状态与传播激活}{equation.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 传播激活与平坦检索并排示意。图中每一数字论断均来自第\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces 5.3 节的归档实验；示意图只建立直觉。}}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:act-schematic}{{2}{4}{传播激活与平坦检索并排示意。图中每一数字论断均来自第~5.3 节的归档实验；示意图只建立直觉。}{figure.caption.2}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces 归因--写回：经历到关系知识}}{4}{algorithm.1}\protected@file@percent }
+\newlabel{alg:wb}{{1}{4}{归因--写回：经历到关系知识}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}经历归因与写回}{4}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:arch-wb}{{3.3}{4}{经历归因与写回}{subsection.3.3}{}}
+\newlabel{eq:wb}{{3}{4}{经历归因与写回}{equation.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}持久化与消费者}{4}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:arch-persist}{{3.4}{4}{持久化与消费者}{subsection.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces FAS 概念闭环：从具身交互到可复用关系知识，再经激活与消费者回到行为。虚线块为支架（机制表；零先验结果刻画其必要性，第\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces \ref {sec:res-system} 节）与消费通道。LLM 在闭环中的位置只有语言生成/解释/反思（第\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces \ref {sec:arch-llm} 节）。}}{5}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:loop}{{3}{5}{FAS 概念闭环：从具身交互到可复用关系知识，再经激活与消费者回到行为。虚线块为支架（机制表；零先验结果刻画其必要性，第~\ref {sec:res-system} 节）与消费通道。LLM 在闭环中的位置只有语言生成/解释/反思（第~\ref {sec:arch-llm} 节）。}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}作为预算化接口的 LLM}{5}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:arch-llm}{{3.5}{5}{作为预算化接口的 LLM}{subsection.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}经历到知识的闭环}{5}{subsection.3.6}\protected@file@percent }
+\newlabel{sec:arch-loop}{{3.6}{5}{经历到知识的闭环}{subsection.3.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}评估协议}{5}{section.4}\protected@file@percent }
+\newlabel{sec:method}{{4}{5}{评估协议}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}环境、确定性，以及“配对种子”的含义}{5}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:method-env}{{4.1}{5}{环境、确定性，以及“配对种子”的含义}{subsection.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 证据等级 $\times $ 协议层（合并尺度；用于归属本文每一条主张）。}}{6}{table.caption.4}\protected@file@percent }
+\newlabel{tab:evidence}{{1}{6}{证据等级 $\times $ 协议层（合并尺度；用于归属本文每一条主张）。}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}预注册与证据记账}{6}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:method-prereg}{{4.2}{6}{预注册与证据记账}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}机制战役协议（预注册）}{6}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:method-civ}{{4.3}{6}{机制战役协议（预注册）}{subsection.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 统计口径表（每个比较族一行；含实现位置的完整版见补充材料 S18）。“状态”：pre $=$ 预注册；post $=$ post-hoc；desc $=$ 描述性（无检验）。本文所有 $p$ 值均由本表所列检验产生。}}{7}{table.caption.5}\protected@file@percent }
+\newlabel{tab:stats}{{2}{7}{统计口径表（每个比较族一行；含实现位置的完整版见补充材料 S18）。“状态”：pre $=$ 预注册；post $=$ post-hoc；desc $=$ 描述性（无检验）。本文所有 $p$ 值均由本表所列检验产生。}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}LLM 决策头协议（路由实验）}{7}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:method-routing}{{4.4}{7}{LLM 决策头协议（路由实验）}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}可复现性}{7}{subsection.4.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 信标任务结果（每条件 $n{=}20$ 配对种子；共 80 run）。全部数字来自归档战役分析。}}{8}{table.caption.6}\protected@file@percent }
+\newlabel{tab:beacon}{{3}{8}{信标任务结果（每条件 $n{=}20$ 配对种子；共 80 run）。全部数字来自归档战役分析。}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}结果}{8}{section.5}\protected@file@percent }
+\newlabel{sec:results}{{5}{8}{结果}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}持久关系复用：信息不对称信标任务}{8}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:res-reuse}{{5.1}{8}{持久关系复用：信息不对称信标任务}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}写回隔离、持久化与消费}{8}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:res-persist}{{5.2}{8}{写回隔离、持久化与消费}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}基于激活访问的预注册边界分析}{9}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:res-boundary}{{5.3}{9}{基于激活访问的预注册边界分析}{subsection.5.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 预注册边界分析：关键机制级数字。全部数值程序化读取自归档统计文件；完整数据见补充材料 S7--S9。}}{10}{table.caption.7}\protected@file@percent }
+\newlabel{tab:boundary}{{4}{10}{预注册边界分析：关键机制级数字。全部数值程序化读取自归档统计文件；完整数据见补充材料 S7--S9。}{table.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 共享枢纽参数扫描（84 格 $\times $ 30 配对种子，确定性、零 LLM）。格色：联合目标的配对成功差（FAS 减平坦）；绿 = FAS 严格更优，橙 = 平坦严格更优，灰 = 平手。FAS 优势区局限于弱边权与浅汇聚路径。全部数字程序化读取自归档扫描输出。}}{10}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:sweep}{{4}{10}{共享枢纽参数扫描（84 格 $\times $ 30 配对种子，确定性、零 LLM）。格色：联合目标的配对成功差（FAS 减平坦）；绿 = FAS 严格更优，橙 = 平坦严格更优，灰 = 平手。FAS 优势区局限于弱边权与浅汇聚路径。全部数字程序化读取自归档扫描输出。}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}决策头族的确定性重跑}{10}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:res-rerun}{{5.4}{10}{决策头族的确定性重跑}{subsection.5.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 扩散适用边界。(a) 预注册确认族：四个 $\Delta $JCG 全负（反方向 Holm $p{=}1.5\times 10^{-9}$）；唯一正点是共享枢纽拓扑（星标，单权重 $w{=}0.5$ 设计）。(b) 权重扫描：两法同时于 $w{=}0.7$ 达 MRR${=}1.0$。(c) 稀释权衡：传播面越宽目标激活越平（$\rho {=}{-}0.445$、${-}0.656$）。}}{11}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:boundary}{{5}{11}{扩散适用边界。(a) 预注册确认族：四个 $\Delta $JCG 全负（反方向 Holm $p{=}1.5\times 10^{-9}$）；唯一正点是共享枢纽拓扑（星标，单权重 $w{=}0.5$ 设计）。(b) 权重扫描：两法同时于 $w{=}0.7$ 达 MRR${=}1.0$。(c) 稀释权衡：传播面越宽目标激活越平（$\rho {=}{-}0.445$、${-}0.656$）。}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}比较行为证据(战役 v2)}{11}{subsection.5.5}\protected@file@percent }
+\newlabel{sec:res-campaign}{{5.5}{11}{比较行为证据(战役 v2)}{subsection.5.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}上下文移除条件下的持久状态检验}{12}{subsection.5.6}\protected@file@percent }
+\newlabel{sec:res-psa}{{5.6}{12}{上下文移除条件下的持久状态检验}{subsection.5.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}补充观察}{13}{subsection.5.7}\protected@file@percent }
+\newlabel{sec:res-system}{{5.7}{13}{补充观察}{subsection.5.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}审计驱动的更正与负结果}{13}{subsection.5.8}\protected@file@percent }
+\newlabel{sec:audit-negative}{{5.8}{13}{审计驱动的更正与负结果}{subsection.5.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}讨论}{14}{section.6}\protected@file@percent }
+\newlabel{sec:discussion}{{6}{14}{讨论}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}FAS 到底证明了什么}{14}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}平坦检索为何通常足够——何时不然}{14}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}支架的角色}{14}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}统一图为何重要}{14}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}设计启示：方向语义}{14}{subsection.6.5}\protected@file@percent }
+\bibstyle{plainnat}
+\bibdata{references}
+\bibcite{anderson2004integrated}{{1}{2004}{{Anderson et~al.}}{{Anderson, Bothell, Byrne, Douglass, Lebiere, and Qin}}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}局限性}{15}{section.7}\protected@file@percent }
+\newlabel{sec:limits}{{7}{15}{局限性}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}结论}{15}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{数据与代码可用性。}{15}{paragraph*.10}\protected@file@percent }
+\bibcite{baddeley2000episodic}{{2}{2000}{{Baddeley}}{{}}}
+\bibcite{collins1975spreading}{{3}{1975}{{Collins and Loftus}}{{}}}
+\bibcite{cowan2001magical}{{4}{2001}{{Cowan}}{{}}}
+\bibcite{edge2024graphrag}{{5}{2024}{{Edge et~al.}}{{Edge, Trinh, Cheng, Bradley, Chao, Mardis, Osinubi, and Others}}}
+\bibcite{gutierrez2024hipporag}{{6}{2024}{{Guti{\'e}rrez et~al.}}{{Guti{\'e}rrez, Sharpentine, Tu, Khramtsova, Zhu, Gweon, and Cohen}}}
+\bibcite{hart2008opencog}{{7}{2008}{{Hart and Goertzel}}{{}}}
+\bibcite{itti2001computational}{{8}{2001}{{Itti and Koch}}{{}}}
+\bibcite{laird2012soar}{{9}{2012}{{Laird}}{{}}}
+\bibcite{lewis2020rag}{{10}{2020}{{Lewis et~al.}}{{Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, K{\"u}ttler, Lewis, Yih, Rockt{\"a}schel, et~al.}}}
+\bibcite{packer2023memgpt}{{11}{2023}{{Packer et~al.}}{{Packer, Fang, Patil, Lin, Wooders, and Gonzalez}}}
+\bibcite{park2023generative}{{12}{2023}{{Park et~al.}}{{Park, O'Brien, Cai, Morris, Liang, and Bernstein}}}
+\bibcite{posner1980orienting}{{13}{1980}{{Posner}}{{}}}
+\bibcite{schacter2007remembering}{{14}{2007}{{Schacter et~al.}}{{Schacter, Addis, and Buckner}}}
+\bibcite{shinn2023reflexion}{{15}{2023}{{Shinn et~al.}}{{Shinn, Cassano, Gopinath, Narasimhan, and Yao}}}
+\bibcite{tulving1983elements}{{16}{1983}{{Tulving}}{{}}}
+\bibcite{wang2023voyager}{{17}{2023}{{Wang et~al.}}{{Wang, Xie, Jiang, Mandlekar, Xiao, Zhu, Fan, and Anandkumar}}}
+\bibcite{yao2023react}{{18}{2023}{{Yao et~al.}}{{Yao, Zhao, Yu, Du, Shafran, Narasimhan, and Cao}}}
+\bibcite{zacks2007event}{{19}{2007}{{Zacks et~al.}}{{Zacks, Speer, Swallow, Braver, and Reynolds}}}
+\gdef \@abspage@last{17}

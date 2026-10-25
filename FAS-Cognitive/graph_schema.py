@@ -74,6 +74,26 @@ def is_canonical_relation(relation: str) -> bool:
     return str(relation or "").strip() in _canon_relations
 
 
+FALLBACK_RELATION = _FALLBACK_RELATION
+
+
+def normalize_verbose(relation: str):
+    """归一化 + 过程透明（2026-10-19 外部抽取质量修复）：返回
+    (canon, kind)，kind ∈ empty | canonical | synonym | fallback。
+    fallback=词表表达不了的自由谓词被压平成"关联"——调用方据此决定
+    保留原词还是留痕，归一不再是静默动作。"""
+    rel = str(relation or "").strip()
+    if not rel:
+        return _FALLBACK_RELATION, "empty"
+    canon = normalize_relation(rel)
+    if canon == rel:
+        return canon, "canonical"
+    if _synonym_map.get(rel) == canon or _synonym_map.get(rel.lower()) == canon \
+            or canon == rel.lower():
+        return canon, "synonym"
+    return canon, "fallback"
+
+
 def category_for(relation: str) -> str:
     """规范关系的 relation_category；未收录返回默认语义类。"""
     return _RELATION_ONTOLOGY.get(str(relation or "").strip(), _DEFAULT_CATEGORY)
@@ -117,6 +137,12 @@ def relation_surface_stats() -> dict:
 # "这是关于主体本身的事实吗？"。世界信息（看见的方块、瞬时的想法共现）
 # 一律不允许直连——必须经由 当前状态/活动/事件/思考 等中间结构。
 HUB_WATCHLIST = ("Haru", "Self", "用户")
+
+# 外部文本抽取的端点黑名单（2026-10-19 Minecraft会话案例）：逛到的视频/
+# 读到的网页里出现"我们/我/大家"，抽取器的代词映射（我→用户）会把第三方
+# 说话人误接成**我们图谱里的这两个真人**。"这段体验涉及用户"必须来自设计
+# 判断（value→相关边），不能来自文本幻觉——涉及/实体类边一律禁止直连枢纽。
+HUB_ENTITY_NAMES = frozenset(HUB_WATCHLIST) | {"Fascinator"}
 
 # 允许直接触碰主体的关系白名单（按 hub 分列；值为规范关系名）。
 # Haru（具身自我）：身份、当前状态/活动/焦点、能力偏好、经历知识。

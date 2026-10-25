@@ -85,11 +85,7 @@ MODULATOR_FIELD_DEFAULTS = {
     "refractory_min": 0.0,            # 不应期（分钟；0=关闭）
     "category": "uncategorized",      # monoamine/neuropeptide/excitatory/...
     "mirror": None,                   # 图谱镜像节点 id（缺省 f"{name}样"）
-    "circadian_driven": False,        # 只接受 circadian 语境驱动（melatonin）。
-                                    # 消费者（R2 P10）：`modulation_events.apply_event`
-                                    # 的门卫——非 circadian 来源的事件动不了它。
-                                    # 它的**驱动**来自图上 时段/昼夜→调制器 的边
-                                    # （`modulator_subgraph.apply_circadian_drift`）。
+    # （circadian_driven 字段已删除，2026-10-17：时段不再驱动任何调制器。）
     "desc": "",
 }
 
@@ -909,6 +905,22 @@ class InternalState:
     def trait_baseline(self, name: str) -> float:
         item = self._traits.get(name) or {}
         return float(item.get("baseline", 0.5))
+
+    def trait_deviations(self) -> dict:
+        """各维性格相对基线的偏差 ∈ [-1,1]（0=中性）。人格消费侧
+        （dialogue_decision 性格乘子）只读这个：不暴露绝对值，band 语义
+        集中在此；坏值/缺项静默跳过（缺席=旧行为）。"""
+        out = {}
+        with self._lock:
+            for name, item in self._traits.items():
+                try:
+                    base = float(item.get("baseline", 0.5))
+                    val = float(item.get("value", base))
+                    out[name] = max(-1.0, min(1.0,
+                                              (val - base) / self.TRAIT_DEV_MAX))
+                except (TypeError, ValueError):
+                    continue
+        return out
 
     def snapshot(self) -> dict:
         """完整状态快照（可回滚、可在测试里全量对比）。"""

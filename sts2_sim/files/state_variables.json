@@ -1,0 +1,297 @@
+{
+  "schema": "fas-sts2-kb/1.0",
+  "version": "kb-0.1.0",
+  "game": "Slay the Spire 2",
+  "game_version": "STS2 Early Access (exact build unknown; sources cite patches v0.100.0-v0.103.2)",
+  "variables": [
+    {
+      "id": "V.player.hp",
+      "type": "int",
+      "scope": "run",
+      "meaning": "current player HP",
+      "update": "damage, heal, rest, events",
+      "bound_to": [
+        "M.rest_site",
+        "M.attack_damage"
+      ]
+    },
+    {
+      "id": "V.player.max_hp",
+      "type": "int",
+      "scope": "run",
+      "meaning": "maximum HP",
+      "update": "relics/events",
+      "bound_to": [
+        "M.rest_site"
+      ]
+    },
+    {
+      "id": "V.player.energy",
+      "type": "int",
+      "scope": "turn",
+      "meaning": "energy available this turn",
+      "update": "refill start of turn; spend on cards",
+      "bound_to": [
+        "M.energy"
+      ]
+    },
+    {
+      "id": "V.player.block",
+      "type": "int",
+      "scope": "round",
+      "meaning": "player block",
+      "update": "gain via cards; expires at start of own turn",
+      "bound_to": [
+        "M.block"
+      ]
+    },
+    {
+      "id": "V.player.stars",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "Regent stars",
+      "update": "gain/spend; persists across turns",
+      "bound_to": [
+        "M.stars"
+      ]
+    },
+    {
+      "id": "V.player.strength",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "damage modifier",
+      "update": "additive",
+      "bound_to": [
+        "M.strength"
+      ],
+      "confidence": "unverified"
+    },
+    {
+      "id": "V.player.dexterity",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "block modifier",
+      "update": "additive",
+      "bound_to": [
+        "M.dexterity"
+      ],
+      "confidence": "unverified"
+    },
+    {
+      "id": "V.player.hand",
+      "type": "list<card>",
+      "scope": "turn",
+      "meaning": "cards in hand",
+      "update": "draw/play/discard/exhaust/retain",
+      "bound_to": [
+        "M.turn_structure",
+        "M.retain",
+        "M.sly"
+      ]
+    },
+    {
+      "id": "V.player.draw_pile",
+      "type": "list<card>",
+      "scope": "combat",
+      "meaning": "draw pile",
+      "update": "draw; reshuffle (rule unverified)",
+      "bound_to": [
+        "M.turn_structure"
+      ]
+    },
+    {
+      "id": "V.player.discard_pile",
+      "type": "list<card>",
+      "scope": "combat",
+      "meaning": "discard pile",
+      "update": "end of turn and discard effects",
+      "bound_to": [
+        "M.discard"
+      ]
+    },
+    {
+      "id": "V.player.exhaust_pile",
+      "type": "list<card>",
+      "scope": "combat",
+      "meaning": "exhausted cards",
+      "update": "exhaust",
+      "bound_to": [
+        "M.exhaust"
+      ]
+    },
+    {
+      "id": "V.osty.hp",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "Osty's HP",
+      "update": "Summon adds; damage reduces; revives next turn",
+      "bound_to": [
+        "M.osty_summon"
+      ]
+    },
+    {
+      "id": "V.blade.damage",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "Sovereign Blade damage",
+      "update": "Forge adds X to all zones",
+      "bound_to": [
+        "M.forge"
+      ]
+    },
+    {
+      "id": "V.enemy.hp",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "enemy current HP",
+      "update": "damage, poison, doom death check",
+      "bound_to": [
+        "M.attack_damage",
+        "M.poison",
+        "M.doom"
+      ]
+    },
+    {
+      "id": "V.enemy.block",
+      "type": "int",
+      "scope": "round",
+      "meaning": "enemy block",
+      "update": "enemy actions; expires on enemy turn start (assumed)",
+      "bound_to": [
+        "M.block"
+      ]
+    },
+    {
+      "id": "V.enemy.vulnerable",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "Vulnerable turns remaining",
+      "update": "apply; decays per turn",
+      "bound_to": [
+        "M.vulnerable"
+      ]
+    },
+    {
+      "id": "V.enemy.weak",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "Weak turns remaining",
+      "update": "apply; decays",
+      "bound_to": [
+        "M.weak"
+      ]
+    },
+    {
+      "id": "V.enemy.poison",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "Poison stacks",
+      "update": "add; -1 per tick",
+      "bound_to": [
+        "M.poison"
+      ]
+    },
+    {
+      "id": "V.enemy.doom",
+      "type": "int",
+      "scope": "combat",
+      "meaning": "Doom stacks",
+      "update": "add; checked at end of enemy turn",
+      "bound_to": [
+        "M.doom"
+      ]
+    },
+    {
+      "id": "V.enemy.intent",
+      "type": "struct",
+      "scope": "enemy turn",
+      "meaning": "telegraphed action(s) with damage x hits",
+      "update": "set each enemy turn",
+      "bound_to": [
+        "M.enemy_intent"
+      ]
+    },
+    {
+      "id": "V.run.gold",
+      "type": "int",
+      "scope": "run",
+      "meaning": "gold",
+      "update": "rewards; shop spend",
+      "bound_to": [
+        "M.gold_economy"
+      ]
+    },
+    {
+      "id": "V.run.potions",
+      "type": "list<potion>",
+      "scope": "run",
+      "meaning": "held potions",
+      "update": "gain/use",
+      "bound_to": [
+        "M.potion_slots"
+      ]
+    },
+    {
+      "id": "V.run.potion_slots",
+      "type": "int",
+      "scope": "run",
+      "meaning": "slot capacity",
+      "update": "relics",
+      "bound_to": [
+        "M.potion_slots"
+      ]
+    },
+    {
+      "id": "V.run.deck",
+      "type": "list<card>",
+      "scope": "run",
+      "meaning": "deck contents and upgrades",
+      "update": "reward add; removal; upgrade",
+      "bound_to": [
+        "M.deck_building",
+        "M.upgrade"
+      ]
+    },
+    {
+      "id": "V.run.relics",
+      "type": "list<relic>",
+      "scope": "run",
+      "meaning": "owned relics",
+      "update": "gain",
+      "bound_to": [
+        "M.rest_site",
+        "M.merchant"
+      ]
+    },
+    {
+      "id": "V.run.map_position",
+      "type": "node",
+      "scope": "run",
+      "meaning": "current node and reachable next nodes",
+      "update": "travel",
+      "bound_to": [
+        "M.map_rooms"
+      ]
+    },
+    {
+      "id": "V.run.act",
+      "type": "int",
+      "scope": "run",
+      "meaning": "current act",
+      "update": "boss defeated",
+      "bound_to": [
+        "M.ancients"
+      ]
+    },
+    {
+      "id": "V.run.ascension",
+      "type": "int",
+      "scope": "run",
+      "meaning": "ascension level",
+      "update": "fixed per run",
+      "bound_to": [
+        "M.ascension"
+      ]
+    }
+  ]
+}
