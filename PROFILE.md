@@ -10,8 +10,8 @@
 
 | 项目 | 说明 |
 |---|---|
-| [**Fascinator**](https://github.com/Hellucigen/Fascinator) | 自研认知引擎与桌面 AI 伙伴：扩散激活知识图谱 × 情境记忆 × 自主表达 × 告别授权式自主探索 |
-| [**Charon**](https://github.com/Hellucigen/Charon-Personal-Terminal-of-Hellucigen) | 个人生活 OS 桌面终端（Wails + React）：夜话主题、Haru 陪伴模块、Fascinator 认知面板 |
+| **Fascinator** | Haru 的认知引擎：扩散激活知识图谱 × 情境记忆 × 自主表达 × 告别授权式自主探索 |
+| **Charon** | Haru 的居所：个人生活 OS 桌面终端（Wails + React），夜话主题、陪伴模块、认知面板 |
 | [**Fascinator-Ear**](https://github.com/Hellucigen/Fascinator-Ear) | 听觉子系统：语音/音乐/环境声三路分析（Demucs 分离 + 说话人分离） |
 
 ## 其他
