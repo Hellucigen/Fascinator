@@ -24,7 +24,7 @@ class FakeBridge:
         return {"connected": True, "username": "Haru",
                 "position": {"x": -216.5, "y": 83, "z": -297.5},
                 "health": 20, "food": 20, "heldItem": None,
-                "playersNearby": [{"name": "Hellucigen", "dist": 9,
+                "playersNearby": [{"name": "<USER>", "dist": 9,
                                    "rel": {"dx": 9, "dy": 0, "dz": 0}}],
                 "chat": []}
     def move(self, direction, secs=1.0):
@@ -35,7 +35,7 @@ class FakeBridge:
 
 # ── 1. 原子感知：固定节点 in-place 更新（无节点爆炸）──────
 kg = KnowledgeGraph()
-for x in ("用户", "Self", "Hellucigen"):
+for x in ("用户", "Self", "<USER>"):
     kg.add_node(Node(id=x))
 class FakeEngine:
     _running = False
@@ -48,12 +48,12 @@ eng = FakeEngine()
 
 st1 = {"connected": True, "position": {"x": -216, "y": 83, "z": -297},
        "health": 20, "food": 20, "heldItem": None,
-       "playersNearby": [{"name": "Hellucigen", "dist": 9}]}
+       "playersNearby": [{"name": "<USER>", "dist": 9}]}
 r1 = mp.update_perception(kg, eng, st1)
 before = len(kg.nodes)
 st2 = {"connected": True, "position": {"x": -215, "y": 83, "z": -296},
        "health": 19, "food": 19, "heldItem": "stone_pickaxe",
-       "playersNearby": [{"name": "Hellucigen", "dist": 5}]}
+       "playersNearby": [{"name": "<USER>", "dist": 5}]}
 mp.update_perception(kg, eng, st2)
 check("动态状态节点不爆炸", len(kg.nodes) - before == 0,
       f"新增 {len(kg.nodes)-before}")
@@ -111,7 +111,7 @@ _fake_mc_bridge = _types.SimpleNamespace(
     get_state=bridge.get_state,
     move=lambda d, secs=1.0: (bridge.move_calls.append((d, secs)) or True),
     stop=lambda: True,
-    follow=lambda player: player == "Hellucigen",
+    follow=lambda player: player == "<USER>",
     stopfollow=lambda: 42,
 )
 # 2026-09-28 分离后（minecraft 成为包）：仅替换 sys.modules 不够——
@@ -123,7 +123,7 @@ sys.modules['minecraft.bridge'] = _fake_mc_bridge
 import importlib as _il
 _il.reload(mca)
 
-r = mca.follow_player("Hellucigen")
+r = mca.follow_player("<USER>")
 check("follow_player 目标在场→成功", r["success"] and r["result"] == "following")
 r2 = mca.follow_player("不存在的玩家")
 check("follow_player 目标不在场→失败反馈", not r2["success"]

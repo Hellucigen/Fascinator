@@ -51,7 +51,7 @@ MC_STATE = {
     "connected": True,
     "position": {"x": -228.7, "y": 46.0, "z": -376.7},
     "health": 20, "food": 18, "heldItem": "grass_block",
-    "playersNearby": [{"name": "Hellucigen", "dist": 10.8,
+    "playersNearby": [{"name": "<USER>", "dist": 10.8,
                        "rel": {"dx": 5.7, "dy": 0.0, "dz": -9.2}}],
     "nearbyBlocks": [{"name": "water", "count": 3}],
     "nearbyEntities": [{"name": "salmon", "displayName": "Salmon", "dist": 4.0}],
@@ -138,7 +138,7 @@ check("prompt 里状态节点渲染成「槽位 = 值」",
 check("prompt 里有【世界状态】块且带接地要求",
       "【世界状态】" in prompt_text and "不许猜测" in prompt_text)
 check("手持物/附近玩家也随之上线（不只有位置）",
-      "grass_block" in prompt_text and "Hellucigen" in prompt_text)
+      "grass_block" in prompt_text and "<USER>" in prompt_text)
 check("空值节点不会被渲染成 '= None'", "= None" not in prompt_text)
 
 # ── 4. prompt 规则：人称与身份（她不是用户） ──

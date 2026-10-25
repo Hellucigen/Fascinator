@@ -65,7 +65,7 @@ def full_ctx(**over):
               hormone={"factor": 1.1},
               exploration={"eligible": False, "candidates": []},
               decision=DD_RESPOND,
-              action_intent={"action_type": "follow_entity", "target": "Hellucigen",
+              action_intent={"action_type": "follow_entity", "target": "<USER>",
                              "outcome": "started_pending"},
               action_queue_len=1,
               evidence={})

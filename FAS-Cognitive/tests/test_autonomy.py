@@ -386,11 +386,11 @@ check("Mode 2 的升级不直接调 LLM（只打标记）",
 # ── 11. 目标容器（触发器/Mode1 可写入，参与后续候选） ──────
 kg11, reg11, loop11, emb11, p11, o11, base11 = build()
 loop11.set_mode("on")
-g = loop11.add_goal({"type": "communicate", "target": "Hellucigen",
+g = loop11.add_goal({"type": "communicate", "target": "<USER>",
                      "text": "我在这儿"})
 check("目标写入成功并持久化", g.get("ok") and len(loop11.goals()) == 1, str(g))
 emb11.percept = dict(emb11.percept)
-emb11.percept["players"] = [{"name": "Hellucigen", "dist": 3.0}]
+emb11.percept["players"] = [{"name": "<USER>", "dist": 3.0}]
 loop11.tick(now=1000.0)
 types = [c["type"] for c in loop11.state()["candidates"]]
 check("有准备内容时才会产生 communicate 候选（不编台词）",

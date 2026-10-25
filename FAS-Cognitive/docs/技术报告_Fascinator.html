@@ -1504,7 +1504,7 @@ flowchart LR
 | sender | 处理 |
 |---|---|
 | 自己的 bot 名 | `self` → 过滤（否则自己回自己） |
-| 用户（默认 Hellucigen） | `user` → 完整认知回合 + 回复 |
+| 用户（默认 <USER>） | `user` → 完整认知回合 + 回复 |
 | 其他人 | `other` → 默认只观察；**被点名（喊 Haru/哈鲁/Fascinator/fas）才回答** |
 
 通道消息走的是应用自己的 HTTP 入口（`app.test_client().post("/api/nlp", ...)`），**认知逻辑只有一份**。
@@ -2091,7 +2091,7 @@ python app.py                 # 默认端口 5000，自动打开浏览器
 | 文件 | 内容 | 处置 |
 |---|---|---|
 | `data/migration_report_episodic.md` | **真实情景经历节点**（如 `用户 -[喝了]→ 奶茶`、`用户 -[玩]→ Minecraft`） | `git rm --cached` 退出跟踪 + gitignore；历史清除见下方"待拍板" |
-| `data/migration_report.md`（117KB） | 图谱节点名清单（含用户 ID `Hellucigen`、事件名） | 同上 |
+| `data/migration_report.md`（117KB） | 图谱节点名清单（含用户 ID `<USER>`、事件名） | 同上 |
 | `data/migration_report_applied.md` | 同类，程度较轻 | 同上 |
 
 **核实后未泄漏的**：`data/runtime_graph.json`、`data/chat_log.json`、`data/recovery_candidates.json`、`payload.json`、`resp.json`、`data/llm_secret.json` 均从未进过任何提交；历史里的 `data/llm_config.json` `api_key` 为空串，无密钥泄漏。
@@ -2103,7 +2103,7 @@ python app.py                 # 默认端口 5000，自动打开浏览器
 
 **处置执行记录（2026-09-15，接"都做"指令）**：
 
-1. ✅ **本地历史已重写**：`git filter-repo --invert-paths` 抹掉三个迁移报告的全部历史 blob（`rev-list --objects --all` 复查为空），全史 25 个提交哈希变更（`bc1c917→f5279ac`、`1c00f5d→7d35139`）。重写前已做双重备份：完整历史 bundle（`C:\Users\Hellucigen\fascinator-backup-20260915.bundle`）+ `data/` 全量快照（`fascinator-privacy-backup-20260915\`）。重写后工作区/图谱/测试全部完好。
+1. ✅ **本地历史已重写**：`git filter-repo --invert-paths` 抹掉三个迁移报告的全部历史 blob（`rev-list --objects --all` 复查为空），全史 25 个提交哈希变更（`bc1c917→f5279ac`、`1c00f5d→7d35139`）。重写前已做双重备份：完整历史 bundle（`C:\Users\<USER>\fascinator-backup-20260915.bundle`）+ `data/` 全量快照（`fascinator-privacy-backup-20260915\`）。重写后工作区/图谱/测试全部完好。
 2. ✅ **当前代码已全部入库**（提交 `7d35139`，74 文件 +14942/−3888）——此前 9,801 行未跟踪的自主/调节/具身代码一并解决；提交由隐私防呆钩把关通过。
 3. ⏳ **force push 待网络**：github.com:443 直连超时，系统代理 127.0.0.1:7897 未运行（ProxyEnable=0 且端口无监听）。代理开启后执行 `git push --force origin main`。
 4. ⏳ **仓库转 Private 需手动**：本机无 gh CLI、凭据非交互取不到。GitHub 网页 → Settings → General → Danger Zone → Change visibility → Private（**请在 push 之前先做**）。
@@ -2149,7 +2149,7 @@ python app.py                 # 默认端口 5000，自动打开浏览器
 
 **事后补记（同日晚）：`/api/nlp` 生产回归与冒烟缺口教训。** 收尾报告交付后，用户真实日志暴露一个仍在流血的 P1：`process_nlp` 函数体内残留两处局部 `import fas_log`（叙事抽取、探索追问分支）。Python 的作用域规则是**局部 import 使该名字在整个函数内变为局部名**，于是函数开头的 `fas_log.new_trace("nlp")` 必然 `UnboundLocalError`——每一次对话回合 500。修复：删除这两处局部 import（模块顶部已有）。逃逸收尾验收的原因有三：`py_compile` 不查作用域地雷；测试全部是独立脚本、从不 import app.py；启动冒烟只打了 `/api/embedding/stats`，**没打核心路由 `/api/nlp`**——"链路贯通：是"当时说得早了。补强两道：① 常驻静态扫描器 `scripts/check_unbound_scope.py`（AST，绑定形态全覆盖：参数/元组解包/for/with/except/walrus/局部 import），验收标准 = **import 型命中 0**；全仓现扫 import 型 0，assign 型 62 处已人工核查均为 comprehension 变量假阳性（含 app.py 热路径 4 处 `e`/`fq` 命中逐处验看）。② 规矩：改动 `app.py` 后的启动冒烟**必须打一发 `/api/nlp`**（简单假输入即可）并验证 200 + 回复结构，不能只打只读统计端点。该规矩当日已执行：沙盒（临时副本、端口 5199、真实图谱零接触）冷启动 51s + `POST /api/nlp {"text":"你好"}` → **200，含 `answer`/`cycle_id` 完整回复结构**，服务端日志无 UnboundLocalError、无新 Traceback，6/6 项通过。
 
-**事后补记 2（同更晚）：Haru 进了 Minecraft"呆呆站着"——三颗雷与一个模拟盲区。** 用户重启后对话已恢复（真实日志 `/api/nlp` 200），但进 MC 找人不行动。逐段回捞日志+代码定位三处（各见上表新增三行）：启动期 `MonitorRegistry.list() got an unexpected keyword argument 'target_type'` 说明 §18.5 的桥失联回写**从未接通过**（B 批次验收测试只复刻了调用形状、没有走 app 的接线函数本体——"测试不 import app.py"主题的又一变体）；`结算 navigate_to_entity@… 失败（entity_not_visible） 0.0s` 说明"去找用户"在实体同步完成前就发出且**即时判死无重试**；而这次失败又被经验通道记成永久阻碍（`comps["causal"]=1.0`，−0.30），把整个"找人"家族压到门槛之下——即使之后用户可见也不会再走过去。日志里 disposition explore 0.55→0.49 / APPROACH 0.25→0.19 属正常软降权通道，未动。三处修复都落在既有机制上（注册表补齐与锁注册表同形的过滤；技能 pending 状态机内加宽限轮询，参照 `follow_entity` 的 `gone_since` 先例；causal 按 AUTONOMY.md §5 暂态/结构二分），**无新架构、无新线程/定时器、无新激活直写点**。新增 `tests/test_mc_approach_race.py`（17 项）逐条钉死：过滤签名、宽限 pending→出现即出发→到期如实失败→grace=0 旧行为、暂态不罚/结构照罚/混合结构性主导。修后 `test_mc_closed_loop_sim` "不连续 3 次刷同一"守卫变红，bisect 定罪：不是 causal 修复，是**模拟观察面盲区**——`busy_tick` 的轮询拍没记进 phases，宽限拉长在飞期后，busy 间隙里真实发生的 gather/explore 被藏掉，表面上看成了"连刷四次看猪"。把内部拍并入决策流后守卫**原断言一字未改**通过。当日全套件 73/73、`verify_p0_all` 全过、import 型地雷 0。实机（真服务器）演示仍待用户网络环境（本节不修清单③），本轮结论以模拟闭环+单测为准，需如实待实机复核。**当日 17:40 实机复核坐销**：重启日志首次出现 `桥活性检测器已接线（mon_1）` INFO，且 17:40:57 即真实纠正上一进程残留态（`桥失联回写：connected → disconnected`，17:43:10 恢复 True）；17:42:21 `后台连接完成` 后 `navigate_to_entity@Hellucigen 结算成功 2.08s`（事故日志中同一动作 0.0s 判死），成功奖赏回灌 explore 0.49→0.59 / APPROACH 0.19→0.29（恰好抵消事故降权），随后自主提交 `inspect_entity@pig` 成功——三雷实机确认解除。
+**事后补记 2（同更晚）：Haru 进了 Minecraft"呆呆站着"——三颗雷与一个模拟盲区。** 用户重启后对话已恢复（真实日志 `/api/nlp` 200），但进 MC 找人不行动。逐段回捞日志+代码定位三处（各见上表新增三行）：启动期 `MonitorRegistry.list() got an unexpected keyword argument 'target_type'` 说明 §18.5 的桥失联回写**从未接通过**（B 批次验收测试只复刻了调用形状、没有走 app 的接线函数本体——"测试不 import app.py"主题的又一变体）；`结算 navigate_to_entity@… 失败（entity_not_visible） 0.0s` 说明"去找用户"在实体同步完成前就发出且**即时判死无重试**；而这次失败又被经验通道记成永久阻碍（`comps["causal"]=1.0`，−0.30），把整个"找人"家族压到门槛之下——即使之后用户可见也不会再走过去。日志里 disposition explore 0.55→0.49 / APPROACH 0.25→0.19 属正常软降权通道，未动。三处修复都落在既有机制上（注册表补齐与锁注册表同形的过滤；技能 pending 状态机内加宽限轮询，参照 `follow_entity` 的 `gone_since` 先例；causal 按 AUTONOMY.md §5 暂态/结构二分），**无新架构、无新线程/定时器、无新激活直写点**。新增 `tests/test_mc_approach_race.py`（17 项）逐条钉死：过滤签名、宽限 pending→出现即出发→到期如实失败→grace=0 旧行为、暂态不罚/结构照罚/混合结构性主导。修后 `test_mc_closed_loop_sim` "不连续 3 次刷同一"守卫变红，bisect 定罪：不是 causal 修复，是**模拟观察面盲区**——`busy_tick` 的轮询拍没记进 phases，宽限拉长在飞期后，busy 间隙里真实发生的 gather/explore 被藏掉，表面上看成了"连刷四次看猪"。把内部拍并入决策流后守卫**原断言一字未改**通过。当日全套件 73/73、`verify_p0_all` 全过、import 型地雷 0。实机（真服务器）演示仍待用户网络环境（本节不修清单③），本轮结论以模拟闭环+单测为准，需如实待实机复核。**当日 17:40 实机复核坐销**：重启日志首次出现 `桥活性检测器已接线（mon_1）` INFO，且 17:40:57 即真实纠正上一进程残留态（`桥失联回写：connected → disconnected`，17:43:10 恢复 True）；17:42:21 `后台连接完成` 后 `navigate_to_entity@<USER> 结算成功 2.08s`（事故日志中同一动作 0.0s 判死），成功奖赏回灌 explore 0.49→0.59 / APPROACH 0.19→0.29（恰好抵消事故降权），随后自主提交 `inspect_entity@pig` 成功——三雷实机确认解除。
 
 ---
 

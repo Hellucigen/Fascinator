@@ -200,7 +200,7 @@
   "expectations": {
     "explore@world":    {"expected": 0.18, "count": 7, "last_rpe": 0.05, "decay": 0.99},
     "collect@oak_log":  {"expected": 0.25, "count": 3, "last_rpe": -0.10, "decay": 0.99},
-    "follow@Hellucigen":{"expected": 0.40, "count": 12, "last_rpe": 0.02, "decay": 0.99}
+    "follow@<USER>":{"expected": 0.40, "count": 12, "last_rpe": 0.02, "decay": 0.99}
   },
   "reward_ledger": [{"cycle_id": "c_000123", "ts": "...", "reward": 0.12,
                      "components": {"internal_goal_progress": 0.20, "cost_time": -0.05,

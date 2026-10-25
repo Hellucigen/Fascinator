@@ -24,7 +24,7 @@
     },
     "candidate_score_change": {
       "value": "observed (mechanism-level)",
-      "rationale": "Live candidate explain strings show active causal priors applying score down-weights: gather_resource@grass_block causal=['Digging aborted'] pb=-0.00; explore_direction@west causal=['preempted:night','not_connected'] pb=-0.03 (cross-session learned rule). Candidate landscape otherwise stable across 151 snapshots: follow_entity@Hellucigen 0.211, screen_observe 0.13-0.16, gather_resource@grass_block 0.027-0.051.",
+      "rationale": "Live candidate explain strings show active causal priors applying score down-weights: gather_resource@grass_block causal=['Digging aborted'] pb=-0.00; explore_direction@west causal=['preempted:night','not_connected'] pb=-0.03 (cross-session learned rule). Candidate landscape otherwise stable across 151 snapshots: follow_entity@<USER> 0.211, screen_observe 0.13-0.16, gather_resource@grass_block 0.027-0.051.",
       "environment_response_evidence": "19:37:48 first appearance of collect_dropped_item 0.201 (resource_opportunity) coincident with user activity (dropped item) - new observation -> new candidate without threshold crossing (no action taken)."
     },
     "settlement_accuracy": {

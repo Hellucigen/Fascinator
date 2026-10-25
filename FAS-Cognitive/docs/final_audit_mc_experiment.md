@@ -206,7 +206,7 @@
 - **causal_attributed 802 次**（归因关窗：09-22 22:17 起；动作=导航/采集/停止/跟随/观察……随时间累积）
 - **causal_promoted 27 次**（晋升内容见 §5/§6；每日：09-23 16:22 起 4 次 → 09-25 5 次 → 09-26 13 次）
 - **replay_batch 745 次 / replay_stopped 83 次**（经验重放调度；收益递减→停是设计，memory: experience-replay-layer）
-- 账本终态 `experience_timeline.json` causal: **71 假设 / 87 聚合 / 27 晋升**；聚合 top：navigate_to_entity(Hellucigen)、say、communicate(用户)、inspect_entity(cow/pig/chicken)、gather_resource(grass_block)、explore_direction(east)、follow_entity(Hellucigen)…… 全是对实验世界的真行为签名。
+- 账本终态 `experience_timeline.json` causal: **71 假设 / 87 聚合 / 27 晋升**；聚合 top：navigate_to_entity(<USER>)、say、communicate(用户)、inspect_entity(cow/pig/chicken)、gather_resource(grass_block)、explore_direction(east)、follow_entity(<USER>)…… 全是对实验世界的真行为签名。
 - 物种营养：24 退役 + 9 经验物种；缺口 4+；`配方线索` hub（note_craftable 写"此刻背包能做什么"）随 09-26 全天 craft 流在行动。
 
 **复用静力学**：晋升假设里 应×2 的（stop→succeeded、follow→succeeded、sleep→succeeded）会被后续评分直接读到（`_score_action` failure/causal 分量 在案）。
@@ -279,7 +279,7 @@
 - **B 具身适配（允许类）**：movement 层"y 缺省用当前高度 / 回执优先 / 3D 到达 / 换路重发 / rawGait 切换 / 停滞检测"（skills/movement.py:32-195）；"近就取"≤6 格 furnace_take（具身感知截断的适配）；探针回执归一 no_path。
 - **C MC 专用先验**：crafting 配方表、world_prior 闭包（588/89 + 版本核验）、block_meta provenance；**这些是"环境事实"类，允许且标明**（自带 provenance 字段，透明）。
 - **D 实验 hack**：EXPERIMENT_MODE 环境变量（**默认 off**，config.py:1882；09-26 04:10/13:04 两次挂载实录）——实验开关不是捷径，且是"留了后门给未来的屏蔽实验"，默认关闭符合诚实；reports/_fuel_probe.py 等一次性探针（单次运行，不入图）；`see_all 快照`（Eye 显著性防 junk，09-22 定版）。
-- **E 可疑**：**0 项**。铁锭无特判（grep 全仓：iron_ingot 只出现在配方表和 world_prior 注释/通用算法，无"赢了就发牌"）；玩家名无硬编码（grep 'Hellucigen' 于 autonomy/skills/bridge/session = 0 命中——跟谁由感知节点决定）。
+- **E 可疑**：**0 项**。铁锭无特判（grep 全仓：iron_ingot 只出现在配方表和 world_prior 注释/通用算法，无"赢了就发牌"）；玩家名无硬编码（grep '<USER>' 于 autonomy/skills/bridge/session = 0 命中——跟谁由感知节点决定）。
 
 ---
 

@@ -173,7 +173,7 @@ class Harness:
 # ═══════════════════════════════════════════════════════════
 print("── Test 1 短指令（跟我走）──────────────────────────────")
 world = FakeWorld()
-world.state["playersNearby"] = [{"name": "Hellucigen", "dist": 6.0,
+world.state["playersNearby"] = [{"name": "<USER>", "dist": 6.0,
                                  "rel": {"dx": 5.0, "dy": 0.0, "dz": 3.0}}]
 h = Harness(world)
 
@@ -185,10 +185,10 @@ check("T1 短指令被估为 Level 1（轻认知快通道）", cx["level"] == 1,
 l1_parsed = {"intent": "follow_user", "target": "用户", "count": None,
              "urgency": 0.9, "needs_reply": True, "needs_action": True,
              "nodes": ["用户"], "memory_type": "episodic"}
-spec = l1_to_action(l1_parsed, "Hellucigen")
+spec = l1_to_action(l1_parsed, "<USER>")
 check("T1 L1 意图映射成 follow_entity ActionNode",
       spec and spec["action_type"] == "follow_entity"
-      and spec["params"].get("entity") == "Hellucigen", str(spec))
+      and spec["params"].get("entity") == "<USER>", str(spec))
 check("T1 ActionNode 带紧迫度（来自认知解析）",
       spec.get("urgency") == 0.9 and spec.get("priority", 0) >= 0.8, str(spec))
 
@@ -209,7 +209,7 @@ h.cleanup()
 
 # 反射快路径（零 LLM）也走同一条 Action 管路
 reflex = {"action": "follow", "params": {}, "matched": "跟着我"}
-spec2 = reflex_to_action(reflex, "Hellucigen")
+spec2 = reflex_to_action(reflex, "<USER>")
 check("T1 反射解析同样映射到 follow_entity（不绕过 Action 系统）",
       spec2 and spec2["action_type"] == "follow_entity", str(spec2))
 
@@ -405,8 +405,8 @@ h.am.propose({"action_type": "gather_resource", "target": "oak_log",
               "params": {"resource": "oak_log"},
               "priority": 0.5}, source="autonomy")
 check("T5a 挖掘进行中", h.am.busy(), str(h.am.status()["current"]))
-p = h.am.propose({"action_type": "follow_entity", "target": "Hellucigen",
-                  "params": {"entity": "Hellucigen"}, "priority": 0.85},
+p = h.am.propose({"action_type": "follow_entity", "target": "<USER>",
+                  "params": {"entity": "<USER>"}, "priority": 0.85},
                  source="user")
 check("T5a 用户呼叫 → 打断挖掘 → 开始跟随",
       p.get("started") and p.get("interrupted")

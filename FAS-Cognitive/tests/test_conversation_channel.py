@@ -266,9 +266,9 @@ check("后续消息照常处理", len(ch.sent) == 1 and ch.sent[0][0] == "这次
 # ── 12. 游戏聊天通道适配器（身份/点名/序号去重/发送诚实） ──
 import minecraft.bridge as bridge
 
-mc_ch = MinecraftChatChannel(user_names=["Hellucigen"], aliases=["Haru"])
+mc_ch = MinecraftChatChannel(user_names=["<USER>"], aliases=["Haru"])
 mc_ch.profile.update({"max_reply_chars": 160})
-check("MC 通道：玩家名归属用户", mc_ch.classify({"sender": "Hellucigen"}) == KIND_USER)
+check("MC 通道：玩家名归属用户", mc_ch.classify({"sender": "<USER>"}) == KIND_USER)
 check("MC 通道：自己（bot 名）被识别", mc_ch.classify({"sender": "Haru"}) == KIND_SELF)
 check("MC 通道：其他玩家归为他人", mc_ch.classify({"sender": "朋友甲"}) == KIND_OTHER)
 check("MC 通道：点名识别（Haru）", mc_ch.is_mentioned("Haru 过来一下"))
@@ -280,7 +280,7 @@ check("MC profile 是环境描述，不含社交政策键（2026-09-21 边界重
       str(MinecraftChatChannel.profile))
 
 state = {"connected": True, "username": "Haru",
-         "chat": [{"seq": 1, "sender": "Hellucigen", "text": "在吗", "time": "t1"},
+         "chat": [{"seq": 1, "sender": "<USER>", "text": "在吗", "time": "t1"},
                   {"seq": 2, "sender": "朋友甲", "text": "哈喽", "time": "t2"}]}
 bridge.get_state = lambda: dict(state)
 bridge.say = lambda text: True
@@ -288,7 +288,7 @@ got = mc_ch.fetch()
 check("MC 通道：读到两条聊天", len(got) == 2, str(got))
 check("MC 通道：序号水位推进后不重复读",
       mc_ch.fetch() == [], str(mc_ch.fetch()))
-state["chat"].append({"seq": 3, "sender": "Hellucigen", "text": "第二句", "time": "t3"})
+state["chat"].append({"seq": 3, "sender": "<USER>", "text": "第二句", "time": "t3"})
 got2 = mc_ch.fetch()
 check("MC 通道：只读新增的那条", len(got2) == 1 and got2[0]["text"] == "第二句", str(got2))
 check("MC 通道：消息键用序号（去重稳定）", mc_ch.message_key({"seq": 7}) == "seq:7")

@@ -33,7 +33,7 @@
 - 逻辑测试 tests/test_voice_loop.py：A 层（双轨/仲裁/分段/epoch/热开关/无声降级）**19 项离线全绿**；B 层真实模型回环（本机 CPU 实测，2026-10-12）：
   - **B1/B2 通过**：kokoro-onnx 量化模型加载+日语合成（11.65s 音频/11.3s，RTF≈0.97——首次单独测 36s 含模型冷启动）。
   - **B3/B4 通过（机制）**：faster-whisper small int8 CPU 加载 34.9s、转录 11.65s 日语耗时 3.8s（RTF 0.33）、lang 检出 ja、输出全日文字符。
-  - **B 层质量红线（如实）**：回环内容不匹配——输入「今日はいい天気ですね、お出かけしますか？」识别为「どういう天気予報…」：ASR 抓住了"天気"（证明 kokoro 日语发音真实），但整句精度不足。**结论：端到端机制成立（声音进→日语文字→主管道→日语声音出），识别/合成质量组合未达可用**；优化路径已列 §9（better whisper 档/云 ASR 兜底/试听 wav 定音色）。样本已存 `C:/Users/Hellucigen/AppData/Local/Temp/haru_ja_sample.wav` 供你试听。
+  - **B 层质量红线（如实）**：回环内容不匹配——输入「今日はいい天気ですね、お出かけしますか？」识别为「どういう天気予報…」：ASR 抓住了"天気"（证明 kokoro 日语发音真实），但整句精度不足。**结论：端到端机制成立（声音进→日语文字→主管道→日语声音出），识别/合成质量组合未达可用**；优化路径已列 §9（better whisper 档/云 ASR 兜底/试听 wav 定音色）。样本已存 `C:/Users/<USER>/AppData/Local/Temp/haru_ja_sample.wav` 供你试听。
   - **真机抓到的两个 bug（测试的价值所在，均已修+注释在案）**：
     1. kokoro-onnx 0.6.1 `create()` **同步返回 (audio,sr)**，初版误用 `asyncio.run` 包装 → 直接失败；回环抓到，改同步调用（voice_io.py TtsBackend.synthesize）。
     2. `avatar_state.release()` 持锁调 `set_state()`，而 `threading.Lock` 不可重入 → **进程冻死**（CPU 0 卡 15 分钟）；改 `RLock`（avatar_state.py 注释在案）。
@@ -96,7 +96,7 @@
 1. **形象投入决策**：静态立绘+表情（零采购）vs Live2D（购模型+确认 Expandable Application 条款）。协议已就绪，任何皮都只订阅 `fas.avatar_state`。
 2. **Steam**：注册免费 API key（https://steamcommunity.com/dev/apikey）→ 设 `STEAM_API_KEY` 环境变量 + config `steam_id`，再开 `steam_poll_enabled`。
 3. **开麦验收**：重启 Haru（Charon 或直跑 app.py）→ Body 面板 → 启用语音+开麦监听 → 对它说一句日语/中文。
-4. **音色试听与 ASR 质量决策**：日语样本已合成 `C:/Users/Hellucigen/AppData/Local/Temp/haru_ja_sample.wav`（jf_alpha）；其余 4 音色改 config 选择即可。回环测试显示 **whisper small int8 CPU 对本机合成日语的整句精度不足**（机制通、质量未达）——三条可选路：① 本机试 `large-v3` int8（显存/内存有余量，需一次权重下载授权）② 云 ASR 兜底（你有 Groq/OpenAI/Deepgram 任一 key 即可接）③ 真人语音实测（合成语音≠真实语音，whisper 对真人日语可能明显更好——这条只能你开麦验）。
+4. **音色试听与 ASR 质量决策**：日语样本已合成 `C:/Users/<USER>/AppData/Local/Temp/haru_ja_sample.wav`（jf_alpha）；其余 4 音色改 config 选择即可。回环测试显示 **whisper small int8 CPU 对本机合成日语的整句精度不足**（机制通、质量未达）——三条可选路：① 本机试 `large-v3` int8（显存/内存有余量，需一次权重下载授权）② 云 ASR 兜底（你有 Groq/OpenAI/Deepgram 任一 key 即可接）③ 真人语音实测（合成语音≠真实语音，whisper 对真人日语可能明显更好——这条只能你开麦验）。
 5. **预算**：在 Body 面板设 `llm_monthly_budget_cny`（价格表 `llm_price_table` 需按 MiMo 实际单价填一次才能算钱；当前为 0=记账不拦截）。
 6. requirements.txt 追加建议（未代改，避免无谓 diff）：`sounddevice silero-vad faster-whisper kokoro-onnx soundfile`。
 
@@ -136,7 +136,7 @@
 
 ## A4 Steam 实接（2026-10-13 用户 steamid 到位）
 
-- steam_id `76561198271164497` 经 PUT /api/config 持久化（overlay）。真实轮询验证：`GetPlayerSummaries` 通了（当前 personastate=0=不在线，去抖正常——第二次轮询 changed=false）。
+- steam_id `<STEAM_ID>` 经 PUT /api/config 持久化（overlay）。真实轮询验证：`GetPlayerSummaries` 通了（当前 personastate=0=不在线，去抖正常——第二次轮询 changed=false）。
 - **实测发现的间歇超时 + 应对**：本机对 `GetPlayerSummaries` 间歇 HTTP=000 而 `GetRecentlyPlayedGames` 稳定 200（同域不同端点、同刻一成一败，CDN 边缘问题）。故 `steam_status.tick_once` 升级为**双通道**：实时 summaries 优先（observed）；失败退回 recently-played **playtime 增量推断**（"榜首游戏时长在轮询间增长→正在玩它"，trust=**inferred**，如实标注非实时观测）。基线首拍不发事件；离线单测 4 场景全过（基线/增量/无变化/换游戏）。
 - 真实数据样例（近 2 周，实测取回）：Delta Force 48.8h、Fallout 4 31.4h、RimWorld 12h、VPet 10.2h…… 情境入图后，表达管线自行决定要不要提（如"又在打辐射4？"级别的 CI）。
 

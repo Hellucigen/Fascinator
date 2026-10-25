@@ -47,7 +47,7 @@ CLASS_UNKNOWN = "unknown"
 # 引擎/自我/社会图谱锚点：绝不外扩、绝不与其建边
 PROTECTED_IDS = {
     "用户", "Self", "Haru", "FAS", "Minecraft会话", "用户关系",
-    "Hellucigen",  # 用户本人账号名（2026-09-22 核查：邻居全是反思/传送私人情节）
+    "<USER>",  # 用户本人账号名（2026-09-22 核查：邻居全是反思/传送私人情节）
     "CuriosityDrive", "SocialDrive", "LearningDrive", "ConsistencyDrive",
 }
 # 时间指示词：语义随"此刻"漂移，外扩只会造出以当下为中心的虚构

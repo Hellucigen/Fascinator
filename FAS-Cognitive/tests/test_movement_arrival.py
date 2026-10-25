@@ -255,19 +255,19 @@ check("第四级如实 stuck（带实体/位置/距离，绝不假成功）",
 print("\n── 8 玩家追击（真机 22:33『过来』entity_not_visible 的修复）──")
 fb = FakeBridge()
 fb.state_data["playersNearby"] = [
-    {"name": "Hellucigen", "rel": {"dx": 20.0, "dy": 2.0, "dz": 0.0},
+    {"name": "<USER>", "rel": {"dx": 20.0, "dy": 2.0, "dz": 0.0},
      "dist": 20.1}]
 ctx = new_ctx(fb)
 nav = NavigateToEntity()
-r = nav.start(ctx, {"entity": "Hellucigen"})
+r = nav.start(ctx, {"entity": "<USER>"})
 check("玩家经 playersNearby 可见 → 发起的是 follow 不是 goto_entity",
-      r["ok"] and fb.follows == ["Hellucigen"] and not fb.goto_entity_calls,
+      r["ok"] and fb.follows == ["<USER>"] and not fb.goto_entity_calls,
       f"follows={fb.follows} ge={fb.goto_entity_calls}")
 check("追击态标记 nav_player（超时/终止时随停跟随）",
       ctx.session.get("nav_player") is True, str(ctx.session.get("nav_player")))
 # 玩家贴近（3D 实测 ≤ keep）→ 到达，goto+follow 都清
 fb.state_data["playersNearby"] = [
-    {"name": "Hellucigen", "rel": {"dx": 1.0, "dy": 1.0, "dz": 0.0},
+    {"name": "<USER>", "rel": {"dx": 1.0, "dy": 1.0, "dz": 0.0},
      "dist": 1.4}]
 ctx.invalidate()
 r2 = nav.poll(ctx)

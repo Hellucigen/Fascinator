@@ -91,7 +91,7 @@ loop.register_embodiment(emb)
 loop.cap_index = emb.cap_index   # 生产形状：图谱候选在场（未播种→发现
                                  # 失败被吞=空，透传/追问链照跑）
 
-PLAYER = [{"name": "Hellucigen", "dist": 2.5, "rel": {"dx": 2.5}}]
+PLAYER = [{"name": "<USER>", "dist": 2.5, "rel": {"dx": 2.5}}]
 
 
 def percept():
@@ -103,7 +103,7 @@ def percept():
 
 # ═══ 1. 邀请落账 ═══
 print("\n── 1 邀请→承诺 ──")
-r = loop.register_invitation("follow", "Hellucigen")
+r = loop.register_invitation("follow", "<USER>")
 gs = loop.goals()
 check("register_invitation 生成持久目标",
       r.get("ok") and len(gs) == 1 and gs[0]["type"] == "follow"
@@ -111,14 +111,14 @@ check("register_invitation 生成持久目标",
 persisted = os.path.join(BASE, "autonomy.json")
 check("目标已落盘（跨重启存活）", os.path.exists(persisted), persisted)
 
-loop.register_invitation("approach", "Hellucigen", text="过来")
-loop.register_invitation("approach", "Hellucigen", text="再到我这")
+loop.register_invitation("approach", "<USER>", text="过来")
+loop.register_invitation("approach", "<USER>", text="再到我这")
 gs = loop.goals()
 check("同型新邀请替换旧邀请（不堆积）",
       sum(1 for g in gs if g["type"] == "approach") == 1, str(gs))
 
 # 执行词也接受（反射处可能拿 follow_entity 来登记）
-r2 = loop.register_invitation("follow_entity", "Hellucigen")
+r2 = loop.register_invitation("follow_entity", "<USER>")
 check("executor 名登记归一为契约词（follow_entity→follow）",
       r2.get("ok") and r2["goal"]["type"] == "follow", str(r2))
 check("不支持的类型拒绝（不造承诺）",
@@ -148,7 +148,7 @@ sc, _expl = loop._score_action(follow_c[0], percept(), time.time())
 check("候选可评分（走的是全链评分，不是旁路直通）",
       isinstance(sc, float), str(sc))
 appr = [c for c in cands if c.get("action_type") == "navigate_to_entity"
-        and c.get("target") == "Hellucigen"]
+        and c.get("target") == "<USER>"]
 ok2, why2 = (loop._feasible_action(appr[0], percept(), time.time())
              if appr else (False, "无候选"))
 check("approach 承诺对**玩家**目标也过在场检查（旧只查生物表）",
@@ -184,16 +184,16 @@ check("同键 social(图先) vs user_goal(承诺后) → 保承诺（生产 dedu
 print("\n── 4 销账 ──")
 n0 = len(loop.goals())
 loop._on_action_settled(
-    {"action_type": "follow_entity", "target": "Hellucigen",
-     "params": {"entity": "Hellucigen"}},
+    {"action_type": "follow_entity", "target": "<USER>",
+     "params": {"entity": "<USER>"}},
     {"success": True}, True)
 gs = loop.goals()
 check("follow 兑现 → 该承诺移除，approach 承诺不动",
       len(gs) == n0 - 1 and not any(
           g["type"] == "follow" for g in gs), str(gs))
 loop._on_action_settled(
-    {"action_type": "navigate_to_entity", "target": "Hellucigen",
-     "params": {"entity": "Hellucigen"}},
+    {"action_type": "navigate_to_entity", "target": "<USER>",
+     "params": {"entity": "<USER>"}},
     {"success": False, "reason": "unreachable"}, False)
 check("失败不销账（承诺还在，下一拍继续兑现）",
       any(g["type"] == "approach" for g in loop.goals()), str(loop.goals()))
@@ -208,7 +208,7 @@ check("cancel 只清邀请来源（调试面板目标不动）",
       any(g["type"] == "collect" for g in loop.goals()), str(loop.goals()))
 
 # 跨重启：重新构造 loop 读同一 data_dir，邀请承诺仍在
-loop.register_invitation("follow", "Hellucigen")
+loop.register_invitation("follow", "<USER>")
 loop2 = AutonomousLoop(kg=kg, config=dict(CFG), data_dir=BASE)
 check("承诺跨重启存活（持久目标，不是内存标签）",
       any(g["type"] == "follow" and g.get("source") == "user_invitation"
@@ -259,7 +259,7 @@ PERC6 = percept()
 _d_bind = loop._bind_follow({"action_type": "follow_entity"}, PERC6, NOW6)
 check("同伴就在跟前（dist≤follow_skip_dist）→ 自主层不再提出跟随",
       _d_bind == [], str(_d_bind))
-PERC6["players"] = [{"name": "Hellucigen", "dist": 10.0, "rel": {"dx": 10.0}}]
+PERC6["players"] = [{"name": "<USER>", "dist": 10.0, "rel": {"dx": 10.0}}]
 _d_bind2 = loop._bind_follow({"action_type": "follow_entity"}, PERC6, NOW6)
 check("人走远（>4 格）→ 下一拍跟随自然回来（是动力学不是禁令）",
       len(_d_bind2) == 1 and _d_bind2[0].get("motivation") == "social",

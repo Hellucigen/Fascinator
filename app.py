@@ -1572,7 +1572,7 @@ def _dispatch_mc_reflex(reflex: dict) -> dict:
     """MODE0 反射指令分发（游戏在线时）。快路径与正常路径共用，防两套逻辑。"""
     _r_act = reflex.get("action")
     _rp = reflex.get("params") or {}
-    _game_user = config.get("minecraft_user_name") or "Hellucigen"
+    _game_user = config.get("minecraft_user_name") or "<USER>"
     if _r_act in ("follow", "approach"):
         _rf = mc_actions.follow_player(_game_user)
         # B4/§4 邀请→承诺：反射先动身（响应性），随后落**持久目标**，
@@ -1969,7 +1969,7 @@ def _mc_on_connected(result):
     # 移交 CI 链：连接事件已入时间轴，若值得说，表达由
     # CI→communicate→通道产生并带真实投递回执；过不了富基底门就不说（诚实）。
     try:
-        _guser = config.get("minecraft_user_name") or "Hellucigen"
+        _guser = config.get("minecraft_user_name") or "<USER>"
         action_manager.propose({
             "action_type": "navigate_to_entity", "target": _guser,
             "params": {"entity": _guser, "player": _guser,
@@ -4117,7 +4117,7 @@ def process_nlp():
                             f"evidence={_mc_info['rejected'].get('evidence')}")
             if _mc_intent is not None:
                 try:
-                    _game_user = config.get("minecraft_user_name") or "Hellucigen"
+                    _game_user = config.get("minecraft_user_name") or "<USER>"
                     _early = _mc_intent.get("reflex") or {
                         "action": "none",
                         "params": _mc_intent.get("parameters") or {}}
@@ -4161,7 +4161,7 @@ def process_nlp():
                                     autonomy.register_invitation(
                                         str(_early.get("action")),
                                         config.get("minecraft_user_name")
-                                        or "Hellucigen")
+                                        or "<USER>")
                                     _mc_action_result["committed"] = True
                                 except Exception as _rie:
                                     logger.debug(f"[Reflex] 邀请落诺失败: {_rie}")
@@ -4261,7 +4261,7 @@ def process_nlp():
                     and not _mc_session_action.get("pending")
                     and _mc_session_action.get("action") == "connect_minecraft"):
                 try:
-                    _guser = config.get("minecraft_user_name") or "Hellucigen"
+                    _guser = config.get("minecraft_user_name") or "<USER>"
                     _prop_ap = action_manager.propose({
                         "action_type": "navigate_to_entity",
                         "target": _guser,
@@ -5252,7 +5252,7 @@ def process_nlp():
         _mc_neg_refused = bool(_mc_info.get("refused"))
         if (not _reflex_fast and _mc_online and not _mc_neg_refused
                 and ((_l1_fast and _l1_wants_action) or not _l1_fast)):
-            _game_user = config.get("minecraft_user_name") or "Hellucigen"
+            _game_user = config.get("minecraft_user_name") or "<USER>"
             if _l1_fast:
                 _spec = l1_to_action(parsed, _game_user)
                 if _spec is not None:

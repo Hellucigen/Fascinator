@@ -41,7 +41,7 @@ appeal 的认知信号来源（不是硬编码轮换）：
 
 ## 五、手动体验与复验方法
 
-1. 往 `C:\Users\Hellucigen\Music` 放几首歌（mp3/flac/wav 均可，曲库目录可在配置改 `activity_music_library`）。
+1. 往 `C:\Users\<USER>\Music` 放几首歌（mp3/flac/wav 均可，曲库目录可在配置改 `activity_music_library`）。
 2. BODY 页把 **LIVING 拨 ON**（这同时就是"过日常生活"的总开关）。
 3. 什么都不做，等 10-20 分钟：她会自己放歌（系统播放器弹出来就是她放的）；日志关键字 `[Act] 这拍想做：`。
 4. 期间你随时发消息——她先理你（busy 让位），聊完继续她的。

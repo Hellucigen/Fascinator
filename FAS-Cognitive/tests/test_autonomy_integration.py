@@ -38,7 +38,7 @@ WORLD = {
     "connected": True, "username": "Haru",
     "position": {"x": 0.0, "y": 64.0, "z": 0.0},
     "health": 20, "food": 20, "heldItem": None,
-    "playersNearby": [{"name": "Hellucigen", "dist": 6.0,
+    "playersNearby": [{"name": "<USER>", "dist": 6.0,
                        "rel": {"dx": 5.0, "dy": 0.0, "dz": 3.0}}],
     # 一只没见过的生物（图里会被感知模块记为 UnknownEntity_axolotl）
     "nearbyEntities": [{"name": "axolotl", "displayName": "Axolotl", "dist": 5.0,

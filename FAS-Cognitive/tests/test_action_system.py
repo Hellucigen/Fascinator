@@ -132,7 +132,7 @@ base, kg, emb, am, tl = build()
 emb.next_result = {"success": True, "pending": True, "describe": "挖矿中"}
 am.propose({"action_type": "gather_resource", "target": "coal_ore",
             "priority": 0.5}, source=SRC_AUTONOMY, now=100.0)
-p = am.propose({"action_type": "follow_entity", "target": "Hellucigen",
+p = am.propose({"action_type": "follow_entity", "target": "<USER>",
                 "priority": 0.85}, source=SRC_USER, now=101.0)
 check("用户高优先级动作打断当前动作", p.get("started") is True
       and p.get("interrupted") is True, str(p))

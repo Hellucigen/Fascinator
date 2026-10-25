@@ -52,23 +52,23 @@ for text in ("我们先去那个村庄看看，如果有铁的话就挖一点，
 
 # ── 3. L1 解析产物 → ActionNode ─────────────────────────────
 spec = l1_to_action({"intent": "follow_user", "target": "用户", "urgency": 0.9,
-                     "needs_action": True}, "Hellucigen")
+                     "needs_action": True}, "<USER>")
 check("follow_user → follow_entity(用户名)",
       spec["action_type"] == "follow_entity"
-      and spec["params"]["entity"] == "Hellucigen", str(spec))
+      and spec["params"]["entity"] == "<USER>", str(spec))
 spec = l1_to_action({"intent": "mine_block", "target": "铁矿", "count": 2,
-                     "urgency": 0.8}, "Hellucigen")
+                     "urgency": 0.8}, "<USER>")
 check("mine_block(铁矿) → gather_resource(iron_ore, qty=2)",
       spec["action_type"] == "gather_resource"
       and spec["params"]["resource"] == "iron_ore"
       and spec["params"]["quantity"] == 2, str(spec))
-spec = l1_to_action({"intent": "stop_action", "urgency": 0.95}, "Hellucigen")
+spec = l1_to_action({"intent": "stop_action", "urgency": 0.95}, "<USER>")
 check("stop_action → stop（高紧迫）",
       spec["action_type"] == "stop" and spec["urgency"] == 0.95, str(spec))
 check("闲聊意图不产生动作",
-      l1_to_action({"intent": "none"}, "Hellucigen") is None)
+      l1_to_action({"intent": "none"}, "<USER>") is None)
 check("未知意图不产生动作（不猜）",
-      l1_to_action({"intent": "dance_for_me"}, "Hellucigen") is None)
+      l1_to_action({"intent": "dance_for_me"}, "<USER>") is None)
 
 # ── 4. L2 意图分解 → ActionNode（队列目标）──────────────────
 spec = intention_to_action({"type": "go_to", "target": "村庄", "params": {}})
@@ -93,15 +93,15 @@ check("词表外意图被拒绝（不猜）",
       intention_to_action({"type": "fly_to_moon", "params": {}}) is None)
 
 # ── 5. 反射解析 → ActionNode（零 LLM 快通道同管路）──────────
-spec = reflex_to_action({"action": "follow", "params": {}}, "Hellucigen")
+spec = reflex_to_action({"action": "follow", "params": {}}, "<USER>")
 check("反射 follow → follow_entity", spec["action_type"] == "follow_entity")
 spec = reflex_to_action({"action": "dig", "params": {"block": "铁矿",
-                                                     "target": "铁矿"}}, "Hellucigen")
+                                                     "target": "铁矿"}}, "<USER>")
 check("反射 dig(铁矿) → gather_resource(iron_ore)",
       spec["action_type"] == "gather_resource"
       and spec["params"]["resource"] == "iron_ore", str(spec))
 spec = reflex_to_action({"action": "attack", "params": {"entity": "zombie"}},
-                        "Hellucigen")
+                        "<USER>")
 check("反射 attack → attack_entity", spec["action_type"] == "attack_entity")
 check("反射 none → 无动作", reflex_to_action({"action": "none"}, "u") is None)
 

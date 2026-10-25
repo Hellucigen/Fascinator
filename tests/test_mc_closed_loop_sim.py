@@ -86,7 +86,7 @@ def reset_world(**over):
         "connected": True, "username": "Haru",
         "position": {"x": 0.0, "y": 64.0, "z": 0.0},
         "health": 20, "food": 20, "heldItem": None,
-        "playersNearby": [_entity("Hellucigen", 6.0, (5.0, 0.0, 3.0))],
+        "playersNearby": [_entity("<USER>", 6.0, (5.0, 0.0, 3.0))],
         "nearbyEntities": [], "nearbyBlocks": [],
         "chat": [], "connectedAt": 1, "timeOfDay": 1000, "isRaining": False,
     })

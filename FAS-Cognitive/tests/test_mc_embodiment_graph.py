@@ -99,8 +99,8 @@ def harness():
 
 # ═══ §28.1 follow 全链：用户指令→意图→能力→执行（graph→capability）═══
 kg, eng, ci, emb, am, kernel, loop, base = harness()
-emb.percept["players"] = [{"name": "Hellucigen", "dist": 4.0}]
-kg.nodes["附近的玩家"].extra_attrs["value"] = "Hellucigen"
+emb.percept["players"] = [{"name": "<USER>", "dist": 4.0}]
+kg.nodes["附近的玩家"].extra_attrs["value"] = "<USER>"
 kg.nodes["附近的玩家"].activation = 1.0
 drafts = ci.discover_candidates(live=emb.percept)
 follow = [d for d in drafts if d.get("concept") == "FOLLOW"]

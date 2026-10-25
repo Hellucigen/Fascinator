@@ -13,7 +13,7 @@
 构建一个会自己过日子的 AI 伙伴 —— 扩散激活知识图谱 × 情境记忆 × 自主表达 | Fascinator & Charon
 ```
 
-Website 填：`https://github.com/Hellucigen/Fascinator`
+Website 填：`https://github.com/<USER>/Fascinator`
 
 ### B. 给 PAT 补权限（如果你以后想让我代管 profile）
 Settings → Developer settings → Personal access tokens →
@@ -22,12 +22,12 @@ Settings → Developer settings → Personal access tokens →
 
 ## PROFILE.md（已推送）
 
-新增了 `PROFILE.md`——虽然你的 username（Hellucigen）没有同名仓库，
+新增了 `PROFILE.md`——虽然你的 username（<USER>）没有同名仓库，
 这个文件**不会**自动显示在主页上（只有与 username 同名的仓库的 README.md
 才会成为个人主页）。两个用法：
 
-1. **建一个 `Hellucigen/Hellucigen` 仓**，把这个文件内容贴进去成 README.md
+1. **建一个 `<USER>/<USER>` 仓**，把这个文件内容贴进去成 README.md
    —— 它就会渲染成你的 GitHub 主页门面。
 2. 或者忽略它，纯当资料留档（也行，内容已经写好）。
 
-要我帮你把 PROFILE.md 内容变成 `Hellucigen/Hellucigen` 仓的 README，说一声即可（repo 创建 + 推送全程可自动化）。
+要我帮你把 PROFILE.md 内容变成 `<USER>/<USER>` 仓的 README，说一声即可（repo 创建 + 推送全程可自动化）。

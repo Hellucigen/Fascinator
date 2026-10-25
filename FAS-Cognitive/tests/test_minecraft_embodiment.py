@@ -33,7 +33,7 @@ STATE = {
     "connected": True, "username": "Haru",
     "position": {"x": 10.0, "y": 64.0, "z": 20.0},
     "health": 20, "food": 18, "heldItem": "wooden_pickaxe",
-    "playersNearby": [{"name": "Hellucigen", "dist": 4.0,
+    "playersNearby": [{"name": "<USER>", "dist": 4.0,
                        "rel": {"dx": 3.0, "dy": 0.0, "dz": 2.0}}],
     "nearbyEntities": [{"name": "cow", "displayName": "Cow", "dist": 5.0,
                         "rel": {"dx": -4.0, "dy": 0.0, "dz": 3.0}}],
@@ -201,7 +201,7 @@ check("dig 失败回真实原因（不假装成功）",
 # ── 6. 其它意图的动作映射 ────────────────────────────────
 kg, emb = build()
 emb.perceive()
-check("follow → /follow", emb.execute({"type": "follow", "params": {"player": "Hellucigen"}})["success"]
+check("follow → /follow", emb.execute({"type": "follow", "params": {"player": "<USER>"}})["success"]
       and any(c[0] == "/follow" for c in calls))
 install_fake_bridge()
 kg, emb = build()

@@ -10,7 +10,7 @@
   ],
   "goals": [],
   "candidate_landscape": [
-    {"type": "follow_entity", "target": "Hellucigen", "score": 0.211},
+    {"type": "follow_entity", "target": "<USER>", "score": 0.211},
     {"type": "screen_observe", "target": null, "score": 0.12},
     {"type": "gather_resource", "target": "grass_block", "score": 0.03}
   ],

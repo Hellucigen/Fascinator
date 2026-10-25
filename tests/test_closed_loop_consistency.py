@@ -461,9 +461,9 @@ print("── Test A：目标消失 → 生命周期降级/搁置 → 目标重�
 W = ScriptWorld()
 install_fake_bridge(W)
 kg, eng, reg, emb, tl, causal, am, loop = build_stack()
-W.set_players("Hellucigen")
+W.set_players("<USER>")
 NOW[0] = 1000.0
-loop.register_invitation("follow", "Hellucigen")
+loop.register_invitation("follow", "<USER>")
 # 虚拟钟测试：生命周期的 created_ts 锚用仿真时间（生产路径是真实时钟，
 # 两边一致；测试注入虚拟 now 时必须对齐，否则 span 为负永不判死）
 loop._goals[-1]["created_ts"] = NOW[0]
@@ -495,7 +495,7 @@ f3 = user_goal_cands(cands3, "follow_entity")
 check("A5 缺席满 STALE → stale 且不再产出候选（保留记录）",
       s3 == "stale" and not f3,
       f"state={s3} cands={len(f3)} status={g.get('status')}")
-W.set_players("Hellucigen")         # 目标重新在场 → 复活
+W.set_players("<USER>")         # 目标重新在场 → 复活
 NOW[0] = 3517.0
 p4, _ = probe(loop)
 s4 = loop._reevaluate_goal(g, p4, NOW[0])

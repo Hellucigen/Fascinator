@@ -6,7 +6,7 @@
 #
 # 身份判定（只回答"这是谁说的"，不规定 FAS 必须怎么做）：
 #   sender == 自己的 bot 名 → self（机械过滤：否则自己回自己，无限回环）
-#   sender == 用户（配置里的 MC 名，默认 Hellucigen）→ user（照常进认知）
+#   sender == 用户（配置里的 MC 名，默认 <USER>）→ user（照常进认知）
 #   sender == 其他人 → other（**身份事实**随消息一起交给认知；是否回应由
 #            统一管线里的 dialogue_decide 决定，"被点名"只是注意力线索）
 #
@@ -21,7 +21,7 @@ from conversation_channel import KIND_USER, KIND_OTHER, KIND_SELF, DEFAULT_PROFI
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_USER_NAMES = ("Hellucigen",)
+DEFAULT_USER_NAMES = ("<USER>",)
 DEFAULT_ALIASES = ("Haru", "哈鲁", "Fascinator", "fas")
 
 

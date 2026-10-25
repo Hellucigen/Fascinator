@@ -60,9 +60,9 @@ if ok:
             blob[:200])
     if r.get("reason") in (None, "", "arrived") and r.get("success"):
         d = next((e.get("dist") for e in (mc_state().get("nearbyEntities") or [])
-                  if "Hellucigen" in str(e.get("name") or "")), None)
+                  if "<USER>" in str(e.get("name") or "")), None)
         pl = next((p.get("dist") for p in (mc_state().get("playersNearby") or [])
-                   if p.get("name") == "Hellucigen"), d)
+                   if p.get("name") == "<USER>"), d)
         verdict("声称到达 ↔ 实时玩家距离 ≤6（无假 XZ）",
                 pl is None or pl <= 6.0, f"实时玩家 dist={pl}")
 

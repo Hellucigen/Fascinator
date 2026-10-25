@@ -11,7 +11,7 @@ PATTERNS = {
     "api_key": re.compile(r"sk-[A-Za-z0-9]{8,}|api[_-]?key\s*[=:]\s*['\"][^'\"]{8,}|secret[_-]?key|Bearer [A-Za-z0-9]{10,}"),
     "token_like": re.compile(r"(token|password|passwd|credential)s?\s*[=:]\s*['\"][^'\"]{6,}", re.I),
     "email": re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"),
-    "username": re.compile(r"Hellucigen|C:\\\\?Users"),
+    "username": re.compile(r"<USER>|C:\\\\?Users"),
 }
 EXCLUDE_EXT = {".png", ".pdf", ".zip", ".index", ".faiss", ".model", ".bin", ".pt", ".pkl"}
 hits = {}

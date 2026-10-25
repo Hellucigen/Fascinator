@@ -6,27 +6,27 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Hellucigen/Fascinator"><img src="https://img.shields.io/badge/🧠_Fascinator-认知引擎-232c48?style=flat-square" alt="Fascinator"></a>
-  <a href="https://github.com/Hellucigen/Charon"><img src="https://img.shields.io/badge/🏠_Charon-居所终端-232c48?style=flat-square" alt="Charon"></a>
-  <a href="https://github.com/Hellucigen/Fascinator-Ear"><img src="https://img.shields.io/badge/👂_Ear-听觉子系统-232c48?style=flat-square" alt="Ear"></a>
+  <a href="https://github.com/<USER>/Fascinator"><img src="https://img.shields.io/badge/🧠_Fascinator-认知引擎-232c48?style=flat-square" alt="Fascinator"></a>
+  <a href="https://github.com/<USER>/Charon"><img src="https://img.shields.io/badge/🏠_Charon-居所终端-232c48?style=flat-square" alt="Charon"></a>
+  <a href="https://github.com/<USER>/Fascinator-Ear"><img src="https://img.shields.io/badge/👂_Ear-听觉子系统-232c48?style=flat-square" alt="Ear"></a>
 </p>
 
 ---
 
 ## 主线
 
-**[Fascinator](https://github.com/Hellucigen/Fascinator)** — Haru 的认知引擎
+**[Fascinator](https://github.com/<USER>/Fascinator)** — Haru 的认知引擎
 
 > 扩散激活知识图谱 × 情境记忆 × 自主表达。
 > 她的每一个念头、每一段经历、每一次想说话的冲动，都是图上的节点——
 > 由一条持续运转的认知循环调度，而不是等用户发问才醒着。
 
-**[Charon](https://github.com/Hellucigen/Charon)** — Haru 的居所
+**[Charon](https://github.com/<USER>/Charon)** — Haru 的居所
 
 > 个人生活 OS 桌面终端（Wails + React）。她的对话区、气泡、状态铭牌
 > 都住在这里；夜话主题，与认知引擎实时联动。
 
-**[Fascinator-Ear](https://github.com/Hellucigen/Fascinator-Ear)** — 听觉子系统
+**[Fascinator-Ear](https://github.com/<USER>/Fascinator-Ear)** — 听觉子系统
 
 > 语音 / 音乐 / 环境声三路分析（Demucs 分离 + 说话人分离）。
 
@@ -40,8 +40,8 @@
 
 ## 其他
 
-[天眼 · 姿态行为检测](https://github.com/Hellucigen/The-Institute-Eyes) ·
-[Kaggle 方案集](https://github.com/Hellucigen/Kaggle-Competitions) ·
-[工具集](https://github.com/Hellucigen/Tools)
+[天眼 · 姿态行为检测](https://github.com/<USER>/The-Institute-Eyes) ·
+[Kaggle 方案集](https://github.com/<USER>/Kaggle-Competitions) ·
+[工具集](https://github.com/<USER>/Tools)
 
 <p align="center"><sub><i>Everything is a node.</i></sub></p>

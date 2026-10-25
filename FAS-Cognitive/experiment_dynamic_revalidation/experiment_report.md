@@ -25,7 +25,7 @@ Environment control used exclusively through existing interfaces: bridge `/say` 
 | window | 18:56:50 – 19:01:50 (300 s) |
 | actions | 4 (amble ×3, explore_direction(north)) — all success |
 | goals | 0 |
-| candidate landscape | follow_entity@Hellucigen 0.211 · screen_observe 0.12 · gather_resource@grass_block 0.03 |
+| candidate landscape | follow_entity@<USER> 0.211 · screen_observe 0.12 · gather_resource@grass_block 0.03 |
 | threshold | 0.35 (untouched) |
 | LLM calls total / on MC action path | 0 / 0 |
 | bridge latency | min 1 · med 15 · p95 22 · max 25 ms (60 commands) |

@@ -11,7 +11,7 @@ DST = sys.argv[2]
 TEXT_EXT = {".py", ".md", ".json", ".jsonl", ".csv", ".txt", ".log", ".cff",
             ".yml", ".yaml", ".tex", ".bib", ".cfg", ".ini", ".js", ".html"}
 REPL = [
-    ("Hellucigen", "player_main"),
+    ("<USER>", "player_main"),
     (r"E:\Project\Fascinator", "<REPO_ROOT>"),
     ("E:/Project/Fascinator", "<REPO_ROOT>"),
     (r"E:\\Project\\Fascinator", "<REPO_ROOT>"),
@@ -23,7 +23,7 @@ REPL = [
     ("E:\\Models", "<MODELS_DIR>"),
     ("E:/LaTeX/MiKTeX", "<TEX_INSTALL>"),
     ("E:\\LaTeX", "<TEX_INSTALL>"),
-    ("C:\\Users\\Hellucigen", "<HOME>"),
+    ("C:\\Users\\<USER>", "<HOME>"),
     ("C:\\Users\\player_main", "<HOME>"),
     (r"C:\\Users\\player_main", "<HOME>"),
     ("The Institute Eyes", "<EXTERNAL_PROJECT>"),
