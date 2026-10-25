@@ -4,7 +4,8 @@
 
 **扩散激活知识图谱 × 情境记忆 × 自主表达的桌面 AI 伙伴**
 
-认知引擎自研 · 无框架 · Python + Flask · 与 [Charon](https://github.com/Hellucigen/Charon-Personal-Terminal-of-Hellucigen) 桌面终端联动
+**Haru** 的认知引擎 —— 扩散激活知识图谱驱动她形成念头、攒出表达、
+在授权时段自主探索。无框架 · Python + Flask
 
 </div>
 
