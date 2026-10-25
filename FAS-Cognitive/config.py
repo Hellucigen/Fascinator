@@ -1464,10 +1464,12 @@ DEFAULT_CONFIG = {
             # 形成/开口/行动。"什么都不做"永远是合法出口，阈值只调宽窄。
             "cognition.form_threshold": {
                 "baseline": 0.55, "min": 0.35, "max": 0.75,
+                # context.fatigue 已删（2026-10-26：AI 无疲劳生理，
+                # 2026-10-17 用户裁定；该系数自那以后无 provider 恒 0，
+                # 清除死配置防误读）
                 "effects": {"drive.curiosity": -0.12, "network.DMN": -0.10,
                              "drive.social": -0.08, "network.CEN": 0.08,
-                             "hormone.cortisol": 0.15,
-                             "context.fatigue": 0.20}},
+                             "hormone.cortisol": 0.15}},
             "cognition.express_threshold": {
                 "baseline": 0.78, "min": 0.55, "max": 0.95,
                 # 20:0x 尺度校准（可解释初值，非生理规律宣称）：CI 激活在
