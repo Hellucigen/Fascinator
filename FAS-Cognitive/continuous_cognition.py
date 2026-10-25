@@ -622,16 +622,29 @@ class ContinuousCognition:
         social_relevance = min(1.0, (0.5 if emotion_present else 0.0)
                                + 0.15 * min(user_relevant, 3))
         affordance_w = (self._loop_cfg.get("focus") or {}).get("weights") or {}
+        # 社交驱力直读项（2026-10-26 "她该主动找我"）：驱力节点被
+        # is_modulator 合法滤出 basis_pool → drive_support 在深夜独处时
+        # 恒 0，focus_score 掉到 0.13 → "想找你"的念头永远形不成。
+        # 想念本身就该是焦点：直读 drive.social 水位作为第 6 分量。
+        _sd_level = 0.0
+        try:
+            if self.drive_evaluator is not None:
+                _sd_level = next((float(d.get("activation", 0))
+                                  for d in self.drive_evaluator.get_all_drives()
+                                  if d.get("drive") == "social"), 0.0)
+        except Exception:
+            pass
         focus_score = (
             float(affordance_w.get("concentration", 0.60)) * concentration
             + float(affordance_w.get("coherence", 0.15)) * coherence
             + float(affordance_w.get("continuity", 0.08)) * continuity
             + float(affordance_w.get("novelty", 0.10)) * novelty
-            + float(affordance_w.get("drive_support", 0.07)) * drive_support)
+            + float(affordance_w.get("drive_support", 0.07)) * drive_support
+            + 0.30 * _sd_level)
         focus_explain = {
             "concentration": round(concentration, 2), "coherence": round(coherence, 2),
             "continuity": round(continuity, 2), "novelty": round(novelty, 2),
-            "drive_support": round(drive_support, 2),
+            "drive_support": round(drive_support, 2), "social_drive": round(_sd_level, 2),
             "focus_score": round(focus_score, 3),
             # 社交三读数入账（2026-10-17 表达去门控）：分享价值是**内容
             # 属性**，随念头定格——事后图谱焦点会漂走，评估时必须拿得到
@@ -744,10 +757,21 @@ class ContinuousCognition:
     def _merge_or_form(self, basis_nodes, focus_score, focus_explain,
                        kinds_aff, signals):
         basis = [n.id for n in basis_nodes[:BASIS_KEEP]]
-        # 纯身份 basis 不配成念头（2026-10-25：452 个 basis=['用户'] 空意图
-        # 的根因）。混合池（身份+真概念）保留——'用户'常与真事件共激活。
+        # 纯身份 basis：默认拒绝（2026-10-25：452 个 basis=['用户'] 空意图
+        # 的根因）——**除非**社交驱力在场（≥0.3）："想找你说话"本身是
+        # 合法念头（2026-10-26 用户裁定：她该主动找我）。此时 basis 记为
+        # 用户+社交驱力支撑，表达内容由表达层从对话/记忆取材。
         if basis and all(b in _IDENTITY_HUBS for b in basis):
-            return
+            _sd_ok = False
+            try:
+                if self.drive_evaluator is not None:
+                    _sd_ok = next((float(d.get("activation", 0))
+                                   for d in self.drive_evaluator.get_all_drives()
+                                   if d.get("drive") == "social"), 0.0) >= 0.3
+            except Exception:
+                pass
+            if not _sd_ok:
+                return
         basis_set = set(basis)
         # 意图形成阈值：受 Drive/网络/激素连续调制。
         # 注意形成判定与 kind 判定分离——focus 够强就形成（"认知场里正在
@@ -1035,6 +1059,29 @@ class ContinuousCognition:
                         self.cfg["decay_per_pulse"])) * damp
                     ea["activation"] = round(
                         float(ea.get("activation", 0)) * eff_decay, 4)
+                    # 想念充能（2026-10-26 用户裁定："她该主动找我，而不是我
+                    # 喂她才有动力"）：communication 意图随 drive.social 水位
+                    # 回充——你不在越久社交驱力越高（social_absence 张力），
+                    # 想找你的念头持续续火而非出生即峰值衰减。实锤：affinity
+                    # 1.12（很想）的念头 3 拍内 0.55→0.19，评估分永远够不着
+                    # 0.60 线。充能=驱力水位×0.10/拍（封顶 1.0；0.06 实测仅悬停在门槛下——想念最终要变成话），只对
+                    # communication 类——探索念头不吃这口（好奇心有自己的
+                    # 供能路径），充能后照常衰减，净效果=有想念时半衰期
+                    # 拉长到几十拍，没想念时行为与从前完全一致。
+                    if ea.get("kind") == "communication":
+                        try:
+                            _ds = 0.0
+                            if self.drive_evaluator is not None:
+                                _ds = next((float(d.get("activation", 0))
+                                            for d in self.drive_evaluator
+                                            .get_all_drives()
+                                            if d.get("drive") == "social"), 0.0)
+                            if _ds > 0.05:
+                                ea["activation"] = round(min(
+                                    1.0, ea["activation"]
+                                    + 0.10 * _ds), 4)
+                        except Exception:
+                            pass
                 if ea["activation"] >= self.cfg["form_threshold"] \
                         and st == ST_FORMING:
                     self._promote_goal(n)
@@ -1329,6 +1376,21 @@ class ContinuousCognition:
                     break
             if all_told and known_material:
                 return True                       # 同族原配方全旧料 = 复读
+            # 有（或疑似有）新原料 → 保留原有的 30min 同族近窗节流
+            for n in self.kg.nodes.values():
+                e = n.extra_attrs or {}
+                if n is ci or e.get("type") not in self._INTENTION_TYPES:
+                    continue
+                if e.get("status") != ST_EXPRESSED:
+                    continue
+                if str(e.get("reply_goal") or "") != goal:
+                    continue
+                ts = float(e.get("expressed_at_ts") or 0.0)
+                if not ts or now - ts > window_s:
+                    continue
+                ob = set(str(x) for x in (e.get("basis") or []))
+                if ob and len(ob & bset) / max(len(ob | bset), 1) >= 0.5:
+                    return True
             # 有（或疑似有）新原料 → 保留原有的 30min 同族近窗节流
             for n in self.kg.nodes.values():
                 e = n.extra_attrs or {}
