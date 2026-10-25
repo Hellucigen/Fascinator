@@ -1,9 +1,9 @@
-# FAS-Companion
+# Fascinator
 
 FAS（Fascinator）的 **Companion Track**：让系统现在就能陪用户聊天、记录经历、
 在游戏里互动。这一层的语言实现是**临时借用**的成熟方案（云端 LLM / 本地 Ollama、
 OCR、ASR 等），全部经适配器接入，可按
-[FAS-Companion ↔ Cognitive 接口指南](../FAS-Cognitive/docs/FAS_INTERFACE_GUIDE.md)
+[Fascinator 接口指南](../FAS-Cognitive/docs/FAS_INTERFACE_GUIDE.md)
 逐个替换为 FAS 自建机制——替换语言方案不需要修改认知层。
 
 依赖方向单向：本仓 → **FAS-Cognitive**（同级目录，或 `FAS_COG_ROOT` 环境变量指向）。
