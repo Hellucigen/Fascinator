@@ -31,3 +31,15 @@ FAS-Cognitive/experiments_archive/
 docs/legacy_fascinator/Knowledge/
 docs/legacy_fascinator/experiments/
 docs/legacy_fascinator/deliverables/*.zip
+
+# ── 运行时大目录（2026-10-26 结构整理：这些是活数据/静态资源，不入库）──
+logs/*.log.[0-9]*
+logs/*.jsonl.[0-9]*
+logs/*.prev.log
+data/faiss/
+data/faiss_runtime/
+docs/legacy_fascinator/Knowledge/
+docs/legacy_fascinator/deliverables/
+docs/legacy_fascinator/experiments/
+docs/legacy_fascinator/experiment_dynamic_revalidation/
+docs/legacy_fascinator/FAS_Paper_I/
