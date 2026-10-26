@@ -53,10 +53,12 @@
 
 ## 其他
 
-[RimWorld-Chronicle · 编年史提取器](https://github.com/Hellucigen/RimWorld-Chronicle) ·
-[RimWorld Story · 存档编年史小说](https://github.com/Hellucigen/RimWorld-Story) ·
-[天眼 · 姿态行为检测](https://github.com/Hellucigen/The-Institute-Eyes) ·
-[Kaggle 方案集](https://github.com/Hellucigen/Kaggle-Competitions) ·
-[课程设计 · 成本管理系统](https://github.com/Hellucigen/Database-Course-Design)
+| 仓库 | 作用 |
+|---|---|
+| [**RimWorld-Chronicle**](https://github.com/Hellucigen/RimWorld-Chronicle) | 环世界编年史提取器：`.rws` 存档 → 编年大事记 / 人物档案 / 任务线 / 信件对话 / 台词速查（纯标准库 + GUI，MIT） |
+| [**notify-tracker**](https://github.com/Hellucigen/notify-tracker) | Windows 通知记录器：连"已被系统划走"的 toast 也刻得下来；实时监听、历史回补、隐私归档（纯标准库 tkinter） |
+| [**The-Institute-Eyes**](https://github.com/Hellucigen/The-Institute-Eyes) | 天眼：YOLOv8-Pose 实时姿态/行为检测桌面应用（集成 HSTforU 视频异常检测） |
+| [**Kaggle-Competitions**](https://github.com/Hellucigen/Kaggle-Competitions) | Kaggle 方案合集：LLM 分类微调 · 井眼地质预测 · 学生健康风险 · PTCG 策略 |
+| [**Database-Course-Design**](https://github.com/Hellucigen/Database-Course-Design) | 采油厂油水井作业成本管理系统（数据库课程设计） |
 
 <p align="center"><sub><i>Everything is a node. —— 而节点会做梦。</i></sub></p>
