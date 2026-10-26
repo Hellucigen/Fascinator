@@ -53,6 +53,7 @@
 
 ## 其他
 
+[RimWorld-Chronicle · 编年史提取器](https://github.com/Hellucigen/RimWorld-Chronicle) ·
 [RimWorld Story · 存档编年史小说](https://github.com/Hellucigen/RimWorld-Story) ·
 [天眼 · 姿态行为检测](https://github.com/Hellucigen/The-Institute-Eyes) ·
 [Kaggle 方案集](https://github.com/Hellucigen/Kaggle-Competitions) ·
