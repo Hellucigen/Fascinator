@@ -1877,6 +1877,8 @@ class ContinuousCognition:
         except Exception:                             # noqa: BLE001
             return None
 
+
+
     def _express(self, ci):
         from langchain_core.prompts import ChatPromptTemplate
         if getattr(self, "llm_budget", None) is not None:
@@ -1974,6 +1976,20 @@ class ContinuousCognition:
                     ci=ci.id, outcome="no_speak")
             except Exception:                        # noqa: BLE001
                 pass
+            return False
+        # ── 感知声明硬校验（2026-10-26 "路过屏幕旁边站了个人"幻觉实锤）──
+        # 生成文本声称目击/听到/路过，但近 2 小时内没有任何对应感官记录
+        # （eye_text/ear）→ 判幻觉：CI 直接废弃，不投递、不留"我说过"痕迹。
+        if _claims_perception(text) and not _has_recent_sensory_evidence(self.kg):
+            with self.kg._lock:
+                _ea = ci.extra_attrs
+                _ea["status"] = ST_DISCARDED
+                _ea["last_change_ts"] = time.time()
+                _ea["hallucination_flag"] = "perception_claim_no_evidence"
+                self._evo.note_node_updated(ci.id, {"status": ST_DISCARDED})
+            logger.warning(
+                "[CC] 感知声明无感官证据 → 废弃（幻觉拦截）: %s | %s",
+                ci.id, text[:60])
             return False
 
         # 输出侧机制名清洗（10-21 实修）：输入替换表只保证"模型没见过原名"，
@@ -2877,3 +2893,43 @@ def render_cognitive_state(kg, ci=None, istate=None, said_recent=None,
         if len(full) > budget:
             full = full[:budget]
     return full
+
+# ── 感知声明硬校验（2026-10-26 幻觉实锤）─────────────────────────
+# "路过屏幕/旁边站了个人"实锤：LLM 把概念级 basis（'游戏'）自由编织成
+# 目击叙事，无任何感官依据，且经防复述段反复加固成伪记忆。
+_PERCEPTION_CLAIM_RE = re.compile(
+    r"路过|看到|看见|盯着|眼前|旁边站|站在.{0,6}旁边|屏幕上在放|"
+    r"听到|听见|耳边")
+_SENSORY_WINDOW_S = 2 * 3600     # 近 2 小时内有感官记录即算"在场"
+
+
+def _claims_perception(text: str) -> bool:
+    """生成文本是否**声称感知**（目击/耳闻类谓词）。纯正则，零 LLM。"""
+    return bool(_PERCEPTION_CLAIM_RE.search(str(text or "")))
+
+
+def _has_recent_sensory_evidence(kg) -> bool:
+    """近 _SENSORY_WINDOW_S 内是否有真实感官记录（eye_text/ear_* 节点）。
+    感官节点由 eye/ear 管线写入，created 时间戳可信。零记录 → 感知声明
+    必为虚构（笔记本合着时她没有眼睛）。"""
+    import datetime as _dt
+    cutoff = time.time() - _SENSORY_WINDOW_S
+    with kg._lock:
+        for n in self.kg.nodes.values():
+            nid = str(n.id)
+            if not (nid.startswith("eye_text") or nid.startswith("ear_")
+                    or (n.extra_attrs or {}).get("source") == "screen_ocr"):
+                continue
+            ts = str(getattr(n, "created", "") or "")
+            dtv = None
+            for fmt in ("%Y/%m/%d %H:%M:%S", "%Y-%m-%d %H:%M:%S"):
+                try:
+                    dtv = _dt.datetime.strptime(ts[:19], fmt)
+                    break
+                except ValueError:
+                    continue
+            if dtv is not None and dtv.timestamp() >= cutoff:
+                return True
+    return False
+
+
