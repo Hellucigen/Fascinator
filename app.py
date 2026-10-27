@@ -1378,6 +1378,14 @@ try:
     logger.info("[Living] 生活循环守护线程: %s（flag=%s，分享出口已接，"
                 "每拍由认知状态选事做：听歌/逛逛/调研/安静）", _why,
                 config.get("living_loop_enabled", False))
+    # 技能插件（执行侧，默认关：skill_plugins_enabled=true 才加载）
+    try:
+        from plugin_loader import load_skill_plugins
+        _sk = load_skill_plugins(config)
+        if _sk:
+            logger.info("[Plugins] 技能插件已加载: %s", _sk)
+    except Exception as _spe:
+        logger.warning("[Plugins] 技能插件加载失败（不阻塞主链路）: %r", _spe)
 except Exception as _lle:                            # noqa: BLE001
     logger.warning("[Living] 生活循环启动失败（不阻塞主链路）: %r", _lle)
 

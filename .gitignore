@@ -8,6 +8,11 @@ __pycache__/
 # LLM 密钥与运行配置绝不入库（example 除外）
 data/*
 !data/llm_config.example.json
+# 插件目录例外（代码文件可入库；data 其余是她的记忆与运行时，永不入库）
+!data/activities_plugins/
+!data/activities_plugins/**
+!data/skill_plugins/
+!data/skill_plugins/**
 data/api_token.json
 data/llm_config.json
 data/llm_secret.json

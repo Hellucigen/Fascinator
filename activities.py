@@ -2571,6 +2571,9 @@ def tidy_beat(ctx, state):
             "steps": pruned}
 
 
+
+
+
 ACTIVITIES = [
     ("music", music_available, _music_appeal, music_beat),
     ("review", review_available, _review_appeal, review_beat),
@@ -2590,6 +2593,7 @@ ACTIVITIES = [
      research_beat),
     ("sts2", sts2_available, _sts2_appeal, sts2_beat),
 ]
+
 
 
 def _sts2_put_down_if_unwanted(ctx, state):
@@ -2641,6 +2645,14 @@ def _sts2_put_down_if_unwanted(ctx, state):
                     "已释放" if okc else "仍被占用")
     except Exception:                       # noqa: BLE001
         logger.debug("[Act] sts2 收拾桌面失败", exc_info=True)
+
+
+def _pl_activity_plugins():
+    from plugin_loader import load_activity_plugins
+    return load_activity_plugins()
+
+
+ACTIVITIES += _pl_activity_plugins()
 
 
 def beat(ctx, trigger: str = "sweep"):
