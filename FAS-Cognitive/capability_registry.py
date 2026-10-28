@@ -547,6 +547,49 @@ class CapabilityRegistry:
              [],
              "TTS 后端 kokoro-onnx（本地）→ edge-tts（云兜底）→ 无声；"
              "能力边界=有引擎、能读有文本时出声"),
+
+            # ── 多模态感知（2026-10-28：云端视觉/音频理解，默认关需授权）──
+            ("visual_understanding", "视觉语义理解",
+             "把一张图/屏幕画面交云端视觉模型理解其语义（看懂图表、界面布局、"
+             "画面在做什么），比本地 OCR 只识字更进一步。默认关闭，需"
+             "multimodal_enabled + vision_api_enabled 双闸才启用。",
+             "acquired", "perception",
+             ["llm_provider.py", "eye/observer.py", "app.py"],
+             ["看屏幕", "视觉理解", "屏幕内容", "界面"],
+             ["screen_observation"],
+             "云端 qwen-vl 视觉理解；隐私敏感，默认关=零调用零网络。"
+             "能力边界=开启后能读懂图像语义，非识别每个具体对象"),
+
+            ("audio_understanding", "音频语义理解",
+             "把一段音频交云端模型转写并理解语气/非语言声音。是本地 "
+             "FunASR/whisper ASR 的可选增强，默认关闭。",
+             "acquired", "perception",
+             ["llm_provider.py", "app.py"],
+             ["听", "音频", "语音识别"],
+             ["speech_listening"],
+             "云端音频理解，默认关；能力边界=开启后可转写并简述语气"),
+
+            ("mixed_modality_input", "图文混合输入",
+             "在同一条消息里接收用户随附的图片，用视觉理解并入本轮语境"
+             "（'看这张图'+一句话一起理解）。默认关闭（mixed_input_enabled）。",
+             "acquired", "perception",
+             ["app.py", "llm_provider.py"],
+             ["看这张图", "图片", "这张图"],
+             ["visual_understanding"],
+             "依赖视觉理解；关时随附图片字段被完全忽略，行为不变"),
+
+            # ── 桌面操作（2026-10-28：受三层白名单+人工批准约束）──────────
+            ("desktop_control", "桌面操作（受控）",
+             "在用户授权下操作这台电脑的图形界面：点击/触发控件/输入文本。"
+             "受三层危害白名单约束——安全层(白名单应用内语义点击)可自动，"
+             "位置层(像素点击)与敏感层(非白名单/敏感词/打字)必须用户逐次批准。"
+             "默认关闭，且设计上不存在无人复核的自动执行。",
+             "acquired", "action",
+             ["ui_desktop.py", "click_policy.py", "app.py"],
+             ["点击", "按钮", "关掉", "帮我点", "操作电脑"],
+             ["action_intent_resolution", "visual_understanding"],
+             "fail-closed：判不了即拒；敏感操作需 Charon 批准卡。"
+             "能力边界=被允许且你确认后才动这台机器，不是自主操作"),
         ]
 
         for cap_data in initial:

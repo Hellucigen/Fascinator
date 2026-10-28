@@ -75,12 +75,34 @@ pytest tests/ -q
 （`config.companion_charon_enabled=True`；Charon 未运行时投递仅告警不反压，
 `FAS_CHARON=0` 或 PUT /api/config 可关）。主动/提问话语会在 Charon 前端弹气泡。
 
+## 能力与扩展（全部默认关，开启需授权）
+
+图谱以"一切皆图"记录她能做什么——每项能力是一个接 Self 的原子能力节点
+（`capability_registry`），她能自述、可被语义召回。近期新增能力默认全部关闭，
+关闭态与"从未接入"逐字节等价（零网络、零副作用、零计费，可从账本证伪）。
+
+- **多模态感知**（`llm_provider` 网关，总闸 `multimodal_enabled` + 子闸）：
+  视觉语义理解（看图表/界面，比 OCR 进一步）、音频理解、图文混合输入。
+  复用现有 Qwen 凭证，无新依赖。
+- **桌面操作**（`ui_desktop` + `click_policy` 三层白名单，总闸 `desktop_control_enabled`）：
+  🟢 安全（白名单应用内语义点击/窗口操作）可自动，🟡 位置（像素点击）与
+  🔴 敏感（非白名单 / 命中删除·付款·发送·登出等词 / 打字）**必须你在前端批准**。
+  视觉定位点击闭环 `POST /api/desktop/locate_click` 结构性强制走待批——不存在无人
+  复核的自动执行。fail-closed：判不了即拒。执行成功原子记一条 ACTION 经历进她的自我叙述。
+- **插件协议**（`docs/PLUGINS.md`）：感知/事件插件（`POST /api/activate` 喂图）、
+  生活活动插件（`data/activities_plugins/`）、技能插件（`data/skill_plugins/`，需授权）。
+- **QQ 通道**（OneBot v11，`qq_enabled`）：白名单硬锁 + 同文去重 + 主动镜像只放行
+  proactive；当前因风控养号封存中。
+- **语音**：本地 kokoro-onnx TTS（日语双轨）、ear/ FunASR 中文 ASR + emotion2vec。
+
+> ⚠️ 上述"能操作电脑/能上云"的能力默认一律关闭——她的默认状态是只读陪伴，
+> 越界动作每一步都要你点头。这是有意为之，不是没做完。
+
 ## 缺件登记（临时占位，待补充选型）
 
 | 缺件 | 现状 |
 |---|---|
-| TTS 语音输出 | 未接入（候选：Charon 前端 Web Speech API / 本地 TTS） |
-| STT 实时麦克风流 | ear/ 目前只支持手动喂音频文件 |
+| STT 实时麦克风流 | ear/ 以文件/分段喂入为主，持续实时流待打磨 |
 | 正式搜索 API | actions/web_search.py 为 HTML 抓取临时方案（已支撑回合内被动搜索 + 好奇驱动自发检索 `_curiosity_web_explorer`，带相关性闸与限速；`FAS_NO_SELF_SEARCH=1` 可关） |
 
 ## 隐私红线

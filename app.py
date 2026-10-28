@@ -7760,13 +7760,38 @@ def qq_send_ep():
 # ══ 桌面控制（ui_desktop + click_policy 三层白名单；2026-10-28，默认关）══
 # 全端点第一行即 request_action/approve，其内部总闸 desktop_control_enabled
 # 关时立即拒绝——本模块对关闭态是零副作用、零 import 合成库。
+
+
+def _emit_desktop_experience(action: dict, res: dict, source: str):
+    """桌面动作成功执行后，通用·原子地记一条 ACTION 经历（复用 experience
+    时间线，自动进她的行动叙述与因果学习——不为桌面单开私有节点/字段）。
+    只有真正执行成功（ok 且非 pending）才记，拒绝/待批不写（没发生的事）。"""
+    if not (res and res.get("ok") and not res.get("pending")):
+        return
+    try:
+        a = action or {}
+        timeline.append(make_event(
+            EVENT_ACTION, actor="self",
+            subject=f"desktop_{str(a.get('kind') or 'click')}",
+            content={"target_app": str(a.get("target_app") or "")[:40],
+                     "element": str(a.get("element_name") or "")[:40],
+                     "vision_located": bool(a.get("vision_located")),
+                     "text": str(res.get("done") or "")[:80]},
+            source=source))
+    except Exception:                              # noqa: BLE001
+        pass
+
+
 @app.route("/api/desktop/action", methods=["POST"])
 def desktop_action_ep():
     """请求一个桌面动作。body=动作 dict（kind/target_app/element_name/x/y/text…）。
     返回 allow→已执行 / pending→待批(带 id) / deny→拒绝(带理由)。"""
     try:
         import ui_desktop as _D
-        return jsonify(_D.request_action(request.json or {}, config))
+        body = request.json or {}
+        _res = _D.request_action(body, config)
+        _emit_desktop_experience(body, _res, "desktop_api")
+        return jsonify(_res)
     except Exception as _de:                       # noqa: BLE001
         return jsonify({"ok": False, "error": str(_de)[:160]}), 500
 
@@ -7804,7 +7829,10 @@ def desktop_approve_ep():
         pid = str((request.json or {}).get("id") or "")
         if not pid:
             return jsonify({"ok": False, "error": "缺 id"}), 400
-        return jsonify(_D.approve_pending(pid, config))
+        _res = _D.approve_pending(pid, config)
+        _emit_desktop_experience(_res.pop("action", None) if isinstance(_res, dict) else None,
+                                 _res, "desktop_approve")
+        return jsonify(_res)
     except Exception as _de:                       # noqa: BLE001
         return jsonify({"ok": False, "error": str(_de)[:160]}), 500
 

@@ -88,6 +88,8 @@ def approve_pending(pid: str, cfg: dict) -> dict:
         return {"ok": False, "reason": "桌面控制未启用"}
     res = _run(target["action"], cfg, forced=True)
     _save_pending([p for p in items if p.get("id") != pid])
+    if isinstance(res, dict):
+        res["action"] = target["action"]           # 供上层原子记录 ACTION 经历
     return res
 
 
