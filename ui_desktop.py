@@ -59,7 +59,7 @@ def list_pending() -> list:
     return _load_pending()
 
 
-def enqueue_pending(action: dict, reasons: list) -> dict:
+def enqueue_pending(action: dict, reasons: list, tier: str = "") -> dict:
     items = _load_pending()
     # 同动作去重（同 kind+目标+控件不重复堆）
     sig = (action.get("kind"), action.get("target_app"),
@@ -68,7 +68,7 @@ def enqueue_pending(action: dict, reasons: list) -> dict:
              if (p["action"].get("kind"), p["action"].get("target_app"),
                  p["action"].get("element_name"), p["action"].get("text")) != sig]
     item = {"id": f"dsk_{int(time.time()*1000)%10**10}",
-            "ts": time.time(), "action": action, "reasons": reasons}
+            "ts": time.time(), "tier": tier, "action": action, "reasons": reasons}
     items.append(item)
     _save_pending(items[-20:])
     logger.info("[Desktop] 动作待确认（%s）: %s %s → %s",
@@ -116,7 +116,7 @@ def request_action(action: dict, cfg: dict) -> dict:
         return {"ok": False, "tier": tier, "decision": "deny",
                 "reasons": decision["reasons"]}
     if act == "confirm":
-        item = enqueue_pending(action, decision["reasons"])
+        item = enqueue_pending(action, decision["reasons"], tier)
         return {"ok": False, "pending": True, "id": item["id"],
                 "tier": tier, "decision": "confirm",
                 "reasons": decision["reasons"],
