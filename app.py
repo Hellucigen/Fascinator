@@ -7771,6 +7771,21 @@ def desktop_action_ep():
         return jsonify({"ok": False, "error": str(_de)[:160]}), 500
 
 
+@app.route("/api/desktop/locate_click", methods=["POST"])
+def desktop_locate_click_ep():
+    """视觉定位闭环：给 {target_app, element_label}，让视觉模型在屏幕截图上
+    定位该控件 → 作为像素点击动作**进待批卡**（非白名单应用直接拒；
+    白名单也只到 pending，需 Charon 人工批准，无自动执行）。"""
+    try:
+        import ui_desktop as _D
+        body = request.json or {}
+        return jsonify(_D.vision_locate_click(
+            str(body.get("target_app") or ""),
+            str(body.get("element_label") or ""), config))
+    except Exception as _le:                       # noqa: BLE001
+        return jsonify({"ok": False, "error": str(_le)[:160]}), 500
+
+
 @app.route("/api/desktop/pending", methods=["GET"])
 def desktop_pending_ep():
     """列出待人工确认的桌面动作（Charon 轮询此口展示批准/拒绝按钮）。"""

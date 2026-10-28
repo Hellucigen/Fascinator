@@ -278,3 +278,67 @@ def _minimize(action: dict) -> dict:
         return {"ok": True, "done": f"minimize {action.get('target_app')}"}
     except Exception as e:                       # noqa: BLE001
         return {"ok": False, "reason": f"minimize 不支持该控件：{e!r}"}
+
+
+# ── 视觉定位闭环（2026-10-28）：看到按钮 → 求坐标 → 进待批卡 ──────────────
+# 结构性安全（不靠自觉）：① 非白名单应用前置直接拒（连视觉都不叫）；
+# ② 定位结果一律 method=pixel → click_policy 必落"位置层" → 必 confirm，
+#    永远经你批准卡才执行（像素点击在策略里没有 allow 分支）；
+# ③ 需 vision_api_enabled 且 desktop_control_enabled 双闸开，关时任一短路，
+#    不截屏、不发视觉请求。不存在无人复核的自动执行路径。
+import re as _re
+
+_VJSON_RE = _re.compile(r"\{[^{}]*\}", _re.S)
+
+
+def _parse_vision_locate(raw: str):
+    """从视觉模型回复里抽 {found,x,y}。返回 (found, x, y) 或 (False, None, None)。"""
+    if not raw:
+        return False, None, None
+    for cand in _VJSON_RE.findall(str(raw)):
+        try:
+            d = json.loads(cand)
+        except Exception:
+            continue
+        if d.get("found") and d.get("x") is not None and d.get("y") is not None:
+            try:
+                return True, int(float(d["x"])), int(float(d["y"]))
+            except (ValueError, TypeError):
+                continue
+    return False, None, None
+
+
+def vision_locate_click(target_app: str, element_label: str, cfg: dict) -> dict:
+    """视觉模型在整屏截图里定位 target_app 中名为 element_label 的控件，
+    得到像素坐标后作为**位置层动作**入待批队列（必过人工确认）。"""
+    cfg = cfg or {}
+    if not cfg.get("desktop_control_enabled", False):
+        return {"ok": False, "reason": "桌面控制未启用"}
+    import llm_provider as _L
+    if not _L.vision_enabled():
+        return {"ok": False, "disabled": True, "reason": "视觉 API 未启用"}
+    safe_apps = list(cfg.get("desktop_safe_apps") or click_policy.DEFAULT_SAFE_APPS)
+    if not (target_app and click_policy._app_in_list(target_app, safe_apps)):
+        return {"ok": False, "tier": "sensitive",
+                "reason": f"目标应用『{target_app}』不在安全白名单，拒绝视觉定位点击"}
+    try:
+        from eye.screen_ocr import capture_png_b64
+        img = capture_png_b64()
+    except Exception as e:
+        return {"ok": False, "reason": f"截屏失败：{e!r}"}
+    q = ("这是整块主屏的截图。请在属于应用『" + str(target_app) + "』的窗口里，"
+         "找到文字/名称含『" + str(element_label) + "』的可点击控件（按钮/图标）。"
+         "只返回一个 JSON 对象，键为 found(布尔)、x、y（该控件中心相对"
+         "整张图的像素坐标）。找不到就 {\"found\": false}。")
+    vr = _L.vision_describe(img, q, purpose="vision_locate")
+    if not vr.get("ok"):
+        return {"ok": False, "reason": vr.get("reason", "视觉请求失败")}
+    found, x, y = _parse_vision_locate(vr.get("text", ""))
+    if not found:
+        return {"ok": False, "reason": "视觉未定位到该控件：" + str(element_label)}
+    action = {"kind": "click", "method": "pixel", "x": x, "y": y,
+              "target_app": target_app, "element_name": element_label,
+              "vision_located": True}
+    res = request_action(action, cfg)
+    res["located_at"] = [x, y]
+    return res

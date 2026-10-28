@@ -141,3 +141,13 @@ pyautogui/uiautomation。动作 HTTP 端点：`POST /api/desktop/action`，`GET
   自身等低危项；**浏览器/银行/邮箱/支付类故意不列**），可经 `desktop_safe_apps` 覆盖。
 - 铁律：默认没有"她想按就按"——能自动执行的只有"白名单应用内的无副作用语义操作"，
   其余一律要你在 Charon 点批准。任何判定异常一律降级为拒绝。
+
+## 视觉定位闭环（vision_locate_click，结构性强制人工确认）
+`POST /api/desktop/locate_click {target_app, element_label}`：
+截屏 → 视觉模型定位该控件像素坐标 → 以 **method=pixel** 交 click_policy →
+必落**位置层** → **必进待批卡**（像素点击在策略里没有 allow 分支）。三重保险：
+1. 目标应用不在白名单 → 前置直接拒（连视觉请求都不发）；
+2. vision_api_enabled / desktop_control_enabled 双闸任一关 → 立即返回，不截屏不发请求；
+3. 命中也只到 pending，需你在 Charon 批准卡点【批准】才真点击。**不存在无人复核的自动点击**。
+（坐标越界会被拦。整屏截图假设 1:1 像素；如系统 DPI 缩放非 100%，坐标可能有偏差，
+需人工在批准卡前核对。）
