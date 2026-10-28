@@ -331,6 +331,27 @@ DEFAULT_CONFIG = {
     "screen_observe_enabled": False,
     "screen_observe_interval_s": 600,  # 自动采样最小间隔（手动观察不受限）
     "screen_observe_max_per_hour": 6,  # 每小时采样上限（防失控轮询）
+    # ── 多模态云端能力（llm_provider 多模态网关；2026-10-28 用户授权接入）──
+    # 默认全关：关时网关在编码任何媒体字节/构造任何请求之前返回 disabled——
+    # 零网络、零 token、与从未接入逐字节等价（可由 usage_ledger 证伪）。
+    # multimodal_enabled 为总硬闸；三子闸各自默认关且必须总闸先开。
+    "multimodal_enabled": False,
+    "vision_api_enabled": False,       # 看懂屏幕/图片语义（qwen-vl）
+    "audio_api_enabled": False,        # 云端音频理解（换本地 ASR 的可选增强）
+    "mixed_input_enabled": False,      # /api/nlp 接受图片/音频随话传入
+    "mm_default_model": "qwen-vl-max",
+    "mm_vision_model": "",             # 空=用 default；可分别指定
+    "mm_audio_model": "",
+    # ── 桌面控制（ui_desktop.py + click_policy 三层白名单；默认关）──────────
+    # desktop_control_enabled=False 时 ui_desktop 任何入口零副作用，绝不
+    # import/调用任何输入合成库。三层裁决：安全(白名单应用内语义点击)可直放，
+    # 位置(像素点击)与敏感(非白名单/敏感词/输入文本)默认进待批需人工确认。
+    "desktop_control_enabled": False,
+    "desktop_safe_apps": None,         # None=用 click_policy 内置低危白名单；可覆盖
+    "desktop_sensitive_keywords": None,  # 追加敏感词（并入内置表）
+    "desktop_positional_confirm": True,  # 像素点击需确认
+    "desktop_sensitive_confirm": True,   # 敏感操作需确认（关=直接拒绝）
+    "desktop_positional_deny": False,    # True 则像素点击一律拒（更保守）
     # ── Steam 情境（只读 Web API，零侵入；密钥走环境变量 STEAM_API_KEY）──
     "steam_poll_enabled": False,       # 需 key+steam_id 齐全才会真的启动
     "steam_id": "",

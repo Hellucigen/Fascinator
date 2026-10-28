@@ -39,6 +39,26 @@ def run_observation(kg, engine=None, embedder=None, region=None, capture=None):
                               f"（共识别 {result.get('count', 0)} 条文字）")
     else:
         result["describe"] = "看了一眼屏幕，没什么值得注意的"
+    # ── 云端视觉增强（2026-10-28，默认关）：vision_api_enabled 关时整段跳过，
+    # 不截第二张图、不发任何请求——行为与未接入逐字节一致。开时把"看懂画面"
+    # 的语义描述并入这条观察节点，参与后续检索/联想（比 OCR 文字更懂图表/界面）。
+    try:
+        import llm_provider as _mm
+        if _mm.vision_enabled() and result.get("graph_node"):
+            from eye.screen_ocr import capture_png_b64
+            vr = _mm.vision_describe(
+                capture_png_b64(region),
+                "客观描述当前屏幕画面在做什么、界面上有哪些可操作元素",
+                purpose="eye_scene")
+            if vr.get("ok"):
+                result["scene"] = vr["text"][:600]
+                n = kg.get_node(result["graph_node"])
+                if n is not None:
+                    ea = dict(n.extra_attrs or {})
+                    ea["scene_understanding"] = result["scene"]
+                    n.extra_attrs = ea
+    except Exception as _ev:                       # noqa: BLE001
+        logger.debug(f"[Eye] 云端视觉增强跳过: {_ev}")
     # 观测：感知只在有显著内容时逐条，否则聚合（防 per-tick 刷屏，§6）
     try:
         import fas_log

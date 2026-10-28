@@ -497,3 +497,128 @@ def create_backend(provider: str = "qwen", **kwargs) -> LLMBackend:
         return OllamaBackend(**kwargs)
     else:
         raise ValueError(f"未知 LLM provider: {provider}")
+
+
+# ── 多模态网关（2026-10-28）：视觉/音频/混合输入的唯一云端出口 ──────────
+# 硬闸 config["multimodal_enabled"] 默认 False：关闭时本模块任何入口在
+# **读取/编码任何媒体字节、构造任何请求、触碰任何 client 之前**就返回
+# disabled——零网络、零 token、与"从未接入"逐字节等价。计费与账本与文本
+# 主路同址（usage_ledger + fas_log），"关=零多模态调用"可从账本证伪。
+# 子闸（vision_api/audio_api/mixed_input）各自默认 False，且都必须总闸先开。
+
+_MM_CLIENT = None                     # 复用单例；关时永不创建
+
+
+def multimodal_enabled() -> bool:
+    """总闸（硬）。False → 下面一切零副作用返回。"""
+    return bool(_RUNTIME_CONFIG.get("multimodal_enabled", False))
+
+
+def _sub(name: str) -> bool:
+    """子闸：总闸开 且 该能力开 才生效。"""
+    return multimodal_enabled() and bool(_RUNTIME_CONFIG.get(name, False))
+
+
+def vision_enabled() -> bool:
+    return _sub("vision_api_enabled")
+
+
+def audio_enabled() -> bool:
+    return _sub("audio_api_enabled")
+
+
+def mixed_input_enabled() -> bool:
+    return _sub("mixed_input_enabled")
+
+
+def _mm_client():
+    global _MM_CLIENT
+    if _MM_CLIENT is None:
+        import openai
+        key = os.environ.get("QWEN_API_KEY", "")
+        url = (os.environ.get("QWEN_BASE_URL")
+               or QwenBackend._DEFAULT_BASE_URL)
+        _MM_CLIENT = openai.OpenAI(
+            api_key=key, base_url=url,
+            timeout=float(os.environ.get("FAS_LLM_TIMEOUT_S", "120")),
+            max_retries=0)
+    return _MM_CLIENT
+
+
+def multimodal_call(content_parts, *, model: str = None,
+                    max_tokens: int = 1024, purpose: str = "multimodal"):
+    """多模态请求唯一出口。content_parts = OpenAI 内容数组
+    （[{"type":"text","text":..}, {"type":"image_url",...}
+      / {"type":"input_audio","input_audio":{"data":b64,"format":".."}}]）。
+
+    总闸关 → {"ok":False,"disabled":True}，不建请求不碰 client（零调用）。
+    返回 {"ok":bool, "text":..., "model":..., "reason":...}。"""
+    if not multimodal_enabled():
+        return {"ok": False, "disabled": True, "reason": "multimodal_disabled"}
+    if not content_parts:
+        return {"ok": False, "reason": "empty_content"}
+    mdl = model or str(_RUNTIME_CONFIG.get("mm_default_model", "qwen-vl-max"))
+    import time as _t
+    try:
+        import fas_log as _fl
+    except Exception:
+        _fl = None
+    t0 = _t.perf_counter()
+    kwargs = dict(model=mdl,
+                  messages=[{"role": "user", "content": content_parts}],
+                  temperature=0.2, max_tokens=max_tokens)
+    if "qwen" in mdl:
+        kwargs["extra_body"] = {"enable_thinking": False}
+    try:
+        if _fl is not None:
+            with _fl.llm_purpose(purpose):
+                resp = _mm_client().chat.completions.create(**kwargs)
+        else:
+            resp = _mm_client().chat.completions.create(**kwargs)
+        txt = (resp.choices[0].message.content or "").strip()
+        _mm_record(mdl, purpose, t0, ok=True, resp=resp)
+        return {"ok": True, "text": txt, "model": mdl}
+    except Exception as e:                          # noqa: BLE001
+        _mm_record(mdl, purpose, t0, ok=False, err=e)
+        return {"ok": False, "reason": str(e)[:200], "model": mdl}
+
+
+def _mm_record(model, purpose, t0, *, ok, resp=None, err=None):
+    """账本旁路（与文本主路同账）；坏账不拖垮多模态主路。"""
+    try:
+        import usage_ledger as _ul
+        u = getattr(resp, "usage", None) if resp is not None else None
+        _ul.record(provider="Qwen-MM", model=model, purpose=purpose,
+                   latency_ms=round((__import__("time").perf_counter() - t0) * 1000),
+                   prompt_tokens=getattr(u, "prompt_tokens", None),
+                   completion_tokens=getattr(u, "completion_tokens", None),
+                   ok=ok, error=(str(err)[:160] if err else None))
+    except Exception:
+        pass
+
+
+def _txt(t):
+    return {"type": "text", "text": str(t or "")}
+
+
+def vision_describe(image_b64_or_url, question="描述这张图，读出界面上的关键信息与可操作控件",
+                    *, mime="image/png", purpose="vision_describe"):
+    """视觉理解（子闸 vision_api_enabled）。图片以 data URL 传。关→disabled。"""
+    if not vision_enabled():
+        return {"ok": False, "disabled": True, "reason": "vision_api_off"}
+    url = (image_b64_or_url if str(image_b64_or_url).startswith("http")
+           else f"data:{mime};base64,{image_b64_or_url}")
+    return multimodal_call(
+        [_txt(question), {"type": "image_url", "image_url": {"url": url}}],
+        model=_RUNTIME_CONFIG.get("mm_vision_model") or None, purpose=purpose)
+
+
+def audio_transcribe(audio_b64, instruction="转写这段音频的内容并简述语气",
+                     *, fmt="wav", purpose="audio_transcribe"):
+    """音频理解（子闸 audio_api_enabled）。关→disabled。"""
+    if not audio_enabled():
+        return {"ok": False, "disabled": True, "reason": "audio_api_off"}
+    return multimodal_call(
+        [_txt(instruction),
+         {"type": "input_audio", "input_audio": {"data": audio_b64, "format": fmt}}],
+        model=_RUNTIME_CONFIG.get("mm_audio_model") or None, purpose=purpose)

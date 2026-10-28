@@ -3935,6 +3935,26 @@ def process_nlp():
             data.get("text", "")
         ).strip()
 
+        # ── 混合输入（2026-10-28）：一句话随附图片 → 云端视觉理解并入本轮语境。
+        # 子闸 mixed_input_enabled 默认关：关时即便 body 带 image 也完全忽略，
+        # text 与从前逐字节一致（零行为变化、零网络）。总闸 multimodal_enabled
+        # 也必须先开（网关内部再校验）。
+        if data.get("image_b64") or data.get("image_url"):
+            try:
+                import llm_provider as _mm
+                if _mm.mixed_input_enabled():
+                    _img = data.get("image_b64") or data.get("image_url")
+                    _vr = _mm.vision_describe(
+                        _img,
+                        "用户随这条消息发来一张图，请客观描述其关键内容/界面元素",
+                        mime=str(data.get("image_mime") or "image/png"),
+                        purpose="mixed_input")
+                    if _vr.get("ok"):
+                        text = (text + "\n\n【用户附带的图片内容（视觉理解）】"
+                                + _vr["text"][:800]).strip()
+            except Exception as _mie:              # noqa: BLE001
+                logger.debug(f"[Multimodal] 混合输入图理解跳过: {_mie}")
+
         # ── 相对时间接地（2026-10-24："昨晚说啥假设了"答不上来的实锤）──
         # 时间链一直记着"何时发生过"（情景节点的 created 时间戳、时点锚），
         # 但语言层从不按时间查："昨晚"被解析成一个概念节点，与绝对时间
@@ -7735,6 +7755,90 @@ def qq_send_ep():
         return jsonify(r)
     except Exception as _qs:                       # noqa: BLE001
         return jsonify({"ok": False, "error": str(_qs)[:120]}), 500
+
+
+# ══ 桌面控制（ui_desktop + click_policy 三层白名单；2026-10-28，默认关）══
+# 全端点第一行即 request_action/approve，其内部总闸 desktop_control_enabled
+# 关时立即拒绝——本模块对关闭态是零副作用、零 import 合成库。
+@app.route("/api/desktop/action", methods=["POST"])
+def desktop_action_ep():
+    """请求一个桌面动作。body=动作 dict（kind/target_app/element_name/x/y/text…）。
+    返回 allow→已执行 / pending→待批(带 id) / deny→拒绝(带理由)。"""
+    try:
+        import ui_desktop as _D
+        return jsonify(_D.request_action(request.json or {}, config))
+    except Exception as _de:                       # noqa: BLE001
+        return jsonify({"ok": False, "error": str(_de)[:160]}), 500
+
+
+@app.route("/api/desktop/pending", methods=["GET"])
+def desktop_pending_ep():
+    """列出待人工确认的桌面动作（Charon 轮询此口展示批准/拒绝按钮）。"""
+    try:
+        import ui_desktop as _D
+        return jsonify({"ok": True, "pending": _D.list_pending()})
+    except Exception as _de:                       # noqa: BLE001
+        return jsonify({"ok": False, "error": str(_de)[:160]}), 500
+
+
+@app.route("/api/desktop/approve", methods=["POST"])
+def desktop_approve_ep():
+    """用户批准某个待批动作 → 此刻才真正执行。"""
+    try:
+        import ui_desktop as _D
+        pid = str((request.json or {}).get("id") or "")
+        if not pid:
+            return jsonify({"ok": False, "error": "缺 id"}), 400
+        return jsonify(_D.approve_pending(pid, config))
+    except Exception as _de:                       # noqa: BLE001
+        return jsonify({"ok": False, "error": str(_de)[:160]}), 500
+
+
+@app.route("/api/desktop/deny", methods=["POST"])
+def desktop_deny_ep():
+    """用户拒绝某个待批动作 → 从队列移除，绝不执行。"""
+    try:
+        import ui_desktop as _D
+        pid = str((request.json or {}).get("id") or "")
+        if not pid:
+            return jsonify({"ok": False, "error": "缺 id"}), 400
+        return jsonify(_D.deny_pending(pid))
+    except Exception as _de:                       # noqa: BLE001
+        return jsonify({"ok": False, "error": str(_de)[:160]}), 500
+
+
+# ══ 视觉理解（多模态网关；vision_api_enabled 默认关=disabled 零请求）══
+@app.route("/api/vision/understand", methods=["POST"])
+def vision_understand_ep():
+    """把一张图交云端视觉模型理解（看图表/界面语义）。
+    body: {image_b64 或 image_url, question?}。总闸/子闸关时返回 disabled。"""
+    try:
+        import llm_provider as _L
+        body = request.json or {}
+        img = body.get("image_b64") or body.get("image_url") or ""
+        if not img:
+            return jsonify({"ok": False, "error": "缺 image_b64/image_url"}), 400
+        q = body.get("question") or "描述这张图，读出界面上的关键信息与可操作控件"
+        return jsonify(_L.vision_describe(img, q))
+    except Exception as _ve:                       # noqa: BLE001
+        return jsonify({"ok": False, "error": str(_ve)[:160]}), 500
+
+
+@app.route("/api/audio/transcribe", methods=["POST"])
+def audio_transcribe_ep():
+    """云端音频理解（可选增强，子闸 audio_api_enabled 默认关=disabled）。
+    body: {audio_b64, format?, instruction?}。"""
+    try:
+        import llm_provider as _L
+        body = request.json or {}
+        a = body.get("audio_b64") or ""
+        if not a:
+            return jsonify({"ok": False, "error": "缺 audio_b64"}), 400
+        return jsonify(_L.audio_transcribe(
+            a, body.get("instruction") or "转写这段音频的内容并简述语气",
+            fmt=str(body.get("format") or "wav")))
+    except Exception as _ae:                       # noqa: BLE001
+        return jsonify({"ok": False, "error": str(_ae)[:160]}), 500
 
 
 @app.route("/api/voice/speak", methods=["POST"])

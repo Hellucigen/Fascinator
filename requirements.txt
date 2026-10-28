@@ -30,4 +30,11 @@ torch>=2.12.0                  # CPU 版；GPU 请按上面命令装 +cu130
 # tqdm>=4.66.0        # 进度条（init_jieba_pos.py 使用）
 # ultralytics>=8.2.0  # 摄像头姿态/行为感知（eye/pose.py，看摄像头 CAMERA_OBSERVE）
 #                     # 未装时"看摄像头"能力如实缺席，其余功能不受影响
+# ── 桌面控制（ui_desktop.py；总闸 desktop_control_enabled 默认关）──────────
+# 关时本模块永不 import 下面的库——不装 = 桌面控制不可用，但主程序一切照旧。
+# 开总闸后：像素点击需 pyautogui；语义点击/窗口操作需 uiautomation（缺失如实报 unavailable）。
+# pyautogui>=0.9.54    # 鼠标/键盘合成（像素点击、输入文本、组合键）
+# uiautomation>=2.0.19 # Windows UI Automation：按控件语义名 Invoke（比像素可靠）
+# ── 多模态云端（llm_provider 多模态网关；multimodal_enabled 默认关）────────
+# 复用现有 openai SDK 与 Qwen 凭证，无需新依赖；关时零网络零请求。
 

@@ -105,3 +105,39 @@ GET http://127.0.0.1:5000/api/cognition/state  # 意图/阈值/场状态
 
 轮询建议 ≥30s 间隔；proactive poll 是消费型接口（取走即删），只挂一个
 消费者。
+
+---
+
+# 多模态与桌面控制（2026-10-28，默认全关）
+
+## 多模态（llm_provider 网关）
+总闸 `multimodal_enabled` + 三子闸（`vision_api_enabled` / `audio_api_enabled` /
+`mixed_input_enabled`），全部默认 false。关时网关在编码任何图像/音频字节、构造
+任何请求、创建任何 client 之前返回 disabled —— 零网络、零 token，与从未接入等价
+（可查 usage_ledger 的 `Qwen-MM` 条目数为 0 证伪）。
+
+- 视觉：`POST /api/vision/understand {image_b64|image_url, question}`；eye 观察在
+  `vision_api_enabled` 时把"看懂画面"的语义并入观察节点（默认只 OCR）。
+- 音频：`POST /api/audio/transcribe {audio_b64, format}`。
+- 混合输入：`/api/nlp` body 带 `image_b64`/`image_url` 且 `mixed_input_enabled` 时，
+  图片内容经视觉理解并入本轮语境；关时 body 里的图字段被完全忽略，行为不变。
+
+## 桌面控制（ui_desktop + click_policy，三层白名单）
+总闸 `desktop_control_enabled` 默认 false：关时任何端点立即拒绝，绝不 import
+pyautogui/uiautomation。动作 HTTP 端点：`POST /api/desktop/action`，`GET
+/api/desktop/pending`（Charon 轮询展示批准/拒绝），`POST /api/desktop/approve
+{id}`，`/api/desktop/deny {id}`。
+
+三层裁决（`click_policy.classify`，fail-closed，默认策略）：
+| 层 | 定义 | 默认动作 |
+|---|---|---|
+| 安全 safe | 白名单应用窗口内、控件名不碰敏感词的**语义点击(UIA)**；聚焦/最小化等可逆窗口操作 | 直接执行 |
+| 位置 positional | 基于像素坐标的点击（视觉定位天然不可靠：偏移/DPI/遮挡） | 进待批队列，需你确认 |
+| 敏感 sensitive | 应用不在白名单 / 控件名命中敏感词（删除/付款/发送/提交/登出/转账…）/ 任何文本输入或按键 | 进待批队列，需你逐次确认 |
+
+- 敏感词表：`click_policy.DEFAULT_SENSITIVE_KEYWORDS`（中英），可经
+  `desktop_sensitive_keywords` 追加。
+- 应用白名单：`DEFAULT_SAFE_APPS`（计算器/记事本/画图/播放器/任务管理器/Charon
+  自身等低危项；**浏览器/银行/邮箱/支付类故意不列**），可经 `desktop_safe_apps` 覆盖。
+- 铁律：默认没有"她想按就按"——能自动执行的只有"白名单应用内的无副作用语义操作"，
+  其余一律要你在 Charon 点批准。任何判定异常一律降级为拒绝。

@@ -72,6 +72,16 @@ def capture_screen(region=None) -> object:
     return img
 
 
+def capture_png_b64(region=None) -> str:
+    """截屏转 PNG base64（供云端视觉理解用）。多模态关闭时不会被调用。"""
+    import base64
+    import io as _io
+    img = capture_screen(region)
+    buf = _io.BytesIO()
+    img.save(buf, format="PNG")
+    return base64.b64encode(buf.getvalue()).decode("ascii")
+
+
 def recognize_text(region=None, min_score: float = 0.5) -> dict:
     """截图 + OCR。返回 {items: [{text, box, score, center}], full_text, count}。
 
